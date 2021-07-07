@@ -17,7 +17,7 @@ link-citations: yes
 cover-image: CoverImage.PNG
 ---
 
-# INTRODUCTION
+# Introduction
 
 The ACE benchmarking work is carried out by the Performance Review Commission (PRC) supported by the EUROCONTROL Performance Review Unit (PRU) and is based on information provided by Air Navigation Services Providers (ANSPs) in compliance with Decision No. 88 of the Permanent Commission of EUROCONTROL on economic information disclosure.
 The data processing, analysis and reporting are conducted with the assistance of the ACE Working Group, which comprises representatives from participating ANSPs, airspace users, regulatory authorities and the Performance Review Unit. This enables participants to share experiences and establish a common understanding of underlying assumptions and limitations of the data.
