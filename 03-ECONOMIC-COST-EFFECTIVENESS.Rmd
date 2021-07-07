@@ -10,8 +10,8 @@ Figure \@ref(fig:figure9) analyses the changes in economic cost-effectiveness be
 (ref:figure9) Trend of unit economic costs at Pan-European system level, 2014-2019 (real terms)^[Sakaeronavigatsia is excluded from the trend analysis provided in this section since no data is available prior to 2015 for this ANSP.].
 
 ```{r figure9, fig.cap = '(ref:figure9)', out.width='50%'}
-knitr::include_graphics('Figure 3-1-Left.png')
-knitr::include_graphics('Figure 3-1-Right.png')
+knitr::include_graphics('figures/Figure 3-1-Left.png')
+knitr::include_graphics('figures/Figure 3-1-Right.png')
 ```
 
 Between 2014 and 2019, economic costs per composite flight-hour increased by +0.7% p.a. in real terms. Over this period, ATM/CNS provision costs increased continuously (+1.3% p.a.) in the context of a significant growth in composite flight-hours (+3.2% p.a.). At the same time, the unit costs of ATFM delays rose by +15.4% p.a., on average, over the period.
@@ -24,7 +24,7 @@ The economic cost-effectiveness indicator at Pan-European level amounts to €51
 (ref:figure10) Economic gate-to-gate cost-effectiveness^[For the purposes of the ACE benchmarking analysis, costs relating to ATM/CNS infrastructure shared with the military authority (€20.0M) are included in ENAIRE 2019 ATM/CNS provision costs. These costs, which are charged to civil airspace users, are not passing through ENAIRE Accounts from 2014 onwards but are borne by the Spanish Air Force (Ministry of Defence) as well as corresponding revenues. Without these costs, ENAIRE unit economic costs would be slightly lower and would amount to €474.], 2019.
 
 ```{r figure10, fig.cap = '(ref:figure10)'}
-knitr::include_graphics('Figure 3-2.png')
+knitr::include_graphics('figures/Figure 3-2.png')
 ```
 
 

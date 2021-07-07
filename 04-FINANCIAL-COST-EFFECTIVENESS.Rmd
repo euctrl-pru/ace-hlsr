@@ -9,7 +9,7 @@ In 2019, ATM/CNS provision costs (+2.3%) increased faster than composite flight-
 (ref:figure11) Changes in unit ATM/CNS provision costs, 2014-2019 (real terms).
 
 ```{r figure11, fig.cap = '(ref:figure11)'}
-knitr::include_graphics('Figure 4-1.png')
+knitr::include_graphics('figures/Figure 4-1.png')
 ```
 
 Figure \@ref(fig:figure12) shows the analytical framework which is used in the ACE analysis to break down the financial cost-effectiveness indicator into basic economic drivers. These key drivers include:
@@ -21,7 +21,7 @@ Figure \@ref(fig:figure12) shows the analytical framework which is used in the A
 (ref:figure12) ACE performance framework, 2019 (real terms).
 
 ```{r figure12, fig.cap = '(ref:figure12)'}
-knitr::include_graphics('Figure 4-2.png')
+knitr::include_graphics('figures/Figure 4-2.png')
 ```
 
 Figure \@ref(fig:figure13) below shows that in 2019, ATCO employment costs per ATCO-hour rose faster (+1.9%) than ATCO-hour productivity (+0.4%). As a result, ATCO employment costs per composite flight-hour increased (+1.5%). In the meantime, unit support costs remained almost stable (+0.2%) since composite flight-hours (+1.7%) and support costs (+1.8%) rose at a similar pace. As a result, in 2019 unit ATM/CNS provision costs increased by +0.6% at Pan-European system level.
@@ -29,7 +29,7 @@ Figure \@ref(fig:figure13) below shows that in 2019, ATCO employment costs per A
 (ref:figure13) Breakdown of changes in unit ATM/CNS provision costs, 2018-2019 (real terms).
 
 ```{r figure13, fig.cap = '(ref:figure13)'}
-knitr::include_graphics('Figure 4-3.png')
+knitr::include_graphics('figures/Figure 4-3.png')
 ```
 The two following pages provide information on the level of ATCO-hour productivity, ATCO employment costs per ATCO-hour and unit support costs for each individual ANSP.
 
@@ -38,25 +38,25 @@ The two following pages provide information on the level of ATCO-hour productivi
 (ref:figure14) Financial gate-to-gate cost-effectiveness^[For the purposes of the ACE benchmarking analysis, costs relating to ATM/CNS infrastructure shared with the military authority (€20.0M) are included in ENAIRE 2019 ATM/CNS provision costs. These costs, which are charged to civil airspace users, are not passing through ENAIRE Accounts from 2014 onwards but are borne by the Spanish Air Force (Ministry of Defence) as well as corresponding revenues. Without these costs, ENAIRE unit ATM/CNS provision costs would be slightly lower and would amount to €371.] , 2019.
 
 ```{r figure14, fig.cap = '(ref:figure14)'}
-knitr::include_graphics('Figure 4-4.png')
+knitr::include_graphics('figures/Figure 4-4.png')
 ```
 
 (ref:figure15) ATCO-hour productivity, 2019.
 
 ```{r figure15, fig.cap = '(ref:figure15)'}
-knitr::include_graphics('Figure 4-5.png')
+knitr::include_graphics('figures/Figure 4-5.png')
 ```
 
 (ref:figure16) Employment costs per ATCO-hour, 2019.
 
 ```{r figure16, fig.cap = '(ref:figure16)'}
-knitr::include_graphics('Figure 4-6.png')
+knitr::include_graphics('figures/Figure 4-6.png')
 ```
 
 (ref:figure17) Breakdown of support costs per composite flight-hour, 2019.
 
 ```{r figure17, fig.cap = '(ref:figure17)'}
-knitr::include_graphics('Figure 4-7.png')
+knitr::include_graphics('figures/Figure 4-7.png')
 ```
 
 A more detailed analysis of the changes in cost-effectiveness, ATCO-hour productivity, ATCO employment costs per ATCO-hour and unit support costs will be available in the final ACE 2019 benchmarking report.

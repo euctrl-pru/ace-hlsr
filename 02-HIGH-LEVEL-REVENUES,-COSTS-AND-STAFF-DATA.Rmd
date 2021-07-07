@@ -5,8 +5,8 @@ This section provides a preliminary presentation of high-level revenues, costs a
 (ref:figure4) Breakdown of gate-to-gate ANS revenues, 2019.
 
 ```{r figure4, fig.cap = '(ref:figure4)', out.width='50%'}
-knitr::include_graphics('Figure 2-1-Top.png')
-knitr::include_graphics('Figure 2-1-Bottom.png')
+knitr::include_graphics('figures/Figure 2-1-Top.png')
+knitr::include_graphics('figures/Figure 2-1-Bottom.png')
 ```
 
 From a methodological point of view, the ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services which amounted to €8 764M in 2019. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 84% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented some 16%.
@@ -14,7 +14,7 @@ From a methodological point of view, the ACE benchmarking analysis focuses on th
 (ref:figure5) Gate-to-gate ATM/CNS provision costs at Pan-European system level, 2019.
 
 ```{r figure5, fig.cap = '(ref:figure5)'}
-knitr::include_graphics('Figure 2-2.png')
+knitr::include_graphics('figures/Figure 2-2.png')
 ```
 
 In 2019, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 54% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of Figure \@ref(fig:figure6) below).
@@ -23,7 +23,7 @@ Between 2014 and 2019, ATM/CNS provision costs increased continuously (+1.3% per
 (ref:figure6) Changes in ATM/CNS provision costs, 2014-2019 (real terms).
 
 ```{r figure6, fig.cap = '(ref:figure6)'}
-knitr::include_graphics('Figure 2-3.png')
+knitr::include_graphics('figures/Figure 2-3.png')
 ```
 
 The Pan-European ANSPs employed some 56 864 ATM/CNS staff in 2019 (excluding 877 internal MET staff). Some 17 984 staff (32%) were ATCOs working on operational duty, split between ACCs (56%) and APP/TWR facilities (44%). On average, 2.2 additional staff are required for every ATCO in OPS in Europe.
@@ -31,7 +31,7 @@ The Pan-European ANSPs employed some 56 864 ATM/CNS staff in 2019 (excluding 877
 (ref:figure7) Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, 2019.
 
 ```{r figure7, fig.cap = '(ref:figure7)'}
-knitr::include_graphics('Figure 2-4.png')
+knitr::include_graphics('figures/Figure 2-4.png')
 ```
 
 
@@ -43,7 +43,7 @@ knitr::include_graphics('Figure 2-4.png')
 
 ::: {.col data-latex="{0.55\textwidth}"}
 ```{r figure8, fig.cap = '(ref:figure8)'}
-knitr::include_graphics('Figure 2-5.png')
+knitr::include_graphics('figures/Figure 2-5.png')
 ```
 :::
 
