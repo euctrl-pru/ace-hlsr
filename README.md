@@ -1,1 +1,14 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/home/about/ for how to compile this example.
+
+# hlsr_ace
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+This repo contains the material to generate a bookdown version of the HLSR Ace.
+
+To compile the whole doc in its HTML output, you can execute
+
+```
+bookdown::render_book(input = 'index.Rmd', output_format = 'bookdown::gitbook')
+```
+
