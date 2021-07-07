@@ -3,3 +3,8 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: "Chapter "
+
+before_chapter_script: "_common.R"
+
+# K-M (kint & merge) approach, see https://bookdown.org/yihui/bookdown/new-session.html
+new_session: yes
