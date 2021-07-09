@@ -3,12 +3,18 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">ACE Report</a></li>
+        <li><a href="./">High-level summary report</a></li>
         <li class="toc-logo"><a href="./"><img src="CoverImage.PNG" width="200" height="200" ></a></li>
-        <li><a href="./">IMPORTANT NOTE:Data contained in this document are preliminary and subject to changes before the publication of the final ACE 2019 benchmarking report in May 2021</a></li>
+        
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     download: ["pdf", "epub"]
+
+toolbar:
+   download: HLSR_2019.pdf
+    
+
+
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

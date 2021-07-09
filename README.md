@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-This repo contains the material to generate a bookdown version of the HLSR Ace.
+This repo contains the material to generate a bookdown version of the ACE High-level summary report.
 
 To compile the whole doc in its HTML output, you can execute
 

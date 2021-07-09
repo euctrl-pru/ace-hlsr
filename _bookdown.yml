@@ -2,7 +2,7 @@ book_filename: "HLSR_ACE"
 delete_merged_file: true
 language:
   ui:
-    chapter_name: "Chapter "
+    chapter_name: ""
 
 before_chapter_script: "_common.R"
 
