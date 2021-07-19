@@ -2,7 +2,7 @@
 
 This section provides a preliminary analysis of financial cost-effectiveness at Pan-European and ANSP level.
 
-## Pan-European system level
+## Pan-European system level {#fin_1}
 
 In 2019, ATM/CNS provision costs (+2.3%) increased faster than composite flight-hours (+1.7%) and as a result unit ATM/CNS provision costs rose by +0.6%.
 
@@ -34,7 +34,7 @@ knitr::include_graphics('figures/Figure_4-3.png')
 
 The two following pages provide information on the level of ATCO-hour productivity, ATCO employment costs per ATCO-hour and unit support costs for each individual ANSP.
 
-## ANSP level
+## ANSP level {#fin_2}
 
 (ref:figure14) Financial gate-to-gate cost-effectiveness[^financial-cost-effectiveness-1] , 2019.
 
