@@ -11,14 +11,6 @@ bookdown::gitbook:
     download: ["pdf", "epub"]
 
 toolbar:
-   download: HLSR_2019.pdf
-    
-
-
-bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
-bookdown::epub_book: default
+      position: fixed
+      download: c:/Users/jchustac/repos/hlsr_ace/HLSR_2019.pdf'
+      search: yes
