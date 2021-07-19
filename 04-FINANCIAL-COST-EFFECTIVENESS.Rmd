@@ -2,7 +2,7 @@
 
 This section provides a preliminary analysis of financial cost-effectiveness at Pan-European and ANSP level.
 
-## Pan-European system LEVEL {#fin_1}
+## Pan-European system level {#fin_1}
 
 In 2019, ATM/CNS provision costs (+2.3%) increased faster than composite flight-hours (+1.7%) and as a result unit ATM/CNS provision costs rose by +0.6%.
 
