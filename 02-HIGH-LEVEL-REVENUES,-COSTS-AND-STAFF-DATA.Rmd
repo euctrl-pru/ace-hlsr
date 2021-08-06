@@ -163,6 +163,35 @@ The Pan-European ANSPs employed some 56 864 ATM/CNS staff in 2019 (excluding 877
 knitr::include_graphics('figures/Figure_2-4.png')
 ```
 
+```{r figure71, fig.cap = '(ref:figure7)'}
+
+chapter2_fig8 <- read_csv("~/fig-2-4-a.csv")
+
+chapter2_fig8 <- as.data.frame(chapter2_fig8)
+
+fig8 <- plot_ly(chapter2_fig8, type='pie', labels = chapter2_fig8$A, values = chapter2_fig8$B, height = 525, 
+               textinfo='label+percent', showlegend = FALSE, rotation = 70)%>%
+               layout(legend = list(orientation = 'h'), font=list(size = 7))
+
+chapter2_fig9 <- read_csv("~/fig-2-4-b.csv")
+
+chapter2_fig9 <- as.data.frame(chapter2_fig9)
+
+fig9 <- plot_ly(chapter2_fig9, type='pie', labels = chapter2_fig9$A, values = chapter2_fig9$B, height = 525, 
+               textinfo='label+percent', showlegend = FALSE, rotation = 35)%>%
+               layout(legend = list(orientation = 'h'), font=list(size = 7))
+
+p <- plot_ly(x = rnorm(100))
+browsable(div(
+  style = "display: flex; flex-wrap: wrap; justify-content: center",
+  div(fig9, style = "width: 50%; border: solid;"),
+  div(fig8, style = "width: 50%; border: solid;")
+))
+
+knitr::include_graphics('C:/Users/izimmo/Documents/Capture24.JPG')
+
+```
+
 (ref:figure8) Total gate-to-gate ATM/CNS staff per staff category and changes, 2018-2019[^high-level-revenues-costs-and-staff-data-2].
 
 [^high-level-revenues-costs-and-staff-data-2]: Sakaeronavigatsia is excluded from the upper part of Figure \@ref(fig:figure8) since no data is available prior to 2015 for this ANSP. It is however included in the lower part of the figure as well as in the comments of changes after 2015.
