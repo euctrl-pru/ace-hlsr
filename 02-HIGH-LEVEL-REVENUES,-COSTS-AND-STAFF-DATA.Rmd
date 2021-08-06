@@ -2,7 +2,6 @@
 year_rev <- 2019
 ```
 
-
 # High-level revenues, costs and staff data {#high}
 
 This section provides a preliminary presentation of high-level revenues, costs and staff data provided in ANSPs ACE 2019 data submissions. Total ANS revenues in `r year_rev` amounted to €9 644M. Almost all en-route revenues comes from the collection of en-route charges (95.7%, see left pie chart). The proportion is lower for terminal revenues (69.0%, see right pie chart), as additional income may directly come from airport operators (21.2% e.g. through a contractual arrangement between the ANSP and the airport operator).
@@ -71,7 +70,7 @@ From a methodological point of view, the ACE benchmarking analysis focuses on th
 knitr::include_graphics('figures/Figure_2-2.png')
 ```
 
-In 2019, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 54% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of Figure \@ref(fig:figure6) below). Between 2014 and 2019, ATM/CNS provision costs increased continuously (+1.3% per annum, on average) at Pan-European system level (see top chart of Figure \@ref(fig:figure6)). As shown in the bottom right part of Figure \@ref(fig:figure6), the +2.3% increase in ATM/CNS costs observed for the Pan-European system in 2019 masks different trends amongst the 37 ANSPs [^high-level-revenues-costs-and-staff-data-1]. More details on the changes in ANSPs ATM/CNS provision costs in 2019 will be available in the final ACE 2019 benchmarking report.
+In 2019, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 54% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of Figure \@ref(fig:figure6) below). Between 2014 and 2019, ATM/CNS provision costs increased continuously (+1.3% per annum, on average) at Pan-European system level (see top chart of Figure \@ref(fig:figure6)). As shown in the bottom right part of Figure \@ref(fig:figure6), the +2.3% increase in ATM/CNS costs observed for the Pan-European system in 2019 masks different trends amongst the 37 ANSPs [^high-level-revenues-costs-and-staff-data-1]. More details on the changes in ANSPs ATM/CNS provision costs in 2019 will be available in the final ACE 2019 benchmarking report [@ace_2019].
 
 [^high-level-revenues-costs-and-staff-data-1]: Sakaeronavigatsia is excluded from the trend analysis provided in the top chart of Figure \@ref(fig:figure6) since no data is available prior to 2015 for this ANSP.
 
