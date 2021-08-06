@@ -70,6 +70,42 @@ From a methodological point of view, the ACE benchmarking analysis focuses on th
 knitr::include_graphics('figures/Figure_2-2.png')
 ```
 
+```{r figure51, fig.cap = '(ref:figure5)'}
+
+chapter2_fig4 <- read_csv("~/fig-2-2-a.csv")
+
+chapter2_fig4 <- as.data.frame(chapter2_fig4, stringsAsFactors = FALSE)
+
+chapter2_fig4$A <- factor(chapter2_fig4$A, levels = unique(chapter2_fig4$A)[order(chapter2_fig4$B, decreasing = TRUE)])
+
+fig4 <- plot_ly(chapter2_fig4, type='pie', labels = chapter2_fig4$A, values = chapter2_fig4$B, 
+               textinfo='label+percent', rotation = 85)%>%
+               layout(legend = list(orientation = 'h'), font=list(size = 7))
+
+chapter2_fig5 <- read_csv("~/fig-2-2-b.csv")
+
+chapter2_fig5 <- as.data.frame(chapter2_fig5, stringsAsFactors = FALSE)
+
+chapter2_fig5$A <- factor(chapter2_fig5$A, levels = unique(chapter2_fig5$A)[order(chapter2_fig5$B, decreasing = TRUE)])
+
+fig5 <- plot_ly(chapter2_fig5, type='pie', labels = chapter2_fig5$A, values = chapter2_fig5$B, 
+               textinfo='label+percent', rotation = 330)%>%
+               layout(legend = list(orientation = 'h'), font=list(size = 7))
+
+p <- plot_ly(x = rnorm(100))
+browsable(div(
+  style = "display: flex; flex-wrap: wrap; justify-content: center",
+  div(fig5, style = "width: 50%; border: solid;"),
+  div(fig4, style = "width: 50%; border: solid;")
+))
+
+knitr::include_graphics('C:/Users/izimmo/Documents/Capture24.JPG')
+
+###
+
+```
+
+
 In 2019, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 54% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of Figure \@ref(fig:figure6) below). Between 2014 and 2019, ATM/CNS provision costs increased continuously (+1.3% per annum, on average) at Pan-European system level (see top chart of Figure \@ref(fig:figure6)). As shown in the bottom right part of Figure \@ref(fig:figure6), the +2.3% increase in ATM/CNS costs observed for the Pan-European system in 2019 masks different trends amongst the 37 ANSPs [^high-level-revenues-costs-and-staff-data-1]. More details on the changes in ANSPs ATM/CNS provision costs in 2019 will be available in the final ACE 2019 benchmarking report [@ace_2019].
 
 [^high-level-revenues-costs-and-staff-data-1]: Sakaeronavigatsia is excluded from the trend analysis provided in the top chart of Figure \@ref(fig:figure6) since no data is available prior to 2015 for this ANSP.
