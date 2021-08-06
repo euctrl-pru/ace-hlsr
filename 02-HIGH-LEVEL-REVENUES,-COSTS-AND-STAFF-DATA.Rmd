@@ -201,6 +201,43 @@ knitr::include_graphics('C:/Users/izimmo/Documents/Capture24.JPG')
 ```{r figure8, fig.cap = '(ref:figure8)', out.width='90%'}
 knitr::include_graphics('figures/Figure_2-5.png')
 ```
+
+```{r figure81, fig.cap = '(ref:figure8)'}
+
+figure2_5 <- read_csv("~/fig-2-5-a.csv")
+
+figure2.5.df <- as.data.frame(figure2_5)
+
+fig10 <- plot_ly(figure2.5.df, x = figure2.5.df$A, y = ~B, type = 'bar', name = 'Number of support staff', text = figure2.5.df$B, textposition = 'outside')
+fig10 <- fig10 %>% add_trace(y = ~C, name = 'Number of ATCOs in OPS', text = figure2.5.df$C, textposition = 'outside')
+fig10 <- fig10 %>% layout(legend = list(orientation = 'h'), yaxis = list(title = 'Thousands of FTEs'), barmode = 'stack', font=list(size = 7), autosize = F, width = 750, height = 250, div(style = "display: flex; flex-wrap: wrap; justify-content: space-between", div(fig10, style = "width: 90%; height: 270px; border: solid")))
+
+figure2_55 <- read_csv("~/fig-2-5-b.csv")
+
+figure2.55.df <- as.data.frame(figure2_55, stringsAsFactors = FALSE)
+
+figure2.55.df$A <- factor(figure2.55.df$A, levels = unique(figure2.55.df$A)[order(figure2.55.df$B, decreasing = FALSE)])
+
+fig11 <- plot_ly(x = figure2.55.df$B, y = figure2.55.df$A, type="bar", mode="markers", marker = list(color = 'rgba(50, 171, 96, 0.6)',
+                            line = list(color = 'rgba(50, 171, 96, 1.0)', width = 1)), text = figure2.55.df$B, textposition = 'outside', orientation = 'h')
+fig11 <- fig11 %>% layout(title = list(text = "Gate-to-gate ATM/CNS staff in 2019 (in FTEs)", y = 0.0), autosize = TRUE, font=list(size = 7), margin = list(b = 80), yaxis = list(tickangle = -20))
+
+fig11a <- plot_ly(y = figure2.55.df$A, x = figure2.55.df$D, type="bar", marker = list(color = 'rgba(50, 171, 96, 0.6)',
+                            line = list(color = 'rgba(50, 171, 96, 1.0)', width = 1)), text = figure2.55.df$D, textposition = 'outside', orientation = 'h', base = 0)
+fig11a <- fig11a %>% layout(title = list(text = "Changes 2018-2019 (in %)", y = 0.0), autosize = TRUE, font=list(size = 7), base = 0, margin = list(b = 80), yaxis = list(tickangle = -20))
+
+p <- plot_ly(x = rnorm(100))
+browsable(div(
+  style = "display: flex; flex-wrap: wrap; justify-content: center",
+  div(fig10, style = "width: 100%;height: 255px;border: solid;"),
+  div(fig11, style = "width: 50%; border: solid;"),
+  div(fig11a, style = "width: 50%; border: solid;")
+))
+
+knitr::include_graphics('C:/Users/izimmo/Documents/Capture24.JPG')
+
+```
+
 :::
 
 ::: {.col data-latex="{0.05\\textwidth}"}
