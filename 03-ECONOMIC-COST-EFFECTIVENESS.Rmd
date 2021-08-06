@@ -17,6 +17,40 @@ knitr::include_graphics('figures/Figure_3-1-Left.png')
 knitr::include_graphics('figures/Figure_3-1-Right.png')
 ```
 
+```{r figure91, fig.cap = '(ref:figure9)'}
+
+figure3_1 <- read_csv("~/fig-3-1-a.csv")
+
+figure3.1.df <- as.data.frame(figure3_1)
+
+fig12 <- plot_ly(figure3.1.df, x = figure3.1.df$A, y = figure3.1.df$B, type = 'bar', name = 'ATM/CNS costs per composite flight-hour')
+fig12 <- fig12 %>% add_trace(y = figure3.1.df$C, name = 'Unit costs of en-route ATFM delays')
+fig12 <- fig12 %>% add_trace(y = figure3.1.df$D, name = 'Unit costs of airport ATFM delays', text = figure3.1.df$E, textposition = 'outside')
+fig12 <- fig12 %>% layout(yaxis = list(title = 'EUR per composite flight-hour (2019 prices)'), barmode = 'stack', legend = list(orientation = 'h'), font=list(size = 7))
+
+figure3_11 <- read_csv("~/fig-3-1-b.csv")
+
+figure3.11.df <- as.data.frame(figure3_11)
+
+fig13 <- plot_ly(figure3.11.df, x = figure3.11.df$A, y = figure3.11.df$B, type = 'bar', name = 'ATM/CNS costs per composite flight-hour', marker = list(color = 'rgb(49,130,189)'), base = 0, text = figure3.11.df$E, textposition = 'outside')
+fig13 <- fig13 %>% add_trace(y = figure3.11.df$C, name = 'Unit costs of en-route ATFM delays', marker = list(color = 'rgb(204,204,204)'), text = figure3.11.df$F, textposition = 'outside')
+fig13 <- fig13 %>% add_trace(y = figure3.11.df$D, name = 'Unit costs of airport ATFM delays', marker = list(color = 'rgb(49,204,189)'), text = figure3.11.df$G, textposition = 'outside')
+fig13 <- fig13 %>% layout(xaxis = list(title = "", tickangle = -45),
+         yaxis = list(title = 'Percentage (%)'),
+         base = 0,
+         barmode = 'group', legend = list(orientation = 'h'), font=list(size = 7))
+
+p <- plot_ly(x = rnorm(100))
+browsable(div(
+  style = "display: flex; flex-wrap: wrap; justify-content: center",
+  div(fig12, style = "width: 50%; border: solid;"),
+  div(fig13, style = "width: 50%; border: solid;")
+))
+
+knitr::include_graphics('C:/Users/izimmo/Documents/Capture24.JPG')
+
+```
+
 Between 2014 and 2019, economic costs per composite flight-hour increased by +0.7% p.a. in real terms. Over this period, ATM/CNS provision costs increased continuously (+1.3% p.a.) in the context of a significant growth in composite flight-hours (+3.2% p.a.). At the same time, the unit costs of ATFM delays rose by +15.4% p.a., on average, over the period. In 2019, composite flight-hours rose slower (+1.7%) than ATM/CNS provision costs (+2.3%). As a result, unit ATM/CNS provision costs increased by +0.6%. However, this increase was more than compensated by a substantial reduction in the unit costs of ATFM delays in 2019 (-7.4%) and therefore unit economic costs decreased by -1.3% compared to 2018.
 
 ## ANSP level {#eco_2}
