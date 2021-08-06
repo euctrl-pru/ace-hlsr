@@ -18,10 +18,14 @@ chapter2_fig <- read_csv("data/fig-2-1-a.csv")
 
 chapter2_fig <- as.data.frame(chapter2_fig)
 
+m1 <-chapter2_fig$B[2]
+m2 <-chapter2_fig$B[1]
+m3 <- m1 +m2
+
 fig <- plot_ly(chapter2_fig, type='pie', labels = chapter2_fig$A, values = chapter2_fig$B, height = 525, 
                textinfo='label+percent', textposition = 'inside',
                rotation = 120, insidetextorientation='radial', showlegend = TRUE)%>%
-               layout(title = 'Gate-to-gate ANS revenue <br /> EUR 9 644 M', legend = list(orientation = 'h'), font=list(size = 7))
+               layout(title = stringr::str_glue('Gate-to-gate ANS revenue <br /> EUR {m3} M', m3 = m3), legend = list(orientation = 'h'), font=list(size = 7))
 
 chapter2_fig2 <- read_csv("data/fig-2-1-b.csv")
 
@@ -29,11 +33,9 @@ chapter2_fig2 <- as.data.frame(chapter2_fig2, stringsAsFactors = FALSE)
 
 chapter2_fig2$A <- factor(chapter2_fig2$A, levels = unique(chapter2_fig2$A)[order(chapter2_fig2$B, decreasing = TRUE)])
 
-m1 <-label_number_si()(7.725e6)
-
 fig2 <- plot_ly(chapter2_fig2, type='pie', labels = chapter2_fig2$A, values = chapter2_fig2$B, height = 525,
                textinfo='label+percent', rotation = 190, showlegend = TRUE)%>%
-               layout(title = stringr::str_glue('Total en-route revenue <br /> EUR {m1}', m1 = m1), legend = list(orientation = 'h'), font=list(size = 7))
+               layout(title = stringr::str_glue('Total en-route revenue <br /> EUR {m1} M', m1 = m1), legend = list(orientation = 'h'), font=list(size = 7))
 
 chapter2_fig3 <- read_csv("data/fig-2-1-c.csv")
 
@@ -44,7 +46,7 @@ chapter2_fig3$A <- factor(chapter2_fig3$A, levels = unique(chapter2_fig3$A)[orde
 fig3 <- plot_ly(chapter2_fig3, type='pie', labels = chapter2_fig3$A, values = chapter2_fig3$B, height = 525, 
                textinfo='label+percent', rotation = 290,
                showlegend = TRUE) %>%
-               layout(title = 'Total terminal revenue <br /> EUR 1 919 M', legend = list(orientation = 'h'), font=list(size = 7))
+               layout(title = stringr::str_glue('Total terminal revenue <br /> EUR {m2} M', m2 = m2), legend = list(orientation = 'h'), font=list(size = 7))
 
 ###
 
