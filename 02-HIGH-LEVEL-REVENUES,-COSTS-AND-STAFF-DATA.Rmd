@@ -116,6 +116,45 @@ In 2019, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 54%
 knitr::include_graphics('figures/Figure_2-3.png')
 ```
 
+```{r figure61, fig.cap = '(ref:figure6)'}
+
+figure2_3a <- read_csv("~/fig-2-3-a.csv")
+
+figure2.3a.df <- as.data.frame(figure2_3a)
+
+# Area chart with 2 groups
+fig6 <- plot_ly(x = figure2.3a.df$A, y = figure2.3a.df$B, type="scatter", mode="markers")
+fig6 <- fig6 %>% add_lines()
+fig6 <- fig6 %>% add_text(text = figure2.3a.df$C, textposition = "top")
+fig6 <- fig6 %>% layout(title = 'Trends in ATM/CNS provision costs at Pan-European system (2014-2019)', showlegend = FALSE, yaxis = list(title = "EUR, 2019", range = c(7000000000,9000000000)), font=list(size = 7), autosize = F, width = 750, height = 160, div(style = "display: flex; flex-wrap: wrap; justify-content: space-between",
+                              div(fig6, style = "width: 100%; height: 160px; border: solid")))
+
+figure2_3 <- read_csv("~/fig-2-3-b.csv")
+
+figure2.3.df <- as.data.frame(figure2_3, stringsAsFactors = FALSE)
+
+figure2.3.df$A <- factor(figure2.3.df$A, levels = unique(figure2.3.df$A)[order(figure2.3.df$B, decreasing = FALSE)])
+
+fig7 <- plot_ly(y = figure2.3.df$A, x = figure2.3.df$B, type="bar", marker = list(color = 'rgba(50, 171, 96, 0.6)',
+                            line = list(color = 'rgba(50, 171, 96, 1.0)', width = 1)), text = figure2.3.df$B, textposition = 'outside', orientation = 'h')
+fig7 <- fig7 %>% layout(title = list(text = "Total ATM/CNS provision costs in 2019", y = 0.0), autosize = TRUE, font=list(size = 7))
+
+fig71 <- plot_ly(y = figure2.3.df$A, x = figure2.3.df$D, type="bar", marker = list(color = 'rgba(50, 171, 96, 0.6)',
+                            line = list(color = 'rgba(50, 171, 96, 1.0)', width = 1)), text = figure2.3.df$D, textposition = 'outside', orientation = 'h', base = 0)
+fig71 <- fig71 %>% layout(title = list(text = "Changes 2018-2019 (in %)", y = 0.0), autosize = TRUE, font=list(size = 7), base = 0)
+
+p <- plot_ly(x = rnorm(100))
+browsable(div(
+  style = "display: flex; flex-wrap: wrap; justify-content: center",
+  div(fig6, style = "width: 100%;height: 170px;border: solid;"),
+  div(fig7, style = "width: 50%; border: solid;"),
+  div(fig71, style = "width: 50%; border: solid;")
+))
+
+knitr::include_graphics('C:/Users/izimmo/Documents/Capture24.JPG')
+
+```
+
 The Pan-European ANSPs employed some 56 864 ATM/CNS staff in 2019 (excluding 877 internal MET staff). Some 17 984 staff (32%) were ATCOs working on operational duty, split between ACCs (56%) and APP/TWR facilities (44%). On average, 2.2 additional staff are required for every ATCO in OPS in Europe.
 
 (ref:figure7) Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, 2019.
