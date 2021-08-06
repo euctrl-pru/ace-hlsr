@@ -65,6 +65,52 @@ The economic cost-effectiveness indicator at Pan-European level amounts to €51
 knitr::include_graphics('figures/Figure_3-2.png')
 ```
 
+```{r figure101, fig.cap = '(ref:figure10)'}
+
+figure3_2 <- read_csv("~/fig-3-2-a.csv")
+
+figure3.2.df <- as.data.frame(figure3_2, stringsAsFactors = FALSE)
+
+#to sort the bars from high to low
+figure3.2.df$A <- factor(figure3.2.df$A, levels = unique(figure3.2.df$A)[order(figure3.2.df$E, decreasing = TRUE)])
+
+fig14 <- plot_ly(figure3.2.df, x = figure3.2.df$A, y = ~B, type = 'bar', name = 'Financial gate-to-gate cost effectiveness')
+fig14 <- fig14 %>% add_trace(y = ~C, name = 'Unit costs of en-route ATFM delays')
+fig14 <- fig14 %>% add_trace(y = ~D, name = 'Unit costs of airport ATFM delays', text = figure3.2.df$E, textposition = 'outside')
+
+fig14 <- fig14 %>% layout(yaxis = list(title = 'EUR per composite flight-hour'), barmode = 'stack', legend = list(x = 0.7, y = 0.7), font=list(size = 8), annotations = 
+ list(x = 1, y = 0.9, text = "European system average for economic cost-effectiveness: EUR 511 <br /> European system average for financial cost-effectiveness: EUR 399", 
+      showarrow = F, xref='paper', yref='paper', 
+      xanchor='right', yanchor='auto', xshift=0, yshift=0,
+      font=list(size=7, color="blue")), div(style = "display: flex; flex-wrap: wrap; justify-content: space-between",
+                                        div(fig14, style = "width: 100%; border: solid;")
+                               ))
+
+figure3_2_1 <- read_csv("~/fig-3-2-b.csv")
+
+figure3.2.1.df <- as.data.frame(figure3_2_1, stringsAsFactors = FALSE)
+
+#to sort the bars from high to low
+figure3.2.1.df$A <- factor(figure3.2.1.df$A, levels = unique(figure3.2.1.df$A)[order(figure3.2.1.df$E, decreasing = TRUE)])
+
+fig15 <- plot_ly(figure3.2.1.df, x = figure3.2.1.df$A, y = ~B, type = 'bar', name = 'Financial gate-to-gate cost effectiveness')
+fig15 <- fig15 %>% add_trace(y = ~C, name = 'Unit costs of en-route ATFM delays')
+fig15 <- fig15 %>% add_trace(y = ~D, name = 'Unit costs of airport ATFM delays', text = figure3.2.1.df$E, textposition = 'outside')
+
+fig15 <- fig15 %>% layout(yaxis = list(title = ''), barmode = 'stack', showlegend = FALSE, font=list(size = 7), autosize = F, width = 300, height = 150, div(style = "display: flex; flex-wrap: wrap; justify-content: space-between",
+                              div(fig15, style = "width: 40%; height: 160px; border: solid"))) 
+
+fig16 <- plot_ly(x = rnorm(100))
+fig16 <- div(style = "display: flex; flex-wrap: wrap; justify-content: space-between",
+                              div(fig15, style = "width: 40%; height: 160px; border: solid"),
+                              div(fig14, style = "width: 100%; border: solid;")
+                              )
+
+fig16
+knitr::include_graphics('C:/Users/izimmo/Documents/Capture24.JPG')
+
+```
+
 More details on the changes in ATFM delays[^economic-cost-effectiveness-4] for individual ANSPs will be provided in the ACE 2019 benchmarking report.
 
 [^economic-cost-effectiveness-4]: The ATFM delays analysed in this ACE benchmarking report do not comprise changes due to the Post Operations Performance Adjustment Process. This process allows operational stakeholders to notify national and European authorities of issues that relate to ATFM delay measurement, classification and assignment. It is a mean of enhancing operational ATFM delay data used in the performance scheme (Commission Implementing Regulation (EU) No 390/2013). The minutes of ATFM delays resulting from this process would lead to different unit economic costs figures for some ANSPs. Detailed information on this process is available on the Network Manager website at the following link: <https://www.eurocontrol.int/service/post-operations-performance-adjustment>.
