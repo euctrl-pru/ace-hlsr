@@ -1,6 +1,11 @@
+```{r read-values}
+year_rev <- 2019
+```
+
+
 # High-level revenues, costs and staff data {#high}
 
-This section provides a preliminary presentation of high-level revenues, costs and staff data provided in ANSPs ACE 2019 data submissions. Total ANS revenues in 2019 amounted to €9 644M. Almost all en-route revenues comes from the collection of en-route charges (95.7%, see left pie chart). The proportion is lower for terminal revenues (69.0%, see right pie chart), as additional income may directly come from airport operators (21.2% e.g. through a contractual arrangement between the ANSP and the airport operator).
+This section provides a preliminary presentation of high-level revenues, costs and staff data provided in ANSPs ACE 2019 data submissions. Total ANS revenues in `r year_rev` amounted to €9 644M. Almost all en-route revenues comes from the collection of en-route charges (95.7%, see left pie chart). The proportion is lower for terminal revenues (69.0%, see right pie chart), as additional income may directly come from airport operators (21.2% e.g. through a contractual arrangement between the ANSP and the airport operator).
 
 (ref:figure4) Breakdown of gate-to-gate ANS revenues, 2019.
 
@@ -25,9 +30,11 @@ chapter2_fig2 <- as.data.frame(chapter2_fig2, stringsAsFactors = FALSE)
 
 chapter2_fig2$A <- factor(chapter2_fig2$A, levels = unique(chapter2_fig2$A)[order(chapter2_fig2$B, decreasing = TRUE)])
 
+m1 <-label_number_si()(7.725e6)
+
 fig2 <- plot_ly(chapter2_fig2, type='pie', labels = chapter2_fig2$A, values = chapter2_fig2$B, height = 525,
                textinfo='label+percent', rotation = 190, showlegend = TRUE)%>%
-               layout(title = 'Total en-route revenue <br /> EUR 7 725 M', legend = list(orientation = 'h'), font=list(size = 7))
+               layout(title = stringr::str_glue('Total en-route revenue <br /> EUR {m1}', m1 = m1), legend = list(orientation = 'h'), font=list(size = 7))
 
 chapter2_fig3 <- read_csv("data/fig-2-1-c.csv")
 
