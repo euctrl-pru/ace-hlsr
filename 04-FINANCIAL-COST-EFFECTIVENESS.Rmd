@@ -40,7 +40,7 @@ Figure \@ref(fig:Figure-4-4) to Figure \@ref(fig:Figure-4-7) present the main AC
 
 There are three main elements to be considered when interpreting the level of the indicators as well as ANSPs rankings in the figures below: a) the traffic reduction in 2020, although being massive for all ANSPs, was not completely homogeneous, b) there were different responses in cost adjustments, and c) there were also different levels of flexibility in adjusting the workforce, and in particular ATCO in OPS hours on duty, which has an enormous impact on the ATCO productivity and employment costs indicators measured in the ACE report.
 
-(ref:Figure-4-5) Financial gate-to-gate cost-effectiveness, 2020
+(ref:Figure-4-4) Financial gate-to-gate cost-effectiveness, 2020
 
 ```{r Figure-4-4, fig.cap = '(ref:Figure-4-4)', out.width='80%'}
 knitr::include_graphics('figures/Figure-4-4.png')

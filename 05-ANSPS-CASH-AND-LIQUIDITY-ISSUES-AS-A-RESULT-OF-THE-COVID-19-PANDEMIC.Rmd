@@ -1,30 +1,5 @@
 # ANSPs Cash and Liquidity Issues as a Result of the Covid-19 Pandemic {#covid}
 
-<style>
-div.blue{ background-color:#e6f0ff; 
-          border-radius: 5px; 
-          padding: 20px;
-          display: flex;}
-          
-div.blank{ background-color:#ffffff; 
-           display: flex;}
-           
-div.left{ flex: 2;
-          width: 80%;
-          text-align: left;}
-          
-div.right{ flex: 1;
-           width: 20%;
-           text-align: right;}
-           
-div.left-narrow{ flex: 1;
-                 width: 50%;
-                 text-align: left;}
-                 
-div.right-wide{ flex: 1;
-                width: 50%;
-                text-align: left;}
-</style>
 
 This section provides a preliminary analysis of specific financial indicators that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic. It is structured into three parts:
 
@@ -44,27 +19,30 @@ Figure \@ref(fig:Figure-5-1) presents the changes in ANSPs balance sheet structu
 knitr::include_graphics('figures/Figure-5-1.png')
 ```
 
-<div class = "blue">
-  <div class = "left">
 
-<b> Spotlight </b>
+:::: {.infobox .blue data-latex=""}
+
+::: {.left data-latex=""}
+**Spotlight**
 
 On the assets side, the shares of NBV of fixed assets in operations and of current assets fell by -5 and -6 percent points, respectively. In the meantime the share of long-term financial assets and receivables rose by +12 percentage points, mainly due to large under-recoveries from 2020 to be charged in future years.
 
 On the liabilities side, the share of capital and reserves fell by -11 percentage points (-€1.1 billion) mainly due to the recording of losses in 2020. In the meantime, the share of long-term liabilities rose by a +11 percentage points as several ANSPs contracted new loans or drew down from existing loan facilities in order to respond to liquidity issues and continue invest in priority projects. Short and long-term borrowings rose by +€2.5 billion in 2020 (+134%).
 
 Although the level of capex was reduced by -26% (-€0.4 billion), it still represents €1 billion of expenditures.
+:::
 
-  </div>
-  <div class = "right">
-  <br>
-
+::: {.right data-latex=""}
+<br><br>
 ```{r Figure-5-2, out.width='90%'}
 knitr::include_graphics('figures/Figure-5-2.png')
 ```
-  
-  </div>
-</div>
+:::
+::::
+
+
+
+
 
 ## Financial indicators calculated from ANSPs ACE data submissions {#covid_2}
 
@@ -78,26 +56,30 @@ Figures below show the 1st quartile[^ansps-cash-and-liquidity-1], the Pan-Europe
 
 [^ansps-cash-and-liquidity-3]: As mentioned in introduction to this section, HCAA, LVNL and MUAC are excluded from all charts. Concerning the current ratio, Fintraffic ANS is also excluded for 2015-2016, and DCAC Cyprus for 2015-2018, due to missing data. For the cash-on-hand days indicator, ENAIRE is excluded since the reporting of cash in ENAIRE ACE submissions does not reflect the actual cash available from centralized cash management at ENAIRE Group level.
 
-<div class = "blank">
-  <div class = "left-narrow">
+
+
+
+:::: {.infobox .blank data-latex=""}
+::: {.left-narrow data-latex=""}
 
 (ref:Figure-5-3) Changes in ANSPs balance sheet structure (2019-2020)
 
-```{r figure19, out.width='100%'}
+<br>
+```{r figure19-bis, out.width='100%'}
 knitr::include_graphics('figures/Figure-5-3.png')
 ```
-
-```{r figure20, out.width='100%'}
+<br><br>
+```{r figure20-bis, out.width='100%'}
 knitr::include_graphics('figures/Figure-5-4.png')
 ```
+<br>
 
-```{r figure21, fig.cap = '(ref:Figure-5-3)', out.width='100%'}
+```{r figure21-bis, fig.cap = '(ref:Figure-5-3)', out.width='100%'}
 knitr::include_graphics('figures/Figure-5-5.png')
 ```
+:::
 
-  </div>
-  <div class = "right-wide">
-
+::: {.right-wide data-latex=""}
 The current ratio measures the ability of a company to pay its short-term debt obligations with its current assets. A value of more than 1 suggests financial well-being for the organisation, as it can settle its short-term debt obligations with its current assets.
 
 In 2020, the average current ratio at Pan-European level amounted to 2.6, which is down by about -28% compared to the 2015-2019 period.
@@ -114,8 +96,10 @@ The equity ratio measures the share of a company's balance sheet (total assets o
 
 In 2020, the average equity ratio at Pan-European level amounted to 0.4, down by -19% compared to the 2015-2019 period. 
 
-  </div>
-</div>
+:::
+::::
+
+
 
 ## Cash flow indicators calculated from ANSPs financial statements {#covid_3}
 
@@ -130,16 +114,16 @@ knitr::include_graphics('figures/Figure-5-6.png')
 
 Figure \@ref(fig:Figure-5-6) shows the 2019-2020 changes in free cash flow to revenues ratio (and its components) at ANSP level for 24 ANSPs for which data is publically available at the time of writing this report[^ansps-cash-and-liquidity-4].
 
-Whereas 15 of these ANSPs had a positive ratio in 2019, all ANSPs analysed (with the exception of Albcontrol) have a negative ratio in 2020. Although changes in the free cash flow are mainly driven by changes in the net cash flow from operating activities (see Figure \@ref(fig:Figure-5-4)), it is interesting to note that when the free cash flow was negative in 2019, it was in several cases due to relatively large capital expenditures during the year (e.g. in 2019, Sakaeronavigatsia and LGS respectively invested 37% and 29% of their revenues).
+Whereas 15 of these ANSPs had a positive ratio in 2019, all ANSPs analysed (with the exception of Albcontrol) have a negative ratio in 2020. Although changes in the free cash flow are mainly driven by changes in the net cash flow from operating activities (see Figure \@ref(fig:Figure-5-6)), it is interesting to note that when the free cash flow was negative in 2019, it was in several cases due to relatively large capital expenditures during the year (e.g. in 2019, Sakaeronavigatsia and LGS respectively invested 37% and 29% of their revenues).
 
 [^ansps-cash-and-liquidity-4]: Figure \@ref(fig:Figure-5-6) is sourced from the ANSP Financial Dashboard produced by the EUROCONTROL Aviation Intelligence Unit. All data from this dashboard has been collected from ANSPs’ most recent financial statements. For more details, see: https://ansperformance.eu/economics/finance/.
 
 More detailed analysis of changes in the free cash flow to revenues ratio will be provided in the ACE 2020 benchmarking report.
 
-<div class = "blue">
-  <div class = "left">
-  
-<b> Spotlight </b>
+:::: {.infobox .blue}
+::: {.left}
+
+**Spotlight**
 
 The analysis of ANSPs financial indicators shows that the situation deteriorated on several criteria:
 
@@ -149,14 +133,13 @@ The analysis of ANSPs financial indicators shows that the situation deteriorated
 
 Based on a sample of 24 ANSPs, the net cash flow from operating activities in 2020 became negative (-€1.5 billion compared to €2.0 billion in 2020). When also considering the cash outflow for capital expenditures, the free cash flow amounted to -€2.2 billion in 2020.	Free Cash Flow
 (24 ANSPs)
+:::
 
-  </div>
-  <div class = "right">
+::: {.right}
   <br>
-  
 ```{r Figure-5-7, out.width='100%'}
 knitr::include_graphics('figures/Figure-5-7.png')
 ```
 
-  </div>
-</div>
+:::
+::::
