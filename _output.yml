@@ -5,9 +5,4 @@ bookdown::gitbook:
       before: |
         <li><a href="./">High-level summary report</a></li>
         <li class="toc-logo"><a href="./"><img src="CoverImage.PNG" width="200" style="border:1px solid black"></a></li>
-        
-      after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     download: ["pdf"]
-
-

@@ -10,5 +10,9 @@ To compile the whole doc in its HTML output, you can execute
 
 ```
 bookdown::render_book(input = 'index.Rmd', output_format = 'bookdown::gitbook')
+
+# for Bootstrap4 version
+bookdown::render_book(input = 'index.Rmd', output_format = 'bookdown::bs4_book')
+
 ```
 

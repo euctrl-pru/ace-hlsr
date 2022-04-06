@@ -3,10 +3,11 @@ title: "HIGH-LEVEL SUMMARY REPORT ON PRELIMINARY ACE 2020 DATA"
 author: "Prepared by the EUROCONTROL Performance Review Unit (PRU)"
 date: "December 2021"
 output:
-  html_document:
-    df_print: paged
-    number_sections: yes
-  pdf_document: default
+  bookdown::bs4_book: default
+  # html_document:
+  #   df_print: paged
+  #   number_sections: yes
+  # pdf_document: default
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:
