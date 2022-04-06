@@ -5,7 +5,10 @@
 div.blue{ background-color:#e6f0ff; 
           border-radius: 5px; 
           padding: 20px;
-          display: flex;}
+          padding-bottom: 0px;
+          display: flex;
+          margin: 10px;
+          }
           
 div.plainblue{ background-color:#e6f0ff; 
                border-radius: 5px; 
@@ -35,6 +38,7 @@ Across the Pan-European system, traffic in 2020 (measured in composite flight-ho
 Some revenue items increased in 2020, such as income from exempted flights (+11.3%), income from domestic governments (+11.3%) and other revenues (+21.6%). However, these increases (+€46M) remain marginal compared to the drop in en-route and terminal charges revenues (-€4 982 M) at Pan-European level. Detailed analysis shows that most ANSPs did not record any State aid as part of their 2020 revenues.
 
 At terminal level, the share of income from airport operator rose from 21.1% in 2019 to 31.2% in 2020 as this revenue stream reduced much less than the income from terminal charges.
+
 :::
 
 ::: {.right}
