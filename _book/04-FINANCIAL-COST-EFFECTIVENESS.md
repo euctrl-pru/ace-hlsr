@@ -1,6 +1,6 @@
 # Financial cost-effectiveness {#financial}
 
-This section provides a preliminary analysis of financial cost-effectiveness.
+This section provides a [preliminary analysis]{.ul} of financial cost-effectiveness.
 
 ## Pan-European system level {#fin_1}
 
@@ -8,9 +8,9 @@ Figure \@ref(fig:Figure-4-1) shows that after three years of continuous reductio
 
 The analytical framework which is used in the ACE analysis to break down the financial cost-effectiveness indicator into basic economic drivers is presented in Figure \@ref(fig:Figure-4-2). These key drivers include:
 
-a)   ATCO-hour productivity (0.47 composite flight-hours per ATCO-hour);
-b)   ATCO employment costs per ATCO-hour (€131); and,
-c)   Support costs per unit output (€589).
+a)  ATCO-hour productivity (0.47 composite flight-hours per ATCO-hour);
+b)  ATCO employment costs per ATCO-hour (€131); and,
+c)  Support costs per unit output (€589).
 
 (ref:Figure-4-1) Changes in unit ATM/CNS provision costs, 2015-2020 (real terms)
 
@@ -39,7 +39,7 @@ In the meantime, unit support costs rose by +120.0% since the fall in composite 
 
 ## ANSP level {#fin_2}
 
-Figure \@ref(fig:Figure-4-4) to Figure \@ref(fig:Figure-4-7) present the main ACE key performance indicators at ANSP level for the year 2020. In all these figures, the dotted lines represent the 1st and 3rd quartiles. 
+Figure \@ref(fig:Figure-4-4) to Figure \@ref(fig:Figure-4-7) present the main ACE key performance indicators at ANSP level for the year 2020. In all these figures, the dotted lines represent the 1st and 3rd quartiles.
 
 There are three main elements to be considered when interpreting the level of the indicators as well as ANSPs rankings in the figures below: a) the traffic reduction in 2020, although being massive for all ANSPs, was not completely homogeneous, b) there were different responses in cost adjustments, and c) there were also different levels of flexibility in adjusting the workforce, and in particular ATCO in OPS hours on duty, which has an enormous impact on the ATCO productivity and employment costs indicators measured in the ACE report.
 

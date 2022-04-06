@@ -3,10 +3,10 @@ title: "HIGH-LEVEL SUMMARY REPORT ON PRELIMINARY ACE 2020 DATA"
 author: "Prepared by the EUROCONTROL Performance Review Unit (PRU)"
 date: "December 2021"
 output:
-  pdf_document: default
   html_document:
     df_print: paged
     number_sections: yes
+  pdf_document: default
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:
@@ -16,7 +16,7 @@ biblio-style: apalike
 link-citations: yes
 ---
 
-# IMPORTANT NOTICE {-}
+# IMPORTANT NOTICE {.unnumbered}
 
 [Data contained in this document are preliminary and subject to changes before the publication of the final ACE 2020 benchmarking report in May 2022.]{style="color: red;"}
 
@@ -35,9 +35,9 @@ The objective of this document is to provide a first insight on the level of 202
 <p class="caption">(\#fig:Figure-1-1)(ref:Figure-1-1)</p>
 </div>
 
-It is important that robust ACE benchmarking analysis is available in a timely manner since several stakeholders, most notably ANSPs’ management, regulatory authorities (e.g. NSAs) and airspace users, have a keen interest in receiving the information in the ACE reports as early as possible.
+It is important that robust ACE benchmarking analysis is available in a timely manner since several stakeholders, most notably ANSPs' management, regulatory authorities (e.g. NSAs) and airspace users, have a keen interest in receiving the information in the ACE reports as early as possible.
 
-It should be noted that the data presented in this document are still preliminary and not yet fully validated. These data reflect the information stored in the ACE database on the 11th November 2021.  Figure \@ref(fig:Figure-1-2) shows the status of the ACE data validation process for the data presented in this document.
+It should be noted that the data presented in this document are still [preliminary and not yet fully validated]{.ul}. These data reflect the information stored in the ACE database on the 11th November 2021. Figure \@ref(fig:Figure-1-2) shows the status of the ACE data validation process for the data presented in this document.
 
 (ref:Figure-1-2) Status of 2020 data validation process
 
@@ -48,7 +48,7 @@ It should be noted that the data presented in this document are still preliminar
 
 The data contained in this report is therefore subject to changes before the release of the final ACE 2020 benchmarking report in May 2022.
 
-Figure \@ref(fig:Figure-1-3) shows that 20 ANSPs provided their ACE 2020 data submission on time by the 1st July 2021 and that, in total, 26 data submissions were received by the 15th July 2021. Figure \@ref(fig:Figure-1-3) also indicates that for 11 ANSPs the ACE data submission was received more than one month after the deadline.
+Figure \@ref(fig:Figure-1-3) below shows that 20 ANSPs provided their ACE 2020 data submission on time by the 1st July 2021 and that, in total, 26 data submissions were received by the 15th July 2021. Figure \@ref(fig:Figure-1-3) also indicates that for 11 ANSPs the ACE data submission was received more than one month after the deadline.
 
 (ref:Figure-1-3) Status of ACE 2020 data submission
 
@@ -57,7 +57,9 @@ Figure \@ref(fig:Figure-1-3) shows that 20 ANSPs provided their ACE 2020 data su
 <p class="caption">(\#fig:Figure-1-3)(ref:Figure-1-3)</p>
 </div>
 
-Clearly, the timescale for the production of the ACE benchmarking report is inevitably delayed if data are not submitted on time. The remainder of this report is organised as follows:
+Clearly, the timescale for the production of the ACE benchmarking report is inevitably delayed if data are not submitted on time.
+
+The remainder of this report is organised as follows:
 
 -   Section \@ref(high): provides a high-level presentation of 2020 revenues, costs and staff data;
 -   Section \@ref(economic): presents a preliminary analysis of economic cost-effectiveness at Pan-European and ANSP level;
