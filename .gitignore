@@ -1,5 +1,11 @@
-HLSR_ACE.rds
+# by default ignore generated HTML: you'll need to force git add them
 _book/
+
+# ignore LaTeX artefacts
+HLSR_ACE.rds
+HLSR_ACE.log
+HLSR_ACE.tex
+
 
 ######## R project specific (R.gitignore)
 # from https://github.com/github/gitignore/
