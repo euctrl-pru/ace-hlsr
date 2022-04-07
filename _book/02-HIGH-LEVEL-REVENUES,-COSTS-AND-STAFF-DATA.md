@@ -1,28 +1,5 @@
 # High-level revenues, costs and staff data {#high}
 
-```{=html}
-<style>
-div.blue{ background-color:#e6f0ff; 
-          border-radius: 5px; 
-          padding: 20px;
-          padding-bottom: 0px;
-          display: flex;
-          margin: 10px;
-          }
-          
-div.plainblue{ background-color:#e6f0ff; 
-               border-radius: 5px; 
-               padding: 20px;}
-          
-div.left{ flex: 2;
-          width: 80%;
-          text-align: left;}
-          
-div.right{ flex: 1;
-           width: 20%;
-           text-align: right;}
-</style>
-```
 This section provides a [preliminary]{.ul} presentation of high-level revenues, costs and staff data provided in ANSPs ACE 2020 data submissions. Total ANS revenues in 2020 amounted to €4 502M. Most en-route revenues come from the collection of en-route charges (91.4%, see left pie chart). The proportion of terminal revenues from charges is lower (50.9%, see right pie chart), as additional income may directly come from airport operators (31.2% e.g. through a contractual arrangement between the ANSP and the airport operator).
 
 (ref:Figure-2-1) Breakdown of gate-to-gate ANS revenues, 2020
