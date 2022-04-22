@@ -1,116 +1,22 @@
 # Economic cost-effectiveness {#economic}
 
-This section provides a preliminary analysis of economic cost-effectiveness at Pan-European and ANSP level.
+The PRC introduced in its ACE benchmarking reports the concept of economic cost-effectiveness. This indicator is defined as gate-to-gate ATM/CNS provision costs plus the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between ATC capacity and costs[^economic-cost-effectiveness-1].
 
-## Pan-European system level {#eco_1}
+[^economic-cost-effectiveness-1]: See Annex 2 of the ACE 2019 benchmarking report for more information on the methodology used to compute composite flight-hours and economic costs.
 
-The PRC introduced in its ACE benchmarking reports the concept of economic cost-effectiveness. This indicator is defined as gate-to-gate ATM/CNS provision costs plus the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between ATC capacity and costs[^economic-cost-effectiveness-1]. Figure \@ref(fig:figure9) analyses the changes in economic cost-effectiveness between 2014 and 2019 at Pan-European system level. The left-hand side of Figure \@ref(fig:figure9) shows the changes in unit economic costs, while the right-hand side provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays.
+Figure \@ref(fig:Figure-3-1) shows [preliminary results]{.ul} on the changes in economic cost-effectiveness between 2015 and 2020 at Pan-European system level. The left-hand side of Figure \@ref(fig:Figure-3-1) shows the changes in unit economic costs, while the right-hand side provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays.
 
-[^economic-cost-effectiveness-1]: See Annex 2 of the ACE 2018 benchmarking report for more information on the methodology used to compute composite flight-hours and economic costs.
+(ref:Figure-3-1) Trend of unit economic costs at Pan-European system level, 2015-2020 (real terms)
 
-(ref:figure9) Trend of unit economic costs at Pan-European system level, 2014-2019 (real terms)[^economic-cost-effectiveness-2].
-
-[^economic-cost-effectiveness-2]: Sakaeronavigatsia is excluded from the trend analysis provided in this section since no data is available prior to 2015 for this ANSP.
-
-```{r figure9, fig.cap = '(ref:figure9)', out.width='50%'}
-knitr::include_graphics('figures/Figure_3-1-Left.png')
-knitr::include_graphics('figures/Figure_3-1-Right.png')
+```{r Figure-3-1, fig.cap = '(ref:Figure-3-1)', out.width='50%'}
+knitr::include_graphics('figures/Figure-3-1-Left.png')
+knitr::include_graphics('figures/Figure-3-1-Right.png')
 ```
 
-```{r figure91, fig.cap = '(ref:figure9)'}
+Figure \@ref(fig:Figure-3-2) shows [preliminary results]{.ul} at ANSP level (dotted lines represent the 1st and 3rd quartiles). On average, the share of ATFM delays in 2020 was 3% (compared to 22% in 2019), and only five ANSPs had ATFM delays representing more than 5% of their unit economic costs (compared to 22 ANSPs in 2019).
 
-figure3_1 <- read_csv("data/fig-3-1-a.csv")
+(ref:Figure-3-2) Economic gate-to-gate cost-effectiveness, 2020
 
-figure3.1.df <- as.data.frame(figure3_1)
-
-fig12 <- plot_ly(figure3.1.df, x = figure3.1.df$A, y = figure3.1.df$B, type = 'bar', name = 'ATM/CNS costs per composite flight-hour')
-fig12 <- fig12 %>% add_trace(y = figure3.1.df$C, name = 'Unit costs of en-route ATFM delays')
-fig12 <- fig12 %>% add_trace(y = figure3.1.df$D, name = 'Unit costs of airport ATFM delays', text = figure3.1.df$E, textposition = 'outside')
-fig12 <- fig12 %>% layout(yaxis = list(title = 'EUR per composite flight-hour (2019 prices)'), barmode = 'stack', legend = list(orientation = 'h'), font=list(size = 7))
-
-figure3_11 <- read_csv("data/fig-3-1-b.csv")
-
-figure3.11.df <- as.data.frame(figure3_11)
-
-fig13 <- plot_ly(figure3.11.df, x = figure3.11.df$A, y = figure3.11.df$B, type = 'bar', name = 'ATM/CNS costs per composite flight-hour', marker = list(color = 'rgb(49,130,189)'), base = 0, text = figure3.11.df$E, textposition = 'outside')
-fig13 <- fig13 %>% add_trace(y = figure3.11.df$C, name = 'Unit costs of en-route ATFM delays', marker = list(color = 'rgb(204,204,204)'), text = figure3.11.df$F, textposition = 'outside')
-fig13 <- fig13 %>% add_trace(y = figure3.11.df$D, name = 'Unit costs of airport ATFM delays', marker = list(color = 'rgb(49,204,189)'), text = figure3.11.df$G, textposition = 'outside')
-fig13 <- fig13 %>% layout(xaxis = list(title = "", tickangle = -45),
-         yaxis = list(title = 'Percentage (%)'),
-         base = 0,
-         barmode = 'group', legend = list(orientation = 'h'), font=list(size = 7))
-
-p <- plot_ly(x = rnorm(100))
-browsable(div(
-  style = "display: flex; flex-wrap: wrap; justify-content: center",
-  div(fig12, style = "width: 50%; border: solid;"),
-  div(fig13, style = "width: 50%; border: solid;")
-))
-
-knitr::include_graphics('figures/Capture24.JPG')
-
+```{r Figure-3-2, fig.cap = '(ref:Figure-3-2)'}
+knitr::include_graphics('figures/Figure-3-2.png')
 ```
-
-Between 2014 and 2019, economic costs per composite flight-hour increased by +0.7% p.a. in real terms. Over this period, ATM/CNS provision costs increased continuously (+1.3% p.a.) in the context of a significant growth in composite flight-hours (+3.2% p.a.). At the same time, the unit costs of ATFM delays rose by +15.4% p.a., on average, over the period. In 2019, composite flight-hours rose slower (+1.7%) than ATM/CNS provision costs (+2.3%). As a result, unit ATM/CNS provision costs increased by +0.6%. However, this increase was more than compensated by a substantial reduction in the unit costs of ATFM delays in 2019 (-7.4%) and therefore unit economic costs decreased by -1.3% compared to 2018.
-
-## ANSP level {#eco_2}
-
-The economic cost-effectiveness indicator at Pan-European level amounts to €511 per composite flight-hour, and, on average, the unit costs of ATFM delays represent some 22% of the unit economic costs.
-
-(ref:figure10) Economic gate-to-gate cost-effectiveness[^economic-cost-effectiveness-3], 2019.
-
-[^economic-cost-effectiveness-3]: For the purposes of the ACE benchmarking analysis, costs relating to ATM/CNS infrastructure shared with the military authority (€20.0M) are included in ENAIRE 2019 ATM/CNS provision costs. These costs, which are charged to civil airspace users, are not passing through ENAIRE Accounts from 2014 onwards but are borne by the Spanish Air Force (Ministry of Defence) as well as corresponding revenues. Without these costs, ENAIRE unit economic costs would be slightly lower and would amount to €474.
-
-```{r figure10, fig.cap = '(ref:figure10)'}
-knitr::include_graphics('figures/Figure_3-2.png')
-```
-
-```{r figure101, fig.cap = '(ref:figure10)'}
-
-figure3_2 <- read_csv("data/fig-3-2-a.csv")
-
-figure3.2.df <- as.data.frame(figure3_2, stringsAsFactors = FALSE)
-
-#to sort the bars from high to low
-figure3.2.df$A <- factor(figure3.2.df$A, levels = unique(figure3.2.df$A)[order(figure3.2.df$E, decreasing = TRUE)])
-
-fig14 <- plot_ly(figure3.2.df, x = figure3.2.df$A, y = ~B, type = 'bar', name = 'Financial gate-to-gate cost effectiveness')
-fig14 <- fig14 %>% add_trace(y = ~C, name = 'Unit costs of en-route ATFM delays')
-fig14 <- fig14 %>% add_trace(y = ~D, name = 'Unit costs of airport ATFM delays', text = figure3.2.df$E, textposition = 'outside')
-
-fig14 <- fig14 %>% layout(yaxis = list(title = 'EUR per composite flight-hour'), barmode = 'stack', legend = list(x = 0.7, y = 0.7), font=list(size = 8), annotations = 
- list(x = 1, y = 0.9, text = "European system average for economic cost-effectiveness: EUR 511 <br /> European system average for financial cost-effectiveness: EUR 399", 
-      showarrow = F, xref='paper', yref='paper', 
-      xanchor='right', yanchor='auto', xshift=0, yshift=0,
-      font=list(size=7, color="blue")), div(style = "display: flex; flex-wrap: wrap; justify-content: space-between",
-                                        div(fig14, style = "width: 100%; border: solid;")
-                               ))
-
-figure3_2_1 <- read_csv("data/fig-3-2-b.csv")
-
-figure3.2.1.df <- as.data.frame(figure3_2_1, stringsAsFactors = FALSE)
-
-#to sort the bars from high to low
-figure3.2.1.df$A <- factor(figure3.2.1.df$A, levels = unique(figure3.2.1.df$A)[order(figure3.2.1.df$E, decreasing = TRUE)])
-
-fig15 <- plot_ly(figure3.2.1.df, x = figure3.2.1.df$A, y = ~B, type = 'bar', name = 'Financial gate-to-gate cost effectiveness')
-fig15 <- fig15 %>% add_trace(y = ~C, name = 'Unit costs of en-route ATFM delays')
-fig15 <- fig15 %>% add_trace(y = ~D, name = 'Unit costs of airport ATFM delays', text = figure3.2.1.df$E, textposition = 'outside')
-
-fig15 <- fig15 %>% layout(yaxis = list(title = ''), barmode = 'stack', showlegend = FALSE, font=list(size = 7), autosize = F, width = 300, height = 150, div(style = "display: flex; flex-wrap: wrap; justify-content: space-between",
-                              div(fig15, style = "width: 40%; height: 160px; border: solid"))) 
-
-fig16 <- plot_ly(x = rnorm(100))
-fig16 <- div(style = "display: flex; flex-wrap: wrap; justify-content: space-between",
-                              div(fig15, style = "width: 40%; height: 160px; border: solid"),
-                              div(fig14, style = "width: 100%; border: solid;")
-                              )
-
-fig16
-knitr::include_graphics('figures/Capture24.JPG')
-
-```
-
-More details on the changes in ATFM delays[^economic-cost-effectiveness-4] for individual ANSPs will be provided in the ACE 2019 benchmarking report.
-
-[^economic-cost-effectiveness-4]: The ATFM delays analysed in this ACE benchmarking report do not comprise changes due to the Post Operations Performance Adjustment Process. This process allows operational stakeholders to notify national and European authorities of issues that relate to ATFM delay measurement, classification and assignment. It is a mean of enhancing operational ATFM delay data used in the performance scheme (Commission Implementing Regulation (EU) No 390/2013). The minutes of ATFM delays resulting from this process would lead to different unit economic costs figures for some ANSPs. Detailed information on this process is available on the Network Manager website at the following link: <https://www.eurocontrol.int/service/post-operations-performance-adjustment>.
