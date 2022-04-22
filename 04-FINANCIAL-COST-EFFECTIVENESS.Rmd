@@ -8,8 +8,8 @@ Figure \@ref(fig:Figure-4-1) shows that after three years of continuous reductio
 
 The analytical framework which is used in the ACE analysis to break down the financial cost-effectiveness indicator into basic economic drivers is presented in Figure \@ref(fig:Figure-4-2). These key drivers include:
 
-a)  ATCO-hour productivity (0.47 composite flight-hours per ATCO-hour);
-b)  ATCO employment costs per ATCO-hour (€131); and,
+a)  ATCO-hour productivity (0.48 composite flight-hours per ATCO-hour);
+b)  ATCO employment costs per ATCO-hour (€133); and,
 c)  Support costs per unit output (€589).
 
 (ref:Figure-4-1) Changes in unit ATM/CNS provision costs, 2015-2020 (real terms)
