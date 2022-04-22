@@ -15,7 +15,7 @@ Figure \@ref(fig:Figure-5-1) presents the changes in ANSPs balance sheet structu
 (ref:Figure-5-1) Changes in ANSPs balance sheet structure (2019-2020)
 
 <div class="figure" style="text-align: center">
-<img src="figures/Figure-5-1.png" alt="(ref:Figure-5-1)" width="70%" />
+<img src="figures/Figure-5-1.png" alt="(ref:Figure-5-1)" width="85%" />
 <p class="caption">(\#fig:Figure-5-1)(ref:Figure-5-1)</p>
 </div>
 
@@ -95,7 +95,7 @@ The free cash flow to revenues ratio provides a representation of the cash gener
 (ref:Figure-5-6) 2019-2020 trends in free cash flow to revenues ratio at ANSP level
 
 <div class="figure" style="text-align: center">
-<img src="figures/Figure-5-6.png" alt="(ref:Figure-5-6)" width="70%" />
+<img src="figures/Figure-5-6.png" alt="(ref:Figure-5-6)" width="100%" />
 <p class="caption">(\#fig:Figure-5-6)(ref:Figure-5-6)</p>
 </div>
 

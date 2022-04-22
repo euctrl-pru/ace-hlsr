@@ -5,7 +5,7 @@ This section provides a [preliminary]{.ul} presentation of high-level revenues, 
 (ref:Figure-2-1) Breakdown of gate-to-gate ANS revenues, 2020
 
 <div class="figure" style="text-align: center">
-<img src="figures/Figure-2-1.png" alt="(ref:Figure-2-1)" width="80%" />
+<img src="figures/Figure-2-1.png" alt="(ref:Figure-2-1)" width="100%" />
 <p class="caption">(\#fig:Figure-2-1)(ref:Figure-2-1)</p>
 </div>
 
@@ -22,7 +22,7 @@ At terminal level, the share of income from airport operator rose from 21.1% in 
 ::: {.right}
 <br>
 
-<img src="figures/Figure-2-2.png" width="80%" style="display: block; margin: auto;" />
+<img src="figures/Figure-2-2.png" width="75%" style="display: block; margin: auto;" />
 :::
 :::
 
@@ -31,7 +31,7 @@ The ACE benchmarking analysis focuses on the specific costs of providing gate-to
 (ref:Figure-2-3) Gate-to-gate ATM/CNS provision costs at Pan-European system level, 2020
 
 <div class="figure" style="text-align: center">
-<img src="figures/Figure-2-3.png" alt="(ref:Figure-2-3)" width="70%" />
+<img src="figures/Figure-2-3.png" alt="(ref:Figure-2-3)" width="100%" />
 <p class="caption">(\#fig:Figure-2-3)(ref:Figure-2-3)</p>
 </div>
 
@@ -66,7 +66,7 @@ Finally, the cancellation or deferral of non-essential investments resulted in l
 (ref:Figure-2-5) Changes in ATM/CNS provision costs, 2015-2020 (real terms)
 
 <div class="figure" style="text-align: center">
-<img src="figures/Figure-2-5.png" alt="(ref:Figure-2-5)" width="70%" />
+<img src="figures/Figure-2-5.png" alt="(ref:Figure-2-5)" width="85%" />
 <p class="caption">(\#fig:Figure-2-5)(ref:Figure-2-5)</p>
 </div>
 
@@ -75,14 +75,14 @@ The Pan-European employed a total of 55 712 staff in 2020 (comprising 54 871 sta
 (ref:Figure-2-6) Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, 2020
 
 <div class="figure" style="text-align: center">
-<img src="figures/Figure-2-6.png" alt="(ref:Figure-2-6)" width="60%" />
+<img src="figures/Figure-2-6.png" alt="(ref:Figure-2-6)" width="90%" />
 <p class="caption">(\#fig:Figure-2-6)(ref:Figure-2-6)</p>
 </div>
 
 (ref:Figure-2-7) Total gate-to-gate ATM/CNS staff per staff category and changes, 2019-2020
 
 <div class="figure" style="text-align: center">
-<img src="figures/Figure-2-7.png" alt="(ref:Figure-2-7)" width="70%" />
+<img src="figures/Figure-2-7.png" alt="(ref:Figure-2-7)" width="80%" />
 <p class="caption">(\#fig:Figure-2-7)(ref:Figure-2-7)</p>
 </div>
 

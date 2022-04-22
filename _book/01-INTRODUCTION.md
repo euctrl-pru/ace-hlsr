@@ -9,7 +9,7 @@ The objective of this document is to provide a first insight on the level of 202
 (ref:Figure-1-1) Timeline for the production of the ACE 2020 benchmarking report
 
 <div class="figure" style="text-align: center">
-<img src="figures/Figure-1-1.png" alt="(ref:Figure-1-1)" width="80%" />
+<img src="figures/Figure-1-1.png" alt="(ref:Figure-1-1)" width="100%" />
 <p class="caption">(\#fig:Figure-1-1)(ref:Figure-1-1)</p>
 </div>
 
@@ -20,7 +20,7 @@ It should be noted that the data presented in this document are still [prelimina
 (ref:Figure-1-2) Status of 2020 data validation process
 
 <div class="figure" style="text-align: center">
-<img src="figures/Figure-1-2.png" alt="(ref:Figure-1-2)" width="80%" />
+<img src="figures/Figure-1-2.png" alt="(ref:Figure-1-2)" width="100%" />
 <p class="caption">(\#fig:Figure-1-2)(ref:Figure-1-2)</p>
 </div>
 
@@ -31,7 +31,7 @@ Figure \@ref(fig:Figure-1-3) below shows that 20 ANSPs provided their ACE 2020 d
 (ref:Figure-1-3) Status of ACE 2020 data submission
 
 <div class="figure" style="text-align: center">
-<img src="figures/Figure-1-3.png" alt="(ref:Figure-1-3)" width="80%" />
+<img src="figures/Figure-1-3.png" alt="(ref:Figure-1-3)" width="100%" />
 <p class="caption">(\#fig:Figure-1-3)(ref:Figure-1-3)</p>
 </div>
 

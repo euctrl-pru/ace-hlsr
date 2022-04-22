@@ -24,13 +24,13 @@ In the meantime, unit support costs rose by +120.0% since the fall in composite 
 
 (ref:Figure-4-2) ACE performance framework, 2020 (real terms)
 
-```{r Figure-4-2, fig.cap = '(ref:Figure-4-2)', out.width='70%'}
+```{r Figure-4-2, fig.cap = '(ref:Figure-4-2)', out.width='100%'}
 knitr::include_graphics('figures/Figure-4-2.png')
 ```
 
 (ref:Figure-4-3) Breakdown of changes in unit ATM/CNS provision costs, 2019-2020 (real terms)
 
-```{r Figure-4-3, fig.cap = '(ref:Figure-4-3)', out.width='80%'}
+```{r Figure-4-3, fig.cap = '(ref:Figure-4-3)', out.width='100%'}
 knitr::include_graphics('figures/Figure-4-3.png')
 ```
 
@@ -42,25 +42,25 @@ There are three main elements to be considered when interpreting the level of th
 
 (ref:Figure-4-4) Financial gate-to-gate cost-effectiveness, 2020
 
-```{r Figure-4-4, fig.cap = '(ref:Figure-4-4)', out.width='80%'}
+```{r Figure-4-4, fig.cap = '(ref:Figure-4-4)', out.width='100%'}
 knitr::include_graphics('figures/Figure-4-4.png')
 ```
 
 (ref:Figure-4-5) ATCO-hour productivity, 2020
 
-```{r Figure-4-5, fig.cap = '(ref:Figure-4-5)', out.width='80%'}
+```{r Figure-4-5, fig.cap = '(ref:Figure-4-5)', out.width='100%'}
 knitr::include_graphics('figures/Figure-4-5.png')
 ```
 
 (ref:Figure-4-6) Employment costs per ATCO-hour, 2020
 
-```{r Figure-4-6, fig.cap = '(ref:Figure-4-6)', out.width='80%'}
+```{r Figure-4-6, fig.cap = '(ref:Figure-4-6)', out.width='100%'}
 knitr::include_graphics('figures/Figure-4-6.png')
 ```
 
 (ref:Figure-4-7) Breakdown of support costs per composite flight-hour, 2020
 
-```{r Figure-4-7, fig.cap = '(ref:Figure-4-7)', out.width='80%'}
+```{r Figure-4-7, fig.cap = '(ref:Figure-4-7)', out.width='100%'}
 knitr::include_graphics('figures/Figure-4-7.png')
 ```
 

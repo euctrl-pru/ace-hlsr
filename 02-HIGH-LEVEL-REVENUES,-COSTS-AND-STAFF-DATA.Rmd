@@ -4,7 +4,7 @@ This section provides a [preliminary]{.ul} presentation of high-level revenues, 
 
 (ref:Figure-2-1) Breakdown of gate-to-gate ANS revenues, 2020
 
-```{r Figure-2-1, fig.cap = '(ref:Figure-2-1)', out.width='80%'}
+```{r Figure-2-1, fig.cap = '(ref:Figure-2-1)', out.width='100%'}
 knitr::include_graphics('figures/Figure-2-1.png')
 ```
 
@@ -21,7 +21,7 @@ At terminal level, the share of income from airport operator rose from 21.1% in 
 ::: {.right}
 <br>
 
-```{r Figure-2-2, out.width='80%'}
+```{r Figure-2-2, out.width='75%'}
 knitr::include_graphics('figures/Figure-2-2.png')
 ```
 :::
@@ -31,7 +31,7 @@ The ACE benchmarking analysis focuses on the specific costs of providing gate-to
 
 (ref:Figure-2-3) Gate-to-gate ATM/CNS provision costs at Pan-European system level, 2020
 
-```{r Figure-2-3, fig.cap = '(ref:Figure-2-3)', out.width='70%'}
+```{r Figure-2-3, fig.cap = '(ref:Figure-2-3)', out.width='100%'}
 knitr::include_graphics('figures/Figure-2-3.png')
 ```
 
@@ -67,7 +67,7 @@ knitr::include_graphics('figures/Figure-2-4.png')
 
 (ref:Figure-2-5) Changes in ATM/CNS provision costs, 2015-2020 (real terms)
 
-```{r Figure-2-5, fig.cap = '(ref:Figure-2-5)', out.width='70%'}
+```{r Figure-2-5, fig.cap = '(ref:Figure-2-5)', out.width='85%'}
 knitr::include_graphics('figures/Figure-2-5.png')
 ```
 
@@ -75,13 +75,13 @@ The Pan-European employed a total of 55 712 staff in 2020 (comprising 54 871 sta
 
 (ref:Figure-2-6) Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, 2020
 
-```{r Figure-2-6, fig.cap = '(ref:Figure-2-6)', out.width='60%'}
+```{r Figure-2-6, fig.cap = '(ref:Figure-2-6)', out.width='90%'}
 knitr::include_graphics('figures/Figure-2-6.png')
 ```
 
 (ref:Figure-2-7) Total gate-to-gate ATM/CNS staff per staff category and changes, 2019-2020
 
-```{r Figure-2-7, fig.cap = '(ref:Figure-2-7)', out.width='70%'}
+```{r Figure-2-7, fig.cap = '(ref:Figure-2-7)', out.width='80%'}
 knitr::include_graphics('figures/Figure-2-7.png')
 ```
 
