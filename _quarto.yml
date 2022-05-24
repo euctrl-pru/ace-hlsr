@@ -1,0 +1,52 @@
+project:
+  type: book
+
+book:
+  title: "High-level Summary Report on Preliminary ACE 2020 Data"
+  author: "Performance Review Unit"
+  date: "2022-04-22"
+  chapters:
+    - index.qmd
+    - "01-introduction.qmd"
+    - "02-high-level-revenues.qmd"
+    - "03-economic-cost-effectiveness.qmd"
+    - "04-financial-cost-effectiveness.qmd"
+    - "05-cash-and-liquidity.qmd"
+    - "06-disclaimer.qmd"
+    - "99-references.qmd"
+  site-url: "https://eurocontrol.int/"
+  link-external-newwindow: true
+  navbar:
+    background: light
+    search: false
+    title: false
+    logo: "images/EUROCONTROL-logo-standard-rgb.svg"
+    left:
+      - text: "Aviation Intelligence"
+        icon: "star"
+        menu:
+          - text: "**Home**"
+            icon: "house-fill"
+            href: "https://ansperformance.eu"
+
+      - text: "About"
+        menu:
+          - text: "About the PRC"
+            href: "https://ansperformance.eu/about/prc/"
+          - text: "About the PRU"
+            href: "https://ansperformance.eu/about/us/"
+
+bibliography: references.bib
+# csl: ieee-with-url.csl
+
+format:
+  html:
+    theme:
+      - cosmo
+      - custom.scss
+    code-link: true
+    cover-image: cover.png
+    include-in-header:
+      - media/fontawesome.html
+  pdf:
+    documentclass: scrreprt
