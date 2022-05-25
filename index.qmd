@@ -2,7 +2,8 @@
 
 This document provides a first insight on the level of 2020 cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the official release of the ACE 2020 benchmarking report.
 
-This document is also available for download as a [PDF version](https://www.eurocontrol.int/ACE/HighLevelSummary-Reports/HighLevelSummaryReport2020.pdf){target="_blank"}.
+This document is also available for download as a
+[PDF version](https://www.eurocontrol.int/ACE/HighLevelSummary-Reports/HighLevelSummaryReport2020.pdf){target="_blank"}.
 
 
 ### IMPORTANT NOTICE {.unnumbered}

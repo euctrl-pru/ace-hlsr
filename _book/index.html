@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.178">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Performance Review Unit">
+  <meta name="dcterms.date" content="2021-12-15">
+  <title>High-level Summary Report on Preliminary ACE 2020 Data</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="site_libs/clipboard/clipboard.min.js"></script>
+  <meta name="quarto:offset" content="./">
+  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./introduction.html" rel="next">
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "navbar",
+    "copy-button": false,
+    "collapse-after": 3,
+    "panel-placement": "end",
+    "type": "overlay",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit"
+    }
+  }</script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="floating">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <img src="./images/EUROCONTROL-logo-standard-rgb.svg" alt="">
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aviation-intelligence" role="button" data-bs-toggle="dropdown" aria-expanded="false">Aviation Intelligence</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-aviation-intelligence">    
+        <li>
+    <a class="dropdown-item" href="https://ansperformance.eu"><i class="bi bi-house-fill" role="img">
+</i> 
+ <span class="dropdown-text"><strong>Home</strong></span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-about">    
+        <li>
+    <a class="dropdown-item" href="https://ansperformance.eu/about/prc/">
+ <span class="dropdown-text">About the PRC</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://ansperformance.eu/about/us/">
+ <span class="dropdown-text">About the PRU</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">High-level Summary Report on Preliminary ACE 2020 Data</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./high-level-revenues.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">High-level revenues, costs and staff data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./economic-cost-effectiveness.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Economic cost-effectiveness</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./financial-cost-effectiveness.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Financial cost-effectiveness</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cash-and-liquidity.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">ANSPs Cash and Liquidity Issues as a Result of the Covid-19 Pandemic</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./disclaimer.html" class="sidebar-item-text sidebar-link">Disclaimer</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
+<ul class="collapse">
+<li><a href="#important-notice" class="nav-link" data-scroll-target="#important-notice">IMPORTANT NOTICE</a></li>
+</ul></li>
+<li><a href="#sec-covid" class="nav-link" data-scroll-target="#sec-covid">ANSPs Cash and Liquidity Issues as a Result of the Covid-19 Pandemic</a>
+<ul class="collapse">
+<li><a href="#sec-covid_1" class="nav-link" data-scroll-target="#sec-covid_1">Changes in the balance sheet structure</a></li>
+<li><a href="#sec-covid_2" class="nav-link" data-scroll-target="#sec-covid_2">Financial indicators calculated from ANSPs ACE data submissions</a></li>
+<li><a href="#sec-covid_3" class="nav-link" data-scroll-target="#sec-covid_3">Cash flow indicators calculated from ANSPs financial statements</a></li>
+</ul></li>
+<li><a href="#disclaimer" class="nav-link" data-scroll-target="#disclaimer">Disclaimer</a></li>
+<li><a href="#sec-economic" class="nav-link" data-scroll-target="#sec-economic">Economic cost-effectiveness</a></li>
+<li><a href="#sec-financial" class="nav-link" data-scroll-target="#sec-financial">Financial cost-effectiveness</a>
+<ul class="collapse">
+<li><a href="#sec-fin_1" class="nav-link" data-scroll-target="#sec-fin_1">Pan-European system level</a></li>
+<li><a href="#sec-fin_2" class="nav-link" data-scroll-target="#sec-fin_2">ANSP level</a></li>
+</ul></li>
+<li><a href="#sec-high" class="nav-link" data-scroll-target="#sec-high">High-level revenues, costs and staff data</a>
+<ul class="collapse">
+<li><a href="#welcome-1" class="nav-link" data-scroll-target="#welcome-1">Welcome</a>
+<ul class="collapse">
+<li><a href="#important-notice-1" class="nav-link" data-scroll-target="#important-notice-1">IMPORTANT NOTICE</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#dec-intro" class="nav-link" data-scroll-target="#dec-intro">Introduction</a></li>
+</ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<header id="title-block-header" class="quarto-title-block default">
+
+
+
+<div class="quarto-title"><h1 class="title d-none d-lg-block display-7">High-level Summary Report on Preliminary ACE 2020 Data</h1></div><div class="quarto-title-meta"><div><div class="quarto-title-meta-heading">Author</div><div class="quarto-title-meta-contents"><div class="quarto-title-authors"><div><div>
+<p>Performance Review Unit</p>
+</div></div></div></div></div><div><div class="quarto-title-meta-heading">Published</div><div class="quarto-title-meta-contents"><p class="date">December 15, 2021</p></div></div></div></header>
+
+
+<section id="welcome" class="level2 unnumbered">
+<p><img src="cover.png" title="High-level Summary Report on Preliminary ACE 2020 Data" class="quarto-cover-image img-fluid"></p><h2 class="unnumbered anchored" data-anchor-id="welcome">Welcome</h2>
+<p>This document provides a first insight on the level of 2020 cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the official release of the ACE 2020 benchmarking report.</p>
+<p>This document is also available for download as a <a href="https://www.eurocontrol.int/ACE/HighLevelSummary-Reports/HighLevelSummaryReport2020.pdf" target="_blank">PDF version</a>.</p>
+<section id="important-notice" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="important-notice">IMPORTANT NOTICE</h3>
+<p><span style="color: red;">Data contained in this document are preliminary and subject to changes before the publication of the final ACE 2020 benchmarking report in May 2022.</span></p>
+
+
+
+</section>
+</section>
+<section id="sec-covid" class="level1">
+<h1>ANSPs Cash and Liquidity Issues as a Result of the Covid-19 Pandemic</h1>
+<p>This section provides a <u>preliminary analysis</u> of specific financial indicators that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic. It is structured into three parts:</p>
+<ul>
+<li>changes in ANSPs balance sheet structure at Pan-European system level between 2019 and 2020;</li>
+<li>presentation of three financial indicators that can be calculated from ACE data submissions (current ratio, cash-on-hand days and equity ratio); and,</li>
+<li>presentation of the free cash flow indicator, which is calculated from ANSPs financial statements.</li>
+</ul>
+<p>Due to specific organisational and financial set up in HCAA, LVNL and MUAC, these three ANSPs are excluded from the analysis presented in this section.</p>
+<section id="sec-covid_1" class="level2">
+<h2 class="anchored" data-anchor-id="sec-covid_1">Changes in the balance sheet structure</h2>
+<p><a href="disclaimer.html#fig-figure-5-1">Figure&nbsp;<span>1.1</span></a> presents the changes in ANSPs balance sheet structure as reported in their ACE data submissions at “Total ANS” level (i.e.&nbsp;en-route, terminal and other ANS). The scope is therefore wider than gate-to-gate ATM/CNS which is used to calculate the other ACE key performance indicators, but depending on what ANSPs include under “Other ANS”, it might not necessarily match with the whole activities of the ANSP.</p>
+<div id="fig-figure-5-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure-5-1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.1: Changes in ANSPs balance sheet structure (2019-2020)</figcaption><p></p>
+</figure>
+</div>
+<div class="infobox blue">
+<div class="left">
+<p>On the assets side, the shares of NBV of fixed assets in operations and of current assets fell by -5 and -6 percent points, respectively. In the meantime the share of long-term financial assets and receivables rose by +12 percentage points, mainly due to large under-recoveries from 2020 to be charged in future years.</p>
+<p>On the liabilities side, the share of capital and reserves fell by -11 percentage points (-€1.1 billion) mainly due to the recording of losses in 2020. In the meantime, the share of long-term liabilities rose by a +11 percentage points as several ANSPs contracted new loans or drew down from existing loan facilities in order to respond to liquidity issues and continue invest in priority projects. Short and long-term borrowings rose by +€2.5 billion in 2020 (+134%).</p>
+<p>Although the level of capex was reduced by -26% (-€0.4 billion), it still represents €1 billion of expenditures.</p>
+</div>
+<div class="right">
+<p><br><br></p>
+<p><code>{r Figure-5-2, out.width='90%',echo=FALSE} knitr::include_graphics('figures/Figure-5-2.png')</code></p>
+</div>
+</div>
+</section>
+<section id="sec-covid_2" class="level2">
+<h2 class="anchored" data-anchor-id="sec-covid_2">Financial indicators calculated from ANSPs ACE data submissions</h2>
+<p>The current ratio, cash-on-hand days, and equity ratio can be calculated using balance sheet information submitted for ACE at the total ANS level. For more details on how these ratios have been defined for the purposes of this analysis, along with their limitations, please refer to Section 3.4 of the ACE 2019 report. More detailed analysis of changes in these indicators will be provided in the ACE 2020 benchmarking report.</p>
+<p>Figures below show the 1st quartile<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, the Pan-European system average<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and the 3rd quartile of these three indicators and the changes between the average for the 2015-2019 period and the year 2020<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<div class="infobox blank">
+<div class="left-narrow">
+<p><br></p>
+<p><code>{r figure19-bis, out.width='100%',echo=FALSE} knitr::include_graphics('figures/Figure-5-3.png')</code></p>
+<p><br><br></p>
+<p><code>{r figure20-bis, out.width='100%',echo=FALSE} knitr::include_graphics('figures/Figure-5-4.png')</code></p>
+<p><br></p>
+<p><code>{r fig-figure21-bis, fig.cap = 'Changes in ANSPs balance sheet structure (2019-2020)', out.width='100%',echo=FALSE} knitr::include_graphics('figures/Figure-5-5.png')</code></p>
+</div>
+<div class="right-wide">
+<p>The current ratio measures the ability of a company to pay its short-term debt obligations with its current assets. A value of more than 1 suggests financial well-being for the organisation, as it can settle its short-term debt obligations with its current assets.</p>
+<p>In 2020, the average current ratio at Pan-European level amounted to 2.6, which is down by about -28% compared to the 2015-2019 period.</p>
+<p><br></p>
+<p>Cash-on-hand days measures the length of time a company can pay its operating costs from its cash reserves.</p>
+<p>In 2020, the average cash-on-hand days at Pan-European level amounted to 136 days, which is 34 days (or -20%) lower than over the 2015-2019 period.</p>
+<p><br></p>
+<p>The equity ratio measures the share of a company’s balance sheet (total assets or total liabilities) which is financed by equity. A high ratio can indicate a relatively strong position in case of economic downturn since the company will have less debt to reimburse and might also be able to obtain loans more easily.</p>
+<p>In 2020, the average equity ratio at Pan-European level amounted to 0.4, down by -19% compared to the 2015-2019 period.</p>
+</div>
+</div>
+</section>
+<section id="sec-covid_3" class="level2">
+<h2 class="anchored" data-anchor-id="sec-covid_3">Cash flow indicators calculated from ANSPs financial statements</h2>
+<p>Free cash flow is an indicator widely used by other aviation industry stakeholders. Here it is presented at an organisational level, based on the information reported in ANSPs’ financial statements. Depending on the organisational set up of ANSPs, this information may cover a wider scope of activities than the scope reported in the ACE submissions for “Total ANS”. In the case of DFS, the financial reporting standards used to establish route charges and for ACE reporting (regulatory accounting) are also different from the reporting standards used in DFS financial statements (IFRS).</p>
+<p>The free cash flow to revenues ratio provides a representation of the cash generated by operations (after accounting for capital investments) which is available to repay creditors or pay dividends and interests to investors. It can therefore be broken down in two elements: a) the net cash from operating activities and b) the capital expenditures (CAPEX). Dividing these ratios by revenues allows an easier interpretation of the indicators when looking at organisations of different size.</p>
+<div id="fig-figure-5-6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure-5-6.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.2: 2019-2020 trends in free cash flow to revenues ratio at ANSP level</figcaption><p></p>
+</figure>
+</div>
+<p><a href="disclaimer.html#fig-figure-5-6">Figure&nbsp;<span>1.2</span></a> shows the 2019-2020 changes in free cash flow to revenues ratio (and its components) at ANSP level for 24 ANSPs for which data is publically available at the time of writing this report<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<p>Whereas 15 of these ANSPs had a positive ratio in 2019, all ANSPs analysed (with the exception of Albcontrol) have a negative ratio in 2020. Although changes in the free cash flow are mainly driven by changes in the net cash flow from operating activities (see middle chart in <a href="disclaimer.html#fig-figure-5-6">Figure&nbsp;<span>1.2</span></a>), it is interesting to note that when the free cash flow was negative in 2019, it was in several cases due to relatively large capital expenditures during the year (e.g.&nbsp;in 2019, Sakaeronavigatsia and LGS respectively invested 37% and 29% of their revenues).</p>
+<p>More detailed analysis of changes in the free cash flow to revenues ratio will be provided in the ACE 2020 benchmarking report.</p>
+<div class="infobox blue">
+<div class="left">
+<p>The analysis of ANSPs indicators shows that the situation deteriorated on several criteria:</p>
+<ul>
+<li>The ability to cover short-term debt by using current assets was reduced by almost one third compared to the 2015-2019 period (current ratio falling from 3.6 to 2.6).</li>
+<li>Cash reserves at the end of 2020 were sufficient to cover 136 days of operating expenses (34 days less than over the 2015-2019 period). When interpreting this indicator, it is important to consider the fact that loans contracted but not fully used in 2020 appear as cash in the balance sheet.</li>
+<li>The equity ratio was around 0.4 at the end of 2020, which is lower than the 0.5 measured over the 2015-2019 period. This reduction results from the combination of a) lower capital reserves due to losses incurred in 2020 and b) the increase in borrowings.</li>
+</ul>
+<p>Based on a sample of 24 ANSPs, the net cash flow from operating activities in 2020 became negative (-€1.5 billion compared to €2.0 billion in 2020). When also considering the cash outflow for capital expenditures, the free cash flow amounted to -€2.2 billion in 2020.</p>
+</div>
+<div class="right">
+<p><br></p>
+<p><code>{r Figure-5-7, out.width='100%',echo=FALSE} knitr::include_graphics('figures/Figure-5-7.png')</code></p>
+</div>
+</div>
+</section>
+</section>
+<section id="disclaimer" class="level1 unnumbered">
+<h1 class="unnumbered">Disclaimer</h1>
+<div class="infobox blue">
+<p>The Performance Review Unit (PRU) has made every effort to ensure that the information and analysis contained in this document are as accurate and complete as possible. Should you find any errors or inconsistencies we would be grateful if you could please bring them to the PRU’s attention. The PRU’s e-mail address is <a href="mailto:pru-support@eurocontrol.int" class="email">pru-support@eurocontrol.int</a></p>
+</div>
+</section>
+<section id="sec-economic" class="level1">
+<h1>Economic cost-effectiveness</h1>
+<p>The PRC introduced in its ACE benchmarking reports the concept of economic cost-effectiveness. This indicator is defined as gate-to-gate ATM/CNS provision costs plus the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between ATC capacity and costs<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<p><a href="disclaimer.html#fig-figure-3-1">Figure&nbsp;<span>2.1</span></a> shows <u>preliminary results</u> on the changes in economic cost-effectiveness between 2015 and 2020 at Pan-European system level. <a href="disclaimer.html#fig-figure-3-1-left">Figure&nbsp;<span>2.1 (a)</span></a> shows the changes in unit economic costs, while <a href="disclaimer.html#fig-figure-3-1-right">Figure&nbsp;<span>2.1 (b)</span></a> provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays.</p>
+<div class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-figure-3-1-left" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure-3-1-Left.png" class="img-fluid figure-img" data-ref-parent="fig-figure-3-1"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">(a)</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-figure-3-1-right" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure-3-1-Right.png" class="img-fluid figure-img" data-ref-parent="fig-figure-3-1"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">(b)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.1: Trend of unit economic costs at Pan-European system level, 2015-2020 (real terms)</figcaption><p></p>
+</figure>
+</div>
+<p><a href="disclaimer.html#fig-figure-3-2">Figure&nbsp;<span>2.2</span></a> shows <u>preliminary results</u> at ANSP level (dotted lines represent the 1st and 3rd quartiles). On average, the share of ATFM delays in 2020 was 3% (compared to 22% in 2019), and only five ANSPs had ATFM delays representing more than 5% of their unit economic costs (compared to 22 ANSPs in 2019).</p>
+<div id="fig-figure-3-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure-3-2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.2: Economic gate-to-gate cost-effectiveness, 2020</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="sec-financial" class="level1">
+<h1>Financial cost-effectiveness</h1>
+<p>This section provides a <u>preliminary analysis</u> of financial cost-effectiveness.</p>
+<section id="sec-fin_1" class="level2">
+<h2 class="anchored" data-anchor-id="sec-fin_1">Pan-European system level</h2>
+<p><a href="disclaimer.html#fig-figure-4-1">Figure&nbsp;<span>3.1</span></a> shows that after three years of continuous reductions and a stabilization in 2019, the unit ATM/CNS provision costs rose by +120.0% in 2020. This extraordinary increase is mainly due to the decrease in composite flight-hours (-56.8%) while ATM/CNS provision costs fell by -5.0%.</p>
+<p>The analytical framework which is used in the ACE analysis to break down the financial cost-effectiveness indicator into basic economic drivers is presented in Figure <a href="disclaimer.html#fig-figure-4-2">Figure&nbsp;<span>3.2</span></a>. These key drivers include:</p>
+<ol type="a">
+<li>ATCO-hour productivity (0.48 composite flight-hours per ATCO-hour);</li>
+<li>ATCO employment costs per ATCO-hour (€133); and,</li>
+<li>Support costs per unit output (€589).</li>
+</ol>
+<div id="fig-figure-4-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure-4-1.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.1: Changes in unit ATM/CNS provision costs, 2015-2020 (real terms)</figcaption><p></p>
+</figure>
+</div>
+<p><a href="disclaimer.html#fig-figure-4-2">Figure&nbsp;<span>3.2</span></a> shows that in 2020, ATCO employment costs per ATCO-hour rose by +12.2% while ATCO-hour productivity fell by -49.0%. As a result, ATCO employment costs per composite flight-hour increased (+120.1%).</p>
+<p>In the meantime, unit support costs rose by +120.0% since the fall in composite flight-hours (-56.8%) was much greater than the reduction in support costs (-5.0%). As a result, in 2020 unit ATM/CNS provision costs increased by +120.0% at Pan-European system level.</p>
+<div id="fig-figure-4-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure-4-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.2: ACE performance framework, 2020 (real terms)</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-figure-4-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure-4-3.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.3: Breakdown of changes in unit ATM/CNS provision costs, 2019-2020 (real terms)</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="sec-fin_2" class="level2">
+<h2 class="anchored" data-anchor-id="sec-fin_2">ANSP level</h2>
+<p><a href="disclaimer.html#fig-figure-4-4">Figure&nbsp;<span>3.4</span></a> to <a href="disclaimer.html#fig-figure-4-7">Figure&nbsp;<span>3.7</span></a> present the main ACE key performance indicators at ANSP level for the year 2020. In all these figures, the dotted lines represent the 1st and 3rd quartiles.</p>
+<p>There are three main elements to be considered when interpreting the level of the indicators as well as ANSPs rankings in the figures below: a) the traffic reduction in 2020, although being massive for all ANSPs, was not completely homogeneous, b) there were different responses in cost adjustments, and c) there were also different levels of flexibility in adjusting the workforce, and in particular ATCO in OPS hours on duty, which has an enormous impact on the ATCO productivity and employment costs indicators measured in the ACE report.</p>
+<div id="fig-figure-4-4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure-4-4.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.4: Financial gate-to-gate cost-effectiveness, 2020</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-figure-4-5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure-4-5.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.5: ATCO-hour productivity, 2020</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-figure-4-6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure-4-6.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.6: Employment costs per ATCO-hour, 2020</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-figure-4-7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure-4-7.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.7: Breakdown of support costs per composite flight-hour, 2020</figcaption><p></p>
+</figure>
+</div>
+<p>A more detailed analysis of the changes in cost-effectiveness, ATCO-hour productivity, ATCO employment costs per ATCO-hour and unit support costs will be available in the final ACE 2020 benchmarking report.</p>
+</section>
+</section>
+<section id="sec-high" class="level1">
+<h1>High-level revenues, costs and staff data</h1>
+<p>This section provides a <u>preliminary</u> presentation of high-level revenues, costs and staff data provided in ANSPs ACE 2020 data submissions. Total ANS revenues in 2020 amounted to €4 502M. Most en-route revenues come from the collection of en-route charges (91.4%, see left pie chart). The proportion of terminal revenues from charges is lower (50.9%, see right pie chart), as additional income may directly come from airport operators (31.2% e.g.&nbsp;through a contractual arrangement between the ANSP and the airport operator).</p>
+<div id="fig-figure-2-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./figures/Figure-2-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.1: Breakdown of gate-to-gate ANS revenues, 2020</figcaption><p></p>
+</figure>
+</div>
+<div class="blue">
+<div class="left">
+<p>Across the Pan-European system, traffic in 2020 (measured in composite flight-hours) was -56.8% lower than in 2019 and total gate-to-gate revenues fell by -53.1%. In this context there were also some changes in the composition of ANSPs revenues, since the outbreak of COVID-19 did not affect all sources of revenues in the same proportion.</p>
+<p>Some revenue items increased in 2020, such as income from exempted flights (+11.3%), income from domestic governments (+11.3%) and other revenues (+21.6%). However, these increases (+€46M) remain marginal compared to the drop in en-route and terminal charges revenues (-€4 982 M) at Pan-European level. Detailed analysis shows that most ANSPs did not record any State aid as part of their 2020 revenues.</p>
+<p>At terminal level, the share of income from airport operator rose from 21.1% in 2019 to 31.2% in 2020 as this revenue stream reduced much less than the income from terminal charges.</p>
+</div>
+<div class="right">
+<p><br></p>
+<p><code>{r Figure-2-2, out.width='100%', echo=FALSE} knitr::include_graphics('figures/Figure-2-2.png')</code></p>
+</div>
+</div>
+<p>The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services which amounted to €8 228M in 2020. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 84% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented some 16%.</p>
+<div id="fig-figure-2-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./figures/Figure-2-3.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.2: Gate-to-gate ATM/CNS provision costs at Pan-European system level, 2020</figcaption><p></p>
+</figure>
+</div>
+<p>In 2020, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 56% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of <a href="disclaimer.html#fig-figure-2-5">Figure&nbsp;<span>4.3</span></a>).</p>
+<p>ATM/CNS provision costs increased by +1.3% p.a. between 2015 and 2019, and then fell by -5.0% in 2020 as ANSPs implemented a range of measures to reduce costs and preserve liquidities. As shown in the bottom right part of <a href="disclaimer.html#fig-figure-2-5">Figure&nbsp;<span>4.3</span></a>, the -5.0% decrease in ATM/CNS costs in 2020 reflects reductions for 31 out of 38 ANSPs. More details on the changes in ANSPs ATM/CNS provision costs in 2020 will be available in the final ACE 2020 benchmarking report.</p>
+<div class="blue">
+<div class="left">
+<p>In response to the challenges presented by the extraordinary drop in traffic, ANSPs implemented a range of cost-containment measures in 2020, leading to an overall reduction in ATM/CNS costs of -€433.4M.</p>
+<p>The full effect of these measures is however not yet visible in the 2020 data since, for instance, some redundancy plans were negotiated during the year but the actual impact on the number of staff, and on the staff costs, will become visible only in the 2021 data. Some ANSPs implementing redundancy plans in 2020 even recorded cost increases in the year, reflecting provisions or payments to the staff made redundant. This was the main driver for an increase in exceptional costs of some +€55.6M.</p>
+<p>Staff costs were by far the main source of savings in 2020 (-€315.6M), due to the implementation of the following measures:</p>
+<ul>
+<li>Short-time work / furlough schemes, where applicable, with part of employees’ salaries paid by the State either directly to the employees or reducing ANSPs wage bill.</li>
+<li>Reduced staff numbers (discussed further below).</li>
+<li>Reduced level of remuneration through reduction or freeze of base salaries, reduction or suspension of variable part of salaries such as overtime payments and performance bonuses.</li>
+</ul>
+<p>A majority of ANSPs also reduced non-staff operating costs by carrying out only essential maintenance, reducing utilities costs and non-essential training activities. This resulted in a decrease of some -€39.2M.</p>
+<p>Finally, the cancellation or deferral of non-essential investments resulted in lower depreciation costs (-€51.0M) and lower cost of capital (-€83.2M). The latter is also impacted, in many cases, by the use of a lower weighted average cost of capital in 2020.</p>
+</div>
+<div class="right">
+<p><br><br></p>
+<p><code>{r Figure-2-4, out.width='100%', echo=FALSE} knitr::include_graphics('figures/Figure-2-4.png')</code></p>
+</div>
+</div>
+<div id="fig-figure-2-5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./figures/Figure-2-5.png" class="img-fluid figure-img" style="width:85.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.3: Changes in ATM/CNS provision costs, 2015-2020 (real terms)</figcaption><p></p>
+</figure>
+</div>
+<p>The Pan-European employed a total of 55 712 staff in 2020 (comprising 54 871 staff providing ATM/CNS services and 845 internal MET staff). Some 17 400 staff (32%) were ATCOs working on operational duty, split between ACCs (56%) and APP/TWR facilities (44%). On average, 2.2 additional staff are required for every ATCO in OPS in Europe.</p>
+<div id="fig-figure-2-6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./figures/Figure-2-6.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.4: Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, 2020</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-figure-2-7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./figures/Figure-2-7.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.5: Total gate-to-gate ATM/CNS staff per staff category and changes, 2019-2020</figcaption><p></p>
+</figure>
+</div>
+<p>After four years of continuous increase in the number of ATM/CNS staff (+0.6% p.a. between 2015 and 2019, or +1 384 FTEs), 2020 showed a -3.4% reduction (-1 936 FTEs).</p>
+<p>The lower staff number observed for 2020 mainly reflects decreases in the following staff categories:</p>
+<ul>
+<li>Other staff (-779 FTEs or -20.1%);</li>
+<li>ATCOs in OPS (-485 FTEs, or -2.7%);</li>
+<li>Technical support for operational maintenance (-340 FTEs, or -3.5%);</li>
+<li>Administrative staff (-323 FTEs, or -3.3%); and,</li>
+<li>Staff for ancillary services (-112 FTEs or -5.8%).</li>
+</ul>
+<p>On the other hand, increases are observed for ATCOs on other duties (+121 FTEs) and on-the-job trainees (+141 FTEs), reflecting a reallocation of some ATCOs from operational to non-operational duties due to the traffic reduction in 2020, and the fact that newly recruited ATCOs had to complete their on-the-job training.</p>
+<div class="plainblue">
+<p>In addition to the measures on staff costs already mentioned above (redundancies, short-time work / furlough schemes), it is important to note that during the lockdown periods, some ANSPs staff had to consume accumulated holidays not used in previous years and/or made use of pre-retirement schemes. Furthermore, depending on the nature of their work, some staff were inevitably left without specific tasks, however, in most cases, they continued to be counted as full time equivalents in 2020.</p>
+<p>It is also important to note that the trend observed at Pan-European system level is heavily affected by the reporting of very large reductions by UkSATSE. Excluding UkSATSE, the total number of ATM/CNS staff in 2020 would be close to its 2019 level (-0.1%).</p>
+<p>The trends shown in the <a href="disclaimer.html#fig-figure-2-7">Figure&nbsp;<span>4.5</span></a> above should therefore be interpreted with caution.</p>
+<p>Although some ANSPs might have discontinued the ATCO recruitment process during the pandemic, the number of ab-initio trainees increased by +1.2% in 2020. It will be interesting to monitor this trend in future years as the long time period required to train a fully qualified ATCO might have an impact on the level the capacity offered by ANSPs when traffic returns to pre-crisis levels.</p>
+</div>
+<section id="welcome-1" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="welcome-1">Welcome</h2>
+<p>This document provides a first insight on the level of 2020 cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the official release of the ACE 2020 benchmarking report.</p>
+<p>This document is also available for download as a <a href="https://www.eurocontrol.int/ACE/HighLevelSummary-Reports/HighLevelSummaryReport2020.pdf" target="_blank">PDF version</a>.</p>
+<section id="important-notice-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="important-notice-1">IMPORTANT NOTICE</h3>
+<p><span style="color: red;">Data contained in this document are preliminary and subject to changes before the publication of the final ACE 2020 benchmarking report in May 2022.</span></p>
+</section>
+</section>
+</section>
+<section id="dec-intro" class="level1">
+<h1>Introduction</h1>
+<p>The ACE benchmarking work is commissioned by the Performance Review Commission (PRC) and carried out by the EUROCONTROL Performance Review Unit (PRU) using information provided by Air Navigation Services Providers (ANSPs) in compliance with Decision No.&nbsp;88 of the Permanent Commission of EUROCONTROL on economic information disclosure.</p>
+<p>The data processing, analysis and reporting are conducted with the assistance of the ACE Working Group, which comprises representatives from participating ANSPs, airspace users, regulatory authorities and the Performance Review Unit. This enables participants to share experiences and establish a common understanding of underlying assumptions and limitations of the data.</p>
+<p>The objective of this document is to provide a first insight on the level of 2020 cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the release of the ACE 2020 benchmarking report, which is planned end of May 2022. It also presents specific financial indicators that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic. Figure <a href="disclaimer.html#fig-figure-1-1">Figure&nbsp;<span>5.1</span></a> illustrates the timeline for the production of the ACE 2020 benchmarking report.</p>
+<div id="fig-figure-1-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./figures/Figure-1-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.1: Timeline for the production of the ACE 2020 benchmarking report</figcaption><p></p>
+</figure>
+</div>
+<p>It is important that robust ACE benchmarking analysis is available in a timely manner since several stakeholders, most notably ANSPs’ management, regulatory authorities (e.g.&nbsp;NSAs) and airspace users, have a keen interest in receiving the information in the ACE reports as early as possible.</p>
+<p>It should be noted that the data presented in this document are still <u>preliminary and not yet fully validated</u>. These data reflect the information stored in the ACE database on the 11th November 2021. Figure <a href="disclaimer.html#fig-figure-1-2">Figure&nbsp;<span>5.2</span></a> shows the status of the ACE data validation process for the data presented in this document.</p>
+<div id="fig-figure-1-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./figures/Figure-1-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.2: Status of 2020 data validation process</figcaption><p></p>
+</figure>
+</div>
+<p>The data contained in this report is therefore subject to changes before the release of the final ACE 2020 benchmarking report in May 2022.</p>
+<p>Figure <a href="disclaimer.html#fig-figure-1-3">Figure&nbsp;<span>5.3</span></a>) below shows that 20 ANSPs provided their ACE 2020 data submission on time by the 1st July 2021 and that, in total, 26 data submissions were received by the 15th July 2021. Figure <a href="disclaimer.html#fig-figure-1-3">Figure&nbsp;<span>5.3</span></a> also indicates that for 11 ANSPs the ACE data submission was received more than one month after the deadline.</p>
+<div id="fig-figure-1-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./figures/Figure-1-3.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.3: Status of ACE 2020 data submission</figcaption><p></p>
+</figure>
+</div>
+<p>Clearly, the timescale for the production of the ACE benchmarking report is inevitably delayed if data are not submitted on time.</p>
+<p>The remainder of this report is organised as follows:</p>
+<ul>
+<li><a href="disclaimer.html">Section&nbsp;<span>4</span></a>: provides a high-level presentation of 2020 revenues, costs and staff data;</li>
+<li><a href="disclaimer.html">Section&nbsp;<span>2</span></a>: presents a preliminary analysis of economic cost-effectiveness at Pan-European and ANSP level;</li>
+<li><a href="disclaimer.html">Section&nbsp;<span>3</span></a>: presents a preliminary analysis of financial cost-effectiveness at Pan-European and ANSP level, and underlying components.</li>
+<li><a href="disclaimer.html">Section&nbsp;<span>1</span></a>: presents a preliminary analysis of specific financial indicators at Pan-European and ANSP level.</li>
+</ul>
+</section>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>To calculate the average value of the 1st and 3rd quartiles over the 2015-2019 period, quartiles are first calculated for each year individually (with possible differences in sample composition if some ANSP data are missing for some years). The yearly ratios are then averaged into a single value.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>The Pan-European system average is a weighted average.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>As mentioned in introduction to this section, HCAA, LVNL and MUAC are excluded from all charts. Concerning the current ratio, Fintraffic ANS is also excluded for 2015-2016, and DCAC Cyprus for 2015-2018, due to missing data. For the cash-on-hand days indicator, ENAIRE is excluded since the reporting of cash in ENAIRE ACE submissions does not reflect the actual cash available from centralized cash management at ENAIRE Group level.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p><a href="disclaimer.html#fig-figure-5-6">Figure&nbsp;<span>1.2</span></a> is sourced from the ANSP Financial Dashboard produced by the EUROCONTROL Aviation Intelligence Unit. All data from this dashboard has been collected from ANSPs’ most recent financial statements. For more details, see: <a href="https://ansperformance.eu/economics/finance/" class="uri">https://ansperformance.eu/economics/finance/</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>See Annex 2 of the ACE 2019 benchmarking report for more information on the methodology used to compute composite flight-hours and economic costs.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./introduction.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+</body></html>
