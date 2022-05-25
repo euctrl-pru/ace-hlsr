@@ -1,4 +1,4 @@
-# Financial cost-effectiveness {#financial}
+# Financial cost-effectiveness {#sec-financial}
 
 This section provides a [preliminary analysis]{.ul} of financial cost-effectiveness.
 

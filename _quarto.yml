@@ -4,7 +4,7 @@ project:
 book:
   title: "High-level Summary Report on Preliminary ACE 2020 Data"
   author: "Performance Review Unit"
-  date: "2022-04-22"
+  date: "2021-12-15"
   chapters:
     - index.qmd
     - introduction.qmd
@@ -16,6 +16,8 @@ book:
     - references.qmd
   site-url: "https://eurocontrol.int/"
   link-external-newwindow: true
+  execute:
+    echo: false
   navbar:
     background: light
     search: false
@@ -41,6 +43,8 @@ bibliography: references.bib
 
 format:
   html:
+    css: 
+      - style.css
     theme:
       - cosmo
       - custom.scss

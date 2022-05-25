@@ -1,4 +1,4 @@
-# ANSPs Cash and Liquidity Issues as a Result of the Covid-19 Pandemic {#covid}
+# ANSPs Cash and Liquidity Issues as a Result of the Covid-19 Pandemic {#sec-covid}
 
 This section provides a [preliminary analysis]{.ul} of specific financial indicators that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic. It is structured into three parts:
 

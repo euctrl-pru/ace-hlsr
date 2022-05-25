@@ -1,4 +1,4 @@
-# Economic cost-effectiveness {#economic}
+# Economic cost-effectiveness {#sec-economic}
 
 The PRC introduced in its ACE benchmarking reports the concept of economic cost-effectiveness. This indicator is defined as gate-to-gate ATM/CNS provision costs plus the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between ATC capacity and costs[^economic-cost-effectiveness-1].
 
