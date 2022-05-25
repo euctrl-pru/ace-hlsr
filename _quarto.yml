@@ -13,7 +13,6 @@ book:
     - financial-cost-effectiveness.qmd
     - cash-and-liquidity.qmd
     - disclaimer.qmd
-    - references.qmd
   site-url: "https://eurocontrol.int/"
   link-external-newwindow: true
   execute:
