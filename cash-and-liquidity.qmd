@@ -8,7 +8,7 @@ This section provides a [preliminary analysis]{.ul} of specific financial indica
 
 Due to specific organisational and financial set up in HCAA, LVNL and MUAC, these three ANSPs are excluded from the analysis presented in this section.
 
-## Changes in the balance sheet structure {#covid_1}
+## Changes in the balance sheet structure {#sec-covid_1}
 
 @fig-figure-5-1 presents the changes in ANSPs balance sheet structure as reported in their ACE data submissions at "Total ANS" level (i.e. en-route, terminal and other ANS). The scope is therefore wider than gate-to-gate ATM/CNS which is used to calculate the other ACE key performance indicators, but depending on what ANSPs include under "Other ANS", it might not necessarily match with the whole activities of the ANSP.
 
@@ -32,17 +32,24 @@ knitr::include_graphics('figures/Figure-5-2.png')
 :::
 :::
 
-## Financial indicators calculated from ANSPs ACE data submissions {#covid_2}
+## Financial indicators calculated from ANSPs ACE data submissions {#sec-covid_2}
 
 The current ratio, cash-on-hand days, and equity ratio can be calculated using balance sheet information submitted for ACE at the total ANS level. For more details on how these ratios have been defined for the purposes of this analysis, along with their limitations, please refer to Section 3.4 of the ACE 2019 report. More detailed analysis of changes in these indicators will be provided in the ACE 2020 benchmarking report.
 
 Figures below show the 1st quartile[^ansps-cash-and-liquidity-issues-as-a-result-of-the-covid-19-pandemic-1], the Pan-European system average[^ansps-cash-and-liquidity-issues-as-a-result-of-the-covid-19-pandemic-2] and the 3rd quartile of these three indicators and the changes between the average for the 2015-2019 period and the year 2020[^ansps-cash-and-liquidity-issues-as-a-result-of-the-covid-19-pandemic-3].
 
+
+
 [^ansps-cash-and-liquidity-issues-as-a-result-of-the-covid-19-pandemic-1]: To calculate the average value of the 1st and 3rd quartiles over the 2015-2019 period, quartiles are first calculated for each year individually (with possible differences in sample composition if some ANSP data are missing for some years). The yearly ratios are then averaged into a single value.
+
+
 
 [^ansps-cash-and-liquidity-issues-as-a-result-of-the-covid-19-pandemic-2]: The Pan-European system average is a weighted average.
 
+
 [^ansps-cash-and-liquidity-issues-as-a-result-of-the-covid-19-pandemic-3]: As mentioned in introduction to this section, HCAA, LVNL and MUAC are excluded from all charts. Concerning the current ratio, Fintraffic ANS is also excluded for 2015-2016, and DCAC Cyprus for 2015-2018, due to missing data. For the cash-on-hand days indicator, ENAIRE is excluded since the reporting of cash in ENAIRE ACE submissions does not reflect the actual cash available from centralized cash management at ENAIRE Group level.
+
+
 
 ::: {.infobox .blank data-latex=""}
 ::: {.left-narrow data-latex=""}
