@@ -7,13 +7,13 @@ book:
   date: "2022-04-22"
   chapters:
     - index.qmd
-    - "01-introduction.qmd"
-    - "02-high-level-revenues.qmd"
-    - "03-economic-cost-effectiveness.qmd"
-    - "04-financial-cost-effectiveness.qmd"
-    - "05-cash-and-liquidity.qmd"
-    - "06-disclaimer.qmd"
-    - "99-references.qmd"
+    - introduction.qmd
+    - high-level-revenues.qmd
+    - economic-cost-effectiveness.qmd
+    - financial-cost-effectiveness.qmd
+    - cash-and-liquidity.qmd
+    - disclaimer.qmd
+    - references.qmd
   site-url: "https://eurocontrol.int/"
   link-external-newwindow: true
   navbar:
