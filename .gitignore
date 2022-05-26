@@ -1,5 +1,5 @@
 # by default ignore generated HTML: you'll need to force git add them
-_book/
+# _book/
 
 ######## R project specific (R.gitignore)
 # from https://github.com/github/gitignore/
