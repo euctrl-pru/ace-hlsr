@@ -12,7 +12,7 @@ The objective of this document is to provide a first insight on the level of 202
 
 It is important that robust ACE benchmarking analysis is available in a timely manner since several stakeholders, most notably ANSPs' management, regulatory authorities (e.g. NSAs) and airspace users, have a keen interest in receiving the information in the ACE reports as early as possible.
 
-It should be noted that the data presented in this document are still [preliminary and not yet fully validated]{.ul}. These data reflect the information stored in the ACE database on the 11th November 2021. Figure @fig-Figure-1-2 shows the status of the ACE data validation process for the data presented in this document.
+It should be noted that the data presented in this document are still [preliminary and not yet fully validated]{.ul}. These data reflect the information stored in the ACE database on the 11th November 2021. Figure @fig-figure-1-2 shows the status of the ACE data validation process for the data presented in this document.
 
 
 ![Status of 2020 data validation process](./figures/Figure-1-2.png){#fig-figure-1-2 width="100%"} 
