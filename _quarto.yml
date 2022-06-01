@@ -250,3 +250,5 @@ format:
     cover-image: cover.png
     include-in-header:
       - media/fontawesome.html
+      # UNCOMMENT for activating GA
+      - media/analytics.html
