@@ -1,6 +1,26 @@
 project:
   type: book
 
+bibliography: references.bib
+# csl: ieee-with-url.csl
+
+format:
+  html:
+    css: 
+      - style.css
+    theme:
+      - cosmo
+      - custom.scss
+    code-link: true
+    cover-image: cover.png
+    link-external-newwindow: true
+    link-external-icon: true
+    link-external-filter: '^(?:http:|https:)\/\/ansperformance\.eu\/|^(?:http:|https:)\/\/.*ace-handbook\.netlify\.app\/'
+    include-in-header:
+      - media/fontawesome.html
+      # UNCOMMENT for activating GA
+      - media/analytics.html
+
 book:
   title: "High-level Summary Report on Preliminary ACE 2020 Data"
   author: "Performance Review Unit"
@@ -236,22 +256,3 @@ book:
           - text: "<i class='fas fa-xs fa-external-link-alt'></i> Single European Sky (SES) Portal"
             href: "https://www.eurocontrol.int/prudata/dashboard/"
 
-bibliography: references.bib
-# csl: ieee-with-url.csl
-
-format:
-  html:
-    css: 
-      - style.css
-    theme:
-      - cosmo
-      - custom.scss
-    code-link: true
-    cover-image: cover.png
-    link-external-newwindow: true
-    link-external-icon: true
-    link-external-filter: '^(?:http:|https:)\/\/ansperformance\.eu\/|^(?:http:|https:)\/\/.*ace-handbook\.netlify\.app\/'
-    include-in-header:
-      - media/fontawesome.html
-      # UNCOMMENT for activating GA
-      - media/analytics.html
