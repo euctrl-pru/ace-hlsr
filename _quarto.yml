@@ -254,4 +254,4 @@ format:
     include-in-header:
       - media/fontawesome.html
       # UNCOMMENT for activating GA
-      # - media/analytics.html
+      - media/analytics.html
