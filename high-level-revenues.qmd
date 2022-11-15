@@ -106,7 +106,7 @@ In addition to the measures on staff costs already mentioned above (redundancies
 
 It is also important to note that the trend observed at Pan-European system level is heavily affected by the reporting of very large reductions by UkSATSE. Excluding UkSATSE, the total number of ATM/CNS staff in 2020 would be close to its 2019 level (-0.1%).
 
-The trends shown in the @fig-figure-2-7 should therefore be interpreted with caution.
+The trends shown in the @fig-figure-2-6 should therefore be interpreted with caution.
 
 Although some ANSPs might have discontinued the ATCO recruitment process during the pandemic, the number of ab-initio trainees increased by +1.2% in 2020. It will be interesting to monitor this trend in future years as the long time period required to train a fully qualified ATCO might have an impact on the level the capacity offered by ANSPs when traffic returns to pre-crisis levels.
 :::
