@@ -1,3 +1,6 @@
+```{r include=FALSE}
+ year_report <- 2021
+```
 
 # Introduction {#dec-intro}
 
@@ -14,8 +17,13 @@ It is important that robust ACE benchmarking analysis is available in a timely m
 
 It should be noted that the data presented in this document are still [preliminary and not yet fully validated]{.ul}. These data reflect the information stored in the ACE database on the 11th November 2021. Figure @fig-figure-1-2 shows the status of the ACE data validation process for the data presented in this document.
 
+:::{#fig-figure-1-2}
+```{r}
+#| child: R/hlsr_ansp_status_table.Rmd
+```
 
-![Status of 2020 data validation process](./figures/Figure-1-2.png){#fig-figure-1-2 width="100%"} 
+Status of `r year_report` data validation process
+:::
 
 
 The data contained in this report is therefore subject to changes before the release of the final ACE 2020 benchmarking report in May 2022.
