@@ -44,6 +44,10 @@ The ACE benchmarking analysis focuses on the specific costs of providing gate-to
 #| child: R/hlsr_c_bdown_pie.Rmd
 ```
 
+```{r}
+#| child: R/hlsr_c_bdown_table.Rmd
+```
+
 Gate-to-gate ATM/CNS provision costs at Pan-European system level, `r year_report`
 :::
 

@@ -87,7 +87,7 @@ pie_cost <- pie_cost_data %>%
 ## import data
 pie_atco_data  <-  read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/Project/ACE/Data for ACE landing page and digital reports/hlsr2021_data.xlsx",
                        sheet = "F_Cost breakdown",
-                       range = cell_limits(c(9, 10), c(NA, 11))) %>%
+                       range = cell_limits(c(9, 12), c(NA, 13))) %>%
   as_tibble() 
 
 ## prepare data for COST pie
