@@ -21,6 +21,7 @@ library(dplyr)
 library(readxl)
 library(reactable)
 library(htmltools)
+library(janitor)
 ```
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -31,11 +32,14 @@ data_raw  <-  read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/P
                        range = cell_limits(c(9, 1), c(NA, 4))) %>%
   as_tibble() %>% 
   rename(TYPE = 'Data', TOTAL = 'Grand Total') %>% 
-  mutate(across(TYPE, str_replace, 'Sum of ', '')
-  )
+  mutate(across(TYPE, str_replace, 'Sum of ', '')) %>% 
+  filter( TYPE != "REVE_DELEGATION")
 
 #sum rows
-data_temp <- data_raw 
+data_temp <- data_raw %>% filter(TYPE != "REVE_REVENUE") %>% 
+  adorn_totals("row") %>% 
+  mutate(TYPE = case_when(TYPE == 'Total' ~ 'REVE_REVENUE', TRUE ~ TYPE))
+  
 data_temp <- data_temp %>% select(-TYPE)
 rownames(data_temp) <- data_raw$TYPE
 

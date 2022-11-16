@@ -71,7 +71,7 @@ total_staf <- pie_staff_data %>%
 start_point_staf <- 90-atcos_ops/total_staf*180
 
 domain_staff_x0 <- 0
-domain_staff_x1 <- 0.5
+domain_staff_x1 <- 0.45
 
 # plot piechart
 pie_staff <- pie_staff_data %>% 
@@ -84,6 +84,7 @@ pie_staff <- pie_staff_data %>%
                         # line = list(color = '#FFFFFF', width = 1)),
           domain = list(x = c(domain_staff_x0, domain_staff_x1), y = c(0, 1)),  #domain controls the position in the subplot
           automargin = TRUE,
+          pull = c(0.05,0,0,0,0,0,0,0,0,0,0),
           rotation = start_point_staf
           ) %>% 
    layout(
@@ -166,12 +167,12 @@ lines <- list (
     ))
 
 image_folder <- here("images")
-arrow_right <- image_read(paste0(image_folder,"/dark_blue_right_arrow.svg"))
+arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
 
 myimages <- list(
   list(source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
       x = (domain_cost_x1+domain_atco_x0)/2, y = 0.55, 
-      sizex = 0.1, sizey = 0.1,
+      sizex = 0.15, sizey = 0.15,
       xref = "paper", yref = "paper", 
       xanchor = "center", yanchor = "center"
   )  

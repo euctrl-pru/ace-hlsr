@@ -29,9 +29,10 @@ pie_data  <-  read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/P
 ## prepare data for central pie
 
 pie_er_trm_data <- pie_data %>% 
-  filter(TYPE == "REVE_REVENUE") %>%
+  filter(TYPE != "REVE_REVENUE", TYPE != "REVE_DELEGATION") %>%
   select(ERT, TRM) %>% 
   mutate_all(~ . /1000000) %>% 
+  summarise(ERT = sum(ERT), TRM = sum(TRM)) %>% 
   pivot_longer(c(ERT,TRM),names_to = "TYPE", values_to = "REVE") %>% 
   mutate(LABELS = case_when(
     TYPE == 'ERT' ~ paste0("En-route"),
@@ -39,15 +40,19 @@ pie_er_trm_data <- pie_data %>%
     )
     )
 
-# parameters for initial slice
-trm_reve_reve <- pie_er_trm_data %>%
+# totals for percentages
+trm_reve <- pie_er_trm_data %>%
   filter(TYPE == 'TRM') %>% 
   select(REVE) %>% pull() 
 
-total_reve_reve <- pie_er_trm_data %>%
-  summarise(sum(REVE))%>% pull()
+ert_reve <- pie_er_trm_data %>%
+  filter(TYPE == 'ERT') %>% 
+  select(REVE) %>% pull()
 
-start_point_er_trm <- 90+trm_reve_reve/total_reve_reve*180
+total_reve <- trm_reve+ert_reve
+
+# parameters for initial slice
+start_point_er_trm <- 90+trm_reve/total_reve*180
 er_trm_domain_x0 <- 0.35
 er_trm_domain_x1 <- 0.65
 
@@ -96,8 +101,11 @@ pie_data_pivot <- transpose(pie_data_temp)
 colnames(pie_data_pivot) <- rownames(pie_data_temp)
 pie_data_pivot$CONCEPT <- colnames(pie_data_temp)
 
-# label positions and colours
+# labels, label positions and colours
 pie_data_pivot <- pie_data_pivot  %>%  
+  mutate(ERT_PERC = ERT/ert_reve,
+         TRM_PERC = TRM/ert_reve,
+         TOTAL_PERC = TOTAL/total_reve) %>% 
   mutate(LABEL = case_when(
            CONCEPT == 'REVE_CHARGE' ~ "Charges",
            CONCEPT == 'REVE_AIRPORT' ~ "\t\nAirport\noperators",
@@ -117,19 +125,20 @@ pie_data_pivot <- pie_data_pivot  %>%
            CONCEPT == 'REVE_OTHER' ~ "#FF6600"
          )
          )
-#filter ERT data for pie
+#filter ERT data and redo label for pie
 pie_er_data <- pie_data_pivot %>% 
-  select(ERT, CONCEPT, LABEL,MYCOLOR) 
+  select(ERT, CONCEPT, LABEL,MYCOLOR, ERT_PERC) %>% 
+  mutate(LABEL = paste0(LABEL,
+                        "\n",
+                        round(ERT_PERC*100,if_else(ERT_PERC*100 <0.5,2,1)),
+                        "%"))
 
 # parameters for initial slice
 er_charge_reve <- pie_er_data %>%
   filter(CONCEPT == 'REVE_CHARGE') %>%
   select(ERT) %>% pull()
 
-total_er_reve <- pie_er_data %>%
-  summarise(sum(ERT))%>% pull()
-
-start_point_er <- 270+(total_er_reve-er_charge_reve)/total_er_reve*180
+start_point_er <- 270+(ert_reve-er_charge_reve)/ert_reve*180
 er_domain_x0 <- 0
 er_domain_x1 <- 0.27
   
@@ -139,7 +148,7 @@ pie_er <- pie_er_data %>%
   plot_ly(
           labels = ~LABEL, values = ~ERT, type = 'pie',
           hoverinfo = "none",
-          textinfo='label+percent',
+          textinfo='label',
           textfont = list(size = 10),
           insidetextorientation='horizontal',
           marker = list(colors = ~MYCOLOR),
@@ -164,17 +173,19 @@ pie_er <- pie_er_data %>%
 
 #filter data for pie
 pie_trm_data <- pie_data_pivot %>% 
-  select(TRM, CONCEPT, LABEL,MYCOLOR) 
+  select(TRM, CONCEPT, LABEL,MYCOLOR, TRM_PERC) %>% 
+    mutate(LABEL = paste0(LABEL,
+                        "\n",
+                        round(TRM_PERC*100,if_else(TRM_PERC*100 <0.5,2,1)),
+                        "%"))
+
 
 # parameters for initial slice
 trm_charge_reve <- pie_trm_data %>%
   filter(CONCEPT == 'REVE_CHARGE') %>%
   select(TRM) %>% pull()
 
-total_trm_reve <- pie_trm_data %>%
-  summarise(sum(TRM))%>% pull()
-
-start_point_trm <- 45+(total_trm_reve-trm_charge_reve)/total_trm_reve*180
+start_point_trm <- 45+(trm_reve-trm_charge_reve)/trm_reve*180
 trm_domain_x0 <- 0.73
 trm_domain_x1 <- 1
 
@@ -183,7 +194,7 @@ pie_trm <- pie_trm_data %>%
   plot_ly(
           labels = ~LABEL, values = ~TRM, type = 'pie',
           hoverinfo = "none",
-          textinfo='label+percent',
+          textinfo='label',
           textfont = list(size = 10),
           insidetextorientation='horizontal',
           marker = list(colors = ~MYCOLOR),
@@ -250,7 +261,7 @@ myannotations <- list(
         text = paste0("<b>", 
                       "Total en-route\nrevenue: ", 
                       "\u20AC ",
-                      format(round(total_reve_reve-trm_reve_reve,0), big.mark = " "),
+                      format(round(ert_reve,0), big.mark = " "),
                       " M</b>"),
         xref = "paper",
         yref = "paper",
@@ -265,7 +276,7 @@ myannotations <- list(
         text = paste0("<b>", 
                       "Gate-to-gate\nrevenue: ", 
                       "\u20AC ",
-                      format(round(total_reve_reve,0), big.mark = " "),
+                      format(round(total_reve,0), big.mark = " "),
                       " M</b>"),
         xref = "paper",
         yref = "paper",
@@ -280,7 +291,7 @@ myannotations <- list(
         text = paste0("<b>", 
                       "Total terminal\nrevenue: ", 
                       "\u20AC ",
-                      format(round(trm_reve_reve,0), big.mark = " "),
+                      format(round(trm_reve,0), big.mark = " "),
                       " M</b>"),
         xref = "paper",
         yref = "paper",
@@ -292,19 +303,19 @@ myannotations <- list(
   )
 
 image_folder <- here("images")
-arrow_left <- image_read(paste0(image_folder,"/dark_blue_left_arrow.svg")) 
-arrow_right <- image_read(paste0(image_folder,"/dark_blue_right_arrow.svg"))
+arrow_left <- image_read(paste0(image_folder,"/long_left_arrow.svg")) 
+arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
 
 myimages <- list(
   list(source =raster2uri(as.raster(arrow_left)), #https://plotly-r.com/embedding-images.html
       x = (er_domain_x1+er_trm_domain_x0)/2, y = 0.55, 
-      sizex = 0.15, sizey = 0.15,
+      sizex = 0.2, sizey = 0.2,
       xref = "paper", yref = "paper", 
       xanchor = "center", yanchor = "center"
   ),
   list(source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
       x = (er_trm_domain_x1+trm_domain_x0)/2, y = 0.55, 
-      sizex = 0.15, sizey = 0.15,
+      sizex = 0.2, sizey = 0.2,
       xref = "paper", yref = "paper", 
       xanchor = "center", yanchor = "center"
   )  
