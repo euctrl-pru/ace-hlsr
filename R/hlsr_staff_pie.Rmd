@@ -116,8 +116,8 @@ pie_atco_data <- pie_atco_data %>%
         )
     )
 
-domain_atco_x0 <-0.5
-domain_atco_x1 <-0.81
+domain_atco_x0 <-0.57
+domain_atco_x1 <-0.88
 
 # plot piechart
 pie_atco <- pie_atco_data %>% 
