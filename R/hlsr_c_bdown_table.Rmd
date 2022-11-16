@@ -10,10 +10,6 @@ output: html_document
     margin-right: 15px;
 }
 
-.right {
-    text-align: right;
-}
-
 ```
 
 
