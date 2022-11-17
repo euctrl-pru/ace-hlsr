@@ -315,7 +315,7 @@ myimages <- list(
   ),
   list(source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
       x = (er_trm_domain_x1+trm_domain_x0)/2, y = 0.55, 
-      sizex = 0.15, sizey = 0.15,
+      sizex = 0.2, sizey = 0.2,
       xref = "paper", yref = "paper", 
       xanchor = "center", yanchor = "center"
   )  
