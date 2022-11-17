@@ -1,4 +1,4 @@
-```{r echo = FALSE, include=FALSE}
+```{r include=FALSE}
  year_report <- 2021
 
 library(tidyverse)
