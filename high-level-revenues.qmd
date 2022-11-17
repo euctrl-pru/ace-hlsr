@@ -1,10 +1,18 @@
-```{r include=FALSE}
- year_report <- 2021
+# High-level revenues, costs and staff data {#sec-high}
+
+```{r}
+#| echo: false 
+#| warning: false 
+
+year_report <- 2021
+
+#libraries
 
 library(tidyverse)
 library(dplyr)
 library(readxl)
 
+#import data
 data_raw  <-  read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/Project/ACE/Data for ACE landing page and digital reports/hlsr2021_data.xlsx",
                        sheet = "F_Revenue",
                        range = cell_limits(c(9, 1), c(NA, 4))) %>%
@@ -13,6 +21,7 @@ data_raw  <-  read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/P
   mutate(across(TYPE, str_replace, 'Sum of ', '')) %>% 
   filter( TYPE != "REVE_DELEGATION", TYPE != "REVE_REVENUE")
 
+#calculate figures for text. Suffix '_f' means formatted figure -- Just an example for you to see how it could be done to avoid copy pasting
 total_reve_f <- data_raw  %>% select(TOTAL) %>%  summarise(sum(TOTAL/1000000)) %>% pull() %>% round() %>% 
   format(., nsmall =0 ,big.mark= " ") %>% paste0("\u20AC", ., "M")
 
@@ -28,8 +37,6 @@ trm_reve_apt <- data_raw  %>%  filter(TYPE == 'REVE_AIRPORT') %>% select(TRM)  %
 trm_reve_apt_perc <- sprintf("%0.1f%%", trm_reve_apt/trm_reve*100) 
 
 ```
-
-# High-level revenues, costs and staff data {#sec-high}
 
 This section provides a [preliminary]{.underline} presentation of high-level revenues, costs and staff data provided in ANSPs ACE `r year_report` data submissions. Total ANS revenues in `r year_report` amounted to `r total_reve_f`. Most en-route revenues come from the collection of en-route charges (`r ert_reve_charge_perc`, see left pie chart). The proportion of terminal revenues from charges is lower (`r trm_reve_charge_perc`, see right pie chart), as additional income may directly come from airport operators (`r ert_reve_charge_perc` e.g. through a contractual arrangement between the ANSP and the airport operator).
 
