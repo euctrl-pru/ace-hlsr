@@ -104,7 +104,7 @@ pie_data_pivot$CONCEPT <- colnames(pie_data_temp)
 # labels, label positions and colours
 pie_data_pivot <- pie_data_pivot  %>%  
   mutate(ERT_PERC = ERT/ert_reve,
-         TRM_PERC = TRM/ert_reve,
+         TRM_PERC = TRM/trm_reve,
          TOTAL_PERC = TOTAL/total_reve) %>% 
   mutate(LABEL = case_when(
            CONCEPT == 'REVE_CHARGE' ~ "Charges",
@@ -303,19 +303,19 @@ myannotations <- list(
   )
 
 image_folder <- here("images")
-arrow_left <- image_read(paste0(image_folder,"/long_left_arrow.svg")) 
-arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
+arrow_left <- image_read(paste0(image_folder,"/dark_blue_left_arrow.svg")) 
+arrow_right <- image_read(paste0(image_folder,"/dark_blue_right_arrow.svg"))
 
 myimages <- list(
   list(source =raster2uri(as.raster(arrow_left)), #https://plotly-r.com/embedding-images.html
       x = (er_domain_x1+er_trm_domain_x0)/2, y = 0.55, 
-      sizex = 0.2, sizey = 0.2,
+      sizex = 0.15, sizey = 0.15,
       xref = "paper", yref = "paper", 
       xanchor = "center", yanchor = "center"
   ),
   list(source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
       x = (er_trm_domain_x1+trm_domain_x0)/2, y = 0.55, 
-      sizex = 0.2, sizey = 0.2,
+      sizex = 0.15, sizey = 0.15,
       xref = "paper", yref = "paper", 
       xanchor = "center", yanchor = "center"
   )  

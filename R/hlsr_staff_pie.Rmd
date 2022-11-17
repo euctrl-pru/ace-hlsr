@@ -12,6 +12,9 @@ library(plotly)
 library(htmltools)
 library(magick)
 library(here)
+library(webshot)
+library(htmlwidgets)
+library(RSelenium)
 # library(ggrepel)
 ```
 
@@ -183,5 +186,9 @@ fig <- subplot(pie_staff, pie_atco) %>%
   layout(images = myimages)
 
 fig
+
+# saveWidget(fig, file = "fig.html")
+# webshot(url = "fig.html", file = "fig.png")
+# export(fig, "fig2.svg", selenium =  RSelenium::rsDriver(browser = "chrome"))
 # htmltools::tagList(list(pie_er, pie_er_term))
 ```
