@@ -4,7 +4,7 @@ The ACE benchmarking work is commissioned by the Performance Review Commission (
 
 The data processing, analysis and reporting are conducted with the assistance of the ACE Working Group, which comprises representatives from participating ANSPs, airspace users, regulatory authorities and the Performance Review Unit. This enables participants to share experiences and establish a common understanding of underlying assumptions and limitations of the data.
 
-The objective of this document is to provide a first insight on the level of 2021 cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the release of the ACE 2021 benchmarking report, which is planned end of May 2023. It also presents specific financial indicators that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic. An initial examination of ANSPs capital expenditures in 2020 and 2021 is also provided.
+The objective of this document is to provide a first insight on the level of 2020 cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the release of the ACE 2020 benchmarking report, which is planned end of May 2022. It also presents specific financial indicators that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic.
 
 Figure @fig-figure-1-1 illustrates the timeline for the production of the ACE 2020 benchmarking report.
 
