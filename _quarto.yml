@@ -34,6 +34,7 @@ book:
     - economic-cost-effectiveness.qmd
     - financial-cost-effectiveness.qmd
     - cash-and-liquidity.qmd
+    - capex.qmd
     - disclaimer.qmd
   site-url: "https://eurocontrol.int/"
   navbar:
