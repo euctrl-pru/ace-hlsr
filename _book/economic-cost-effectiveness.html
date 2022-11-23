@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.309">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,19 +11,25 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
+
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./financial-cost-effectiveness.html" rel="next">
 <link href="./high-level-revenues.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -31,10 +37,10 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,22 +72,28 @@ ul.task-list{list-style: none;}
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="./index.html">
-    <img src="./images/EUROCONTROL-logo-standard-rgb.svg" alt="">
-  </a>
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/EUROCONTROL-logo-standard-rgb.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-i-classfar-fa-star-fa-spin-fa-fwi-aviation-intelligence" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-star fa-spin fa-fw"></i> Aviation Intelligence</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-i-classfar-fa-star-fa-spin-fa-fwi-aviation-intelligence" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-star" role="img">
+</i> 
+ <span class="menu-text"><i class="far fa-star fa-spin fa-fw"></i> Aviation Intelligence</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-i-classfar-fa-star-fa-spin-fa-fwi-aviation-intelligence">    
         <li>
     <a class="dropdown-item" href="https://ansperformance.eu"><i class="bi bi-house-fill" role="img">
@@ -248,7 +260,9 @@ ul.task-list{list-style: none;}
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-about">    
         <li>
     <a class="dropdown-item" href="https://ansperformance.eu/about/prc/">
@@ -269,7 +283,9 @@ ul.task-list{list-style: none;}
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-areas" role="button" data-bs-toggle="dropdown" aria-expanded="false">Areas</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-areas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Areas</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-areas">    
         <li>
     <a class="dropdown-item" href="https://ansperformance.eu/covid/">
@@ -295,7 +311,9 @@ ul.task-list{list-style: none;}
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-views" role="button" data-bs-toggle="dropdown" aria-expanded="false">Views</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-views" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Views</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-views">    
         <li>
     <a class="dropdown-item" href="https://ansperformance.eu/dashboard/stakeholder/airport/">
@@ -316,10 +334,13 @@ ul.task-list{list-style: none;}
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="https://ansperformance.eu/publications/">Publications</a>
+    <a class="nav-link" href="https://ansperformance.eu/publications/">
+ <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-reference" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reference</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-reference" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Reference</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-reference">    
         <li>
     <a class="dropdown-item" href="https://ansperformance.eu/data/">
@@ -349,7 +370,9 @@ ul.task-list{list-style: none;}
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ses" role="button" data-bs-toggle="dropdown" aria-expanded="false">SES</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ses" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">SES</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-ses">    
         <li>
     <a class="dropdown-item" href="https://www.eurocontrol.int/prudata/dashboard/">
@@ -434,11 +457,10 @@ ul.task-list{list-style: none;}
 
 
 
-
-
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -447,14 +469,14 @@ ul.task-list{list-style: none;}
 
 <p>The PRC introduced in its ACE benchmarking reports the concept of economic cost-effectiveness. This indicator is defined as gate-to-gate ATM/CNS provision costs plus the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between ATC capacity and costs<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <p><a href="#fig-figure-3-1">Figure&nbsp;<span>3.1</span></a> shows <u>preliminary results</u> on the changes in economic cost-effectiveness between 2015 and 2020 at Pan-European system level. <a href="#fig-figure-3-1-left">Figure&nbsp;<span>3.1 (a)</span></a> shows the changes in unit economic costs, while <a href="#fig-figure-3-1-right">Figure&nbsp;<span>3.1 (b)</span></a> provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays.</p>
-<div class="quarto-layout-panel">
+<div id="fig-figure-3-1" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
 <div id="fig-figure-3-1-left" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/Figure-3-1-Left.png" class="img-fluid figure-img" data-ref-parent="fig-figure-3-1"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">(a)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">(a)</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -462,33 +484,51 @@ ul.task-list{list-style: none;}
 <div id="fig-figure-3-1-right" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/Figure-3-1-Right.png" class="img-fluid figure-img" data-ref-parent="fig-figure-3-1"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">(b)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">(b)</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.1: Trend of unit economic costs at Pan-European system level, 2015-2020 (real terms)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3.1: Trend of unit economic costs at Pan-European system level, 2015-2020 (real terms)</figcaption><p></p>
 </figure>
 </div>
 <p><a href="#fig-figure-3-2">Figure&nbsp;<span>3.2</span></a> shows <u>preliminary results</u> at ANSP level (dotted lines represent the 1st and 3rd quartiles). On average, the share of ATFM delays in 2020 was 3% (compared to 22% in 2019), and only five ANSPs had ATFM delays representing more than 5% of their unit economic costs (compared to 22 ANSPs in 2019).</p>
 <div id="fig-figure-3-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/Figure-3-2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.2: Economic gate-to-gate cost-effectiveness, 2020</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3.2: Economic gate-to-gate cost-effectiveness, 2020</figcaption><p></p>
 </figure>
 </div>
 
 
-<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1" role="doc-endnote"><p>See Annex 2 of the ACE 2019 benchmarking report for more information on the methodology used to compute composite flight-hours and economic costs.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>See Annex 2 of the ACE 2019 benchmarking report for more information on the methodology used to compute composite flight-hours and economic costs.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
 </main> <!-- /main -->
-<script type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -510,7 +550,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -538,31 +595,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var filterRegex = new RegExp(/^(?:http:|https:)\/\/ansperformance\.eu\/|^(?:http:|https:)\/\/.*ace-handbook\.netlify\.app\//);
@@ -570,7 +646,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
