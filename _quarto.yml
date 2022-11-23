@@ -8,6 +8,8 @@ format:
   html:
     css: 
       - style.css
+    execute:
+      echo: false
     theme:
       - cosmo
       - custom.scss
@@ -34,9 +36,6 @@ book:
     - cash-and-liquidity.qmd
     - disclaimer.qmd
   site-url: "https://eurocontrol.int/"
-  link-external-newwindow: true
-  execute:
-    echo: false
   navbar:
     background: light
     search: false
