@@ -38,7 +38,7 @@ trm_reve_apt_perc <- sprintf("%0.1f%%", trm_reve_apt/trm_reve*100)
 
 ```
 
-This section provides a [preliminary]{.underline} presentation of high-level revenues, costs and staff data provided in ANSPs ACE `r year_report` data submissions. Total ANS revenues in `r year_report` amounted to `r total_reve_f`. Most en-route revenues come from the collection of en-route charges (`r ert_reve_charge_perc`, see left pie chart). The proportion of terminal revenues from charges is lower (`r trm_reve_charge_perc`, see right pie chart), as additional income may directly come from airport operators (`r ert_reve_charge_perc` e.g. through a contractual arrangement between the ANSP and the airport operator).
+This section provides a [preliminary]{.underline} presentation of high-level revenues, costs and staff data provided in ANSPs ACE `r year_report` data submissions. Total ANS revenues in `r year_report` amounted to `r total_reve_f`. Most en-route revenues come from the collection of en-route charges (`r ert_reve_charge_perc`, see left pie chart). The proportion of terminal revenues from charges is lower (`r trm_reve_charge_perc`, see right pie chart), as additional income may directly come from airport operators (`r trm_reve_apt_perc` e.g. through a contractual arrangement between the ANSP and the airport operator).
 
 ::: {#fig-figure-2-1}
 ```{r}
@@ -54,23 +54,24 @@ Breakdown of gate-to-gate ANS revenues, `r year_report`
 
 ::: blue
 ::: left
-Across the Pan-European system, traffic in 2020 (measured in composite flight-hours) was -56.8% lower than in 2019 and total gate-to-gate revenues fell by -53.1%. In this context there were also some changes in the composition of ANSPs revenues, since the outbreak of COVID-19 did not affect all sources of revenues in the same proportion.
-
-Some revenue items increased in 2020, such as income from exempted flights (+11.3%), income from domestic governments (+11.3%) and other revenues (+21.6%). However, these increases (+€46M) remain marginal compared to the drop in en-route and terminal charges revenues (-€4 982 M) at Pan-European level. Detailed analysis shows that most ANSPs did not record any State aid as part of their 2020 revenues.
-
-At terminal level, the share of income from airport operator rose from 21.1% in 2019 to 31.2% in 2020 as this revenue stream reduced much less than the income from terminal charges.
+Across the Pan-European system, traffic in 2021 (measured in composite flight-hours) was + 27.2% higher than in 2020 but remained - 44.9% lower than in 2019. In the meantime, total gate-to-gate revenues increased less than traffic (+ 20.8%) and remained - 44.3% lower than in 2019.
 :::
 
 ::: right
 <br>
 
-```{r Figure-2-2, out.width='100%', echo=FALSE}
-knitr::include_graphics('figures/Figure-2-2.png')
+```{r Figure-2-2-cfh, out.width='100%', echo=FALSE}
+knitr::include_graphics('figures/Figure-2-2-cfh.png')
 ```
+
+```{r Figure-2-2-rev, out.width='100%', echo=FALSE}
+knitr::include_graphics('figures/Figure-2-2-rev.png')
+```
+
 :::
 :::
 
-The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services which amounted to €8 228M in 2020. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 84% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented some 16%.
+The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services which amounted to €7 937M in 2021. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 84% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented some 16%.
 
 ::: {#fig-figure-2-3}
 ```{r}
@@ -84,7 +85,7 @@ The ACE benchmarking analysis focuses on the specific costs of providing gate-to
 Gate-to-gate ATM/CNS provision costs at Pan-European system level, `r year_report`
 :::
 
-In 2020, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 56% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-5).
+In 2021, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 56% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-5).
 
 ATM/CNS provision costs increased by +1.3% p.a. between 2015 and 2019, and then fell by -5.0% in 2020 as ANSPs implemented a range of measures to reduce costs and preserve liquidities. As shown in the bottom right part of @fig-figure-2-5, the -5.0% decrease in ATM/CNS costs in 2020 reflects reductions for 31 out of 38 ANSPs. More details on the changes in ANSPs ATM/CNS provision costs in 2020 will be available in the final ACE 2020 benchmarking report.
 
