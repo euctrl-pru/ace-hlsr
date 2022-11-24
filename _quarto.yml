@@ -1,6 +1,7 @@
 project:
   type: book
-
+  output-dir: _book
+  
 bibliography: references.bib
 # csl: ieee-with-url.csl
 
@@ -10,6 +11,7 @@ format:
       - style.css
     execute:
       echo: false
+      keep-md: false
     theme:
       - cosmo
       - custom.scss
@@ -34,6 +36,7 @@ book:
     - economic-cost-effectiveness.qmd
     - financial-cost-effectiveness.qmd
     - cash-and-liquidity.qmd
+    # - capex.qmd
     - disclaimer.qmd
   site-url: "https://eurocontrol.int/"
   navbar:
@@ -43,7 +46,6 @@ book:
     logo: "images/EUROCONTROL-logo-standard-rgb.svg"
     left:
       - text: "<i class='far fa-star fa-spin fa-fw'></i> Aviation Intelligence"
-        icon: "star"
         menu:
           - text: "**Home**"
             icon: "house-fill"
