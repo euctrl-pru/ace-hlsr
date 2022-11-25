@@ -32,12 +32,12 @@ In the meantime, short and long term borrowings continued to increase (+33.5% in
 :::
 In order to assess the impact of the COVID-19 on the ANS industry, the PRC uses indicators aiming at monitoring ANSPs financial situation. For more details on how these indicators have been defined for the purposes of this analysis, along with their limitations, please refer to Section 4.2 of the ACE 2020 report. 
 
-xxxxx  THIS IS A TEST TO HAVE THE 2 CHARTS SIDE BY SIDE; i HAVE COPIED THE CODE USED IN ECONOMIC COST6EFFECTIVENESS BUT IT DOES NOT WORK XXXXX
+::: {#fig-figure-toto layout-ncol=2}
 
-::: {#fig-figure-toto layout-ncol="2"}
-![](figures/Figure-5-cap-res.png){#fig-figure-toto-left}
+![](figures/Figure-5-cap-res.png)
 
-![](figures/Figure-5-borrow.png){#fig-figure-toto-right}
+![](figures/Figure-5-borrow.png)
+
 Changes in total ANS capital and reserves and borrowing, 2019-`r year_report` (real terms)
 :::
 
