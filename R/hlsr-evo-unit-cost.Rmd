@@ -1,10 +1,17 @@
+---
+title: "hlsr_evo_unit_cost"
+output: html_document
+---
+
+```{r, echo=FALSE, include=FALSE}
 ## libraries
 library(dplyr)
 library(stringr)
 library(readxl)
 library(plotly)
+```
 
-
+```{r, echo=FALSE, warning=FALSE, out.width="70%", out.height="300px", fig.align = 'center'}
 ace_graph_data <- read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/Project/ACE/Data for ACE landing page and digital reports/hlsr2021_data.xlsx",
             sheet = "F_Unit cost",
             range = cell_limits(c(18, 2), c(24, NA))) %>%
@@ -24,7 +31,7 @@ plot_ACE <- ace_graph_data %>%
     textangle = -90,
     textposition = "inside",
     insidetextanchor =  "start",
-    textfont = list(color = '#FFFFFF', size = 14),
+    textfont = list(color = '#FFFFFF', size = 13),
     type = "bar",
     hoverinfo = "none",
     showlegend = F
@@ -37,7 +44,7 @@ plot_ACE <- ace_graph_data %>%
     # colors = c('#4F81BD'),
     mode = 'text',
     text = paste0("<b>",if_else(ace_graph_data$costs_per_cph_change_perc >0, "+", ""),format(round(ace_graph_data$costs_per_cph_change_perc*100,1), 1), "%","</b>"),
-    textfont = list(color = 'black', size = 14),
+    textfont = list(color = 'black', size = 12),
     type = 'scatter',  mode = 'lines',
     hoverinfo = "none",
     showlegend = F
@@ -100,7 +107,9 @@ plot_ACE <- ace_graph_data %>%
   ) %>%
   config(displaylogo = FALSE, modeBarButtons = list(list("toImage"))
   )
+```
 
+```{r echo=FALSE, warning=FALSE, out.height="300px"}
 plot_ACE
 
-
+```
