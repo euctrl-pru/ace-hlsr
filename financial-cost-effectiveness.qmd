@@ -8,7 +8,9 @@ This section provides a [preliminary analysis]{.underline} of financial cost-eff
 
 ## Pan-European system level {#sec-fin_1}
 
-@fig-figure-4-1 shows that in `r year_report` the unit ATM/CNS provision costs fell by -25.2% compared to `r year_report-1`. This is the result of higher traffic in `r year_report` compared to `r year_report-1` (+27.2%) combined with lower ATM/CNS provision costs (-4.9%). On the other hand, `r year_report` unit ATM/CNS provision costs remain +65.7% higher than in `r year_report-2`. This mainly reflects the fact that, despite a reduced cost-base (-8.8% compared to `r year_report-2`) traffic volumes in `r year_report` were still significantly lower than in `r year_report-2` (-44.9%).
+@fig-figure-4-1 shows that in `r year_report` the unit ATM/CNS provision costs fell by -25.2% compared to `r year_report-1`. This is the result of higher traffic in `r year_report` compared to `r year_report-1` (+27.2%) combined with lower ATM/CNS provision costs (-4.9%).
+
+On the other hand, `r year_report` unit ATM/CNS provision costs remain +65.7% higher than in `r year_report-2`. This mainly reflects the fact that, despite a reduced cost-base (-8.8% compared to `r year_report-2`) traffic volumes in `r year_report` were still significantly lower than in `r year_report-2` (-44.9%).
 
 ![Changes in unit ATM/CNS provision costs, `r year_report-5`-`r year_report` (real terms)](figures/Figure-4-1.png){#fig-figure-4-1 width="70%"}
 

@@ -21,7 +21,7 @@ In the meantime, short and long term borrowings continued to increase (+33.5% in
 
 ![](figures/Figure-5-borrow.png)
 
-Changes in total ANS capital and reserves and borrowing, 2019-`r year_report` (real terms)
+Changes in ANSPs capital and reserves and borrowing, 2019-`r year_report` (real terms)
 :::
 In order to assess the impact of the COVID-19 on the ANS industry, the PRC uses indicators aiming at monitoring ANSPs financial situation. For more details on how these indicators have been defined for the purposes of this analysis, along with their limitations, please refer to Section 4.2 of the ACE 2020 report.
 
