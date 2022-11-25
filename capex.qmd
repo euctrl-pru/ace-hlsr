@@ -1,7 +1,3 @@
-```{r include=FALSE}
- year_report <- 2021
-```
-
 # Capital expenditure in 2020-2021 compared to their historical average {#sec-capex}
 
 This section provides a preliminary analysis of capital expenditures in 2020 and 2021 compared with their historical levels and looks at contextual elements such as traffic, ATFM delays and staffing. Although the relationship between these elements is not straightforward, with many factors affecting the quality of service provided by ANSPs, it is important to consider the situation in which ANSPs were operating at the time of making investment decisions.

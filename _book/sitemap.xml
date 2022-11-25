@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://eurocontrol.int/index.html</loc>
+    <lastmod>2022-11-24T09:55:33.929Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eurocontrol.int/introduction.html</loc>
+    <lastmod>2022-11-24T09:58:55.068Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eurocontrol.int/high-level-revenues.html</loc>
+    <lastmod>2022-11-24T09:55:17.230Z</lastmod>
+  </url>
+  <url>
     <loc>https://eurocontrol.int/economic-cost-effectiveness.html</loc>
+<<<<<<< HEAD
     <lastmod>2022-11-25T08:32:21.018Z</lastmod>
   </url>
   <url>
@@ -27,5 +40,24 @@
   <url>
     <loc>https://eurocontrol.int/capex.html</loc>
     <lastmod>2022-11-25T10:00:12.644Z</lastmod>
+=======
+    <lastmod>2022-11-24T09:55:17.253Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eurocontrol.int/financial-cost-effectiveness.html</loc>
+    <lastmod>2022-11-24T09:55:17.263Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eurocontrol.int/cash-and-liquidity.html</loc>
+    <lastmod>2022-11-24T09:55:17.274Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eurocontrol.int/disclaimer.html</loc>
+    <lastmod>2022-11-24T09:55:17.290Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eurocontrol.int/capex.html</loc>
+    <lastmod>2022-11-24T09:59:09.822Z</lastmod>
+>>>>>>> 01cae987f97e6310f04a72ae0df2b31fb6fc375c
   </url>
 </urlset>
