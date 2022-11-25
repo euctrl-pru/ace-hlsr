@@ -1,19 +1,23 @@
+```{r include=FALSE}
+ year_report <- 2021
+```
+
+
 # Economic cost-effectiveness {#sec-economic}
 
-The PRC introduced in its ACE benchmarking reports the concept of economic cost-effectiveness. This indicator is defined as gate-to-gate ATM/CNS provision costs plus the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between ATC capacity and costs[^economic-cost-effectiveness-1].
+The concept of economic cost-effectiveness, developed by the PRC, is defined as the sum of gate-to-gate ATM/CNS provision costs and the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between ATC capacity and costs[^economic-cost-effectiveness-1].
 
 [^economic-cost-effectiveness-1]: See https://ansperformance.eu/economics/ace/ace-handbook/ for more information on the methodology used to compute composite flight-hours and economic costs..
 
-@fig-figure-3-1 shows [preliminary results]{.underline} on the changes in economic cost-effectiveness between 2015 and 2020 at Pan-European system level. @fig-figure-3-1-left shows the changes in unit economic costs, while @fig-figure-3-1-right provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays.
+@fig-figure-3-1 shows [preliminary results]{.underline} on the changes in economic cost-effectiveness between `r year_report-5` and `r year_report` at Pan-European system level. @fig-figure-3-1-left shows the changes in unit economic costs, while @fig-figure-3-1-right provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays.
 
 ::: {#fig-figure-3-1 layout-ncol="2"}
 ![](figures/Figure-3-1-Left.png){#fig-figure-3-1-left}
 
 ![](figures/Figure-3-1-Right.png){#fig-figure-3-1-right}
-
-Trend of unit economic costs at Pan-European system level, 2015-2020 (real terms)
+Trend of unit economic costs at Pan-European system level, `r year_report-5`-`r year_report` (real terms)
 :::
 
-@fig-figure-3-2 shows [preliminary results]{.underline} at ANSP level (dotted lines represent the 1st and 3rd quartiles). On average, the share of ATFM delays in 2020 was 3% (compared to 22% in 2019), and only five ANSPs had ATFM delays representing more than 5% of their unit economic costs (compared to 22 ANSPs in 2019).
+@fig-figure-3-2 shows [preliminary results]{.underline} at ANSP level (dotted lines represent the 1st and 3rd quartiles). On average, the share of ATFM delays in `r year_report` was some 4% (compared to 3% in `r year_report-1` and 22% in `r year_report-2`), and only four ANSPs had ATFM delays representing 5% or more of their unit economic costs: HASP (32%), NAV Portugal (8%), DSNA (7%) and LVNL (5%)
 
-![Economic gate-to-gate cost-effectiveness, 2020](figures/Figure-3-2.png){#fig-figure-3-2}
+![Economic gate-to-gate cost-effectiveness, `r year_report`](figures/Figure-3-2.png){#fig-figure-3-2}

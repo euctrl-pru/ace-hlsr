@@ -40,7 +40,6 @@ trm_reve_apt_perc <- sprintf("%0.1f%%", trm_reve_apt/trm_reve*100)
 
 This section provides a [preliminary]{.underline} presentation of high-level revenues, costs and staff data provided in ANSPs ACE `r year_report` data submissions. Total ANS revenues in `r year_report` amounted to `r total_reve_f`. Most en-route revenues come from the collection of en-route charges (`r ert_reve_charge_perc`, see left pie chart). The proportion of terminal revenues from charges is lower (`r trm_reve_charge_perc`, see right pie chart), as additional income may directly come from airport operators (`r trm_reve_apt_perc` e.g. through a contractual arrangement between the ANSP and the airport operator).
 
-::: {#fig-figure-2-1}
 ```{r}
 #| child: R/hlsr_rev_pie.Rmd
 ```
@@ -50,24 +49,20 @@ This section provides a [preliminary]{.underline} presentation of high-level rev
 ```
 
 Breakdown of gate-to-gate ANS revenues, `r year_report`
-:::
 
 ::: blue
-::: left
-Across the Pan-European system, traffic in 2021 (measured in composite flight-hours) was + 27.2% higher than in 2020 but remained - 44.9% lower than in 2019. In the meantime, total gate-to-gate revenues increased less than traffic (+ 20.8%) and remained - 44.3% lower than in 2019.
+::: columns
+::: {.column width="30%"}
+![](figures/Figure-2-2-cfh.png)
 :::
 
-::: right
-<br>
+::: {.column width="40%"}
+Across the Pan-European system, traffic in 2021 (measured in composite flight-hours) was +27.2% higher than in 2020 but remained -44.9% lower than in 2019. In the meantime, total gate-to-gate revenues increased less than traffic (+20.8%) and remained -44.3% lower than in 2019.
+:::
 
-```{r Figure-2-2-cfh, out.width='100%', echo=FALSE}
-knitr::include_graphics('figures/Figure-2-2-cfh.png')
-```
-
-```{r Figure-2-2-rev, out.width='100%', echo=FALSE}
-knitr::include_graphics('figures/Figure-2-2-rev.png')
-```
-
+::: {.column width="30%"}
+![](figures/Figure-2-2-rev.png)
+:::
 :::
 :::
 
@@ -85,39 +80,33 @@ The ACE benchmarking analysis focuses on the specific costs of providing gate-to
 Gate-to-gate ATM/CNS provision costs at Pan-European system level, `r year_report`
 :::
 
-In 2021, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 56% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-5).
-
-ATM/CNS provision costs increased by +1.3% p.a. between 2015 and 2019, and then fell by -5.0% in 2020 as ANSPs implemented a range of measures to reduce costs and preserve liquidities. As shown in the bottom right part of @fig-figure-2-5, the -5.0% decrease in ATM/CNS costs in 2020 reflects reductions for 31 out of 38 ANSPs. More details on the changes in ANSPs ATM/CNS provision costs in 2020 will be available in the final ACE 2020 benchmarking report.
+In `r year_report`, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 56% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-5).
 
 ::: blue
-::: left
-In response to the challenges presented by the extraordinary drop in traffic, ANSPs implemented a range of cost-containment measures in 2020, leading to an overall reduction in ATM/CNS costs of -€433.4M.
-
-The full effect of these measures is however not yet visible in the 2020 data since, for instance, some redundancy plans were negotiated during the year but the actual impact on the number of staff, and on the staff costs, will become visible only in the 2021 data. Some ANSPs implementing redundancy plans in 2020 even recorded cost increases in the year, reflecting provisions or payments to the staff made redundant. This was the main driver for an increase in exceptional costs of some +€55.6M.
-
-Staff costs were by far the main source of savings in 2020 (-€315.6M), due to the implementation of the following measures:
-
--   Short-time work / furlough schemes, where applicable, with part of employees' salaries paid by the State either directly to the employees or reducing ANSPs wage bill.
--   Reduced staff numbers (discussed further below).
--   Reduced level of remuneration through reduction or freeze of base salaries, reduction or suspension of variable part of salaries such as overtime payments and performance bonuses.
-
-A majority of ANSPs also reduced non-staff operating costs by carrying out only essential maintenance, reducing utilities costs and non-essential training activities. This resulted in a decrease of some -€39.2M.
-
-Finally, the cancellation or deferral of non-essential investments resulted in lower depreciation costs (-€51.0M) and lower cost of capital (-€83.2M). The latter is also impacted, in many cases, by the use of a lower weighted average cost of capital in 2020.
+::: columns
+::: {.column width="35%"}
+Between `r year_report-1` and `r year_report`, total ATM/CNS provision costs fell by -4.9% (-€408.4M), reflecting cost reductions from 27 out of 38 ANSPs. When considering the savings already achieved in 2020, the cumulative decrease since 2019 is -8.8% (-€765M).
 :::
 
-::: right
-<br><br>
-
-```{r Figure-2-4, out.width='100%', echo=FALSE}
+::: {.column width="65%"}
+```{r Figure-2-4, out.width='80%', echo=FALSE}
 knitr::include_graphics('figures/Figure-2-4.png')
 ```
 :::
 :::
+:::
 
-![Changes in ATM/CNS provision costs, 2015-2020 (real terms)](./figures/Figure-2-5.png){#fig-figure-2-5 width="85%"}
+::: blue
+Staff costs were by far the main source of savings in 2021 (-€221.4M). This reflects both the effect of temporary measures implemented in 2020 and 2021 (e.g. short time work, furlough schemes, reduced remuneration...) but also the effect of redundancy plans.
+:::
 
-The Pan-European employed a total of 55 712 staff in 2020 (comprising 54 871 staff providing ATM/CNS services and 845 internal MET staff). Some 17 400 staff (32%) were ATCOs working on operational duty, split between ACCs (56%) and APP/TWR facilities (44%). On average, 2.2 additional staff are required for every ATCO in OPS in Europe.
+A majority of ANSPs also maintained lower level of non-staff operating costs or reduced it further in 2021 leading to a decrease of -€102.4M. Similarly, the cancellation or deferral of non-essential investments resulted in further reduction in depreciation costs (-€42.3M). Exceptional costs decreased by -€94.4M in 2021 mainly reflecting the fact that this cost item was particularly high in 2020 due to the reporting of redundancy costs. The only cost item increasing in 2021 was the cost of capital (+€52.2M), mainly due to large increases for DHMI and NATS, reflecting increases in their asset base and weighted average cost of capital.
+:::
+
+
+![Changes in ATM/CNS provision costs, `r year_report-5`-`r year_report` (real terms)](./figures/Figure-2-5.png){#fig-figure-2-5 width="85%"}
+
+The Pan-European ANSPs employed a total of 53 014 staff in 2021 (comprising 52 164 staff providing ATM/CNS services and 850 internal MET staff). Some 16 781 staff (32%) were ATCOs working on operational duty, split between ACCs (55%) and APP/TWR facilities (45%). On average, 3.1 additional staff are required for every ATCO in OPS in Europe.
 
 ::: {#fig-figure-2-6}
 ```{r}
@@ -127,24 +116,8 @@ The Pan-European employed a total of 55 712 staff in 2020 (comprising 54 871 sta
 Total gate-to-gate ATM/CNS staff per staff category and changes, `r year_report-1`-`r year_report`
 :::
 
-After four years of continuous increase in the number of ATM/CNS staff (+0.6% p.a. between 2015 and 2019, or +1 384 FTEs), 2020 showed a -3.4% reduction (-1 936 FTEs).
+In 2021, the number of ATM/CNS staff fell by -1.5% (-796 FTEs) compared to 2020. The lower staff number observed for 2021 mainly reflects decreases in the following staff categories: • Administrative staff (-338 FTEs, or -3.7%); • ATCOs in OPS (-201 FTEs, or 1.2%); • Ab-initio trainees (-126 FTEs, or 12.5%); and • Technical support staff for operational maintenance, monitoring and control (-102 FTEs, or -1.2%). On the other hand, increase is observed for ATCOs on other duties (+154 FTEs) reflecting a reallocation of some ATCOs from operational to non-operational duties due to the relatively low traffic levels in 2021 compared to pre-crisis. Minor increases are also observed for staff for ancillary services (+14 FTEs) and other staff (+25 FTEs).
 
-The lower staff number observed for 2020 mainly reflects decreases in the following staff categories:
-
--   Other staff (-779 FTEs or -20.1%);
--   ATCOs in OPS (-485 FTEs, or -2.7%);
--   Technical support for operational maintenance (-340 FTEs, or -3.5%);
--   Administrative staff (-323 FTEs, or -3.3%); and,
--   Staff for ancillary services (-112 FTEs or -5.8%).
-
-On the other hand, increases are observed for ATCOs on other duties (+121 FTEs) and on-the-job trainees (+141 FTEs), reflecting a reallocation of some ATCOs from operational to non-operational duties due to the traffic reduction in 2020, and the fact that newly recruited ATCOs had to complete their on-the-job training.
-
-::: plainblue
-In addition to the measures on staff costs already mentioned above (redundancies, short-time work / furlough schemes), it is important to note that during the lockdown periods, some ANSPs staff had to consume accumulated holidays not used in previous years and/or made use of pre-retirement schemes. Furthermore, depending on the nature of their work, some staff were inevitably left without specific tasks, however, in most cases, they continued to be counted as full time equivalents in 2020.
-
-It is also important to note that the trend observed at Pan-European system level is heavily affected by the reporting of very large reductions by UkSATSE. Excluding UkSATSE, the total number of ATM/CNS staff in 2020 would be close to its 2019 level (-0.1%).
-
-The trends shown in the @fig-figure-2-6 should therefore be interpreted with caution.
-
-Although some ANSPs might have discontinued the ATCO recruitment process during the pandemic, the number of ab-initio trainees increased by +1.2% in 2020. It will be interesting to monitor this trend in future years as the long time period required to train a fully qualified ATCO might have an impact on the level the capacity offered by ANSPs when traffic returns to pre-crisis levels.
+::: blue
+In addition to the measures on staff costs already mentioned above (redundancies, short-time work / furlough schemes), it is important to note that during the lockdown periods, some ANSPs staff had to consume accumulated holidays not used in previous years and/or made use of pre-retirement schemes.
 :::

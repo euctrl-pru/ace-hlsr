@@ -12,7 +12,7 @@ This section provides a preliminary analysis of capital expenditures in 2020 and
 
 Several factors could explain this overall reduction, including local sanitary measures, liquidity issues, availability of internal resources, availability of suppliers, etc. However, the situation at individual ANSP level is contrasted, and some ANSPs invested significantly more in 2020 and 2021 than in the preceding decade. More details will be provided in the forthcoming ACE report.
 
-@fig-figure-6-2 and XX\@fig-figure-6-3 below provide an overview of the context in which the capital expenditures were made. Traffic grew consistently from 2013, so that by 2019 ANSPs were handling + 19% more composite flight-hours than at the start of the period, leading to a marked deterioration in the quality of service, especially in 2018 and 2019.
+@fig-figure-6-2 and @fig-figure-6-3 below provide an overview of the context in which the capital expenditures were made. Traffic grew consistently from 2013, so that by 2019 ANSPs were handling + 19% more composite flight-hours than at the start of the period, leading to a marked deterioration in the quality of service, especially in 2018 and 2019.
 
 ![Evolution of traffic, ATCO hours on duty and ATFM delays (2011-2021)](figures/Figure-6-2.png){#fig-figure-6-2}
 
