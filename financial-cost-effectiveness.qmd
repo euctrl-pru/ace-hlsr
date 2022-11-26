@@ -19,7 +19,7 @@ On the other hand, `r year_report` unit ATM/CNS provision costs remain +65.7% hi
 
 ::: {.column width="70%"}
 ```{r, out.width="100%" }
-#| child: R/hlsr-evo-unit-cost.Rmd
+#| child: R/hlsr_evo_unit_cost.Rmd
 ```
 :::
 
@@ -49,7 +49,14 @@ c\) support costs per unit output (€454).
 
 There are three main elements to be considered when interpreting the level of the indicators as well as ANSPs rankings in the figures below: a) the traffic level in `r year_report` was still significantly lower than before COVID-19 crisis (although being lower for all ANSPs, the gap is not completely homogeneous), b) there were different responses in cost adjustments in `r year_report-1` and `r year_report`, and c) there were also different levels of flexibility in adjusting the workforce, and in particular ATCO in OPS hours on duty, which has an enormous impact on the ATCO productivity and employment costs indicators measured in the ACE report.
 
-![Financial gate-to-gate cost-effectiveness, `r year_report`](figures/Figure-4-4.png){#fig-figure-4-4 width="100%"}
+::: {#fig-figure-4-4}
+```{r}
+#| child: R/hlsr_fin_ce.Rmd
+```
+Financial gate-to-gate cost-effectiveness, `r year_report`
+:::
+
+![Financial gate-to-gate cost-effectiveness, `r year_report`](figures/Figure-4-4.png)
 
 ![ATCO-hour productivity, `r year_report`](figures/Figure-4-5.png){#fig-figure-4-5 width="100%"}
 

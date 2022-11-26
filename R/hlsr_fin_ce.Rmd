@@ -1,0 +1,218 @@
+---
+title: "hlsr_fin_ce"
+output: html_document
+---
+
+```{r, echo=FALSE, include=FALSE}
+## libraries
+library(dplyr)
+library(stringr)
+library(readxl)
+library(plotly)
+```
+
+```{r, echo=FALSE}
+# import data
+data_raw <- read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/Project/ACE/Data for ACE landing page and digital reports/hlsr2021_data.xlsx",
+sheet = "F_Fin CE",
+range = cell_limits(c(7, 1), c(NA, 4))) %>%
+  as_tibble() %>% 
+  rename(VALUE=2, COST =3, CFH =4)
+
+
+# prepare data for main plot
+data_plot <- data_raw  %>%
+  select(ANSP_NAME, VALUE) %>% 
+  mutate(QUART1 = quantile(VALUE, 0.25),
+         QUART3 = quantile(VALUE, 0.75),
+         LABELS = as.character(format(round(VALUE,0), big.mark = " ")))
+
+#prepare data for inset
+data_inset <- data_plot %>% 
+  filter(ANSP_NAME == 'DSNA'| ANSP_NAME == 'ENAIRE' | ANSP_NAME == 'DFS' |
+           ANSP_NAME == 'ENAV' | ANSP_NAME == 'NATS (Continental)') %>% 
+  mutate(ANSP_NAME = case_when(
+    ANSP_NAME == 'NATS (Continental)' ~ 'NATS\n(Continental)',
+    TRUE ~ ANSP_NAME))
+
+# system average for annotation
+sys_avg <- data_raw %>% summarise(sum(COST)/sum(CFH)) %>% pull()
+
+# plot
+
+plot_fin_ce <- data_plot %>%
+  plot_ly(
+    x = ~ ANSP_NAME,
+    y = ~ VALUE,
+    yaxis = "y1",
+    marker = list(color =('#8989FF')),
+    text = ~ LABELS,
+    # text = ~ as.character(format(round(VALUE,0), big.mark = " ")),
+    # textangle = -90,
+    textposition = "outside",
+    # insidetextanchor =  "start",
+    textfont = list(color = 'black', size = 7),
+    type = "bar",
+    hoverinfo = "none",
+    # domain = list(x = c(0, 1), y = c(0, 1)),
+    showlegend = F
+  ) %>% 
+  add_trace(
+    inherit = FALSE,
+    x = ~ ANSP_NAME,
+    y = ~ QUART1,
+    yaxis = "y1",
+    # colors = c('#4F81BD'),
+    type = 'scatter',  mode = 'lines',
+    line = list(color = '#333399', width = 2, dash = 'dash'),
+    opacity = 0.5,
+    hoverinfo = "none",
+    showlegend = F
+    ) %>%
+  add_trace(
+    inherit = FALSE,
+    x = ~ ANSP_NAME,
+    y = ~ QUART3,
+    yaxis = "y1",
+    # color = c('#333399'),
+    type = 'scatter',  mode = 'lines',
+    line = list(color = '#333399', width = 2, dash = 'dash'),
+    opacity = 0.5,
+    hoverinfo = "none",
+    showlegend = F
+  ) %>%
+  layout(
+    autosize = T,
+    bargap = 0.8,
+    uniformtext=list(minsize=10, mode='show') #this is important so it does not autofit fonts
+  ) %>%
+  config( responsive = FALSE,
+          displaylogo = FALSE,
+          displayModeBar = F
+         # modeBarButtons = list(list("toImage"))
+    )
+
+plot_inset <- data_inset %>%
+  plot_ly(
+    x = ~ ANSP_NAME,
+    y = ~ VALUE,
+    yaxis = "y1",
+    marker = list(color =('#8989FF')),
+    text = ~ ANSP_NAME,
+    textangle = -90,
+    textposition = "inside",
+    insidetextanchor =  "start",
+    textfont = list(color = 'black', size = 9),
+    type = "bar",
+    hoverinfo = "none",
+    showlegend = F
+  ) %>% 
+  add_trace(
+    inherit = FALSE,
+    # marker = list(color =('transparent')),
+    x = ~ ANSP_NAME,
+    y = ~ VALUE+50,
+    yaxis = "y1",
+    mode = 'text',
+    text = ~ LABELS,
+    textfont = list(color = 'black', size = 10),
+    # textangle = 0,
+    # textposition = "outside",
+    type = 'scatter',  mode = 'lines',
+    hoverinfo = "none",
+    showlegend = F
+  ) %>% 
+  add_trace(
+    inherit = FALSE,
+    x = ~ ANSP_NAME,
+    y = ~ QUART1,
+    yaxis = "y1",
+    # colors = c('#4F81BD'),
+    type = 'scatter',  mode = 'lines',
+    line = list(color = '#333399', width = 2, dash = 'dash'),
+    opacity = 0.5,
+    hoverinfo = "none",
+    showlegend = F
+  ) %>%
+  add_trace(
+    inherit = FALSE,
+    x = ~ ANSP_NAME,
+    y = ~ QUART3,
+    yaxis = "y1",
+    # color = c('#333399'),
+    type = 'scatter',  mode = 'lines',
+    line = list(color = '#333399', width = 2, dash = 'dash'),
+    opacity = 0.5,
+    hoverinfo = "none",
+    showlegend = F
+  ) %>%
+  layout(
+    autosize = T,
+    bargap = 0.4,
+    uniformtext=list(minsize=8, mode='show') #this is important so it does not autofit fonts
+  ) %>%
+  config(responsive = FALSE,
+        displaylogo = FALSE,
+        displayModeBar = F
+         # modeBarButtons = list(list("toImage"))
+  )
+
+myannotations <- list(
+  x = 0.05,
+  y = 1,
+  text = paste0("<b>", 
+                "European system average: ", 
+                "\u20AC ",
+                format(round(sys_avg,0), big.mark = " "),
+                "</b>"),
+  xref = "paper",
+  yref = "paper",
+  xanchor = "left",
+  showarrow = FALSE,
+  font = list(color = "#9999FF",
+              size=13)
+)
+
+fig <- subplot(plot_fin_ce, plot_inset) %>% 
+  layout( 
+          title = list(text = "Gate-to-gate ATM/CNS", font = list(color = "black", size = 14)),
+          font = list(family = "Helvetica"),
+    xaxis = list(title = "",
+                 tickangle=270,
+                 tickfont = list(size=11),
+                 autotick = F,
+                 showgrid = F,
+                 categoryorder = "total descending",
+                 domain=c(0,1)),
+    yaxis = list(title = paste("\U20AC","per composite flight-hour"),
+                 titlefont   = list(size = 12),
+                 tickfont = list(size=11),
+                 dtick = 200,
+                 fixedrange = TRUE,
+                 range = list(0, 200+round(max(data_plot$VALUE/1000), 1)*1000),
+                 zeroline = T, showline = F, showgrid = T,
+                 domain=c(0,1)),
+    xaxis2 = list(title = "",
+                  showticklabels = FALSE,
+                  # tickangle=270,
+                  # tickfont = list(size=10),
+                  autotick = F,
+                  showgrid = F,
+                  categoryorder = "total descending",
+                  domain=c(0.65,1)),
+    yaxis2 = list(title = "",
+                  # titlefont   = list(size = 13),
+                  tickfont = list(size=10),
+                  dtick = 200,
+                  fixedrange = TRUE,
+                  range = list(0, 200+round(max(data_inset$VALUE/1000), 1)*1000),
+                  zeroline = T, showline = F, showgrid = T,
+                  domain=c(0.65,1)),
+    annotations = myannotations,
+    margin = list(b=0)
+  )
+```
+
+```{r, echo=FALSE, warning=FALSE, out.width="100%", out.height="450px"}
+fig
+```
