@@ -232,7 +232,7 @@ myannotations <- list(list(
   x = 0.12,
   y = 0.98,
   text = paste0("<b>", 
-                "European system average for economic cost-effectiveness: ", 
+                "European system avg. for economic cost-effectiveness: ", 
                 "\u20AC ",
                 format(round(sys_avg_ece,0), big.mark = " "),
                 "</b>"),
@@ -241,13 +241,13 @@ myannotations <- list(list(
   xanchor = "left",
   showarrow = FALSE,
   font = list(color = "#993366",
-              size=11)
+              size=10)
   ),
 list(
   x = 0.12,
   y = 0.93,
   text = paste0("<b>", 
-                "European system average for financial cost-effectiveness: ", 
+                "European system avg. for financial cost-effectiveness: ", 
                 "\u20AC ",
                 format(round(sys_avg_fce,0), big.mark = " "),
                 "</b>"),
@@ -256,7 +256,7 @@ list(
   xanchor = "left",
   showarrow = FALSE,
   font = list(color = "#8989FF",
-              size=11)
+              size=10)
   )
 )
 
