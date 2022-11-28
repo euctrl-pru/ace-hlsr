@@ -77,6 +77,4 @@ Employment costs per ATCO-hour, `r year_report`
 Breakdown of support costs per composite flight-hour, `r year_report`
 :::
 
-<!-- ![Breakdown of support costs per composite flight-hour, `r year_report`](figures/Figure-4-7.png){#fig-figure-4-7 width="100%"} -->
-
 A more detailed analysis of the changes in cost-effectiveness, ATCO-hour productivity, ATCO employment costs per ATCO-hour and unit support costs will be available in the final ACE `r year_report` benchmarking report.
