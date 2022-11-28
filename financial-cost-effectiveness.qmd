@@ -56,12 +56,27 @@ There are three main elements to be considered when interpreting the level of th
 Financial gate-to-gate cost-effectiveness, `r year_report`
 :::
 
-<!-- ![Financial gate-to-gate cost-effectiveness, `r year_report`](figures/Figure-4-4.png){#fig-figure-4-5 width="100%"} -->
+::: {#fig-figure-4-5}
+```{r}
+#| child: R/hlsr_prod.Rmd
+```
+ATCO-hour productivity, `r year_report`
+:::
 
-![ATCO-hour productivity, `r year_report`](figures/Figure-4-5.png){#fig-figure-4-5 width="100%"}
+::: {#fig-figure-4-6}
+```{r}
+#| child: R/hlsr_atco_cost_h.Rmd
+```
+Employment costs per ATCO-hour, `r year_report`
+:::
 
-![Employment costs per ATCO-hour, `r year_report`](figures/Figure-4-6.png){#fig-figure-4-6 width="100%"}
+::: {#fig-figure-4-7}
+```{r}
+#| child: R/hlsr_support.Rmd
+```
+Breakdown of support costs per composite flight-hour, `r year_report`
+:::
 
-![Breakdown of support costs per composite flight-hour, `r year_report`](figures/Figure-4-7.png){#fig-figure-4-7 width="100%"}
+<!-- ![Breakdown of support costs per composite flight-hour, `r year_report`](figures/Figure-4-7.png){#fig-figure-4-7 width="100%"} -->
 
 A more detailed analysis of the changes in cost-effectiveness, ATCO-hour productivity, ATCO employment costs per ATCO-hour and unit support costs will be available in the final ACE `r year_report` benchmarking report.

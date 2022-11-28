@@ -54,7 +54,7 @@ plot_all <- data_plot %>%
     # textangle = -90,
     textposition = "outside", cliponaxis = FALSE,
     # insidetextanchor =  "start",
-    textfont = list(color = 'black', size = 9),
+    textfont = list(color = 'black', size = 7),
     type = "bar",
     hoverinfo = "none",
     # domain = list(x = c(0, 1), y = c(0, 1)),
@@ -207,7 +207,7 @@ fig <- subplot(plot_all, plot_inset) %>%
                  fixedrange = TRUE,
                  linewidth=10, linecolor='transparent',  mirror = T,
                  # range = list(0, 200+round(max(data_plot$VALUE/1000), 1)*1000),
-                 zeroline = T, showline = T, showgrid = T,
+                 zeroline = T, showline = T, showgrid = F,
                  domain=c(0,1)),
     xaxis2 = list(title = "",
                   showticklabels = FALSE,
@@ -226,7 +226,7 @@ fig <- subplot(plot_all, plot_inset) %>%
                   # ticktext = ticktexts2,
                   fixedrange = TRUE,
                   # range = list(0, 200+round(max(data_inset$VALUE/1000), 1)*1000),
-                  zeroline = T, showline = F, showgrid = T,
+                  zeroline = T, showline = F, showgrid = F,
                   domain=c(0.65,1)),
     annotations = myannotations
   )

@@ -18,7 +18,6 @@ library(tidyr)
 data_raw <- read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/Project/ACE/Data for ACE landing page and digital reports/hlsr2021_data.xlsx",
 sheet = "F_Support",
 range = cell_limits(c(7, 1), c(NA, NA))) %>%
-  make
   as_tibble() 
 
 
@@ -113,7 +112,7 @@ plot_all <- data_plot %>%
     # colors = c('#4F81BD'),
     type = 'scatter',  mode = 'lines',
     line = list(color = '#003366', width = 2, dash = 'dash'),
-    opacity = 1,
+    opacity = 0.5,
     hoverinfo = "none",
     showlegend = F
     ) %>%
@@ -125,7 +124,7 @@ plot_all <- data_plot %>%
     # color = c('#333399'),
     type = 'scatter',  mode = 'lines',
     line = list(color = '#003366', width = 2, dash = 'dash'),
-    opacity = 1,
+    opacity = 0.5,
     hoverinfo = "none",
     showlegend = F
   ) %>% 
@@ -192,7 +191,7 @@ plot_inset <- data_inset %>%
     yaxis = "y1",
     # colors = c('#4F81BD'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#333399', width = 2, dash = 'dash'),
+    line = list(color = '#003366', width = 2, dash = 'dash'),
     opacity = 0.5,
     hoverinfo = "none",
     showlegend = F
@@ -204,7 +203,7 @@ plot_inset <- data_inset %>%
     yaxis = "y1",
     # color = c('#333399'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#333399', width = 2, dash = 'dash'),
+    line = list(color = '#003366', width = 2, dash = 'dash'),
     opacity = 0.5,
     hoverinfo = "none",
     showlegend = F
@@ -227,7 +226,7 @@ myannotations <- list(
   yref = "paper",
   xanchor = "left",
   showarrow = FALSE,
-  font = list(color = "#9999FF",
+  font = list(color = "#1F497D",
               size=13)
 )
 
@@ -248,9 +247,10 @@ fig <- subplot(plot_all, plot_inset) %>%
           title = list(text = "", font = list(color = "black", size = 14)),
           font = list(family = "Helvetica"),
           legend = list(orientation = 'h',
-                        traceorder = 'reversed',
+                        traceorder = 'reversed', #for some reason this does not work
                         font = list(size = 9),
-                        y = -0.5,
+                        y = -0.55,
+                        x = -0.05,
                         bgcolor = 'transparent'),
     xaxis = list(title = "",
                  tickangle=270,
@@ -270,9 +270,9 @@ fig <- subplot(plot_all, plot_inset) %>%
                  # automargin = FALSE,
                  # margin = list(l=100),
                  fixedrange = TRUE,
-                 linewidth=10, linecolor='transparent',  mirror = T,
+                 linewidth=1, linecolor='transparent',  mirror = T,
                  # range = list(0, 200+round(max(data_plot$VALUE/1000), 1)*1000),
-                 zeroline = T, showline = T, showgrid = T,
+                 zeroline = T, showline = T, showgrid = F,
                  domain=c(0,1)),
     xaxis2 = list(title = "",
                   showticklabels = FALSE,
@@ -291,8 +291,8 @@ fig <- subplot(plot_all, plot_inset) %>%
                   ticktext = ticktexts2,
                   fixedrange = TRUE,
                   # range = list(0, 200+round(max(data_inset$VALUE/1000), 1)*1000),
-                  zeroline = T, showline = F, showgrid = T,
-                  domain=c(0.50,1)),
+                  zeroline = T, showline = F, showgrid = F,
+                  domain=c(0.45,1)),
     annotations = myannotations
   )
 ```

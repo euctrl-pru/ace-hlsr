@@ -210,7 +210,7 @@ fig <- subplot(plot_fin_ce, plot_inset) %>%
                  fixedrange = TRUE,
                  linewidth=10, linecolor='transparent',  mirror = T,
                  # range = list(0, 200+round(max(data_plot$VALUE/1000), 1)*1000),
-                 zeroline = T, showline = T, showgrid = T,
+                 zeroline = T, showline = T, showgrid = F,
                  domain=c(0,1)),
     xaxis2 = list(title = "",
                   showticklabels = FALSE,
@@ -229,7 +229,7 @@ fig <- subplot(plot_fin_ce, plot_inset) %>%
                   # ticktext = ticktexts2,
                   fixedrange = TRUE,
                   # range = list(0, 200+round(max(data_inset$VALUE/1000), 1)*1000),
-                  zeroline = T, showline = F, showgrid = T,
+                  zeroline = T, showline = F, showgrid = F,
                   domain=c(0.65,1)),
     annotations = myannotations
   )
