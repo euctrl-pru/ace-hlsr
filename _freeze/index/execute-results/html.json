@@ -1,8 +1,10 @@
 {
-  "hash": "1c6224174ce03594b781bebcc6c6c172",
+  "hash": "09ae0f15818a9463b4752f3424f1d1f0",
   "result": {
     "markdown": "\n\n\n## Welcome {.unnumbered}\n\nThis document provides a first insight on the level of 2021 cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the official release of the ACE 2021 benchmarking report.\n\nThis document is also available for download as a\n[PDF version](https://www.eurocontrol.int/ACE/HighLevelSummary-Reports/HighLevelSummaryReport2021.pdf){target=\"_blank\"}.\n\n\n### IMPORTANT NOTICE {.unnumbered}\n\n[Data contained in this document are preliminary and subject to changes before the publication of the final ACE 2021 benchmarking report in May 2023.]{style=\"color: red;\"}\n",
-    "supporting": [],
+    "supporting": [
+      "index_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
