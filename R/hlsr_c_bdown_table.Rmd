@@ -28,7 +28,7 @@ library(htmltools)
 
 ## import data
 
-cost_data  <-  read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/Project/ACE/Data for ACE landing page and digital reports/hlsr2021_data.xlsx",
+cost_data  <-  read_xlsx("data/hlsr2021_data.xlsx",
                        sheet = "F_Cost breakdown",
                        range = cell_limits(c(9, 1), c(NA, 4))) %>%
   as_tibble() %>% 
@@ -36,7 +36,7 @@ cost_data  <-  read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/
   mutate(across(COST_TYPE, str_replace, 'Sum of ', ''))
 
 
-atco_data  <-  read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/Project/ACE/Data for ACE landing page and digital reports/hlsr2021_data.xlsx",
+atco_data  <-  read_xlsx("data/hlsr2021_data.xlsx",
                        sheet = "F_Cost breakdown",
                        range = cell_limits(c(9, 12), c(NA, 15))) %>%
   as_tibble() %>% 

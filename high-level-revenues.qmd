@@ -13,7 +13,7 @@ library(dplyr)
 library(readxl)
 
 #import data
-data_raw  <-  read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/Project/ACE/Data for ACE landing page and digital reports/hlsr2021_data.xlsx",
+data_raw  <-  read_xlsx("data/hlsr2021_data.xlsx",
                        sheet = "F_Revenue",
                        range = cell_limits(c(9, 1), c(NA, 4))) %>%
   as_tibble() %>% 
@@ -102,7 +102,7 @@ knitr::include_graphics('figures/Figure-2-4.png')
 Staff costs were by far the main source of savings in `r year_report` (-€221.4M). This reflects both the effect of temporary measures implemented in 2020 and 2021 (e.g. short time work, furlough schemes, reduced remuneration...) but also the effect of redundancy plans. <br><br> A majority of ANSPs also maintained lower level of non-staff operating costs or reduced it further in 2021 leading to a decrease of -€102.4M. Similarly, the cancellation or deferral of non-essential investments resulted in further reduction in depreciation costs (-€42.3M). Exceptional costs decreased by -€94.4M in 2021 mainly reflecting the fact that this cost item was particularly high in 2020 due to the reporting of redundancy costs.<br><br>The only cost item increasing in 2021 was the cost of capital (+€52.2M), mainly due to large increases for DHMI and NATS, reflecting increases in their asset base and weighted average cost of capital.
 :::
 
-![Changes in ATM/CNS provision costs, `r year_report-5`-`r year_report` (real terms)](./figures/Figure-2-3.png){#fig-figure-2-3 width="75%"}
+![Changes in ATM/CNS provision costs, `r year_report-5`-`r year_report` (real terms)](./figures/Figure-2-3.png){width="75%"}
 
 The Pan-European ANSPs employed a total of 53 014 staff in 2021 (comprising 52 164 staff providing ATM/CNS services and 850 internal MET staff). Some 16 781 staff (32%) were ATCOs working on operational duty, split between ACCs (55%) and APP/TWR facilities (45%). On average, 3.1 additional staff are required for every ATCO in OPS in Europe.
 

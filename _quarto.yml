@@ -1,6 +1,10 @@
 project:
   type: book
   output-dir: _book
+execute:
+  freeze: auto
+  echo: false
+  warning: false
   
 bibliography: references.bib
 # csl: ieee-with-url.csl

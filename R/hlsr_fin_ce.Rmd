@@ -14,7 +14,7 @@ library(stringr)
 
 ```{r, echo=FALSE}
 # import data
-data_raw <- read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/Project/ACE/Data for ACE landing page and digital reports/hlsr2021_data.xlsx",
+data_raw <- read_xlsx("data/hlsr2021_data.xlsx",
 sheet = "F_Fin CE",
 range = cell_limits(c(7, 1), c(NA, 4))) %>%
   as_tibble() %>% 
