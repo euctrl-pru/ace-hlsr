@@ -38,7 +38,7 @@ trm_reve_apt_perc <- sprintf("%0.1f%%", trm_reve_apt/trm_reve*100)
 
 ```
 
-This section provides a [preliminary]{.underline} presentation of high-level revenues, costs and staff data provided in ANSPs ACE `r year_report` data submissions. Total ANS revenues in `r year_report` amounted to `r total_reve_f`. Most en-route revenues come from the collection of en-route charges (`r ert_reve_charge_perc`, see left pie chart). The proportion of terminal revenues from charges is lower (`r trm_reve_charge_perc`, see right pie chart), as additional income may directly come from airport operators (`r trm_reve_apt_perc` e.g. through a contractual arrangement between the ANSP and the airport operator).
+This chapter provides a [preliminary]{.underline} presentation of high-level revenues, costs and staff data provided in ANSPs ACE `r year_report` data submissions. Total ANS revenues in `r year_report` amounted to `r total_reve_f`. Most en-route revenues come from the collection of en-route charges (`r ert_reve_charge_perc`, see left pie chart). The proportion of terminal revenues from charges is lower (`r trm_reve_charge_perc`, see right pie chart), as additional income may directly come from airport operators (`r trm_reve_apt_perc` e.g. through a contractual arrangement between the ANSP and the airport operator).
 
 ::: {#fig-figure-2-1}
 ```{r}
