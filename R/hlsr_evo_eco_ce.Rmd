@@ -1,5 +1,5 @@
 ---
-title: "hlsr_eco_Ce"
+title: "hlsr_eco_ce"
 output: html_document
 ---
 
@@ -47,7 +47,7 @@ data_calc <- data_merged %>%
   select(YEAR_DATA, FIN_CE, DELAY_ERT_CPH, DELAY_ARP_CPH, ECO_CE, ECO_CE_EVO)  %>% 
   filter(YEAR_DATA != min(YEAR_DATA))
 
-# prepare data for main plot
+# prepare data for plot
 data_prep <- data_calc  %>% 
   mutate(LABELS = round(ECO_CE_EVO,3)
   ) %>% 
@@ -127,7 +127,7 @@ p <- plot_ly(
     ),
     yaxis = list(
       title = paste0("\u20AC per composite flight-hour (", max(DT$YEAR_DATA)," prices)"),
-      titlefont = list(size = 13),
+      titlefont = list(size = 12),
       showgrid = F)
   ) %>%
   add_annotations(
