@@ -25,7 +25,6 @@ The concept of economic cost-effectiveness, developed by the PRC, is defined as 
 ```
 &nbsp;
 :::
-
 Trend of unit economic costs at Pan-European system level, `r year_report-5`-`r year_report` (real terms)
 :::
 
