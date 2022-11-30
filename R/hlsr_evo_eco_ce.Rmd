@@ -114,7 +114,7 @@ p <- plot_ly(
     font = list(family = "Helvetica"),
     legend = list(orientation = 'h',
                   traceorder = 'reversed', #for some reason this does not work
-                  font = list(size = 10),
+                  font = list(size = 11),
                   y = -0.1,
                   x = 0.0,
                   bgcolor = 'transparent'),

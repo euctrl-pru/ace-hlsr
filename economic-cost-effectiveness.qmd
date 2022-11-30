@@ -16,10 +16,15 @@ The concept of economic cost-effectiveness, developed by the PRC, is defined as 
 ```{r}
 #| child: R/hlsr_evo_eco_ce.Rmd
 ```
-_
+&nbsp;
 :::
 
-![](figures/Figure-3-1-Right.png){#fig-figure-3-1-right}
+::: {#fig-figure-3-1-right}
+```{r}
+#| child: R/hlsr_evo_eco_ce_comp.Rmd
+```
+&nbsp;
+:::
 
 Trend of unit economic costs at Pan-European system level, `r year_report-5`-`r year_report` (real terms)
 :::
