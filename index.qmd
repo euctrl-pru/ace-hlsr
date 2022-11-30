@@ -3,7 +3,6 @@
 ```
 
 ## Welcome {.unnumbered}
-Oscar line
 This document provides a first insight on the level of `r year_report` cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the official release of the ACE `r year_report` benchmarking report.
 
 This document is also available for download as a
