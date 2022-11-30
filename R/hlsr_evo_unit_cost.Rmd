@@ -12,7 +12,7 @@ library(plotly)
 ```
 
 ```{r, echo=FALSE, warning=FALSE, out.width="70%", out.height="300px", fig.align = 'center'}
-ace_graph_data <- read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/Project/ACE/Data for ACE landing page and digital reports/hlsr2021_data.xlsx",
+ace_graph_data <- read_xlsx("data/hlsr2021_data.xlsx",
             sheet = "F_Unit cost",
             range = cell_limits(c(18, 2), c(24, NA))) %>%
     as_tibble() %>% 

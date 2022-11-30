@@ -15,18 +15,18 @@ library(tidyr)
 
 ```{r, echo=FALSE}
 # import data
-data_raw <- read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/Project/ACE/Data for ACE landing page and digital reports/hlsr2021_data.xlsx",
+data_raw <- read_xlsx("data/hlsr2021_data.xlsx",
 sheet = "F_Eco CE",
 range = cell_limits(c(7, 1), c(NA, 3))) %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
   as_tibble() 
 
-data_raw_extra <- read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/Project/ACE/Data for ACE landing page and digital reports/hlsr2021_data.xlsx",
+data_raw_extra <- read_xlsx("data/hlsr2021_data.xlsx",
 sheet = "F_Eco CE",
 range = cell_limits(c(7, 5), c(NA, 7))) %>%
   as_tibble() %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
   mutate(FIN_CE = COST_CONTROLLABLE/COMPOSITE_FLIGHTHOUR) 
 
-cost_delay <- read_xlsx("//sky.corp.eurocontrol.int/DFSRoot/Groups/HQ/dgof-pru/Project/ACE/Data for ACE landing page and digital reports/hlsr2021_data.xlsx",
+cost_delay <- read_xlsx("data/hlsr2021_data.xlsx",
 sheet = "F_Eco CE",
 range = cell_limits(c(7, 10), c(8, 10))) %>%
   as_tibble() %>% pull()
