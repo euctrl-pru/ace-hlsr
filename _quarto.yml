@@ -1,9 +1,5 @@
 project:
   type: book
-execute:
-  freeze: auto
-  echo: false
-  warning: false
 
 bibliography: references.bib
 # csl: ieee-with-url.csl
@@ -38,6 +34,9 @@ book:
     - cash-and-liquidity.qmd
     - disclaimer.qmd
   site-url: "https://eurocontrol.int/"
+  link-external-newwindow: true
+  execute:
+    echo: false
   navbar:
     background: light
     search: false
