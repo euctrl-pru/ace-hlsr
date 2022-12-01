@@ -8,7 +8,7 @@ The concept of economic cost-effectiveness, developed by the PRC, is defined as 
 
 [^economic-cost-effectiveness-1]: See https://ansperformance.eu/economics/ace/ace-handbook/ for more information on the methodology used to compute composite flight-hours and economic costs.
 
-@fig-figure-3-1 shows [preliminary results]{.underline} on the changes in economic cost-effectiveness between `r year_report-5` and `r year_report` at Pan-European system level. @fig-figure-3-1-left shows the changes in unit economic costs, while @fig-figure-3-1-right provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays.
+@fig-figure-3-1 shows [preliminary results]{.underline} on the changes in economic cost-effectiveness between {{< var doc.year_report_minus5 >}} and {{< var doc.year_report >}} at Pan-European system level. @fig-figure-3-1-left shows the changes in unit economic costs, while @fig-figure-3-1-right provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays.
 
 ::: {#fig-figure-3-1 layout-ncol="2"}
 ::: {#fig-figure-3-1-left}
@@ -25,16 +25,16 @@ The concept of economic cost-effectiveness, developed by the PRC, is defined as 
 ```
 &nbsp;
 :::
-Trend of unit economic costs at Pan-European system level, `r year_report-5`-`r year_report` (real terms)
+Trend of unit economic costs at Pan-European system level, {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} (real terms)
 :::
 
-@fig-figure-3-2 shows [preliminary results]{.underline} at ANSP level (dotted lines represent the 1st and 3rd quartiles). On average, the share of ATFM delays in `r year_report` was some 4% (compared to 3% in `r year_report-1` and 22% in `r year_report-2`), and only four ANSPs had ATFM delays representing 5% or more of their unit economic costs: HASP (32%), NAV Portugal (8%), DSNA (7%) and LVNL (5%)
+@fig-figure-3-2 shows [preliminary results]{.underline} at ANSP level (dotted lines represent the 1st and 3rd quartiles). On average, the share of ATFM delays in {{< var doc.year_report >}} was some 4% (compared to 3% in {{< var doc.year_report_minus1 >}} and 22% in {{< var doc.year_report_minus2 >}}), and only four ANSPs had ATFM delays representing 5% or more of their unit economic costs: HASP (32%), NAV Portugal (8%), DSNA (7%) and LVNL (5%)
 
 ::: {#fig-figure-3-2}
 ```{r}
 #| child: R/hlsr_eco_ce.Rmd
 ```
-Economic gate-to-gate cost-effectiveness, `r year_report`
+Economic gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 :::
 
 
