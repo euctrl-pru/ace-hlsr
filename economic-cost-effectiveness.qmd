@@ -32,7 +32,9 @@ Trend of unit economic costs at Pan-European system level, {{< var doc.year_repo
 
 ::: {#fig-figure-3-2}
 ```{r}
-#| child: R/hlsr_eco_ce.Rmd
+#| file: R/hlsr_eco_ce.R
+#| out.height: "450px"
+#| out.width: "100%"
 ```
 Economic gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 :::

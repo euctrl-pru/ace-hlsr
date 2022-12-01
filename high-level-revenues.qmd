@@ -67,7 +67,7 @@ The ACE benchmarking analysis focuses on the specific costs of providing gate-to
 
 ::: {#fig-figure-2-3}
 ```{r}
-#| child: R/hlsr_c_bdown_pie.Rmd
+#| file: R/hlsr_c_bdown_pie.R
 ```
 
 ```{r}
