@@ -1,7 +1,3 @@
-```{r include=FALSE}
- year_report <- 2021
-```
-
 # ANSPs Cash and Liquidity Issues as a Result of the Covid-19 Pandemic {#sec-covid}
 
 This section provides a [preliminary analysis]{.ul} of specific indicators that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic in {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}}.
