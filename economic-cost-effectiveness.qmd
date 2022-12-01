@@ -1,7 +1,3 @@
-```{r include=FALSE}
- year_report <- 2021
-```
-
 # Economic cost-effectiveness {#sec-economic}
 
 The concept of economic cost-effectiveness, developed by the PRC, is defined as the sum of gate-to-gate ATM/CNS provision costs and the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between ATC capacity and costs[^economic-cost-effectiveness-1].
