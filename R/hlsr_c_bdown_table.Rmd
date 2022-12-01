@@ -22,13 +22,14 @@ library(readxl)
 library(reactable)
 library(janitor)
 library(htmltools)
+library(here)
 ```
 
 ```{r, echo=FALSE, warning=FALSE}
 
 ## import data
 
-cost_data  <-  read_xlsx("data/hlsr2021_data.xlsx",
+cost_data  <-  read_xlsx(here("data","hlsr2021_data.xlsx"),
                        sheet = "F_Cost breakdown",
                        range = cell_limits(c(9, 1), c(NA, 4))) %>%
   as_tibble() %>% 

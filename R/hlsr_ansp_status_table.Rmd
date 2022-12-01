@@ -19,11 +19,12 @@ library(dplyr)
 library(readxl)
 library(reactable)
 library(htmltools)
+library(here)
 ```
 
 ```{r echo=FALSE}
 ## import ANSP table
-ansp  <- read_xlsx("data/hlsr2021_data.xlsx",
+ansp  <- read_xlsx(here("data","hlsr2021_data.xlsx"),
                        sheet = "Status",
                        range = cell_limits(c(8, 1), c(NA, 2))) %>%
   as_tibble() %>% 

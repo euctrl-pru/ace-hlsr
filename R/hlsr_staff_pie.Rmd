@@ -15,12 +15,13 @@ library(here)
 library(webshot)
 library(htmlwidgets)
 library(RSelenium)
+library(here)
 # library(ggrepel)
 ```
 
 ```{r, echo=FALSE}
 ## import data
-pie_staff_data_all  <-  read_xlsx("data/hlsr2021_data.xlsx",
+pie_staff_data_all  <-  read_xlsx(here("data","hlsr2021_data.xlsx"),
                        sheet = "F_Staff",
                        range = cell_limits(c(9, 1), c(NA, 2))) %>%
   as_tibble() %>% 

@@ -9,10 +9,11 @@ library(dplyr)
 library(stringr)
 library(readxl)
 library(plotly)
+library(here)
 ```
 
 ```{r, echo=FALSE, warning=FALSE, out.width="70%", out.height="300px", fig.align = 'center'}
-ace_graph_data <- read_xlsx("data/hlsr2021_data.xlsx",
+ace_graph_data <- read_xlsx(here("data","hlsr2021_data.xlsx"),
             sheet = "F_Unit cost",
             range = cell_limits(c(18, 2), c(24, NA))) %>%
     as_tibble() %>% 

@@ -17,7 +17,7 @@ library(here)
 
 ```{r, echo=FALSE}
 ## import data
-pie_cost_data  <-  read_xlsx("data/hlsr2021_data.xlsx",
+pie_cost_data  <-  read_xlsx(here("data","hlsr2021_data.xlsx"),
                        sheet = "F_Cost breakdown",
                        range = cell_limits(c(9, 1), c(NA, 4))) %>%
   as_tibble() %>% 
