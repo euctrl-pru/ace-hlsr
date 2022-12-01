@@ -19,7 +19,9 @@ The concept of economic cost-effectiveness, developed by the PRC, is defined as 
 
 ::: {#fig-figure-3-1-right}
 ```{r}
-#| child: R/hlsr_evo_eco_ce_comp.Rmd
+#| file: R/hlsr_evo_eco_ce_comp.R
+#| out.height: "300px"
+#| out.width: "100%"
 ```
 &nbsp;
 :::
