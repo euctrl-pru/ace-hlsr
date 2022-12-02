@@ -128,6 +128,10 @@ book:
             icon: "arrow-return-right"
             href: "https://ansperformance.eu/economics/finance/"
 
+          - text: "Standard Inputs"
+            icon: "arrow-return-right"
+            href: "https://ansperformance.eu/economics/standard-inputs-overview/"
+
             # ---
           - text: "<i class='fas fa-user-friends'></i> **Stakeholder views**"
             href: "https://ansperformance.eu/dashboard/stakeholder/"
