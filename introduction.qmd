@@ -1,5 +1,6 @@
 # Introduction {#dec-intro}
 
+
 The ACE benchmarking work is commissioned by the Performance Review Commission (PRC) and carried out by the EUROCONTROL Performance Review Unit (PRU) using information provided by Air Navigation Services Providers (ANSPs) in compliance with Decision No. 88 of the Permanent Commission of EUROCONTROL on economic information disclosure[^introduction-1].
 
 [^introduction-1]: Due to the war in Ukraine, UkSATSE was not able to provide ACE {{< var doc.year_report >}} data. UkSATSE is therefore excluded from the ACE 2021 analysis. On the other hand, BHANSA, the ANSP operating in Bosnia and Herzegovina, joined in ACE project in {{< var doc.year_report >}}. BHANSA data for the years {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}} are therefore included in the ACE {{< var doc.year_report >}} analysis. .
