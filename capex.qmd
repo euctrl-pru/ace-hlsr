@@ -1,5 +1,6 @@
 # Capital expenditure in 2020-2021 compared to their historical average {#sec-capex}
 
+
 This section provides a preliminary analysis of capital expenditures in 2020 and 2021 compared with their historical levels and looks at contextual elements such as traffic, ATFM delays and staffing. Although the relationship between these elements is not straightforward, with many factors affecting the quality of service provided by ANSPs, it is important to consider the situation in which ANSPs were operating at the time of making investment decisions.
 
 @fig-figure-6-1 shows that, on average, capex across the 2011-2019 period was €1.1 billion per year, with less spent in the first part of the period (€1.0 billion 2011-2014) and more in the second part (€1.2 billion 2015-2019). After a -27.1% drop in 2020 compared to 2019, capex rose by +5.8% in 2021, but, overall, remained -5.3% below the 2011-2019 average.
