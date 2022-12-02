@@ -37,8 +37,11 @@ This chapter provides a [preliminary]{.underline} presentation of high-level rev
 
 ::: {#fig-figure-2-1}
 ```{r}
-#| child: R/hlsr_rev_pie.Rmd
+#| file: R/hlsr_rev_pie.R
+#| out.height: "320px"
+#| out.width: "100%"
 ```
+
 
 ```{r}
 #| child: R/hlsr_rev_table.Rmd
@@ -68,6 +71,8 @@ The ACE benchmarking analysis focuses on the specific costs of providing gate-to
 ::: {#fig-figure-2-3}
 ```{r}
 #| file: R/hlsr_c_bdown_pie.R
+#| out.width: "100%"
+#| out.height: "300px"
 ```
 
 ```{r}
@@ -103,7 +108,9 @@ The Pan-European ANSPs employed a total of 53 014 staff in 2021 (comprising 52 1
 
 ::: {#fig-figure-2-6}
 ```{r}
-#| child: R/hlsr_staff_pie.Rmd
+#| file: R/hlsr_staff_pie.R
+#| out.width: "100%"
+#| out.height: "300px"
 ```
 
 Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, {{< var doc.year_report >}}

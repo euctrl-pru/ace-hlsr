@@ -1,22 +1,15 @@
----
-title: "hlsr_evo_unit_cost"
-output: html_document
----
 
-```{r, echo=FALSE, include=FALSE}
 ## libraries
 library(dplyr)
 library(stringr)
 library(readxl)
 library(plotly)
 library(here)
-```
 
-```{r, echo=FALSE, warning=FALSE, out.width="70%", out.height="300px", fig.align = 'center'}
 ace_graph_data <- read_xlsx(here("data","hlsr2021_data.xlsx"),
-            sheet = "F_Unit cost",
-            range = cell_limits(c(18, 2), c(24, NA))) %>%
-    as_tibble() %>% 
+                            sheet = "F_Unit cost",
+                            range = cell_limits(c(18, 2), c(24, NA))) %>%
+  as_tibble() %>% 
   mutate_all(as.numeric)%>%
   rename(year_data=1)
 
@@ -108,9 +101,6 @@ plot_ACE <- ace_graph_data %>%
   ) %>%
   config(displaylogo = FALSE, modeBarButtons = list(list("toImage"))
   )
-```
 
-```{r echo=FALSE, warning=FALSE, out.height="300px"}
 plot_ACE
 
-```

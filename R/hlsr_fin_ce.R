@@ -1,9 +1,4 @@
----
-title: "hlsr_fin_ce"
-output: html_document
----
 
-```{r, echo=FALSE, include=FALSE}
 ## libraries
 library(dplyr)
 library(stringr)
@@ -11,13 +6,11 @@ library(readxl)
 library(plotly)
 library(stringr)
 library(here)
-```
 
-```{r, echo=FALSE}
 # import data
 data_raw <- read_xlsx(here("data","hlsr2021_data.xlsx"),
-sheet = "F_Fin CE",
-range = cell_limits(c(7, 1), c(NA, 4))) %>%
+                      sheet = "F_Fin CE",
+                      range = cell_limits(c(7, 1), c(NA, 4))) %>%
   as_tibble() %>% 
   rename(VALUE=2, COST =3, CFH =4)
 
@@ -30,7 +23,7 @@ data_plot <- data_raw  %>%
          LABELS = format(round(VALUE,0), big.mark = " ")
   ) %>% 
   mutate(LABELS = if_else(VALUE >=1000, LABELS,
-           str_sub(LABELS, start= -nchar(LABELS)+1)) #to avoid the leading space created by format
+                          str_sub(LABELS, start= -nchar(LABELS)+1)) #to avoid the leading space created by format
   )
 
 #prepare data for inset
@@ -75,7 +68,7 @@ plot_fin_ce <- data_plot %>%
     opacity = 0.5,
     hoverinfo = "none",
     showlegend = F
-    ) %>%
+  ) %>%
   add_trace(
     inherit = FALSE,
     x = ~ ANSP_NAME,
@@ -91,8 +84,8 @@ plot_fin_ce <- data_plot %>%
   config( responsive = FALSE,
           displaylogo = FALSE,
           displayModeBar = F
-         # modeBarButtons = list(list("toImage"))
-    )
+          # modeBarButtons = list(list("toImage"))
+  )
 
 plot_inset <- data_inset %>%
   plot_ly(
@@ -125,20 +118,20 @@ plot_inset <- data_inset %>%
     hoverinfo = "none",
     showlegend = F
   ) %>% 
-    add_annotations (
-     text = ~ ANSP_NAME,
-       x = ~ ANSP_NAME,
-       y = ~ LAB_COORD,      
-      showarrow = F,
-      xref = "x",
-      yref = "y",
-      yanchor = "bottom",
-      xanchor = "center",
-      align = "left",
-      textangle = -90,
-      font = list(color = 'black', size = 9)
-      ) %>% 
-    add_trace(
+  add_annotations (
+    text = ~ ANSP_NAME,
+    x = ~ ANSP_NAME,
+    y = ~ LAB_COORD,      
+    showarrow = F,
+    xref = "x",
+    yref = "y",
+    yanchor = "bottom",
+    xanchor = "center",
+    align = "left",
+    textangle = -90,
+    font = list(color = 'black', size = 9)
+  ) %>% 
+  add_trace(
     inherit = FALSE,
     x = ~ ANSP_NAME,
     y = ~ QUART1,
@@ -163,8 +156,8 @@ plot_inset <- data_inset %>%
     showlegend = F
   ) %>%
   config(responsive = FALSE,
-        displaylogo = FALSE,
-        displayModeBar = F
+         displaylogo = FALSE,
+         displayModeBar = F
          # modeBarButtons = list(list("toImage"))
   )
 
@@ -199,51 +192,49 @@ fig <- subplot(plot_fin_ce, plot_inset) %>%
           bargap = 0.45,
           title = list(text = "", font = list(color = "black", size = 14)),
           font = list(family = "Helvetica"),
-    xaxis = list(title = "",
-                 tickangle=270,
-                 tickfont = list(size=11),
-                 autotick = F,
-                 # tick0=0.25,
-                 fixedrange = TRUE,
-                 showgrid = F,
-                 categoryorder = "total descending",
-                 domain=c(0,1)),
-    yaxis = list(title = paste("\U20AC","per composite flight-hour"),
-                 titlefont   = list(size = 12),
-                 tickfont = list(size=11),
-                 # dtick = 200,
-                 tickvals = ticklabels1,
-                 ticktext = ticktexts1,
-                 # automargin = FALSE,
-                 # margin = list(l=100),
-                 fixedrange = TRUE,
-                 linewidth=10, linecolor='transparent',  mirror = T,
-                 # range = list(0, 200+round(max(data_plot$VALUE/1000), 1)*1000),
-                 zeroline = T, showline = T, showgrid = F,
-                 domain=c(0,1)),
-    xaxis2 = list(title = "",
-                  showticklabels = FALSE,
-                  # tickangle=270,
-                  # tickfont = list(size=10),
-                  autotick = F,
-                  fixedrange = TRUE,
-                  showgrid = F,
-                  categoryorder = "total descending",
-                  domain=c(0.65,1)),
-    yaxis2 = list(title = "",
-                  # titlefont   = list(size = 13),
-                  tickfont = list(size=10),
-                  # dtick = 200,
-                  tickvals = ticklabels2,
-                  ticktext = ticktexts2,
-                  fixedrange = TRUE,
-                  # range = list(0, 200+round(max(data_inset$VALUE/1000), 1)*1000),
-                  zeroline = T, showline = F, showgrid = F,
-                  domain=c(0.65,1)),
-    annotations = myannotations
+          xaxis = list(title = "",
+                       tickangle=270,
+                       tickfont = list(size=11),
+                       autotick = F,
+                       # tick0=0.25,
+                       fixedrange = TRUE,
+                       showgrid = F,
+                       categoryorder = "total descending",
+                       domain=c(0,1)),
+          yaxis = list(title = paste("\U20AC","per composite flight-hour"),
+                       titlefont   = list(size = 12),
+                       tickfont = list(size=11),
+                       # dtick = 200,
+                       tickvals = ticklabels1,
+                       ticktext = ticktexts1,
+                       # automargin = FALSE,
+                       # margin = list(l=100),
+                       fixedrange = TRUE,
+                       linewidth=10, linecolor='transparent',  mirror = T,
+                       # range = list(0, 200+round(max(data_plot$VALUE/1000), 1)*1000),
+                       zeroline = T, showline = T, showgrid = F,
+                       domain=c(0,1)),
+          xaxis2 = list(title = "",
+                        showticklabels = FALSE,
+                        # tickangle=270,
+                        # tickfont = list(size=10),
+                        autotick = F,
+                        fixedrange = TRUE,
+                        showgrid = F,
+                        categoryorder = "total descending",
+                        domain=c(0.65,1)),
+          yaxis2 = list(title = "",
+                        # titlefont   = list(size = 13),
+                        tickfont = list(size=10),
+                        # dtick = 200,
+                        tickvals = ticklabels2,
+                        ticktext = ticktexts2,
+                        fixedrange = TRUE,
+                        # range = list(0, 200+round(max(data_inset$VALUE/1000), 1)*1000),
+                        zeroline = T, showline = F, showgrid = F,
+                        domain=c(0.65,1)),
+          annotations = myannotations
   )
-```
 
-```{r, echo=FALSE, warning=FALSE, out.width="100%", out.height="450px"}
 fig
-```
+
