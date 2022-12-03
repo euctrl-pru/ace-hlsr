@@ -28,7 +28,7 @@ The concept of economic cost-effectiveness, developed by the PRC, is defined as 
 Trend of unit economic costs at Pan-European system level, {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} (real terms)
 :::
 
-@fig-figure-3-2 shows [preliminary results]{.underline} at ANSP level (dotted lines represent the 1st and 3rd quartiles). On average, the share of ATFM delays in {{< var doc.year_report >}} was some 4% (compared to 3% in {{< var doc.year_report_minus1 >}} and 22% in {{< var doc.year_report_minus2 >}}), and only four ANSPs had ATFM delays representing 5% or more of their unit economic costs: HASP (32%), NAV Portugal (8%), DSNA (7%) and LVNL (5%)
+@fig-figure-3-2 shows [preliminary results]{.underline} at ANSP level (dotted lines represent the 1st and 3rd quartiles). On average, the share of ATFM delays in {{< var doc.year_report >}} was some 4% (compared to 3% in {{< var doc.year_report_minus1 >}} and 22% in {{< var doc.year_report_minus2 >}}), and only four ANSPs had ATFM delays representing 5% or more of their unit economic costs: HASP (32%), NAV Portugal (8%), DSNA (7%) and LVNL (5%).
 
 ::: {#fig-figure-3-2}
 ```{r}
