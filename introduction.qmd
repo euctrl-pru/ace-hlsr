@@ -2,13 +2,13 @@
 
 The ACE benchmarking work is commissioned by the Performance Review Commission (PRC) and carried out by the EUROCONTROL Performance Review Unit (PRU) using information provided by Air Navigation Services Providers (ANSPs) in compliance with Decision No. 88 of the Permanent Commission of EUROCONTROL on economic information disclosure[^introduction-1].
 
-[^introduction-1]: Due to the war in Ukraine, UkSATSE was not able to provide ACE {{< var doc.year_report >}} data. UkSATSE is therefore excluded from the ACE 2021 analysis. On the other hand, BHANSA, the ANSP operating in Bosnia and Herzegovina, joined in ACE project in {{< var doc.year_report >}}. BHANSA data for the years {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}} are therefore included in the ACE {{< var doc.year_report >}} analysis. .
+[^introduction-1]: Due to the war in Ukraine, UkSATSE was not able to provide ACE {{< var doc.year_report >}} data. UkSATSE is therefore excluded from the ACE 2021 analysis. On the other hand, BHANSA, the ANSP operating in Bosnia and Herzegovina, joined in ACE project in {{< var doc.year_report >}}. BHANSA data for the years {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}} are therefore included in the ACE {{< var doc.year_report >}} analysis.
 
 The data processing, analysis and reporting are conducted with the assistance of the ACE Working Group, which comprises representatives from participating ANSPs, airspace users, regulatory authorities and the Performance Review Unit. This enables participants to share experiences and establish a common understanding of underlying assumptions and limitations of the data.
 
 The objective of this document is to provide a first insight on the level of {{< var doc.year_report >}} cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the release of the ACE {{< var doc.year_report >}} benchmarking report, which is planned end of May {{< var doc.year_report_plus2 >}}. It also presents specific financial indicators that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic. An initial examination of ANSPs capital expenditures in {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}} is also provided.
 
-Figure @fig-figure-1-1 illustrates the timeline for the production of the ACE {{< var doc.year_report >}} benchmarking report.
+@fig-figure-1-1 illustrates the timeline for the production of the ACE {{< var doc.year_report >}} benchmarking report.
 
 ![Timeline for the production of the ACE {{< var doc.year_report >}} benchmarking report](figures/Figure-1-1.png){#fig-figure-1-1 width="100%"}
 

@@ -1,15 +1,15 @@
 # ANSPs Cash and Liquidity Issues as a Result of the Covid-19 Pandemic {#sec-covid}
 
 
-This section provides a [preliminary analysis]{.ul} of specific indicators that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic in {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}}.
-Due to specific organisational and financial set up in HCAA, LVNL and MUAC, these three ANSPs are excluded from the analysis presented in this section.
+This chapter provides a [preliminary analysis]{.ul} of specific indicators that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic in {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}}.
+Due to specific organisational and financial set up in HASP, LVNL and MUAC, these three ANSPs are excluded from the analysis presented in this chapter.
 
 @fig-figure-5-1 presents the changes in ANSPs balance sheet structure as reported in their ACE data submissions at "Total ANS" level (i.e. en-route, terminal and other ANS). The scope is therefore wider than gate-to-gate ATM/CNS which is used to calculate the other ACE key performance indicators, but depending on what ANSPs include under "Other ANS", it might not necessarily match with the whole activities of the ANSP.
 
 ![Changes in ANSPs balance sheet structure (2019-{{< var doc.year_report >}})](figures/Figure-5-bal-str.png){#fig-figure-5-1 width="75%"}
 
 
-@fig-figure-toto shows capital and reserves increased by +4.2% in {{< var doc.year_report >}} but remained - €778M lower than in 2019.
+@fig-figure-toto shows capital and reserves increased by +4.2% in {{< var doc.year_report >}} but remained -€778M lower than in 2019.
 In the meantime, short and long term borrowings continued to increase (+33.5% in {{< var doc.year_report >}}), reaching €5 900M, which is three times higher than in 2019.
 
 ::: {#fig-figure-toto layout-ncol=2 width="50%"}

@@ -1,7 +1,7 @@
 # Financial cost-effectiveness {#sec-financial}
 
 
-This section provides a [preliminary analysis]{.underline} of financial cost-effectiveness.
+This chapter provides a [preliminary analysis]{.underline} of financial cost-effectiveness.
 
 ## Pan-European system level {#sec-fin_1}
 

@@ -83,8 +83,6 @@ The ACE benchmarking analysis focuses on the specific costs of providing gate-to
 Gate-to-gate ATM/CNS provision costs at Pan-European system level, {{< var doc.year_report >}}
 :::
 
-In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 56% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-3).
-
 ::: blue
 ::: columns
 ::: {.column width="35%"}
@@ -103,9 +101,11 @@ knitr::include_graphics('figures/Figure-2-4.png')
 Staff costs were by far the main source of savings in {{< var doc.year_report >}} (-€221.4M). This reflects both the effect of temporary measures implemented in 2020 and 2021 (e.g. short time work, furlough schemes, reduced remuneration...) but also the effect of redundancy plans. <br><br> A majority of ANSPs also maintained lower level of non-staff operating costs or reduced it further in 2021 leading to a decrease of -€102.4M. Similarly, the cancellation or deferral of non-essential investments resulted in further reduction in depreciation costs (-€42.3M). Exceptional costs decreased by -€94.4M in 2021 mainly reflecting the fact that this cost item was particularly high in 2020 due to the reporting of redundancy costs.<br><br>The only cost item increasing in 2021 was the cost of capital (+€52.2M), mainly due to large increases for DHMI and NATS, reflecting increases in their asset base and weighted average cost of capital.
 :::
 
-![Changes in ATM/CNS provision costs, {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} (real terms)](figures/Figure-2-3.png){width="75%"}
+In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 56% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-3).
 
-The Pan-European ANSPs employed a total of 53 014 staff in 2021 (comprising 52 164 staff providing ATM/CNS services and 850 internal MET staff). Some 16 781 staff (32%) were ATCOs working on operational duty, split between ACCs (55%) and APP/TWR facilities (45%). On average, 3.1 additional staff are required for every ATCO in OPS in Europe.
+![Changes in ATM/CNS provision costs (real terms)](figures/Figure-2-3.png){#fig-figure-2-3 width="75%"}
+
+The Pan-European ANSPs employed a total of 53 014 staff in 2021 (comprising 52 164 staff providing ATM/CNS services and 850 internal MET staff). Some 16 781 staff (32%) were ATCOs working on operational duty, split between ACCs (55%) and APP/TWR facilities (45%). On average, 2.1 additional staff are required for every ATCO in OPS in Europe.
 
 ::: {#fig-figure-2-6}
 ```{r}
@@ -124,8 +124,8 @@ In {{< var doc.year_report >}}, the number of ATM/CNS staff fell by -1.5% (-796 
 The lower staff number observed for {{< var doc.year_report >}} mainly reflects decreases in the following staff categories:
 
 -   Administrative staff (-338 FTEs, or -3.7%);
--   ATCOs in OPS (-201 FTEs, or 1.2%);
--   Ab-initio trainees (-126 FTEs, or 12.5%); and,
+-   ATCOs in OPS (-201 FTEs, or -1.2%);
+-   Ab-initio trainees (-126 FTEs, or -12.5%); and,
 -   Technical support staff for operational maintenance, monitoring and control (-102 FTEs, or -1.2%).
 
 On the other hand, increase is observed for ATCOs on other duties (+154 FTEs) reflecting a reallocation of some ATCOs from operational to non-operational duties due to the relatively low traffic levels in 2021 compared to pre-crisis. Minor increases are also observed for staff for ancillary services (+14 FTEs) and other staff (+25 FTEs).
