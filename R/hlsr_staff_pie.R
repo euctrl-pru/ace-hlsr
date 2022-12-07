@@ -56,6 +56,11 @@ pie_staff_data <- pie_staff_data %>%
     STAF_TYPE == 'STAF_ANCILLARY' ~ "#FF00FF",
     STAF_TYPE == 'STAF_OTHER' ~ "#993366"
   )
+  ) %>% 
+  mutate(LABEL =  paste0(LABEL,
+                         "\n",
+                         format(round(STAF/sum(STAF)*100,1), nsmall =1 ,big.mark= " "),
+                         "%")
   )
 
 # parameters for initial slice
@@ -75,7 +80,7 @@ pie_staff <- pie_staff_data %>%
   plot_ly(
     labels = ~LABEL, values = ~STAF, type = 'pie',
     hoverinfo = "none",
-    textinfo='label+percent',
+    textinfo='label',
     textfont = list(size = 10),
     marker = list(colors = ~MYCOLOR),
     # line = list(color = '#FFFFFF', width = 1)),
