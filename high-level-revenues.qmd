@@ -86,7 +86,7 @@ Gate-to-gate ATM/CNS provision costs at Pan-European system level, {{< var doc.y
 ::: blue
 ::: columns
 ::: {.column width="35%"}
-Between {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}}, total ATM/CNS provision costs fell by -4.9% (-€408.4M), reflecting cost reductions from 27 out of 38 ANSPs. When considering the savings already achieved in 2020, the cumulative decrease since 2019 is -8.8% (-€765M).
+Between {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}}, total ATM/CNS provision costs fell by -4.9% (-€408.9M), reflecting cost reductions from 27 out of 38 ANSPs. When considering the savings already achieved in 2020, the cumulative decrease since 2019 is -8.8% (-€765M).
 :::
 
 ::: {.column width="65%"}
@@ -98,7 +98,7 @@ knitr::include_graphics('figures/Figure-2-4.png')
 :::
 
 ::: blue
-Staff costs were by far the main source of savings in {{< var doc.year_report >}} (-€221.4M). This reflects both the effect of temporary measures implemented in 2020 and 2021 (e.g. short time work, furlough schemes, reduced remuneration...) but also the effect of redundancy plans. <br><br> A majority of ANSPs also maintained lower level of non-staff operating costs or reduced it further in 2021 leading to a decrease of -€102.4M. Similarly, the cancellation or deferral of non-essential investments resulted in further reduction in depreciation costs (-€42.3M). Exceptional costs decreased by -€94.4M in 2021 mainly reflecting the fact that this cost item was particularly high in 2020 due to the reporting of redundancy costs.<br><br>The only cost item increasing in 2021 was the cost of capital (+€52.2M), mainly due to large increases for DHMI and NATS, reflecting increases in their asset base and weighted average cost of capital.
+Staff costs were by far the main source of savings in {{< var doc.year_report >}} (-€221.7M). This reflects both the effect of temporary measures implemented in 2020 and 2021 (e.g. short time work, furlough schemes, reduced remuneration...) but also the effect of redundancy plans. <br><br> A majority of ANSPs also maintained lower level of non-staff operating costs or reduced it further in 2021 leading to a decrease of -€102.5M. Similarly, the cancellation or deferral of non-essential investments resulted in further reduction in depreciation costs (-€42.4M). Exceptional costs decreased by -€94.4M in 2021 mainly reflecting the fact that this cost item was particularly high in 2020 due to the reporting of redundancy costs.<br><br>The only cost item increasing in 2021 was the cost of capital (+€52.2M), mainly due to large increases for DHMI and NATS, reflecting increases in their asset base and weighted average cost of capital.
 :::
 
 In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 56% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-3).
