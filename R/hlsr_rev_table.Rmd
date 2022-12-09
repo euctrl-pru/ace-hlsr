@@ -26,9 +26,13 @@ library(here)
 ```
 
 ```{r, echo=FALSE, warning=FALSE}
+## data source
+source("data_source.R")
 
 ## import data
-data_raw  <-  read_xlsx(here("data","hlsr2021_data.xlsx"),
+data_raw  <-  read_xlsx(
+                       paste0(data_folder, data_file),
+                       # here("data","hlsr2021_data.xlsx"),
                        sheet = "F_Revenue",
                        range = cell_limits(c(9, 1), c(NA, 4))) %>%
   as_tibble() %>% 

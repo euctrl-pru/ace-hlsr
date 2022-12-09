@@ -6,20 +6,28 @@ library(plotly)
 library(stringr)
 library(tidyr)
 library(here)
+## data source
+source("R/data_source.R")
 
 # import data
-data_raw <- read_xlsx(here("data","hlsr2021_data.xlsx"),
+data_raw <- read_xlsx(
+                      paste0(data_folder, data_file),
+                        # here("data","hlsr2021_data.xlsx"), 
                       sheet = "F_Eco CE",
                       range = cell_limits(c(7, 1), c(NA, 3))) %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
   as_tibble() 
 
-data_raw_extra <- read_xlsx(here("data","hlsr2021_data.xlsx"),
+data_raw_extra <-  read_xlsx(
+                            paste0(data_folder, data_file),
+                            # here("data","hlsr2021_data.xlsx"),
                             sheet = "F_Eco CE",
                             range = cell_limits(c(7, 5), c(NA, 7))) %>%
   as_tibble() %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
   mutate(FIN_CE = COST_CONTROLLABLE/COMPOSITE_FLIGHTHOUR) 
 
-cost_delay <- read_xlsx(here("data","hlsr2021_data.xlsx"),
+cost_delay <-  read_xlsx(
+                        paste0(data_folder, data_file),
+                        # here("data","hlsr2021_data.xlsx"),
                         sheet = "F_Eco CE",
                         range = cell_limits(c(7, 10), c(8, 10))) %>%
   as_tibble() %>% pull()

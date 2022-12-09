@@ -13,8 +13,13 @@ library(RSelenium)
 library(here)
 # library(ggrepel)
 
+## data source
+source("R/data_source.R")
+
 ## import data
-pie_staff_data_all  <-  read_xlsx(here("data","hlsr2021_data.xlsx"),
+pie_staff_data_all  <-  read_xlsx(
+                                  paste0(data_folder, data_file),
+                                  # here("data","hlsr2021_data.xlsx"),
                                   sheet = "F_Staff",
                                   range = cell_limits(c(9, 1), c(NA, 2))) %>%
   as_tibble() %>% 
