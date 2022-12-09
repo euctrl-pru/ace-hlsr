@@ -47,7 +47,7 @@ book:
     background: light
     search: false
     title: false
-    logo: "images/EUROCONTROL-logo-standard-rgb.svg"
+    logo: "media/EUROCONTROL-logo-standard-rgb.svg"
     left:
       - text: "<i class='far fa-star fa-spin fa-fw'></i> Aviation Intelligence"
         menu:
