@@ -24,7 +24,7 @@ library(here)
 
 ```{r echo=FALSE}
 ## data source
-source("data_source.R")
+source(here("data_source.R"))
 
 ## import ANSP table
 ansp  <- read_xlsx(

@@ -10,7 +10,7 @@ library(magick)
 library(here)
 # library(ggrepel)
 ## data source
-source("R/data_source.R")
+source(here("data_source.R"))
 
 ## import data
 pie_data  <-  read_xlsx(

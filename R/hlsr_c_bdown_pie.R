@@ -7,7 +7,7 @@ library(htmltools)
 library(magick)
 library(here)
 ## data source
-source("R/data_source.R")
+source(here("data_source.R"))
 
 ## import data
 pie_cost_data  <- read_xlsx(

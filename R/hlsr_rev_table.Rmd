@@ -27,7 +27,7 @@ library(here)
 
 ```{r, echo=FALSE, warning=FALSE}
 ## data source
-source("data_source.R")
+source(here("data_source.R"))
 
 ## import data
 data_raw  <-  read_xlsx(

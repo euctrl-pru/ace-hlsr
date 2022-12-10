@@ -7,7 +7,7 @@ library(plotly)
 library(stringr)
 library(here)
 ## data source
-source("R/data_source.R")
+source(here("data_source.R"))
 
 # import data
 data_raw <-  read_xlsx(

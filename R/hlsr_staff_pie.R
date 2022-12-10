@@ -14,7 +14,7 @@ library(here)
 # library(ggrepel)
 
 ## data source
-source("R/data_source.R")
+source(here("data_source.R"))
 
 ## import data
 pie_staff_data_all  <-  read_xlsx(
