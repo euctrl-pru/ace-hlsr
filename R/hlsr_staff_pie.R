@@ -21,14 +21,17 @@ pie_staff_data_all  <-  read_xlsx(
                                   paste0(data_folder, data_file),
                                   # here("data","hlsr2021_data.xlsx"),
                                   sheet = "F_Staff",
-                                  range = cell_limits(c(9, 1), c(NA, 2))) %>%
+                                  range = cell_limits(c(9, 1), c(NA, 3))) %>%
   as_tibble() %>% 
   rename(STAF_TYPE = 'Data', STAF = 'Total') %>% 
   mutate(across(STAF_TYPE, str_replace, 'Sum of ', ''))
 
-## prepare data for pie
+  
 
+## prepare data for pie
 pie_staff_data <- pie_staff_data_all %>% 
+  filter(YEAR_DATA == year_report) %>% 
+  select(-YEAR_DATA) %>% 
   filter(grepl('STAF_', STAF_TYPE)) %>% 
   filter(!grepl('COST_', STAF_TYPE))
 
