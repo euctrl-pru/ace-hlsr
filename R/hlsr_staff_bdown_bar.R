@@ -35,7 +35,19 @@ data_plot <- data_raw %>%
     STAF_TYPE == 'STAF_ANCILLARY' ~ "Ancillary services",
     STAF_TYPE == 'STAF_OTHER' ~ "Other"
     )
-  )
+  )%>% 
+  mutate(LABEL = factor(LABEL, levels = c("Other",
+                                          "Ancillary services",
+                                          "Admin.",
+                                          "Technical support\nfor planning & development",
+                                          "Technical support\nfor maintenance",
+                                          "OPS-Support",
+                                          "ATC assistants",
+                                          "On-the-job trainees",
+                                          "Ab-initio trainees",
+                                          "ATCOs on other duties",
+                                          "ATCOs in OPS"
+  ))) 
 
 #calculate range for x axis 
 xrange_max <- round((max(data_plot$STAF)+5000)/1000,0)*1000
@@ -84,7 +96,6 @@ p1 <- data_plot %>%
       tickson="boundaries",
       tickcolor='#BFBFBF', ticklen=3,
       # tickformat=",.0%", 
-      categoryorder = "total ascending",
       # domain=c(0,1),
       zeroline = F, showline = T, showgrid = F
     ),
