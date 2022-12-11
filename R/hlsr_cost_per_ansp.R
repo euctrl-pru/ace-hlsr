@@ -53,16 +53,18 @@ p1 <- data_plot %>%
     title = list(
       text = paste0("Total ATM/CNS provision costs in ", year_max ," (M€",year_max,")"), 
       font = list(color = '#747a7f', size = 12),
-      y = 0),
+      y = 0.02),
     xaxis = list(
       title = "",
       # fixedrange = TRUE,
       range = c(0, cost_max),
       # automargin = T,
       # tickvals = c(),
-      tickangle = 0,
-      autotick = T, zeroline = F,
+      # tickangle = 0,
+      # autotick = T, 
+      zeroline = F,
       # domain=c(0,0.6),
+      showticklabels = FALSE,
       showgrid = F
     ),
     yaxis = list(
