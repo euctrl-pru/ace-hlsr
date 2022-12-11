@@ -171,7 +171,7 @@ arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
 
 myimages <- list(
   list(source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
-       x = (domain_cost_x1+domain_atco_x0)/2, y = 0.55, 
+       x = (domain_staff_x1+domain_atco_x0)/2, y = 0.55, 
        sizex = 0.15, sizey = 0.15,
        xref = "paper", yref = "paper", 
        xanchor = "center", yanchor = "center"
