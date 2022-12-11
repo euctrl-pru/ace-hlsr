@@ -72,8 +72,8 @@ p1 <- data_plot %>%
   layout(
     title = list(
       text = paste0("Gate-to-gate ATM/CNS staff in ", year_report ," (in FTEs)"), 
-      font = list(color = '#747a7f', size = 11),
-      y = 0),
+      font = list(color = '#747a7f', size = 12),
+      y = 0.05),
     xaxis = list(
       title = "",
       # fixedrange = TRUE,
@@ -95,6 +95,7 @@ p1 <- data_plot %>%
       ticks = 'outside',
       tickson="boundaries",
       tickcolor='#BFBFBF', ticklen=3,
+      tickfont = list(size = 11),
       # tickformat=",.0%", 
       # domain=c(0,1),
       zeroline = F, showline = T, showgrid = F
