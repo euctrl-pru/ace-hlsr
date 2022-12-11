@@ -53,21 +53,6 @@ p1 <- data_plot %>%
     hoverinfo = "none",
     showlegend = TRUE
   ) %>% 
-  # add_trace(
-  #   inherit = FALSE,
-  #   x = ~ YEAR_DATA,
-  #   y = ~ COST+0.07,
-  #   text = ~ if_else(YOY>=0, paste0("+",round(YOY*100,1), "%"),
-  #                    paste0(round(YOY*100,1), "%")),
-  #   textangle = 0,
-  #   textposition = "top center",
-  #   # insidetextanchor =  "start",
-  #   textfont = list(color = 'black'),
-  #   cliponaxis = FALSE,
-  #   mode = 'text',
-  #   hoverinfo = "none",
-  #   showlegend = F
-  # ) %>% 
   layout(
     xaxis = list(
       title = "",
