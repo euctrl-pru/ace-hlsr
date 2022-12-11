@@ -11,8 +11,8 @@ source(here("data_source.R"))
 data_raw <- read_xlsx(
   paste0(data_folder, data_file),
   # here("data","hlsr2021_data.xlsx"),
-  sheet = "F_Costs_ANSP",
-  range = cell_limits(c(7, 1), c(NA, NA))) %>%
+  sheet = "F_Costs",
+  range = cell_limits(c(7, 1), c(NA, 3))) %>%
   as_tibble() %>% 
   rename(COST=3)
 
@@ -33,7 +33,7 @@ year_max <- max(data_plot$YEAR_DATA)
 p2 <- data_plot %>% 
   plot_ly(
     # width = 500, 
-    height = 750,
+    # height = 750,
     x = ~ YOY,
     y = ~ factor(ANSP_NAME, levels = rev(data_plot$ANSP_NAME)),
     marker = list(color =('#95B3D7')),
@@ -72,6 +72,7 @@ p2 <- data_plot %>%
       linewidth=1, linecolor='#BFBFBF',
       # titlefont   = list(size = 13),
       fixedrange = TRUE,
+      autotick = F,
       showticklabels = FALSE,
       gridcolor = '#BFBFBF',
       tickson="boundaries",
