@@ -26,8 +26,6 @@ pie_staff_data_all  <-  read_xlsx(
   rename(STAF_TYPE = 'Data', STAF = 'Total') %>% 
   mutate(across(STAF_TYPE, str_replace, 'Sum of ', ''))
 
-  
-
 ## prepare data for pie
 pie_staff_data <- pie_staff_data_all %>% 
   filter(YEAR_DATA == year_report) %>% 
