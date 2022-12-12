@@ -49,39 +49,16 @@ book:
     title: false
     logo: "media/EUROCONTROL-logo-standard-rgb.svg"
     left:
-      - text: "<i class='far fa-star fa-spin fa-fw'></i> Aviation Intelligence"
+      - text: "AIU Home"
         menu:
           - text: "**Home**"
             icon: "house-fill"
             href: "https://ansperformance.eu"
             # ---
-          - text: "**Balanced Scorecard**"
-            icon: "grid-3x3-gap-fill"
-            href: "https://www.eurocontrol.int/Economics/BalancedScorecard.html"
-            # ---
-          - text: "<i class='fas fa-biohazard'></i> **COVID-19 crisis**"
-            href: "https://ansperformance.eu/covid/"
-
-          - text: "State and Airline response to Covid-19"
-            icon: "arrow-return-right"
-            href: "https://www.eurocontrol.int/covid19#response-to-covid-19"
-
-          - text: "Grounded Aircraft"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/covid/acft_ground/"
-
-          - text: "Impact on ANSPs financial situation"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/economics/finance/"
-
-          - text: "Impact on vertical flight efficiency (CCO/CDO)"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/covid/covid_vfe/"
-            # ---
           - text: "<i class='fas fa-plane-departure'></i> **Traffic**"
             href: "https://ansperformance.eu/traffic/"
 
-          - text: "<i class='far fa-star fa-spin fa-fw'></i> Daily Traffic Variation & Restart <i class='far fa-star fa-spin fa-fw'></i>"
+          - text: "</i> Daily Traffic Dashboard</i>"
             icon: "arrow-return-right"
             href: "https://www.eurocontrol.int/Economics/DailyTrafficVariation-States.html"
 
@@ -91,7 +68,9 @@ book:
             # ---
           - text: "<i class='fas fa-leaf'></i> **Efficiency & Environment**"
             href: "https://ansperformance.eu/efficiency/"
-
+          - text: "CO<sub>2</sub> emissions"
+            icon: "arrow-return-right"
+            href: "https://ansperformance.eu/efficiency/emissions/"
           - text: "Horizontal Flight Efficiency"
             icon: "arrow-return-right"
             href: "https://ansperformance.eu/efficiency/hfe/"
@@ -128,9 +107,9 @@ book:
             icon: "arrow-return-right"
             href: "https://ansperformance.eu/economics/finance/"
 
-          - text: "Standard Inputs"
+          - text: "CBA"
             icon: "arrow-return-right"
-            href: "https://ansperformance.eu/economics/standard-inputs-overview/"
+            href: "https://ansperformance.eu/economics/cba/"
 
             # ---
           - text: "<i class='fas fa-user-friends'></i> **Stakeholder views**"
@@ -156,29 +135,16 @@ book:
           - text: "<i class='fas fa-book'></i> **Publications**"
             href: "https://ansperformance.eu/publications/"
 
+          - text: "Data"
+            icon: "arrow-return-right"
+            href: "https://ansperformance.eu/data/"
+
             # ---
           - text: "<i class='fas fa-hands-helping'></i> **Reference**"
             href: "https://ansperformance.eu/reference/"
 
-          - text: "Data Download"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/data/"
-
-          - text: "Studies"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/study/"
-
-          - text: "Definitions"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/definition/"
-
-          - text: "Methodology"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/methodology/"
-
             # ---
           - text: "<i class='fas fa-external-link-alt'></i> **External**"
-            href: "https://ansperformance.eu/"
 
           - text: "Single European Sky Portal"
             icon: "arrow-return-right"
@@ -204,11 +170,6 @@ book:
 
       - text: "Areas"
         menu:
-          - text: "<i class='fas fa-biohazard'></i> COVID-19 crisis"
-            href: "https://ansperformance.eu/covid/"
-
-          - text: "---"
-
           - text: "Traffic"
             href: "https://ansperformance.eu/traffic/"
 
@@ -264,4 +225,5 @@ book:
         menu:
           - text: "<i class='fas fa-xs fa-external-link-alt'></i> Single European Sky (SES) Portal"
             href: "https://www.eurocontrol.int/prudata/dashboard/"
+
 
