@@ -20,7 +20,7 @@ format:
       - cosmo
       - media/custom.scss
     code-link: true
-    cover-image: cover.png
+    cover-image: media/cover.png
     link-external-newwindow: true
     link-external-icon: true
     link-external-filter: '^(?:http:|https:)\/\/ansperformance\.eu\/|^(?:http:|https:)\/\/.*ace-handbook\.netlify\.app\/'
@@ -33,6 +33,8 @@ book:
   title: "High-level Summary Report on Preliminary ACE 2021 Data"
   author: "Performance Review Unit"
   date: "2022-12-15"
+  search:
+    location: sidebar
   chapters:
     - index.qmd
     - introduction.qmd
@@ -225,4 +227,5 @@ book:
         menu:
           - text: "<i class='fas fa-xs fa-external-link-alt'></i> Single European Sky (SES) Portal"
             href: "https://www.eurocontrol.int/prudata/dashboard/"
+
 
