@@ -24,7 +24,7 @@ On the other hand, {{< var doc.year_report >}} unit ATM/CNS provision costs rema
 ::: {.column width="15%"}
 :::
 :::
-Changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} (real terms)
+Changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus5 >}} -- {{< var doc.year_report >}} (real terms)
 :::
 
 The analytical framework which is used in the ACE analysis to break down the financial cost-effectiveness indicator into relevant economic drivers is presented in @fig-figure-4-2. These key drivers include:
@@ -39,7 +39,7 @@ c\) support costs per unit output (€454).
 
 @fig-figure-4-3 shows that in {{< var doc.year_report >}}, ATCO employment costs per ATCO-hour fell by -8.5% while ATCO-hour productivity rose by +24.8%. As a result, ATCO employment costs per composite flight-hour decreased (-26.7%). In the meantime, unit support costs fell by -24.5% due to the combination of an increase in composite flight-hours (+27.2%) and a reduction in support costs (-4.0%). As a result, in 2021, unit ATM/CNS provision costs fell by -25.2% at Pan-European system level.
 
-![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}}-{{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3 width="100%"}
+![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3 width="100%"}
 
 ## ANSP level {#sec-fin_2}
 
