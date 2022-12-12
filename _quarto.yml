@@ -12,7 +12,7 @@ bibliography: references.bib
 format:
   html:
     css: 
-      - style.css
+      - media/style.css
     execute:
       echo: false
       keep-md: false
