@@ -33,6 +33,8 @@ book:
   title: "High-level Summary Report on Preliminary ACE 2021 Data"
   author: "Performance Review Unit"
   date: "2022-12-15"
+  search:
+    location: sidebar
   chapters:
     - index.qmd
     - introduction.qmd
