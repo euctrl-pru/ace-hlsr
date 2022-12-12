@@ -12,28 +12,28 @@ source(here("data_source.R"))
 
 # import data
 data_raw <- read_xlsx(
-                      paste0(data_folder, data_file),
-                      # here("data","hlsr2021_data.xlsx"),
+                      # paste0(data_folder, data_file),
+                      here("data","hlsr2021_data.xlsx"),
                       sheet = "E_EcoCostEff",
                       range = cell_limits(c(7, 1), c(NA, 3))) %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
   as_tibble() %>% 
   rename(YEAR_DATA = Year)
 
 data_raw_extra <-  read_xlsx(
-                            paste0(data_folder, data_file),
-                            # here("data","hlsr2021_data.xlsx"),
+                            # paste0(data_folder, data_file),
+                            here("data","hlsr2021_data.xlsx"),
                             sheet = "E_EcoCostEff",
                             range = cell_limits(c(7, 5), c(NA, 7))) %>%
   as_tibble() %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
   mutate(FIN_CE = COST_CONTROLLABLE/COMPOSITE_FLIGHTHOUR) 
 
 cost_delay <-  read_xlsx(
-  paste0(data_folder, data_file),
-  # here("data","hlsr2021_data.xlsx"),
-  sheet = "E_EcoCostEff",
-  range = cell_limits(c(7, 9), c(NA, 10))) %>%
-  as_tibble() %>% 
-  rename (COST_DELAY = Total)
+                          # paste0(data_folder, data_file),
+                          here("data","hlsr2021_data.xlsx"),
+                          sheet = "E_EcoCostEff",
+                          range = cell_limits(c(7, 9), c(NA, 10))) %>%
+                          as_tibble() %>% 
+                          rename (COST_DELAY = Total)
 
 data_merged = merge(x=data_raw, y=data_raw_extra, by="YEAR_DATA")
 data_merged = merge(x=data_merged, y=cost_delay, by="YEAR_DATA")

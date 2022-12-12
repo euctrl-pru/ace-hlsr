@@ -11,8 +11,8 @@ source(here("data_source.R"))
 
 # import data
 data_raw <-  read_xlsx(
-                      paste0(data_folder, data_file),
-                      # here("data","hlsr2021_data.xlsx"),
+                      # paste0(data_folder, data_file),
+                      here("data","hlsr2021_data.xlsx"),
                       sheet = "F_Prod",
                       range = cell_limits(c(7, 1), c(NA, 4))) %>%
   as_tibble() %>% 

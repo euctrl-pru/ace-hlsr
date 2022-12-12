@@ -14,8 +14,8 @@ source(here("data_source.R"))
 
 ## import data
 pie_data  <-  read_xlsx(
-  paste0(data_folder, data_file),
-  # here("data","hlsr2021_data.xlsx"),
+  # paste0(data_folder, data_file),
+  here("data","hlsr2021_data.xlsx"),
   sheet = "F_Revenue",
                         range = cell_limits(c(9, 1), c(NA, 4))) %>%
   as_tibble() %>% 
