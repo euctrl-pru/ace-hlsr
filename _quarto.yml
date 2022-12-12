@@ -18,7 +18,7 @@ format:
       keep-md: false
     theme:
       - cosmo
-      - custom.scss
+      - media/custom.scss
     code-link: true
     cover-image: cover.png
     link-external-newwindow: true
