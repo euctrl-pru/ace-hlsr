@@ -1,6 +1,7 @@
 # High-level revenues, costs and staff data {#sec-high}
 
 
+
 ```{r}
 #libraries
 
