@@ -201,6 +201,9 @@ book:
       - text: "Publications"
         href: "https://ansperformance.eu/publications/"
 
+      - text: "Data"
+        href: "https://ansperformance.eu/data/"
+      
       - text: "Reference"
         menu:
           - text: "Data downloads"
