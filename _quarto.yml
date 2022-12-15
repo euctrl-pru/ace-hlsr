@@ -1,30 +1,40 @@
 project:
   type: book
-
+  output-dir: _book
+execute:
+  freeze: auto
+  echo: false
+  warning: false
+  
 bibliography: references.bib
 # csl: ieee-with-url.csl
 
 format:
   html:
     css: 
-      - style.css
+      - media/style.css
+    execute:
+      echo: false
+      keep-md: false
     theme:
       - cosmo
-      - custom.scss
+      - media/custom.scss
     code-link: true
-    cover-image: cover.png
+    cover-image: media/cover.png
     link-external-newwindow: true
     link-external-icon: true
     link-external-filter: '^(?:http:|https:)\/\/ansperformance\.eu\/|^(?:http:|https:)\/\/.*ace-handbook\.netlify\.app\/'
     include-in-header:
       - media/fontawesome.html
       # UNCOMMENT for activating GA
-      - media/analytics.html
+      # - media/analytics.html
 
 book:
-  title: "High-level Summary Report on Preliminary ACE 2020 Data"
+  title: "High-level Summary Report on Preliminary ACE 2021 Data"
   author: "Performance Review Unit"
-  date: "2021-12-15"
+  date: "2022-12-15"
+  search:
+    location: sidebar
   chapters:
     - index.qmd
     - introduction.qmd
@@ -32,51 +42,25 @@ book:
     - economic-cost-effectiveness.qmd
     - financial-cost-effectiveness.qmd
     - cash-and-liquidity.qmd
+    - capex.qmd
     - disclaimer.qmd
   site-url: "https://eurocontrol.int/"
-  link-external-newwindow: true
-  execute:
-    echo: false
   navbar:
     background: light
     search: false
     title: false
-    logo: "images/EUROCONTROL-logo-standard-rgb.svg"
+    logo: "media/EUROCONTROL-logo-standard-rgb.svg"
     left:
-      - text: "<i class='far fa-star fa-spin fa-fw'></i> Aviation Intelligence"
-        icon: "star"
+      - text: "AIU Home"
         menu:
           - text: "**Home**"
             icon: "house-fill"
             href: "https://ansperformance.eu"
             # ---
-          - text: "**Balanced Scorecard**"
-            icon: "grid-3x3-gap-fill"
-            href: "https://www.eurocontrol.int/Economics/BalancedScorecard.html"
-            # ---
-          - text: "<i class='fas fa-biohazard'></i> **COVID-19 crisis**"
-            href: "https://ansperformance.eu/covid/"
-
-          - text: "State and Airline response to Covid-19"
-            icon: "arrow-return-right"
-            href: "https://www.eurocontrol.int/covid19#response-to-covid-19"
-
-          - text: "Grounded Aircraft"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/covid/acft_ground/"
-
-          - text: "Impact on ANSPs financial situation"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/economics/finance/"
-
-          - text: "Impact on vertical flight efficiency (CCO/CDO)"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/covid/covid_vfe/"
-            # ---
           - text: "<i class='fas fa-plane-departure'></i> **Traffic**"
             href: "https://ansperformance.eu/traffic/"
 
-          - text: "<i class='far fa-star fa-spin fa-fw'></i> Daily Traffic Variation & Restart <i class='far fa-star fa-spin fa-fw'></i>"
+          - text: "</i> Daily Traffic Dashboard</i>"
             icon: "arrow-return-right"
             href: "https://www.eurocontrol.int/Economics/DailyTrafficVariation-States.html"
 
@@ -86,7 +70,9 @@ book:
             # ---
           - text: "<i class='fas fa-leaf'></i> **Efficiency & Environment**"
             href: "https://ansperformance.eu/efficiency/"
-
+          - text: "CO<sub>2</sub> emissions"
+            icon: "arrow-return-right"
+            href: "https://ansperformance.eu/efficiency/emissions/"
           - text: "Horizontal Flight Efficiency"
             icon: "arrow-return-right"
             href: "https://ansperformance.eu/efficiency/hfe/"
@@ -123,6 +109,10 @@ book:
             icon: "arrow-return-right"
             href: "https://ansperformance.eu/economics/finance/"
 
+          - text: "CBA"
+            icon: "arrow-return-right"
+            href: "https://ansperformance.eu/economics/cba/"
+
             # ---
           - text: "<i class='fas fa-user-friends'></i> **Stakeholder views**"
             href: "https://ansperformance.eu/dashboard/stakeholder/"
@@ -147,29 +137,16 @@ book:
           - text: "<i class='fas fa-book'></i> **Publications**"
             href: "https://ansperformance.eu/publications/"
 
+          - text: "Data"
+            icon: "arrow-return-right"
+            href: "https://ansperformance.eu/data/"
+
             # ---
           - text: "<i class='fas fa-hands-helping'></i> **Reference**"
             href: "https://ansperformance.eu/reference/"
 
-          - text: "Data Download"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/data/"
-
-          - text: "Studies"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/study/"
-
-          - text: "Definitions"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/definition/"
-
-          - text: "Methodology"
-            icon: "arrow-return-right"
-            href: "https://ansperformance.eu/methodology/"
-
             # ---
           - text: "<i class='fas fa-external-link-alt'></i> **External**"
-            href: "https://ansperformance.eu/"
 
           - text: "Single European Sky Portal"
             icon: "arrow-return-right"
@@ -195,11 +172,6 @@ book:
 
       - text: "Areas"
         menu:
-          - text: "<i class='fas fa-biohazard'></i> COVID-19 crisis"
-            href: "https://ansperformance.eu/covid/"
-
-          - text: "---"
-
           - text: "Traffic"
             href: "https://ansperformance.eu/traffic/"
 
@@ -229,6 +201,9 @@ book:
       - text: "Publications"
         href: "https://ansperformance.eu/publications/"
 
+      - text: "Data"
+        href: "https://ansperformance.eu/data/"
+      
       - text: "Reference"
         menu:
           - text: "Data downloads"
@@ -255,4 +230,5 @@ book:
         menu:
           - text: "<i class='fas fa-xs fa-external-link-alt'></i> Single European Sky (SES) Portal"
             href: "https://www.eurocontrol.int/prudata/dashboard/"
+
 

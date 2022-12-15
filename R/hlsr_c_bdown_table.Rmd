@@ -1,0 +1,155 @@
+---
+title: "hlsr_c_bdown_table"
+output: html_document
+---
+
+```{css, echo=FALSE}
+
+.reactable {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+```
+
+
+```{r, echo=FALSE, include=FALSE}
+## libraries
+library(tidyverse)
+library("data.table")
+library(dplyr)
+library(readxl)
+library(reactable)
+library(janitor)
+library(htmltools)
+library(here)
+```
+
+```{r, echo=FALSE, warning=FALSE}
+## data source
+source("data_source.R")
+
+## import data
+cost_data  <-  read_xlsx(
+                       # paste0(data_folder, data_file),
+                       here("data","hlsr2021_data.xlsx"),
+                       sheet = "F_Cost breakdown",
+                       range = cell_limits(c(9, 1), c(NA, 4))) %>%
+  as_tibble() %>% 
+  rename(COST_TYPE = 'Data', COST = 'Grand Total') %>% 
+  mutate(across(COST_TYPE, str_replace, 'Sum of ', ''))
+
+
+atco_data  <-  read_xlsx(
+                       # paste0(data_folder, data_file),
+                       here("data","hlsr2021_data.xlsx"),
+                       sheet = "F_Cost breakdown",
+                       range = cell_limits(c(9, 12), c(NA, 15))) %>%
+  as_tibble() %>% 
+  select(COST_TYPE, ERT, TRM, COST)
+
+# add row with totals
+cost_data <- cost_data %>% adorn_totals("row")
+
+
+#totals for percentages
+ert_cost_total <- cost_data[nrow(cost_data),'ERT'] %>% pull() 
+trm_cost_total <- cost_data[nrow(cost_data),'TRM'] %>% pull()
+g2g_cost_total <- cost_data[nrow(cost_data),'COST'] %>% pull()
+
+## prepare data for COST pie
+
+c_bdown_data <- rbind(cost_data, atco_data)
+
+c_bdown_data <- c_bdown_data %>% 
+  mutate_at(vars(-COST_TYPE), ~ . /1000000) %>% 
+  mutate( COST_TYPE = factor(COST_TYPE, levels = c(
+    'COST_STAFF', 
+    'COST_ATCO_OPS', 
+    'OTHER_STAFF_COST',
+    'COST_OPERAT',
+    'COST_DEPRECIATION',
+    'COST_CAPITAL',
+    'COST_EXCEPTIONAL',
+    'Total')
+    )
+    ) %>% 
+  arrange(COST_TYPE)
+
+
+# prepare data for table
+data_table <- c_bdown_data %>% 
+  mutate(
+    ERT_F = format(round(ERT,0), nsmall =0 ,big.mark= " "),
+    TRM_F = format(round(TRM,0), nsmall =0 ,big.mark= " "),
+    G2G_F = format(round(COST,0), nsmall =0 ,big.mark= " "),
+    ERT_PERC = case_when(
+            COST_TYPE == 'COST_ATCO_OPS' ~ 'n.a.',
+            COST_TYPE == 'OTHER_STAFF_COST' ~ 'n.a.',
+            TRUE ~  paste0(format(round(ERT/ert_cost_total*100000000,1), nsmall =1 ,big.mark= " "), "%")
+           ),
+    TRM_PERC = case_when(
+            COST_TYPE == 'COST_ATCO_OPS' ~ 'n.a.',
+            COST_TYPE == 'OTHER_STAFF_COST' ~ 'n.a.',
+            TRUE ~  paste0(format(round(TRM/trm_cost_total*100000000,1), nsmall =1 ,big.mark= " "), "%")
+           ),
+    G2G_PERC = case_when(
+            COST_TYPE == 'COST_ATCO_OPS' ~ 'n.a.',
+            COST_TYPE == 'OTHER_STAFF_COST' ~ 'n.a.',
+            TRUE ~  paste0(format(round(COST/g2g_cost_total*100000000,1), nsmall =1 ,big.mark= " "), "%")
+           )
+    ) %>% 
+    mutate(LABEL = case_when(
+           COST_TYPE == 'COST_STAFF' ~ "Staff costs",
+           COST_TYPE == 'COST_ATCO_OPS' ~ paste0("        ","ATCOs in OPS employment costs"),
+           COST_TYPE == 'OTHER_STAFF_COST' ~ paste0("              ","Other staff employment costs"),
+           COST_TYPE == 'COST_OPERAT' ~ "Non-staff operating costs",
+           COST_TYPE == 'COST_DEPRECIATION' ~ "Depreciation costs",
+           COST_TYPE == 'COST_CAPITAL' ~ "Cost of capital",
+           COST_TYPE == 'COST_EXCEPTIONAL' ~ "Exceptional items",
+           COST_TYPE == 'Total' ~ "Total ATM/CNS provision costs"
+         )
+         )%>%
+  select(LABEL, ERT_F,ERT_PERC, TRM_F, TRM_PERC, G2G_F, G2G_PERC)
+
+
+##plot table
+table_cost <- reactable(
+  data_table,
+  bordered = TRUE,
+  pagination = FALSE,
+  striped = FALSE,
+  compact = TRUE,
+  highlight = TRUE,
+  defaultColDef = colDef(style=list("font-size" = "11px", "white-space"= "wrap"),
+                         align = "right",
+                         headerStyle = list(background = "#538DD5", color = "white", fontSize = "11px", style=list("white-space"= "wrap"))
+                         
+  ),
+  columns = list(
+    LABEL = colDef(name="", minWidth = 40, align = "left",style = list(whiteSpace = "pre", "font-size" = "11px")), # to preserve whitespace,
+    ERT_F = colDef(name="\u20AC M", minWidth = 10),
+    ERT_PERC = colDef(name="%", minWidth = 10, align = "right"),
+    TRM_F = colDef(name="\u20AC M", minWidth = 10),
+    TRM_PERC = colDef(name="%", minWidth = 10, align = "right"),
+    G2G_F = colDef(name="\u20AC M", minWidth = 10),
+    G2G_PERC = colDef(name="%", minWidth = 10, align = "right")
+    ),
+  columnGroups = list(
+    colGroup(name = "", columns = c("LABEL"), headerStyle = list(background = "#538DD5", color = "white", fontSize = "11px")),
+    colGroup(name = "En-route", columns = c("ERT_F", "ERT_PERC"), headerStyle = list(background = "#538DD5", color = "white", fontSize = "11px")),
+    colGroup(name = "Terminal", columns = c("TRM_F", "TRM_PERC"), headerStyle = list(background = "#538DD5", color = "white", fontSize = "11px")),
+    colGroup(name = "Gate-to-gate", columns = c("G2G_F", "G2G_PERC"), headerStyle = list(background = "#538DD5", color = "white", fontSize = "11px"))
+  ),
+  borderless = TRUE,
+  rowStyle = 
+    function(index) {
+    if (index == nrow(data_table)) list(background = '#C0C0C0')
+    else if (index == 2) list(fontStyle="italic")
+    else if (index == 3) list(fontStyle="italic")
+  }
+
+)
+
+table_cost
+```

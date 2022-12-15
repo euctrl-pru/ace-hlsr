@@ -1,5 +1,6 @@
-# by default ignore generated HTML: you'll need to force git add them
-# _book/
+# see https://quarto.org/docs/publishing/netlify.html#rendering-on-netlify
+/.quarto/
+/_book/
 
 ######## R project specific (R.gitignore)
 # from https://github.com/github/gitignore/
