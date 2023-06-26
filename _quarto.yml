@@ -27,7 +27,7 @@ format:
     include-in-header:
       - media/fontawesome.html
       # UNCOMMENT for activating GA
-      # - media/analytics.html
+      - media/analytics.html
 
 book:
   title: "High-level Summary Report on Preliminary ACE 2021 Data"
