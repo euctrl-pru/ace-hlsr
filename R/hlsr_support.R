@@ -13,7 +13,7 @@ source(here("data_source.R"))
 # import data
 data_raw <- read_xlsx(
             # paste0(data_folder, data_file),
-              here("data","hlsr2021_data.xlsx"),
+              here("data", data_file ),
             sheet = "F_Support",
                       range = cell_limits(c(7, 1), c(NA, NA))) %>%
   as_tibble() 

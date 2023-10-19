@@ -6,13 +6,16 @@ library(plotly)
 library(htmltools)
 library(magick)
 library(here)
+# library(grImport2)
+# library(rsvg)
+
 ## data source
 source(here("data_source.R"))
 
 ## import data
 pie_cost_data  <- read_xlsx(
                             # paste0(data_folder, data_file),
-                             here("data","hlsr2021_data.xlsx"),
+                             here("data",data_file),
                              sheet = "F_Cost breakdown",
                              range = cell_limits(c(9, 1), c(NA, 4))) %>%
   as_tibble() %>% 
@@ -89,7 +92,7 @@ pie_cost <- pie_cost_data %>%
 ## import data
 pie_atco_data  <-   read_xlsx(
                               # paste0(data_folder, data_file),
-                              here("data","hlsr2021_data.xlsx"),
+                              here("data",data_file ),
                               sheet = "F_Cost breakdown",
                               range = cell_limits(c(9, 12), c(NA, 13))) %>%
                               as_tibble() 
@@ -176,19 +179,28 @@ myannotations <- list(
 )
 
 image_folder <- here("images")
-arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
+# arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg")) #magick
+# rsvg_svg(paste0(image_folder,"/long_right_arrow.svg"), 
+         # paste0(image_folder,"/long_right_arrow-cairo.svg")) # needed only once
+# arrow_right <- readPicture(paste0(image_folder,"/long_right_arrow-cairo.svg")) #grImport2
+# grid.picture(arrow_right)
+
 
 myimages <- list(
-  list(source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
-       x = (domain_cost_x1+domain_atco_x0)/2, y = 0.55, 
+  list(
+    source = base64enc::dataURI(file = paste0(image_folder,"/long_right_arrow.png")),
+     # source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
+       x = (domain_cost_x1+domain_atco_x0)/2, y = 0.55,
        sizex = 0.15, sizey = 0.15,
-       xref = "paper", yref = "paper", 
+       xref = "paper", yref = "paper",
        xanchor = "center", yanchor = "center"
-  )  
+  )
 )
 
-fig <- subplot(pie_cost, pie_atco) %>% 
-  layout(annotations = myannotations, images = myimages)
+fig <- subplot(pie_cost, pie_atco) %>%
+layout(annotations = myannotations, images = myimages)
+
+# fig <- subplot(pie_cost, pie_atco)
 
 fig
 

@@ -35,7 +35,7 @@ Trend of unit economic costs at Pan-European system level, {{< var doc.year_repo
 ::: {#fig-figure-3-2}
 ```{r}
 #| file: R/hlsr_eco_ce.R
-#| out.height: "450px"
+#| out.height: "490px"
 #| out.width: "100%"
 ```
 

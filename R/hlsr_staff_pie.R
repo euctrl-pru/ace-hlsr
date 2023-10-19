@@ -19,7 +19,7 @@ source(here("data_source.R"))
 ## import data
 pie_staff_data_all  <-  read_xlsx(
                                   # paste0(data_folder, data_file),
-                                  here("data","hlsr2021_data.xlsx"),
+                                  here("data", data_file ),
                                   sheet = "F_Staff",
                                   range = cell_limits(c(9, 1), c(NA, 3))) %>%
   as_tibble() %>% 
@@ -168,20 +168,23 @@ lines <- list (
   ))
 
 image_folder <- here("images")
-arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
-
+# arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
+ 
 myimages <- list(
-  list(source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
-       x = (domain_staff_x1+domain_atco_x0)/2, y = 0.55, 
+  list(
+    source = base64enc::dataURI(file = paste0(image_folder,"/long_right_arrow.png")),
+    # source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
+       x = (domain_staff_x1+domain_atco_x0)/2, y = 0.55,
        sizex = 0.15, sizey = 0.15,
-       xref = "paper", yref = "paper", 
+       xref = "paper", yref = "paper",
        xanchor = "center", yanchor = "center"
-  )  
+  )
 )
 
 
-fig <- subplot(pie_staff, pie_atco) %>% 
-  layout(images = myimages)
+fig <- subplot(pie_staff, pie_atco) %>%
+   layout(images = myimages)
+
 
 fig
 

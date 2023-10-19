@@ -1,7 +1,6 @@
 # High-level revenues, costs and staff data {#sec-high}
 
-
-
+ 
 ```{r}
 #libraries
 
@@ -10,8 +9,10 @@ library(dplyr)
 library(readxl)
 library(here)
 
+source(here("data_source.R"))
+
 #import data
-data_raw  <-  read_xlsx(here("data","hlsr2021_data.xlsx"),
+data_raw  <-  read_xlsx(here("data",data_file),
                        sheet = "F_Revenue",
                        range = cell_limits(c(9, 1), c(NA, 4))) %>%
   as_tibble() %>% 
@@ -41,7 +42,7 @@ This chapter provides a [preliminary]{.underline} presentation of high-level rev
 ::: {#fig-figure-2-1}
 ```{r}
 #| file: R/hlsr_rev_pie.R
-#| out.height: "320px"
+#| out.height: "420px"
 #| out.width: "100%"
 ```
 

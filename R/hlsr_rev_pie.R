@@ -15,7 +15,7 @@ source(here("data_source.R"))
 ## import data
 pie_data  <-  read_xlsx(
   # paste0(data_folder, data_file),
-  here("data","hlsr2021_data.xlsx"),
+  here("data", data_file ),
   sheet = "F_Revenue",
                         range = cell_limits(c(9, 1), c(NA, 4))) %>%
   as_tibble() %>% 
@@ -56,7 +56,9 @@ er_trm_domain_x1 <- 0.65
 # plot piechart
 pie_er_trm <- pie_er_trm_data %>% 
   plot_ly(
-    labels = ~LABELS, values = ~REVE, type = 'pie',
+    labels = ~LABELS, 
+    values = ~REVE, 
+    type = 'pie',
     hoverinfo = "none",
     textinfo='label+percent',
     textfont = list(size = 10),
@@ -288,27 +290,32 @@ myannotations <- list(
 )
 
 image_folder <- here("images")
-arrow_left <- image_read(paste0(image_folder,"/long_left_arrow.svg")) 
-arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
+# arrow_left <- image_read(paste0(image_folder,"/long_left_arrow.svg"))
+# arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
 
 myimages <- list(
-  list(source =raster2uri(as.raster(arrow_left)), #https://plotly-r.com/embedding-images.html
-       x = (er_domain_x1+er_trm_domain_x0)/2, y = 0.55, 
+  list(
+      source = base64enc::dataURI(file = paste0(image_folder,"/long_right_arrow.png")),
+    # source =raster2uri(as.raster(arrow_left)), #https://plotly-r.com/embedding-images.html
+       x = (er_domain_x1+er_trm_domain_x0)/2, y = 0.55,
        sizex = 0.18, sizey = 0.18,
-       xref = "paper", yref = "paper", 
+       xref = "paper", yref = "paper",
        xanchor = "center", yanchor = "center"
   ),
-  list(source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
-       x = (er_trm_domain_x1+trm_domain_x0)/2, y = 0.55, 
+  list(
+    source = base64enc::dataURI(file = paste0(image_folder,"/long_left_arrow.png")),
+    # source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
+       x = (er_trm_domain_x1+trm_domain_x0)/2, y = 0.55,
        sizex = 0.18, sizey = 0.18,
-       xref = "paper", yref = "paper", 
+       xref = "paper", yref = "paper",
        xanchor = "center", yanchor = "center"
-  )  
+  )
 )
 
 
-fig <- subplot(pie_er, pie_er_trm,pie_trm) %>% 
+fig <- subplot(pie_er, pie_er_trm,pie_trm) %>%
   layout(annotations = myannotations, images = myimages)
+
 
 fig
 

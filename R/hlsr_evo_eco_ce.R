@@ -13,7 +13,7 @@ source(here("data_source.R"))
 # import data
 data_raw <- read_xlsx(
                       # paste0(data_folder, data_file),
-                      here("data","hlsr2021_data.xlsx"),
+                      here("data",data_file ),
                       sheet = "E_EcoCostEff",
                       range = cell_limits(c(7, 1), c(NA, 3))) %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
   as_tibble() %>% 
@@ -21,7 +21,7 @@ data_raw <- read_xlsx(
 
 data_raw_extra <-  read_xlsx(
                             # paste0(data_folder, data_file),
-                            here("data","hlsr2021_data.xlsx"),
+                            here("data",data_file ),
                             sheet = "E_EcoCostEff",
                             range = cell_limits(c(7, 5), c(NA, 7))) %>%
   as_tibble() %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
@@ -29,7 +29,7 @@ data_raw_extra <-  read_xlsx(
 
 cost_delay <-  read_xlsx(
                           # paste0(data_folder, data_file),
-                          here("data","hlsr2021_data.xlsx"),
+                          here("data",data_file ),
                           sheet = "E_EcoCostEff",
                           range = cell_limits(c(7, 9), c(NA, 10))) %>%
                           as_tibble() %>% 

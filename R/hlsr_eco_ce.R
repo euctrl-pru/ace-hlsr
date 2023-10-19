@@ -12,14 +12,14 @@ source(here("data_source.R"))
 # import data
 data_raw <- read_xlsx(
                       # paste0(data_folder, data_file),
-                        here("data","hlsr2021_data.xlsx"),
+                        here("data",data_file ),
                       sheet = "F_Eco CE",
                       range = cell_limits(c(7, 1), c(NA, 3))) %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
   as_tibble() 
 
 data_raw_extra <-  read_xlsx(
                             # paste0(data_folder, data_file),
-                            here("data","hlsr2021_data.xlsx"),
+                            here("data", data_file ),
                             sheet = "F_Eco CE",
                             range = cell_limits(c(7, 5), c(NA, 7))) %>%
   as_tibble() %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
@@ -27,7 +27,7 @@ data_raw_extra <-  read_xlsx(
 
 cost_delay <-  read_xlsx(
                         # paste0(data_folder, data_file),
-                        here("data","hlsr2021_data.xlsx"),
+                        here("data", data_file ),
                         sheet = "F_Eco CE",
                         range = cell_limits(c(7, 10), c(8, 10))) %>%
   as_tibble() %>% pull()
@@ -102,12 +102,13 @@ plot_all <- data_plot %>%
     # insidetextanchor =  "start",
     # textfont = list(color = 'black', size = 7),
     type = "bar", 
-    hoverinfo = "none",
+    hovertemplate = paste('%{y:.0f}'),
+    # hoverinfo = "none",
     showlegend = T
   ) %>%
   add_trace( data = data_help,
              inherit = FALSE,
-             # marker = list(color =('transparent')),
+             marker = list(color =('transparent')),
              x = ~ ANSP_NAME,
              y = ~ ECO_CE,
              yaxis = "y1",
@@ -115,9 +116,11 @@ plot_all <- data_plot %>%
              text = ~ LABELS,
              textfont = list(color = 'black', size = 8),
              # textangle = 0,
+             name = 'Total',
              textposition = "top center", cliponaxis = FALSE,
              type = 'scatter',  mode = 'lines',
-             hoverinfo = "none",
+             hovertemplate = paste('%{y:.0f}'),
+             # hoverinfo = "none",
              showlegend = F
   ) %>% 
   add_trace(data = data_help,
@@ -168,12 +171,13 @@ plot_inset <- data_inset %>%
     # insidetextanchor =  "start",
     # textfont = list(color = 'black', size = 9),
     type = "bar",
-    hoverinfo = "none",
+    hovertemplate = paste('%{y:.0f}'),
+    # hoverinfo = "none",
     showlegend = F
   ) %>% 
   add_trace(data = data_help_inset,
             inherit = FALSE,
-            # marker = list(color =('transparent')),
+            marker = list(color =('transparent')),
             x = ~ ANSP_NAME,
             y = ~ ECO_CE,
             yaxis = "y1",
@@ -183,7 +187,9 @@ plot_inset <- data_inset %>%
             # textangle = 0,
             textposition = "top center", cliponaxis = FALSE,
             type = 'scatter',  mode = 'lines',
-            hoverinfo = "none",
+            name = 'Total',
+            hovertemplate = paste('%{y:.0f}'),
+            # hoverinfo = "none",
             showlegend = F
   ) %>% 
   add_annotations (data = data_help_inset,
@@ -231,7 +237,7 @@ plot_inset <- data_inset %>%
 
 myannotations <- list(list(
   x = 0.12,
-  y = 0.98,
+  y = 1.10,
   text = paste0("<b>", 
                 "European system avg. for economic cost-effectiveness: ", 
                 "\u20AC ",
@@ -246,7 +252,7 @@ myannotations <- list(list(
 ),
 list(
   x = 0.12,
-  y = 0.93,
+  y = 1.05,
   text = paste0("<b>", 
                 "European system avg. for financial cost-effectiveness: ", 
                 "\u20AC ",
@@ -272,11 +278,13 @@ ticktexts2 <- c(0,format(ticklabels2[-1], big.mark = " "))
 
 fig <- subplot(plot_all, plot_inset) %>% 
   layout( autosize = T, 
-          uniformtext=list(minsize=8, mode='show'), #this is important so it does not autofit fonts
+          uniformtext = list(minsize=8, mode='show'), #this is important so it does not autofit fonts
           bargap = 0.45,
           barmode = 'stack',
           title = list(text = "", font = list(color = "black", size = 14)),
           font = list(family = "Helvetica"),
+          hovermode = "x unified",
+          hoverlabel=list(bgcolor="rgba(255,255,255,0.88)"),
           legend = list(orientation = 'h',
                         traceorder = 'reversed', #for some reason this does not work
                         font = list(size = 10),
@@ -284,7 +292,7 @@ fig <- subplot(plot_all, plot_inset) %>%
                         x = 0.0,
                         bgcolor = 'transparent'),
           xaxis = list(title = "",
-                       tickangle=270,
+                       tickangle = 270,
                        tickfont = list(size=11),
                        autotick = F,
                        # tick0=0.25,
@@ -293,14 +301,15 @@ fig <- subplot(plot_all, plot_inset) %>%
                        categoryorder = "total descending",
                        domain=c(0,1)),
           yaxis = list(title = paste("\U20AC","per composite flight-hour"),
-                       titlefont   = list(size = 12),
-                       tickfont = list(size=11),
+                       titlefont = list(size = 12),
+                       tickfont = list(size = 11),
                        # dtick = 200,
                        tickvals = ticklabels1,
                        ticktext = ticktexts1,
                        # automargin = FALSE,
                        # margin = list(l=100),
                        fixedrange = TRUE,
+                       hoverformat = '.0f',
                        linewidth=1, linecolor='transparent',  mirror = T,
                        # range = list(0, 200+round(max(data_plot$VALUE/1000), 1)*1000),
                        zeroline = T, showline = T, showgrid = F,
@@ -320,10 +329,11 @@ fig <- subplot(plot_all, plot_inset) %>%
                         # dtick = 200,
                         tickvals = ticklabels2,
                         ticktext = ticktexts2,
+                        hoverformat = '.0f',
                         fixedrange = TRUE,
                         # range = list(0, 200+round(max(data_inset$VALUE/1000), 1)*1000),
                         zeroline = T, showline = F, showgrid = F,
-                        domain=c(0.50,1)),
+                        domain=c(0.45,0.95)),
           annotations = myannotations
   )
 
