@@ -1,6 +1,5 @@
 # Economic cost-effectiveness {#sec-economic}
 
-
 The concept of economic cost-effectiveness, developed by the PRC, is defined as the sum of gate-to-gate ATM/CNS provision costs and the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between ATC capacity and costs[^economic-cost-effectiveness-1].
 
 [^economic-cost-effectiveness-1]: See https://ansperformance.eu/economics/ace/ace-handbook/ for more information on the methodology used to compute composite flight-hours and economic costs.
@@ -9,13 +8,13 @@ The concept of economic cost-effectiveness, developed by the PRC, is defined as 
 
 ::: {#fig-figure-3-1 layout-ncol="2"}
 ::: {#fig-figure-3-1-left}
-
 ```{r}
 #| file: R/hlsr_evo_eco_ce.R
 #| out.height: "300px"
 #| out.width: "100%"
 ```
-&nbsp;
+
+ 
 :::
 
 ::: {#fig-figure-3-1-right}
@@ -24,8 +23,10 @@ The concept of economic cost-effectiveness, developed by the PRC, is defined as 
 #| out.height: "300px"
 #| out.width: "100%"
 ```
-&nbsp;
+
+ 
 :::
+
 Trend of unit economic costs at Pan-European system level, {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} (real terms)
 :::
 
@@ -37,7 +38,6 @@ Trend of unit economic costs at Pan-European system level, {{< var doc.year_repo
 #| out.height: "450px"
 #| out.width: "100%"
 ```
+
 Economic gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 :::
-
-

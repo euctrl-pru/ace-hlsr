@@ -1,12 +1,9 @@
 ## Welcome {.unnumbered}
 
+This document provides a first insight on the level of {{< var doc.year_report >}} cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the official release of the next ACE benchmarking report.
 
-This document provides a first insight on the level of {{< var doc.year_report >}} cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the official release of the ACE {{< var doc.year_report >}} benchmarking report.
-
-This document is also available for download as a
-[PDF version](https://www.eurocontrol.int/ACE/HighLevelSummary-Reports/HighLevelSummaryReport2021.pdf){target="_blank"}.
-
+This document is also available for download as a [PDF version](https://www.eurocontrol.int/ACE/HighLevelSummary-Reports/HighLevelSummaryReport2021.pdf){target="_blank"}.
 
 ### IMPORTANT NOTICE {.unnumbered}
 
-[Data contained in this document are preliminary and subject to changes before the publication of the final ACE {{< var doc.year_report >}} benchmarking report in May {{< var doc.year_report_plus2 >}}.]{style="color: red;"}
+[Data contained in this document are preliminary and subject to changes before the publication of the final ACE benchmarking report in May {{< var doc.year_report_plus2 >}}.]{style="color: red;"}
