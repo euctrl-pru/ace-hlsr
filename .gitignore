@@ -1,6 +1,7 @@
 # see https://quarto.org/docs/publishing/netlify.html#rendering-on-netlify
 /.quarto/
 /_book/
+/_freeze/
 
 ######## R project specific (R.gitignore)
 # from https://github.com/github/gitignore/
