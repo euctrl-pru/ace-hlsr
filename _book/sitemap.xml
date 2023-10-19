@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+<<<<<<< HEAD
     <loc>https://eurocontrol.int/financial-cost-effectiveness.html</loc>
     <lastmod>2023-10-18T12:20:19.294Z</lastmod>
   </url>
@@ -31,5 +32,21 @@
   <url>
     <loc>https://eurocontrol.int/high-level-revenues.html</loc>
     <lastmod>2023-10-19T07:47:57.507Z</lastmod>
+=======
+    <loc>https://eurocontrol.int/economic-cost-effectiveness.html</loc>
+    <lastmod>2023-10-19T10:25:59.830Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eurocontrol.int/financial-cost-effectiveness.html</loc>
+    <lastmod>2023-10-19T10:26:21.818Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eurocontrol.int/cash-and-liquidity.html</loc>
+    <lastmod>2023-10-19T10:26:38.385Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eurocontrol.int/index.html</loc>
+    <lastmod>2023-10-19T10:28:15.773Z</lastmod>
+>>>>>>> 6d3cef53115e93051330100ab562db065921accb
   </url>
 </urlset>
