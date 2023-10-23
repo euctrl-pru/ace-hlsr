@@ -9,8 +9,8 @@ source(here("data_source.R"))
 
 ## import data
 data_raw  <-  read_xlsx(
-                        # paste0(data_folder, data_file),
-                        here("data", data_file ),
+                        paste0(data_folder, data_file),
+                        # here("data", data_file ),
                         sheet = "F_Staff",
                         range = cell_limits(c(9, 1), c(NA, 3))) %>%
               as_tibble() %>% 

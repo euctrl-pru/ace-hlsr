@@ -15,7 +15,7 @@ source(here("data_source.R"))
 ## import data
 pie_cost_data  <- read_xlsx(
                             # paste0(data_folder, data_file),
-                             here("data",data_file),
+                              paste0(data_folder,data_file),
                              sheet = "F_Cost breakdown",
                              range = cell_limits(c(9, 1), c(NA, 4))) %>%
   as_tibble() %>% 
@@ -92,7 +92,7 @@ pie_cost <- pie_cost_data %>%
 ## import data
 pie_atco_data  <-   read_xlsx(
                               # paste0(data_folder, data_file),
-                              here("data",data_file ),
+                              paste0(data_folder,data_file ),
                               sheet = "F_Cost breakdown",
                               range = cell_limits(c(9, 12), c(NA, 13))) %>%
                               as_tibble() 

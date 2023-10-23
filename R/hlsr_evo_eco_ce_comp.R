@@ -13,23 +13,25 @@ source(here("data_source.R"))
 # import data
 data_raw <- read_xlsx(
                       # paste0(data_folder, data_file),
-                      here("data", data_file ),
-                      sheet = "E_EcoCostEff",
-                      range = cell_limits(c(7, 1), c(NA, 3))) %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
+  paste0(data_folder,data_file ),
+  sheet = "E_EcoCostEff",
+  range = cell_limits(c(7, 1), c(NA, 3))
+  ) %>%
+  mutate_at(c(2,3), ~replace_na(.,0)) %>% 
   as_tibble() %>% 
   rename(YEAR_DATA = Year)
 
 data_raw_extra <-  read_xlsx(
-                            # paste0(data_folder, data_file),
-                            here("data",data_file ),
+                            paste0(data_folder, data_file),
+                            # here("data",data_file ),
                             sheet = "E_EcoCostEff",
                             range = cell_limits(c(7, 5), c(NA, 7))) %>%
   as_tibble() %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
   mutate(FIN_CE = COST_CONTROLLABLE/COMPOSITE_FLIGHTHOUR) 
 
 cost_delay <-  read_xlsx(
-                        # paste0(data_folder, data_file),
-                        here("data",data_file ),
+                        paste0(data_folder, data_file),
+                        # here("data",data_file ),
                         sheet = "E_EcoCostEff",
                         range = cell_limits(c(7, 9), c(NA, 10))) %>%
   as_tibble() %>% 
