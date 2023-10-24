@@ -1,6 +1,5 @@
 # Financial cost-effectiveness {#sec-financial}
 
-
 This chapter provides a [preliminary analysis]{.underline} of financial cost-effectiveness.
 
 ## Pan-European system level {#sec-fin_1}
@@ -9,22 +8,13 @@ This chapter provides a [preliminary analysis]{.underline} of financial cost-eff
 
 On the other hand, {{< var doc.year_report >}} unit ATM/CNS provision costs remain +65.7% higher than in {{< var doc.year_report_minus2 >}}. This mainly reflects the fact that, despite a reduced cost-base (-8.8% compared to {{< var doc.year_report_minus2 >}}) traffic volumes in {{< var doc.year_report >}} were still significantly lower than in {{< var doc.year_report_minus2 >}} (-44.9%).
 
-::: {#fig-figure-4-1}
-::: columns
-::: {.column width="15%"}
-:::
- 
-::: {.column width="70%"}
+::: {#fig-figure-4-1 style="max-width: 470px; margin: auto"}
 ```{r}
 #| file: R/hlsr_evo_unit_cost.R
 #| out.height: "300px"
 #| out.width: "100%"
 ```
-:::
 
-::: {.column width="15%"}
-:::
-:::
 Changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus5 >}} -- {{< var doc.year_report >}} (real terms)
 :::
 
@@ -54,6 +44,7 @@ There are three main elements to be considered when interpreting the level of th
 #| out.height: "450px"
 #| out.width: "100%"
 ```
+
 Financial gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 :::
 
@@ -63,6 +54,7 @@ Financial gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 #| out.height: "450px"
 #| out.width: "100%"
 ```
+
 ATCO-hour productivity, {{< var doc.year_report >}}
 :::
 
@@ -72,6 +64,7 @@ ATCO-hour productivity, {{< var doc.year_report >}}
 #| out.height: "450px"
 #| out.width: "100%"
 ```
+
 Employment costs per ATCO-hour, {{< var doc.year_report >}}
 :::
 
@@ -81,6 +74,7 @@ Employment costs per ATCO-hour, {{< var doc.year_report >}}
 #| out.height: "450px"
 #| out.width: "100%"
 ```
+
 Breakdown of support costs per composite flight-hour, {{< var doc.year_report >}}
 :::
 
