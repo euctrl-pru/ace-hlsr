@@ -41,7 +41,7 @@ data_merged = merge(x=data_raw, y=data_raw_extra, by="YEAR_DATA")
 data_merged = merge(x=data_merged, y=cost_delay, by="YEAR_DATA")
 
 data_calc <- data_merged %>% 
-  mutate(DELAY_CPH = (TDM_ERT_ALL_REASON*COST_DELAY+TDM_ARP_ALL_REASON)/COMPOSITE_FLIGHTHOUR,
+  mutate(DELAY_CPH = (TDM_ERT_ALL_REASON*COST_DELAY+TDM_ARP_ALL_REASON*COST_DELAY)/COMPOSITE_FLIGHTHOUR,
          COST_EV = case_when(YEAR_DATA == min(YEAR_DATA) ~ 0,
                              TRUE ~ COST_CONTROLLABLE/lag(COST_CONTROLLABLE)-1),
          DELAY_CPH_EV = case_when(YEAR_DATA == min(YEAR_DATA) ~ 0,
