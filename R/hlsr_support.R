@@ -24,10 +24,12 @@ data_prep <- data_raw  %>%
   mutate(QUART1 = quantile(`Support costs per composite flight-hour`, 0.25),
          QUART3 = quantile(`Support costs per composite flight-hour`, 0.75),
          LABELS = format(round(`Support costs per composite flight-hour`,0), big.mark = " ")
-  ) %>% 
-  mutate(LABELS = if_else(`Support costs per composite flight-hour` >=1000, LABELS,
-                          str_sub(LABELS, start= -nchar(LABELS)+1)) #to avoid the leading space created by format
   ) 
+
+# %>% 
+#   mutate(LABELS = if_else(`Support costs per composite flight-hour` >=1000, LABELS,
+#                           str_sub(LABELS, start= -nchar(LABELS)+1)) #to avoid the leading space created by format
+#   ) 
 
 data_plot <- data_prep %>% 
   select(-c(`Support costs`, `Composite flight-hours`)) %>% 
