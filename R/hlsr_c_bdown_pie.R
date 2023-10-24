@@ -107,7 +107,7 @@ pie_atco_data <- pie_atco_data %>%
 
 pie_atco_data <- pie_atco_data %>% 
   mutate(LABEL = case_when(
-    COST_TYPE == 'COST_ATCO_OPS' ~ "ATCOs in OPS\noemployment costs",
+    COST_TYPE == 'COST_ATCO_OPS' ~ "ATCOs in OPS\nemployment costs",
     COST_TYPE == 'OTHER_STAFF_COST' ~ "Other staff\nemployment costs"
   ),
   MYCOLOR = case_when(

@@ -130,10 +130,8 @@ In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA 
 :::
 ::: columns
 
-::: {.column width="10%"}
-:::
 
-::: {.column width="55%"}
+::: {.column width="65%"}
 ```{r}
 #| file: R/hlsr_cost_per_ansp.R
 #| out.height: "600px"
@@ -141,7 +139,7 @@ In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA 
 ```
 :::
 
-::: {.column width="25%"}
+::: {.column width="35%"}
 ```{r}
 #| file: R/hlsr_cost_per_ansp_perc.R
 #| out.height: "600px"
@@ -149,8 +147,7 @@ In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA 
 ```
 :::
 
-::: {.column width="10%"}
-:::
+
 :::
 Changes in ATM/CNS provision costs (real terms)
 :::
@@ -165,7 +162,7 @@ The Pan-European ANSPs employed a total of 53 014 staff in 2021 (comprising 52 1
 #| out.width: "100%"
 #| out.height: "300px"
 ```
-
+ 
 Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, {{< var doc.year_report >}}
 :::
 

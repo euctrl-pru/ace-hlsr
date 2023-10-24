@@ -13,7 +13,7 @@ On the other hand, {{< var doc.year_report >}} unit ATM/CNS provision costs rema
 ::: columns
 ::: {.column width="15%"}
 :::
-
+ 
 ::: {.column width="70%"}
 ```{r}
 #| file: R/hlsr_evo_unit_cost.R

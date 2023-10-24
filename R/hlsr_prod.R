@@ -163,8 +163,8 @@ plot_inset <- data_inset %>%
   )
 
 myannotations <- list(
-  x = 0.1,
-  y = 0.93,
+  x = 0.12,
+  y = 1.05,
   text = paste0("<b>", 
                 "European system average: ", 
                 # "\u20AC ",
@@ -204,7 +204,7 @@ fig <- subplot(plot_all, plot_inset) %>%
                        # margin = list(l=100),
                        fixedrange = TRUE,
                        linewidth=10, linecolor='transparent',  mirror = T,
-                       # range = list(0, 200+round(max(data_plot$VALUE/1000), 1)*1000),
+                       range = list(0, 0.2+round(max(data_plot$VALUE), 1)),
                        zeroline = T, showline = T, showgrid = F,
                        domain=c(0,1)),
           xaxis2 = list(title = "",
@@ -223,9 +223,9 @@ fig <- subplot(plot_all, plot_inset) %>%
                         # tickvals = ticklabels2,
                         # ticktext = ticktexts2,
                         fixedrange = TRUE,
-                        # range = list(0, 200+round(max(data_inset$VALUE/1000), 1)*1000),
+                        range = list(0, 0.2+round(max(data_inset$VALUE), 1)),
                         zeroline = T, showline = F, showgrid = F,
-                        domain=c(0.65,1)),
+                        domain=c(0.45,0.95)),
           annotations = myannotations
   )
 

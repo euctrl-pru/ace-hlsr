@@ -107,6 +107,7 @@ pie_staff <- pie_staff_data %>%
 ## prepare data for pie
 
 pie_atco_data <- pie_staff_data_all %>% 
+  filter(YEAR_DATA == year_report)%>% 
   filter(STAF_TYPE == "ACC_ATCO_NB" | STAF_TYPE == "APP_ATCO_NB")
 
 ## labels and colurs

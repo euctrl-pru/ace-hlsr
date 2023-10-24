@@ -84,12 +84,12 @@ plot_all <- data_plot %>%
     # insidetextanchor =  "start",
     # textfont = list(color = 'black', size = 7),
     type = "bar", 
-    hoverinfo = "none",
+    hovertemplate = paste('%{y:.0f}'),
     showlegend = T
   ) %>%
   add_trace( data = data_help,
              inherit = FALSE,
-             # marker = list(color =('transparent')),
+             marker = list(color =('transparent')),
              x = ~ ANSP_NAME,
              y = ~ `Support costs per composite flight-hour`,
              yaxis = "y1",
@@ -99,7 +99,8 @@ plot_all <- data_plot %>%
              # textangle = 0,
              textposition = "top center", cliponaxis = FALSE,
              type = 'scatter',  mode = 'lines',
-             hoverinfo = "none",
+             hovertemplate = paste('%{y:.0f}'),
+             name = 'Total',
              showlegend = F
   ) %>% 
   add_trace(data = data_help,
@@ -151,12 +152,12 @@ plot_inset <- data_inset %>%
     # insidetextanchor =  "start",
     # textfont = list(color = 'black', size = 9),
     type = "bar",
-    hoverinfo = "none",
+    hovertemplate = paste('%{y:.0f}'),
     showlegend = F
   ) %>% 
   add_trace(data = data_help_inset,
             inherit = FALSE,
-            # marker = list(color =('transparent')),
+            marker = list(color =('transparent')),
             x = ~ ANSP_NAME,
             y = ~ `Support costs per composite flight-hour`,
             yaxis = "y1",
@@ -166,7 +167,8 @@ plot_inset <- data_inset %>%
             # textangle = 0,
             textposition = "top center", cliponaxis = FALSE,
             type = 'scatter',  mode = 'lines',
-            hoverinfo = "none",
+            hovertemplate = paste('%{y:.0f}'),
+            name = 'Total',
             showlegend = F
   ) %>% 
   add_annotations (data = data_help_inset,
@@ -213,8 +215,8 @@ plot_inset <- data_inset %>%
   )
 
 myannotations <- list(
-  x = 0.1,
-  y = 0.93,
+  x = 0.12,
+  y = 1.05,
   text = paste0("<b>", 
                 "European system average: ", 
                 "\u20AC ",
@@ -244,6 +246,8 @@ fig <- subplot(plot_all, plot_inset) %>%
           barmode = 'stack',
           title = list(text = "", font = list(color = "black", size = 14)),
           font = list(family = "Helvetica"),
+          hovermode = "x unified",
+          hoverlabel=list(bgcolor="rgba(255,255,255,0.88)"),
           legend = list(orientation = 'h',
                         traceorder = 'reversed', #for some reason this does not work
                         font = list(size = 9),
@@ -269,7 +273,7 @@ fig <- subplot(plot_all, plot_inset) %>%
                        # margin = list(l=100),
                        fixedrange = TRUE,
                        linewidth=1, linecolor='transparent',  mirror = T,
-                       # range = list(0, 200+round(max(data_plot$VALUE/1000), 1)*1000),
+                       range = list(0, 200+round(max(data_plot$`Support costs per composite flight-hour`/1000), 1)*1000),
                        zeroline = T, showline = T, showgrid = F,
                        domain=c(0,1)),
           xaxis2 = list(title = "",
@@ -288,9 +292,9 @@ fig <- subplot(plot_all, plot_inset) %>%
                         tickvals = ticklabels2,
                         ticktext = ticktexts2,
                         fixedrange = TRUE,
-                        # range = list(0, 200+round(max(data_inset$VALUE/1000), 1)*1000),
+                        range = list(0, 200+round(max(data_inset$`Support costs per composite flight-hour`/1000), 1)*1000),
                         zeroline = T, showline = F, showgrid = F,
-                        domain=c(0.45,1)),
+                        domain=c(0.45,0.95)),
           annotations = myannotations
   )
 

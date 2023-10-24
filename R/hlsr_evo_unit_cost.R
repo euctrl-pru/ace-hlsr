@@ -94,12 +94,12 @@ plot_ACE <- ace_graph_data %>%
       side = "right",
       title = paste ("Index of costs and traffic", "<br>","(", min(ace_graph_data$year_data), " = 100)",sep = ""),
       titlefont = list(size = 13),
-      range = list(40, 10+round(max(ace_graph_data$index_costs, ace_graph_data$index_cph)/10)*10),
+      range = list(20, 10+round(max(ace_graph_data$index_costs, ace_graph_data$index_cph)/10)*10),
       automargin = T,
       showgrid = F
     ),
     bargap = 0.4,
-    legend = list(orientation = 'h', xanchor = "left", x = -0.05, y = -0.05),
+    legend = list(orientation = 'h', xanchor = "left", x = -0.05, y = -0.12),
     # hovermode = "x unified",
     uniformtext=list(minsize=10, mode='show')
   ) %>%
