@@ -7,7 +7,7 @@ This chapter provides a [preliminary analysis]{.underline} of financial cost-eff
 @fig-figure-4-1 shows that in {{< var doc.year_report >}} the unit ATM/CNS provision costs fell by -25.2% compared to {{< var doc.year_report_minus1 >}}. This is the result of higher traffic in {{< var doc.year_report >}} compared to {{< var doc.year_report_minus1 >}} (+27.2%) combined with lower ATM/CNS provision costs (-xxxxxxxxxx%).
 
 On the other hand, {{< var doc.year_report >}} unit ATM/CNS provision costs remain +65.7% higher than in {{< var doc.year_report_minus2 >}}. This mainly reflects the fact that, despite a reduced cost-base (-8.8% compared to {{< var doc.year_report_minus2 >}}) traffic volumes in {{< var doc.year_report >}} were still significantly lower than in {{< var doc.year_report_minus2 >}} (-44.9%).
-
+ 
 ::: {#fig-figure-4-1 style="max-width: 470px; margin: auto"}
 ```{r}
 #| file: R/hlsr_evo_unit_cost.R
