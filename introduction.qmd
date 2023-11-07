@@ -6,7 +6,7 @@ The ACE benchmarking work is commissioned by the Performance Review Commission (
 
 The data processing, analysis and reporting are conducted with the assistance of the ACE Working Group, which comprises representatives from participating ANSPs, airspace users, regulatory authorities and the Performance Review Unit. This enables participants to share experiences and establish a common understanding of underlying assumptions and limitations of the data.
 
-The objective of this document is to provide a first insight on the level of {{< var doc.year_report >}} cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the release of the next ACE benchmarking report, which is planned end of May {{< var doc.year_report_plus2 >}}. It also presents specific financial indicators, extracted from the [ANSPs Financial Indicators Dashboard](https://ansperformance.eu/economics/finance/), that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic. \[Add intro to new theme of the year if we can\].
+The objective of this document is to provide a first insight on the level of {{< var doc.year_report >}} cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the release of the next ACE benchmarking report, which is planned end of May {{< var doc.year_report_plus2 >}}. It also presents specific financial indicators, extracted from the [ANSPs Financial Indicators Dashboard](https://ansperformance.eu/economics/finance/), that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic.
 
 @fig-figure-1-1 illustrates the timeline for the production of the next ACE benchmarking report.
 
@@ -34,4 +34,3 @@ The remainder of this report is organised as follows:
 -   @sec-economic: presents a preliminary analysis of economic cost-effectiveness at Pan-European and ANSP level.
 -   @sec-financial: presents a preliminary analysis of financial cost-effectiveness at Pan-European and ANSP level, and underlying components.
 -   @sec-covid: presents a preliminary analysis of specific financial indicators at Pan-European and ANSP level.
--   @sec-capex: presents a preliminary overview of TBC...
