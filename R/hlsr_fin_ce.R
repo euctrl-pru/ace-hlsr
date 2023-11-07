@@ -49,7 +49,7 @@ plot_fin_ce <- data_plot %>%
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
-    marker = list(color =('#8989FF')),
+    marker = list(color =('#78B4F0')),
     text = ~ LABELS,
     # text = ~ as.character(format(round(VALUE,0), big.mark = " ")),
     # textangle = -90,
@@ -96,7 +96,7 @@ plot_inset <- data_inset %>%
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
-    marker = list(color =('#8989FF')),
+    marker = list(color =('#78B4F0')),
     text = " ", # for some reason I need to keep this to avoid labels in prev plot to autosize
     # cliponaxis = FALSE,
     # textangle = -90,
@@ -177,7 +177,7 @@ myannotations <- list(
   yref = "paper",
   xanchor = "left",
   showarrow = FALSE,
-  font = list(color = "#9999FF",
+  font = list(color = "#78B4F0",
               size=13)
 )
 

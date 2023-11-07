@@ -45,7 +45,7 @@ plot_fin_ce <- data_plot %>%
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
-    marker = list(color =('#FFC081')),
+    marker = list(color =('#E0584F')),
     text = ~ LABELS,
     # text = ~ as.character(format(round(VALUE,0), big.mark = " ")),
     # textangle = -90,
@@ -64,7 +64,7 @@ plot_fin_ce <- data_plot %>%
     yaxis = "y1",
     # colors = c('#4F81BD'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#FF9900', width = 2, dash = 'dash'),
+    line = list(color = '#DC4034', width = 2, dash = 'dash'),
     opacity = 1,
     hoverinfo = "none",
     showlegend = F
@@ -76,7 +76,7 @@ plot_fin_ce <- data_plot %>%
     yaxis = "y1",
     # color = c('#333399'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#FF9900', width = 2, dash = 'dash'),
+    line = list(color = '#DC4034', width = 2, dash = 'dash'),
     opacity = 1,
     hoverinfo = "none",
     showlegend = F
@@ -92,7 +92,7 @@ plot_inset <- data_inset %>%
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
-    marker = list(color =('#FFC081')),
+    marker = list(color =('#E0584F')),
     text = " ", # for some reason I need to keep this to avoid labels in prev plot to autosize
     # cliponaxis = FALSE,
     # textangle = -90,
@@ -138,7 +138,7 @@ plot_inset <- data_inset %>%
     yaxis = "y1",
     # colors = c('#4F81BD'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#FF9900', width = 2, dash = 'dash'),
+    line = list(color = '#DC4034', width = 2, dash = 'dash'),
     opacity = 1,
     hoverinfo = "none",
     showlegend = F
@@ -150,7 +150,7 @@ plot_inset <- data_inset %>%
     yaxis = "y1",
     # color = c('#333399'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#FF9900', width = 2, dash = 'dash'),
+    line = list(color = '#DC4034', width = 2, dash = 'dash'),
     opacity = 1,
     hoverinfo = "none",
     showlegend = F
@@ -173,7 +173,7 @@ myannotations <- list(
   yref = "paper",
   xanchor = "left",
   showarrow = FALSE,
-  font = list(color = "#FF9933",
+  font = list(color = "#E0584F",
               size=13)
 )
 

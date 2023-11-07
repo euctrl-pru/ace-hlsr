@@ -24,7 +24,7 @@ plot_ACE <- ace_graph_data %>%
     x = ~ year_data,
     y = ~ costs_per_cph,
     yaxis = "y1",
-    marker = list(color =('#4F81BD')),
+    marker = list(color =('#78B4F0')),
     text = ~ paste("  <b>",round(costs_per_cph,0),"</b>"),
     textangle = -90,
     textposition = "inside",
@@ -54,7 +54,7 @@ plot_ACE <- ace_graph_data %>%
     inherit = FALSE,
     yaxis = "y2",
     type = 'scatter',  mode = 'lines', name = 'ATM/CNS provision costs',
-    line = list(color = "#1F497D"),
+    line = list(color = "#003366"),
     hovertemplate = paste('<b>ATM/CNS costs index</b>: <br>%{y}',
                           "<extra></extra>",
                           sep = "")
@@ -65,8 +65,8 @@ plot_ACE <- ace_graph_data %>%
     inherit = FALSE,
     yaxis = "y2",
     type = 'scatter',  mode = 'lines', name = 'Composite flight-hours',
-    line = list(color = "#E46C0A"),
-    hoverlabel=list(bgcolor="#F8A662",font=list(color='black')),
+    line = list(color = "#E1F060"),
+    hoverlabel=list(bgcolor="#E1F060",font=list(color='black')),
     hovertemplate = paste('<b>Composite flight-hours index</b>: <br>%{y}',
                           "<extra></extra>",
                           sep = "")

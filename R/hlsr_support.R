@@ -78,7 +78,7 @@ plot_all <- data_plot %>%
                                       "Capital-related costs per composite flight-hour",
                                       "Exceptional costs per composite flight-hour")
     ),
-    colors = c('#000080', '#FF9900', '#C3D69B', '#993366'),
+    colors = c('#003366', '#78B4F0', '#E1F060', '#E0584F'),
     # text = ~ LABELS,
     # text = ~ as.character(format(round(VALUE,0), big.mark = " ")),
     # textangle = -90,
@@ -145,7 +145,7 @@ plot_inset <- data_inset %>%
                                       "Capital-related costs per composite flight-hour",
                                       "Exceptional costs per composite flight-hour")
     ),
-    colors = c('#000080', '#FF9900', '#C3D69B', '#993366'),
+    colors = c('#003366', '#78B4F0', '#E1F060', '#E0584F'),
     # marker = list(color =('#8989FF')),
     text = " ", # for some reason I need to keep this to avoid labels in prev plot to autosize
     # cliponaxis = FALSE,
@@ -228,7 +228,7 @@ myannotations <- list(
   yref = "paper",
   xanchor = "left",
   showarrow = FALSE,
-  font = list(color = "#1F497D",
+  font = list(color = "#003366",
               size=13)
 )
 
