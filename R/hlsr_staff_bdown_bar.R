@@ -57,7 +57,7 @@ p1 <- data_plot %>%
   plot_ly(
     x = ~ STAF,
     y = ~ LABEL,
-    marker = list(color =('#4F81BD')),
+    marker = list(color =('#003366')),
     text = ~ format(round(STAF,0), big.mark = " "),
     textangle = 0,
     textposition = "outside",

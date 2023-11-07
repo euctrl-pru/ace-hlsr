@@ -9,7 +9,7 @@ library(magick)
 library(here)
 library(webshot)
 library(htmlwidgets)
-library(RSelenium)
+# library(RSelenium)
 library(here)
 # library(ggrepel)
 
@@ -82,12 +82,13 @@ domain_staff_x0 <- 0
 domain_staff_x1 <- 0.45
 
 # plot piechart
-pie_staff <- pie_staff_data %>% 
+pie_staff <- function(mytext){
+  pie_staff_data %>% 
   plot_ly(
     labels = ~LABEL, values = ~STAF, type = 'pie',
     hoverinfo = "none",
     textinfo='label',
-    textfont = list(size = 10),
+    textfont = list(size = mytext),
     marker = list(colors = ~MYCOLOR),
     # line = list(color = '#FFFFFF', width = 1)),
     domain = list(x = c(domain_staff_x0, domain_staff_x1), y = c(0, 1)),  #domain controls the position in the subplot
@@ -103,7 +104,7 @@ pie_staff <- pie_staff_data %>%
     displaylogo = FALSE,
     displayModeBar = F
   )
-
+}
 ## prepare data for pie
 
 pie_atco_data <- pie_staff_data_all %>% 
@@ -127,12 +128,13 @@ domain_atco_x0 <-0.57
 domain_atco_x1 <-0.88
 
 # plot piechart
-pie_atco <- pie_atco_data %>% 
+pie_atco <- function(mytext) {
+  pie_atco_data %>% 
   plot_ly(
     labels = ~LABEL, values = ~STAF, type = 'pie',
     hoverinfo = "none",
     textinfo='label+percent',
-    textfont = list(size = 10),
+    textfont = list(size = mytext),
     insidetextorientation='horizontal',
     marker = list(colors = ~MYCOLOR),
     domain = list(x = c(domain_atco_x0, domain_atco_x1), y = c(0, 1)),
@@ -147,7 +149,8 @@ pie_atco <- pie_atco_data %>%
     displaylogo = FALSE,
     displayModeBar = F
   )
-
+}
+  
 # finally we don't use the lines. Too difficult to control in the html page
 lines <- list (
   list(
@@ -183,13 +186,18 @@ myimages <- list(
 )
 
 
-fig <- subplot(pie_staff, pie_atco) %>%
+fig <- subplot(pie_staff(10), pie_atco(10)) %>%
    layout(images = myimages)
 
 
 fig
 
-# saveWidget(fig, file = "fig.html")
-# webshot(url = "fig.html", file = "fig.png")
-# export(fig, "fig2.svg", selenium =  RSelenium::rsDriver(browser = "chrome"))
-# htmltools::tagList(list(pie_er, pie_er_term))
+fig_pdf <- subplot(pie_staff(14), pie_atco(14)) %>%
+  layout(images = myimages)
+
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+
+invisible(export(fig_pdf, paste0(fig_dir,"figure-2-6-hlsr_staff_pie.png")))

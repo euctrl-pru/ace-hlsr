@@ -44,7 +44,7 @@ p1 <- data_plot %>%
     y = ~ STAF/1000,
     color = ~ factor(LABEL, levels = c('Number of support staff', 'Number of ATCOs in OPS')),
     type = "bar",
-    colors = c('#4F81BD', '#C0504D'),
+    colors = c('#9AA349', '#003366'),
     text = ~ round(STAF/1000,0),
     textangle = 0,
     textposition = "inside",

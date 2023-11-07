@@ -41,39 +41,41 @@ trm_reve_apt_perc <- sprintf("%0.1f%%", trm_reve_apt/trm_reve*100)
 This chapter provides a [preliminary]{.underline} presentation of high-level revenues, costs and staff data provided in ANSPs ACE {{< var doc.year_report >}} data submissions. Total ANS revenues in {{< var doc.year_report >}} amounted to `r total_reve_f`. Most en-route revenues come from the collection of en-route charges (`r ert_reve_charge_perc`, see left pie chart). The proportion of terminal revenues from charges is lower (`r trm_reve_charge_perc`, see right pie chart), as additional income may directly come from airport operators (`r trm_reve_apt_perc` e.g. through a contractual arrangement between the ANSP and the airport operator).
 
 ::: {#fig-figure-2-1}
-::: {.content-visible when-format="html"}
+
+:::: {.content-visible when-format="html"}
 ```{r}
 #| file: R/hlsr_rev_pie.R
 #| out.height: "420px"
 #| out.width: "100%"
 ```
+::::
+
+:::: {.content-visible when-format="pdf"}
+![](figures/figure-2-1-hlsr_rev_pie.png){height=85% width=88% fig-align="center"}
+::::
 
 ```{r}
 #| child: R/hlsr_rev_table.Rmd
 ```
-:::
 
-::: {.content-visible when-format="pdf"}
-![](figures/pie.png)
-:::
 
 Breakdown of gate-to-gate ANS revenues, {{< var doc.year_report >}}
 :::
 
 ::: blue
-::: columns
-::: {.column width="25%"}
+:::: columns
+::::: {.column width="25%"}
 ![](figures/Figure-2-2-cfh.png)
-:::
+:::::
 
-::: {.column width="50%"}
+::::: {.column width="50%"}
 Across the Pan-European system, traffic in 2022 (measured in composite flight-hours) was +58.5% higher than in 2021 but remained -12.7% lower than in 2019. In the meantime, total gate-to-gate revenues increased slightly less than traffic (+53.6%) and remained -15.4% lower than in 2019.
-:::
+:::::
 
-::: {.column width="25%"}
+::::: {.column width="25%"}
 ![](figures/Figure-2-2-rev.png)
-:::
-:::
+:::::
+::::
 :::
 
 The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services which amounted to €8 983M in 2022. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 83% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented some 17%.
@@ -103,18 +105,19 @@ The ACE benchmarking analysis focuses on the specific costs of providing gate-to
 Gate-to-gate ATM/CNS provision costs at Pan-European system level, {{< var doc.year_report >}}
 :::
 
-::: blue
-::: columns
-::: {.column width="35%"}
-Between {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}}, total ATM/CNS provision costs rose by +4.2% (+€358.1M), reflecting cost increases from 26 out of 38 ANSPs. Staff costs (+€220.2M), the cost of capital (+163.2M) and non-staff operating costs (+130.5M) were the main sources of increase in 2022.
-:::
 
-::: {.column width="65%"}
+::: blue
+:::: columns
+::::: {.column width="35%"}
+Between {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}}, total ATM/CNS provision costs rose by +4.2% (+€358.1M), reflecting cost increases from 26 out of 38 ANSPs. Staff costs (+€220.2M), the cost of capital (+163.2M) and non-staff operating costs (+130.5M) were the main sources of increase in 2022.
+:::::
+
+::::: {.column width="65%"}
 ```{r Figure-2-4, out.width='100%', echo=FALSE}
 knitr::include_graphics('figures/Figure-2-4.png')
 ```
-:::
-:::
+:::::
+::::
 :::
 
 ::: blue
@@ -123,108 +126,98 @@ For staff and non-staff operating costs, this reflects the release of temporary 
 
 In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 54% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-3).
 
-<p style="font-weight: bold; text-decoration: underline; font-family: Helvetica; text-align: center; margin-bottom: 0rem">
-
-Trends in ATM/CNS provision costs at Pan-European system level
-
-</p>
-
-<div>
-
-::: columns
-::: {.column width="10%"}
+::: {style="text-align: center;"}
+[Trends in ATM/CNS provision costs at Pan-European system level]{style="font-weight: bold; text-decoration: underline; font-family: Helvetica; margin-bottom: 0rem"}
 :::
 
-::: {.column width="80%"}
+::: {#fig-figure-2-5}
+
+:::: {style="max-width: 620px; margin: auto"}
 ```{r}
 #| file: R/hlsr_evo_cost.R
 #| out.height: "200px"
 #| out.width: "100%"
 ```
-:::
+::::
 
-::: {.column width="10%"}
-:::
-:::
-
-::: columns
-::: {.column width="65%"}
+:::: columns
+::::: {.column width="65%"}
 ```{r}
 #| file: R/hlsr_cost_per_ansp.R
 #| out.height: "600px"
 #| out.width: "100%"
 ```
-:::
+:::::
 
-::: {.column width="35%"}
+::::: {.column width="35%"}
 ```{r}
 #| file: R/hlsr_cost_per_ansp_perc.R
 #| out.height: "600px"
 #| out.width: "100%"
 ```
-:::
-:::
+:::::
+::::
 
 Changes in ATM/CNS provision costs (real terms)
 
-</div>
+:::
 
 <!-- ![Changes in ATM/CNS provision costs (real terms)](figures/Figure-2-3.png){#fig-figure-2-3 width="75%"} -->
 
 The Pan-European ANSPs employed a total of 52 843 staff in 2022 (comprising 52 026 staff providing ATM/CNS services and 817 internal MET staff). Some 17 335 staff (33%) were ATCOs working on operational duty, split between ACCs (54%) and APP/TWR facilities (46%). On average, 2.0 additional staff are required for every ATCO in OPS in Europe.
 
+
+
 ::: {#fig-figure-2-6}
+:::: {.content-visible when-format="html"}
 ```{r}
 #| file: R/hlsr_staff_pie.R
 #| out.width: "100%"
 #| out.height: "300px"
 ```
+::::
+
+:::: {.content-visible when-format="pdf"}
+![](figures/figure-2-6-hlsr_staff_pie.png){height=85% width=85% fig-align="center"}
+::::
 
 Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, {{< var doc.year_report >}}
 :::
 
+
 In {{< var doc.year_report >}}, the number of ATM/CNS staff remained almost at the same level as in 2021 (-0.2% or -127 FTEs).
 
-<p style="font-weight: bold; text-decoration: underline; font-family: Helvetica; text-align: center; margin-bottom: 0rem">
-
-Trends in gate-to-gate ATM/CNS staff at Pan-European system level
-
-</p>
-
-::: {#fig-figure-2-5}
-::: columns
-::: {.column width="10%"}
+::: {style="text-align: center;"}
+[Trends in gate-to-gate ATM/CNS staff at Pan-European system level]{style="font-weight: bold; text-decoration: underline; font-family: Helvetica; margin-bottom: 0rem"}
 :::
 
-::: {.column width="80%"}
+::: {#fig-figure-2-5}
+
+:::: {style="max-width: 620px; margin: auto"}
 ```{r}
 #| file: R/hlsr_evo_staff.R
 #| out.height: "200px"
 #| out.width: "100%"
 ```
-:::
+::::
 
-::: {.column width="10%"}
-:::
-:::
-
-::: columns
-::: {.column width="65%"}
+:::: columns
+::::: {.column width="65%"}
 ```{r}
 #| file: R/hlsr_staff_bdown_bar.R
 #| out.height: "400px"
 #| out.width: "100%"
 ```
-:::
+:::::
 
-::: {.column width="35%"}
+::::: {.column width="35%"}
 ```{r}
 #| file: R/hlsr_staff_bdown_bar_perc.R
 #| out.height: "400px"
 #| out.width: "100%"
 ```
-:::
-:::
+:::::
+::::
 
 Total gate-to-gate ATM/CNS staff per staff category
 :::

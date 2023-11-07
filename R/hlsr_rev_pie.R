@@ -8,6 +8,7 @@ library(plotly)
 library(htmltools)
 library(magick)
 library(here)
+library(webshot)
 # library(ggrepel)
 ## data source
 source(here("data_source.R"))
@@ -54,14 +55,17 @@ er_trm_domain_x0 <- 0.35
 er_trm_domain_x1 <- 0.65
 
 # plot piechart
-pie_er_trm <- pie_er_trm_data %>% 
+
+pie_er_trm <- function(mytext){
+  
+  pie_er_trm_data %>% 
   plot_ly(
     labels = ~LABELS, 
     values = ~REVE, 
     type = 'pie',
     hoverinfo = "none",
     textinfo='label+percent',
-    textfont = list(size = 10),
+    textfont = list(size = mytext),
     marker = list(colors = c("#008080", "#FFFF99"),
                   line = list(color = '#FFFFFF', width = 1)),
     rotation = start_point_er_trm,
@@ -77,7 +81,9 @@ pie_er_trm <- pie_er_trm_data %>%
     displaylogo = FALSE,
     displayModeBar = F
   )
-
+}
+  
+  
 #transpose
 pie_data_t <- transpose(pie_data)
 colnames(pie_data_t) <- pie_data$TYPE
@@ -138,13 +144,14 @@ er_domain_x0 <- 0
 er_domain_x1 <- 0.27
 
 # plot piechart
-pie_er <- pie_er_data %>% 
+pie_er <- function(mytext){
+  pie_er_data %>% 
   filter(CONCEPT != "REVE_AIRPORT") %>% 
   plot_ly(
     labels = ~LABEL, values = ~ERT, type = 'pie',
     hoverinfo = "none",
     textinfo='label',
-    textfont = list(size = 10),
+    textfont = list(size = mytext),
     insidetextorientation='horizontal',
     marker = list(colors = ~MYCOLOR),
     rotation = start_point_er,
@@ -161,7 +168,8 @@ pie_er <- pie_er_data %>%
     displaylogo = FALSE,
     displayModeBar = F
   )
-
+}
+  
 ## prepare data for terminal pie
 
 #filter data for pie
@@ -183,12 +191,13 @@ trm_domain_x0 <- 0.73
 trm_domain_x1 <- 1
 
 # plot piechart
-pie_trm <- pie_trm_data %>% 
+pie_trm <- function(mytext){
+  pie_trm_data %>% 
   plot_ly(
     labels = ~LABEL, values = ~TRM, type = 'pie',
     hoverinfo = "none",
     textinfo='label',
-    textfont = list(size = 10),
+    textfont = list(size = mytext),
     insidetextorientation='horizontal',
     marker = list(colors = ~MYCOLOR),
     rotation = start_point_trm,
@@ -205,7 +214,8 @@ pie_trm <- pie_trm_data %>%
     displaylogo = FALSE,
     displayModeBar = F
   )
-
+}
+  
 # finally we don't use the lines. Too difficult to control in the html page
 lines <- list (
   list(
@@ -241,10 +251,12 @@ lines <- list (
     yref = "paper"
   )  )
 
-myannotations <- list(
+
+myannotations <- function(mytext, myvert){
+  list(
   list(
     x = 0.15,
-    y = -0.3,
+    y = myvert,
     text = paste0("<b>", 
                   "Total en-route\nrevenue: ", 
                   "\u20AC ",
@@ -255,11 +267,11 @@ myannotations <- list(
     xanchor = "center",
     showarrow = FALSE,
     font = list(color = "black",
-                size=11)
+                size=mytext)
   ),
   list(
     x = 0.5,
-    y = -0.3,
+    y = myvert,
     text = paste0("<b>", 
                   "Gate-to-gate\nrevenue: ", 
                   "\u20AC ",
@@ -270,11 +282,11 @@ myannotations <- list(
     xanchor = "center",
     showarrow = FALSE,
     font = list(color = "black",
-                size=11)
+                size=mytext)
   ),
   list(
     x = 0.85,
-    y = -0.3,
+    y = myvert,
     text = paste0("<b>", 
                   "Total terminal\nrevenue: ", 
                   "\u20AC ",
@@ -285,10 +297,11 @@ myannotations <- list(
     xanchor = "center",
     showarrow = FALSE,
     font = list(color = "black",
-                size=11)
+                size=mytext)
   )
 )
-
+}
+  
 image_folder <- here("images")
 # arrow_left <- image_read(paste0(image_folder,"/long_left_arrow.svg"))
 # arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
@@ -313,10 +326,20 @@ myimages <- list(
 )
 
 
-fig <- subplot(pie_er, pie_er_trm,pie_trm) %>%
-  layout(annotations = myannotations, images = myimages)
+fig <- subplot(pie_er(10), pie_er_trm(10), pie_trm(10)) %>%
+  layout(annotations = myannotations(11, -0.3), images = myimages)
 
 
 fig
 
 
+fig_pdf <-  subplot(pie_er(14), pie_er_trm(14), pie_trm(14)) %>%
+  layout(annotations = myannotations(18, -0.05), images = myimages)
+
+
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+
+invisible(export(fig_pdf, paste0(fig_dir,"figure-2-1-hlsr_rev_pie.png")))

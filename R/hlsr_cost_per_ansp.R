@@ -37,7 +37,7 @@ p1 <- data_plot %>%
     # height = 750,
     x = ~ COST/10^6,
     y = ~ paste0(ANSP_NAME, "  "),
-    marker = list(color =('#4F81BD')),
+    marker = list(color =('#003366')),
     text = ~ format(round(COST/10^6,0), big.mark = " "),
     textangle = 0,
     textposition = "outside",

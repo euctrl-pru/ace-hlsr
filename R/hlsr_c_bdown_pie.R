@@ -209,6 +209,8 @@ layout(annotations = myannotations(12, -0.15), images = myimages)
 
 # fig <- subplot(pie_cost, pie_atco)
 
+fig
+
 fig_pdf <- subplot(pie_cost(14, '<b>%{label}</b>'), pie_atco(14, '<b>%{label}</br>%{percent}</b>')) %>%
   layout(annotations = myannotations(18, 0), images = myimages)
 
@@ -216,15 +218,6 @@ fig_pdf <- subplot(pie_cost(14, '<b>%{label}</b>'), pie_atco(14, '<b>%{label}</b
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
 fig_dir <- 'figures/'
-# 
-# export(fig, paste0(fig_dir,"figure-2-3-hlsr_c_bdown_pie.png"))
 
-
-fig
-
-
-
-
-
-
+invisible(export(fig_pdf, paste0(fig_dir,"figure-2-3-hlsr_c_bdown_pie.png")))
 

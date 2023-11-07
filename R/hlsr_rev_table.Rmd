@@ -103,17 +103,17 @@ table_reve <- reactable(
   striped = FALSE,
   compact = TRUE,
   highlight = TRUE,
-  defaultColDef = colDef(style=list("font-size" = "11px", "white-space"= "wrap"),
+  defaultColDef = colDef(style=list("font-size" = "0.9rem", "white-space"= "wrap"),
                          align = "right",
-                         headerStyle = list(background = "#538DD5", color = "white", fontSize = "11px", style=list("white-space"= "wrap")),
-                         footerStyle = list(fontWeight = "bold", fontSize = "11px", style=list("white-space"= "wrap"))
+                         headerStyle = list(background = "#538DD5", color = "white", fontSize = "0.9rem", style=list("white-space"= "wrap")),
+                         footerStyle = list(fontWeight = "bold", fontSize = "0.9rem", style=list("white-space"= "wrap"))
   ),
   columns = list(
-    ERT_F = colDef(name="En-route",minWidth = 15),
-    ERT_PERC = colDef(name="%",minWidth = 15),
-    LABEL = colDef(name="Gate-to-gate revenues (\u20AC M)", minWidth = 40, align = "center"),
-    TRM_PERC = colDef(name="%",minWidth = 15),
-    TRM_F = colDef(name="Terminal", minWidth = 15)
+    ERT_F = colDef(name="En-route",minWidth = 14),
+    ERT_PERC = colDef(name="%",minWidth = 14),
+    LABEL = colDef(name="Gate-to-gate revenues (\u20AC M)", minWidth = 44, align = "center", style=list(fontSize = "0.8rem")),
+    TRM_PERC = colDef(name="%",minWidth = 14),
+    TRM_F = colDef(name="Terminal", minWidth = 14)
     ),
   borderless = TRUE,
   rowStyle = JS(paste0("function(rowInfo) {
