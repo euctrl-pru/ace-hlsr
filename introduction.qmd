@@ -14,9 +14,9 @@ The objective of this document is to provide a first insight on the level of {{<
 
 It is important that robust ACE benchmarking analysis is available in a timely manner since several stakeholders, most notably ANSPs' management, regulatory authorities (e.g. NSAs) and airspace users, have a keen interest in receiving the information in the ACE reports as early as possible.
 
-Eighteen ANSPs provided their ACE {{< var doc.year_report >}} data submission on time by the 1st July {{< var doc.year_report_plus1 >}} and, in total, 23 data submissions were received by the 15th July {{< var doc.year_report_plus1 >}}. For 10 ANSPs (Avinor, BULATSA, DCAC Cyprus, Fintraffic ANS, HASP, LVNL, MATS, Oro Navigacija, ROMATSA and Sakaeronavigatsia) the ACE data submissions were received more than one month after the deadline. Clearly, the timescale for the production of the ACE benchmarking report is inevitably delayed if data are not submitted on time.
+Seventeen ANSPs provided their ACE {{< var doc.year_report >}} data submission on time by the 1st of July {{< var doc.year_report_plus1 >}} and, all data submissions were received by the end of August {{< var doc.year_report_plus1 >}}. This constitutes a major improvement compared to previous years. Clearly, the timescale for the production of the ACE benchmarking report is inevitably delayed if data are not submitted on time.
 
-It should be noted that the data presented in this document are still [preliminary and not yet fully validated]{.underline}. These data reflect the information stored in the ACE database on the 17th November {{< var doc.year_report_plus1 >}}. @fig-figure-1-2 shows the status of the ACE data validation process for the data presented in this document.
+It should be noted that the data presented in this document are still [preliminary and not yet fully validated]{.underline}. These data reflect the information stored in the ACE database on the 7th of November {{< var doc.year_report_plus1 >}}. @fig-figure-1-2 shows the status of the ACE data validation process for the data presented in this document.
 
 ::: {#fig-figure-1-2}
 ```{r}
