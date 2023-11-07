@@ -28,6 +28,7 @@ format:
       - media/fontawesome.html
       # UNCOMMENT for activating GA
       - media/analytics.html
+  pdf: default
 
 book:
   title: "High-level Summary Report on Preliminary ACE 2022 Data"
