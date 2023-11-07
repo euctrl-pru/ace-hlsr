@@ -4,9 +4,9 @@ This chapter provides a [preliminary analysis]{.underline} of financial cost-eff
 
 ## Pan-European system level {#sec-fin_1}
 
-@fig-figure-4-1 shows that in {{< var doc.year_report >}} the unit ATM/CNS provision costs fell by -25.2% compared to {{< var doc.year_report_minus1 >}}. This is the result of higher traffic in {{< var doc.year_report >}} compared to {{< var doc.year_report_minus1 >}} (+27.2%) combined with lower ATM/CNS provision costs (-xxxxxxxxxx%).
+@fig-figure-4-1 shows that in {{< var doc.year_report >}} the unit ATM/CNS provision costs fell by -34.3% compared to {{< var doc.year_report_minus1 >}}. This is the result of higher traffic in {{< var doc.year_report >}} compared to {{< var doc.year_report_minus1 >}} (58.5%) combined with higher ATM/CNS provision costs (+4.2%).
 
-On the other hand, {{< var doc.year_report >}} unit ATM/CNS provision costs remain +65.7% higher than in {{< var doc.year_report_minus2 >}}. This mainly reflects the fact that, despite a reduced cost-base (-8.8% compared to {{< var doc.year_report_minus2 >}}) traffic volumes in {{< var doc.year_report >}} were still significantly lower than in {{< var doc.year_report_minus2 >}} (-44.9%).
+Comparing with pre-pandemic levels, in {{< var doc.year_report >}} unit ATM/CNS provision costs remain +8.8% higher than in 2019. This mainly reflects the fact that, despite a lower cost-base (-5.5% compared to {{< var doc.year_report_minus2 >}}) traffic volumes in {{< var doc.year_report >}} were still lower than in {{< var doc.year_report_minus2 >}} (-13.2%).
  
 ::: {#fig-figure-4-1 style="max-width: 470px; margin: auto"}
 ```{r}
@@ -20,15 +20,15 @@ Changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus5 >}} -- {
 
 The analytical framework which is used in the ACE analysis to break down the financial cost-effectiveness indicator into relevant economic drivers is presented in @fig-figure-4-2. These key drivers include:
 
-a\) ATCO-hour productivity (0.60 composite flight-hours per ATCO-hour);
+a\) ATCO-hour productivity (0.88 composite flight-hours per ATCO-hour);
 
-b\) ATCO employment costs per ATCO-hour (€125); and,
+b\) ATCO employment costs per ATCO-hour (€132); and,
 
-c\) support costs per unit output (€454).
+c\) support costs per unit output (€322).
 
 ![ACE performance framework, {{< var doc.year_report >}} (real terms)](figures/Figure-4-2.png){#fig-figure-4-2 width="100%"}
 
-@fig-figure-4-3 shows that in {{< var doc.year_report >}}, ATCO employment costs per ATCO-hour fell by -8.5% while ATCO-hour productivity rose by +24.8%. As a result, ATCO employment costs per composite flight-hour decreased (-26.7%). In the meantime, unit support costs fell by -24.5% due to the combination of an increase in composite flight-hours (+27.2%) and a reduction in support costs (-4.0%). As a result, in 2021, unit ATM/CNS provision costs fell by -25.2% at Pan-European system level.
+@fig-figure-4-3 shows that in {{< var doc.year_report >}}, ATCO employment costs per ATCO-hour fell by -2.9% while ATCO-hour productivity rose by +45.7%. As a result, ATCO employment costs per composite flight-hour decreased (-33.4%). In the meantime, unit support costs fell by -34.7% due to the combination of an increase in composite flight-hours (+58.5%) and an increase in in support costs (+3.5%). As a result, in 2022, unit ATM/CNS provision costs fell by -34.3% at Pan-European system level.
 
 ![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3 width="100%"}
 
@@ -36,7 +36,6 @@ c\) support costs per unit output (€454).
 
 @fig-figure-4-4 to @fig-figure-4-7 present the main ACE key performance indicators at ANSP level for the year {{< var doc.year_report >}}. In all these figures, the dotted lines represent the 1st and 3rd quartiles.
 
-There are three main elements to be considered when interpreting the level of the indicators as well as ANSPs rankings in the figures below: a) the traffic level in {{< var doc.year_report >}} was still significantly lower than before COVID-19 crisis (although being lower for all ANSPs, the gap is not completely homogeneous), b) there were different responses in cost adjustments in {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}}, and c) there were also different levels of flexibility in adjusting the workforce, and in particular ATCO in OPS hours on duty, which has an enormous impact on the ATCO productivity and employment costs indicators measured in the ACE report.
 
 ::: {#fig-figure-4-4}
 ```{r}
