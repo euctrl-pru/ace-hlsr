@@ -1,6 +1,5 @@
 # High-level revenues, costs and staff data {#sec-high}
 
- 
 ```{r}
 #libraries
 
@@ -42,10 +41,7 @@ trm_reve_apt_perc <- sprintf("%0.1f%%", trm_reve_apt/trm_reve*100)
 This chapter provides a [preliminary]{.underline} presentation of high-level revenues, costs and staff data provided in ANSPs ACE {{< var doc.year_report >}} data submissions. Total ANS revenues in {{< var doc.year_report >}} amounted to `r total_reve_f`. Most en-route revenues come from the collection of en-route charges (`r ert_reve_charge_perc`, see left pie chart). The proportion of terminal revenues from charges is lower (`r trm_reve_charge_perc`, see right pie chart), as additional income may directly come from airport operators (`r trm_reve_apt_perc` e.g. through a contractual arrangement between the ANSP and the airport operator).
 
 ::: {#fig-figure-2-1}
-
-
-:::: {.content-visible when-format="html"}
-
+::: {.content-visible when-format="html"}
 ```{r}
 #| file: R/hlsr_rev_pie.R
 #| out.height: "420px"
@@ -55,38 +51,32 @@ This chapter provides a [preliminary]{.underline} presentation of high-level rev
 ```{r}
 #| child: R/hlsr_rev_table.Rmd
 ```
+:::
 
-::::
-
-:::: {.content-visible when-format="pdf"}
-
-
+::: {.content-visible when-format="pdf"}
 ![](figures/pie.png)
-
-
-::::
-
+:::
 
 Breakdown of gate-to-gate ANS revenues, {{< var doc.year_report >}}
 :::
 
 ::: blue
 ::: columns
-::: {.column width="30%"}
+::: {.column width="25%"}
 ![](figures/Figure-2-2-cfh.png)
 :::
 
-::: {.column width="40%"}
-Across the Pan-European system, traffic in 2021 (measured in composite flight-hours) was +27.2% higher than in 2020 but remained -44.9% lower than in 2019. In the meantime, total gate-to-gate revenues increased less than traffic (+20.8%) and remained -44.3% lower than in 2019.
+::: {.column width="50%"}
+Across the Pan-European system, traffic in 2022 (measured in composite flight-hours) was +58.5% higher than in 2021 but remained -12.7% lower than in 2019. In the meantime, total gate-to-gate revenues increased slightly less than traffic (+53.6%) and remained -15.4% lower than in 2019.
 :::
 
-::: {.column width="30%"}
+::: {.column width="25%"}
 ![](figures/Figure-2-2-rev.png)
 :::
 :::
 :::
 
-The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services which amounted to €7 937M in 2021. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 84% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented some 16%.
+The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services which amounted to €8 983M in 2022. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 83% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented some 17%.
 
 ::: {#fig-figure-2-3}
 
@@ -116,11 +106,11 @@ Gate-to-gate ATM/CNS provision costs at Pan-European system level, {{< var doc.y
 ::: blue
 ::: columns
 ::: {.column width="35%"}
-Between {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}}, total ATM/CNS provision costs fell by -4.9% (-€408.9M), reflecting cost reductions from 27 out of 38 ANSPs. When considering the savings already achieved in 2020, the cumulative decrease since 2019 is -8.8% (-€765M).
+Between {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}}, total ATM/CNS provision costs rose by +4.2% (+€358.1M), reflecting cost increases from 26 out of 38 ANSPs. Staff costs (+€220.2M), the cost of capital (+163.2M) and non-staff operating costs (+130.5M) were the main sources of increase in 2022.
 :::
 
 ::: {.column width="65%"}
-```{r Figure-2-4, out.width='80%', echo=FALSE}
+```{r Figure-2-4, out.width='100%', echo=FALSE}
 knitr::include_graphics('figures/Figure-2-4.png')
 ```
 :::
@@ -128,17 +118,20 @@ knitr::include_graphics('figures/Figure-2-4.png')
 :::
 
 ::: blue
-Staff costs were by far the main source of savings in {{< var doc.year_report >}} (-€221.7M). This reflects both the effect of temporary measures implemented in 2020 and 2021 (e.g. short time work, furlough schemes, reduced remuneration...) but also the effect of redundancy plans. <br><br> A majority of ANSPs also maintained lower level of non-staff operating costs or reduced it further in 2021 leading to a decrease of -€102.5M. Similarly, the cancellation or deferral of non-essential investments resulted in further reduction in depreciation costs (-€42.4M). Exceptional costs decreased by -€94.4M in 2021 mainly reflecting the fact that this cost item was particularly high in 2020 due to the reporting of redundancy costs.<br><br>The only cost item increasing in 2021 was the cost of capital (+€52.2M), mainly due to large increases for DHMI and NATS, reflecting increases in their asset base and weighted average cost of capital.
+For staff and non-staff operating costs, this reflects the release of temporary measures implemented in 2020 and 2021 (e.g. short time work, furlough schemes, reduced remuneration, postponement of non-essential activities, etc.). <br><br> The observed trend in the cost of capital is heavily affected by very large increases for DHMI, DFS and LFV. Finally, the cancellation or deferral of non-essential investments resulted in a reduction in depreciation costs (-€82.4M).
 :::
 
-In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 56% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-3).
+In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA and NATS) bore some 54% of total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-3).
 
-<p style="font-weight: bold; text-decoration: underline; font-family: Helvetica; text-align: center; margin-bottom: 0rem">Trends in ATM/CNS provision costs at Pan-European system level</p>
+<p style="font-weight: bold; text-decoration: underline; font-family: Helvetica; text-align: center; margin-bottom: 0rem">
 
-::: {#fig-figure-2-3}
+Trends in ATM/CNS provision costs at Pan-European system level
+
+</p>
+
+<div>
 
 ::: columns
-
 ::: {.column width="10%"}
 :::
 
@@ -153,9 +146,8 @@ In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA 
 ::: {.column width="10%"}
 :::
 :::
+
 ::: columns
-
-
 ::: {.column width="65%"}
 ```{r}
 #| file: R/hlsr_cost_per_ansp.R
@@ -171,15 +163,15 @@ In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA 
 #| out.width: "100%"
 ```
 :::
-
-
 :::
+
 Changes in ATM/CNS provision costs (real terms)
-:::
+
+</div>
 
 <!-- ![Changes in ATM/CNS provision costs (real terms)](figures/Figure-2-3.png){#fig-figure-2-3 width="75%"} -->
 
-The Pan-European ANSPs employed a total of 53 014 staff in 2021 (comprising 52 164 staff providing ATM/CNS services and 850 internal MET staff). Some 16 781 staff (32%) were ATCOs working on operational duty, split between ACCs (55%) and APP/TWR facilities (45%). On average, 2.1 additional staff are required for every ATCO in OPS in Europe.
+The Pan-European ANSPs employed a total of 52 843 staff in 2022 (comprising 52 026 staff providing ATM/CNS services and 817 internal MET staff). Some 17 335 staff (33%) were ATCOs working on operational duty, split between ACCs (54%) and APP/TWR facilities (46%). On average, 2.0 additional staff are required for every ATCO in OPS in Europe.
 
 ::: {#fig-figure-2-6}
 ```{r}
@@ -187,17 +179,20 @@ The Pan-European ANSPs employed a total of 53 014 staff in 2021 (comprising 52 1
 #| out.width: "100%"
 #| out.height: "300px"
 ```
- 
+
 Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, {{< var doc.year_report >}}
 :::
 
-In {{< var doc.year_report >}}, the number of ATM/CNS staff fell by -1.5% (-796 FTEs) compared to 2020.
+In {{< var doc.year_report >}}, the number of ATM/CNS staff remained almost at the same level as in 2021 (-0.2% or -127 FTEs).
 
-<p style="font-weight: bold; text-decoration: underline; font-family: Helvetica; text-align: center; margin-bottom: 0rem">Trends in gate-to-gate ATM/CNS staff at Pan-European system level</p>
+<p style="font-weight: bold; text-decoration: underline; font-family: Helvetica; text-align: center; margin-bottom: 0rem">
+
+Trends in gate-to-gate ATM/CNS staff at Pan-European system level
+
+</p>
 
 ::: {#fig-figure-2-5}
 ::: columns
-
 ::: {.column width="10%"}
 :::
 
@@ -214,7 +209,6 @@ In {{< var doc.year_report >}}, the number of ATM/CNS staff fell by -1.5% (-796 
 :::
 
 ::: columns
-
 ::: {.column width="65%"}
 ```{r}
 #| file: R/hlsr_staff_bdown_bar.R
@@ -230,22 +224,20 @@ In {{< var doc.year_report >}}, the number of ATM/CNS staff fell by -1.5% (-796 
 #| out.width: "100%"
 ```
 :::
-
 :::
+
 Total gate-to-gate ATM/CNS staff per staff category
 :::
 
 <!-- ![Total gate-to-gate ATM/CNS staff per staff category](figures/Figure-2-5.png){#fig-figure-2-5 width="75%"} -->
 
-The lower staff number observed for {{< var doc.year_report >}} mainly reflects decreases in the following staff categories:
+The overall change in staff number observed for {{< var doc.year_report >}} mainly reflects changes in the following staff categories:
 
--   Administrative staff (-338 FTEs, or -3.7%);
--   ATCOs in OPS (-201 FTEs, or -1.2%);
--   Ab-initio trainees (-126 FTEs, or -12.5%); and,
--   Technical support staff for operational maintenance, monitoring and control (-102 FTEs, or -1.2%).
+-   Administrative staff (-357 FTEs, or -4.1%); and,
+-   ATCOs in OPS (+550 FTEs, or +3.3%).
 
-On the other hand, increase is observed for ATCOs on other duties (+154 FTEs) reflecting a reallocation of some ATCOs from operational to non-operational duties due to the relatively low traffic levels in 2021 compared to pre-crisis. Minor increases are also observed for staff for ancillary services (+14 FTEs) and other staff (+25 FTEs).
+The changes in the number of ATCOs categories may reflect the reallocation of some ATCOs from non-operational duties to OPS, due to the traffic increase after COVID-19 pandemic.
 
-::: blue
-In addition to the measures on staff costs already mentioned above (redundancies, short-time work / furlough schemes), it is important to note that during the lockdown periods, some ANSPs staff had to consume accumulated holidays not used in previous years and/or made use of pre-retirement schemes.
-:::
+Minor decreases are also observed for OPS support -- non-ATCO (-80 FTEs), ATC assistants (-57 FTEs), technical support staff for planning and development (-38 FTEs), Ab-initio trainees (-30 FTEs).
+
+On the other hand, minor increases are also observed for staff for ancillary services (+41 FTEs) and technical support staff for operational maintenance, monitoring and control (+19 FTEs).
