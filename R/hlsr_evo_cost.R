@@ -52,7 +52,7 @@ p1 <- data_plot %>%
     x = ~ YEAR_DATA,
     y = ~ COST,
     type = 'scatter', mode = 'lines', 
-    line = list(width = 4), 
+    line = list(width = 4, color = "#003366"), 
     hoverinfo = "none",
     showlegend = F
   ) %>% 
@@ -84,7 +84,7 @@ p1 <- data_plot %>%
     ),
     yaxis = list(
       title = paste0("Billions €", year_report),
-      linewidth=1, linecolor='black',
+      linewidth = 1, linecolor='black',
       # titlefont   = list(size = 13),
       fixedrange = TRUE,
       ticks = 'outside',
