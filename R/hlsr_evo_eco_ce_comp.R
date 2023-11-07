@@ -100,7 +100,7 @@ p <- plot_ly(
   x = ~X_LABELS,
   y = ~PLOT1,
   color = ~TYPE,
-  colors = c("#003366","#DEA900", "#993366"),
+  colors = c("#2990EA","#E1F060", "#E0584F"),
   text = ~ if_else(abs(VALUE) > plot_div, "", LABELS),
   textangle = -90,
   textposition = "outside",
@@ -113,7 +113,7 @@ p <- plot_ly(
              x = ~X_LABELS,
              y = ~PLOT2,
              color = ~TYPE,
-             colors = c("#003366","#DEA900", "#993366"),
+             colors = c("#2990EA","#E1F060", "#E0584F"),
              xaxis= "x2",
              yaxis = "y2",
              text = ~ if_else(abs(VALUE) > plot_div, LABELS,"" ),
@@ -121,7 +121,7 @@ p <- plot_ly(
              textposition = "inside",
              insidetextanchor = "start",
              textfont = list(
-               color = "white", size = 10),
+               color = "black", size = 10),
              type = "bar",
              showlegend = FALSE,
              hoverinfo = "none"

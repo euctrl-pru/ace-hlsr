@@ -94,7 +94,7 @@ plot_all <- data_plot %>%
                                       "Unit cost of en-route ATFM delays",
                                       "Unit cost of airport ATFM delays")
     ),
-    colors = c('#9999FF', '#FF0000', '#EEE800'),
+    colors = c('#78B4F0', '#E0584F', '#E1F060'),
     # text = ~ LABELS,
     # text = ~ as.character(format(round(VALUE,0), big.mark = " ")),
     # textangle = -90,
@@ -162,7 +162,7 @@ plot_inset <- data_inset %>%
                                       "Unit cost of en-route ATFM delays",
                                       "Unit cost of airport ATFM delays")
     ),
-    colors = c('#9999FF', '#FF0000', '#EEE800'),
+    colors = c('#78B4F0', '#E0584F', '#E1F060'),
     # marker = list(color =('#8989FF')),
     text = " ", # for some reason I need to keep this to avoid labels in prev plot to autosize
     # cliponaxis = FALSE,

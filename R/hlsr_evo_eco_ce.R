@@ -104,7 +104,7 @@ p <- plot_ly(
   y = ~ value,
   color = ~ variable,
   type = "bar",
-  colors = c('#9999FF', '#FF0000', '#EEE800'),
+  colors = c('#78B4F0', '#E0584F', '#E1F060'),
   legendgroup =  ~ variable,
   hoverinfo = "none",
   showlegend = TRUE
