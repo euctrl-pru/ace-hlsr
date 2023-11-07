@@ -89,11 +89,22 @@ Across the Pan-European system, traffic in 2021 (measured in composite flight-ho
 The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services which amounted to €7 937M in 2021. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 84% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented some 16%.
 
 ::: {#fig-figure-2-3}
+
+:::: {.content-visible when-format="html"}
+
 ```{r}
 #| file: R/hlsr_c_bdown_pie.R
 #| out.width: "100%"
 #| out.height: "300px"
 ```
+
+::::
+
+:::: {.content-visible when-format="pdf"}
+
+![](figures/figure-2-3-hlsr_c_bdown_pie.png){height=85% width=85% fig-align="center"}
+
+:::: 
 
 ```{r}
 #| child: R/hlsr_c_bdown_table.Rmd

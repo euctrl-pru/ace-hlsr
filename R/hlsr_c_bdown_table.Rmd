@@ -121,13 +121,13 @@ table_cost <- reactable(
   striped = FALSE,
   compact = TRUE,
   highlight = TRUE,
-  defaultColDef = colDef(style=list("font-size" = "11px", "white-space"= "wrap"),
+  defaultColDef = colDef(style=list("font-size" = "0.9rem", "white-space"= "wrap"),
                          align = "right",
-                         headerStyle = list(background = "#538DD5", color = "white", fontSize = "11px", style=list("white-space"= "wrap"))
+                         headerStyle = list(background = "#538DD5", color = "white", fontSize = "0.9rem", style=list("white-space"= "wrap"))
                          
   ),
   columns = list(
-    LABEL = colDef(name="", minWidth = 40, align = "left",style = list(whiteSpace = "pre", "font-size" = "11px")), # to preserve whitespace,
+    LABEL = colDef(name="", minWidth = 40, align = "left",style = list(whiteSpace = "pre", "font-size" = "0.9rem")), # to preserve whitespace,
     ERT_F = colDef(name="\u20AC M", minWidth = 10),
     ERT_PERC = colDef(name="%", minWidth = 10, align = "right"),
     TRM_F = colDef(name="\u20AC M", minWidth = 10),
@@ -136,10 +136,10 @@ table_cost <- reactable(
     G2G_PERC = colDef(name="%", minWidth = 10, align = "right")
     ),
   columnGroups = list(
-    colGroup(name = "", columns = c("LABEL"), headerStyle = list(background = "#538DD5", color = "white", fontSize = "11px")),
-    colGroup(name = "En-route", columns = c("ERT_F", "ERT_PERC"), headerStyle = list(background = "#538DD5", color = "white", fontSize = "11px")),
-    colGroup(name = "Terminal", columns = c("TRM_F", "TRM_PERC"), headerStyle = list(background = "#538DD5", color = "white", fontSize = "11px")),
-    colGroup(name = "Gate-to-gate", columns = c("G2G_F", "G2G_PERC"), headerStyle = list(background = "#538DD5", color = "white", fontSize = "11px"))
+    colGroup(name = "", columns = c("LABEL"), headerStyle = list(background = "#538DD5", color = "white", fontSize = "0.9rem")),
+    colGroup(name = "En-route", columns = c("ERT_F", "ERT_PERC"), headerStyle = list(background = "#538DD5", color = "white", fontSize = "0.9rem")),
+    colGroup(name = "Terminal", columns = c("TRM_F", "TRM_PERC"), headerStyle = list(background = "#538DD5", color = "white", fontSize = "0.9rem")),
+    colGroup(name = "Gate-to-gate", columns = c("G2G_F", "G2G_PERC"), headerStyle = list(background = "#538DD5", color = "white", fontSize = "0.9rem"))
   ),
   borderless = TRUE,
   rowStyle = 
