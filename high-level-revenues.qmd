@@ -41,10 +41,7 @@ trm_reve_apt_perc <- sprintf("%0.1f%%", trm_reve_apt/trm_reve*100)
 This chapter provides a [preliminary]{.underline} presentation of high-level revenues, costs and staff data provided in ANSPs ACE {{< var doc.year_report >}} data submissions. Total ANS revenues in {{< var doc.year_report >}} amounted to `r total_reve_f`. Most en-route revenues come from the collection of en-route charges (`r ert_reve_charge_perc`, see left pie chart). The proportion of terminal revenues from charges is lower (`r trm_reve_charge_perc`, see right pie chart), as additional income may directly come from airport operators (`r trm_reve_apt_perc` e.g. through a contractual arrangement between the ANSP and the airport operator).
 
 ::: {#fig-figure-2-1}
-
-
-:::: {.content-visible when-format="html"}
-
+::: {.content-visible when-format="html"}
 ```{r}
 #| file: R/hlsr_rev_pie.R
 #| out.height: "420px"
@@ -54,32 +51,26 @@ This chapter provides a [preliminary]{.underline} presentation of high-level rev
 ```{r}
 #| child: R/hlsr_rev_table.Rmd
 ```
+:::
 
-::::
-
-:::: {.content-visible when-format="pdf"}
-
-
+::: {.content-visible when-format="pdf"}
 ![](figures/pie.png)
-
-
-::::
-
+:::
 
 Breakdown of gate-to-gate ANS revenues, {{< var doc.year_report >}}
 :::
 
 ::: blue
 ::: columns
-::: {.column width="30%"}
+::: {.column width="25%"}
 ![](figures/Figure-2-2-cfh.png)
 :::
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 Across the Pan-European system, traffic in 2022 (measured in composite flight-hours) was +58.5% higher than in 2021 but remained -12.7% lower than in 2019. In the meantime, total gate-to-gate revenues increased slightly less than traffic (+53.6%) and remained -15.4% lower than in 2019.
 :::
 
-::: {.column width="30%"}
+::: {.column width="25%"}
 ![](figures/Figure-2-2-rev.png)
 :::
 :::
@@ -108,7 +99,7 @@ Between {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}}, tota
 :::
 
 ::: {.column width="65%"}
-```{r Figure-2-4, out.width='80%', echo=FALSE}
+```{r Figure-2-4, out.width='100%', echo=FALSE}
 knitr::include_graphics('figures/Figure-2-4.png')
 ```
 :::
@@ -239,4 +230,3 @@ The changes in the number of ATCOs categories may reflect the reallocation of so
 Minor decreases are also observed for OPS support -- non-ATCO (-80 FTEs), ATC assistants (-57 FTEs), technical support staff for planning and development (-38 FTEs), Ab-initio trainees (-30 FTEs).
 
 On the other hand, minor increases are also observed for staff for ancillary services (+41 FTEs) and technical support staff for operational maintenance, monitoring and control (+19 FTEs).
-
