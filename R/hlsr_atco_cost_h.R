@@ -42,6 +42,7 @@ sys_avg <- data_raw %>% summarise(sum(COST)/sum(HOUR)) %>% pull()
 
 plot_fin_ce <- data_plot %>%
   plot_ly(
+    height = '450px',
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
@@ -64,7 +65,7 @@ plot_fin_ce <- data_plot %>%
     yaxis = "y1",
     # colors = c('#4F81BD'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#DC4034', width = 2, dash = 'dash'),
+    line = list(color = '#A6A6A6', width = 2, dash = 'dash'),
     opacity = 1,
     hoverinfo = "none",
     showlegend = F
@@ -76,7 +77,7 @@ plot_fin_ce <- data_plot %>%
     yaxis = "y1",
     # color = c('#333399'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#DC4034', width = 2, dash = 'dash'),
+    line = list(color = '#A6A6A6', width = 2, dash = 'dash'),
     opacity = 1,
     hoverinfo = "none",
     showlegend = F
@@ -138,7 +139,7 @@ plot_inset <- data_inset %>%
     yaxis = "y1",
     # colors = c('#4F81BD'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#DC4034', width = 2, dash = 'dash'),
+    line = list(color = '#A6A6A6', width = 2, dash = 'dash'),
     opacity = 1,
     hoverinfo = "none",
     showlegend = F
@@ -150,7 +151,7 @@ plot_inset <- data_inset %>%
     yaxis = "y1",
     # color = c('#333399'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#DC4034', width = 2, dash = 'dash'),
+    line = list(color = '#A6A6A6', width = 2, dash = 'dash'),
     opacity = 1,
     hoverinfo = "none",
     showlegend = F
@@ -229,3 +230,13 @@ fig <- subplot(plot_fin_ce, plot_inset) %>%
   )
 
 fig
+
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+
+invisible(export(fig, paste0(fig_dir,"figure-4-6-hlsr_atco_cost_h.png")))
+invisible(figure <- image_read(paste0(fig_dir,"figure-4-6-hlsr_atco_cost_h.png")))
+invisible(cropped <- image_crop(figure, "0x450"))
+invisible(image_write(cropped, paste0(fig_dir,"figure-4-6-hlsr_atco_cost_h.png")))

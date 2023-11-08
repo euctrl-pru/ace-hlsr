@@ -8,6 +8,7 @@ library(stringr)
 library(here)
 ## data source
 source(here("data_source.R"))
+library(magick)
 
 # import data
 data_raw <-  read_xlsx(
@@ -43,6 +44,7 @@ sys_avg <- data_raw %>% summarise(sum(HOURS)/sum(CFH)) %>% pull()
 
 plot_all <- data_plot %>%
   plot_ly(
+    height = '450px',
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
@@ -190,10 +192,11 @@ fig <- subplot(plot_all, plot_inset) %>%
                        tickfont = list(size=11),
                        autotick = F,
                        # tick0=0.25,
-                       fixedrange = TRUE,
+                       # fixedrange = TRUE,
                        showgrid = F,
-                       categoryorder = "total descending",
-                       domain=c(0,1)),
+                       categoryorder = "total descending"
+                       , domain=c(0,1)
+                       ),
           yaxis = list(title = paste("Composite flight-hours per ATCO-hour"),
                        titlefont   = list(size = 12),
                        tickfont = list(size=11),
@@ -203,17 +206,18 @@ fig <- subplot(plot_all, plot_inset) %>%
                        # ticktext = ticktexts1,
                        # automargin = FALSE,
                        # margin = list(l=100),
-                       fixedrange = TRUE,
+                       # fixedrange = TRUE,
                        linewidth=10, linecolor='transparent',  mirror = T,
                        range = list(0, 0.2+round(max(data_plot$VALUE), 1)),
-                       zeroline = T, showline = T, showgrid = F,
-                       domain=c(0,1)),
+                       zeroline = T, showline = T, showgrid = F
+                       # , domain=c(0,1)
+                       ),
           xaxis2 = list(title = "",
                         showticklabels = FALSE,
                         # tickangle=270,
                         # tickfont = list(size=10),
                         autotick = F,
-                        fixedrange = TRUE,
+                        # fixedrange = TRUE,
                         showgrid = F,
                         categoryorder = "total descending",
                         domain=c(0.65,1)),
@@ -224,7 +228,7 @@ fig <- subplot(plot_all, plot_inset) %>%
                         tickformat = ".1f",
                         # tickvals = ticklabels2,
                         # ticktext = ticktexts2,
-                        fixedrange = TRUE,
+                        # fixedrange = TRUE,
                         range = list(0, 0.2+round(max(data_inset$VALUE), 1)),
                         zeroline = T, showline = F, showgrid = F,
                         domain=c(0.45,0.95)),
@@ -232,3 +236,13 @@ fig <- subplot(plot_all, plot_inset) %>%
   )
 
 fig
+
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+
+invisible(export(fig, paste0(fig_dir,"figure-4-5-hlsr_prod.png")))
+invisible(figure <- image_read(paste0(fig_dir,"figure-4-5-hlsr_prod.png")))
+invisible(cropped <- image_crop(figure, "0x450"))
+invisible(image_write(cropped, paste0(fig_dir,"figure-4-5-hlsr_prod.png")))
