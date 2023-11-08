@@ -5,6 +5,8 @@ library(stringr)
 library(readxl)
 library(plotly)
 library(here)
+library(webshot)
+library(magick)
 ## data source
 source(here("data_source.R"))
 
@@ -17,9 +19,10 @@ ace_graph_data <- read_xlsx(
   mutate_all(as.numeric)%>%
   rename(year_data=1)
 
-plot_ACE <- ace_graph_data %>%
+plot_ACE <- function(mywidth) {
+  ace_graph_data %>%
   plot_ly(
-    # width = 500, 
+    width = mywidth,
     height = 330,
     x = ~ year_data,
     y = ~ costs_per_cph,
@@ -105,6 +108,13 @@ plot_ACE <- ace_graph_data %>%
   ) %>%
   config(displaylogo = FALSE, modeBarButtons = list(list("toImage"))
   )
+}
 
-plot_ACE
+plot_ACE(NULL)
 
+fig_dir <- 'figures/'
+
+invisible(export(plot_ACE(500), paste0(fig_dir,"figure-4-1-hlsr_evo_unit_cost.png")))
+invisible(figure <- image_read(paste0(fig_dir,"figure-4-1-hlsr_evo_unit_cost.png")))
+invisible(cropped <- image_crop(figure, "500x330"))
+invisible(image_write(cropped, paste0(fig_dir,"figure-4-1-hlsr_evo_unit_cost.png")))

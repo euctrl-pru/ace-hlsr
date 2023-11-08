@@ -6,6 +6,8 @@ library(readxl)
 library(plotly)
 library(stringr)
 library(here)
+library(webshot)
+library(magick)
 ## data source
 source(here("data_source.R"))
 
@@ -46,6 +48,7 @@ sys_avg <- data_raw %>% summarise(sum(COST)/sum(CFH)) %>% pull()
 
 plot_fin_ce <- data_plot %>%
   plot_ly(
+    height = '450px',
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
@@ -242,3 +245,12 @@ fig <- subplot(plot_fin_ce, plot_inset) %>%
 
 fig
 
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+
+invisible(export(fig, paste0(fig_dir,"figure-4-4-hlsr_fin_ce.png")))
+invisible(figure <- image_read(paste0(fig_dir,"figure-4-4-hlsr_fin_ce.png")))
+invisible(cropped <- image_crop(figure, "0x450"))
+invisible(image_write(cropped, paste0(fig_dir,"figure-4-4-hlsr_fin_ce.png")))

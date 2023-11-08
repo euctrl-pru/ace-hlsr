@@ -70,6 +70,7 @@ sys_avg <- data_raw %>% summarise(sum(`Support costs`)/sum(`Composite flight-hou
 
 plot_all <- data_plot %>%
   plot_ly(
+    height = '450px',
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
@@ -229,7 +230,7 @@ myannotations <- list(
   xanchor = "left",
   showarrow = FALSE,
   font = list(color = "#003366",
-              size=13)
+              size = 13)
 )
 
 # this is ugly but it's the only way i found for space as thousand sep for the y axis
@@ -243,7 +244,7 @@ ticktexts2 <- c(0,format(ticklabels2[-1], big.mark = " "))
 
 fig <- subplot(plot_all, plot_inset) %>% 
   layout( autosize = T, 
-          uniformtext=list(minsize=8, mode='show'), #this is important so it does not autofit fonts
+          uniformtext = list(minsize=8, mode='show'), #this is important so it does not autofit fonts
           bargap = 0.45,
           barmode = 'stack',
           title = list(text = "", font = list(color = "black", size = 14)),
@@ -253,7 +254,7 @@ fig <- subplot(plot_all, plot_inset) %>%
           legend = list(orientation = 'h',
                         traceorder = 'reversed', #for some reason this does not work
                         font = list(size = 9),
-                        y = -0.55,
+                        y = -0.85,
                         x = -0.05,
                         bgcolor = 'transparent'),
           xaxis = list(title = "",
@@ -296,8 +297,18 @@ fig <- subplot(plot_all, plot_inset) %>%
                         fixedrange = TRUE,
                         range = list(0, 200+round(max(data_inset$`Support costs per composite flight-hour`/1000), 1)*1000),
                         zeroline = T, showline = F, showgrid = F,
-                        domain=c(0.45,0.95)),
+                        domain=c(0.55,0.95)),
           annotations = myannotations
   )
 
 fig
+
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+
+invisible(export(fig, paste0(fig_dir,"figure-4-7-hlsr_support.png")))
+invisible(figure <- image_read(paste0(fig_dir,"figure-4-7-hlsr_support.png")))
+invisible(cropped <- image_crop(figure, "0x500"))
+invisible(image_write(cropped, paste0(fig_dir,"figure-4-7-hlsr_support.png")))
