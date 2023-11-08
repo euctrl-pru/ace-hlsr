@@ -58,7 +58,7 @@ data_prep <- data_calc  %>%
 # calculate the joining lines
 # https://stackoverflow.com/questions/58825957/connect-bars-with-lines-in-r-plotly
 DF <- data_prep %>% select (FIN_CE,DELAY_ERT_CPH,DELAY_ARP_CPH, YEAR_DATA, LABELS) %>% 
-  rename(`ATM/CNS provision per composite flight-hour` = FIN_CE,
+  rename(`ATM/CNS provision costs per composite flight-hour` = FIN_CE,
          `Unit cost of en-route ATFM delays` = DELAY_ERT_CPH,
          `Unit cost of airport ATFM delays` = DELAY_ARP_CPH)
 
