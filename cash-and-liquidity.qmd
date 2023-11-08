@@ -1,15 +1,15 @@
 # Monitoring of ANSPs Cash and Liquidity situation {#sec-covid}
 
-This chapter provides an overview of ANSPs' financial situation over the {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} period, using two indicators: the current ratio and the cash-on-hand days. These indicators have been calculated at pan-European system level using the information provided in the XX ANSPs' Financial Statements which were available at the time of publishing this report. The indicators are therefore consistent with those published at individual ANSP level in the EUROCONTROL Aviation Intelligence Unit [ANSPs Financial Dashboard](https://ansperformance.eu/economics/finance/).
+This chapter provides an overview of ANSPs' financial situation over the {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} period, using two indicators: the current ratio and the cash-on-hand days. These indicators have been calculated at pan-European system level using the information provided in the XX ANSPs' Financial Statements which were available at the time of publishing this report. The indicators are therefore consistent with those published at individual ANSP level in the EUROCONTROL Aviation Intelligence Unit [ANSPs Financial Dashboard](https://ansperformance.eu/economics/finance/).
 
 Depending on the organisational set up of different ANSPs, the information reported in their financial statements covers a different scope of activities (e.g. it may include airport management operations, commercial activities, etc.) that does not always correspond with the ACE gate-to-gate scope. Additionally, due to specific organisational and financial set up in DCAC Cyprus, HASP, LVNL and MUAC, these four ANSPs are excluded from the analysis presented in this chapter.
 
 @fig-figure-5-1 presents the changes in average ANSPs current ratio between {{< var doc.year_report_minus5 >}} and {{< var doc.year_report >}} as well as the 1st and 3rd quartiles. The average level of indicator in 2022 (2.86) shows that the ability of ANSPs to cover their short-term liabilities by current assets slightly increased compared to 2021 (2.72), however is still below pre-pandemic level (3.76 in 2019).
 
-![Changes in ANSPs current ratio {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}}](figures/Figure-5-1.png){#fig-figure-5-1 width="75%"}
+![Changes in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}}](figures/Figure-5-1.png){#fig-figure-5-1 width="75%"}
 
-@fig-figure-5-2 shows the changes in cash-on-hand days at Pan-European system level over the {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} period as well as the 1st quartile and the 3rd quartile of these indicators. Cash-on-hand days measures the length of time a company can pay its operating costs from its cash reserves.
+@fig-figure-5-2 shows the changes in cash-on-hand days at Pan-European system level over the {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} period as well as the 1st quartile and the 3rd quartile of these indicators. Cash-on-hand days measures the length of time a company can pay its operating costs from its cash reserves.
 
-![{{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} trends in cash-on-hand days at Pan-European system level](figures/Figure-5-2.png){#fig-figure-5-2 width="75%"}
+![{{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} trends in cash-on-hand days at Pan-European system level](figures/Figure-5-2.png){#fig-figure-5-2 width="75%"}
 
 In {{< var doc.year_report >}}, the average cash-on-hand days amounted to 145 days, which is +38 days higher than in 2021 and +7 days higher than in 2020, but is still below the pre-pandemic levels.
