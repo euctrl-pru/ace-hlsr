@@ -130,13 +130,23 @@ In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA 
 [**Trends in ATM/CNS provision costs at Pan-European system level**]{.underline }
 :::
 
-::: {#fig-figure-2-5 layout="[[100], [65,35]]"}
-
+::: {#fig-figure-2-5}
+:::: {.content-visible when-format="html"}
+::::: {style="max-width: 620px; margin: auto"}
 ```{r}
 #| file: R/hlsr_evo_cost.R
 #| out.height: "200px"
+#| out.width: "100%"
 ```
+:::::
 
+:::: {.content-visible when-format="pdf"}
+![](figures/figure-2-5-1-hlsr_eco_ce.png){height=100% width=100%}
+::::
+
+::::
+
+:::: {layout="[65,35]"}
 ```{r}
 #| file: R/hlsr_cost_per_ansp.R
 #| out.height: "600px"
@@ -146,6 +156,7 @@ In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA 
 #| file: R/hlsr_cost_per_ansp_perc.R
 #| out.height: "600px"
 ```
+::::
 
 Changes in ATM/CNS provision costs (real terms)
 :::
@@ -179,13 +190,16 @@ In {{< var doc.year_report >}}, the number of ATM/CNS staff remained almost at t
 [**Trends in gate-to-gate ATM/CNS staff at Pan-European system level**]{.underline }
 :::
 
-::: {#fig-figure-2-7 layout="[[100], [65,35]]"}
-
+::: {#fig-figure-2-7}
+:::: {style="max-width: 620px; margin: auto"}
 ```{r}
 #| file: R/hlsr_evo_staff.R
 #| out.height: "200px"
+#| out.width: "100%"
 ```
+::::
 
+:::: {layout="[65,35]"}
 ```{r}
 #| file: R/hlsr_staff_bdown_bar.R
 #| out.height: "400px"
@@ -195,6 +209,7 @@ In {{< var doc.year_report >}}, the number of ATM/CNS staff remained almost at t
 #| file: R/hlsr_staff_bdown_bar_perc.R
 #| out.height: "400px"
 ```
+::::
 
 Total gate-to-gate ATM/CNS staff per staff category
 :::
