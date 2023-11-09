@@ -172,7 +172,7 @@ list(
   x = 0.45,
   y = myvertical,
   text = paste0("<b>", 
-                "Total ATM/CNS provision cost: ", 
+                "Total ATM/CNS provision costs: ", 
                 "\u20AC ",
                 format(round(total_cost,0), big.mark = " "),
                 " M</b>"),
