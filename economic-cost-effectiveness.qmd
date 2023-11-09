@@ -36,11 +36,17 @@ Trend of unit economic costs at Pan-European system level, {{< var doc.year_repo
 @fig-figure-3-2 shows [preliminary results]{.underline} at ANSP level (dotted lines represent the 1st and 3rd quartiles). 
 
 ::: {#fig-figure-3-2}
+:::: {.content-visible when-format="html"}
 ```{r}
 #| file: R/hlsr_eco_ce.R
 #| out.height: "490px"
 #| out.width: "100%"
 ```
+::::
+
+:::: {.content-visible when-format="pdf"}
+![](figures/figure-3-2-hlsr_eco_ce.png){height=100% width=100%}
+::::
 
 Economic gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 :::
