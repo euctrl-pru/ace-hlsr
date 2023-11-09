@@ -6,6 +6,8 @@ library(plotly)
 library(stringr)
 library(tidyr)
 library(here)
+library(webshot)
+library(magick)
 ## data source
 source(here("data_source.R"))
 
@@ -85,8 +87,10 @@ sys_avg_ece <- data_merged %>%
 
 # plot
 
-plot_all <- data_plot %>%
+plot_all <- function(myfont){
+  data_plot %>%
   plot_ly(
+    height = '490px',
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
@@ -114,7 +118,7 @@ plot_all <- data_plot %>%
              yaxis = "y1",
              mode = 'text',
              text = ~ LABELS,
-             textfont = list(color = 'black', size = 8),
+             textfont = list(color = 'black', size = if_else(myfont == 10, 9, myfont)),
              # textangle = 0,
              name = 'Total',
              textposition = "top center", cliponaxis = FALSE,
@@ -152,8 +156,10 @@ plot_all <- data_plot %>%
           displayModeBar = F
           # modeBarButtons = list(list("toImage"))
   )
-
-plot_inset <- data_inset %>%
+}
+  
+plot_inset <- function(myfont){
+  data_inset %>%
   plot_ly(
     x = ~ ANSP_NAME,
     y = ~ VALUE,
@@ -183,7 +189,7 @@ plot_inset <- data_inset %>%
             yaxis = "y1",
             mode = 'text',
             text = ~ LABELS,
-            textfont = list(color = 'black', size = 10),
+            textfont = list(color = 'black', size = myfont + 1),
             # textangle = 0,
             textposition = "top center", cliponaxis = FALSE,
             type = 'scatter',  mode = 'lines',
@@ -203,7 +209,7 @@ plot_inset <- data_inset %>%
                    xanchor = "center",
                    align = "right",
                    textangle = -90,
-                   font = list(color = 'black', size = 9)
+                   font = list(color = 'black', size = myfont)
   ) %>% 
   add_trace(data = data_help_inset,
             inherit = FALSE,
@@ -234,8 +240,10 @@ plot_inset <- data_inset %>%
          displayModeBar = F
          # modeBarButtons = list(list("toImage"))
   )
-
-myannotations <- list(list(
+}
+  
+myannotations <- function(myfont){
+  list(list(
   x = 0.12,
   y = 1.10,
   text = paste0("<b>", 
@@ -248,7 +256,7 @@ myannotations <- list(list(
   xanchor = "left",
   showarrow = FALSE,
   font = list(color = "#993366",
-              size=10)
+              size=myfont)
 ),
 list(
   x = 0.12,
@@ -263,10 +271,10 @@ list(
   xanchor = "left",
   showarrow = FALSE,
   font = list(color = "#8989FF",
-              size=10)
+              size=myfont)
 )
 )
-
+}
 # this is ugly but it's the only way i found for space as thousand sep for the y axis
 # https://stackoverflow.com/questions/64024937/how-to-change-thousands-separator-for-blank-in-r-plotly
 
@@ -276,7 +284,8 @@ ticktexts1 <- c(0,format(ticklabels1[-1], big.mark = " "))
 ticklabels2 <- seq(from=0, to=round(max(data_inset$ECO_CE+200)), by=200)
 ticktexts2 <- c(0,format(ticklabels2[-1], big.mark = " "))
 
-fig <- subplot(plot_all, plot_inset) %>% 
+fig <- function(myfont, vertlegend){
+  subplot(plot_all(myfont), plot_inset(myfont+1)) %>% 
   layout( autosize = T, 
           uniformtext = list(minsize=8, mode='show'), #this is important so it does not autofit fonts
           bargap = 0.45,
@@ -287,13 +296,13 @@ fig <- subplot(plot_all, plot_inset) %>%
           hoverlabel=list(bgcolor="rgba(255,255,255,0.88)"),
           legend = list(orientation = 'h',
                         traceorder = 'reversed', #for some reason this does not work
-                        font = list(size = 10),
-                        y = -0.55,
+                        font = list(size = myfont+2),
+                        y = vertlegend,
                         x = 0.0,
                         bgcolor = 'transparent'),
           xaxis = list(title = "",
                        tickangle = 270,
-                       tickfont = list(size=11),
+                       tickfont = list(size=myfont+3),
                        autotick = F,
                        # tick0=0.25,
                        fixedrange = TRUE,
@@ -301,8 +310,8 @@ fig <- subplot(plot_all, plot_inset) %>%
                        categoryorder = "total descending",
                        domain=c(0,1)),
           yaxis = list(title = paste("\U20AC","per composite flight-hour"),
-                       titlefont = list(size = 12),
-                       tickfont = list(size = 11),
+                       titlefont = list(size = myfont+4),
+                       tickfont = list(size = myfont+3),
                        # dtick = 200,
                        tickvals = ticklabels1,
                        ticktext = ticktexts1,
@@ -325,7 +334,7 @@ fig <- subplot(plot_all, plot_inset) %>%
                         domain=c(0.70,1)),
           yaxis2 = list(title = "",
                         # titlefont   = list(size = 13),
-                        tickfont = list(size=10),
+                        tickfont = list(size=myfont+2),
                         # dtick = 200,
                         tickvals = ticklabels2,
                         ticktext = ticktexts2,
@@ -333,9 +342,20 @@ fig <- subplot(plot_all, plot_inset) %>%
                         fixedrange = TRUE,
                         # range = list(0, 200+round(max(data_inset$VALUE/1000), 1)*1000),
                         zeroline = T, showline = F, showgrid = F,
-                        domain=c(0.45,0.95)),
-          annotations = myannotations
+                        domain=c(0.40,0.95)),
+          annotations = myannotations(myfont+2)
   )
+}
 
-fig
+fig(8, -0.55)
+
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+
+invisible(export(fig(10, -0.75), paste0(fig_dir,"figure-3-2-hlsr_eco_ce.png")))
+invisible(figure <- image_read(paste0(fig_dir,"figure-3-2-hlsr_eco_ce.png")))
+invisible(cropped <- image_crop(figure, "0x450"))
+invisible(image_write(cropped, paste0(fig_dir,"figure-3-2-hlsr_eco_ce.png")))
 
