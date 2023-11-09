@@ -100,3 +100,10 @@ div.right {
 div.callout.callout {
     border-left: 0px;
 }
+
+/* centered text */
+.centeredtitle{
+  font-family: Helvetica; 
+  margin-bottom: 0rem;
+  text-align: center;
+}
