@@ -30,10 +30,11 @@ perc_max <- max(abs(data_plot$YOY)) + 0.4
 year_max <- max(data_plot$YEAR_DATA)
 
 # draw cost variation plot
-p2 <- data_plot %>% 
+p <- function(mywidth, myheight) {
+  data_plot %>% 
   plot_ly(
-    # width = 500, 
-    # height = 750,
+    width = mywidth,
+    height = myheight,
     x = ~ YOY,
     y = ~ factor(ANSP_NAME, levels = rev(data_plot$ANSP_NAME)),
     marker = list(color =('#2990EA')),
@@ -91,5 +92,16 @@ p2 <- data_plot %>%
          displaylogo = FALSE,
          displayModeBar = F)
 
-p2
+}
 
+p(NULL, NULL)
+
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+
+invisible(export(p(250, 750), paste0(fig_dir,"figure-2-5-3-hlsr_cost_per_ansp_perc.png")))
+invisible(figure <- image_read(paste0(fig_dir,"figure-2-5-3-hlsr_cost_per_ansp_perc.png")))
+invisible(cropped <- image_crop(figure, "250x0"))
+invisible(image_write(cropped, paste0(fig_dir,"figure-2-5-3-hlsr_cost_per_ansp_perc.png")))

@@ -31,10 +31,11 @@ cost_max <- round((max(data_plot$COST/10^6)+500)/100,0)*100
 year_max <- max(data_plot$YEAR_DATA)
 
 # draw costs plot
-p1 <- data_plot %>% 
+p1 <- function(mywidth, myheight){
+  data_plot %>% 
   plot_ly(
-    # width = 500, 
-    # height = 750,
+    width = mywidth,
+    height = myheight,
     x = ~ COST/10^6,
     y = ~ paste0(ANSP_NAME, "  "),
     marker = list(color =('#003366')),
@@ -88,5 +89,17 @@ p1 <- data_plot %>%
   config(responsive = FALSE,
          displaylogo = FALSE,
          displayModeBar = F)
+}
+  
+p1(NULL, NULL)
 
-p1
+
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+
+invisible(export(p1(475, 750), paste0(fig_dir,"figure-2-5-2-hlsr_cost_per_ansp.png")))
+invisible(figure <- image_read(paste0(fig_dir,"figure-2-5-2-hlsr_cost_per_ansp.png")))
+invisible(cropped <- image_crop(figure, "475x0"))
+invisible(image_write(cropped, paste0(fig_dir,"figure-2-5-2-hlsr_cost_per_ansp.png")))
