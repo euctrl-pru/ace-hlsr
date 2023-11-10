@@ -4,6 +4,8 @@ library(stringr)
 library(readxl)
 library(plotly)
 library(here)
+library(webshot)
+library(magick)
 ## data source
 source(here("data_source.R"))
 
@@ -39,7 +41,7 @@ data_plot <- rbind (data_ATCO, data_support) %>%
 p1 <- data_plot %>% 
   plot_ly(
     # width = 500, 
-    # height = 750,
+    height = 230,
     x = ~ YEAR_DATA,
     y = ~ STAF/1000,
     color = ~ factor(LABEL, levels = c('Number of support staff', 'Number of ATCOs in OPS')),
@@ -99,3 +101,12 @@ p1 <- data_plot %>%
 p1
 
 
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+
+invisible(export(p1, paste0(fig_dir,"figure-2-7-1-hlsr_evo_staff.png")))
+invisible(figure <- image_read(paste0(fig_dir,"figure-2-7-1-hlsr_evo_staff.png")))
+invisible(cropped <- image_crop(figure, "0x230"))
+invisible(image_write(cropped, paste0(fig_dir,"figure-2-7-1-hlsr_evo_staff.png")))

@@ -4,6 +4,8 @@ library(stringr)
 library(readxl)
 library(plotly)
 library(here)
+library(webshot)
+library(magick)
 ## data source
 source(here("data_source.R"))
 
@@ -53,8 +55,11 @@ data_plot <- data_raw %>%
 xrange_max <- round((max(data_plot$STAF)+5000)/1000,0)*1000
 
 # draw costs plot
-p1 <- data_plot %>% 
+p1 <- function(mywidth, myheight){
+  data_plot %>% 
   plot_ly(
+    width = mywidth,
+    height = myheight,
     x = ~ STAF,
     y = ~ LABEL,
     marker = list(color =('#003366')),
@@ -108,8 +113,18 @@ p1 <- data_plot %>%
   config(responsive = FALSE,
          displaylogo = FALSE,
          displayModeBar = F)
+}
 
 
-p1
+p1(NULL, NULL)
 
 
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+
+invisible(export(p1(475, 500), paste0(fig_dir,"figure-2-7-2-hlsr_staff_bdown_bar.png")))
+invisible(figure <- image_read(paste0(fig_dir,"figure-2-7-2-hlsr_staff_bdown_bar.png")))
+invisible(cropped <- image_crop(figure, "475x500"))
+invisible(image_write(cropped, paste0(fig_dir,"figure-2-7-2-hlsr_staff_bdown_bar.png")))
