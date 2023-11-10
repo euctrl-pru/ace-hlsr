@@ -30,6 +30,15 @@ format:
       - media/analytics.html
   pdf: default
 
+# this changes the html page as well. I wanted to change the pdf font only.
+# mainfont: Roboto
+geometry:
+  # - showframe
+  # - inner=3cm
+  # - outer=4cm
+  - top=3cm
+  - bottom=3cm
+
 book:
   title: "High-level Summary Report on Preliminary ACE 2022 Data"
   author: "Performance Review Unit"
