@@ -213,6 +213,18 @@ In {{< var doc.year_report >}}, the number of ATM/CNS staff remained almost at t
 :::::
 ::::
 
+:::: {.content-visible when-format="pdf"}
+
+![](figures/figure-2-7-1-hlsr_evo_staff.png){height=100% width=100%}
+
+<!-- ::::: {layout="[65,35]"} -->
+![](figures/figure-2-7-2-hlsr_staff_bdown_bar.png){height=80% width=80%}
+
+![](figures/figure-2-7-3-hlsr_staff_bdown_bar_perc.png){height=80% width=80%}
+<!-- ::::: -->
+::::
+
+
 Total gate-to-gate ATM/CNS staff per staff category
 :::
 
