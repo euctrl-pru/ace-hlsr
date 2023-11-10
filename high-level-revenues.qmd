@@ -61,16 +61,16 @@ Breakdown of gate-to-gate ANS revenues, {{< var doc.year_report >}}
 :::
 
 ::: blue
-:::: columns
-::::: {.column width="25%"}
+:::: {layout="[0.25, 0.5, 0.25]"}
+::::: {#firstcol}
 ![](figures/Figure-2-2-cfh.png)
 :::::
 
-::::: {.column width="50%"}
+::::: {#secondcol}
 Across the Pan-European system, traffic in 2022 (measured in composite flight-hours) was +58.5% higher than in 2021 but remained -12.7% lower than in 2019. In the meantime, total gate-to-gate revenues increased slightly less than traffic (+53.6%) and remained -15.4% lower than in 2019.
 :::::
 
-::::: {.column width="25%"}
+::::: {#thirdcol}
 ![](figures/Figure-2-2-rev.png)
 :::::
 ::::
@@ -99,15 +99,13 @@ Gate-to-gate ATM/CNS provision costs at Pan-European system level, {{< var doc.y
 :::
 
 ::: blue
-:::: columns
-::::: {.column width="35%"}
+:::: {layout="[0.35, 0.65]"}
+::::: {#firstcol}
 Between {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}}, total ATM/CNS provision costs rose by +4.2% (+€358.1M), reflecting cost increases from 26 out of 38 ANSPs. Staff costs (+€220.2M), the cost of capital (+163.2M) and non-staff operating costs (+130.5M) were the main sources of increase in 2022.
 :::::
 
-::::: {.column width="65%"}
-```{r Figure-2-4, out.width='100%', echo=FALSE}
-knitr::include_graphics('figures/Figure-2-4.png')
-```
+::::: {#secondcol}
+![](figures/Figure-2-4.png)
 :::::
 ::::
 :::
@@ -122,17 +120,16 @@ In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA 
 [**Trends in ATM/CNS provision costs at Pan-European system level**]{.underline }
 :::
 
-::: {#fig-figure-2-5}
-:::: {.content-visible when-format="html"}
-::::: {style="max-width: 620px; margin: auto"}
+::: {.content-visible when-format="html"}
+:::: {style="max-width: 620px; margin: auto"}
 ```{r}
 #| file: R/hlsr_evo_cost.R
 #| out.height: "200px"
 #| out.width: "100%"
 ```
-:::::
+::::
 
-::::: {layout="[65,35]"}
+:::: {#fig-figure-2-5 layout="[65,35]"}
 ```{r}
 #| file: R/hlsr_cost_per_ansp.R
 #| out.height: "600px"
@@ -143,24 +140,28 @@ In {{< var doc.year_report >}}, the five largest ANSPs (ENAIRE, ENAV, DFS, DSNA 
 #| file: R/hlsr_cost_per_ansp_perc.R
 #| out.height: "600px"
 ```
-:::::
-::::
 
-:::: {.content-visible when-format="pdf"}
+Changes in ATM/CNS provision costs (real terms)
+::::
+:::
+
+::: {.content-visible when-format="pdf"}
 
 ![](figures/figure-2-5-1-hlsr_eco_ce.png){height=100% width=100%}
 
-<!-- ::::: {layout="[65,35]"} -->
-![](figures/figure-2-5-2-hlsr_cost_per_ansp.png){height=80% width=80%}
+:::: {#fig-figure-2-5 layout="[66,34]"}
+::::: {#firstcol}
+![](figures/figure-2-5-2-hlsr_cost_per_ansp.png)
+:::::
 
-![](figures/figure-2-5-3-hlsr_cost_per_ansp_perc.png){height=80% width=80%}
-<!-- ::::: -->
-::::
+::::: {#secondcol}
+![](figures/figure-2-5-3-hlsr_cost_per_ansp_perc.png)
+:::::
 
+<!-- I had to organise the divs like this to avoid the pdf from giving error -->
 Changes in ATM/CNS provision costs (real terms)
+::::
 :::
-
-
 
 <!-- ![Changes in ATM/CNS provision costs (real terms)](figures/Figure-2-3.png){#fig-figure-2-3 width="75%"} -->
 
@@ -190,9 +191,8 @@ In {{< var doc.year_report >}}, the number of ATM/CNS staff remained almost at t
 [**Trends in gate-to-gate ATM/CNS staff at Pan-European system level**]{.underline }
 :::
 
-::: {#fig-figure-2-7}
-:::: {.content-visible when-format="html"}
-::::: {style="max-width: 620px; margin: auto"}
+::: {.content-visible when-format="html"}
+:::: {style="max-width: 620px; margin: auto"}
 ```{r}
 #| file: R/hlsr_evo_staff.R
 #| out.height: "200px"
@@ -200,7 +200,7 @@ In {{< var doc.year_report >}}, the number of ATM/CNS staff remained almost at t
 ```
 ::::
 
-:::: {layout="[65,35]"}
+:::: {#fig-figure-2-7 layout="[65,35]"}
 ```{r}
 #| file: R/hlsr_staff_bdown_bar.R
 #| out.height: "400px"
@@ -210,22 +210,22 @@ In {{< var doc.year_report >}}, the number of ATM/CNS staff remained almost at t
 #| file: R/hlsr_staff_bdown_bar_perc.R
 #| out.height: "400px"
 ```
-:::::
-::::
 
-:::: {.content-visible when-format="pdf"}
+Total gate-to-gate ATM/CNS staff per staff category
+::::
+:::
+
+::: {.content-visible when-format="pdf"}
 
 ![](figures/figure-2-7-1-hlsr_evo_staff.png){height=100% width=100%}
 
-<!-- ::::: {layout="[65,35]"} -->
+:::: {#fig-figure-2-7 layout="[66,34]"}
 ![](figures/figure-2-7-2-hlsr_staff_bdown_bar.png){height=80% width=80%}
 
 ![](figures/figure-2-7-3-hlsr_staff_bdown_bar_perc.png){height=80% width=80%}
-<!-- ::::: -->
-::::
-
 
 Total gate-to-gate ATM/CNS staff per staff category
+::::
 :::
 
 <!-- ![Total gate-to-gate ATM/CNS staff per staff category](figures/Figure-2-5.png){#fig-figure-2-5 width="75%"} -->
