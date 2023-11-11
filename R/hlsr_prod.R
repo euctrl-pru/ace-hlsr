@@ -42,7 +42,8 @@ sys_avg <- data_raw %>% summarise(sum(HOURS)/sum(CFH)) %>% pull()
 
 # plot
 
-plot_all <- data_plot %>%
+plot_all <- function(myfont){
+  data_plot %>%
   plot_ly(
     height = '450px',
     x = ~ ANSP_NAME,
@@ -54,7 +55,7 @@ plot_all <- data_plot %>%
     # textangle = -90,
     textposition = "outside", cliponaxis = FALSE,
     # insidetextanchor =  "start",
-    textfont = list(color = 'black', size = 7),
+    textfont = list(color = 'black', size = myfont),
     type = "bar",
     hoverinfo = "none",
     # domain = list(x = c(0, 1), y = c(0, 1)),
@@ -89,8 +90,10 @@ plot_all <- data_plot %>%
           displayModeBar = F
           # modeBarButtons = list(list("toImage"))
   )
-
-plot_inset <- data_inset %>%
+}
+  
+plot_inset <- function(myfont){ 
+  data_inset %>%
   plot_ly(
     x = ~ ANSP_NAME,
     y = ~ VALUE,
@@ -114,7 +117,7 @@ plot_inset <- data_inset %>%
     yaxis = "y1",
     mode = 'text',
     text = ~ LABELS,
-    textfont = list(color = 'black', size = 10),
+    textfont = list(color = 'black', size = myfont + 1),
     # textangle = 0,
     textposition = "top center", cliponaxis = FALSE,
     type = 'scatter',  mode = 'lines',
@@ -132,7 +135,7 @@ plot_inset <- data_inset %>%
     xanchor = "center",
     align = "left",
     textangle = -90,
-    font = list(color = 'white', size = 9)
+    font = list(color = 'white', size = myfont)
   ) %>% 
   add_trace(
     inherit = FALSE,
@@ -163,8 +166,10 @@ plot_inset <- data_inset %>%
          displayModeBar = F
          # modeBarButtons = list(list("toImage"))
   )
-
-myannotations <- list(
+}
+  
+myannotations <- function(myfont){
+  list(
   x = 0.12,
   y = 1.05,
   text = paste0("<b>", 
@@ -177,11 +182,12 @@ myannotations <- list(
   xanchor = "left",
   showarrow = FALSE,
   font = list(color = "#003366",
-              size=13)
+              size=myfont)
 )
+}
 
-
-fig <- subplot(plot_all, plot_inset) %>% 
+fig <- function(myfont, myinsetv) {
+  subplot(plot_all(myfont), plot_inset(myfont + 1)) %>% 
   layout( autosize = T,
           uniformtext=list(minsize=8, mode='show'), #this is important so it does not autofit fonts
           bargap = 0.45,
@@ -189,7 +195,7 @@ fig <- subplot(plot_all, plot_inset) %>%
           font = list(family = "Helvetica"),
           xaxis = list(title = "",
                        tickangle=270,
-                       tickfont = list(size=11),
+                       tickfont = list(size = myfont + 3),
                        autotick = F,
                        # tick0=0.25,
                        # fixedrange = TRUE,
@@ -198,8 +204,8 @@ fig <- subplot(plot_all, plot_inset) %>%
                        , domain=c(0,1)
                        ),
           yaxis = list(title = paste("Composite flight-hours per ATCO-hour"),
-                       titlefont   = list(size = 12),
-                       tickfont = list(size=11),
+                       titlefont   = list(size = myfont + 4),
+                       tickfont = list(size = myfont + 3),
                        dtick = 0.2,
                        tickformat = ".1f",
                        # tickvals = ticklabels1,
@@ -223,7 +229,7 @@ fig <- subplot(plot_all, plot_inset) %>%
                         domain=c(0.65,1)),
           yaxis2 = list(title = "",
                         # titlefont   = list(size = 13),
-                        tickfont = list(size=10),
+                        tickfont = list(size = myfont + 2),
                         dtick = 0.2,
                         tickformat = ".1f",
                         # tickvals = ticklabels2,
@@ -231,18 +237,19 @@ fig <- subplot(plot_all, plot_inset) %>%
                         # fixedrange = TRUE,
                         range = list(0, 0.2+round(max(data_inset$VALUE), 1)),
                         zeroline = T, showline = F, showgrid = F,
-                        domain=c(0.45,0.95)),
-          annotations = myannotations
+                        domain=c(myinsetv, myinsetv + 0.5)),
+          annotations = myannotations(myfont + 5)
   )
-
-fig
+}
+  
+fig(8, 0.45)
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
 fig_dir <- 'figures/'
 
-invisible(export(fig, paste0(fig_dir,"figure-4-5-hlsr_prod.png")))
+invisible(export(fig(10, 0.5), paste0(fig_dir,"figure-4-5-hlsr_prod.png")))
 invisible(figure <- image_read(paste0(fig_dir,"figure-4-5-hlsr_prod.png")))
 invisible(cropped <- image_crop(figure, "0x450"))
 invisible(image_write(cropped, paste0(fig_dir,"figure-4-5-hlsr_prod.png")))
