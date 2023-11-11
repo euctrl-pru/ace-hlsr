@@ -45,7 +45,7 @@ sys_avg <- data_raw %>% summarise(sum(HOURS)/sum(CFH)) %>% pull()
 plot_all <- function(myfont){
   data_plot %>%
   plot_ly(
-    height = '450px',
+    height = 450,
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",

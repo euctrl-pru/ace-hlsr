@@ -49,7 +49,7 @@ sys_avg <- data_raw %>% summarise(sum(COST)/sum(CFH)) %>% pull()
 plot_fin_ce <- function(myfont){
   data_plot %>%
   plot_ly(
-    height = '450px',
+    height = 450,
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",

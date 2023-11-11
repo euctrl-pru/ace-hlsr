@@ -68,10 +68,10 @@ sys_avg <- data_raw %>% summarise(sum(`Support costs`)/sum(`Composite flight-hou
 
 # plot
 
-plot_all <- function(myfont){
+plot_all <- function(myfont, myheight){
   data_plot %>%
   plot_ly(
-    height = '450px',
+    height = myheight,
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
@@ -248,8 +248,8 @@ ticktexts1 <- c(0,format(ticklabels1[-1], big.mark = " "))
 ticklabels2 <- seq(from=0, to=round(max(data_inset$`Support costs per composite flight-hour`+200)), by=200)
 ticktexts2 <- c(0,format(ticklabels2[-1], big.mark = " "))
 
-fig <- function(myfont){ 
-  subplot(plot_all(myfont), plot_inset(myfont + 1)) %>% 
+fig <- function(myfont, myheight, vlegend){ 
+  subplot(plot_all(myfont, myheight), plot_inset(myfont + 1)) %>% 
   layout( autosize = T, 
           uniformtext = list(minsize=8, mode='show'), #this is important so it does not autofit fonts
           bargap = 0.45,
@@ -260,8 +260,8 @@ fig <- function(myfont){
           hoverlabel=list(bgcolor="rgba(255,255,255,0.88)"),
           legend = list(orientation = 'h',
                         traceorder = 'reversed', #for some reason this does not work
-                        font = list(size = myfont + 1),
-                        y = -0.85,
+                        font = list(size = if_else(myfont == 8, myfont + 1, myfont + 3)),
+                        y = vlegend,
                         x = -0.05,
                         bgcolor = 'transparent'),
           xaxis = list(title = "",
@@ -309,14 +309,14 @@ fig <- function(myfont){
   )
 }
 
-fig(8)
+fig(8, NULL, -0.85)
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
 fig_dir <- 'figures/'
 
-invisible(export(fig(10), paste0(fig_dir,"figure-4-7-hlsr_support.png")))
+invisible(export(fig(10, 600, -0.55), paste0(fig_dir,"figure-4-7-hlsr_support.png")))
 invisible(figure <- image_read(paste0(fig_dir,"figure-4-7-hlsr_support.png")))
-invisible(cropped <- image_crop(figure, "0x500"))
+invisible(cropped <- image_crop(figure, "0x600"))
 invisible(image_write(cropped, paste0(fig_dir,"figure-4-7-hlsr_support.png")))
