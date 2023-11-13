@@ -2,19 +2,19 @@
 
 The ACE benchmarking work is commissioned by the Performance Review Commission (PRC) and carried out by the EUROCONTROL Performance Review Unit (PRU) using information provided by Air Navigation Services Providers (ANSPs) in compliance with Decision No. 88 of the Permanent Commission of EUROCONTROL on economic information disclosure[^introduction-1].
 
-[^introduction-1]: Due to the war in Ukraine, UkSATSE was not able to provide ACE {{< var doc.year_report >}} data. UkSATSE is therefore excluded from the ACE analysis.
+[^introduction-1]: Due to the on-going war in Ukraine, UkSATSE has been excluded from the ACE analysis.
 
-The data processing, analysis and reporting are conducted with the assistance of the ACE Working Group, which comprises representatives from participating ANSPs, airspace users, regulatory authorities and the Performance Review Unit. This enables participants to share experiences and establish a common understanding of underlying assumptions and limitations of the data.
+The data processing, analysis and reporting are conducted with the assistance of the ACE Working Group, which comprises representatives from participating ANSPs, airspace users, regulatory authorities and the Performance Review Unit. This enables participants to share experiences and establish a common understanding of underlying assumptions and data limitations.
 
 The objective of this document is to provide a first insight on the level of {{< var doc.year_report >}} cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the release of the next ACE benchmarking report, which is planned end of May {{< var doc.year_report_plus2 >}}. It also presents specific financial indicators, extracted from the [ANSPs Financial Indicators Dashboard](https://ansperformance.eu/economics/finance/), that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic.
 
-@fig-figure-1-1 illustrates the timeline for the production of the next ACE benchmarking report.
+@fig-figure-1-1 illustrates the timeline to produce the next ACE benchmarking report.
 
-![Timeline for the production of the next ACE benchmarking report](figures/Figure-1-1.png){#fig-figure-1-1 width="100%"}
+![Timeline to produce the next ACE benchmarking report](figures/Figure-1-1.png){#fig-figure-1-1 width="100%"}
 
 It is important that robust ACE benchmarking analysis is available in a timely manner since several stakeholders, most notably ANSPs' management, regulatory authorities (e.g. NSAs) and airspace users, have a keen interest in receiving the information in the ACE reports as early as possible.
 
-Seventeen ANSPs provided their ACE {{< var doc.year_report >}} data submission on time by the 1st of July {{< var doc.year_report_plus1 >}} and, all data submissions were received by the end of August {{< var doc.year_report_plus1 >}}. This constitutes a major improvement compared to previous years. Clearly, the timescale for the production of the ACE benchmarking report is inevitably delayed if data are not submitted on time.
+Seventeen ANSPs submitted their ACE {{< var doc.year_report >}} data on time by the 1st of July {{< var doc.year_report_plus1 >}} and, all data submissions were received by the end of August {{< var doc.year_report_plus1 >}}. This constitutes a major improvement compared to previous years. Clearly, the timescale to produce the ACE benchmarking report is inevitably delayed if data are not submitted on time.
 
 It should be noted that the data presented in this document are still [preliminary and not yet fully validated]{.underline}. These data reflect the information stored in the ACE database on the 7th of November {{< var doc.year_report_plus1 >}}. @fig-figure-1-2 shows the status of the ACE data validation process for the data presented in this document.
 
@@ -28,7 +28,7 @@ Status of {{< var doc.year_report >}} data validation process
 
 The data contained in this report is therefore subject to changes before the release of the final ACE {{< var doc.year_report >}} benchmarking report in May {{< var doc.year_report_plus2 >}}.
 
-The remainder of this report is organised as follows:
+The remainder of this report is structured as follows:
 
 -   @sec-high: provides a high-level presentation of {{< var doc.year_report >}} revenues, costs and staff data.
 -   @sec-economic: presents a preliminary analysis of economic cost-effectiveness at Pan-European and ANSP level.
