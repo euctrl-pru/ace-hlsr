@@ -14,7 +14,7 @@ source(here("data_source.R"))
 data_raw <- read_xlsx(
   # paste0(data_folder, data_file),
   paste0(data_folder,data_file ),
-  sheet = "current_ratio",
+  sheet = "cash-on-hand_days",
   range = cell_limits(c(5, 2), c(NA, NA))) %>%
   as_tibble() %>% 
   pivot_longer(!year, names_to = "year_data", values_to = "value") %>% 
@@ -26,11 +26,11 @@ data_plot <- data_raw %>%
   arrange(year_data) %>% 
   filter(year_data >= year_report-5, year_data <= year_report) %>% 
   mutate_at(c(2), ~as.numeric(.)) %>% 
-  mutate(value_text = case_when(type == "3rd quartile" ~ value + 0.15,
-                                .default = value - 0.15))
+  mutate(value_text = case_when(type == "3rd quartile" ~ value + 10,
+                                .default = value - 10))
 
 #calculate min and max for y axis
-value_max <- ceiling((max(data_plot$value)/2))*2
+value_max <- ceiling((max(data_plot$value)/100))*100
 # cost_min <- round((min(data_plot$COST)-0.5)*2,0)/2
 
 # draw costs plot
@@ -48,14 +48,14 @@ p <- function(mywidth, myheight) {
     ),
     colors = c('#003366', '#E0584F', '#9AA349'),
     line = list(width = 4), 
-    hovertemplate = paste('%{y:.2f}'),
+    hovertemplate = paste('%{y:.0f}'),
     showlegend = T
   ) %>% 
   add_trace(
     inherit = FALSE,
     x = ~ year_data,
     y = ~ value_text,
-    text = ~ format(round(value, 2), nsmall=2),
+    text = ~ format(round(value, 0), nsmall=0),
     textangle = 0,
     textposition = ~ if_else(type == '3rd quartile', "top center", "bottom center"),
     # insidetextanchor =  "start",
@@ -89,8 +89,8 @@ p <- function(mywidth, myheight) {
       # titlefont   = list(size = 13),
       fixedrange = TRUE,
       ticks = 'outside',
-      dtick = 2,
-      range = c(0, value_max + 0.1), #so the last line is plotted
+      dtick = 100,
+      range = c(0, value_max + 5), #so the last line is plotted
       showgrid = TRUE,
       # tickson="boundaries",
       # tickcolor='#BFBFBF', ticklen=3,
@@ -116,7 +116,7 @@ p(NULL, NULL)
 
 fig_dir <- 'figures/'
 
-invisible(export(p(754, 520), paste0(fig_dir,"figure-5-1-hlsr_current_ratio.png")))
-invisible(figure <- image_read(paste0(fig_dir,"figure-5-1-hlsr_current_ratio.png")))
+invisible(export(p(754, 520), paste0(fig_dir,"figure-5-2-hlsr_cash_on_hand.png")))
+invisible(figure <- image_read(paste0(fig_dir,"figure-5-2-hlsr_cash_on_hand.png")))
 invisible(cropped <- image_crop(figure, "754x520"))
-invisible(image_write(cropped, paste0(fig_dir,"figure-5-1-hlsr_current_ratio.png")))
+invisible(image_write(cropped, paste0(fig_dir,"figure-5-2-hlsr_cash_on_hand.png")))

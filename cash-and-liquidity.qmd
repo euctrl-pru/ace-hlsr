@@ -6,10 +6,43 @@ Depending on the organisational set up of different ANSPs, the information repor
 
 @fig-figure-5-1 presents the changes in the average current ratio between {{< var doc.year_report_minus5 >}} and {{< var doc.year_report >}} as well as the 1st and 3rd quartiles. The current ratio (current assets divided by current liabilities) measures the ability of a company to pay its short-term debt obligations with its current assets. On average, the situation slightly improved in {{< var doc.year_report >}} following four years of continuous deterioration.
 
-![Changes in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}}](figures/Figure-5-1.png){#fig-figure-5-1 width="90%"}
+::: {#fig-figure-5-1}
+:::: {.content-visible when-format="html"}
+```{r}
+#| file: R/hlsr_current_ratio.R
+#| out.height: "400px"
+#| out.width: "100%"
+```
+::::
+
+:::: {.content-visible when-format="pdf"}
+![](figures/figure-5-1-hlsr_current_ratio.png)
+::::
+
+Changes in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}}
+:::
+
+<!-- ![Changes in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}}](figures/Figure-5-1.png){#fig-figure-5-1 width="90%"} -->
 
 @fig-figure-5-2 shows the changes in cash-on-hand days at Pan-European system level over the {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} period as well as the 1st quartile and the 3rd quartile of these indicators. The cash-on-hand days indicator (cash & cash equivalents divided by operating costs x 365) measures the length of time a company can pay its operating costs from its cash reserves.
 
-![{{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} trends in cash-on-hand days at Pan-European system level](figures/Figure-5-2.png){#fig-figure-5-2 width="90%"}
+::: {#fig-figure-5-2}
+:::: {.content-visible when-format="html"}
+```{r}
+#| file: R/hlsr_cash_on_hand.R
+#| out.height: "400px"
+#| out.width: "100%"
+```
+::::
+
+:::: {.content-visible when-format="pdf"}
+![](figures/figure-5-2-hlsr_cash_on_hand.png)
+::::
+
+{{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} trends in cash-on-hand days at Pan-European system level
+:::
+
+<!-- ![{{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} trends in cash-on-hand days at Pan-European system level](figures/Figure-5-2.png){#fig-figure-5-2 width="90%"} -->
+
 
 In {{< var doc.year_report >}}, the average cash-on-hand days amounted to 145 days, which is +38 days higher than in 2021 and +7 days higher than in 2020. However, the 2022 figure is still below the pre-pandemic levels. More detailed analysis on these financial indicators will be available in the forthcoming ACE report.
