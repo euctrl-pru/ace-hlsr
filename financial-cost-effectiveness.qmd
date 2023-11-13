@@ -4,9 +4,9 @@ This chapter provides a [preliminary analysis]{.underline} of financial cost-eff
 
 ## Pan-European system level {#sec-fin_1}
 
-@fig-figure-4-1 shows that in {{< var doc.year_report >}} the unit ATM/CNS provision costs fell by -34.3% compared to {{< var doc.year_report_minus1 >}}. This is the result of higher traffic in {{< var doc.year_report >}} compared to {{< var doc.year_report_minus1 >}} (58.5%) combined with higher ATM/CNS provision costs (+4.2%).
+@fig-figure-4-1 shows that in {{< var doc.year_report >}} the unit ATM/CNS provision costs fell by -34.3% compared to 2021, reaching an amount of €473. This is the result of higher traffic (+58.5%) coupled with higher ATM/CNS provision costs (+4.2%).
 
-Comparing with pre-pandemic levels, in {{< var doc.year_report >}} unit ATM/CNS provision costs remain +8.8% higher than in 2019. This mainly reflects the fact that, despite a lower cost-base (-5.5% compared to {{< var doc.year_report_minus2 >}}) traffic volumes in {{< var doc.year_report >}} were still lower than in {{< var doc.year_report_minus2 >}} (-13.2%).
+Comparing with pre-pandemic levels, in 2022 unit ATM/CNS provision costs remain +8.8% higher than in 2019. This mainly reflects the fact that, despite a lower cost-base (-5.5% compared to 2019) traffic volumes in 2022 were still lower than in 2019 (-13.2%).
 
 
  
@@ -26,7 +26,7 @@ Comparing with pre-pandemic levels, in {{< var doc.year_report >}} unit ATM/CNS 
 Changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus5 >}} -- {{< var doc.year_report >}} (real terms)
 :::
 
-The analytical framework which is used in the ACE analysis to break down the financial cost-effectiveness indicator into relevant economic drivers is presented in @fig-figure-4-2. These key drivers include:
+The analytical framework used in the ACE analysis to break down the financial cost-effectiveness indicator into relevant economic drivers is presented in @fig-figure-4-2. These key drivers include:
 
 a\) ATCO-hour productivity (0.88 composite flight-hours per ATCO-hour);
 
@@ -36,13 +36,13 @@ c\) support costs per unit output (€322).
 
 ![ACE performance framework, {{< var doc.year_report >}} (real terms)](figures/Figure-4-2.png){#fig-figure-4-2 width="100%"}
 
-@fig-figure-4-3 shows that in {{< var doc.year_report >}}, ATCO employment costs per ATCO-hour fell by -2.9% while ATCO-hour productivity rose by +45.7%. As a result, ATCO employment costs per composite flight-hour decreased (-33.4%). In the meantime, unit support costs fell by -34.7% due to the combination of an increase in composite flight-hours (+58.5%) and an increase in in support costs (+3.5%). As a result, in 2022, unit ATM/CNS provision costs fell by -34.3% at Pan-European system level.
+@fig-figure-4-3 shows that in {{< var doc.year_report >}}, ATCO employment costs per ATCO-hour fell by -2.9% while ATCO-hour productivity rose by +45.7%. As a result, ATCO employment costs per composite flight-hour decreased (-33.4%). In the meantime, unit support costs fell by -34.7% due to the combination of an increase in composite flight-hours (+58.5%) and an increase in support costs (+3.5%). As a result, in 2022, unit ATM/CNS provision costs fell by -34.3% at Pan-European system level.
 
 ![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3 width="100%"}
 
 ## ANSP level {#sec-fin_2}
 
-@fig-figure-4-4 to @fig-figure-4-7 present the main ACE key performance indicators at ANSP level for the year {{< var doc.year_report >}}. In all these figures, the dotted lines represent the 1st and 3rd quartiles.
+@fig-figure-4-4 to @fig-figure-4-7 present the main ACE key performance indicators at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles for each of the indicators.
 
 ::: {#fig-figure-4-4}
 :::: {.content-visible when-format="html"}
@@ -108,4 +108,4 @@ Employment costs per ATCO-hour, {{< var doc.year_report >}}
 Breakdown of support costs per composite flight-hour, {{< var doc.year_report >}}
 :::
 
-A more detailed analysis of the changes in cost-effectiveness, ATCO-hour productivity, ATCO employment costs per ATCO-hour and unit support costs will be available in the final ACE {{< var doc.year_report >}} benchmarking report.
+A more detailed analysis of the changes in cost-effectiveness, ATCO-hour productivity, ATCO employment costs per ATCO-hour and unit support costs will be available in the final ACE benchmarking report.
