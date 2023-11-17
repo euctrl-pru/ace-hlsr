@@ -126,7 +126,7 @@ pie_data_pivot <- pie_data_pivot  %>%
     CONCEPT == 'REVE_OTHER' ~ "#D9D9D9"
   ),
   MYCOLOR_ER = case_when(
-    CONCEPT == 'REVE_CHARGE' ~ "#001933",
+    CONCEPT == 'REVE_CHARGE' ~ "#125AA2",
     CONCEPT == 'REVE_AIRPORT' ~ "#C12C22",
     CONCEPT == 'REVE_MILITARY' ~ "#6A9FD5",
     CONCEPT == 'REVE_EXEMPT_FLT' ~ "#0A85FF",
