@@ -1,4 +1,4 @@
-# Monitoring of ANSPs Cash and Liquidity situation {#sec-covid}
+# Monitoring of ANSPs cash and liquidity situation {#sec-covid}
 
 This chapter provides an overview of ANSPs' financial situation over the {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} period, using two indicators: the current ratio and the cash-on-hand days. These indicators have been calculated at pan-European system level using the information provided in the ANSPs’ Financial Statements which were available at the time of publishing this report (34 for the 2017-2021 period and 18 in 2022). The indicators are therefore consistent with those published at individual ANSP level in the EUROCONTROL Aviation Intelligence Unit [ANSPs Financial Dashboard](https://ansperformance.eu/economics/finance/).
 
