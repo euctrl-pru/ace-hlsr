@@ -66,7 +66,7 @@ pie_er_trm <- function(mytext){
     hoverinfo = "none",
     textinfo='label+percent',
     textfont = list(size = mytext),
-    marker = list(colors = c("#008080", "#FFFF99"),
+    marker = list(colors = c("#003366", "#E0584F"),
                   line = list(color = '#FFFFFF', width = 1)),
     rotation = start_point_er_trm,
     pull = c(0,0.05),
@@ -116,19 +116,28 @@ pie_data_pivot <- pie_data_pivot  %>%
     CONCEPT == 'REVE_FINANCIAL' ~ "\t\nFinancial",
     CONCEPT == 'REVE_OTHER' ~ "\t\nOther income"
   ),
-  MYCOLOR = case_when(
-    CONCEPT == 'REVE_CHARGE' ~ "#376092",
-    CONCEPT == 'REVE_AIRPORT' ~ "#0000FF",
-    CONCEPT == 'REVE_MILITARY' ~ "#FFFFCC",
-    CONCEPT == 'REVE_EXEMPT_FLT' ~ "#FFFF00",
-    CONCEPT == 'REVE_DOMESTIC' ~ "#FFCC00", 
-    CONCEPT == 'REVE_FINANCIAL' ~ "#CC99FF",
-    CONCEPT == 'REVE_OTHER' ~ "#FF6600"
+  MYCOLOR_TRM = case_when(
+    CONCEPT == 'REVE_CHARGE' ~ "#811D17",
+    CONCEPT == 'REVE_AIRPORT' ~ "#C12C22",
+    CONCEPT == 'REVE_MILITARY' ~ "#C64D45",
+    CONCEPT == 'REVE_EXEMPT_FLT' ~ "#EC9B95",
+    CONCEPT == 'REVE_DOMESTIC' ~ "#F3BCB9", 
+    CONCEPT == 'REVE_FINANCIAL' ~ "#F9DEDC",
+    CONCEPT == 'REVE_OTHER' ~ "#D9D9D9"
+  ),
+  MYCOLOR_ER = case_when(
+    CONCEPT == 'REVE_CHARGE' ~ "#001933",
+    CONCEPT == 'REVE_AIRPORT' ~ "#C12C22",
+    CONCEPT == 'REVE_MILITARY' ~ "#6A9FD5",
+    CONCEPT == 'REVE_EXEMPT_FLT' ~ "#0A85FF",
+    CONCEPT == 'REVE_DOMESTIC' ~ "#5CADFF", 
+    CONCEPT == 'REVE_FINANCIAL' ~ "#ADD6FF",
+    CONCEPT == 'REVE_OTHER' ~ "#D9D9D9"
   )
   )
 #filter ERT data and redo label for pie
 pie_er_data <- pie_data_pivot %>% 
-  select(ERT, CONCEPT, LABEL,MYCOLOR, ERT_PERC) %>% 
+  select(ERT, CONCEPT, LABEL,MYCOLOR_ER, ERT_PERC) %>% 
   mutate(LABEL = paste0(LABEL,
                         "\n",
                         round(ERT_PERC*100,if_else(ERT_PERC*100 <0.5,2,1)),
@@ -153,7 +162,7 @@ pie_er <- function(mytext){
     textinfo='label',
     textfont = list(size = mytext),
     insidetextorientation='horizontal',
-    marker = list(colors = ~MYCOLOR),
+    marker = list(colors = ~MYCOLOR_ER),
     rotation = start_point_er,
     sort = FALSE,
     automargin = TRUE,
@@ -174,7 +183,7 @@ pie_er <- function(mytext){
 
 #filter data for pie
 pie_trm_data <- pie_data_pivot %>% 
-  select(TRM, CONCEPT, LABEL,MYCOLOR, TRM_PERC) %>% 
+  select(TRM, CONCEPT, LABEL,MYCOLOR_TRM, TRM_PERC) %>% 
   mutate(LABEL = paste0(LABEL,
                         "\n",
                         round(TRM_PERC*100,if_else(TRM_PERC*100 <0.5,2,1)),
@@ -199,7 +208,7 @@ pie_trm <- function(mytext){
     textinfo='label',
     textfont = list(size = mytext),
     insidetextorientation='horizontal',
-    marker = list(colors = ~MYCOLOR),
+    marker = list(colors = ~MYCOLOR_TRM),
     rotation = start_point_trm,
     automargin = TRUE,
     sort = FALSE,

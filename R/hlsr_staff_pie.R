@@ -50,24 +50,39 @@ pie_staff_data <- pie_staff_data %>%
     STAF_TYPE == 'STAF_OTHER' ~ "Other"
   ),
   MYCOLOR = case_when(
-    STAF_TYPE == 'STAF_ATCO' ~ "#000080",
-    STAF_TYPE == 'STAF_ATCO_OTHER' ~ "#0000FF",
-    STAF_TYPE == 'STAF_AB_INITIO' ~ "#0066CC",
-    STAF_TYPE == 'STAF_TRAINEE' ~ "#9999FF",
-    STAF_TYPE == 'STAF_ATC_ASSISTANT' ~ "#99CCFF",
-    STAF_TYPE == 'STAF_OPS_SUPPORT' ~ "#CCFFFF",
-    STAF_TYPE == 'STAF_TECH_OPERAT' ~ "#FFCC00",
-    STAF_TYPE == 'STAF_TECH_PLANNING' ~ "#FFFF00",
-    STAF_TYPE == 'STAF_ADMIN' ~ "#FFFFCC",
-    STAF_TYPE == 'STAF_ANCILLARY' ~ "#FF00FF",
-    STAF_TYPE == 'STAF_OTHER' ~ "#993366"
+    STAF_TYPE == 'STAF_ATCO' ~ "#003366",
+    STAF_TYPE == 'STAF_ATCO_OTHER' ~ "#D4E9FB",
+    STAF_TYPE == 'STAF_AB_INITIO' ~ "#A9D3F7",
+    STAF_TYPE == 'STAF_TRAINEE' ~ "#7FBCF2",
+    STAF_TYPE == 'STAF_ATC_ASSISTANT' ~ "#EDF6A0",
+    STAF_TYPE == 'STAF_OPS_SUPPORT' ~ "#D9DDB3",
+    STAF_TYPE == 'STAF_TECH_OPERAT' ~ "#C6CC8D",
+    STAF_TYPE == 'STAF_TECH_PLANNING' ~ "#D1E616",
+    STAF_TYPE == 'STAF_ADMIN' ~ "#8B9A0E",
+    STAF_TYPE == 'STAF_ANCILLARY' ~ "#747A37",
+    STAF_TYPE == 'STAF_OTHER' ~ "#4D5225"
   )
   ) %>% 
   mutate(LABEL =  paste0(LABEL,
                          "\n",
                          format(round(STAF/sum(STAF)*100,1), nsmall =1 ,big.mark= " "),
                          "%")
-  )
+  ) %>% 
+  mutate(
+  STAF_TYPE = factor(STAF_TYPE, levels = c(
+    'STAF_ATCO',
+    'STAF_OTHER',                  
+    'STAF_ANCILLARY',
+    'STAF_ADMIN',
+    'STAF_TECH_PLANNING', 
+    'STAF_TECH_OPERAT',
+    'STAF_OPS_SUPPORT',
+    'STAF_ATC_ASSISTANT',
+    'STAF_TRAINEE',
+    'STAF_AB_INITIO',
+    'STAF_ATCO_OTHER'
+    ))) %>% 
+  arrange(STAF_TYPE)
 
 # parameters for initial slice
 atcos_ops <- pie_staff_data %>% select(STAF_TYPE,STAF) %>% 
@@ -81,12 +96,15 @@ start_point_staf <- 90-atcos_ops/total_staf*180
 domain_staff_x0 <- 0
 domain_staff_x1 <- 0.45
 
+mytext = 10
+
 # plot piechart
 pie_staff <- function(mytext){
   pie_staff_data %>% 
   plot_ly(
     labels = ~LABEL, values = ~STAF, type = 'pie',
     hoverinfo = "none",
+    sort = FALSE,
     textinfo='label',
     textfont = list(size = mytext),
     marker = list(colors = ~MYCOLOR),
@@ -119,8 +137,8 @@ pie_atco_data <- pie_atco_data %>%
     STAF_TYPE == 'APP_ATCO_NB' ~ "APPs + TWRs\nATCOs in OPS"
   ),
   MYCOLOR = case_when(
-    STAF_TYPE == 'ACC_ATCO_NB' ~ "#CCFFCC",
-    STAF_TYPE == 'APP_ATCO_NB' ~ "#FFFF99"
+    STAF_TYPE == 'ACC_ATCO_NB' ~ "#125AA2",
+    STAF_TYPE == 'APP_ATCO_NB' ~ "#2787E7"
   )
   )
 

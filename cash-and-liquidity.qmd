@@ -16,11 +16,13 @@ Depending on the organisational set up of different ANSPs, the information repor
 ::::
 
 :::: {.content-visible when-format="pdf"}
-![](figures/figure-5-1-hlsr_current_ratio.png)
+![](figures/figure-5-1-hlsr_current_ratio.png){height="85%" width="85%"}
 ::::
 
 Changes in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}}
 :::
+
+{{< pagebreak >}}
 
 <!-- ![Changes in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}}](figures/Figure-5-1.png){#fig-figure-5-1 width="90%"} -->
 
@@ -36,7 +38,7 @@ Changes in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.
 ::::
 
 :::: {.content-visible when-format="pdf"}
-![](figures/figure-5-2-hlsr_cash_on_hand.png)
+![](figures/figure-5-2-hlsr_cash_on_hand.png){height="85%" width="85%"}
 ::::
 
 {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} trends in cash-on-hand days at Pan-European system level
