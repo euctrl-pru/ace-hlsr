@@ -28,19 +28,23 @@ format:
       - media/fontawesome.html
       # UNCOMMENT for activating GA
       - media/analytics.html
-  pdf: default
-
-geometry:
-  - a4paper
-  # - showframe
-  # - inner=3cm
-  # - outer=4cm
-  - top=3cm
-  - bottom=3cm
-
-# include-in-header:
-#   - text: |
-#       \setmainfont{Roboto}
+# quarto render --to pdf --output-dir _pdf
+  pdf: 
+    toc: true
+    lof: true
+    geometry:
+      - a4paper
+      # - showframe
+      # - inner=3cm
+      # - outer=4cm
+      - top=2cm
+      - bottom=2cm
+      - left=2.5cm
+      - right=2.2cm
+    mainfont: "Roboto"
+    include-in-header:
+      - text: |
+          \RedeclareSectionCommand[beforeskip=0pt]{chapter}
 
 book:
   title: "High-level Summary Report on Preliminary ACE 2022 Data"
@@ -51,10 +55,10 @@ book:
   chapters:
     - index.qmd
     - introduction.qmd
-    - high-level-revenues.qmd
-    - economic-cost-effectiveness.qmd
-    - financial-cost-effectiveness.qmd
-    - cash-and-liquidity.qmd
+    # - high-level-revenues.qmd
+    # - economic-cost-effectiveness.qmd
+    # - financial-cost-effectiveness.qmd
+    # - cash-and-liquidity.qmd
     - disclaimer.qmd
   site-url: "https://eurocontrol.int/"
   navbar:

@@ -10,7 +10,7 @@ The objective of this document is to provide a first insight on the level of {{<
 
 @fig-figure-1-1 illustrates the timeline to produce the next ACE benchmarking report.
 
-![Timeline to produce the next ACE benchmarking report](figures/Figure-1-1.png){#fig-figure-1-1 width="100%"}
+![Timeline to produce the next ACE benchmarking report](figures/figure1-1_transp.png){#fig-figure-1-1 width="100%"}
 
 It is important that robust ACE benchmarking analysis is available in a timely manner since several stakeholders, most notably ANSPs' management, regulatory authorities (e.g. NSAs) and airspace users, have a keen interest in receiving the information in the ACE reports as early as possible.
 
