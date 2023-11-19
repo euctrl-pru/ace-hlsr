@@ -1,17 +1,3 @@
----
-title: "ANSP status table"
-output: html_document
----
-
-```{css, echo=FALSE}
-
-.reactable {
-    margin-bottom: 5px;
-}
-
-```
-
-```{r, echo=FALSE, include=FALSE}
 ## libraries
 library(tidyr)
 library("data.table")
@@ -20,18 +6,16 @@ library(readxl)
 library(reactable)
 library(htmltools)
 library(here)
-```
 
-```{r echo=FALSE}
 ## data source
 source(here("data_source.R"))
 
 ## import ANSP table
 ansp  <- read_xlsx(
-                       # paste0(data_folder, data_file),
-                       paste0(data_folder, data_file),
-                       sheet = "Status",
-                       range = cell_limits(c(8, 1), c(NA, 2))) %>%
+  # paste0(data_folder, data_file),
+  paste0(data_folder, data_file),
+  sheet = "Status",
+  range = cell_limits(c(8, 1), c(NA, 2))) %>%
   as_tibble() %>% 
   filter(ANSP_NAME != 'UkSATSE')%>%
   replace(is.na(.), 0)
@@ -47,7 +31,7 @@ ansp_split <-ansp_checkmark %>%
   mutate(mygroup = ceiling(row_number()/8)) %>%  
   mutate(rn = rowid(mygroup)) %>% 
   pivot_wider(names_from = c(mygroup), values_from = c(ANSP_NAME))%>%
-   select(-rn)
+  select(-rn)
 
 ## find out number of rows.. we need it later for table formatting
 ansp_rows <- nrow(ansp_split)
@@ -62,9 +46,9 @@ table_ansp_sub <- reactable(
   compact = TRUE,
   highlight = TRUE,
   defaultColDef = colDef(style=list("font-size" = "12px", "white-space"= "wrap"),
-      headerStyle = list(display = "none"),
-      # footerStyle = list(fontWeight = "bold", display = "block"),
-      html = TRUE
+                         headerStyle = list(display = "none"),
+                         # footerStyle = list(fontWeight = "bold", display = "block"),
+                         html = TRUE
   ),
   columns = list(
     '1' = colDef(minWidth = 20),
@@ -88,5 +72,3 @@ table_ansp_sub <- reactable(
 )
 
 table_ansp_sub
-```
-<p style = "font-size:10pt; text-align: left">✔️Data submission has been reviewed</p>

@@ -19,9 +19,17 @@ Seventeen ANSPs submitted their ACE {{< var doc.year_report >}} data on time by 
 It should be noted that the data presented in this document are still [preliminary and not yet fully validated]{.underline}. These data reflect the information stored in the ACE database on the 7th of November {{< var doc.year_report_plus1 >}}. @fig-figure-1-2 shows the status of the ACE data validation process for the data presented in this document.
 
 ::: {#fig-figure-1-2}
+:::: {.content-visible when-format="html"}
 ```{r}
-#| child: R/hlsr_ansp_status_table.Rmd
+#| file: R/hlsr_ansp_status_gt.R
 ```
+::::
+
+:::: {.content-visible when-format="pdf"}
+```{r, options=(checkmark='√')}
+#| file: R/hlsr_ansp_status_gt.R
+```
+::::
 
 Status of {{< var doc.year_report >}} data validation process
 :::
