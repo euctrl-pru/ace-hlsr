@@ -85,7 +85,7 @@ pie_er_trm <- function(mytext){
   
   
 #transpose
-pie_data_t <- transpose(pie_data)
+pie_data_t <- data.table::transpose(pie_data)
 colnames(pie_data_t) <- pie_data$TYPE
 rownames(pie_data_t) <- colnames(pie_data)
 
@@ -98,7 +98,7 @@ pie_data_temp <- pie_data_t %>% filter(row_number()!=1)  %>%
          REVE_MILITARY, REVE_AIRPORT) 
 
 # transpose back
-pie_data_pivot <- transpose(pie_data_temp)
+pie_data_pivot <- data.table::transpose(pie_data_temp)
 colnames(pie_data_pivot) <- rownames(pie_data_temp)
 pie_data_pivot$CONCEPT <- colnames(pie_data_temp)
 
@@ -351,4 +351,9 @@ fig_pdf <-  subplot(pie_er(14), pie_er_trm(14), pie_trm(14)) %>%
 
 fig_dir <- 'figures/'
 
-invisible(export(fig_pdf, paste0(fig_dir,"figure-2-1-hlsr_rev_pie.png")))
+image_name <- "figure-2-1-hlsr_rev_pie.png"
+invisible(export(fig_pdf, paste0(fig_dir, image_name)))
+invisible(figure <- image_read(paste0(fig_dir,image_name)))
+invisible(cropped <- image_crop(figure, "0x490-0+160"))
+invisible(image_write(cropped, paste0(fig_dir, image_name)))
+  

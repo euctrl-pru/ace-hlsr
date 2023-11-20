@@ -219,5 +219,10 @@ fig_pdf <- subplot(pie_cost(14, '<b>%{label}</b>'), pie_atco(14, '<b>%{label}</b
 
 fig_dir <- 'figures/'
 
-invisible(export(fig_pdf, paste0(fig_dir,"figure-2-3-hlsr_c_bdown_pie.png")))
+image_name <- "figure-2-3-hlsr_c_bdown_pie.png"
+invisible(export(fig_pdf, paste0(fig_dir, image_name)))
+
+invisible(figure <- image_read(paste0(fig_dir,image_name)))
+invisible(cropped <- image_crop(figure, "0x520-0+140"))
+invisible(image_write(cropped, paste0(fig_dir, image_name)))
 

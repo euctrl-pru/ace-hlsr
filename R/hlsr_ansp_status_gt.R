@@ -4,6 +4,7 @@ library("data.table")
 library(dplyr)
 library(readxl)
 library(gt)
+# library(webshot2)
 library(htmltools)
 library(here)
 
@@ -66,3 +67,5 @@ table_ansp_sub <- gt(
   )
 
 table_ansp_sub
+
+# gtsave(table_ansp_sub, 'table_ansp_sub.png') #doesn't work because cannot open chrome

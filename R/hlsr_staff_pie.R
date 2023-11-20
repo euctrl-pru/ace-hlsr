@@ -218,4 +218,9 @@ fig_pdf <- subplot(pie_staff(14), pie_atco(14)) %>%
 
 fig_dir <- 'figures/'
 
-invisible(export(fig_pdf, paste0(fig_dir,"figure-2-6-hlsr_staff_pie.png")))
+image_name <- "figure-2-6-hlsr_staff_pie.png"
+invisible(export(fig_pdf, paste0(fig_dir, image_name)))
+
+invisible(figure <- image_read(paste0(fig_dir,image_name)))
+invisible(cropped <- image_crop(figure, "0x470-0+140"))
+invisible(image_write(cropped, paste0(fig_dir, image_name)))

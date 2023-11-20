@@ -40,9 +40,10 @@ format:
       # - inner=3cm
       # - outer=4cm
       - top=2cm
-      - bottom=2cm
+      - bottom=1cm
       - left=2.5cm
       - right=2.2cm
+      - footskip=0cm
     mainfont: "Calibri"
     include-in-header:
       - text: |
@@ -50,6 +51,8 @@ format:
           % \setmainfont{Biolinum}
           % \usepackage[utf8]{inputenc}
           % \usepackage{unicode-math}
+          \usepackage{xcolor}
+          \usepackage{ragged2e} % for justifying text in multiple column layout
           \RedeclareSectionCommand[beforeskip=0pt]{chapter} %so to remove the word chapter and the space before
 
 book:
