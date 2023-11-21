@@ -64,7 +64,7 @@ Breakdown of gate-to-gate ANS revenues, {{< var doc.year_report >}}
 if (knitr::is_latex_output()) {
   mystring = '\\hfill\\break
   \\hfill\\break'
-   mylayout = '"[0.28, 0.44, 0.28]"'
+   mylayout = '"[0.30, 0.40, 0.30]"'
 } else {
    mystring = ''
    mylayout = '"[0.25, 0.5, 0.25]"'
@@ -116,8 +116,13 @@ Gate-to-gate ATM/CNS provision costs at Pan-European system level, {{< var doc.y
 ```{r}
 if (knitr::is_html_output()) {
   mylayout = '"[0.35, 0.65]"'
+  mystring = ''
 } else {
    mylayout = '"[0.40, 0.60]"'
+  mystring = '\\hfill\\break
+  \\hfill\\break
+  \\hfill\\break
+  \\hfill\\break'
 }
 ```
 
@@ -127,7 +132,7 @@ if (knitr::is_html_output()) {
 
 ::::: {#firstcol}
 <!-- took this trick from here https://github.com/quarto-dev/quarto-cli/discussions/1534 -->
-\justifying \noindent After two years of consecutive decreases, total ATM/CNS provision costs rose by +4.2% (+€358.1M) in 2022, reflecting cost increases for 26 out of 38 ANSPs. Staff costs (+€220.2M), the cost of capital (+163.2M) and non-staff operating costs (+130.5M) were the main sources of increase in 2022.
+\justifying \noindent `r mystring` After two years of consecutive decreases, total ATM/CNS provision costs rose by +4.2% (+€358.1M) in 2022, reflecting cost increases for 26 out of 38 ANSPs. Staff costs (+€220.2M), the cost of capital (+163.2M) and non-staff operating costs (+130.5M) were the main sources of increase in 2022.
 :::::
 
 ::::: {#secondcol}
@@ -146,20 +151,20 @@ For staff and non-staff operating costs, this mainly reflects the fact that 2021
 
 In {{< var doc.year_report >}}, the five largest ANSPs (DFS, DSNA, ENAIRE, ENAV and NATS) bore some 54% of the total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-3).
 
-::: centeredtitle
-[**Trends in ATM/CNS provision costs at Pan-European system level**]{.underline}
-:::
-
 ::: {.content-visible when-format="html"}
-::: {style="max-width: 620px; margin: auto"}
+:::: centeredtitle
+[**Trends in ATM/CNS provision costs at Pan-European system level**]{.underline}
+::::
+
+:::: {style="max-width: 620px; margin: auto"}
 ```{r}
 #| file: R/hlsr_evo_cost.R
 #| out.height: "200px"
 #| out.width: "100%"
 ```
-:::
+::::
 
-::: {#fig-figure-2-5 layout="[65,35]"}
+:::: {#fig-figure-2-5 layout="[65,35]"}
 ```{r}
 #| file: R/hlsr_cost_per_ansp.R
 #| out.height: "600px"
@@ -171,13 +176,18 @@ In {{< var doc.year_report >}}, the five largest ANSPs (DFS, DSNA, ENAIRE, ENAV 
 ```
 
 Changes in ATM/CNS provision costs (real terms)
-:::
+::::
 :::
 
 ::: {.content-visible when-format="pdf"}
+<!-- this is latex https://tex.stackexchange.com/questions/24186/how-to-center-text-without-adding-space-and-not-altering-alignment-of-surroundin-->
+\begin{tightcenter}
+\underline{Trends in ATM/CNS provision costs at Pan-European system level}
+\end{tightcenter}
+
 ![](figures/figure-2-5-1-hlsr_eco_ce.png){height="100%" width="100%"}
 
-:::: {#fig-figure-2-5 layout="[66,34]"}
+:::: {#fig-figure-2-5 layout="[645,355]"}
 
 ::::: {#firstcol}
 ![](figures/figure-2-5-2-hlsr_cost_per_ansp.png)
@@ -207,7 +217,7 @@ The Pan-European ANSPs employed a total of 52 843 staff in 2022 (comprising 52 0
 ::::
 
 :::: {.content-visible when-format="pdf"}
-![](figures/figure-2-6-hlsr_staff_pie.png){height="70%" width="70%"}
+![](figures/figure-2-6-hlsr_staff_pie.png){height="75%" width="75%"}
 ::::
 
 Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, {{< var doc.year_report >}}
@@ -215,11 +225,11 @@ Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, {{< 
 
 In {{< var doc.year_report >}}, the number of ATM/CNS staff remained almost at the same level as in 2021 (-0.2% or -127 FTEs).
 
-::: centeredtitle
-[**Trends in gate-to-gate ATM/CNS staff at Pan-European system level**]{.underline}
-:::
-
 ::: {.content-visible when-format="html"}
+:::: centeredtitle
+[**Trends in gate-to-gate ATM/CNS staff at Pan-European system level**]{.underline}
+::::
+
 :::: {style="max-width: 620px; margin: auto"}
 ```{r}
 #| file: R/hlsr_evo_staff.R
@@ -244,12 +254,16 @@ Total gate-to-gate ATM/CNS staff per staff category
 :::
 
 ::: {.content-visible when-format="pdf"}
+\begin{tightcenter}
+\underline{Trends in gate-to-gate ATM/CNS staff at Pan-European system level}
+\end{tightcenter}
+
 ![](figures/figure-2-7-1-hlsr_evo_staff.png){height="90%" width="90%"}
 
-:::: {#fig-figure-2-7 layout="[66,34]"}
-![](figures/figure-2-7-2-hlsr_staff_bdown_bar.png){height="78%" width="78%"}
+:::: {#fig-figure-2-7 layout="[0.53,0.28,0.19]"}
+![](figures/figure-2-7-2-hlsr_staff_bdown_bar.png)
 
-![](figures/figure-2-7-3-hlsr_staff_bdown_bar_perc.png){height="78%" width="78%"}
+![](figures/figure-2-7-3-hlsr_staff_bdown_bar_perc.png)
 
 Total gate-to-gate ATM/CNS staff per staff category
 ::::

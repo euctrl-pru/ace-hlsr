@@ -34,9 +34,9 @@ It should be noted that the data presented in this document are still [prelimina
 Status of {{< var doc.year_report >}} data validation process
 :::
 
-:::{.blue}
+{{< pagebreak >}}
+
 The data contained in this report is therefore subject to changes before the release of the final ACE {{< var doc.year_report >}} benchmarking report in May {{< var doc.year_report_plus2 >}}.
-:::
 
 The remainder of this report is structured as follows:
 

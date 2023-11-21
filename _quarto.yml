@@ -43,17 +43,37 @@ format:
       - bottom=1cm
       - left=2.5cm
       - right=2.2cm
-      - footskip=0cm
+      - footskip=0.7cm
     mainfont: "Calibri"
     include-in-header:
       - text: |
           % \usepackage{libertine} % so we can see the checkmarks in the intro
-          % \setmainfont{Biolinum}
-          % \usepackage[utf8]{inputenc}
-          % \usepackage{unicode-math}
           \usepackage{xcolor}
           \usepackage{ragged2e} % for justifying text in multiple column layout
-          \RedeclareSectionCommand[beforeskip=0pt]{chapter} %so to remove the word chapter and the space before
+          
+          \RedeclareSectionCommand[
+            beforeskip=0pt,
+            afterskip=2pt]{chapter} %so to remove the word chapter and the space before
+          
+          \setsansfont{Calibri}
+          
+          \definecolor{MyBlue}{RGB}{54,95,145}
+          \addtokomafont{chapter}{\color{MyBlue}}
+          \addtokomafont{chapterprefix}{\color{MyBlue}}
+          \addtokomafont{chapter}{\fontsize{14pt}{14pt}\selectfont}
+          \addtokomafont{chapterprefix}{\fontsize{14pt}{14pt}\selectfont}
+
+          \addtokomafont{section}{\color{MyBlue}}
+          \addtokomafont{section}{\fontsize{12pt}{12pt}\selectfont}
+
+          \newenvironment{tightcenter}{%
+            \setlength\topsep{5pt}
+            \setlength\parskip{0pt}
+            \bfseries
+            \begin{center}
+          }{%
+            \end{center}
+          }
 
 book:
   title: "High-level Summary Report on Preliminary ACE 2022 Data"
@@ -63,6 +83,7 @@ book:
     location: sidebar
   chapters:
     - index.qmd
+    # - test.qmd
     - introduction.qmd
     - high-level-revenues.qmd
     - economic-cost-effectiveness.qmd
