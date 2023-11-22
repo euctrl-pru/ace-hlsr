@@ -61,8 +61,7 @@ ul.task-list li input[type="checkbox"] {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-RJ3R0C35X7');
-</script><script src="site_libs/core-js-2.5.3/shim.min.js"></script><script src="site_libs/react-17.0.0/react.min.js"></script><script src="site_libs/react-17.0.0/react-dom.min.js"></script><script src="site_libs/reactwidget-1.0.0/react-tools.js"></script><script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><link href="site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
-<script src="site_libs/reactable-binding-0.4.4/reactable.js"></script><link rel="stylesheet" href="media/style.css">
+</script><link rel="stylesheet" href="media/style.css">
 </head>
 <body class="nav-sidebar floating nav-fixed">
 
@@ -423,35 +422,525 @@ ul.task-list li input[type="checkbox"] {
 <p>The objective of this document is to provide a first insight on the level of 2022 cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the release of the next ACE benchmarking report, which is planned end of May 2024. It also presents specific financial indicators, extracted from the <a href="https://ansperformance.eu/economics/finance/">ANSPs Financial Indicators Dashboard</a>, that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic.</p>
 <p><a href="#fig-figure-1-1">Figure&nbsp;<span>1.1</span></a> illustrates the timeline to produce the next ACE benchmarking report.</p>
 <div id="fig-figure-1-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="figures/Figure-1-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="figures/figure1-1_transp.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption class="figure-caption">Figure&nbsp;1.1: Timeline to produce the next ACE benchmarking report</figcaption></figure>
 </div>
 <p>It is important that robust ACE benchmarking analysis is available in a timely manner since several stakeholders, most notably ANSPs’ management, regulatory authorities (e.g.&nbsp;NSAs) and airspace users, have a keen interest in receiving the information in the ACE reports as early as possible.</p>
 <p>Seventeen ANSPs submitted their ACE 2022 data on time by the 1st of July 2023 and, all data submissions were received by the end of August 2023. This constitutes a major improvement compared to previous years. Clearly, the timescale to produce the ACE benchmarking report is inevitably delayed if data are not submitted on time.</p>
 <p>It should be noted that the data presented in this document are still <u>preliminary and not yet fully validated</u>. These data reflect the information stored in the ACE database on the 7th of November 2023. <a href="#fig-figure-1-2">Figure&nbsp;<span>1.2</span></a> shows the status of the ACE data validation process for the data presented in this document.</p>
 <div id="fig-figure-1-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><div class="cell">
-
-<style type="text/css">
-
-.reactable {
-    margin-bottom: 5px;
-}
-
-</style>
-</div>
-<div class="cell">
+<figure class="figure"><div class="cell" data-file="R/hlsr_ansp_status_gt.R">
 <div class="cell-output-display">
 
-<div class="reactable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-235974e08af5b999bec4" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-235974e08af5b999bec4">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"1":["Albcontrol","ANS CR","ARMATS","Austro Control ✔️","Avinor (Continental)","BHANSA ✔️","BULATSA","Croatia Control"],"2":["DCAC Cyprus","DFS ✔️","DHMI ✔️","DSNA ✔️","EANS","ENAIRE ✔️","ENAV ✔️","Fintraffic ANS"],"3":["HASP ✔️","HungaroControl","IAA ✔️","LFV","LGS ✔️","LPS","LVNL","MATS"],"4":["M-NAV","MOLDATSA ✔️","MUAC","NATS (Continental) ✔️","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA"],"5":["ROMATSA","Sakaeronavigatsia ✔️","skeyes","Skyguide","Slovenia Control ✔️","SMATSA",null,null]},"columns":[{"id":"1","name":"1","type":"character","html":true,"style":{"font-size":"12px","white-space":"wrap"},"headerStyle":{"display":"none"},"minWidth":20},{"id":"2","name":"2","type":"character","html":true,"style":{"font-size":"12px","white-space":"wrap"},"headerStyle":{"display":"none"},"minWidth":18},{"id":"3","name":"3","type":"character","html":true,"style":{"font-size":"12px","white-space":"wrap"},"headerStyle":{"display":"none"},"minWidth":18},{"id":"4","name":"4","type":"character","html":true,"style":{"font-size":"12px","white-space":"wrap"},"headerStyle":{"display":"none"},"minWidth":26},{"id":"5","name":"5","type":"character","html":true,"style":{"font-size":"12px","white-space":"wrap"},"headerStyle":{"display":"none"},"minWidth":18}],"pagination":false,"highlight":true,"borderless":true,"compact":true,"rowStyle":"function(rowInfo) {\n    if (rowInfo.index == 0) {\n      return { borderTop: '2px solid #3F557A' }\n    } else if (rowInfo.index == 7) {\n      return { borderBottom: '2px solid #3F557A' }\n    } else {\n      return { borderTop: '1px solid transparent' }\n    }\n  }","dataKey":"87c9c29ae557d448bfdcf9a3bc9c57ab"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.rowStyle"],"jsHooks":[]}</script>
+<div id="tesodudelg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tesodudelg table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#tesodudelg thead, #tesodudelg tbody, #tesodudelg tfoot, #tesodudelg tr, #tesodudelg td, #tesodudelg th {
+  border-style: none;
+}
+
+#tesodudelg p {
+  margin: 0;
+  padding: 0;
+}
+
+#tesodudelg .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#tesodudelg .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#tesodudelg .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#tesodudelg .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#tesodudelg .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tesodudelg .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tesodudelg .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tesodudelg .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#tesodudelg .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#tesodudelg .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#tesodudelg .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#tesodudelg .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#tesodudelg .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#tesodudelg .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#tesodudelg .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#tesodudelg .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#tesodudelg .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#tesodudelg .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#tesodudelg .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tesodudelg .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#tesodudelg .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#tesodudelg .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#tesodudelg .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tesodudelg .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#tesodudelg .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#tesodudelg .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tesodudelg .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tesodudelg .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#tesodudelg .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tesodudelg .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#tesodudelg .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tesodudelg .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: hidden;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tesodudelg .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tesodudelg .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tesodudelg .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tesodudelg .gt_left {
+  text-align: left;
+}
+
+#tesodudelg .gt_center {
+  text-align: center;
+}
+
+#tesodudelg .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#tesodudelg .gt_font_normal {
+  font-weight: normal;
+}
+
+#tesodudelg .gt_font_bold {
+  font-weight: bold;
+}
+
+#tesodudelg .gt_font_italic {
+  font-style: italic;
+}
+
+#tesodudelg .gt_super {
+  font-size: 65%;
+}
+
+#tesodudelg .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#tesodudelg .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#tesodudelg .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#tesodudelg .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#tesodudelg .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#tesodudelg .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#tesodudelg .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<tbody class="gt_table_body">
+<tr>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">Albcontrol</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">DCAC Cyprus</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">HASP ✔️</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">M-NAV</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">ROMATSA</td>
+</tr>
+<tr>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">ANS CR</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">DFS ✔️</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">HungaroControl</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">MOLDATSA ✔️</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">Sakaeronavigatsia ✔️</td>
+</tr>
+<tr>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">ARMATS</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">DHMI ✔️</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">IAA ✔️</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">MUAC</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">skeyes</td>
+</tr>
+<tr>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">Austro Control ✔️</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">DSNA ✔️</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">LFV</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">NATS (Continental) ✔️</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">Skyguide</td>
+</tr>
+<tr>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">Avinor (Continental)</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">EANS</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">LGS ✔️</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">NAV Portugal (Continental)</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">Slovenia Control ✔️</td>
+</tr>
+<tr>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">BHANSA ✔️</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">ENAIRE ✔️</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">LPS</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">NAVIAIR</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">SMATSA</td>
+</tr>
+<tr>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">BULATSA</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">ENAV ✔️</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">LVNL</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">Oro Navigacija</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;"></td>
+</tr>
+<tr>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">Croatia Control</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">Fintraffic ANS</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">MATS</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;">PANSA</td>
+<td headers="" class="gt_row gt_left" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white;"></td>
+</tr>
+</tbody>
+<tfoot class="gt_footnotes"><tr>
+<td class="gt_footnote" colspan="5"> ✔️ Data submission has been reviewed</td>
+    </tr></tfoot>
+</table>
 </div>
 </div>
-<p style="font-size:10pt; text-align: left">
-✔️Data submission has been reviewed
-</p>
+</div>
 <figcaption class="figure-caption">Figure&nbsp;1.2: Status of 2022 data validation process</figcaption></figure>
 </div>
+<div style="page-break-after: always;"></div>
 <p>The data contained in this report is therefore subject to changes before the release of the final ACE 2022 benchmarking report in May 2024.</p>
 <p>The remainder of this report is structured as follows:</p>
 <ul>

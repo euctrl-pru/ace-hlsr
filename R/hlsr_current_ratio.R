@@ -86,7 +86,7 @@ p <- function(mywidth, myheight) {
     yaxis = list(
       title = "Current assets / current liabilities ratio",
       linewidth = 1, linecolor='black',
-      titlefont   = list(size = 12),
+      titlefont   = list(size = 13),
       fixedrange = TRUE,
       ticks = 'outside',
       dtick = 2,
