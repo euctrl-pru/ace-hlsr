@@ -32,6 +32,10 @@ data_plot <- data_raw  %>%
                           str_sub(LABELS, start= -nchar(LABELS)+1)) #to avoid the leading space created by format
   )
 
+# extract quartiles for text
+q1_4_4 <- round(max(data_plot$QUART1), digits = 0)
+q3_4_4 <- round(max(data_plot$QUART3), digits = 0)
+
 #prepare data for inset
 data_inset <- data_plot %>% 
   filter(ANSP_NAME == 'DSNA'| ANSP_NAME == 'ENAIRE' | ANSP_NAME == 'DFS' |
