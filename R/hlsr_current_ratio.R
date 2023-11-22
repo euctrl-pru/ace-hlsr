@@ -84,9 +84,9 @@ p <- function(mywidth, myheight) {
       showgrid = F
     ),
     yaxis = list(
-      title = "",
+      title = "Current assets / current liabilities ratio",
       linewidth = 1, linecolor='black',
-      # titlefont   = list(size = 13),
+      titlefont   = list(size = 12),
       fixedrange = TRUE,
       ticks = 'outside',
       dtick = 2,

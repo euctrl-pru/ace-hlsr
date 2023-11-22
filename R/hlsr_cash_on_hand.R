@@ -84,9 +84,9 @@ p <- function(mywidth, myheight) {
       showgrid = F
     ),
     yaxis = list(
-      title = "",
+      title = "Days",
       linewidth = 1, linecolor='black',
-      # titlefont   = list(size = 13),
+      titlefont   = list(size = 13),
       fixedrange = TRUE,
       ticks = 'outside',
       dtick = 100,
