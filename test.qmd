@@ -1,0 +1,14 @@
+# Introduction {#dec-intro}
+
+The ACE benchmarking work is commissioned by the Performance Review Commission (PRC) and carried out by the EUROCONTROL Performance Review Unit (PRU) using information provided by Air Navigation Services Providers (ANSPs) in compliance with Decision No. 88 of the Permanent Commission of EUROCONTROL on economic information disclosure[^introduction-1].
+
+[^introduction-1]: Due to the on-going war in Ukraine, UkSATSE has been excluded from the ACE analysis.
+
+The data processing, analysis and reporting are conducted with the assistance of the ACE Working Group, which comprises representatives from participating ANSPs, airspace users, regulatory authorities and the Performance Review Unit. This enables participants to share experiences and establish a common understanding of underlying assumptions and data limitations.
+
+The objective of this document is to provide a first insight on the level of {{< var doc.year_report >}} cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the release of the next ACE benchmarking report, which is planned end of May {{< var doc.year_report_plus2 >}}. It also presents specific financial indicators, extracted from the [ANSPs Financial Indicators Dashboard](https://ansperformance.eu/economics/finance/), that can be used to monitor potential cash and liquidity issues experienced by ANSPs as a result of the COVID-19 pandemic.
+
+@fig-figure-1-1 illustrates the timeline to produce the next ACE benchmarking report.
+
+![Timeline to produce the next ACE benchmarking report](figures/figure1-1_transp.png){#fig-figure-1-1 width="100%"}
+
