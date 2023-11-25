@@ -35,11 +35,23 @@ cost_delay <-  read_xlsx(
 
 data_merged = merge(x=data_raw, y=data_raw_extra, by="ANSP_NAME")
 
+# import ANSP countries
+ansp  <- read_xlsx(
+  # paste0(data_folder, data_file),
+  paste0(data_folder, data_file),
+  sheet = "Status",
+  range = cell_limits(c(8, 1), c(NA, 3))) %>%
+  as_tibble() %>% 
+replace(is.na(.), 0) %>% 
+  select(-status)
+
+data_merged = merge(x=data_merged, y=ansp, by="ANSP_NAME")
+
 data_calc <- data_merged %>% 
   mutate(DELAY_ERT_CPH = TDM_ERT_ALL_REASON*cost_delay/COMPOSITE_FLIGHTHOUR,
          DELAY_ARP_CPH = TDM_ARP_ALL_REASON*cost_delay/COMPOSITE_FLIGHTHOUR,
          ECO_CE = FIN_CE+DELAY_ERT_CPH+DELAY_ARP_CPH) %>% 
-  select(ANSP_NAME, FIN_CE, DELAY_ERT_CPH, DELAY_ARP_CPH, ECO_CE)
+  select(ANSP_NAME, FIN_CE, DELAY_ERT_CPH, DELAY_ARP_CPH, ECO_CE, country)
 
 # prepare data for main plot
 data_prep <- data_calc  %>% 
@@ -55,11 +67,11 @@ data_plot <- data_prep %>%
   rename(`Financial gate-to-gate cost-effectiveness` = FIN_CE,
          `Unit cost of en-route ATFM delays` = DELAY_ERT_CPH,
          `Unit cost of airport ATFM delays` = DELAY_ARP_CPH) %>% 
-  pivot_longer(!c(ANSP_NAME, LABELS, QUART1, QUART3, ECO_CE), names_to = "TYPE", values_to = "VALUE" )
+  pivot_longer(!c(ANSP_NAME, LABELS, QUART1, QUART3, ECO_CE, country), names_to = "TYPE", values_to = "VALUE" )
 
 # help table for labels and additional traces
 data_help <- data_prep %>% 
-  select(ANSP_NAME, LABELS, QUART1, QUART3, ECO_CE)
+  select(ANSP_NAME, country, LABELS, QUART1, QUART3, ECO_CE)
 
 #prepare data for inset
 data_inset <- data_plot %>% 
@@ -119,14 +131,30 @@ plot_all <- function(myfont, myheight){
              text = ~ LABELS,
              textfont = list(color = 'black', size = if_else(myfont == 10, 9, myfont)),
              # textangle = 0,
-             name = 'Total',
+             name = '',
              textposition = "top center", cliponaxis = FALSE,
              type = 'scatter',  mode = 'lines',
-             hovertemplate = paste('%{y:.0f}'),
-             # hoverinfo = "none",
+             # hovertemplate = paste('%{y:.0f}'),
+             hoverinfo = "none",
              showlegend = F
   ) %>% 
-  add_trace(data = data_help,
+    add_trace( data = data_help,
+               inherit = FALSE,
+               marker = list(color =('transparent')),
+               x = ~ ANSP_NAME,
+               y = ~ ECO_CE,
+               yaxis = "y1",
+               mode = 'text',
+               text = ~ paste(ANSP_NAME, " (", country, ")"),
+               textfont = list(color = 'transparent', size = 1),
+               # textangle = 0,
+               # textposition = "top center", cliponaxis = FALSE,
+               type = 'scatter',  mode = 'lines',
+               hovertemplate = paste('%{text} %{y:.0f}<extra></extra>'),
+               name = "",
+               showlegend = F
+    ) %>% 
+    add_trace(data = data_help,
             inherit = FALSE,
             x = ~ ANSP_NAME,
             y = ~ QUART1,
@@ -180,7 +208,23 @@ plot_inset <- function(myfont){
     # hoverinfo = "none",
     showlegend = F
   ) %>% 
-  add_trace(data = data_help_inset,
+    add_trace( data = data_help_inset,
+               inherit = FALSE,
+               marker = list(color =('transparent')),
+               x = ~ ANSP_NAME,
+               y = ~ ECO_CE,
+               yaxis = "y1",
+               mode = 'text',
+               text = ~ paste(ANSP_NAME, " (", country, ")"),
+               textfont = list(color = 'transparent', size = 1),
+               # textangle = 0,
+               # textposition = "top center", cliponaxis = FALSE,
+               type = 'scatter',  mode = 'lines',
+               hovertemplate = paste('%{text} %{y:.0f}<extra></extra>'),
+               name = "",
+               showlegend = F
+    ) %>% 
+    add_trace(data = data_help_inset,
             inherit = FALSE,
             marker = list(color =('transparent')),
             x = ~ ANSP_NAME,
@@ -192,9 +236,9 @@ plot_inset <- function(myfont){
             # textangle = 0,
             textposition = "top center", cliponaxis = FALSE,
             type = 'scatter',  mode = 'lines',
-            name = 'Total',
-            hovertemplate = paste('%{y:.0f}'),
-            # hoverinfo = "none",
+            name = '',
+            # hovertemplate = paste('%{y:.0f}'),
+            hoverinfo = "none",
             showlegend = F
   ) %>% 
   add_annotations (data = data_help_inset,

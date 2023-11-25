@@ -16,14 +16,26 @@ data_raw <- read_xlsx(
   as_tibble() %>% 
   rename(COST=3)
 
+
 ## process data for plot
 data_plot <- data_raw %>% 
-  mutate(across('ANSP_NAME', str_replace, 'Continental', 'Cont.')) %>% 
+  mutate_at("ANSP_NAME", ~ str_replace (.,'Continental', 'Cont.')) %>% 
   group_by(ANSP_NAME) %>% arrange(YEAR_DATA) %>% 
   mutate(YOY = COST/lag(COST)-1) %>% 
   filter(YEAR_DATA == max(YEAR_DATA)) %>% 
   arrange(desc(COST))  
-  
+
+# import ANSP countries
+ansp  <- read_xlsx(
+  # paste0(data_folder, data_file),
+  paste0(data_folder, data_file),
+  sheet = "Status",
+  range = cell_limits(c(8, 1), c(NA, 3))) %>%
+  as_tibble() %>% 
+  replace(is.na(.), 0) %>% 
+  select(-status)  
+
+data_plot = merge(x=data_plot, y=ansp, by="ANSP_NAME")
 
 #calculate range for x axis and max year
 cost_max <- round((max(data_plot$COST/10^6)+500)/100,0)*100
@@ -50,7 +62,17 @@ p1 <- function(mywidth, myheight){
     hoverinfo = "none",
     showlegend = F
   ) %>% 
-  layout(
+    add_trace(
+      type = 'bar',
+      marker = list(color =('transparent')),
+      text = ~ paste0(ANSP_NAME, " (", country, "): ", format(round(COST/10^6,0), big.mark = " ")),
+      textfont = list(color = 'transparent', size = 1),
+      name = "",
+      hovertemplate = paste('%{text}<extra></extra>'), #extra stuff is to remove the name of the trace
+      # hoverinfo = "none",
+      showlegend = F
+    ) %>%
+    layout(
     title = list(
       text = paste0("Total ATM/CNS provision costs in ", year_max ," (M€",year_max,")"), 
       font = list(color = '#747a7f', size = 12),
@@ -83,6 +105,7 @@ p1 <- function(mywidth, myheight){
     ),
     autosize = T,
     bargap = 0.4,
+    barmode = 'overlay',
     plot_bgcolor = '#DCE6F2',
     uniformtext=list(minsize=10, mode='show')
   ) %>%

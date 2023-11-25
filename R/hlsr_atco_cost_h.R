@@ -17,10 +17,21 @@ data_raw <- read_xlsx(
   as_tibble() %>% 
   rename(VALUE=2, COST =3, HOUR =4)
 
+# import ANSP countries
+ansp  <- read_xlsx(
+  # paste0(data_folder, data_file),
+  paste0(data_folder, data_file),
+  sheet = "Status",
+  range = cell_limits(c(8, 1), c(NA, 3))) %>%
+  as_tibble() %>% 
+  replace(is.na(.), 0) %>% 
+  select(-status)
+
+data_merged = merge(x=data_raw, y=ansp, by="ANSP_NAME")
 
 # prepare data for main plot
-data_plot <- data_raw  %>%
-  select(ANSP_NAME, VALUE) %>% 
+data_plot <- data_merged  %>%
+  select(ANSP_NAME, VALUE, country) %>% 
   mutate(QUART1 = quantile(VALUE, 0.25),
          QUART3 = quantile(VALUE, 0.75),
          LABELS = format(round(VALUE,0), big.mark = " ")
@@ -59,6 +70,21 @@ plot_fin_ce <- function(myfont) {
     # domain = list(x = c(0, 1), y = c(0, 1)),
     showlegend = F
   ) %>% 
+    add_trace(
+      inherit = FALSE,
+      x = ~ ANSP_NAME,
+      y = ~ VALUE,
+      yaxis = "y1",
+      # colors = c('#4F81BD'),
+      type = 'bar',
+      marker = list(color =('transparent')),
+      text = ~ paste0(ANSP_NAME, " (", country, ")"),
+      textfont = list(color = 'transparent', size = 1),
+      name = "",
+      hovertemplate = paste('%{text}: %{y:.0f}<extra></extra>'), #extra stuff is to remove the name of the trace
+      # hoverinfo = "none",
+      showlegend = F
+    ) %>%
   add_trace(
     inherit = FALSE,
     x = ~ ANSP_NAME,
@@ -107,6 +133,21 @@ plot_inset <- function(myfont) {
     hoverinfo = "none",
     showlegend = F
   ) %>% 
+    add_trace(
+      inherit = FALSE,
+      x = ~ ANSP_NAME,
+      y = ~ VALUE,
+      yaxis = "y1",
+      # colors = c('#4F81BD'),
+      type = 'bar',
+      marker = list(color =('transparent')),
+      text = ~ paste0(ANSP_NAME, " (", country, ")"),
+      textfont = list(color = 'transparent', size = 1),
+      name = "",
+      hovertemplate = paste('%{text}: %{y:.0f}<extra></extra>'), #extra stuff is to remove the name of the trace
+      # hoverinfo = "none",
+      showlegend = F
+    ) %>%
   add_trace(
     inherit = FALSE,
     # marker = list(color =('transparent')),
@@ -189,6 +230,7 @@ fig <- function(myfont){
   layout( autosize = T,
           uniformtext=list(minsize=8, mode='show'), #this is important so it does not autofit fonts
           bargap = 0.45,
+          barmode = 'overlay',
           title = list(text = "", font = list(color = "black", size = 14)),
           font = list(family = "Helvetica"),
           xaxis = list(title = "",

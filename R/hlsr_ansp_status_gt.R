@@ -16,7 +16,7 @@ ansp  <- read_xlsx(
   # paste0(data_folder, data_file),
   paste0(data_folder, data_file),
   sheet = "Status",
-  range = cell_limits(c(8, 1), c(NA, 2))) %>%
+  range = cell_limits(c(8, 1), c(NA, 3))) %>%
   as_tibble() %>% 
   filter(ANSP_NAME != 'UkSATSE')%>%
   replace(is.na(.), 0)
@@ -26,8 +26,10 @@ if (exists("checkmark") == FALSE) {checkmark = "\u2714\ufe0f"}
 
 ## add checkmark if submission reviewed
 ansp_checkmark <- ansp %>% 
-  mutate(ANSP_NAME = paste0(ANSP_NAME, if_else(status == 1, paste0(" ", checkmark) ,""))) %>% 
-  select(-status)
+  mutate(ANSP_NAME = paste0(ANSP_NAME, 
+                            if_else(status == 1, paste0(" ", checkmark) ,""),
+                            "\n(", country, ")")) %>% 
+  select(-status,-country)
 
 ## split column 
 # from https://stackoverflow.com/questions/61961687/unstacking-data-frame-by-columns-in-r

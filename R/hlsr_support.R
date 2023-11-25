@@ -18,9 +18,20 @@ data_raw <- read_xlsx(
                       range = cell_limits(c(7, 1), c(NA, NA))) %>%
   as_tibble() 
 
+# import ANSP countries
+ansp  <- read_xlsx(
+  # paste0(data_folder, data_file),
+  paste0(data_folder, data_file),
+  sheet = "Status",
+  range = cell_limits(c(8, 1), c(NA, 3))) %>%
+  as_tibble() %>% 
+  replace(is.na(.), 0) %>% 
+  select(-status)
+
+data_merged = merge(x=data_raw, y=ansp, by="ANSP_NAME")
 
 # prepare data for main plot
-data_prep <- data_raw  %>% 
+data_prep <- data_merged  %>% 
   mutate(QUART1 = quantile(`Support costs per composite flight-hour`, 0.25),
          QUART3 = quantile(`Support costs per composite flight-hour`, 0.75),
          LABELS = format(round(`Support costs per composite flight-hour`,0), big.mark = " ")
@@ -39,11 +50,11 @@ data_plot <- data_prep %>%
            `Non-staff operating costs (excluding exceptional cost) per composite flight-hours`,
          `Exceptional costs per composite flight-hour` = 
            `Exceptional Cost per composite flight hour`) %>% 
-  pivot_longer(!c(ANSP_NAME, LABELS, QUART1, QUART3, `Support costs per composite flight-hour`), names_to = "TYPE", values_to = "VALUE" )
+  pivot_longer(!c(ANSP_NAME, country, LABELS, QUART1, QUART3, `Support costs per composite flight-hour`), names_to = "TYPE", values_to = "VALUE" )
 
 # help table for labels and additional traces
 data_help <- data_prep %>% 
-  select(ANSP_NAME, LABELS, QUART1, QUART3, `Support costs per composite flight-hour`)
+  select(ANSP_NAME, country, LABELS, QUART1, QUART3, `Support costs per composite flight-hour`)
 
 #prepare data for inset
 data_inset <- data_plot %>% 
@@ -103,11 +114,28 @@ plot_all <- function(myfont, myheight){
              # textangle = 0,
              textposition = "top center", cliponaxis = FALSE,
              type = 'scatter',  mode = 'lines',
-             hovertemplate = paste('%{y:.0f}'),
-             name = 'Total',
+             hoverinfo = 'none',
+             # hovertemplate = paste('%{y:.0f}'),
+             name = "Total",
              showlegend = F
   ) %>% 
-  add_trace(data = data_help,
+    add_trace( data = data_help,
+               inherit = FALSE,
+               marker = list(color =('transparent')),
+               x = ~ ANSP_NAME,
+               y = ~ `Support costs per composite flight-hour`,
+               yaxis = "y1",
+               mode = 'text',
+               text = ~ paste(ANSP_NAME, " (", country, ")"),
+               textfont = list(color = 'transparent', size = 1),
+               # textangle = 0,
+               # textposition = "top center", cliponaxis = FALSE,
+               type = 'scatter',  mode = 'lines',
+               hovertemplate = paste('%{text} %{y:.0f}<extra></extra>'),
+               name = "",
+               showlegend = F
+    ) %>% 
+    add_trace(data = data_help,
             inherit = FALSE,
             x = ~ ANSP_NAME,
             y = ~ QUART1,
@@ -161,23 +189,40 @@ plot_inset <- function(myfont){
     hovertemplate = paste('%{y:.0f}'),
     showlegend = F
   ) %>% 
-  add_trace(data = data_help_inset,
-            inherit = FALSE,
-            marker = list(color =('transparent')),
-            x = ~ ANSP_NAME,
-            y = ~ `Support costs per composite flight-hour`,
-            yaxis = "y1",
-            mode = 'text',
-            text = ~ LABELS,
-            textfont = list(color = 'black', size = myfont + 1),
-            # textangle = 0,
-            textposition = "top center", cliponaxis = FALSE,
-            type = 'scatter',  mode = 'lines',
-            hovertemplate = paste('%{y:.0f}'),
-            name = 'Total',
-            showlegend = F
-  ) %>% 
-  add_annotations (data = data_help_inset,
+    add_trace( data = data_help_inset,
+               inherit = FALSE,
+               marker = list(color =('transparent')),
+               x = ~ ANSP_NAME,
+               y = ~ `Support costs per composite flight-hour`,
+               yaxis = "y1",
+               mode = 'text',
+               text = ~ LABELS,
+               textfont = list(color = 'black', size = myfont),
+               # textangle = 0,
+               textposition = "top center", cliponaxis = FALSE,
+               type = 'scatter',  mode = 'lines',
+               hoverinfo = 'none',
+               # hovertemplate = paste('%{y:.0f}'),
+               name = "Total",
+               showlegend = F
+    ) %>% 
+    add_trace( data = data_help_inset,
+               inherit = FALSE,
+               marker = list(color =('transparent')),
+               x = ~ ANSP_NAME,
+               y = ~ `Support costs per composite flight-hour`,
+               yaxis = "y1",
+               mode = 'text',
+               text = ~ paste(ANSP_NAME, " (", country, ")"),
+               textfont = list(color = 'transparent', size = 1),
+               # textangle = 0,
+               # textposition = "top center", cliponaxis = FALSE,
+               type = 'scatter',  mode = 'lines',
+               hovertemplate = paste('%{text} %{y:.0f}<extra></extra>'),
+               name = "",
+               showlegend = F
+    ) %>% 
+    add_annotations (data = data_help_inset,
                    text = ~ ANSP_NAME,
                    x = ~ ANSP_NAME,
                    y = ~ LAB_COORD,      
