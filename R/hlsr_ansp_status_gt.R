@@ -28,7 +28,7 @@ if (exists("checkmark") == FALSE) {checkmark = "\u2714\ufe0f"}
 ansp_checkmark <- ansp %>% 
   mutate(ANSP_NAME = paste0(ANSP_NAME, 
                             if_else(status == 1, paste0(" ", checkmark) ,""),
-                            "\n(", country, ")")) %>% 
+                            "<br>(", country, ")")) %>% 
   select(-status,-country)
 
 ## split column 
@@ -66,7 +66,8 @@ table_ansp_sub <- gt(
     paste0(checkmark, " ", "Data submission has been reviewed"),
     locations = NULL,
     placement = c("left")
-  )
+  ) %>% 
+  fmt_markdown(columns = everything()) # so the table understands the linebreak tags
 
 table_ansp_sub
 
