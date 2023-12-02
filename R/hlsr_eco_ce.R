@@ -98,10 +98,11 @@ sys_avg_ece <- data_merged %>%
 
 # plot
 
-plot_all <- function(myfont, myheight){
+plot_all <- function(myfont, mywidth, myheight){
   data_plot %>%
   plot_ly(
     height = myheight,
+    width = mywidth,
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
@@ -145,7 +146,7 @@ plot_all <- function(myfont, myheight){
                y = ~ ECO_CE,
                yaxis = "y1",
                mode = 'text',
-               text = ~ paste(ANSP_NAME, " (", country, ")"),
+               text = ~ paste0(ANSP_NAME, " (", country, ")"),
                textfont = list(color = 'transparent', size = 1),
                # textangle = 0,
                # textposition = "top center", cliponaxis = FALSE,
@@ -182,7 +183,7 @@ plot_all <- function(myfont, myheight){
           displaylogo = FALSE,
           displayModeBar = F
           # modeBarButtons = list(list("toImage"))
-  )
+  ) 
 }
   
 plot_inset <- function(myfont){
@@ -215,7 +216,7 @@ plot_inset <- function(myfont){
                y = ~ ECO_CE,
                yaxis = "y1",
                mode = 'text',
-               text = ~ paste(ANSP_NAME, " (", country, ")"),
+               text = ~ paste0(ANSP_NAME, " (", country, ")"),
                textfont = list(color = 'transparent', size = 1),
                # textangle = 0,
                # textposition = "top center", cliponaxis = FALSE,
@@ -285,10 +286,10 @@ plot_inset <- function(myfont){
   )
 }
   
-myannotations <- function(myfont){
+myannotations <- function(myfont, myvposition){
   list(list(
   x = 0.12,
-  y = 1.08,
+  y = myvposition,
   text = paste0("<b>", 
                 "European system avg. for economic cost-effectiveness: ", 
                 "\u20AC ",
@@ -303,7 +304,7 @@ myannotations <- function(myfont){
 ),
 list(
   x = 0.12,
-  y = 1.03,
+  y = myvposition - 0.05,
   text = paste0("<b>", 
                 "European system avg. for financial cost-effectiveness: ", 
                 "\u20AC ",
@@ -327,10 +328,10 @@ ticktexts1 <- c(0,format(ticklabels1[-1], big.mark = " "))
 ticklabels2 <- seq(from=0, to=round(max(data_inset$ECO_CE+200)), by=200)
 ticktexts2 <- c(0,format(ticklabels2[-1], big.mark = " "))
 
-fig <- function(myfont, myheight, vertlegend){
-  subplot(plot_all(myfont, myheight), plot_inset(myfont+1)) %>% 
+fig <- function(myfont, mywidth, myheight, vlegend, vdomain, myvposition){
+  subplot(plot_all(myfont, mywidth, myheight), plot_inset(myfont+1)) %>% 
   layout( autosize = T, 
-          uniformtext = list(minsize=8, mode='show'), #this is important so it does not autofit fonts
+          uniformtext = list(minsize=myfont, mode='show'), #this is important so it does not autofit fonts
           bargap = 0.45,
           barmode = 'stack',
           title = list(text = "", font = list(color = "black", size = 14)),
@@ -340,7 +341,7 @@ fig <- function(myfont, myheight, vertlegend){
           legend = list(orientation = 'h',
                         traceorder = 'reversed', #for some reason this does not work
                         font = list(size = myfont+2),
-                        y = vertlegend,
+                        y = vlegend,
                         x = 0.0,
                         bgcolor = 'transparent'),
           xaxis = list(title = "",
@@ -385,20 +386,20 @@ fig <- function(myfont, myheight, vertlegend){
                         fixedrange = TRUE,
                         # range = list(0, 200+round(max(data_inset$VALUE/1000), 1)*1000),
                         zeroline = T, showline = F, showgrid = F,
-                        domain=c(0.40,0.92)),
-          annotations = myannotations(myfont+2)
+                        domain=c(vdomain - 0.52,vdomain)),
+          annotations = myannotations(if_else(myfont <=10, myfont + 2, myfont + 8), myvposition)
   )
 }
 
-fig(8, NULL, -0.55)
+fig(8, NULL, NULL, -0.85, 0.92, 1.08)
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
 fig_dir <- 'figures/'
+fig_name <- "figure-3-2-hlsr_eco_ce.png"
 
-invisible(export(fig(10, 600, -0.55), paste0(fig_dir,"figure-3-2-hlsr_eco_ce.png")))
-invisible(figure <- image_read(paste0(fig_dir,"figure-3-2-hlsr_eco_ce.png")))
-invisible(cropped <- image_crop(figure, "0x600"))
-invisible(image_write(cropped, paste0(fig_dir,"figure-3-2-hlsr_eco_ce.png")))
-
+invisible(export(fig(18, 2000, 920, -0.55, 0.96, 1.05), paste0(fig_dir, fig_name)))
+invisible(figure <- image_read(paste0(fig_dir,fig_name)))
+invisible(cropped <- image_crop(figure, "0x920"))
+invisible(image_write(cropped, paste0(fig_dir, fig_name)))

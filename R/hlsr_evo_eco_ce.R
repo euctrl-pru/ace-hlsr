@@ -9,6 +9,7 @@ library(data.table)
 library(here)
 ## data source
 source(here("data_source.R"))
+library(magick)
 
 # import data
 data_raw <- read_xlsx(
@@ -98,8 +99,11 @@ lineDT5 <- lineDT %>% arrange(variable, label_group) %>%
   filter(label_group == mylist[10] | label_group == mylist[11])
 
 # plot
-p <- plot_ly(
+p <- function(myfont, mywidth, myheight, myvoffset) { 
+  plot_ly(
   DT,
+  height = myheight,
+  width = mywidth,
   x = ~ label_group,
   y = ~ value,
   color = ~ variable,
@@ -115,20 +119,22 @@ p <- plot_ly(
          font = list(family = "Helvetica"),
          legend = list(orientation = 'h',
                        traceorder = 'reversed', #for some reason this does not work
-                       font = list(size = 11),
+                       font = list(size = myfont + 3),
                        y = -0.1,
                        x = 0.0,
                        bgcolor = 'transparent'),
-         uniformtext=list(minsize=8, mode='show'), #this is important so it does not autofit fonts
+         uniformtext=list(minsize = myfont, mode='show'), #this is important so it does not autofit fonts
          xaxis = list(
            title = "",
+           tickfont = list(size = myfont+3),
            ticktext = ~ YEAR_DATA,
            tickvals = ~ label_group,
            tickmode = "array"
          ),
          yaxis = list(
            title = paste0("\u20AC per composite flight-hour (", max(DT$YEAR_DATA)," prices)"),
-           titlefont = list(size = 12),
+           titlefont = list(size = myfont + 4),
+           tickfont = list(size = myfont+3),
            showgrid = F)
   ) %>%
   add_annotations(
@@ -139,10 +145,11 @@ p <- plot_ly(
     text = ~ LABELS,
     xref = 'x',
     yref = 'y',
-    y = ~ maxval,
+    y = ~ maxval + myvoffset,
     x = ~ label_group,
     showarrow = FALSE,
-    yshift = 10
+    yshift = 10,
+    font = list(size=myfont + 3)
   ) %>%
   add_lines(
     data = lineDT1,
@@ -204,5 +211,15 @@ p <- plot_ly(
           displayModeBar = F
           # modeBarButtons = list(list("toImage"))
   )
+}
 
-p
+p(8, NULL, NULL, 0)
+
+fig_dir <- 'figures/'
+fig_name <- "figure-3-1-1-hlsr_evo_eco_ce.png"
+
+invisible(export(p(17, 600, 600, 10), paste0(fig_dir, fig_name)))
+invisible(figure <- image_read(paste0(fig_dir,fig_name)))
+invisible(cropped <- image_crop(figure, "600x600"))
+invisible(image_write(cropped, paste0(fig_dir, fig_name)))
+

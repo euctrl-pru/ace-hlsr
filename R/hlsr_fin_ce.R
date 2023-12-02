@@ -60,10 +60,11 @@ data_inset <- data_plot %>%
 sys_avg <- data_raw %>% summarise(sum(COST)/sum(CFH)) %>% pull()
 
 # plot
-plot_fin_ce <- function(myfont){
+plot_fin_ce <- function(myfont, mywidth, myheight){
   data_plot %>%
   plot_ly(
-    height = 450,
+    height = myheight,
+    width = mywidth,
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
@@ -230,7 +231,7 @@ myannotations <- function(myfont) {
   xanchor = "left",
   showarrow = FALSE,
   font = list(color = "#78B4F0",
-              size=myfont)
+              size = myfont)
 )
 }
   
@@ -243,10 +244,10 @@ ticktexts1 <- c(0,format(ticklabels1[-1], big.mark = " "))
 ticklabels2 <- seq(from=0, to=round(max(data_inset$VALUE+200)), by=200)
 ticktexts2 <- c(0,format(ticklabels2[-1], big.mark = " "))
 
-fig <- function(myfont){
-  subplot(plot_fin_ce(myfont), plot_inset(myfont+1)) %>% 
+fig <- function(myfont, mywidth, myheight){
+  subplot(plot_fin_ce(myfont, mywidth, myheight), plot_inset(myfont+1)) %>% 
   layout( autosize = T,
-          uniformtext=list(minsize=8, mode='show'), #this is important so it does not autofit fonts
+          uniformtext=list(minsize=myfont, mode='show'), #this is important so it does not autofit fonts
           bargap = 0.45,
           barmode = 'overlay',
           title = list(text = "", font = list(color = "black", size = 14)),
@@ -292,18 +293,20 @@ fig <- function(myfont){
                         range = list(0, 200+round(max(data_inset$VALUE/1000), 1)*1000),
                         zeroline = T, showline = F, showgrid = F,
                         domain=c(0.45,0.95)),
-          annotations = myannotations(myfont + 5)
+          annotations = myannotations(if_else(myfont <=10, myfont + 5, myfont + 13))
   )
 }
   
-fig(8)
+fig(8, NULL, 450)
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
 fig_dir <- 'figures/'
+fig_name <- "figure-4-4-hlsr_fin_ce.png"
 
-invisible(export(fig(10), paste0(fig_dir,"figure-4-4-hlsr_fin_ce.png")))
-invisible(figure <- image_read(paste0(fig_dir,"figure-4-4-hlsr_fin_ce.png")))
-invisible(cropped <- image_crop(figure, "0x450"))
-invisible(image_write(cropped, paste0(fig_dir,"figure-4-4-hlsr_fin_ce.png")))
+invisible(export(fig(22, 2000, 900), paste0(fig_dir, fig_name)))
+invisible(figure <- image_read(paste0(fig_dir,fig_name)))
+invisible(cropped <- image_crop(figure, "0x900"))
+invisible(image_write(cropped, paste0(fig_dir, fig_name)))
+

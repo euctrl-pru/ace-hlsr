@@ -54,10 +54,11 @@ sys_avg <- data_raw %>% summarise(sum(HOURS)/sum(CFH)) %>% pull()
 
 # plot
 
-plot_all <- function(myfont){
+plot_all <- function(myfont, mywidth, myheight){
   data_plot %>%
   plot_ly(
-    height = 450,
+    height = myheight,
+    width = mywidth,
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
@@ -227,10 +228,10 @@ myannotations <- function(myfont){
 )
 }
 
-fig <- function(myfont, myinsetv) {
-  subplot(plot_all(myfont), plot_inset(myfont + 1)) %>% 
+fig <- function(myfont, mywidth, myheight) {
+  subplot(plot_all(myfont, mywidth, myheight), plot_inset(myfont + 1)) %>% 
   layout( autosize = T,
-          uniformtext=list(minsize=8, mode='show'), #this is important so it does not autofit fonts
+          uniformtext=list(minsize=myfont, mode='show'), #this is important so it does not autofit fonts
           bargap = 0.45,
           barmode = 'overlay',
           title = list(text = "", font = list(color = "black", size = 14)),
@@ -279,20 +280,22 @@ fig <- function(myfont, myinsetv) {
                         # fixedrange = TRUE,
                         range = list(0, 0.2+round(max(data_inset$VALUE), 1)),
                         zeroline = T, showline = F, showgrid = F,
-                        domain=c(myinsetv, myinsetv + 0.5)),
-          annotations = myannotations(myfont + 5)
+                        domain=c(0.47,0.97)),
+          annotations = myannotations(if_else(myfont <=10, myfont + 5, myfont + 13))
           # , hovermode = "x unified"
   )
 }
   
-fig(8, 0.45)
+fig(8, NULL, 450)
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
 fig_dir <- 'figures/'
+fig_name <- "figure-4-5-hlsr_prod.png"
 
-invisible(export(fig(10, 0.5), paste0(fig_dir,"figure-4-5-hlsr_prod.png")))
-invisible(figure <- image_read(paste0(fig_dir,"figure-4-5-hlsr_prod.png")))
-invisible(cropped <- image_crop(figure, "0x450"))
-invisible(image_write(cropped, paste0(fig_dir,"figure-4-5-hlsr_prod.png")))
+invisible(export(fig(22, 2000, 900), paste0(fig_dir, fig_name)))
+invisible(figure <- image_read(paste0(fig_dir,fig_name)))
+invisible(cropped <- image_crop(figure, "0x900"))
+invisible(image_write(cropped, paste0(fig_dir, fig_name)))
+

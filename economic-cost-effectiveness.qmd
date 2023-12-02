@@ -14,8 +14,9 @@ The concept of economic cost-effectiveness, developed by the PRC, is defined as 
 
 In 2022, ATFM delays increased by a factor of almost seven to reach a level of 19.3M minutes. As a result, the share of ATFM delays in the 2022 unit economic costs amounts to 20%. This is close to the level reached in 2019, which was a year marked by significant capacity issues in several ANSPs.
 
-::: {#fig-figure-3-1 layout-ncol="2"}
-::: {#fig-figure-3-1-left}
+::: {.content-visible when-format="html"}
+:::: {#fig-figure-3-1 layout-ncol="2"}
+::::: {#fig-figure-3-1-left}
 ```{r}
 #| file: R/hlsr_evo_eco_ce.R
 #| out.height: "300px"
@@ -23,9 +24,9 @@ In 2022, ATFM delays increased by a factor of almost seven to reach a level of 1
 ```
 
  
-:::
+:::::
 
-::: {#fig-figure-3-1-right}
+::::: {#fig-figure-3-1-right}
 ```{r}
 #| file: R/hlsr_evo_eco_ce_comp.R
 #| out.height: "300px"
@@ -33,14 +34,35 @@ In 2022, ATFM delays increased by a factor of almost seven to reach a level of 1
 ```
 
  
-:::
+:::::
 
 Trend of unit economic costs at Pan-European system level, {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} (real terms)
+
+::::
+:::
+
+::: {.content-visible when-format="pdf"}
+:::: {#fig-figure-3-1 layout-ncol="2" fig-pos='ht'}
+::::: {#fig-figure-3-1-left fig-pos='ht'}
+![](figures/figure-3-1-1-hlsr_evo_eco_ce.png)
+
+ 
+:::::
+
+::::: {#fig-figure-3-1-right fig-pos='ht'}
+![](figures/figure-3-1-2-hlsr_evo_eco_ce_comp.png)
+
+ 
+:::::
+
+Trend of unit economic costs at Pan-European system level, {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} (real terms)
+
+::::
 :::
 
 @fig-figure-3-2 shows [preliminary results]{.underline} at ANSP level (dotted lines represent the 1st and 3rd quartiles, €`r q1_3_2` and €`r q3_3_2`, respectively). 
 
-::: {#fig-figure-3-2}
+::: {#fig-figure-3-2 fig-pos='ht'}
 :::: {.content-visible when-format="html"}
 ```{r}
 #| file: R/hlsr_eco_ce.R

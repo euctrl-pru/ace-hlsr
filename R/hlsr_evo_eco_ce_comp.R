@@ -9,6 +9,7 @@ library(data.table)
 library(here)
 ## data source
 source(here("data_source.R"))
+library(magick)
 
 # import data
 data_raw <- read_xlsx(
@@ -95,8 +96,11 @@ vline <- function(x = 0, color = "black") {
 }
 
 # plot 
-p <- plot_ly(
+p <- function(myfont, mywidth, myheight) { 
+  plot_ly(
   data_plot,
+  height = myheight,
+  width = mywidth,
   x = ~X_LABELS,
   y = ~PLOT1,
   color = ~TYPE,
@@ -105,7 +109,7 @@ p <- plot_ly(
   textangle = -90,
   textposition = "outside",
   textfont = list(
-    color = "black", size = 10),
+    color = "black", size = myfont +2),
   type = "bar",
   hoverinfo = "none"
 ) %>% 
@@ -121,7 +125,7 @@ p <- plot_ly(
              textposition = "inside",
              insidetextanchor = "start",
              textfont = list(
-               color = "black", size = 10),
+               color = "black", size = myfont +2),
              type = "bar",
              showlegend = FALSE,
              hoverinfo = "none"
@@ -129,21 +133,23 @@ p <- plot_ly(
   layout (plot_bgcolor = "transparent",
           font = list(family = "Helvetica"),
           legend = list(orientation = 'h',
-                        font = list(size = 11),
+                        font = list(size = myfont + 3),
                         y = -0.1,
                         x = 0.0,
                         bgcolor = 'transparent'),
-          uniformtext=list(minsize=8, mode='show'), #this is important so it does not autofit fonts
+          uniformtext=list(minsize=myfont, mode='show'), #this is important so it does not autofit fonts
           xaxis = list(
             title = "",
+            tickfont = list(size = myfont+3),
             showgrid = F
           ),
           yaxis = list(
             title = "",
-            titlefont = list(size = 12),
+            titlefont = list(size = myfont + 4),
             cliponaxis = FALSE,
             dtick = 0.05,
             tickformat=",.0%", ticks = 'outside',
+            tickfont = list(size = myfont+3),
             zeroline = T, showline = T, showgrid = F,
             range = list(-0.2,0.2)
           ),
@@ -163,4 +169,15 @@ p <- plot_ly(
           displayModeBar = F
           # modeBarButtons = list(list("toImage"))
   )
-p
+}
+
+p(8, NULL, NULL)
+
+fig_dir <- 'figures/'
+fig_name <- "figure-3-1-2-hlsr_evo_eco_ce_comp.png"
+
+invisible(export(p(17, 600, 600), paste0(fig_dir, fig_name)))
+invisible(figure <- image_read(paste0(fig_dir,fig_name)))
+invisible(cropped <- image_crop(figure, "600x600"))
+invisible(image_write(cropped, paste0(fig_dir, fig_name)))
+
