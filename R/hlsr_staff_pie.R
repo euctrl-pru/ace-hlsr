@@ -210,8 +210,10 @@ fig <- subplot(pie_staff(10), pie_atco(10)) %>%
 
 fig
 
-fig_pdf <- subplot(pie_staff(14), pie_atco(14)) %>%
-  layout(images = myimages)
+fig_pdf <- subplot(pie_staff(30), pie_atco(30)) %>%
+  layout(
+    height = 900, width = 1984,
+    images = myimages)
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
@@ -221,6 +223,6 @@ fig_dir <- 'figures/'
 image_name <- "figure-2-6-hlsr_staff_pie.png"
 invisible(export(fig_pdf, paste0(fig_dir, image_name)))
 
-invisible(figure <- image_read(paste0(fig_dir,image_name)))
-invisible(cropped <- image_crop(figure, "0x470-0+140"))
-invisible(image_write(cropped, paste0(fig_dir, image_name)))
+# invisible(figure <- image_read(paste0(fig_dir,image_name)))
+# invisible(cropped <- image_crop(figure, "0x470-0+140"))
+# invisible(image_write(cropped, paste0(fig_dir, image_name)))

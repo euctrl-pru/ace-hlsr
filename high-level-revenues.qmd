@@ -50,7 +50,7 @@ This chapter provides a [preliminary]{.underline} overview of high-level revenue
 :::
 
 ::: {.content-visible when-format="pdf"}
-![](figures/figure-2-1-hlsr_rev_pie.png){height="88%" width="88%"}
+![](figures/figure-2-1-hlsr_rev_pie.png){height="100%" width="100%"}
 :::
 
 ```{r}
@@ -102,7 +102,7 @@ The ACE benchmarking analysis focuses on the specific costs of providing gate-to
 :::
 
 ::: {.content-visible when-format="pdf"}
-![](figures/figure-2-3-hlsr_c_bdown_pie.png){height="75%" width="75%"}
+![](figures/figure-2-3-hlsr_c_bdown_pie.png){height="100%" width="100%"}
 :::
 
 ```{r}
@@ -217,7 +217,7 @@ The Pan-European ANSPs employed a total of 52 843 staff in 2022 (comprising 52 0
 ::::
 
 :::: {.content-visible when-format="pdf"}
-![](figures/figure-2-6-hlsr_staff_pie.png){height="75%" width="75%"}
+![](figures/figure-2-6-hlsr_staff_pie.png){height="100%" width="100%"}
 ::::
 
 Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, {{< var doc.year_report >}}

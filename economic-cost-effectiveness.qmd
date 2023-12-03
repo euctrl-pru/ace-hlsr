@@ -42,14 +42,14 @@ Trend of unit economic costs at Pan-European system level, {{< var doc.year_repo
 :::
 
 ::: {.content-visible when-format="pdf"}
-:::: {#fig-figure-3-1 layout-ncol="2" fig-pos='ht'}
-::::: {#fig-figure-3-1-left fig-pos='ht'}
+:::: {#fig-figure-3-1 layout-ncol="2" fig-pos='h'}
+::::: {#fig-figure-3-1-left fig-pos='h'}
 ![](figures/figure-3-1-1-hlsr_evo_eco_ce.png)
 
  
 :::::
 
-::::: {#fig-figure-3-1-right fig-pos='ht'}
+::::: {#fig-figure-3-1-right fig-pos='h'}
 ![](figures/figure-3-1-2-hlsr_evo_eco_ce_comp.png)
 
  
@@ -62,7 +62,7 @@ Trend of unit economic costs at Pan-European system level, {{< var doc.year_repo
 
 @fig-figure-3-2 shows [preliminary results]{.underline} at ANSP level (dotted lines represent the 1st and 3rd quartiles, €`r q1_3_2` and €`r q3_3_2`, respectively). 
 
-::: {#fig-figure-3-2 fig-pos='ht'}
+::: {#fig-figure-3-2 fig-pos='h'}
 :::: {.content-visible when-format="html"}
 ```{r}
 #| file: R/hlsr_eco_ce.R

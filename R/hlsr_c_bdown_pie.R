@@ -73,6 +73,7 @@ pie_cost_data %>%
     labels = ~LABEL, values = ~COST, type = 'pie',
     hoverinfo = "none",
     # textinfo='label',
+    insidetextorientation='horizontal',
     texttemplate = mytext,
     textfont = list(size = myfont),
     marker = list(colors = ~MYCOLOR),
@@ -123,7 +124,7 @@ pie_atco_data <- pie_atco_data %>%
 domain_atco_x0 <- 0.6
 domain_atco_x1 <- 0.95
 
-pie_atco <- function(myfont, mytext){
+pie_atco <- function(myfont, mytext, mysize){
   pie_atco_data %>% 
   plot_ly(
     labels = ~LABEL, values = ~COST, type = 'pie',
@@ -134,7 +135,7 @@ pie_atco <- function(myfont, mytext){
     insidetextorientation='horizontal',
     marker = list(colors = ~MYCOLOR),
     # line = list(color = '#FFFFFF', width = 1)),
-    domain = list(x = c(domain_atco_x0, domain_atco_x1), y = c(0, 1)),
+    domain = list(x = c(domain_atco_x0, domain_atco_x1), y = c(0, mysize)),
     automargin = TRUE,
     rotation = 90
   ) %>% 
@@ -204,15 +205,20 @@ myimages <- list(
   )
 )
 
-fig <- subplot(pie_cost(10, '%{label}'), pie_atco(10, '%{label}</br>%{percent}')) %>%
+fig <- subplot(pie_cost(10, '%{label}'), pie_atco(10, '%{label}</br>%{percent}', 1)) %>%
 layout(annotations = myannotations(12, -0.15), images = myimages)
 
 # fig <- subplot(pie_cost, pie_atco)
 
 fig
 
-fig_pdf <- subplot(pie_cost(14, '<b>%{label}</b>'), pie_atco(14, '<b>%{label}</br>%{percent}</b>')) %>%
-  layout(annotations = myannotations(18, 0), images = myimages)
+fig_pdf <- subplot(
+  pie_cost(30, '%{label}'), pie_atco(30, '%{label}</br>%{percent}', 0.88)
+  # pie_cost(30, '<b>%{label}</b>'), pie_atco(30, '<b>%{label}</br>%{percent}</b>')
+  ) %>%
+  layout(
+    height = 700, width = 1984,
+    annotations = myannotations(40, -0.2), images = myimages)
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
@@ -222,7 +228,7 @@ fig_dir <- 'figures/'
 image_name <- "figure-2-3-hlsr_c_bdown_pie.png"
 invisible(export(fig_pdf, paste0(fig_dir, image_name)))
 
-invisible(figure <- image_read(paste0(fig_dir,image_name)))
-invisible(cropped <- image_crop(figure, "0x520-0+140"))
-invisible(image_write(cropped, paste0(fig_dir, image_name)))
+# invisible(figure <- image_read(paste0(fig_dir,image_name)))
+# invisible(cropped <- image_crop(figure, "0x520-0+140"))
+# invisible(image_write(cropped, paste0(fig_dir, image_name)))
 

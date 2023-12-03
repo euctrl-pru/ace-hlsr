@@ -50,7 +50,7 @@ c\) support costs per unit output (€322).
 
 @fig-figure-4-4 presents the financial gate-to-gate cost-effectiveness indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_4` and €`r q3_4_4`, respectively).
 
-::: {#fig-figure-4-4 fig-pos='ht'}
+::: {#fig-figure-4-4 fig-pos='h'}
 :::: {.content-visible when-format="html"}
 ```{r}
 #| file: R/hlsr_fin_ce.R
@@ -60,7 +60,7 @@ c\) support costs per unit output (€322).
 ::::
 
 :::: {.content-visible when-format="pdf"}
-![](figures/figure-4-4-hlsr_fin_ce.png){height=100% width=100%}
+![](figures/figure-4-4-hlsr_fin_ce.png)
 ::::
 
 Financial gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
@@ -68,7 +68,7 @@ Financial gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 
 @fig-figure-4-5 presents the ATCO-hour productivity indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (`r q1_4_5` and `r q3_4_5`, respectively). 
 
-::: {#fig-figure-4-5 fig-pos='ht'}
+::: {#fig-figure-4-5 fig-pos='h'}
 :::: {.content-visible when-format="html"}
 ```{r}
 #| file: R/hlsr_prod.R
@@ -78,7 +78,7 @@ Financial gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 ::::
 
 :::: {.content-visible when-format="pdf"}
-![](figures/figure-4-5-hlsr_prod.png){height=100% width=100%}
+![](figures/figure-4-5-hlsr_prod.png)
 ::::
 
 ATCO-hour productivity, {{< var doc.year_report >}}
@@ -86,7 +86,7 @@ ATCO-hour productivity, {{< var doc.year_report >}}
 
 @fig-figure-4-6 presents the employment costs per ATCO in OPS indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_6` and €`r q3_4_6`, respectively).
 
-::: {#fig-figure-4-6 fig-pos='ht'}
+::: {#fig-figure-4-6 fig-pos='h'}
 :::: {.content-visible when-format="html"}
 ```{r}
 #| file: R/hlsr_atco_cost_h.R
@@ -96,7 +96,7 @@ ATCO-hour productivity, {{< var doc.year_report >}}
 ::::
 
 :::: {.content-visible when-format="pdf"}
-![](figures/figure-4-6-hlsr_atco_cost_h.png){height=100% width=100%}
+![](figures/figure-4-6-hlsr_atco_cost_h.png)
 ::::
 
 Employment costs per ATCO-hour, {{< var doc.year_report >}}
@@ -104,7 +104,7 @@ Employment costs per ATCO-hour, {{< var doc.year_report >}}
 
 @fig-figure-4-7 presents the support costs per composite flight-hour indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_7` and €`r q3_4_7`, respectively).
 
-::: {#fig-figure-4-7 fig-pos='ht'}
+::: {#fig-figure-4-7 fig-pos='h'}
 :::: {.content-visible when-format="html"}
 ```{r}
 #| file: R/hlsr_support.R
