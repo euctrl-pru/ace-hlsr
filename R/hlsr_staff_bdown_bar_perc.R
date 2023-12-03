@@ -58,7 +58,7 @@ data_plot <- data_raw %>%
 xrange_max <- max(abs(data_plot$YOY)) + 0.4
 
 # draw costs plot
-p1 <- function(mywidth, myheight){
+p <- function(myfont, mywidth, myheight, vmargin, myautosize) {
   data_plot %>% 
     plot_ly(
       width = mywidth,
@@ -71,7 +71,7 @@ p1 <- function(mywidth, myheight){
       textangle = 0,
       textposition = "outside",
       # insidetextanchor =  "start",
-      textfont = list(color = '#1782E3'),
+      textfont = list(color = '#1782E3', size = myfont + 1),
       cliponaxis = FALSE,
       type = "bar",
       orientation = 'h',
@@ -81,7 +81,7 @@ p1 <- function(mywidth, myheight){
       layout(
         title = list(
           text = paste0("Changes ",year_report-1,"-",year_report," (in %)"), 
-          font = list(color = '#747a7f', size = 12),
+          font = list(color = '#747a7f', size = myfont),
           y = 0.05),
         xaxis = list(
           title = "",
@@ -111,8 +111,8 @@ p1 <- function(mywidth, myheight){
           zeroline = F, showline = F, showgrid = T
         ),
         bargap = 0.4,
-        autosize = T,
-        margin = list(l=0, r=0),
+        autosize = myautosize,
+        margin = list(b = vmargin, l=0, r=0),
         plot_bgcolor = 'white',
         uniformtext=list(minsize=10, mode='show')
       ) %>%
@@ -122,17 +122,18 @@ p1 <- function(mywidth, myheight){
 
 }
 
-p1(NULL, NULL)
+p(12, NULL, NULL, 40, 'T')
 
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
 fig_dir <- 'figures/'
+image_name <- "figure-2-7-3-hlsr_staff_bdown_bar_perc.png"
 
-invisible(export(p1(250, 500), paste0(fig_dir,"figure-2-7-3-hlsr_staff_bdown_bar_perc.png")))
-invisible(figure <- image_read(paste0(fig_dir,"figure-2-7-3-hlsr_staff_bdown_bar_perc.png")))
-invisible(cropped <- image_crop(figure, "250x500"))
-invisible(image_write(cropped, paste0(fig_dir,"figure-2-7-3-hlsr_staff_bdown_bar_perc.png")))
+invisible(export(p(26,500, 950, 100, 'F'), paste0(fig_dir,image_name)))
+invisible(figure <- image_read(paste0(fig_dir,image_name)))
+invisible(cropped <- image_crop(figure, "500"))
+invisible(image_write(cropped, paste0(fig_dir,image_name)))
 
 

@@ -38,10 +38,11 @@ data_plot <- rbind (data_ATCO, data_support) %>%
                           STAF_TYPE == 'STAF_SUPPORT' ~ 'Number of support staff'))
 
 # draw costs plot
-p1 <- data_plot %>% 
+p1 <- function(myfont, mywidth, myheight) {
+  data_plot %>% 
   plot_ly(
-    # width = 500, 
-    height = 230,
+    width = mywidth,
+    height = myheight,
     x = ~ YEAR_DATA,
     y = ~ STAF/1000,
     color = ~ factor(LABEL, levels = c('Number of support staff', 'Number of ATCOs in OPS')),
@@ -50,7 +51,7 @@ p1 <- data_plot %>%
     text = ~ round(STAF/1000,0),
     textangle = 0,
     textposition = "inside",
-    textfont = list(color = 'white'),
+    textfont = list(color = 'white', size= if_else(myfont <20, myfont, myfont+2)),
     insidetextanchor =  "middle",
     hoverinfo = "none",
     showlegend = TRUE
@@ -62,17 +63,20 @@ p1 <- data_plot %>%
       # range = c(0, cost_max),
       # automargin = T,
       # tickvals = c(),
+      tickfont   = list(size = myfont),
       autotick = F, zeroline = F, showline = T,
       # domain=c(0,0.6),
       showgrid = F
     ),
     yaxis = list(
-      title = paste0("Thousands of FTEs"),
+      title = paste0("Thousands of FTEs", "\n&nbsp;"),
+      titlefont   = list(size = myfont),
       linewidth=1, linecolor='black',
       # titlefont   = list(size = 13),
       fixedrange = TRUE,
       ticks = 'outside',
-      # range = c(cost_min,cost_max),
+      tickfont   = list(size = myfont-1),
+      range = c(0,60),
       # tickson="boundaries",
       # tickcolor='#BFBFBF', ticklen=3,
       # tickformat=".1f",
@@ -81,8 +85,8 @@ p1 <- data_plot %>%
       zeroline = F, showline = T, showgrid = F
     ),
     legend = list(orientation = 'h',
-                  # font = list(size = 11),
-                  y = -0.1,
+                  font = list(size = myfont),
+                  y = -0.13,
                   x = 0.5,
                   xanchor = 'center',
                   bgcolor = 'transparent'),
@@ -91,22 +95,23 @@ p1 <- data_plot %>%
     bargap = 0.4,
     font = list(family = "Helvetica"),
     # plot_bgcolor = '#DCE6F2',
-    uniformtext=list(minsize=10, mode='show')
+    uniformtext=list(minsize=myfont-1, mode='show')
   ) %>%
   config(responsive = FALSE,
          displaylogo = FALSE,
          displayModeBar = F)
+}
 
-
-p1
+p1(13, NULL, 230)
 
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
 fig_dir <- 'figures/'
+image_name <- "figure-2-7-1-hlsr_evo_staff.png"
 
-invisible(export(p1, paste0(fig_dir,"figure-2-7-1-hlsr_evo_staff.png")))
-invisible(figure <- image_read(paste0(fig_dir,"figure-2-7-1-hlsr_evo_staff.png")))
-invisible(cropped <- image_crop(figure, "0x230"))
-invisible(image_write(cropped, paste0(fig_dir,"figure-2-7-1-hlsr_evo_staff.png")))
+invisible(export(p1(26, 1500, 460), paste0(fig_dir,image_name)))
+invisible(figure <- image_read(paste0(fig_dir,image_name)))
+invisible(cropped <- image_crop(figure, "0x460"))
+invisible(image_write(cropped, paste0(fig_dir,image_name)))

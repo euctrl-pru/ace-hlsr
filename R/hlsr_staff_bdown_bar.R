@@ -55,7 +55,7 @@ data_plot <- data_raw %>%
 xrange_max <- round((max(data_plot$STAF)+5000)/1000,0)*1000
 
 # draw costs plot
-p1 <- function(mywidth, myheight){
+p1 <- function(myfont, mywidth, myheight, vmargin, myautosize){
   data_plot %>% 
   plot_ly(
     width = mywidth,
@@ -67,7 +67,7 @@ p1 <- function(mywidth, myheight){
     textangle = 0,
     textposition = "outside",
     # insidetextanchor =  "start",
-    textfont = list(color = 'black'),
+    textfont = list(color = 'black', size = myfont + 1),
     cliponaxis = FALSE,
     type = "bar",
     orientation = 'h',
@@ -77,7 +77,7 @@ p1 <- function(mywidth, myheight){
   layout(
     title = list(
       text = paste0("Gate-to-gate ATM/CNS staff in ", year_report ," (in FTEs)"), 
-      font = list(color = '#747a7f', size = 12),
+      font = list(color = '#747a7f',  size = myfont),
       y = 0.05),
     xaxis = list(
       title = "",
@@ -100,15 +100,16 @@ p1 <- function(mywidth, myheight){
       ticks = 'outside',
       tickson="boundaries",
       tickcolor='#BFBFBF', ticklen=3,
-      tickfont = list(size = 11),
+      tickfont = list(size = myfont-1),
       # tickformat=",.0%", 
       # domain=c(0,1),
       zeroline = F, showline = T, showgrid = F
     ),
-    autosize = T,
+    autosize = myautosize,
+    margin = list(b = vmargin),
     bargap = 0.4,
     plot_bgcolor = '#DCE6F2',
-    uniformtext=list(minsize=10, mode='show')
+    uniformtext=list(minsize=myfont-1, mode='show')
   ) %>%
   config(responsive = FALSE,
          displaylogo = FALSE,
@@ -116,15 +117,19 @@ p1 <- function(mywidth, myheight){
 }
 
 
-p1(NULL, NULL)
+p1(12, NULL, NULL, 40, 'T')
 
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
 fig_dir <- 'figures/'
+image_name <- "figure-2-7-2-hlsr_staff_bdown_bar.png"
 
-invisible(export(p1(475, 500), paste0(fig_dir,"figure-2-7-2-hlsr_staff_bdown_bar.png")))
-invisible(figure <- image_read(paste0(fig_dir,"figure-2-7-2-hlsr_staff_bdown_bar.png")))
-invisible(cropped <- image_crop(figure, "475x500"))
-invisible(image_write(cropped, paste0(fig_dir,"figure-2-7-2-hlsr_staff_bdown_bar.png")))
+invisible(export(p1(26, 950, 950, 100, 'F'), paste0(fig_dir, image_name)))
+invisible(figure <- image_read(paste0(fig_dir,image_name)))
+invisible(cropped <- image_crop(figure, "950x0"))
+invisible(image_write(cropped, paste0(fig_dir,image_name)))
+
+
+

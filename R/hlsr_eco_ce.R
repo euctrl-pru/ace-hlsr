@@ -130,7 +130,7 @@ plot_all <- function(myfont, mywidth, myheight){
              yaxis = "y1",
              mode = 'text',
              text = ~ LABELS,
-             textfont = list(color = 'black', size = if_else(myfont == 10, 9, myfont)),
+             textfont = list(color = 'black', size = if_else(myfont == 8, 8, myfont-4)),
              # textangle = 0,
              name = '',
              textposition = "top center", cliponaxis = FALSE,
@@ -366,7 +366,7 @@ fig <- function(myfont, mywidth, myheight, vlegend, vdomain, myvposition){
                        linewidth=1, linecolor='transparent',  mirror = T,
                        # range = list(0, 200+round(max(data_plot$VALUE/1000), 1)*1000),
                        zeroline = T, showline = T, showgrid = F,
-                       domain=c(0,1)),
+                       domain=c(0,0.9)),
           xaxis2 = list(title = "",
                         showticklabels = FALSE,
                         # tickangle=270,
@@ -399,7 +399,7 @@ fig(8, NULL, NULL, -0.85, 0.92, 1.08)
 fig_dir <- 'figures/'
 fig_name <- "figure-3-2-hlsr_eco_ce.png"
 
-invisible(export(fig(18, 2000, 920, -0.55, 0.96, 1.05), paste0(fig_dir, fig_name)))
+invisible(export(fig(22, 2000, 1000, -0.55, 0.96, 1.05), paste0(fig_dir, fig_name)))
 invisible(figure <- image_read(paste0(fig_dir,fig_name)))
-invisible(cropped <- image_crop(figure, "0x920"))
+invisible(cropped <- image_crop(figure, "0x1000"))
 invisible(image_write(cropped, paste0(fig_dir, fig_name)))

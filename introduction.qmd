@@ -26,9 +26,13 @@ It should be noted that the data presented in this document are still [prelimina
 ::::
 
 :::: {.content-visible when-format="pdf"}
+<!--
 ```{r, options=(checkmark='√')}
 #| file: R/hlsr_ansp_status_gt.R
 ```
+-->
+
+![](figures/ansp_status_table.PNG){height="90%" width="90%"}
 ::::
 
 Status of {{< var doc.year_report >}} data validation process

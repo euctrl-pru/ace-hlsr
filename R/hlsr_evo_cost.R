@@ -112,7 +112,7 @@ p1 <- function(myfont, mywidth, myheight) {
                   ),
     autosize = T,
     # plot_bgcolor = '#DCE6F2',
-    uniformtext=list(minsize=10, mode='show')
+    uniformtext=list(minsize=myfont-1, mode='show')
   ) %>%
   config(responsive = FALSE,
          displaylogo = FALSE,

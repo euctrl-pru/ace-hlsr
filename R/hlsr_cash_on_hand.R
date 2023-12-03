@@ -34,7 +34,7 @@ value_max <- ceiling((max(data_plot$value)/100))*100
 # cost_min <- round((min(data_plot$COST)-0.5)*2,0)/2
 
 # draw costs plot
-p <- function(mywidth, myheight) {
+p <- function(myfont, mywidth, myheight) {
   data_plot %>% 
   plot_ly(
     width = mywidth,
@@ -59,7 +59,7 @@ p <- function(mywidth, myheight) {
     textangle = 0,
     textposition = ~ if_else(type == '3rd quartile', "top center", "bottom center"),
     # insidetextanchor =  "start",
-    textfont = list(color = 'black'),
+    textfont = list(color = 'black', size = myfont +1),
     cliponaxis = FALSE,
     mode = 'text',
     hoverinfo = "none",
@@ -67,7 +67,7 @@ p <- function(mywidth, myheight) {
   ) %>%
   layout(
     legend = list(orientation = 'h',
-                  # font = list(size = 10),
+                  font = list(size = myfont),
                   y = -0.15,
                   x = 0.5,
                   xanchor = "center",
@@ -76,6 +76,7 @@ p <- function(mywidth, myheight) {
       title = "",
       ticks = 'outside',
       range = c(min(data_plot$year_data) - 0.5, max(data_plot$year_data) + 0.5),
+      tickfont = list(size = myfont),
       tick0 = min(data_plot$year_data),
       # fixedrange = TRUE,
       # automargin = T,
@@ -84,11 +85,12 @@ p <- function(mywidth, myheight) {
       showgrid = F
     ),
     yaxis = list(
-      title = "Days",
+      title = paste0("Days", "\n&nbsp;"),
       linewidth = 1, linecolor='black',
-      titlefont   = list(size = 13),
+      titlefont   = list(size = myfont),
       fixedrange = TRUE,
       ticks = 'outside',
+      tickfont = list(size = myfont),
       dtick = 100,
       range = c(0, value_max + 5), #so the last line is plotted
       showgrid = TRUE,
@@ -108,15 +110,16 @@ p <- function(mywidth, myheight) {
 
 }
 
-p(NULL, NULL)
+p(12, NULL, NULL)
 
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
 fig_dir <- 'figures/'
+image_name <- "figure-5-2-hlsr_cash_on_hand.png"
 
-invisible(export(p(754, 520), paste0(fig_dir,"figure-5-2-hlsr_cash_on_hand.png")))
-invisible(figure <- image_read(paste0(fig_dir,"figure-5-2-hlsr_cash_on_hand.png")))
-invisible(cropped <- image_crop(figure, "754x520"))
-invisible(image_write(cropped, paste0(fig_dir,"figure-5-2-hlsr_cash_on_hand.png")))
+invisible(export(p(28, 1320, 700), paste0(fig_dir, image_name)))
+# invisible(figure <- image_read(paste0(fig_dir,image_name)))
+# invisible(cropped <- image_crop(figure, "754x520"))
+# invisible(image_write(cropped, paste0(fig_dir,image_name)))

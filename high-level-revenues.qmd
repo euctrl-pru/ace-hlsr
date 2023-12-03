@@ -264,10 +264,21 @@ Total gate-to-gate ATM/CNS staff per staff category
 
 ![](figures/figure-2-7-1-hlsr_evo_staff.png){height="90%" width="90%"}
 
-:::: {#fig-figure-2-7 layout="[0.53,0.28,0.19]"}
-![](figures/figure-2-7-2-hlsr_staff_bdown_bar.png)
+```{r combine_fig2-7-2}
+library(magick)
+fig_dir <- 'figures/'
+image1_name <- "figure-2-7-2-hlsr_staff_bdown_bar.png"
+image2_name <- "figure-2-7-3-hlsr_staff_bdown_bar_perc.png"
 
-![](figures/figure-2-7-3-hlsr_staff_bdown_bar_perc.png)
+invisible(figure1 <- image_read(paste0(fig_dir,image1_name)))
+invisible(figure2 <- image_read(paste0(fig_dir,image2_name)))
+
+image_write(image_append(c(figure1,figure2)), paste0(fig_dir, "figure-2-7-23.png"))
+```
+
+:::: {#fig-figure-2-7-2}
+\centering
+![](figures/figure-2-7-23.png){height="85%" width="85%"}
 
 Total gate-to-gate ATM/CNS staff per staff category
 ::::
