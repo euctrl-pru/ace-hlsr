@@ -47,10 +47,11 @@ vline <- function(x = 0, y=0) {
 
 
 # draw costs plot
-p1 <- data_plot %>% 
+p1 <- function(myfont, mywidth, myheight) {
+  data_plot %>% 
   plot_ly(
-    # width = 500, 
-    height = 230,
+    width = mywidth,
+    height = myheight,
     x = ~ YEAR_DATA,
     y = ~ COST,
     type = 'scatter', mode = 'lines', 
@@ -67,7 +68,7 @@ p1 <- data_plot %>%
     textangle = 0,
     textposition = "top center",
     # insidetextanchor =  "start",
-    textfont = list(color = 'black'),
+    textfont = list(color = 'black', size=myfont),
     cliponaxis = FALSE,
     mode = 'text',
     hoverinfo = "none",
@@ -80,17 +81,21 @@ p1 <- data_plot %>%
       # range = c(0, cost_max),
       # automargin = T,
       # tickvals = c(),
+      tickfont   = list(size = myfont),
       autotick = F, zeroline = F, showline = T,
       # domain=c(0,0.6),
+      uniformtext=list(minsize=myfont, mode='show'),
       showgrid = F
     ),
     yaxis = list(
-      title = paste0("Billions €", year_report),
+      title = paste0("Billions €", year_report, "\n&nbsp;"),
+      titlefont   = list(size = myfont),
       linewidth = 1, linecolor='black',
       # titlefont   = list(size = 13),
       fixedrange = TRUE,
       ticks = 'outside',
       range = c(cost_min,cost_max),
+      tickfont   = list(size = myfont-1),
       # tickson="boundaries",
       # tickcolor='#BFBFBF', ticklen=3,
       tickformat=".1f",
@@ -112,17 +117,18 @@ p1 <- data_plot %>%
   config(responsive = FALSE,
          displaylogo = FALSE,
          displayModeBar = F)
+}
 
-
-p1
+p1(13, NULL, 230)
 
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
 fig_dir <- 'figures/'
+image_name <- "figure-2-5-1-hlsr_evo_cost.png"
 
-invisible(export(p1, paste0(fig_dir,"figure-2-5-1-hlsr_eco_ce.png")))
-invisible(figure <- image_read(paste0(fig_dir,"figure-2-5-1-hlsr_eco_ce.png")))
-invisible(cropped <- image_crop(figure, "0x230"))
-invisible(image_write(cropped, paste0(fig_dir,"figure-2-5-1-hlsr_eco_ce.png")))
+invisible(export(p1(26, 1500, 460), paste0(fig_dir,image_name)))
+invisible(figure <- image_read(paste0(fig_dir,image_name)))
+invisible(cropped <- image_crop(figure, "0x460"))
+invisible(image_write(cropped, paste0(fig_dir,image_name)))

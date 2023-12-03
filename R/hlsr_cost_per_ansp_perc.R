@@ -30,7 +30,7 @@ perc_max <- max(abs(data_plot$YOY)) + 0.4
 year_max <- max(data_plot$YEAR_DATA)
 
 # draw cost variation plot
-p <- function(mywidth, myheight) {
+p <- function(myfont, mywidth, myheight, vmargin, myautosize) {
   data_plot %>% 
   plot_ly(
     width = mywidth,
@@ -43,7 +43,7 @@ p <- function(mywidth, myheight) {
     textangle = 0,
     textposition = "outside",
     # insidetextanchor =  "start",
-    textfont = list(color = '#1782E3'),
+    textfont = list(color = '#1782E3', size = myfont + 1),
     cliponaxis = FALSE,
     type = "bar",
     orientation = 'h',
@@ -53,7 +53,7 @@ p <- function(mywidth, myheight) {
   layout(
     title = list(
       text = paste0("Changes ",year_max-1,"-",year_max," (in %)"), 
-      font = list(color = '#747a7f', size = 12),
+      font = list(color = '#747a7f', size = myfont),
       y = 0.02),
     xaxis = list(
       title = "",
@@ -83,10 +83,10 @@ p <- function(mywidth, myheight) {
       zeroline = F, showline = F, showgrid = T
     ),
     bargap = 0.4,
-    autosize = T,
-    margin = list(l=0, r=0),
+    autosize = myautosize,
+    margin = list(b = vmargin, l=0, r=0),
     plot_bgcolor = 'white',
-    uniformtext=list(minsize=10, mode='show')
+    uniformtext=list(minsize=myfont, mode='show')
   ) %>%
   config(responsive = FALSE,
          displaylogo = FALSE,
@@ -94,14 +94,15 @@ p <- function(mywidth, myheight) {
 
 }
 
-p(NULL, NULL)
+p(12, NULL, NULL, 30, 'T')
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
 fig_dir <- 'figures/'
+image_name <- "figure-2-5-3-hlsr_cost_per_ansp_perc.png"
 
-invisible(export(p(250, 750), paste0(fig_dir,"figure-2-5-3-hlsr_cost_per_ansp_perc.png")))
-invisible(figure <- image_read(paste0(fig_dir,"figure-2-5-3-hlsr_cost_per_ansp_perc.png")))
-invisible(cropped <- image_crop(figure, "250x0"))
-invisible(image_write(cropped, paste0(fig_dir,"figure-2-5-3-hlsr_cost_per_ansp_perc.png")))
+invisible(export(p(26,500, 1300, 60, 'F'), paste0(fig_dir,image_name)))
+invisible(figure <- image_read(paste0(fig_dir,image_name)))
+invisible(cropped <- image_crop(figure, "500"))
+invisible(image_write(cropped, paste0(fig_dir,image_name)))

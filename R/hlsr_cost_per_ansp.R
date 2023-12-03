@@ -43,7 +43,7 @@ cost_max <- round((max(data_plot$COST/10^6)+500)/100,0)*100
 year_max <- max(data_plot$YEAR_DATA)
 
 # draw costs plot
-p1 <- function(mywidth, myheight){
+p1 <- function(myfont, mywidth, myheight, vmargin, myautosize){
   data_plot %>% 
   plot_ly(
     width = mywidth,
@@ -55,7 +55,7 @@ p1 <- function(mywidth, myheight){
     textangle = 0,
     textposition = "outside",
     # insidetextanchor =  "start",
-    textfont = list(color = 'black'),
+    textfont = list(color = 'black', size = myfont + 1),
     cliponaxis = FALSE,
     type = "bar",
     orientation = 'h',
@@ -75,7 +75,7 @@ p1 <- function(mywidth, myheight){
     layout(
     title = list(
       text = paste0("Total ATM/CNS provision costs in ", year_max ," (M€",year_max,")"), 
-      font = list(color = '#747a7f', size = 12),
+      font = list(color = '#747a7f', size = myfont),
       y = 0.02),
     xaxis = list(
       title = "",
@@ -99,30 +99,34 @@ p1 <- function(mywidth, myheight){
       tickson="boundaries",
       tickcolor='#BFBFBF', ticklen=3,
       # tickformat=",.0%", 
+      tickfont = list(size = myfont),
       categoryorder = "total ascending",
       # domain=c(0,1),
       zeroline = F, showline = T, showgrid = F
     ),
-    autosize = T,
+    autosize = myautosize,
+    margin = list(b = vmargin),
     bargap = 0.4,
     barmode = 'overlay',
     plot_bgcolor = '#DCE6F2',
-    uniformtext=list(minsize=10, mode='show')
+    uniformtext=list(minsize=myfont, mode='show')
   ) %>%
   config(responsive = FALSE,
          displaylogo = FALSE,
          displayModeBar = F)
 }
   
-p1(NULL, NULL)
+p1(12, NULL, NULL, 30, 'T')
 
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
 fig_dir <- 'figures/'
+image_name <- "figure-2-5-2-hlsr_cost_per_ansp.png"
 
-invisible(export(p1(475, 750), paste0(fig_dir,"figure-2-5-2-hlsr_cost_per_ansp.png")))
-invisible(figure <- image_read(paste0(fig_dir,"figure-2-5-2-hlsr_cost_per_ansp.png")))
-invisible(cropped <- image_crop(figure, "475x0"))
-invisible(image_write(cropped, paste0(fig_dir,"figure-2-5-2-hlsr_cost_per_ansp.png")))
+invisible(export(p1(26, 950, 1300, 60, 'F'), paste0(fig_dir, image_name)))
+invisible(figure <- image_read(paste0(fig_dir,image_name)))
+invisible(cropped <- image_crop(figure, "950x0"))
+invisible(image_write(cropped, paste0(fig_dir,image_name)))
+

@@ -185,19 +185,23 @@ Changes in ATM/CNS provision costs (real terms)
 \underline{Trends in ATM/CNS provision costs at Pan-European system level}
 \end{tightcenter}
 
-![](figures/figure-2-5-1-hlsr_eco_ce.png){height="100%" width="100%"}
+![](figures/figure-2-5-1-hlsr_evo_cost.png){height="90%" width="90%"}
 
-:::: {#fig-figure-2-5 layout="[645,355]"}
+```{r combine_fig2-5-2}
+library(magick)
+fig_dir <- 'figures/'
+image1_name <- "figure-2-5-2-hlsr_cost_per_ansp.png"
+image2_name <- "figure-2-5-3-hlsr_cost_per_ansp_perc.png"
 
-::::: {#firstcol}
-![](figures/figure-2-5-2-hlsr_cost_per_ansp.png)
-:::::
+invisible(figure1 <- image_read(paste0(fig_dir,image1_name)))
+invisible(figure2 <- image_read(paste0(fig_dir,image2_name)))
 
-::::: {#secondcol}
-![](figures/figure-2-5-3-hlsr_cost_per_ansp_perc.png)
-:::::
+image_write(image_append(c(figure1,figure2)), paste0(fig_dir, "figure-2-5-23.png"))
+```
 
-<!-- I had to organise the divs like this to avoid the pdf from giving error -->
+:::: {#fig-figure-2-5-2}
+\centering
+![](figures/figure-2-5-23.png){height="80%" width="80%"}
 
 Changes in ATM/CNS provision costs (real terms)
 ::::
