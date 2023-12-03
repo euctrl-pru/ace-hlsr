@@ -45,6 +45,7 @@ format:
       - right=2.2cm
       - footskip=0.7cm
     mainfont: "Calibri"
+    # fig-pos: 'h'
     include-in-header:
       - text: |
           % \usepackage{libertine} % so we can see the checkmarks in the intro

@@ -40,11 +40,15 @@ b\) ATCO employment costs per ATCO-hour (€132); and,
 
 c\) support costs per unit output (€322).
 
-![ACE performance framework, {{< var doc.year_report >}} (real terms)](figures/Figure-4-2.png){#fig-figure-4-2 width="100%"}
+{{< pagebreak >}}
+
+![ACE performance framework, {{< var doc.year_report >}} (real terms)](figures/Figure-4-2.png){#fig-figure-4-2 height="98%" width="98%"}
 
 @fig-figure-4-3 shows that in {{< var doc.year_report >}}, ATCO employment costs per ATCO-hour fell by -2.9% while ATCO-hour productivity rose by +45.7%. As a result, ATCO employment costs per composite flight-hour decreased (-33.4%). In the meantime, unit support costs fell by -34.7% due to the combination of an increase in composite flight-hours (+58.5%) and an increase in support costs (+3.5%). As a result, in {{< var doc.year_report >}}, unit ATM/CNS provision costs fell by -34.3% at Pan-European system level.
 
-![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3 width="100%"}
+![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3   height="98%" width="98%"}
+
+{{< pagebreak >}}
 
 ## ANSP level {#sec-fin_2}
 
@@ -83,6 +87,8 @@ Financial gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 
 ATCO-hour productivity, {{< var doc.year_report >}}
 :::
+
+{{< pagebreak >}}
 
 @fig-figure-4-6 presents the employment costs per ATCO in OPS indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_6` and €`r q3_4_6`, respectively).
 
