@@ -77,8 +77,8 @@ Trend of unit economic costs at Pan-European system level, {{< var doc.year_repo
 
 Economic gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 <!-- to avoid figure in the middle of the page -->
-\vspace{14cm}
 
 :::
+\vspace{14cm}
 
 For ten ANSPs the unit cost of ATFM delays represented more than 20% of their unit economic costs. ANSPs generating the highest levels of ATFM delays in 2022 were DFS, DSNA, ENAIRE, NAV Portugal and NATS. For some of these ANSPs, work associated with the implementation of new ATM systems caused a temporary reduction of the available capacity and as a consequence contributed to increase ATFM delays (this was for example the case for DSNA and NAV Portugal). Other ANSPs, such as PANSA, were also affected by military activities due to the war in Ukraine.
