@@ -218,7 +218,7 @@ fig_pdf <- subplot(
   ) %>%
   layout(
     height = 700, width = 1984,
-    annotations = myannotations(40, -0.18), images = myimages)
+    annotations = myannotations(40, -0.15), images = myimages)
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS

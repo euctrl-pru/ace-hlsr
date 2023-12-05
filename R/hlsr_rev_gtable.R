@@ -116,8 +116,7 @@ table_reve <- gt(
     locations = cells_body(columns = everything(), rows = nrow(data_table))
   ) %>% 
   tab_style(
-    style = list(cell_text(size = '0.95rem',
-                           align = 'right')),
+    style = list(cell_text(size = '0.95rem')),
     locations = cells_body(columns = everything(), rows = everything())
   )
 
