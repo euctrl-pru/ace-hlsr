@@ -10,9 +10,9 @@ This chapter provides a [preliminary analysis]{.underline} of financial cost-eff
 
 ## Pan-European system level {#sec-fin_1}
 
-@fig-figure-4-1 shows that in {{< var doc.year_report >}} the unit ATM/CNS provision costs fell by -34.3% compared to 2021, reaching an amount of €473. This is the result of higher traffic (+58.5%) coupled with higher ATM/CNS provision costs (+4.2%).
+@fig-figure-4-1 shows that in {{< var doc.year_report >}} the unit ATM/CNS provision costs fell by -34.7% compared to 2021, reaching an amount of €470. This is the result of traffic increase (+58.3%) coupled with the growth of ATM/CNS provision costs (+3.4%).
 
-Comparing with pre-pandemic levels, in 2022 unit ATM/CNS provision costs remain +8.8% higher than in 2019. This mainly reflects the fact that, despite a lower cost-base (-5.5% compared to 2019) traffic volumes in 2022 were still lower than in 2019 (-13.2%).
+However, Comparing with pre-pandemic levels, in 2022 unit ATM/CNS provision costs still remain +8.2% higher than in 2019. This mainly reflects the fact that, despite a lower cost-base (-6.1% compared to 2019) traffic volumes in 2022  still did not reach the 2019 level (-13.3%).
 
 
  
