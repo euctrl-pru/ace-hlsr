@@ -1,131 +1,314 @@
-<!-- Calculate quartiles for text -->
-```{r}
+# High-level revenues, costs and staff data {#sec-high}
+
+```{r load-data}
+#libraries
+
+library(tidyverse)
+library(dplyr)
+library(readxl)
 library(here)
-source(here("R/calc_quartiles.R"))
+
+source(here("data_source.R"))
+
+#import data
+data_raw  <-  read_xlsx(
+                        paste0(data_folder,data_file ),
+                        # here("data",data_file),
+                       sheet = "F_Revenue",
+                       range = cell_limits(c(9, 1), c(NA, 4))) %>%
+  as_tibble() %>% 
+  rename(TYPE = 'Data', TOTAL = 'Grand Total') %>% 
+  mutate(across(TYPE, str_replace, 'Sum of ', '')) %>% 
+  filter( TYPE != "REVE_DELEGATION", TYPE != "REVE_REVENUE")
+
+#calculate figures for text. Suffix '_f' means formatted figure -- Just an example for you to see how it could be done to avoid copy pasting
+total_reve_f <- data_raw  %>% select(TOTAL) %>%  summarise(sum(TOTAL/1000000)) %>% pull() %>% round() %>% 
+  format(., nsmall =0 ,big.mark= " ") %>% paste0("\u20AC", ., "M")
+
+ert_reve <- data_raw  %>% select(ERT) %>%  summarise(sum(ERT)) %>% pull() 
+ert_reve_charge <- data_raw  %>%  filter(TYPE == 'REVE_CHARGE') %>% select(ERT)  %>% pull() 
+ert_reve_charge_perc <- sprintf("%0.1f%%", ert_reve_charge/ert_reve*100) 
+
+trm_reve <- data_raw  %>% select(TRM) %>%  summarise(sum(TRM)) %>% pull() 
+trm_reve_charge <- data_raw  %>%  filter(TYPE == 'REVE_CHARGE') %>% select(TRM)  %>% pull() 
+trm_reve_charge_perc <- sprintf("%0.1f%%", trm_reve_charge/trm_reve*100) 
+
+trm_reve_apt <- data_raw  %>%  filter(TYPE == 'REVE_AIRPORT') %>% select(TRM)  %>% pull() 
+trm_reve_apt_perc <- sprintf("%0.1f%%", trm_reve_apt/trm_reve*100) 
+
 ```
 
-# Financial cost-effectiveness {#sec-financial}
+This chapter provides a [preliminary]{.underline} overview of high-level revenues, costs and staff data provided in ANSPs ACE {{< var doc.year_report >}} data submissions. Total ANS revenues in {{< var doc.year_report >}} amounted to `r total_reve_f`. Most en-route revenues come from the collection of en-route charges (`r ert_reve_charge_perc`, see left pie chart). The proportion of terminal revenues from charges is lower (`r trm_reve_charge_perc`, see right pie chart), as additional income may directly come from airport operators (`r trm_reve_apt_perc`) through, for example, a contractual arrangement between the ANSP and the airport operator).
 
-This chapter provides a [preliminary analysis]{.underline} of financial cost-effectiveness.
+::: {#fig-figure-2-1}
+::: {.content-visible when-format="html"}
+```{r fig-2-1}
+#| file: R/hlsr_rev_pie.R
+#| out.height: "420px"
+#| out.width: "100%"
+```
+:::
 
-## Pan-European system level {#sec-fin_1}
+::: {.content-visible when-format="pdf"}
+![](figures/figure-2-1-hlsr_rev_pie.png){height="100%" width="100%"}
+:::
 
-@fig-figure-4-1 shows that in {{< var doc.year_report >}} the unit ATM/CNS provision costs fell by -34.3% compared to 2021, reaching an amount of €473. This is the result of higher traffic (+58.5%) coupled with higher ATM/CNS provision costs (+4.2%).
+```{r table-2-1}
+#| file: R/hlsr_rev_gtable.R
+```
 
-Comparing with pre-pandemic levels, in 2022 unit ATM/CNS provision costs remain +8.8% higher than in 2019. This mainly reflects the fact that, despite a lower cost-base (-5.5% compared to 2019) traffic volumes in 2022 were still lower than in 2019 (-13.2%).
+Breakdown of gate-to-gate ANS revenues, {{< var doc.year_report >}}
+:::
 
+```{r conditional-latex}
+if (knitr::is_latex_output()) {
+  mystring = '\\hfill\\break
+  \\hfill\\break'
+   mylayout = '"[0.30, 0.40, 0.30]"'
+   mybox = '::: {.callout-note appearance="minimal"}' 
+   myboxclose = ':::'
+} else {
+   mystring = ''
+   mylayout = '"[0.25, 0.5, 0.25]"'
+   mybox = ''
+   myboxclose = ''
+}
+```
 
- 
-::: {#fig-figure-4-1 style="max-width: 500px; margin: auto"}
-:::: {.content-visible when-format="html"}
-```{r}
-#| file: R/hlsr_evo_unit_cost.R
+`r mybox` 
+::: blue 
+:::: {layout=`r mylayout`} 
+::::: {#firstcol} 
+![](figures/Figure-2-2-cfh.png) 
+:::::
+
+::: {#secondcol}
+<!-- took this trick from here https://github.com/quarto-dev/quarto-cli/discussions/1534 -->
+
+\justifying \noindent `r mystring` Across the Pan-European system, traffic in 2022 (measured in composite flight-hours) was +58.3% higher than in 2021 but remained -13.3% lower than in 2019. In the meantime, total gate-to-gate revenues increased slightly less than traffic (+55.3%) and remained -14.9% lower than in 2019.
+:::
+
+::: {#thirdcol}
+![](figures/Figure-2-2-rev.png)
+:::
+
+:::: 
+::: 
+`r myboxclose`
+
+{{< pagebreak >}}
+
+At ANSP level, a wide range of recovery rates is observed, ranging from -51% to +14% (see @Traffic_map). The war in Ukraine also resulted in airspace closures and reciprocal sanctions on air carriers which impacted traffic flows in Europe. This inevitably impacts the levels and trends of ACE indicators for the ANSPs being most affected by the changes in traffic patterns.
+
+::: {#Traffic_map}
+![Changes in composite flight-hours between 2019 and 2022](figures/Traffic_map.png){#Traffic_map width="100%"}
+:::
+
+The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services which amounted to €8 921M in 2022. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 84% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented around 16%.
+
+::: {#fig-figure-2-3}
+::: {.content-visible when-format="html"}
+```{r fig-2-3}
+#| file: R/hlsr_c_bdown_pie.R
+#| out.width: "100%"
 #| out.height: "300px"
-#| out.width: "100%"
 ```
-::::
-
-:::: {.content-visible when-format="pdf"}
-![](figures/figure-4-1-hlsr_evo_unit_cost.png){height=75% width=75%}
-::::
-
-Changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus5 >}} -- {{< var doc.year_report >}} (real terms)
 :::
 
-The analytical framework used in the ACE analysis to break down the financial cost-effectiveness indicator into relevant economic drivers is presented in @fig-figure-4-2. These key drivers include:
+::: {.content-visible when-format="pdf"}
+![](figures/figure-2-3-hlsr_c_bdown_pie.png){height="100%" width="100%"}
+:::
 
-a\) ATCO-hour productivity (0.88 composite flight-hours per ATCO-hour);
+```{r table 2-3}
+#| file: R/hlsr_c_bdown_gtable.R
+```
 
-b\) ATCO employment costs per ATCO-hour (€132); and,
+Gate-to-gate ATM/CNS provision costs at Pan-European system level, {{< var doc.year_report >}}
+:::
 
-c\) support costs per unit output (€322).
+```{r conditional-latex-}
+if (knitr::is_html_output()) {
+  mylayout = '"[0.35, 0.65]"'
+  mystring = ''
+} else {
+   mylayout = '"[0.35, 0.65]"'
+  mystring = '\\hfill\\break
+  \\hfill\\break'
+}
+```
+
+`r mybox` 
+::: blue 
+:::: {layout=`r mylayout`}
+
+::::: {#firstcol}
+<!-- took this trick from here https://github.com/quarto-dev/quarto-cli/discussions/1534 -->
+
+\justifying \noindent `r mystring` After two years of consecutive decreases, total ATM/CNS provision costs rose by +3.4% (+€296.8M) in 2022, reflecting cost increases for 26 out of 38 ANSPs. Non-staff operating costs (+€118.8M) and the cost of capital (+€115.7M) were the main sources of increase in 2022.
+:::::
+
+::::: {#secondcol}
+
+![](figures/Figure-2-4.png)
+
+:::::
+:::: 
+:::
+
+::: blue
+For non-staff operating costs, this mainly reflects the fact that 2021 ANSPs cost-bases were affected by the temporary measures implemented in response to the COVID-19 crisis (e.g. short time work, furlough schemes, reduced remuneration, postponement of non-essential activities, etc.). <br><br> The observed trend in the cost of capital is heavily affected by very large increases for DHMI, DFS and LFV.
+:::
+
+`r myboxclose`
 
 {{< pagebreak >}}
 
-![ACE performance framework, {{< var doc.year_report >}} (real terms)](figures/Figure-4-2.png){#fig-figure-4-2 height="98%" width="98%"}
+In {{< var doc.year_report >}}, the five largest ANSPs (DFS, DSNA, ENAIRE, ENAV and NATS) bore some 53% of the total Pan-European gate-to-gate ATM/CNS provision costs, while the five smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-3).
 
-@fig-figure-4-3 shows that in {{< var doc.year_report >}}, ATCO employment costs per ATCO-hour fell by -2.9% while ATCO-hour productivity rose by +45.7%. As a result, ATCO employment costs per composite flight-hour decreased (-33.4%). In the meantime, unit support costs fell by -34.7% due to the combination of an increase in composite flight-hours (+58.5%) and an increase in support costs (+3.5%). As a result, in {{< var doc.year_report >}}, unit ATM/CNS provision costs fell by -34.3% at Pan-European system level.
+::: {.content-visible when-format="html"}
+:::: centeredtitle
+[**Trends in ATM/CNS provision costs at Pan-European system level**]{.underline}
+::::
 
-![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3   height="98%" width="98%"}
-
-{{< pagebreak >}}
-
-## ANSP level {#sec-fin_2}
-
-@fig-figure-4-4 presents the financial gate-to-gate cost-effectiveness indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_4` and €`r q3_4_4`, respectively).
-
-::: {#fig-figure-4-4 fig-pos='h'}
-:::: {.content-visible when-format="html"}
+:::: {style="max-width: 620px; margin: auto"}
 ```{r}
-#| file: R/hlsr_fin_ce.R
-#| out.height: "450px"
+#| file: R/hlsr_evo_cost.R
+#| out.height: "200px"
 #| out.width: "100%"
 ```
 ::::
 
-:::: {.content-visible when-format="pdf"}
-![](figures/figure-4-4-hlsr_fin_ce.png)
-::::
+:::: {#fig-figure-2-5 layout="[65,35]"}
+```{r}
+#| file: R/hlsr_cost_per_ansp.R
+#| out.height: "600px"
+```
 
-Financial gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
+```{r}
+#| file: R/hlsr_cost_per_ansp_perc.R
+#| out.height: "600px"
+```
+
+Changes in ATM/CNS provision costs (real terms)
+::::
 :::
 
+::: {.content-visible when-format="pdf"}
+<!-- this is latex https://tex.stackexchange.com/questions/24186/how-to-center-text-without-adding-space-and-not-altering-alignment-of-surroundin-->
 \hfill\break
-@fig-figure-4-5 presents the ATCO-hour productivity indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (`r q1_4_5` and `r q3_4_5`, respectively). 
+\begin{tightcenter}
+\underline{Trends in ATM/CNS provision costs at Pan-European system level}
+\end{tightcenter}
 
-::: {#fig-figure-4-5 fig-pos='h'}
-:::: {.content-visible when-format="html"}
-```{r}
-#| file: R/hlsr_prod.R
-#| out.height: "450px"
-#| out.width: "100%"
+:::: {#fig-figure-2-5-2}
+\centering
+![](figures/figure-2-5-1-hlsr_evo_cost.png){height="85%" width="85%"}
+
+```{r combine_fig2-5-2}
+library(magick)
+fig_dir <- 'figures/'
+image1_name <- "figure-2-5-2-hlsr_cost_per_ansp.png"
+image2_name <- "figure-2-5-3-hlsr_cost_per_ansp_perc.png"
+
+invisible(figure1 <- image_read(paste0(fig_dir,image1_name)))
+invisible(figure2 <- image_read(paste0(fig_dir,image2_name)))
+
+image_write(image_append(c(figure1,figure2)), paste0(fig_dir, "figure-2-5-23.png"))
 ```
-::::
 
-:::: {.content-visible when-format="pdf"}
-![](figures/figure-4-5-hlsr_prod.png)
-::::
+![](figures/figure-2-5-23.png){height="85%" width="85%"}
 
-ATCO-hour productivity, {{< var doc.year_report >}}
+Changes in ATM/CNS provision costs (real terms)
+::::
 :::
 
 {{< pagebreak >}}
 
-@fig-figure-4-6 presents the employment costs per ATCO in OPS indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_6` and €`r q3_4_6`, respectively).
+The Pan-European ANSPs employed a total of 52 497 staff in 2022 (comprising 51 680 staff providing ATM/CNS services and 817 internal MET staff). Some 17 142 staff (33%) were ATCOs working on operational duties, split between ACCs (55%) and APP/TWR facilities (45%). On average, 2.0 additional staff are required for every ATCO in OPS in Europe.
 
-::: {#fig-figure-4-6 fig-pos='h'}
+
+::: {#fig-figure-2-6}
 :::: {.content-visible when-format="html"}
 ```{r}
-#| file: R/hlsr_atco_cost_h.R
-#| out.height: "450px"
+#| file: R/hlsr_staff_pie.R
 #| out.width: "100%"
+#| out.height: "300px"
 ```
 ::::
 
 :::: {.content-visible when-format="pdf"}
-![](figures/figure-4-6-hlsr_atco_cost_h.png)
+![](figures/figure-2-6-hlsr_staff_pie.png){height="100%" width="100%"}
 ::::
 
-Employment costs per ATCO-hour, {{< var doc.year_report >}}
+Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, {{< var doc.year_report >}}
 :::
 
-\hfill\break
-@fig-figure-4-7 presents the support costs per composite flight-hour indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_7` and €`r q3_4_7`, respectively).
+In {{< var doc.year_report >}}, the number of ATM/CNS staff was slightly lower than in 2021 (-0.9% or -473 FTEs).
 
-::: {#fig-figure-4-7 fig-pos='h'}
-:::: {.content-visible when-format="html"}
+::: {.content-visible when-format="html"}
+:::: centeredtitle
+[**Trends in gate-to-gate ATM/CNS staff at Pan-European system level**]{.underline}
+::::
+
+:::: {style="max-width: 620px; margin: auto"}
 ```{r}
-#| file: R/hlsr_support.R
-#| out.height: "450px"
+#| file: R/hlsr_evo_staff.R
+#| out.height: "200px"
 #| out.width: "100%"
 ```
 ::::
 
-:::: {.content-visible when-format="pdf"}
-![](figures/figure-4-7-hlsr_support.png)
-::::
+:::: {#fig-figure-2-7 layout="[65,35]"}
+```{r}
+#| file: R/hlsr_staff_bdown_bar.R
+#| out.height: "400px"
+```
 
-Breakdown of support costs per composite flight-hour, {{< var doc.year_report >}}
+```{r}
+#| file: R/hlsr_staff_bdown_bar_perc.R
+#| out.height: "400px"
+```
+
+Total gate-to-gate ATM/CNS staff per staff category
+::::
 :::
 
-A more detailed analysis of the changes in cost-effectiveness, ATCO-hour productivity, ATCO employment costs per ATCO-hour and unit support costs will be available in the final ACE benchmarking report.
+::: {.content-visible when-format="pdf"}
+\begin{tightcenter}
+\underline{Trends in gate-to-gate ATM/CNS staff at Pan-European system level}
+\end{tightcenter}
+
+![](figures/figure-2-7-1-hlsr_evo_staff.png){height="90%" width="90%"}
+
+```{r combine_fig2-7-2}
+library(magick)
+fig_dir <- 'figures/'
+image1_name <- "figure-2-7-2-hlsr_staff_bdown_bar.png"
+image2_name <- "figure-2-7-3-hlsr_staff_bdown_bar_perc.png"
+
+invisible(figure1 <- image_read(paste0(fig_dir,image1_name)))
+invisible(figure2 <- image_read(paste0(fig_dir,image2_name)))
+
+image_write(image_append(c(figure1,figure2)), paste0(fig_dir, "figure-2-7-23.png"))
+```
+
+:::: {#fig-figure-2-7-2}
+\centering
+
+![](figures/figure-2-7-23.png){height="85%" width="85%"}
+
+Total gate-to-gate ATM/CNS staff per staff category
+::::
+:::
+
+{{< pagebreak >}}
+
+The overall change in staff numbers observed for {{< var doc.year_report >}} mainly reflects changes in the following staff categories:
+
+-   Administrative staff (-357 FTEs, or -4.1%);
+-   ATCOs in OPS (+356 FTEs, or +2.1%); and,
+-   ATCOs on other duties (-215 FTEs or -8.7%).
+
+To some extent, the changes observed for the ATCOs categories may reflect the fact that some ATCOs previously reported as "on other duties" following the traffic decrease in 2020 and the COVID-19 pandemic, are now re-allocated to OPS duties.
+
+Decreases are also observed for technical support staff for operational maintenance (-1.7%), OPS support staff (-2.0%), ab-initio trainees (-7.6%), ATC assistants (-3.1%), technical support staff for planning and development (-1.2%) an other staff (-0.2%). Conversely, the number of on-the job trainees (+8.9%) and staff for ancillary services (+2.2%) rose in 2022.
