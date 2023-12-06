@@ -1,4 +1,5 @@
 <!-- Calculate quartiles for text -->
+
 ```{r}
 library(here)
 source(here("R/calc_quartiles.R"))
@@ -6,17 +7,17 @@ source(here("R/calc_quartiles.R"))
 
 # Economic cost-effectiveness {#sec-economic}
 
-The concept of economic cost-effectiveness, developed by the PRC, is defined as the sum of gate-to-gate ATM/CNS provision costs and the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between ATC capacity and costs[^economic-cost-effectiveness-1].
+The concept of economic cost-effectiveness, developed by the PRC, is defined as the sum of gate-to-gate ATM/CNS provision costs and the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between quality of service provided and costs[^economic-cost-effectiveness-1].
 
-[^economic-cost-effectiveness-1]: See [https://ansperformance.eu/economics/ace/ace-handbook/](https://ansperformance.eu/economics/ace/ace-handbook/) for more information on the methodology used to compute composite flight-hours and economic costs.
+[^economic-cost-effectiveness-1]: See <https://ansperformance.eu/economics/ace/ace-handbook/> for more information on the methodology used to compute composite flight-hours and economic costs.
 
-@fig-figure-3-1 shows [preliminary results]{.underline} on the changes in economic cost-effectiveness over {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} at Pan-European system level. @fig-figure-3-1-left shows the changes in unit economic costs, while @fig-figure-3-1-right provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays. Unit economic costs significantly reduced in {{< var doc.year_report >}} (-20.7%). This reduction results from the combination of a decrease in ATM/CNS provision costs per composite flight-hour (-34.3%) and a large increase in the unit cost of ATFM delays (+324.6%).
+@fig-figure-3-1 shows [preliminary results]{.underline} on the changes in economic cost-effectiveness over {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} at Pan-European system level. @fig-figure-3-1-left shows the changes in unit economic costs, while @fig-figure-3-1-right provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays. Unit economic costs significantly reduced in {{< var doc.year_report >}} (-21.0%). This reduction results from the combination of a decrease in ATM/CNS provision costs per composite flight-hour (-34.7%) and a large increase in the unit cost of ATFM delays (+325.3%). Despite this large increase, 2022 unit costs remain +5.0% higher than in 2019.
 
-In 2022, ATFM delays increased by a factor of almost seven to reach a level of 19.3M minutes. As a result, the share of ATFM delays in the 2022 unit economic costs amounts to 20%. This is close to the level reached in 2019, which was a year marked by significant capacity issues in several ANSPs.
+In 2022, ATFM delays increased almost six-fold to some 19.3M minutes. As a result, the share of ATFM delays in the 2022 unit economic costs amounts to 20%. This is close to the level reached in 2019, which was a year marked by significant capacity issues in several ANSPs.
 
 ::: {.content-visible when-format="html"}
-:::: {#fig-figure-3-1 layout-ncol="2"}
-::::: {#fig-figure-3-1-left}
+::: {#fig-figure-3-1 layout-ncol="2"}
+::: {#fig-figure-3-1-left}
 ```{r}
 #| file: R/hlsr_evo_eco_ce.R
 #| out.height: "300px"
@@ -24,9 +25,9 @@ In 2022, ATFM delays increased by a factor of almost seven to reach a level of 1
 ```
 
  
-:::::
+:::
 
-::::: {#fig-figure-3-1-right}
+::: {#fig-figure-3-1-right}
 ```{r}
 #| file: R/hlsr_evo_eco_ce_comp.R
 #| out.height: "300px"
@@ -34,51 +35,51 @@ In 2022, ATFM delays increased by a factor of almost seven to reach a level of 1
 ```
 
  
-:::::
+:::
 
 Trend of unit economic costs at Pan-European system level, {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} (real terms)
-
-::::
+:::
 :::
 
 ::: {.content-visible when-format="pdf"}
-:::: {#fig-figure-3-1 layout-ncol="2" fig-pos='h'}
-::::: {#fig-figure-3-1-left fig-pos='h'}
+::: {layout-ncol="2" fig-pos="h"}
+::: {fig-pos="h"}
 ![](figures/figure-3-1-1-hlsr_evo_eco_ce.png)
 
  
-:::::
+:::
 
-::::: {#fig-figure-3-1-right fig-pos='h'}
+::: {fig-pos="h"}
 ![](figures/figure-3-1-2-hlsr_evo_eco_ce_comp.png)
 
  
-:::::
-
-Trend of unit economic costs at Pan-European system level, {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} (real terms)
-
-::::
 :::
 
-@fig-figure-3-2 shows [preliminary results]{.underline} at ANSP level (dotted lines represent the 1st and 3rd quartiles, €`r q1_3_2` and €`r q3_3_2`, respectively). 
+Trend of unit economic costs at Pan-European system level, {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} (real terms)
+:::
+:::
 
-::: {#fig-figure-3-2 fig-pos='h'}
-:::: {.content-visible when-format="html"}
+@fig-figure-3-2 shows [preliminary results]{.underline} at ANSP level (dotted lines represent the 1st and 3rd quartiles, €`r q1_3_2` and €`r q3_3_2`, respectively).
+
+::: {#fig-figure-3-2 fig-pos="h"}
+::: {.content-visible when-format="html"}
 ```{r}
 #| file: R/hlsr_eco_ce.R
 #| out.height: "490px"
 #| out.width: "100%"
 ```
-::::
-
-:::: {.content-visible when-format="pdf"}
-![](figures/figure-3-2-hlsr_eco_ce.png)
-::::
-
-Economic gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
-<!-- to avoid figure in the middle of the page -->
-
 :::
+
+::: {.content-visible when-format="pdf"}
+![](figures/figure-3-2-hlsr_eco_ce.png)
+:::
+
+Economic gate-to-gate cost-effectiveness, {{< var doc.year_report >}} <!-- to avoid figure in the middle of the page -->
+:::
+
 \vspace{14cm}
 
-For ten ANSPs the unit cost of ATFM delays represented more than 20% of their unit economic costs. ANSPs generating the highest levels of ATFM delays in 2022 were DFS, DSNA, ENAIRE, NAV Portugal and NATS. For some of these ANSPs, work associated with the implementation of new ATM systems caused a temporary reduction of the available capacity and as a consequence contributed to increase ATFM delays (this was for example the case for DSNA and NAV Portugal). Other ANSPs, such as PANSA, were also affected by military activities due to the war in Ukraine.
+For ten ANSPs ATFM delays represented more than 20% of their unit economic costs (see ANSPs with the largest red and lime portions, e.g. ANS CR, DFS, SMATSA, HungaroControl, etc.).  In absolute terms (cumulative ATFM delays in minutes), DFS, DSNA, ENAIRE, NAV Portugal and NATS were the ANSPs generating the highest levels of ATFM delays in 2022 (70% of the pan-European system total ATFM delays). For some of these ANSPs, work associated with the implementation of new ATM systems caused a temporary reduction of the available capacity and as a consequence contributed to increase ATFM delays (this was for example the case for DSNA and NAV Portugal). Other ANSPs, for example PANSA, were affected by airspace closure due to extended monitoring activities performed by the military at the border with Ukraine, due to the ongoing war therein. 
+
+Further analysis of the relationship between changes in ANSPs costs, traffic and unit costs will be analysed in detail in the forthcoming ACE report.
+
