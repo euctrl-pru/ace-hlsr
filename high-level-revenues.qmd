@@ -185,11 +185,14 @@ Changes in ATM/CNS provision costs (real terms)
 
 ::: {.content-visible when-format="pdf"}
 <!-- this is latex https://tex.stackexchange.com/questions/24186/how-to-center-text-without-adding-space-and-not-altering-alignment-of-surroundin-->
+\hfill\break
 \begin{tightcenter}
 \underline{Trends in ATM/CNS provision costs at Pan-European system level}
 \end{tightcenter}
 
-![](figures/figure-2-5-1-hlsr_evo_cost.png){height="90%" width="90%"}
+:::: {#fig-figure-2-5-2}
+\centering
+![](figures/figure-2-5-1-hlsr_evo_cost.png){height="85%" width="85%"}
 
 ```{r combine_fig2-5-2}
 library(magick)
@@ -203,9 +206,8 @@ invisible(figure2 <- image_read(paste0(fig_dir,image2_name)))
 image_write(image_append(c(figure1,figure2)), paste0(fig_dir, "figure-2-5-23.png"))
 ```
 
-:::: {#fig-figure-2-5-2}
-\centering
-![](figures/figure-2-5-23.png){height="80%" width="80%"}
+
+![](figures/figure-2-5-23.png){height="85%" width="85%"}
 
 Changes in ATM/CNS provision costs (real terms)
 ::::
@@ -214,6 +216,7 @@ Changes in ATM/CNS provision costs (real terms)
 {{< pagebreak >}}
 
 The Pan-European ANSPs employed a total of 52 843 staff in 2022 (comprising 52 026 staff providing ATM/CNS services and 817 internal MET staff). Some 17 335 staff (33%) were ATCOs working on operational duties, split between ACCs (54%) and APP/TWR facilities (46%). On average, 2.0 additional staff are required for every ATCO in OPS in Europe.
+
 
 ::: {#fig-figure-2-6}
 :::: {.content-visible when-format="html"}

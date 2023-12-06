@@ -26,7 +26,7 @@ Comparing with pre-pandemic levels, in 2022 unit ATM/CNS provision costs remain 
 ::::
 
 :::: {.content-visible when-format="pdf"}
-![](figures/figure-4-1-hlsr_evo_unit_cost.png){height=85% width=85%}
+![](figures/figure-4-1-hlsr_evo_unit_cost.png){height=75% width=75%}
 ::::
 
 Changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus5 >}} -- {{< var doc.year_report >}} (real terms)
@@ -70,6 +70,7 @@ c\) support costs per unit output (€322).
 Financial gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 :::
 
+\hfill\break
 @fig-figure-4-5 presents the ATCO-hour productivity indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (`r q1_4_5` and `r q3_4_5`, respectively). 
 
 ::: {#fig-figure-4-5 fig-pos='h'}
@@ -108,6 +109,7 @@ ATCO-hour productivity, {{< var doc.year_report >}}
 Employment costs per ATCO-hour, {{< var doc.year_report >}}
 :::
 
+\hfill\break
 @fig-figure-4-7 presents the support costs per composite flight-hour indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_7` and €`r q3_4_7`, respectively).
 
 ::: {#fig-figure-4-7 fig-pos='h'}

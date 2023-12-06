@@ -130,7 +130,7 @@ plot_all <- function(myfont, mywidth, myheight){
              yaxis = "y1",
              mode = 'text',
              text = ~ LABELS,
-             textfont = list(color = 'black', size = if_else(myfont == 8, 8, myfont-4)),
+             textfont = list(color = 'black', size = if_else(myfont == 8, 8, myfont-6)),
              # textangle = 0,
              name = '',
              textposition = "top center", cliponaxis = FALSE,
@@ -331,7 +331,7 @@ ticktexts2 <- c(0,format(ticklabels2[-1], big.mark = " "))
 fig <- function(myfont, mywidth, myheight, vlegend, vdomain, myvposition){
   subplot(plot_all(myfont, mywidth, myheight), plot_inset(myfont+1)) %>% 
   layout( autosize = T, 
-          uniformtext = list(minsize=myfont, mode='show'), #this is important so it does not autofit fonts
+          uniformtext = list(minsize=if_else(myfont == 8, 8, myfont-6), mode='show'), #this is important so it does not autofit fonts
           bargap = 0.45,
           barmode = 'stack',
           title = list(text = "", font = list(color = "black", size = 14)),
@@ -399,7 +399,8 @@ fig(8, NULL, NULL, -0.85, 0.92, 1.08)
 fig_dir <- 'figures/'
 fig_name <- "figure-3-2-hlsr_eco_ce.png"
 
-invisible(export(fig(22, 2000, 1000, -0.55, 0.96, 1.05), paste0(fig_dir, fig_name)))
+# fig <- function(myfont, mywidth, myheight, vlegend, vdomain, myvposition)
+invisible(export(fig(22, 1700, 1000, -0.55, 0.88, 1.05), paste0(fig_dir, fig_name)))
 invisible(figure <- image_read(paste0(fig_dir,fig_name)))
 invisible(cropped <- image_crop(figure, "0x1000"))
 invisible(image_write(cropped, paste0(fig_dir, fig_name)))

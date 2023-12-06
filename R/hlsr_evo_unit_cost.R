@@ -19,11 +19,11 @@ ace_graph_data <- read_xlsx(
   mutate_all(as.numeric)%>%
   rename(year_data=1)
 
-plot_ACE <- function(mywidth) {
+p <- function(myfont, mywidth, myheight) {
   ace_graph_data %>%
   plot_ly(
     width = mywidth,
-    height = 330,
+    height = myheight,
     x = ~ year_data,
     y = ~ costs_per_cph,
     yaxis = "y1",
@@ -32,7 +32,7 @@ plot_ACE <- function(mywidth) {
     textangle = -90,
     textposition = "inside",
     insidetextanchor =  "start",
-    textfont = list(color = '#FFFFFF', size = 13),
+    textfont = list(color = '#FFFFFF', size = myfont + 1),
     type = "bar",
     hoverinfo = "none",
     showlegend = F
@@ -45,7 +45,7 @@ plot_ACE <- function(mywidth) {
     # colors = c('#4F81BD'),
     mode = 'text',
     text = paste0("<b>",if_else(ace_graph_data$costs_per_cph_change_perc >0, "+", ""),format(round(ace_graph_data$costs_per_cph_change_perc*100,1), 1), "%","</b>"),
-    textfont = list(color = 'black', size = 12),
+    textfont = list(color = 'black', size = myfont),
     type = 'scatter',  mode = 'lines',
     hoverinfo = "none",
     showlegend = F
@@ -79,6 +79,7 @@ plot_ACE <- function(mywidth) {
     xaxis = list(
       title = "",
       fixedrange = TRUE,
+      tickfont = list(size = myfont),
       # automargin = T,
       # tickvals = 2014:2019,
       autotick = F,
@@ -87,8 +88,9 @@ plot_ACE <- function(mywidth) {
     
     yaxis = list(
       title = paste("\U20AC","per composite flight-hour"),
-      titlefont   = list(size = 13),
+      titlefont   = list(size = myfont + 1),
       fixedrange = TRUE,
+      tickfont = list(size = myfont),
       # tickformat=",.0%", ticks = 'outside',
       zeroline = T, showline = F, showgrid = T
     ),
@@ -96,25 +98,31 @@ plot_ACE <- function(mywidth) {
       overlaying = "y",
       side = "right",
       title = paste ("Index of costs and traffic", "<br>","(", min(ace_graph_data$year_data), " = 100)",sep = ""),
-      titlefont = list(size = 13),
+      titlefont = list(size = myfont +1 ),
+      tickfont = list(size = myfont),
       range = list(20, 10+round(max(ace_graph_data$index_costs, ace_graph_data$index_cph)/10)*10),
       automargin = T,
       showgrid = F
     ),
     bargap = 0.4,
-    legend = list(orientation = 'h', xanchor = "left", x = -0.05, y = -0.12),
+    legend = list(orientation = 'h', 
+                  font = list(size = myfont),
+                  xanchor = "left", 
+                  x = -0.05, 
+                  y = -0.12),
     # hovermode = "x unified",
-    uniformtext=list(minsize=10, mode='show')
+    uniformtext=list(minsize=myfont, mode='show')
   ) %>%
   config(displaylogo = FALSE, modeBarButtons = list(list("toImage"))
   )
 }
 
-plot_ACE(NULL)
+p(12, NULL, 330)
 
 fig_dir <- 'figures/'
+fig_name <- "figure-4-1-hlsr_evo_unit_cost.png"
 
-invisible(export(plot_ACE(500), paste0(fig_dir,"figure-4-1-hlsr_evo_unit_cost.png")))
-invisible(figure <- image_read(paste0(fig_dir,"figure-4-1-hlsr_evo_unit_cost.png")))
-invisible(cropped <- image_crop(figure, "500x330"))
-invisible(image_write(cropped, paste0(fig_dir,"figure-4-1-hlsr_evo_unit_cost.png")))
+invisible(export(p(24, 1000, 660), paste0(fig_dir,fig_name)))
+invisible(figure <- image_read(paste0(fig_dir,fig_name)))
+invisible(cropped <- image_crop(figure, "1000x660"))
+invisible(image_write(cropped, paste0(fig_dir,fig_name)))

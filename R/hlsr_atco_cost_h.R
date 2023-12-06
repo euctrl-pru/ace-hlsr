@@ -288,7 +288,7 @@ fig(8, NULL, 450)
 fig_dir <- 'figures/'
 fig_name <- "figure-4-6-hlsr_atco_cost_h.png"
 
-invisible(export(fig(22, 2000, 900), paste0(fig_dir, fig_name)))
+invisible(export(fig(22, 1700, 900), paste0(fig_dir, fig_name)))
 invisible(figure <- image_read(paste0(fig_dir,fig_name)))
 invisible(cropped <- image_crop(figure, "0x900"))
 invisible(image_write(cropped, paste0(fig_dir, fig_name)))
