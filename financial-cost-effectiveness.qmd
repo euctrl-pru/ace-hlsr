@@ -47,9 +47,9 @@ c\) support costs per unit output (€319).
 
 ![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3 height="98%" width="98%"}
 
-As the values of the 2021 indicators were significantly affected by the consequences of the COVID-19 crisis, @fig-figure-4-4 below provides an additional analysis using 2019 as a reference year. It shows that in 2022 the traffic was still well below its 2019 level and, despite a reduction in total support costs, the unit support costs were higher than in 2019. A similar situation is observed on the ATCO employment costs side where the reduction in employment costs per ATCO-hour was not sufficient to compensate for the decrease in ATCO-hour productivity. Overall, the unit cost in 2022 was then +8.7% higher than in 2019.
+As the values of the 2021 indicators were significantly affected by the consequences of the COVID-19 crisis, @fig-figure-4-3-2 below provides an additional analysis using 2019 as a reference year. It shows that in 2022 the traffic was still well below its 2019 level and, despite a reduction in total support costs, the unit support costs were higher than in 2019. A similar situation is observed on the ATCO employment costs side where the reduction in employment costs per ATCO-hour was not sufficient to compensate for the decrease in ATCO-hour productivity. Overall, the unit cost in 2022 was then +8.7% higher than in 2019.
 
-![Breakdown of changes in unit ATM/CNS provision costs, 2019 -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-4.png){#fig-figure-4-4 height="98%" width="98%"}
+![Breakdown of changes in unit ATM/CNS provision costs, 2019 -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-4.png){#fig-figure-4-3-2 height="98%" width="98%"}
 
 {{< pagebreak >}}
 
