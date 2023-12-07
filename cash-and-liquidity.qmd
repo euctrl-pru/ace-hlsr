@@ -8,7 +8,7 @@ Depending on the organisational set up of different ANSPs, the information repor
 
 ::: {#fig-figure-5-1}
 :::: {.content-visible when-format="html"}
-```{r}
+```{r current-ratio}
 #| file: R/hlsr_current_ratio.R
 #| out.height: "400px"
 #| out.width: "100%"
@@ -30,7 +30,7 @@ Changes in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.
 
 ::: {#fig-figure-5-2}
 :::: {.content-visible when-format="html"}
-```{r}
+```{r cash-on-hand}
 #| file: R/hlsr_cash_on_hand.R
 #| out.height: "400px"
 #| out.width: "100%"
