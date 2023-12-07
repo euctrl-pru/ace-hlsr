@@ -43,13 +43,19 @@ c\) support costs per unit output (€319).
 
 ![ACE performance framework, {{< var doc.year_report >}} (real terms)](figures/Figure-4-2.png){#fig-figure-4-2 height="98%" width="98%"}
 
-@fig-figure-4-3 shows that in {{< var doc.year_report >}}, ATCO employment costs per ATCO-hour fell by -2.9% while ATCO-hour productivity rose by +45.7%. As a result, ATCO employment costs per composite flight-hour decreased (-33.4%). In the meantime, unit support costs fell by -34.7% due to the combination of an increase in composite flight-hours (+58.5%) and an increase in support costs (+3.5%). As a result, in {{< var doc.year_report >}}, unit ATM/CNS provision costs fell by -34.3% at Pan-European system level.
+@fig-figure-4-3 shows that in {{< var doc.year_report >}}, ATCO employment costs per ATCO-hour fell by -2.3% while ATCO-hour productivity rose by +46.9%. As a result, ATCO employment costs per composite flight-hour decreased (-33.5%). In the meantime, unit support costs fell by -35.2% due to the combination of an increase in composite flight-hours (+58.3%) and an increase in support costs (+2.6%). As a result, in {{< var doc.year_report >}}, unit ATM/CNS provision costs fell by -34.7% at Pan-European system level.
 
 ![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3 height="98%" width="98%"}
+
+As the values of the 2021 indicators were significantly affected by the consequences of the COVID-19 crisis, @fig-figure-4-4 below provides an additional analysis using 2019 as a reference year. It shows that in 2022 the traffic was still well below its 2019 level and, despite a reduction in total support costs, the unit support costs were higher than in 2019. A similar situation is observed on the ATCO employment costs side where the reduction in employment costs per ATCO-hour was not sufficient to compensate for the decrease in ATCO-hour productivity. Overall, the unit cost in 2022 was then +8.7% higher than in 2019.
+
+![Breakdown of changes in unit ATM/CNS provision costs, 2019 -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-4.png){#fig-figure-4-4 height="98%" width="98%"}
 
 {{< pagebreak >}}
 
 ## ANSP level {#sec-fin_2}
+
+All figures presented in this section present the preliminary benchmarking results for the 38 ANSPs. Because of their weight in the Pan-European system and their relatively similar operational and economic characteristics, the five largest ANSPs (DFS, DSNA, ENAIRE, ENAV and NATS) are also shown in a miniature replica of the chart (top right corner of the figures). The 1st and 3rd quartiles for each indicator are also shown in all figures. The gap between these two quartiles provides additional insight on the dispersion of the values.
 
 @fig-figure-4-4 presents the financial gate-to-gate cost-effectiveness indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_4` and €`r q3_4_4`, respectively).
 
