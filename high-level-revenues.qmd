@@ -128,7 +128,7 @@ The ACE benchmarking analysis focuses on the specific costs of providing gate-to
 Gate-to-gate ATM/CNS provision costs at Pan-European system level, {{< var doc.year_report >}}
 :::
 
-```{r conditional-latex-}
+```{r conditional-latex-2}
 if (knitr::is_html_output()) {
   mylayout = '"[0.35, 0.65]"'
   mystring = ''
@@ -202,8 +202,6 @@ Changes in ATM/CNS provision costs (real terms)
 \underline{Trends in ATM/CNS provision costs at Pan-European system level}
 \end{tightcenter}
 
-:::: {#fig-figure-2-5-2}
-\centering
 ![](figures/figure-2-5-1-hlsr_evo_cost.png){height="85%" width="85%"}
 
 ```{r combine_fig2-5-2}
@@ -218,20 +216,22 @@ invisible(figure2 <- image_read(paste0(fig_dir,image2_name)))
 image_write(image_append(c(figure1,figure2)), paste0(fig_dir, "figure-2-5-23.png"))
 ```
 
-![](figures/figure-2-5-23.png){height="85%" width="85%"}
+{{< pagebreak >}}
+
+:::: {#fig-figure-2-5-2}
+\centering
+![](figures/figure-2-5-23.png){height="79%" width="79%"}
 
 Changes in ATM/CNS provision costs (real terms)
 ::::
 :::
-
-{{< pagebreak >}}
 
 The Pan-European ANSPs employed a total of 52 497 staff in 2022 (comprising 51 680 staff providing ATM/CNS services and 817 internal MET staff). Some 17 142 staff (33%) were ATCOs working on operational duties, split between ACCs (55%) and APP/TWR facilities (45%). On average, 2.0 additional staff are required for every ATCO in OPS in Europe.
 
 
 ::: {#fig-figure-2-6}
 :::: {.content-visible when-format="html"}
-```{r}
+```{r fig-staff-pie}
 #| file: R/hlsr_staff_pie.R
 #| out.width: "100%"
 #| out.height: "300px"
@@ -239,11 +239,13 @@ The Pan-European ANSPs employed a total of 52 497 staff in 2022 (comprising 51 6
 ::::
 
 :::: {.content-visible when-format="pdf"}
-![](figures/figure-2-6-hlsr_staff_pie.png){height="100%" width="100%"}
+![](figures/figure-2-6-hlsr_staff_pie.png){height="93%" width="93%"}
 ::::
 
 Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, {{< var doc.year_report >}}
 :::
+
+{{< pagebreak >}}
 
 In {{< var doc.year_report >}}, the number of ATM/CNS staff was slightly lower than in 2021 (-0.9% or -473 FTEs).
 
@@ -277,6 +279,7 @@ Total gate-to-gate ATM/CNS staff per staff category
 
 ::: {.content-visible when-format="pdf"}
 \begin{tightcenter}
+\hfill\break
 \underline{Trends in gate-to-gate ATM/CNS staff at Pan-European system level}
 \end{tightcenter}
 
@@ -302,8 +305,6 @@ image_write(image_append(c(figure1,figure2)), paste0(fig_dir, "figure-2-7-23.png
 Total gate-to-gate ATM/CNS staff per staff category
 ::::
 :::
-
-{{< pagebreak >}}
 
 The overall change in staff numbers observed for {{< var doc.year_report >}} mainly reflects changes in the following staff categories:
 
