@@ -26,7 +26,7 @@ The data used in this document reflects the information stored in the ACE databa
 
 ::: {#fig-figure-1-2}
 ::: {.content-visible when-format="html"}
-```{r}
+```{r figure1-2}
 #| file: R/hlsr_ansp_status_gt.R
 ```
 :::
@@ -45,8 +45,6 @@ The data used in this document reflects the information stored in the ACE databa
 
 Status of {{< var doc.year_report >}} data validation process
 :::
-
-{{< pagebreak >}}
 
 The data contained in this report is therefore subject to changes before the release of the final ACE {{< var doc.year_report >}} benchmarking report in May {{< var doc.year_report_plus2 >}}.
 
