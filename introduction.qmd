@@ -22,7 +22,7 @@ Seventeen out of 38 ANSPs submitted their ACE {{< var doc.year_report >}} data o
 
 It should be noted that the data presented in this document are still [preliminary and not yet fully validated]{.underline}. Indeed, the data submission milestone is just the first step of a process which comprises a thorough verification and analysis of individual ANSP submissions. This validation exercise also includes a formal round of exchange between the PRU and each ANSP in order to ensure a common understanding of the data submitted by the ANSP.
 
-The data used in this document reflects the information stored in the ACE database on the 5th November {{< var doc.year_report_plus1 >}}. @fig-figure-1-2 shows the status of the ACE data validation process for the data presented in this document.
+The data used in this document reflects the information stored in the ACE database on the 5th December {{< var doc.year_report_plus1 >}}. @fig-figure-1-2 shows the status of the ACE data validation process for the data presented in this document.
 
 ::: {#fig-figure-1-2}
 ::: {.content-visible when-format="html"}
