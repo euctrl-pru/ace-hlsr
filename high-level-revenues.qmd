@@ -98,7 +98,7 @@ if (knitr::is_latex_output()) {
 
 {{< pagebreak >}}
 
-At ANSP level, a wide range of recovery rates is observed, ranging from -51% to +14% (see @fig-Traffic_map). The war in Ukraine also resulted in airspace closures and reciprocal sanctions on air carriers which impacted traffic flows in Europe. This inevitably impacts the levels and trends of ACE indicators for the ANSPs being most affected by the changes in traffic patterns.
+At ANSP level, a wide range of recovery rates is observed (from -51% to +14%, see @fig-Traffic_map). The war in Ukraine also resulted in airspace closures and reciprocal sanctions on air carriers which impacted traffic flows in Europe. This inevitably impacts the levels and trends of ACE indicators for the ANSPs being most affected by the changes in traffic patterns.
 
 ::: {#fig-Traffic_map}
 ![](figures/Traffic_map.png)
@@ -146,7 +146,7 @@ if (knitr::is_html_output()) {
 ::::: {#firstcol}
 <!-- took this trick from here https://github.com/quarto-dev/quarto-cli/discussions/1534 -->
 
-\justifying \noindent `r mystring` After two years of consecutive decreases, total ATM/CNS provision costs rose by +3.4% (+€296.8M) in 2022, reflecting cost increases for 26 out of 38 ANSPs. Non-staff operating costs (+€118.8M) and the cost of capital (+€115.7M) were the main sources of increase in 2022.
+\justifying \noindent `r mystring` After two years of consecutive decreases, total ATM/CNS provision costs rose by +3.4% (+€296.8M) in 2022, reflecting cost increases for 26 out of 38 ANSPs. Non-staff operating costs (+€118.8M) and the cost of capital (+€115.7M) were the main sources of increase in 2022. The observed trend in the cost of capital is heavily affected by a very large increase for DHMI.
 :::::
 
 ::::: {#secondcol}
@@ -157,9 +157,6 @@ if (knitr::is_html_output()) {
 :::: 
 :::
 
-::: blue
-For non-staff operating costs, this mainly reflects the fact that 2021 ANSPs cost-bases were affected by the temporary measures implemented in response to the COVID-19 crisis (e.g. short time work, furlough schemes, reduced remuneration, postponement of non-essential activities, etc.). <br><br> The observed trend in the cost of capital is heavily affected by a very large increase for DHMI.
-:::
 
 `r myboxclose`
 

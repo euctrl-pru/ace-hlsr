@@ -13,7 +13,7 @@ The concept of economic cost-effectiveness, developed by the PRC, is defined as 
 
 @fig-figure-3-1 shows [preliminary results]{.underline} on the changes in economic cost-effectiveness over {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} at Pan-European system level. @fig-figure-3-1-left shows the changes in unit economic costs, while @fig-figure-3-1-right provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays. Unit economic costs significantly reduced in {{< var doc.year_report >}} (-21.0%). This reduction results from the combination of a decrease in ATM/CNS provision costs per composite flight-hour (-34.7%) and a large increase in the unit cost of ATFM delays (+325.3%). Despite this large increase, 2022 unit costs remain +5.0% higher than in 2019.
 
-In 2022, ATFM delays increased almost six-fold to some 19.3M minutes. As a result, the share of ATFM delays in the 2022 unit economic costs amounts to 20%. This is close to the level reached in 2019, which was a year marked by significant capacity issues in several ANSPs.
+In 2022, ATFM delays increased almost six-fold to some 19.3M minutes. As a result, the share of ATFM delays in the 2022 unit economic costs amounts to 20%. This is close to the level reached in 2019, which was a year marked by significant capacity issues for several ANSPs.
 
 ::: {.content-visible when-format="html"}
 :::: {#fig-figure-3-1 layout-ncol="2"}
