@@ -245,9 +245,9 @@ The Pan-European ANSPs employed a total of 52 497 staff in 2022 (comprising 51 6
 Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, {{< var doc.year_report >}}
 :::
 
-{{< pagebreak >}}
-
 In {{< var doc.year_report >}}, the number of ATM/CNS staff was slightly lower than in 2021 (-0.9% or -473 FTEs).
+
+{{< pagebreak >}}
 
 ::: {.content-visible when-format="html"}
 :::: centeredtitle

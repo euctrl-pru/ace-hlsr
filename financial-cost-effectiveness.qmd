@@ -41,7 +41,7 @@ c\) support costs per unit output (€319).
 
 {{< pagebreak >}}
 
-![ACE performance framework, {{< var doc.year_report >}} (real terms)](figures/Figure-4-2.png){#fig-figure-4-2 height="98%" width="98%"}
+![ACE performance framework, {{< var doc.year_report >}} (real terms)](figures/Figure-4-2.png){#fig-figure-4-2 height="88%" width="88%"}
 
 @fig-figure-4-3 shows that in {{< var doc.year_report >}}, ATCO employment costs per ATCO-hour fell by -2.3% while ATCO-hour productivity rose by +46.9%. As a result, ATCO employment costs per composite flight-hour decreased (-33.5%). In the meantime, unit support costs fell by -35.2% due to the combination of an increase in composite flight-hours (+58.3%) and an increase in support costs (+2.6%). As a result, in {{< var doc.year_report >}}, unit ATM/CNS provision costs fell by -34.7% at Pan-European system level.
 
@@ -59,6 +59,8 @@ All figures presented in this section present the preliminary benchmarking resul
 
 @fig-figure-4-4 presents the financial gate-to-gate cost-effectiveness indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_4` and €`r q3_4_4`, respectively).
 
+\hfill\break
+
 ::: {#fig-figure-4-4 fig-pos="h"}
 ::: {.content-visible when-format="html"}
 ```{r}
@@ -75,9 +77,11 @@ All figures presented in this section present the preliminary benchmarking resul
 Financial gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 :::
 
-\hfill\break
+{{< pagebreak >}}
 
 @fig-figure-4-5 presents the ATCO-hour productivity indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (`r q1_4_5` and `r q3_4_5`, respectively).
+
+\hfill\break
 
 ::: {#fig-figure-4-5 fig-pos="h"}
 ::: {.content-visible when-format="html"}
@@ -95,9 +99,10 @@ Financial gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 ATCO-hour productivity, {{< var doc.year_report >}}
 :::
 
-{{< pagebreak >}}
 
 @fig-figure-4-6 presents the employment costs per ATCO in OPS indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_6` and €`r q3_4_6`, respectively).
+
+\hfill\break
 
 ::: {#fig-figure-4-6 fig-pos="h"}
 ::: {.content-visible when-format="html"}
@@ -115,9 +120,11 @@ ATCO-hour productivity, {{< var doc.year_report >}}
 Employment costs per ATCO-hour, {{< var doc.year_report >}}
 :::
 
-\hfill\break
+{{< pagebreak >}}
 
 @fig-figure-4-7 presents the support costs per composite flight-hour indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_7` and €`r q3_4_7`, respectively).
+
+\hfill\break
 
 ::: {#fig-figure-4-7 fig-pos="h"}
 ::: {.content-visible when-format="html"}
