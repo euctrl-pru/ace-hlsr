@@ -4,6 +4,7 @@ library(stringr)
 library(readxl)
 library(plotly)
 library(here)
+library(magick)
 ## data source
 source(here("data_source.R"))
 

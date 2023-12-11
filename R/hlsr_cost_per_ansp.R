@@ -4,6 +4,7 @@ library(stringr)
 library(readxl)
 library(plotly)
 library(here)
+library(magick)
 ## data source
 source(here("data_source.R"))
 
@@ -19,7 +20,6 @@ data_raw <- read_xlsx(
 
 ## process data for plot
 data_plot <- data_raw %>% 
-  mutate_at("ANSP_NAME", ~ str_replace (.,'Continental', 'Cont.')) %>% 
   group_by(ANSP_NAME) %>% arrange(YEAR_DATA) %>% 
   mutate(YOY = COST/lag(COST)-1) %>% 
   filter(YEAR_DATA == max(YEAR_DATA)) %>% 
@@ -37,6 +37,9 @@ ansp  <- read_xlsx(
 
 data_plot = merge(x=data_plot, y=ansp, by="ANSP_NAME")
 
+data_plot <- data_plot %>% 
+  mutate_at("ANSP_NAME", ~ str_replace (.,'Continental', 'Cont.')) 
+  
 #calculate range for x axis and max year
 cost_max <- round((max(data_plot$COST/10^6)+500)/100,0)*100
 # perc_max <- max(abs(data_plot$YOY)) + 0.4
