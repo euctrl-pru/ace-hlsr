@@ -146,7 +146,7 @@ if (knitr::is_html_output()) {
 ::::: {#firstcol}
 <!-- took this trick from here https://github.com/quarto-dev/quarto-cli/discussions/1534 -->
 
-\justifying \noindent `r mystring` After two years of consecutive decreases, total ATM/CNS provision costs rose by +3.4% (+€296.8M) in 2022, reflecting cost increases for 26 out of 38 ANSPs. Non-staff operating costs (+€118.8M) and the cost of capital (+€115.7M) were the main sources of increase in 2022.
+\justifying \noindent `r mystring` After two years of consecutive decreases, total ATM/CNS provision costs rose by +3.4% (+€296.8M) in 2022, reflecting cost increases for 26 out of 38 ANSPs. Non-staff operating costs (+€118.8M) and the cost of capital (+€115.7M) were the main sources of increase in 2022. The observed trend in the cost of capital is heavily affected by a very large increase for DHMI.
 :::::
 
 ::::: {#secondcol}
@@ -157,9 +157,6 @@ if (knitr::is_html_output()) {
 :::: 
 :::
 
-::: blue
-The observed trend in the cost of capital is heavily affected by a very large increase for DHMI.
-:::
 
 `r myboxclose`
 
