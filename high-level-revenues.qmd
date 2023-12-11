@@ -158,7 +158,7 @@ if (knitr::is_html_output()) {
 :::
 
 ::: blue
-For non-staff operating costs, this mainly reflects the fact that 2021 ANSPs cost-bases were affected by the temporary measures implemented in response to the COVID-19 crisis (e.g. short time work, furlough schemes, reduced remuneration, postponement of non-essential activities, etc.). <br><br> The observed trend in the cost of capital is heavily affected by very large increases for DHMI, DFS and LFV.
+For non-staff operating costs, this mainly reflects the fact that 2021 ANSPs cost-bases were affected by the temporary measures implemented in response to the COVID-19 crisis (e.g. short time work, furlough schemes, reduced remuneration, postponement of non-essential activities, etc.). <br><br> The observed trend in the cost of capital is heavily affected by a very large increase for DHMI.
 :::
 
 `r myboxclose`
