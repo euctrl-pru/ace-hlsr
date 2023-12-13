@@ -53,8 +53,11 @@ data_calc <- data_merged %>%
 data_prep <- data_calc  %>% 
   mutate(LABELS = round(ECO_CE_EVO,3)
   ) %>% 
-  mutate(LABELS = if_else(ECO_CE_EVO >=0, paste0("+", LABELS*100,"%"), paste0(LABELS*100,"%"))
-  ) 
+  mutate(LABELS = if_else(ECO_CE_EVO >=0, paste0("+", format(LABELS*100, nsmall=1),"%"), paste0(format(LABELS*100, nsmall=1),"%"))
+  ) %>% 
+  mutate(LABELS = case_when(YEAR_DATA == min(YEAR_DATA) ~ "",
+                            .default = LABELS)
+         )        # JC made me remove the first label
 
 # calculate the joining lines
 # https://stackoverflow.com/questions/58825957/connect-bars-with-lines-in-r-plotly
