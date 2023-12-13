@@ -299,7 +299,7 @@ myannotations <- function(myfont, myvposition){
   yref = "paper",
   xanchor = "left",
   showarrow = FALSE,
-  font = list(color = "#993366",
+  font = list(color = "#E0584F",
               size=myfont)
 ),
 list(
@@ -314,7 +314,7 @@ list(
   yref = "paper",
   xanchor = "left",
   showarrow = FALSE,
-  font = list(color = "#8989FF",
+  font = list(color = "#78B4F0",
               size=myfont)
 )
 )
