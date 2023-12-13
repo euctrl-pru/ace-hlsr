@@ -311,4 +311,4 @@ The overall change in staff numbers observed for {{< var doc.year_report >}} mai
 
 To some extent, the changes observed for the ATCOs categories may reflect the fact that some ATCOs previously reported as "on other duties" following the traffic decrease in 2020 and the COVID-19 pandemic, are now re-allocated to OPS duties.
 
-Decreases are also observed for technical support staff for operational maintenance (-1.7%), OPS support staff (-2.0%), ab-initio trainees (-7.6%), ATC assistants (-3.1%), technical support staff for planning and development (-1.2%) an other staff (-0.2%). Conversely, the number of on-the job trainees (+8.9%) and staff for ancillary services (+2.2%) rose in 2022.
+Decreases are also observed for technical support staff for operational maintenance (-1.7%), OPS support staff (-2.0%), ab-initio trainees (-7.6%), ATC assistants (-3.1%), technical support staff for planning and development (-1.2%) and other staff (-0.2%). Conversely, the number of on-the job trainees (+8.9%) and staff for ancillary services (+2.2%) rose in 2022.
