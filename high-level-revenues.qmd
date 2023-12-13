@@ -75,7 +75,12 @@ if (knitr::is_latex_output()) {
 }
 ```
 
-`r mybox` ::: blue :::: {layout=`r mylayout`} ::::: {#firstcol} ![](figures/Figure-2-2-cfh.png) :::::
+`r mybox` 
+::: blue
+:::: {layout=`r mylayout`} 
+::::: {#firstcol} 
+![](figures/Figure-2-2-cfh.png) 
+:::::
 
 ::: {#secondcol}
 <!-- took this trick from here https://github.com/quarto-dev/quarto-cli/discussions/1534 -->
@@ -87,7 +92,9 @@ if (knitr::is_latex_output()) {
 ![](figures/Figure-2-2-rev.png)
 :::
 
-:::: ::: `r myboxclose`
+:::: 
+::: 
+`r myboxclose`
 
 {{< pagebreak >}}
 
@@ -132,21 +139,24 @@ if (knitr::is_html_output()) {
 }
 ```
 
-`r mybox` ::: blue :::: {layout=`r mylayout`}
+`r mybox`
+::: blue
+:::: {layout=`r mylayout`}
 
-::: {#firstcol}
+::::: {#firstcol}
 <!-- took this trick from here https://github.com/quarto-dev/quarto-cli/discussions/1534 -->
 
 \justifying \noindent `r mystring` After two years of consecutive decreases, total ATM/CNS provision costs rose by +3.4% (+€296.8M) in 2022, reflecting cost increases for 26 out of 38 ANSPs. Non-staff operating costs (+€118.8M) and the cost of capital (+€115.7M) were the main sources of increase in 2022. The observed trend in the cost of capital is heavily affected by a very large increase for DHMI.
-:::
+:::::
 
-<div>
+::::: {#secondcol}
 
 ![](figures/Figure-2-4.png)
 
-</div>
+:::::
 
-:::: :::
+:::: 
+:::
 
 `r myboxclose`
 
