@@ -228,7 +228,7 @@ The Pan-European ANSPs employed a total of 52 497 staff in 2022 (comprising 51 6
 
 ::: {#fig-figure-2-6}
 :::: {.content-visible when-format="html"}
-```{r fig-staff-pie}
+```{r}
 #| file: R/hlsr_staff_pie.R
 #| out.width: "100%"
 #| out.height: "300px"
