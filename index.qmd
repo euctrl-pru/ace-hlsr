@@ -2,7 +2,7 @@
 
 This document provides a first insight on the level of {{< var doc.year_report >}} cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the official release of the next ACE benchmarking report.
 
-This document is available for download as a [PDF version](https://www.eurocontrol.int/ACE/HighLevelSummary-Reports/HighLevelSummaryReport2022.pdf){target="_blank"}.
+This document is available for download as a [PDF version](https://www.eurocontrol.int/sites/default/files/2023-12/eurocontrol-summary-report-preliminary-ace-2022-data.pdf){target="_blank"}.
 
 ### IMPORTANT NOTICE {.unnumbered}
 
