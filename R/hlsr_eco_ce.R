@@ -3,23 +3,24 @@ library(dplyr)
 library(stringr)
 library(readxl)
 library(plotly)
-library(stringr)
 library(tidyr)
 library(here)
+library(webshot)
+library(magick)
 ## data source
 source(here("data_source.R"))
 
 # import data
 data_raw <- read_xlsx(
                       # paste0(data_folder, data_file),
-                        here("data","hlsr2021_data.xlsx"),
-                      sheet = "F_Eco CE",
+                    paste0(data_folder,data_file ),
+                    sheet = "F_Eco CE",
                       range = cell_limits(c(7, 1), c(NA, 3))) %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
   as_tibble() 
 
 data_raw_extra <-  read_xlsx(
                             # paste0(data_folder, data_file),
-                            here("data","hlsr2021_data.xlsx"),
+                            paste0(data_folder,data_file ),
                             sheet = "F_Eco CE",
                             range = cell_limits(c(7, 5), c(NA, 7))) %>%
   as_tibble() %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
@@ -27,18 +28,30 @@ data_raw_extra <-  read_xlsx(
 
 cost_delay <-  read_xlsx(
                         # paste0(data_folder, data_file),
-                        here("data","hlsr2021_data.xlsx"),
+                        paste0(data_folder,data_file ),
                         sheet = "F_Eco CE",
                         range = cell_limits(c(7, 10), c(8, 10))) %>%
   as_tibble() %>% pull()
 
 data_merged = merge(x=data_raw, y=data_raw_extra, by="ANSP_NAME")
 
+# import ANSP countries
+ansp  <- read_xlsx(
+  # paste0(data_folder, data_file),
+  paste0(data_folder, data_file),
+  sheet = "Status",
+  range = cell_limits(c(8, 1), c(NA, 3))) %>%
+  as_tibble() %>% 
+replace(is.na(.), 0) %>% 
+  select(-status)
+
+data_merged = merge(x=data_merged, y=ansp, by="ANSP_NAME")
+
 data_calc <- data_merged %>% 
   mutate(DELAY_ERT_CPH = TDM_ERT_ALL_REASON*cost_delay/COMPOSITE_FLIGHTHOUR,
          DELAY_ARP_CPH = TDM_ARP_ALL_REASON*cost_delay/COMPOSITE_FLIGHTHOUR,
          ECO_CE = FIN_CE+DELAY_ERT_CPH+DELAY_ARP_CPH) %>% 
-  select(ANSP_NAME, FIN_CE, DELAY_ERT_CPH, DELAY_ARP_CPH, ECO_CE)
+  select(ANSP_NAME, FIN_CE, DELAY_ERT_CPH, DELAY_ARP_CPH, ECO_CE, country)
 
 # prepare data for main plot
 data_prep <- data_calc  %>% 
@@ -54,11 +67,11 @@ data_plot <- data_prep %>%
   rename(`Financial gate-to-gate cost-effectiveness` = FIN_CE,
          `Unit cost of en-route ATFM delays` = DELAY_ERT_CPH,
          `Unit cost of airport ATFM delays` = DELAY_ARP_CPH) %>% 
-  pivot_longer(!c(ANSP_NAME, LABELS, QUART1, QUART3, ECO_CE), names_to = "TYPE", values_to = "VALUE" )
+  pivot_longer(!c(ANSP_NAME, LABELS, QUART1, QUART3, ECO_CE, country), names_to = "TYPE", values_to = "VALUE" )
 
 # help table for labels and additional traces
 data_help <- data_prep %>% 
-  select(ANSP_NAME, LABELS, QUART1, QUART3, ECO_CE)
+  select(ANSP_NAME, country, LABELS, QUART1, QUART3, ECO_CE)
 
 #prepare data for inset
 data_inset <- data_plot %>% 
@@ -85,8 +98,11 @@ sys_avg_ece <- data_merged %>%
 
 # plot
 
-plot_all <- data_plot %>%
+plot_all <- function(myfont, mywidth, myheight){
+  data_plot %>%
   plot_ly(
+    height = myheight,
+    width = mywidth,
     x = ~ ANSP_NAME,
     y = ~ VALUE,
     yaxis = "y1",
@@ -94,7 +110,7 @@ plot_all <- data_plot %>%
                                       "Unit cost of en-route ATFM delays",
                                       "Unit cost of airport ATFM delays")
     ),
-    colors = c('#9999FF', '#FF0000', '#EEE800'),
+    colors = c('#78B4F0', '#E0584F', '#E1F060'),
     # text = ~ LABELS,
     # text = ~ as.character(format(round(VALUE,0), big.mark = " ")),
     # textangle = -90,
@@ -102,25 +118,44 @@ plot_all <- data_plot %>%
     # insidetextanchor =  "start",
     # textfont = list(color = 'black', size = 7),
     type = "bar", 
-    hoverinfo = "none",
+    hovertemplate = paste('%{y:.0f}'),
+    # hoverinfo = "none",
     showlegend = T
   ) %>%
   add_trace( data = data_help,
              inherit = FALSE,
-             # marker = list(color =('transparent')),
+             marker = list(color =('transparent')),
              x = ~ ANSP_NAME,
              y = ~ ECO_CE,
              yaxis = "y1",
              mode = 'text',
              text = ~ LABELS,
-             textfont = list(color = 'black', size = 8),
+             textfont = list(color = 'black', size = if_else(myfont == 8, 8, myfont-6)),
              # textangle = 0,
+             name = '',
              textposition = "top center", cliponaxis = FALSE,
              type = 'scatter',  mode = 'lines',
+             # hovertemplate = paste('%{y:.0f}'),
              hoverinfo = "none",
              showlegend = F
   ) %>% 
-  add_trace(data = data_help,
+    add_trace( data = data_help,
+               inherit = FALSE,
+               marker = list(color =('transparent')),
+               x = ~ ANSP_NAME,
+               y = ~ ECO_CE,
+               yaxis = "y1",
+               mode = 'text',
+               text = ~ paste0(ANSP_NAME, " (", country, ")"),
+               textfont = list(color = 'transparent', size = 1),
+               # textangle = 0,
+               # textposition = "top center", cliponaxis = FALSE,
+               type = 'scatter',  mode = 'lines',
+               hovertemplate = paste('%{text} %{y:.0f}<extra></extra>'),
+               name = "",
+               showlegend = F
+    ) %>% 
+    add_trace(data = data_help,
             inherit = FALSE,
             x = ~ ANSP_NAME,
             y = ~ QUART1,
@@ -148,9 +183,11 @@ plot_all <- data_plot %>%
           displaylogo = FALSE,
           displayModeBar = F
           # modeBarButtons = list(list("toImage"))
-  )
-
-plot_inset <- data_inset %>%
+  ) 
+}
+  
+plot_inset <- function(myfont){
+  data_inset %>%
   plot_ly(
     x = ~ ANSP_NAME,
     y = ~ VALUE,
@@ -159,7 +196,7 @@ plot_inset <- data_inset %>%
                                       "Unit cost of en-route ATFM delays",
                                       "Unit cost of airport ATFM delays")
     ),
-    colors = c('#9999FF', '#FF0000', '#EEE800'),
+    colors = c('#78B4F0', '#E0584F', '#E1F060'),
     # marker = list(color =('#8989FF')),
     text = " ", # for some reason I need to keep this to avoid labels in prev plot to autosize
     # cliponaxis = FALSE,
@@ -168,21 +205,40 @@ plot_inset <- data_inset %>%
     # insidetextanchor =  "start",
     # textfont = list(color = 'black', size = 9),
     type = "bar",
-    hoverinfo = "none",
+    hovertemplate = paste('%{y:.0f}'),
+    # hoverinfo = "none",
     showlegend = F
   ) %>% 
-  add_trace(data = data_help_inset,
+    add_trace( data = data_help_inset,
+               inherit = FALSE,
+               marker = list(color =('transparent')),
+               x = ~ ANSP_NAME,
+               y = ~ ECO_CE,
+               yaxis = "y1",
+               mode = 'text',
+               text = ~ paste0(ANSP_NAME, " (", country, ")"),
+               textfont = list(color = 'transparent', size = 1),
+               # textangle = 0,
+               # textposition = "top center", cliponaxis = FALSE,
+               type = 'scatter',  mode = 'lines',
+               hovertemplate = paste('%{text} %{y:.0f}<extra></extra>'),
+               name = "",
+               showlegend = F
+    ) %>% 
+    add_trace(data = data_help_inset,
             inherit = FALSE,
-            # marker = list(color =('transparent')),
+            marker = list(color =('transparent')),
             x = ~ ANSP_NAME,
             y = ~ ECO_CE,
             yaxis = "y1",
             mode = 'text',
             text = ~ LABELS,
-            textfont = list(color = 'black', size = 10),
+            textfont = list(color = 'black', size = myfont + 1),
             # textangle = 0,
             textposition = "top center", cliponaxis = FALSE,
             type = 'scatter',  mode = 'lines',
+            name = '',
+            # hovertemplate = paste('%{y:.0f}'),
             hoverinfo = "none",
             showlegend = F
   ) %>% 
@@ -197,7 +253,7 @@ plot_inset <- data_inset %>%
                    xanchor = "center",
                    align = "right",
                    textangle = -90,
-                   font = list(color = 'black', size = 9)
+                   font = list(color = 'black', size = myfont)
   ) %>% 
   add_trace(data = data_help_inset,
             inherit = FALSE,
@@ -228,10 +284,12 @@ plot_inset <- data_inset %>%
          displayModeBar = F
          # modeBarButtons = list(list("toImage"))
   )
-
-myannotations <- list(list(
+}
+  
+myannotations <- function(myfont, myvposition){
+  list(list(
   x = 0.12,
-  y = 0.98,
+  y = myvposition,
   text = paste0("<b>", 
                 "European system avg. for economic cost-effectiveness: ", 
                 "\u20AC ",
@@ -241,12 +299,12 @@ myannotations <- list(list(
   yref = "paper",
   xanchor = "left",
   showarrow = FALSE,
-  font = list(color = "#993366",
-              size=10)
+  font = list(color = "#E0584F",
+              size=myfont)
 ),
 list(
   x = 0.12,
-  y = 0.93,
+  y = myvposition - 0.05,
   text = paste0("<b>", 
                 "European system avg. for financial cost-effectiveness: ", 
                 "\u20AC ",
@@ -256,11 +314,11 @@ list(
   yref = "paper",
   xanchor = "left",
   showarrow = FALSE,
-  font = list(color = "#8989FF",
-              size=10)
+  font = list(color = "#78B4F0",
+              size=myfont)
 )
 )
-
+}
 # this is ugly but it's the only way i found for space as thousand sep for the y axis
 # https://stackoverflow.com/questions/64024937/how-to-change-thousands-separator-for-blank-in-r-plotly
 
@@ -270,22 +328,25 @@ ticktexts1 <- c(0,format(ticklabels1[-1], big.mark = " "))
 ticklabels2 <- seq(from=0, to=round(max(data_inset$ECO_CE+200)), by=200)
 ticktexts2 <- c(0,format(ticklabels2[-1], big.mark = " "))
 
-fig <- subplot(plot_all, plot_inset) %>% 
+fig <- function(myfont, mywidth, myheight, vlegend, vdomain, myvposition){
+  subplot(plot_all(myfont, mywidth, myheight), plot_inset(myfont+1)) %>% 
   layout( autosize = T, 
-          uniformtext=list(minsize=8, mode='show'), #this is important so it does not autofit fonts
+          uniformtext = list(minsize=if_else(myfont == 8, 8, myfont-6), mode='show'), #this is important so it does not autofit fonts
           bargap = 0.45,
           barmode = 'stack',
           title = list(text = "", font = list(color = "black", size = 14)),
           font = list(family = "Helvetica"),
+          hovermode = "x unified",
+          hoverlabel=list(bgcolor="rgba(255,255,255,0.88)"),
           legend = list(orientation = 'h',
                         traceorder = 'reversed', #for some reason this does not work
-                        font = list(size = 10),
-                        y = -0.55,
+                        font = list(size = myfont+2),
+                        y = vlegend,
                         x = 0.0,
                         bgcolor = 'transparent'),
           xaxis = list(title = "",
-                       tickangle=270,
-                       tickfont = list(size=11),
+                       tickangle = 270,
+                       tickfont = list(size=myfont+3),
                        autotick = F,
                        # tick0=0.25,
                        fixedrange = TRUE,
@@ -293,18 +354,19 @@ fig <- subplot(plot_all, plot_inset) %>%
                        categoryorder = "total descending",
                        domain=c(0,1)),
           yaxis = list(title = paste("\U20AC","per composite flight-hour"),
-                       titlefont   = list(size = 12),
-                       tickfont = list(size=11),
+                       titlefont = list(size = myfont+4),
+                       tickfont = list(size = myfont+3),
                        # dtick = 200,
                        tickvals = ticklabels1,
                        ticktext = ticktexts1,
                        # automargin = FALSE,
                        # margin = list(l=100),
                        fixedrange = TRUE,
+                       hoverformat = '.0f',
                        linewidth=1, linecolor='transparent',  mirror = T,
                        # range = list(0, 200+round(max(data_plot$VALUE/1000), 1)*1000),
                        zeroline = T, showline = T, showgrid = F,
-                       domain=c(0,1)),
+                       domain=c(0,0.9)),
           xaxis2 = list(title = "",
                         showticklabels = FALSE,
                         # tickangle=270,
@@ -316,16 +378,29 @@ fig <- subplot(plot_all, plot_inset) %>%
                         domain=c(0.70,1)),
           yaxis2 = list(title = "",
                         # titlefont   = list(size = 13),
-                        tickfont = list(size=10),
+                        tickfont = list(size=myfont+2),
                         # dtick = 200,
                         tickvals = ticklabels2,
                         ticktext = ticktexts2,
+                        hoverformat = '.0f',
                         fixedrange = TRUE,
                         # range = list(0, 200+round(max(data_inset$VALUE/1000), 1)*1000),
                         zeroline = T, showline = F, showgrid = F,
-                        domain=c(0.50,1)),
-          annotations = myannotations
+                        domain=c(vdomain - 0.52,vdomain)),
+          annotations = myannotations(if_else(myfont <=10, myfont + 2, myfont + 8), myvposition)
   )
+}
 
-fig
+fig(8, NULL, NULL, -0.85, 0.92, 1.08)
 
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+fig_name <- "figure-3-2-hlsr_eco_ce.png"
+
+# fig <- function(myfont, mywidth, myheight, vlegend, vdomain, myvposition)
+invisible(export(fig(22, 1700, 1000, -0.55, 0.88, 1.05), paste0(fig_dir, fig_name)))
+invisible(figure <- image_read(paste0(fig_dir,fig_name)))
+invisible(cropped <- image_crop(figure, "0x1000"))
+invisible(image_write(cropped, paste0(fig_dir, fig_name)))

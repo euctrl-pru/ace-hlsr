@@ -4,13 +4,15 @@ library(stringr)
 library(readxl)
 library(plotly)
 library(here)
+library(webshot)
+library(magick)
 ## data source
 source(here("data_source.R"))
 
 ## import data
 data_raw  <-  read_xlsx(
-                        # paste0(data_folder, data_file),
-                        here("data","hlsr2021_data.xlsx"),
+                        paste0(data_folder, data_file),
+                        # here("data", data_file ),
                         sheet = "F_Staff",
                         range = cell_limits(c(9, 1), c(NA, 3))) %>%
               as_tibble() %>% 
@@ -53,16 +55,19 @@ data_plot <- data_raw %>%
 xrange_max <- round((max(data_plot$STAF)+5000)/1000,0)*1000
 
 # draw costs plot
-p1 <- data_plot %>% 
+p1 <- function(myfont, mywidth, myheight, vmargin, myautosize){
+  data_plot %>% 
   plot_ly(
+    width = mywidth,
+    height = myheight,
     x = ~ STAF,
     y = ~ LABEL,
-    marker = list(color =('#4F81BD')),
+    marker = list(color =('#003366')),
     text = ~ format(round(STAF,0), big.mark = " "),
     textangle = 0,
     textposition = "outside",
     # insidetextanchor =  "start",
-    textfont = list(color = 'black'),
+    textfont = list(color = 'black', size = myfont + 1),
     cliponaxis = FALSE,
     type = "bar",
     orientation = 'h',
@@ -72,7 +77,7 @@ p1 <- data_plot %>%
   layout(
     title = list(
       text = paste0("Gate-to-gate ATM/CNS staff in ", year_report ," (in FTEs)"), 
-      font = list(color = '#747a7f', size = 12),
+      font = list(color = '#747a7f',  size = myfont),
       y = 0.05),
     xaxis = list(
       title = "",
@@ -95,21 +100,36 @@ p1 <- data_plot %>%
       ticks = 'outside',
       tickson="boundaries",
       tickcolor='#BFBFBF', ticklen=3,
-      tickfont = list(size = 11),
+      tickfont = list(size = myfont-1),
       # tickformat=",.0%", 
       # domain=c(0,1),
       zeroline = F, showline = T, showgrid = F
     ),
-    autosize = T,
+    autosize = myautosize,
+    margin = list(b = vmargin),
     bargap = 0.4,
     plot_bgcolor = '#DCE6F2',
-    uniformtext=list(minsize=10, mode='show')
+    uniformtext=list(minsize=myfont-1, mode='show')
   ) %>%
   config(responsive = FALSE,
          displaylogo = FALSE,
          displayModeBar = F)
+}
 
 
-p1
+p1(12, NULL, NULL, 40, 'T')
+
+
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+image_name <- "figure-2-7-2-hlsr_staff_bdown_bar.png"
+
+invisible(export(p1(26, 950, 950, 100, 'F'), paste0(fig_dir, image_name)))
+invisible(figure <- image_read(paste0(fig_dir,image_name)))
+invisible(cropped <- image_crop(figure, "950x0"))
+invisible(image_write(cropped, paste0(fig_dir,image_name)))
+
 
 

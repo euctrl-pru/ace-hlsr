@@ -6,13 +6,15 @@ library(plotly)
 library(htmltools)
 library(magick)
 library(here)
+library(webshot)
+
 ## data source
 source(here("data_source.R"))
 
 ## import data
 pie_cost_data  <- read_xlsx(
                             # paste0(data_folder, data_file),
-                             here("data","hlsr2021_data.xlsx"),
+                              paste0(data_folder,data_file),
                              sheet = "F_Cost breakdown",
                              range = cell_limits(c(9, 1), c(NA, 4))) %>%
   as_tibble() %>% 
@@ -36,11 +38,11 @@ pie_cost_data <- pie_cost_data %>%
     COST_TYPE == 'COST_EXCEPTIONAL' ~ "Exceptional\nitems",
   ),
   MYCOLOR = case_when(
-    COST_TYPE == 'COST_STAFF' ~ "#000080",
-    COST_TYPE == 'COST_OPERAT' ~ "#99CCFF",
-    COST_TYPE == 'COST_DEPRECIATION' ~ "#FFFF00",
-    COST_TYPE == 'COST_CAPITAL' ~ "#FFFFCC",
-    COST_TYPE == 'COST_EXCEPTIONAL' ~ "#FF6600",
+    COST_TYPE == 'COST_STAFF' ~ "#003366",
+    COST_TYPE == 'COST_OPERAT' ~ "#78B4F0",
+    COST_TYPE == 'COST_DEPRECIATION' ~ "#9AA349",
+    COST_TYPE == 'COST_CAPITAL' ~ "#E1F060",
+    COST_TYPE == 'COST_EXCEPTIONAL' ~ "#E0584F",
   )
   )
 
@@ -65,12 +67,15 @@ start_point_cost <- 90-staff_cost/total_cost*180
 domain_cost_x1 <- 0.45
 
 # plot piechart
-pie_cost <- pie_cost_data %>% 
+pie_cost <- function(myfont, mytext) {
+pie_cost_data %>% 
   plot_ly(
     labels = ~LABEL, values = ~COST, type = 'pie',
     hoverinfo = "none",
-    textinfo='label',
-    textfont = list(size = 10),
+    # textinfo='label',
+    insidetextorientation='horizontal',
+    texttemplate = mytext,
+    textfont = list(size = myfont),
     marker = list(colors = ~MYCOLOR),
     # line = list(color = '#FFFFFF', width = 1)),
     domain = list(x = c(0, domain_cost_x1), y = c(0, 1)),
@@ -85,11 +90,12 @@ pie_cost <- pie_cost_data %>%
     displaylogo = FALSE,
     displayModeBar = F
   )
-
+}
+  
 ## import data
 pie_atco_data  <-   read_xlsx(
                               # paste0(data_folder, data_file),
-                              here("data","hlsr2021_data.xlsx"),
+                              paste0(data_folder,data_file ),
                               sheet = "F_Cost breakdown",
                               range = cell_limits(c(9, 12), c(NA, 13))) %>%
                               as_tibble() 
@@ -104,12 +110,12 @@ pie_atco_data <- pie_atco_data %>%
 
 pie_atco_data <- pie_atco_data %>% 
   mutate(LABEL = case_when(
-    COST_TYPE == 'COST_ATCO_OPS' ~ "ATCOs in OPS\noemployment costs",
+    COST_TYPE == 'COST_ATCO_OPS' ~ "ATCOs in OPS\nemployment costs",
     COST_TYPE == 'OTHER_STAFF_COST' ~ "Other staff\nemployment costs"
   ),
   MYCOLOR = case_when(
-    COST_TYPE == 'COST_ATCO_OPS' ~ "#FFFF99",
-    COST_TYPE == 'OTHER_STAFF_COST' ~ "#008080"
+    COST_TYPE == 'COST_ATCO_OPS' ~ "#E0584F",
+    COST_TYPE == 'OTHER_STAFF_COST' ~ "#003366"
   )
   )
 
@@ -118,16 +124,18 @@ pie_atco_data <- pie_atco_data %>%
 domain_atco_x0 <- 0.6
 domain_atco_x1 <- 0.95
 
-pie_atco <- pie_atco_data %>% 
+pie_atco <- function(myfont, mytext, mysize){
+  pie_atco_data %>% 
   plot_ly(
     labels = ~LABEL, values = ~COST, type = 'pie',
     hoverinfo = "none",
-    textinfo='label+percent',
-    textfont = list(size = 10),
+    # textinfo='label+percent',
+    texttemplate = mytext,
+    textfont = list(size = myfont),
     insidetextorientation='horizontal',
     marker = list(colors = ~MYCOLOR),
     # line = list(color = '#FFFFFF', width = 1)),
-    domain = list(x = c(domain_atco_x0, domain_atco_x1), y = c(0, 1)),
+    domain = list(x = c(domain_atco_x0, domain_atco_x1), y = c(0, mysize)),
     automargin = TRUE,
     rotation = 90
   ) %>% 
@@ -139,6 +147,7 @@ pie_atco <- pie_atco_data %>%
     displaylogo = FALSE,
     displayModeBar = F
   )
+}
 
 # finally we don't use the lines. Too difficult to control in the html page
 lines <- list (
@@ -159,11 +168,12 @@ lines <- list (
     yref = "paper"
   ))
 
-myannotations <- list(
+myannotations <- function(myfont, myvertical) {
+list(
   x = 0.45,
-  y = -0.15,
+  y = myvertical,
   text = paste0("<b>", 
-                "Total ATM/CNS provision cost: ", 
+                "Total ATM/CNS provision costs: ", 
                 "\u20AC ",
                 format(round(total_cost,0), big.mark = " "),
                 " M</b>"),
@@ -172,23 +182,53 @@ myannotations <- list(
   xanchor = "center",
   showarrow = FALSE,
   font = list(color = "black",
-              size=12)
+              size = myfont)
 )
+}
 
 image_folder <- here("images")
-arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
+# arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg")) #magick
+# rsvg_svg(paste0(image_folder,"/long_right_arrow.svg"), 
+         # paste0(image_folder,"/long_right_arrow-cairo.svg")) # needed only once
+# arrow_right <- readPicture(paste0(image_folder,"/long_right_arrow-cairo.svg")) #grImport2
+# grid.picture(arrow_right)
+
 
 myimages <- list(
-  list(source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
-       x = (domain_cost_x1+domain_atco_x0)/2, y = 0.55, 
+  list(
+    source = base64enc::dataURI(file = paste0(image_folder,"/long_right_arrow.png")),
+     # source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
+       x = (domain_cost_x1 + domain_atco_x0)/2, y = 0.55,
        sizex = 0.15, sizey = 0.15,
-       xref = "paper", yref = "paper", 
+       xref = "paper", yref = "paper",
        xanchor = "center", yanchor = "center"
-  )  
+  )
 )
 
-fig <- subplot(pie_cost, pie_atco) %>% 
-  layout(annotations = myannotations, images = myimages)
+fig <- subplot(pie_cost(10, '%{label}'), pie_atco(10, '%{label}</br>%{percent}', 1)) %>%
+layout(annotations = myannotations(12, -0.15), images = myimages)
+
+# fig <- subplot(pie_cost, pie_atco)
 
 fig
+
+fig_pdf <- subplot(
+  pie_cost(30, '%{label}'), pie_atco(30, '%{label}</br>%{percent}', 0.88)
+  # pie_cost(30, '<b>%{label}</b>'), pie_atco(30, '<b>%{label}</br>%{percent}</b>')
+  ) %>%
+  layout(
+    height = 700, width = 1984,
+    annotations = myannotations(40, -0.15), images = myimages)
+
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+
+image_name <- "figure-2-3-hlsr_c_bdown_pie.png"
+invisible(export(fig_pdf, paste0(fig_dir, image_name)))
+
+# invisible(figure <- image_read(paste0(fig_dir,image_name)))
+# invisible(cropped <- image_crop(figure, "0x520-0+140"))
+# invisible(image_write(cropped, paste0(fig_dir, image_name)))
 

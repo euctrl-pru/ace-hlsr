@@ -96,3 +96,23 @@ div.right {
   text-align: right;
 }
 
+/* remove left border of callout */
+div.callout.callout {
+    border-left: 0px;
+}
+
+/* centered text */
+.centeredtitle{
+  font-family: Helvetica; 
+  margin-bottom: 0rem;
+  text-align: center;
+}
+
+.gt_footnote, .gt_footnotes{
+  text-align: left;
+  border-bottom: 1px solid white ;
+}
+
+.gt_table{
+  margin-bottom: 0px;
+}

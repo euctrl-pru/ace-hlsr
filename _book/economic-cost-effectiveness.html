@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.3.427">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>High-level Summary Report on Preliminary ACE 2021 Data - 3&nbsp; Economic cost-effectiveness</title>
+<title>High-level Summary Report on Preliminary ACE 2022 Data - 3&nbsp; Economic cost-effectiveness</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -14,7 +14,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -52,7 +52,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <!-- Google tag (gtag.js) --><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RJ3R0C35X7"></script><script>
@@ -60,7 +61,7 @@ ul.task-list li input[type="checkbox"] {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-RJ3R0C35X7');
-</script><script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="site_libs/plotly-binding-4.10.1/plotly.js"></script><script src="site_libs/typedarray-0.1/typedarray.min.js"></script><script src="site_libs/jquery-3.5.1/jquery.min.js"></script><link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+</script><script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><script src="site_libs/plotly-binding-4.10.1.9000/plotly.js"></script><script src="site_libs/typedarray-0.1/typedarray.min.js"></script><script src="site_libs/jquery-3.5.1/jquery.min.js"></script><link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
 <script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script><link rel="stylesheet" href="media/style.css">
 </head>
@@ -78,323 +79,334 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
 <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aiu-home" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aiu-home" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">AIU Home</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-aiu-home">
 <li>
-    <a class="dropdown-item" href="https://ansperformance.eu"><i class="bi bi-house-fill" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu" rel="" target=""><i class="bi bi-house-fill" role="img">
 </i> 
  <span class="dropdown-text"><strong>Home</strong></span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/traffic/">
+    <a class="dropdown-item" href="https://ansperformance.eu/traffic/" rel="" target="">
  <span class="dropdown-text"><i class="fas fa-plane-departure"></i> <strong>Traffic</strong></span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://www.eurocontrol.int/Economics/DailyTrafficVariation-States.html"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://www.eurocontrol.int/Economics/DailyTrafficVariation-States.html" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text"> Daily Traffic Dashboard</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/traffic/statfor/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/traffic/statfor/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">Traffic Forecast</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/">
+    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/" rel="" target="">
  <span class="dropdown-text"><i class="fas fa-leaf"></i> <strong>Efficiency &amp; Environment</strong></span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/emissions/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/emissions/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">CO<sub>2</sub> emissions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/hfe/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/hfe/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">Horizontal Flight Efficiency</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/vfe/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/vfe/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">Vertical Flight Efficiency</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/asma/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/asma/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">Terminal Holdings</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/taxiout/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/taxiout/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">Taxi-out</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/economics/">
+    <a class="dropdown-item" href="https://ansperformance.eu/economics/" rel="" target="">
  <span class="dropdown-text"><i class="fas fa-euro-sign"></i> <strong>Economics</strong></span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://www.eurocontrol.int/ServiceUnits/Dashboard/EnRouteMainDashboard.html"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://www.eurocontrol.int/ServiceUnits/Dashboard/EnRouteMainDashboard.html" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">Service Units</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://www.eurocontrol.int/ServiceUnits/Dashboard/EnRouteUnitRates.html"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://www.eurocontrol.int/ServiceUnits/Dashboard/EnRouteUnitRates.html" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">Unit Rates and Costs</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/ACE/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/ACE/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">ATM Cost Effectiveness</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/economics/finance/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/economics/finance/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">ANSPs Financial Situation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/economics/cba/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/economics/cba/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">CBA</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/dashboard/stakeholder/">
+    <a class="dropdown-item" href="https://ansperformance.eu/dashboard/stakeholder/" rel="" target="">
  <span class="dropdown-text"><i class="fas fa-user-friends"></i> <strong>Stakeholder views</strong></span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/airport/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/airport/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">Airport View</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/ansp/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/ansp/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">ANSP View</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/dashboard/stakeholder/fab/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/dashboard/stakeholder/fab/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">FAB View</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/dashboard/stakeholder/state/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/dashboard/stakeholder/state/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">State View</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/publications/">
+    <a class="dropdown-item" href="https://ansperformance.eu/publications/" rel="" target="">
  <span class="dropdown-text"><i class="fas fa-book"></i> <strong>Publications</strong></span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/data/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://ansperformance.eu/data/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/reference/">
+    <a class="dropdown-item" href="https://ansperformance.eu/reference/" rel="" target="">
  <span class="dropdown-text"><i class="fas fa-hands-helping"></i> <strong>Reference</strong></span></a>
   </li>  
         <li class="dropdown-header"><i class="fas fa-external-link-alt"></i> <strong>External</strong></li>
         <li>
-    <a class="dropdown-item" href="https://www.eurocontrol.int/prudata/dashboard/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://www.eurocontrol.int/prudata/dashboard/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">Single European Sky Portal</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://www4.icao.int/ganpportal/"><i class="bi bi-arrow-return-right" role="img">
+    <a class="dropdown-item" href="https://www4.icao.int/ganpportal/" rel="" target=""><i class="bi bi-arrow-return-right" role="img">
 </i> 
  <span class="dropdown-text">ICAO GANP</span></a>
   </li>  
     </ul>
 </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">About</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-about">
 <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/about/prc/">
+    <a class="dropdown-item" href="https://ansperformance.eu/about/prc/" rel="" target="">
  <span class="dropdown-text">About the PRC</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/about/us/">
+    <a class="dropdown-item" href="https://ansperformance.eu/about/us/" rel="" target="">
  <span class="dropdown-text">About the PRU</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/post/">
+    <a class="dropdown-item" href="https://ansperformance.eu/post/" rel="" target="">
  <span class="dropdown-text">Release notes</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/about/disclaimer/">
+    <a class="dropdown-item" href="https://ansperformance.eu/about/disclaimer/" rel="" target="">
  <span class="dropdown-text">Disclaimer</span></a>
   </li>  
     </ul>
 </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-areas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-areas" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Areas</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-areas">
 <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/traffic/">
+    <a class="dropdown-item" href="https://ansperformance.eu/traffic/" rel="" target="">
  <span class="dropdown-text">Traffic</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/capacity/">
+    <a class="dropdown-item" href="https://ansperformance.eu/capacity/" rel="" target="">
  <span class="dropdown-text">Capacity &amp; delays</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/">
+    <a class="dropdown-item" href="https://ansperformance.eu/efficiency/" rel="" target="">
  <span class="dropdown-text">Efficiency &amp; environment</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/economics/">
+    <a class="dropdown-item" href="https://ansperformance.eu/economics/" rel="" target="">
  <span class="dropdown-text">Economics</span></a>
   </li>  
     </ul>
 </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-views" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-views" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Views</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-views">
 <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/dashboard/stakeholder/airport/">
+    <a class="dropdown-item" href="https://ansperformance.eu/dashboard/stakeholder/airport/" rel="" target="">
  <span class="dropdown-text">Airports</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/ansp/">
+    <a class="dropdown-item" href="https://ansperformance.eu/ansp/" rel="" target="">
  <span class="dropdown-text">Air Navigation Service Provider</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/fab/">
+    <a class="dropdown-item" href="https://ansperformance.eu/fab/" rel="" target="">
  <span class="dropdown-text">Functional Airspace Block</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/dashboard/stakeholder/state/">
+    <a class="dropdown-item" href="https://ansperformance.eu/dashboard/stakeholder/state/" rel="" target="">
  <span class="dropdown-text">State</span></a>
   </li>  
     </ul>
 </li>
   <li class="nav-item">
-    <a class="nav-link" href="https://ansperformance.eu/publications/">
+    <a class="nav-link" href="https://ansperformance.eu/publications/" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://ansperformance.eu/data/">
+    <a class="nav-link" href="https://ansperformance.eu/data/" rel="" target="">
  <span class="menu-text">Data</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-reference" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-reference" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Reference</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-reference">
 <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/data/">
+    <a class="dropdown-item" href="https://ansperformance.eu/data/" rel="" target="">
  <span class="dropdown-text">Data downloads</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/definition/">
+    <a class="dropdown-item" href="https://ansperformance.eu/definition/" rel="" target="">
  <span class="dropdown-text">Definitions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/methodology/">
+    <a class="dropdown-item" href="https://ansperformance.eu/methodology/" rel="" target="">
  <span class="dropdown-text">Methodology</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/acronym/">
+    <a class="dropdown-item" href="https://ansperformance.eu/acronym/" rel="" target="">
  <span class="dropdown-text">Acronyms</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://ansperformance.eu/bibliography/">
+    <a class="dropdown-item" href="https://ansperformance.eu/bibliography/" rel="" target="">
  <span class="dropdown-text">Bibliography</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
-    <a class="dropdown-item" href="https://www4.icao.int/ganpportal/">
+    <a class="dropdown-item" href="https://www4.icao.int/ganpportal/" rel="" target="">
  <span class="dropdown-text"><i class="fas fa-xs fa-external-link-alt"></i> ICAO GANP</span></a>
   </li>  
     </ul>
 </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ses" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ses" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">SES</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-ses">
 <li>
-    <a class="dropdown-item" href="https://www.eurocontrol.int/prudata/dashboard/">
+    <a class="dropdown-item" href="https://www.eurocontrol.int/prudata/dashboard/" rel="" target="">
  <span class="dropdown-text"><i class="fas fa-xs fa-external-link-alt"></i> Single European Sky (SES) Portal</span></a>
   </li>  
     </ul>
 </li>
 </ul>
-</div> <!-- /navcollapse -->
+<div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Economic cost-effectiveness</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./economic-cost-effectiveness.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Economic cost-effectiveness</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./high-level-revenues.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">High-level revenues, costs and staff data</span></a>
+  <a href="./high-level-revenues.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">High-level revenues, costs and staff data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./economic-cost-effectiveness.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Economic cost-effectiveness</span></a>
+  <a href="./economic-cost-effectiveness.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Economic cost-effectiveness</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./financial-cost-effectiveness.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Financial cost-effectiveness</span></a>
+  <a href="./financial-cost-effectiveness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Financial cost-effectiveness</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cash-and-liquidity.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">ANSPs Cash and Liquidity Issues as a Result of the Covid-19 Pandemic</span></a>
+  <a href="./cash-and-liquidity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Monitoring of ANSPs cash and liquidity situation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./capex.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Capital expenditure in 2020-2021 compared to their historical average</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./disclaimer.html" class="sidebar-item-text sidebar-link">Disclaimer</a>
+  <a href="./disclaimer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Disclaimer</span></a>
   </div>
 </li>
     </ul>
 </div>
-</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="sec-economic" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Economic cost-effectiveness</span></span></h1>
+<h1 class="title"><span id="sec-economic" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Economic cost-effectiveness</span></span></h1>
 </div>
 
 
@@ -407,50 +419,50 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
-</header><p>The concept of economic cost-effectiveness, developed by the PRC, is defined as the sum of gate-to-gate ATM/CNS provision costs and the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between ATC capacity and costs<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p><a href="#fig-figure-3-1">Figure&nbsp;<span>3.1</span></a> shows <u>preliminary results</u> on the changes in economic cost-effectiveness over 2016 - 2021 at Pan-European system level. <a href="#fig-figure-3-1-left">Figure&nbsp;<span>3.1 (a)</span></a> shows the changes in unit economic costs, while <a href="#fig-figure-3-1-right">Figure&nbsp;<span>3.1 (b)</span></a> provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays. Unit economic costs significantly reduced in 2021 (-24.8%) but their level remains substantially higher than before the COVID-19 pandemic.</p>
+</header><!-- Calculate quartiles for text --><p>The concept of economic cost-effectiveness, developed by the PRC, is defined as the sum of gate-to-gate ATM/CNS provision costs and the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between quality of service provided and costs<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p><a href="#fig-figure-3-1">Figure&nbsp;<span>3.1</span></a> shows <u>preliminary results</u> on the changes in economic cost-effectiveness over 2017 - 2022 at Pan-European system level. <a href="#fig-figure-3-1-left">Figure&nbsp;<span>3.1 (a)</span></a> shows the changes in unit economic costs, while <a href="#fig-figure-3-1-right">Figure&nbsp;<span>3.1 (b)</span></a> provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays. Unit economic costs significantly reduced in 2022 (-21.0%). This reduction results from the combination of a decrease in ATM/CNS provision costs per composite flight-hour (-34.7%) and a large increase in the unit cost of ATFM delays (+325.3%). Despite this large increase, 2022 unit costs remain +5.0% higher than in 2019.</p>
+<p>In 2022, ATFM delays increased almost six-fold to some 19.3M minutes. As a result, the share of ATFM delays in the 2022 unit economic costs amounts to 20%. This is close to the level reached in 2019, which was a year marked by significant capacity issues for several ANSPs.</p>
 <div id="fig-figure-3-1" class="quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
 <div id="fig-figure-3-1-left" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure"><div class="cell" data-file="R/hlsr_evo_eco_ce.R">
 <div class="cell-output-display">
-<div id="htmlwidget-a88c3aca1d99d89abda2" style="width:100%;height:300px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a88c3aca1d99d89abda2">{"x":{"visdat":{"13ffa4729984f":["function () ","plotlyVisDat"],"13ffa7bce8f08":["function () ","data"],"13ffa361095b8":["function () ","data"],"13ffa7ad57ec2":["function () ","data"],"13ffa5675318e":["function () ","data"],"13ffa28088dfa":["function () ","data"],"13ffa49a12c9e":["function () ","data"]},"cur_data":"13ffa49a12c9e","attrs":{"13ffa4729984f":{"x":{},"y":{},"legendgroup":{},"hoverinfo":"none","showlegend":true,"color":{},"colors":["#9999FF","#FF0000","#EEE800"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"13ffa361095b8":{"x":{},"y":{},"type":"scatter","mode":"lines","color":{},"line":{"color":"black","width":1,"dash":"dot"},"legendgroup":{},"showlegend":false,"hoverinfo":"none","inherit":false},"13ffa7ad57ec2":{"x":{},"y":{},"type":"scatter","mode":"lines","color":{},"line":{"color":"black","width":1,"dash":"dot"},"legendgroup":{},"showlegend":false,"hoverinfo":"none","inherit":false},"13ffa5675318e":{"x":{},"y":{},"type":"scatter","mode":"lines","color":{},"line":{"color":"black","width":1,"dash":"dot"},"legendgroup":{},"showlegend":false,"hoverinfo":"none","inherit":false},"13ffa28088dfa":{"x":{},"y":{},"type":"scatter","mode":"lines","color":{},"line":{"color":"black","width":1,"dash":"dot"},"legendgroup":{},"showlegend":false,"hoverinfo":"none","inherit":false},"13ffa49a12c9e":{"x":{},"y":{},"type":"scatter","mode":"lines","color":{},"line":{"color":"black","width":1,"dash":"dot"},"legendgroup":{},"showlegend":false,"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"autosize":true,"barmode":"stack","bargap":0.4,"font":{"family":"Helvetica"},"legend":{"orientation":"h","traceorder":"reversed","font":{"size":11},"y":-0.1,"x":0,"bgcolor":"transparent"},"uniformtext":{"minsize":8,"mode":"show"},"xaxis":{"domain":[0,1],"automargin":true,"title":"","ticktext":[2016,2017,2018,2019,2020,2021,2016,2017,2018,2019,2020,2021,2016,2017,2018,2019,2020,2021],"tickvals":[1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6],"tickmode":"array"},"yaxis":{"domain":[0,1],"automargin":true,"title":"€ per composite flight-hour (2021 prices)","titlefont":{"size":12},"showgrid":false},"annotations":[{"text":"-0.8%","xref":"x","yref":"y","y":515.374419332034,"x":1,"showarrow":false,"yshift":10},{"text":"-3.6%","xref":"x","yref":"y","y":497.053938857912,"x":2,"showarrow":false,"yshift":10},{"text":"+6.1%","xref":"x","yref":"y","y":527.422047998414,"x":3,"showarrow":false,"yshift":10},{"text":"-1.9%","xref":"x","yref":"y","y":517.294890002316,"x":4,"showarrow":false,"yshift":10},{"text":"+77.1%","xref":"x","yref":"y","y":916.224504024798,"x":5,"showarrow":false,"yshift":10},{"text":"-24.8%","xref":"x","yref":"y","y":688.896927993647,"x":6,"showarrow":false,"yshift":10}],"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"responsive":false,"displaylogo":false,"displayModeBar":false},"data":[{"x":[1,2,3,4,5,6],"y":[431.670674268746,416.145123881098,401.12392657017,400.132637730855,886.495978472031,662.850924468762],"legendgroup":"ATM/CNS provision per composite flight-hour","hoverinfo":["none","none","none","none","none","none"],"showlegend":true,"type":"bar","name":"ATM/CNS provision per composite flight-hour","marker":{"color":"rgba(153,153,255,1)","line":{"color":"rgba(153,153,255,1)"}},"textfont":{"color":"rgba(153,153,255,1)"},"error_y":{"color":"rgba(153,153,255,1)"},"error_x":{"color":"rgba(153,153,255,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1,2,3,4,5,6],"y":[48.8424371205834,49.8825681113719,96.5903024530713,87.4818345527829,18.5744786503184,16.320216570316],"legendgroup":"Unit cost of en-route ATFM delays","hoverinfo":["none","none","none","none","none","none"],"showlegend":true,"type":"bar","name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(255,0,0,1)","line":{"color":"rgba(255,0,0,1)"}},"textfont":{"color":"rgba(255,0,0,1)"},"error_y":{"color":"rgba(255,0,0,1)"},"error_x":{"color":"rgba(255,0,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1,2,3,4,5,6],"y":[34.8613079427043,31.0262468654414,29.707818975173,29.6804177186784,11.154046902449,9.72578695456929],"legendgroup":"Unit cost of airport ATFM delays","hoverinfo":["none","none","none","none","none","none"],"showlegend":true,"type":"bar","name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(238,232,0,1)","line":{"color":"rgba(238,232,0,1)"}},"textfont":{"color":"rgba(238,232,0,1)"},"error_y":{"color":"rgba(238,232,0,1)"},"error_x":{"color":"rgba(238,232,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1.3,1.7],"y":[431.670674268746,416.145123881098],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"ATM/CNS provision per composite flight-hour","showlegend":false,"hoverinfo":["none","none"],"name":"ATM/CNS provision per composite flight-hour","marker":{"color":"rgba(153,153,255,1)","line":{"color":"rgba(153,153,255,1)"}},"textfont":{"color":"rgba(153,153,255,1)"},"error_y":{"color":"rgba(153,153,255,1)"},"error_x":{"color":"rgba(153,153,255,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1.3,1.7],"y":[480.513111389329,466.02769199247],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of en-route ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(255,0,0,1)","line":{"color":"rgba(255,0,0,1)"}},"textfont":{"color":"rgba(255,0,0,1)"},"error_y":{"color":"rgba(255,0,0,1)"},"error_x":{"color":"rgba(255,0,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1.3,1.7],"y":[515.374419332034,497.053938857912],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of airport ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(238,232,0,1)","line":{"color":"rgba(238,232,0,1)"}},"textfont":{"color":"rgba(238,232,0,1)"},"error_y":{"color":"rgba(238,232,0,1)"},"error_x":{"color":"rgba(238,232,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2.3,2.7],"y":[416.145123881098,401.12392657017],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"ATM/CNS provision per composite flight-hour","showlegend":false,"hoverinfo":["none","none"],"name":"ATM/CNS provision per composite flight-hour","marker":{"color":"rgba(153,153,255,1)","line":{"color":"rgba(153,153,255,1)"}},"textfont":{"color":"rgba(153,153,255,1)"},"error_y":{"color":"rgba(153,153,255,1)"},"error_x":{"color":"rgba(153,153,255,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2.3,2.7],"y":[466.02769199247,497.714229023241],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of en-route ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(255,0,0,1)","line":{"color":"rgba(255,0,0,1)"}},"textfont":{"color":"rgba(255,0,0,1)"},"error_y":{"color":"rgba(255,0,0,1)"},"error_x":{"color":"rgba(255,0,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2.3,2.7],"y":[497.053938857912,527.422047998414],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of airport ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(238,232,0,1)","line":{"color":"rgba(238,232,0,1)"}},"textfont":{"color":"rgba(238,232,0,1)"},"error_y":{"color":"rgba(238,232,0,1)"},"error_x":{"color":"rgba(238,232,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[3.3,3.7],"y":[401.12392657017,400.132637730855],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"ATM/CNS provision per composite flight-hour","showlegend":false,"hoverinfo":["none","none"],"name":"ATM/CNS provision per composite flight-hour","marker":{"color":"rgba(153,153,255,1)","line":{"color":"rgba(153,153,255,1)"}},"textfont":{"color":"rgba(153,153,255,1)"},"error_y":{"color":"rgba(153,153,255,1)"},"error_x":{"color":"rgba(153,153,255,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[3.3,3.7],"y":[497.714229023241,487.614472283638],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of en-route ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(255,0,0,1)","line":{"color":"rgba(255,0,0,1)"}},"textfont":{"color":"rgba(255,0,0,1)"},"error_y":{"color":"rgba(255,0,0,1)"},"error_x":{"color":"rgba(255,0,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[3.3,3.7],"y":[527.422047998414,517.294890002316],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of airport ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(238,232,0,1)","line":{"color":"rgba(238,232,0,1)"}},"textfont":{"color":"rgba(238,232,0,1)"},"error_y":{"color":"rgba(238,232,0,1)"},"error_x":{"color":"rgba(238,232,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[4.3,4.7],"y":[400.132637730855,886.495978472031],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"ATM/CNS provision per composite flight-hour","showlegend":false,"hoverinfo":["none","none"],"name":"ATM/CNS provision per composite flight-hour","marker":{"color":"rgba(153,153,255,1)","line":{"color":"rgba(153,153,255,1)"}},"textfont":{"color":"rgba(153,153,255,1)"},"error_y":{"color":"rgba(153,153,255,1)"},"error_x":{"color":"rgba(153,153,255,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[4.3,4.7],"y":[487.614472283638,905.070457122349],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of en-route ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(255,0,0,1)","line":{"color":"rgba(255,0,0,1)"}},"textfont":{"color":"rgba(255,0,0,1)"},"error_y":{"color":"rgba(255,0,0,1)"},"error_x":{"color":"rgba(255,0,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[4.3,4.7],"y":[517.294890002316,916.224504024798],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of airport ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(238,232,0,1)","line":{"color":"rgba(238,232,0,1)"}},"textfont":{"color":"rgba(238,232,0,1)"},"error_y":{"color":"rgba(238,232,0,1)"},"error_x":{"color":"rgba(238,232,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[5.3,5.7],"y":[886.495978472031,662.850924468762],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"ATM/CNS provision per composite flight-hour","showlegend":false,"hoverinfo":["none","none"],"name":"ATM/CNS provision per composite flight-hour","marker":{"color":"rgba(153,153,255,1)","line":{"color":"rgba(153,153,255,1)"}},"textfont":{"color":"rgba(153,153,255,1)"},"error_y":{"color":"rgba(153,153,255,1)"},"error_x":{"color":"rgba(153,153,255,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[5.3,5.7],"y":[905.070457122349,679.171141039078],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of en-route ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(255,0,0,1)","line":{"color":"rgba(255,0,0,1)"}},"textfont":{"color":"rgba(255,0,0,1)"},"error_y":{"color":"rgba(255,0,0,1)"},"error_x":{"color":"rgba(255,0,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[5.3,5.7],"y":[916.224504024798,688.896927993647],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of airport ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(238,232,0,1)","line":{"color":"rgba(238,232,0,1)"}},"textfont":{"color":"rgba(238,232,0,1)"},"error_y":{"color":"rgba(238,232,0,1)"},"error_x":{"color":"rgba(238,232,0,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-52776603a5a8bdd08e38" style="width:100%;height:300px;"></div>
+<script type="application/json" data-for="htmlwidget-52776603a5a8bdd08e38">{"x":{"visdat":{"7b0c31562aad":["function () ","plotlyVisDat"],"7b0c2d0d1c71":["function () ","data"],"7b0c65af12e6":["function () ","data"],"7b0c42dd54d8":["function () ","data"],"7b0c1f344d67":["function () ","data"],"7b0c306b3e39":["function () ","data"],"7b0c312e66":["function () ","data"]},"cur_data":"7b0c312e66","attrs":{"7b0c31562aad":{"x":{},"y":{},"legendgroup":{},"hoverinfo":"none","showlegend":true,"color":{},"colors":["#78B4F0","#E0584F","#E1F060"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"7b0c65af12e6":{"x":{},"y":{},"type":"scatter","mode":"lines","color":{},"line":{"color":"black","width":1,"dash":"dot"},"legendgroup":{},"showlegend":false,"hoverinfo":"none","inherit":false},"7b0c42dd54d8":{"x":{},"y":{},"type":"scatter","mode":"lines","color":{},"line":{"color":"black","width":1,"dash":"dot"},"legendgroup":{},"showlegend":false,"hoverinfo":"none","inherit":false},"7b0c1f344d67":{"x":{},"y":{},"type":"scatter","mode":"lines","color":{},"line":{"color":"black","width":1,"dash":"dot"},"legendgroup":{},"showlegend":false,"hoverinfo":"none","inherit":false},"7b0c306b3e39":{"x":{},"y":{},"type":"scatter","mode":"lines","color":{},"line":{"color":"black","width":1,"dash":"dot"},"legendgroup":{},"showlegend":false,"hoverinfo":"none","inherit":false},"7b0c312e66":{"x":{},"y":{},"type":"scatter","mode":"lines","color":{},"line":{"color":"black","width":1,"dash":"dot"},"legendgroup":{},"showlegend":false,"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"autosize":true,"barmode":"stack","bargap":0.40000000000000002,"font":{"family":"Helvetica"},"legend":{"orientation":"h","traceorder":"reversed","font":{"size":11},"y":-0.10000000000000001,"x":0,"bgcolor":"transparent"},"uniformtext":{"minsize":8,"mode":"show"},"xaxis":{"domain":[0,1],"automargin":true,"title":"","tickfont":{"size":11},"ticktext":[2017,2018,2019,2020,2021,2022,2017,2018,2019,2020,2021,2022,2017,2018,2019,2020,2021,2022],"tickvals":[1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6],"tickmode":"array"},"yaxis":{"domain":[0,1],"automargin":true,"title":"€ per composite flight-hour (2022 prices)","titlefont":{"size":12},"tickfont":{"size":11},"showgrid":false},"annotations":[{"text":"","xref":"x","yref":"y","y":540.72819171468461,"x":1,"showarrow":false,"yshift":10,"font":{"size":11}},{"text":"+  6.1%","xref":"x","yref":"y","y":573.84302512098895,"x":2,"showarrow":false,"yshift":10,"font":{"size":11}},{"text":" -1.9%","xref":"x","yref":"y","y":562.83232893116156,"x":3,"showarrow":false,"yshift":10,"font":{"size":11}},{"text":"+ 76.9%","xref":"x","yref":"y","y":995.45772557871351,"x":4,"showarrow":false,"yshift":10,"font":{"size":11}},{"text":"-24.9%","xref":"x","yref":"y","y":747.85438032389925,"x":5,"showarrow":false,"yshift":10,"font":{"size":11}},{"text":"-21.0%","xref":"x","yref":"y","y":590.95598368911624,"x":6,"showarrow":false,"yshift":10,"font":{"size":11}}],"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"responsive":false,"displaylogo":false,"displayModeBar":false},"data":[{"x":[1,2,3,4,5,6],"y":[452.51681152100053,436.1416536369108,435.08885002913263,963.04485099436874,719.45022470427966,470.1566322974233],"legendgroup":"ATM/CNS provision costs per composite flight-hour","hoverinfo":["none","none","none","none","none","none"],"showlegend":true,"type":"bar","name":"ATM/CNS provision costs per composite flight-hour","marker":{"color":"rgba(120,180,240,1)","line":{"color":"rgba(120,180,240,1)"}},"textfont":{"color":"rgba(120,180,240,1)"},"error_y":{"color":"rgba(120,180,240,1)"},"error_x":{"color":"rgba(120,180,240,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1,2,3,4,5,6],"y":[54.384805684900591,105.31128230126934,95.382545741878914,20.251668583217512,17.797815728860105,100.99304968741384],"legendgroup":"Unit cost of en-route ATFM delays","hoverinfo":["none","none","none","none","none","none"],"showlegend":true,"type":"bar","name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(224,88,79,1)","line":{"color":"rgba(224,88,79,1)"}},"textfont":{"color":"rgba(224,88,79,1)"},"error_y":{"color":"rgba(224,88,79,1)"},"error_x":{"color":"rgba(224,88,79,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1,2,3,4,5,6],"y":[33.826574508783487,32.390089182808765,32.360933160150068,12.161206001127194,10.606339890759438,19.8063017042791],"legendgroup":"Unit cost of airport ATFM delays","hoverinfo":["none","none","none","none","none","none"],"showlegend":true,"type":"bar","name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(225,240,96,1)","line":{"color":"rgba(225,240,96,1)"}},"textfont":{"color":"rgba(225,240,96,1)"},"error_y":{"color":"rgba(225,240,96,1)"},"error_x":{"color":"rgba(225,240,96,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1.3,1.7],"y":[452.51681152100053,436.1416536369108],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"ATM/CNS provision costs per composite flight-hour","showlegend":false,"hoverinfo":["none","none"],"name":"ATM/CNS provision costs per composite flight-hour","marker":{"color":"rgba(120,180,240,1)","line":{"color":"rgba(120,180,240,1)"}},"textfont":{"color":"rgba(120,180,240,1)"},"error_y":{"color":"rgba(120,180,240,1)"},"error_x":{"color":"rgba(120,180,240,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1.3,1.7],"y":[506.90161720590112,541.45293593818019],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of en-route ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(224,88,79,1)","line":{"color":"rgba(224,88,79,1)"}},"textfont":{"color":"rgba(224,88,79,1)"},"error_y":{"color":"rgba(224,88,79,1)"},"error_x":{"color":"rgba(224,88,79,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1.3,1.7],"y":[540.72819171468461,573.84302512098895],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of airport ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(225,240,96,1)","line":{"color":"rgba(225,240,96,1)"}},"textfont":{"color":"rgba(225,240,96,1)"},"error_y":{"color":"rgba(225,240,96,1)"},"error_x":{"color":"rgba(225,240,96,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2.2999999999999998,2.7000000000000002],"y":[436.1416536369108,435.08885002913263],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"ATM/CNS provision costs per composite flight-hour","showlegend":false,"hoverinfo":["none","none"],"name":"ATM/CNS provision costs per composite flight-hour","marker":{"color":"rgba(120,180,240,1)","line":{"color":"rgba(120,180,240,1)"}},"textfont":{"color":"rgba(120,180,240,1)"},"error_y":{"color":"rgba(120,180,240,1)"},"error_x":{"color":"rgba(120,180,240,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2.2999999999999998,2.7000000000000002],"y":[541.45293593818019,530.47139577101154],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of en-route ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(224,88,79,1)","line":{"color":"rgba(224,88,79,1)"}},"textfont":{"color":"rgba(224,88,79,1)"},"error_y":{"color":"rgba(224,88,79,1)"},"error_x":{"color":"rgba(224,88,79,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2.2999999999999998,2.7000000000000002],"y":[573.84302512098895,562.83232893116156],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of airport ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(225,240,96,1)","line":{"color":"rgba(225,240,96,1)"}},"textfont":{"color":"rgba(225,240,96,1)"},"error_y":{"color":"rgba(225,240,96,1)"},"error_x":{"color":"rgba(225,240,96,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[3.2999999999999998,3.7000000000000002],"y":[435.08885002913263,963.04485099436874],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"ATM/CNS provision costs per composite flight-hour","showlegend":false,"hoverinfo":["none","none"],"name":"ATM/CNS provision costs per composite flight-hour","marker":{"color":"rgba(120,180,240,1)","line":{"color":"rgba(120,180,240,1)"}},"textfont":{"color":"rgba(120,180,240,1)"},"error_y":{"color":"rgba(120,180,240,1)"},"error_x":{"color":"rgba(120,180,240,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[3.2999999999999998,3.7000000000000002],"y":[530.47139577101154,983.29651957758631],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of en-route ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(224,88,79,1)","line":{"color":"rgba(224,88,79,1)"}},"textfont":{"color":"rgba(224,88,79,1)"},"error_y":{"color":"rgba(224,88,79,1)"},"error_x":{"color":"rgba(224,88,79,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[3.2999999999999998,3.7000000000000002],"y":[562.83232893116156,995.45772557871351],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of airport ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(225,240,96,1)","line":{"color":"rgba(225,240,96,1)"}},"textfont":{"color":"rgba(225,240,96,1)"},"error_y":{"color":"rgba(225,240,96,1)"},"error_x":{"color":"rgba(225,240,96,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[4.2999999999999998,4.7000000000000002],"y":[963.04485099436874,719.45022470427966],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"ATM/CNS provision costs per composite flight-hour","showlegend":false,"hoverinfo":["none","none"],"name":"ATM/CNS provision costs per composite flight-hour","marker":{"color":"rgba(120,180,240,1)","line":{"color":"rgba(120,180,240,1)"}},"textfont":{"color":"rgba(120,180,240,1)"},"error_y":{"color":"rgba(120,180,240,1)"},"error_x":{"color":"rgba(120,180,240,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[4.2999999999999998,4.7000000000000002],"y":[983.29651957758631,737.24804043313975],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of en-route ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(224,88,79,1)","line":{"color":"rgba(224,88,79,1)"}},"textfont":{"color":"rgba(224,88,79,1)"},"error_y":{"color":"rgba(224,88,79,1)"},"error_x":{"color":"rgba(224,88,79,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[4.2999999999999998,4.7000000000000002],"y":[995.45772557871351,747.85438032389925],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of airport ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(225,240,96,1)","line":{"color":"rgba(225,240,96,1)"}},"textfont":{"color":"rgba(225,240,96,1)"},"error_y":{"color":"rgba(225,240,96,1)"},"error_x":{"color":"rgba(225,240,96,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[5.2999999999999998,5.7000000000000002],"y":[719.45022470427966,470.1566322974233],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"ATM/CNS provision costs per composite flight-hour","showlegend":false,"hoverinfo":["none","none"],"name":"ATM/CNS provision costs per composite flight-hour","marker":{"color":"rgba(120,180,240,1)","line":{"color":"rgba(120,180,240,1)"}},"textfont":{"color":"rgba(120,180,240,1)"},"error_y":{"color":"rgba(120,180,240,1)"},"error_x":{"color":"rgba(120,180,240,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[5.2999999999999998,5.7000000000000002],"y":[737.24804043313975,571.14968198483712],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of en-route ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(224,88,79,1)","line":{"color":"rgba(224,88,79,1)"}},"textfont":{"color":"rgba(224,88,79,1)"},"error_y":{"color":"rgba(224,88,79,1)"},"error_x":{"color":"rgba(224,88,79,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[5.2999999999999998,5.7000000000000002],"y":[747.85438032389925,590.95598368911624],"type":"scatter","mode":"lines","line":{"color":"black","width":1,"dash":"dot"},"legendgroup":"Unit cost of airport ATFM delays","showlegend":false,"hoverinfo":["none","none"],"name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(225,240,96,1)","line":{"color":"rgba(225,240,96,1)"}},"textfont":{"color":"rgba(225,240,96,1)"},"error_y":{"color":"rgba(225,240,96,1)"},"error_x":{"color":"rgba(225,240,96,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">(a) &nbsp;</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">(a) &nbsp;</figcaption></figure>
 </div>
 <div id="fig-figure-3-1-right" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure"><div class="cell" data-file="R/hlsr_evo_eco_ce_comp.R">
 <div class="cell-output-display">
-<div id="htmlwidget-97ec885d79ec6ffaabd6" style="width:100%;height:300px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-97ec885d79ec6ffaabd6">{"x":{"visdat":{"13ffaa9a2db0":["function () ","plotlyVisDat"]},"cur_data":"13ffaa9a2db0","attrs":{"13ffaa9a2db0":{"x":{},"y":{},"text":{},"textangle":-90,"textposition":"outside","textfont":{"color":"black","size":10},"hoverinfo":"none","color":{},"colors":["#003366","#DEA900","#993366"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"13ffaa9a2db0.1":{"x":{},"y":{},"color":{},"colors":["#003366","#DEA900","#993366"],"xaxis":"x2","yaxis":"y2","text":{},"textangle":-90,"textposition":"inside","insidetextanchor":"start","textfont":{"color":"white","size":10},"type":"bar","showlegend":false,"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"plot_bgcolor":"transparent","font":{"family":"Helvetica"},"legend":{"orientation":"h","font":{"size":11},"y":-0.1,"x":0,"bgcolor":"transparent"},"uniformtext":{"minsize":8,"mode":"show"},"xaxis":{"domain":[0,1],"automargin":true,"title":"","showgrid":false,"type":"category","categoryorder":"array","categoryarray":["2016-17","2017-18","2018-19","2019-20","2020-21"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"","titlefont":{"size":12},"cliponaxis":false,"dtick":0.05,"tickformat":",.0%","ticks":"outside","zeroline":true,"showline":true,"showgrid":false,"range":[-0.2,0.2]},"yaxis2":{"overlaying":"y","title":"","cliponaxis":false,"showticklabels":false,"zeroline":true,"showline":true,"showgrid":false,"range":[-0.2,0.2]},"xaxis2":{"overlaying":"y","showticklabels":false,"type":"category","categoryorder":"array","categoryarray":["2016-17","2017-18","2018-19","2019-20","2020-21"]},"shapes":[{"type":"line","y0":0,"y1":1,"yref":"paper","x0":0.5,"x1":0.5,"line":{"color":"black","dash":"dot","width":1}},{"type":"line","y0":0,"y1":1,"yref":"paper","x0":1.5,"x1":1.5,"line":{"color":"black","dash":"dot","width":1}},{"type":"line","y0":0,"y1":1,"yref":"paper","x0":2.5,"x1":2.5,"line":{"color":"black","dash":"dot","width":1}},{"type":"line","y0":0,"y1":1,"yref":"paper","x0":3.5,"x1":3.5,"line":{"color":"black","dash":"dot","width":1}}],"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"responsive":false,"displaylogo":false,"displayModeBar":false},"data":[{"x":["2016-17","2017-18","2018-19","2019-20","2020-21"],"y":[0.00888268416717164,0.0152475680310382,0.0140807309992454,-0.0410098370229525,-0.048930042069818],"text":["+0.9%","+1.5%","+1.4%","-4.1%","-4.9%"],"textangle":-90,"textposition":["outside","outside","outside","outside","outside"],"textfont":{"color":"black","size":10},"hoverinfo":["none","none","none","none","none"],"type":"bar","name":"ATM/CNS provision costs","marker":{"color":"rgba(0,51,102,1)","line":{"color":"rgba(0,51,102,1)"}},"error_y":{"color":"rgba(0,51,102,1)"},"error_x":{"color":"rgba(0,51,102,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2016-17","2017-18","2018-19","2019-20","2020-21"],"y":[0.0465220989996233,0.0532663273935929,0.0165930152170595,0,0],"text":["+4.7%","+5.3%","+1.7%","",""],"textangle":-90,"textposition":["outside","outside","outside","outside","outside"],"textfont":{"color":"black","size":10},"hoverinfo":["none","none","none","none","none"],"type":"bar","name":"Composite flight-hours","marker":{"color":"rgba(222,169,0,1)","line":{"color":"rgba(222,169,0,1)"}},"error_y":{"color":"rgba(222,169,0,1)"},"error_x":{"color":"rgba(222,169,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2016-17","2017-18","2018-19","2019-20","2020-21"],"y":[0.0204414286292938,0,-0.0940372823050448,0,-0.121400038897271],"text":["+2%","","-9.4%","","-12.1%"],"textangle":-90,"textposition":["outside","outside","outside","outside","outside"],"textfont":{"color":"black","size":10},"hoverinfo":["none","none","none","none","none"],"type":"bar","name":"Unit costs of ATFM delays","marker":{"color":"rgba(153,51,102,1)","line":{"color":"rgba(153,51,102,1)"}},"error_y":{"color":"rgba(153,51,102,1)"},"error_x":{"color":"rgba(153,51,102,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2016-17","2017-18","2018-19","2019-20","2020-21"],"y":[0,0,0,0,0],"xaxis":"x2","yaxis":"y2","text":["","","","",""],"textangle":-90,"textposition":["inside","inside","inside","inside","inside"],"insidetextanchor":"start","textfont":{"color":"white","size":10},"type":"bar","showlegend":false,"hoverinfo":["none","none","none","none","none"],"name":"ATM/CNS provision costs","marker":{"color":"rgba(0,51,102,1)","line":{"color":"rgba(0,51,102,1)"}},"error_y":{"color":"rgba(0,51,102,1)"},"error_x":{"color":"rgba(0,51,102,1)"},"frame":null},{"x":["2016-17","2017-18","2018-19","2019-20","2020-21"],"y":[0,0,0,-0.56714607534787,0.271959745136334],"xaxis":"x2","yaxis":"y2","text":["","","","-56.7%","+27.2%"],"textangle":-90,"textposition":["inside","inside","inside","inside","inside"],"insidetextanchor":"start","textfont":{"color":"white","size":10},"type":"bar","showlegend":false,"hoverinfo":["none","none","none","none","none"],"name":"Composite flight-hours","marker":{"color":"rgba(222,169,0,1)","line":{"color":"rgba(222,169,0,1)"}},"error_y":{"color":"rgba(222,169,0,1)"},"error_x":{"color":"rgba(222,169,0,1)"},"frame":null},{"x":["2016-17","2017-18","2018-19","2019-20","2020-21"],"y":[0,0.930799944293367,0,-0.787168889509266,0],"xaxis":"x2","yaxis":"y2","text":["","+93.1%","","-78.7%",""],"textangle":-90,"textposition":["inside","inside","inside","inside","inside"],"insidetextanchor":"start","textfont":{"color":"white","size":10},"type":"bar","showlegend":false,"hoverinfo":["none","none","none","none","none"],"name":"Unit costs of ATFM delays","marker":{"color":"rgba(153,51,102,1)","line":{"color":"rgba(153,51,102,1)"}},"error_y":{"color":"rgba(153,51,102,1)"},"error_x":{"color":"rgba(153,51,102,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-07a389102d520bb760c3" style="width:100%;height:300px;"></div>
+<script type="application/json" data-for="htmlwidget-07a389102d520bb760c3">{"x":{"visdat":{"7b0c7f587cd":["function () ","plotlyVisDat"]},"cur_data":"7b0c7f587cd","attrs":{"7b0c7f587cd":{"x":{},"y":{},"text":{},"textangle":-90,"textposition":"outside","textfont":{"color":"black","size":10},"hoverinfo":"none","color":{},"colors":["#2990EA","#E1F060","#E0584F"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"7b0c7f587cd.1":{"x":{},"y":{},"color":{},"colors":["#2990EA","#E1F060","#E0584F"],"xaxis":"x2","yaxis":"y2","text":{},"textangle":-90,"textposition":"inside","insidetextanchor":"start","textfont":{"color":"black","size":10},"type":"bar","showlegend":false,"hoverinfo":"none","inherit":false}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"plot_bgcolor":"transparent","font":{"family":"Helvetica"},"legend":{"orientation":"h","font":{"size":11},"y":-0.10000000000000001,"x":0,"bgcolor":"transparent"},"uniformtext":{"minsize":8,"mode":"show"},"xaxis":{"domain":[0,1],"automargin":true,"title":"","tickfont":{"size":11},"showgrid":false,"type":"category","categoryorder":"array","categoryarray":["2017-18","2018-19","2019-20","2020-21","2021-22"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"","titlefont":{"size":12},"cliponaxis":false,"dtick":0.050000000000000003,"tickformat":",.0%","ticks":"outside","tickfont":{"size":11},"zeroline":true,"showline":true,"showgrid":false,"range":[-0.20000000000000001,0.20000000000000001]},"yaxis2":{"overlaying":"y","title":"","cliponaxis":false,"showticklabels":false,"zeroline":true,"showline":true,"showgrid":false,"range":[-0.20000000000000001,0.20000000000000001]},"xaxis2":{"overlaying":"y","showticklabels":false,"type":"category","categoryorder":"array","categoryarray":["2017-18","2018-19","2019-20","2020-21","2021-22"]},"shapes":[{"type":"line","y0":0,"y1":1,"yref":"paper","x0":0.5,"x1":0.5,"line":{"color":"black","dash":"dot","width":1}},{"type":"line","y0":0,"y1":1,"yref":"paper","x0":1.5,"x1":1.5,"line":{"color":"black","dash":"dot","width":1}},{"type":"line","y0":0,"y1":1,"yref":"paper","x0":2.5,"x1":2.5,"line":{"color":"black","dash":"dot","width":1}},{"type":"line","y0":0,"y1":1,"yref":"paper","x0":3.5,"x1":3.5,"line":{"color":"black","dash":"dot","width":1}}],"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"responsive":false,"displaylogo":false,"displayModeBar":false},"data":[{"x":["2017-18","2018-19","2019-20","2020-21","2021-22"],"y":[0.0151224899583704,0.014116518304213788,-0.041886922145303318,-0.049983832135574224,0.034409572293988777],"text":["+1.5%","+1.4%","-4.2%","-5%","+3.4%"],"textangle":-90,"textposition":["outside","outside","outside","outside","outside"],"textfont":{"color":"black","size":10},"hoverinfo":["none","none","none","none","none"],"type":"bar","name":"ATM/CNS provision costs","marker":{"color":"rgba(41,144,234,1)","line":{"color":"rgba(41,144,234,1)"}},"error_y":{"color":"rgba(41,144,234,1)"},"error_x":{"color":"rgba(41,144,234,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2017-18","2018-19","2019-20","2020-21","2021-22"],"y":[0.053235774727536489,0.016570420602805447,0,0,0],"text":["+5.3%","+1.7%","","",""],"textangle":-90,"textposition":["outside","outside","outside","outside","outside"],"textfont":{"color":"black","size":10},"hoverinfo":["none","none","none","none","none"],"type":"bar","name":"Composite flight-hours","marker":{"color":"rgba(225,240,96,1)","line":{"color":"rgba(225,240,96,1)"}},"error_y":{"color":"rgba(225,240,96,1)"},"error_x":{"color":"rgba(225,240,96,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2017-18","2018-19","2019-20","2020-21","2021-22"],"y":[0,-0.072315130014522055,0,-0.12367674932051098,0],"text":["","-7.2%","","-12.4%",""],"textangle":-90,"textposition":["outside","outside","outside","outside","outside"],"textfont":{"color":"black","size":10},"hoverinfo":["none","none","none","none","none"],"type":"bar","name":"Unit costs of ATFM delays","marker":{"color":"rgba(224,88,79,1)","line":{"color":"rgba(224,88,79,1)"}},"error_y":{"color":"rgba(224,88,79,1)"},"error_x":{"color":"rgba(224,88,79,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2017-18","2018-19","2019-20","2020-21","2021-22"],"y":[0,0,0,0,0],"xaxis":"x2","yaxis":"y2","text":["","","","",""],"textangle":-90,"textposition":["inside","inside","inside","inside","inside"],"insidetextanchor":"start","textfont":{"color":"black","size":10},"type":"bar","showlegend":false,"hoverinfo":["none","none","none","none","none"],"name":"ATM/CNS provision costs","marker":{"color":"rgba(41,144,234,1)","line":{"color":"rgba(41,144,234,1)"}},"error_y":{"color":"rgba(41,144,234,1)"},"error_x":{"color":"rgba(41,144,234,1)"},"frame":null},{"x":["2017-18","2018-19","2019-20","2020-21","2021-22"],"y":[0,0,-0.56713924921435421,0.27167682684274341,0.58288993092918795],"xaxis":"x2","yaxis":"y2","text":["","","-56.7%","+27.2%","+58.3%"],"textangle":-90,"textposition":["inside","inside","inside","inside","inside"],"insidetextanchor":"start","textfont":{"color":"black","size":10},"type":"bar","showlegend":false,"hoverinfo":["none","none","none","none","none"],"name":"Composite flight-hours","marker":{"color":"rgba(225,240,96,1)","line":{"color":"rgba(225,240,96,1)"}},"error_y":{"color":"rgba(225,240,96,1)"},"error_x":{"color":"rgba(225,240,96,1)"},"frame":null},{"x":["2017-18","2018-19","2019-20","2020-21","2021-22"],"y":[0.56103862315417552,0,-0.74626591617092797,0,3.2528759879154254],"xaxis":"x2","yaxis":"y2","text":["+56.1%","","-74.6%","","+325.3%"],"textangle":-90,"textposition":["inside","inside","inside","inside","inside"],"insidetextanchor":"start","textfont":{"color":"black","size":10},"type":"bar","showlegend":false,"hoverinfo":["none","none","none","none","none"],"name":"Unit costs of ATFM delays","marker":{"color":"rgba(224,88,79,1)","line":{"color":"rgba(224,88,79,1)"}},"error_y":{"color":"rgba(224,88,79,1)"},"error_x":{"color":"rgba(224,88,79,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">(b) &nbsp;</figcaption><p></p>
+<figcaption class="figure-caption">(b) &nbsp;</figcaption></figure>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3.1: Trend of unit economic costs at Pan-European system level, 2017 (real terms)</figcaption><p></p>
 </figure>
 </div>
-</div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.1: Trend of unit economic costs at Pan-European system level, 2016 (real terms)</figcaption><p></p>
-</figure>
-</div>
-<p><a href="#fig-figure-3-2">Figure&nbsp;<span>3.2</span></a> shows <u>preliminary results</u> at ANSP level (dotted lines represent the 1st and 3rd quartiles). On average, the share of ATFM delays in 2021 was some 4% (compared to 3% in 2020 and 22% in 2019), and only four ANSPs had ATFM delays representing 5% or more of their unit economic costs: HASP (32%), NAV Portugal (8%), DSNA (7%) and LVNL (5%).</p>
+<p><a href="#fig-figure-3-2">Figure&nbsp;<span>3.2</span></a> shows <u>preliminary results</u> at ANSP level (dotted lines represent the 1st and 3rd quartiles, €411 and €635, respectively).</p>
 <div id="fig-figure-3-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><div class="cell" data-file="R/hlsr_eco_ce.R">
 <div class="cell-output-display">
-<div id="htmlwidget-bc660806eb916fd424ce" style="width:100%;height:450px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bc660806eb916fd424ce">{"x":{"data":[{"x":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"y":[452.835065590465,633.498761035135,614.900085428157,854.005123459872,486.327687660469,411.708267422822,507.489487820224,409.02294359547,289.048511197828,1015.71060030326,362.825943426017,793.938583520174,505.231519398407,607.890908817655,744.115856755587,598.969802428724,248.680960076694,496.211750132277,554.440147842413,643.076436927012,367.426603236274,686.216052163682,1190.57020940956,396.576398226122,293.032066446543,506.307502686558,603.275374299311,763.381296584809,433.528966329856,760.246349777828,407.860413975495,448.437110978834,686.500377082453,578.577439625868,1285.26198921221,1371.63293397264,640.341565541656,463.392460242452],"yaxis":"y","hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"showlegend":true,"type":"bar","name":"Financial gate-to-gate cost-effectiveness","marker":{"color":"rgba(153,153,255,1)","line":{"color":"rgba(153,153,255,1)"}},"textfont":{"color":"rgba(153,153,255,1)"},"error_y":{"color":"rgba(153,153,255,1)"},"error_x":{"color":"rgba(153,153,255,1)"},"xaxis":"x","frame":null},{"x":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"y":[0.0906121712118553,3.28930886933649,0,0.438143527030321,0,5.04235529081072,0,17.5445989576176,0.461685925836676,38.9352475987472,0,53.6196492182381,0,9.79646746467943,6.47395430103768,0,51.6738863220834,1.52071615964649,0,0.0305985224351034,0,0.12591868340151,14.5654566993233,9.89231023666904,0,0,1.40271488859529,1.04592201071154,9.66534750793928,0,0,10.3237121565032,0,0,3.50749860786408,15.4174482986898,0,1.70582040375205],"yaxis":"y","hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"showlegend":true,"type":"bar","name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(255,0,0,1)","line":{"color":"rgba(255,0,0,1)"}},"textfont":{"color":"rgba(255,0,0,1)"},"error_y":{"color":"rgba(255,0,0,1)"},"error_x":{"color":"rgba(255,0,0,1)"},"xaxis":"x","frame":null},{"x":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"y":[1.13951669857333,0.244748838170559,0,4.36484939546295,0.393321619798344,0,0.0515455121021506,1.20530177535475,1.51839667305853,13.829335025417,6.09365399658001,9.5952655453328,0,7.50327946301139,7.69823864503385,4.35910284768165,65.896519828835,0,0.313787437901048,0.0378455409065752,1.50816388102013,0,51.078470539029,0,0.225644706649109,3.47249764265918,0,3.9604547532126,28.0884981568752,0.872428093678024,0,0.150515023288831,0,0,3.58176941171913,18.7625246719656,0,0],"yaxis":"y","hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"showlegend":true,"type":"bar","name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(238,232,0,1)","line":{"color":"rgba(238,232,0,1)"}},"textfont":{"color":"rgba(238,232,0,1)"},"error_y":{"color":"rgba(238,232,0,1)"},"error_x":{"color":"rgba(238,232,0,1)"},"xaxis":"x","frame":null},{"x":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"y":[454.065194460251,637.032818742642,614.900085428157,858.808116382365,486.721009280268,416.750622713633,507.541033332326,427.772844328442,291.028593796723,1068.47518292742,368.919597422597,857.153498283745,505.231519398407,625.190655745346,758.288049701658,603.328905276406,366.251366227613,497.732466291924,554.753935280314,643.144880990354,368.934767117294,686.341970847083,1256.21413664791,406.468708462791,293.257711153193,509.780000329217,604.678089187906,768.387673348733,471.28281199467,761.118777871506,407.860413975495,458.911338158626,686.500377082453,578.577439625868,1292.3512572318,1405.81290694329,640.341565541656,465.098280646204],"yaxis":"y","mode":"text","text":[" 454"," 637"," 615"," 859"," 487"," 417"," 508"," 428"," 291","1 068"," 369"," 857"," 505"," 625"," 758"," 603"," 366"," 498"," 555"," 643"," 369"," 686","1 256"," 406"," 293"," 510"," 605"," 768"," 471"," 761"," 408"," 459"," 687"," 579","1 292","1 406"," 640"," 465"],"textfont":{"color":"black","size":8},"textposition":["top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center"],"cliponaxis":false,"type":"scatter","mode.1":"lines","hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"showlegend":false,"marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"line":{"color":"rgba(214,39,40,1)"},"xaxis":"x","frame":null},{"x":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"y":[455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844],"yaxis":"y","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.3,"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"showlegend":false,"marker":{"color":"rgba(148,103,189,1)","line":{"color":"rgba(148,103,189,1)"}},"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","frame":null},{"x":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"y":[686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361],"yaxis":"y","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.3,"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"showlegend":false,"marker":{"color":"rgba(140,86,75,1)","line":{"color":"rgba(140,86,75,1)"}},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","frame":null},{"x":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"y":[1015.71060030326,793.938583520174,607.890908817655,744.115856755587,763.381296584809],"yaxis":"y2","text":[" "," "," "," "," "],"hoverinfo":["none","none","none","none","none"],"showlegend":false,"type":"bar","name":"Financial gate-to-gate cost-effectiveness","marker":{"color":"rgba(153,153,255,1)","line":{"color":"rgba(153,153,255,1)"}},"textfont":{"color":"rgba(153,153,255,1)"},"error_y":{"color":"rgba(153,153,255,1)"},"error_x":{"color":"rgba(153,153,255,1)"},"xaxis":"x2","frame":null},{"x":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"y":[38.9352475987472,53.6196492182381,9.79646746467943,6.47395430103768,1.04592201071154],"yaxis":"y2","text":[" "," "," "," "," "],"hoverinfo":["none","none","none","none","none"],"showlegend":false,"type":"bar","name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(255,0,0,1)","line":{"color":"rgba(255,0,0,1)"}},"textfont":{"color":"rgba(255,0,0,1)"},"error_y":{"color":"rgba(255,0,0,1)"},"error_x":{"color":"rgba(255,0,0,1)"},"xaxis":"x2","frame":null},{"x":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"y":[13.829335025417,9.5952655453328,7.50327946301139,7.69823864503385,3.9604547532126],"yaxis":"y2","text":[" "," "," "," "," "],"hoverinfo":["none","none","none","none","none"],"showlegend":false,"type":"bar","name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(238,232,0,1)","line":{"color":"rgba(238,232,0,1)"}},"textfont":{"color":"rgba(238,232,0,1)"},"error_y":{"color":"rgba(238,232,0,1)"},"error_x":{"color":"rgba(238,232,0,1)"},"xaxis":"x2","frame":null},{"x":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"y":[1068.47518292742,857.153498283745,625.190655745346,758.288049701658,768.387673348733],"yaxis":"y2","mode":"text","text":["1 068"," 857"," 625"," 758"," 768"],"textfont":{"color":"black","size":10},"textposition":["top center","top center","top center","top center","top center"],"cliponaxis":false,"type":"scatter","mode.1":"lines","hoverinfo":["none","none","none","none","none"],"showlegend":false,"marker":{"color":"rgba(23,190,207,1)","line":{"color":"rgba(23,190,207,1)"}},"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"line":{"color":"rgba(23,190,207,1)"},"xaxis":"x2","frame":null},{"x":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"y":[455.276730384844,455.276730384844,455.276730384844,455.276730384844,455.276730384844],"yaxis":"y2","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.3,"hoverinfo":["none","none","none","none","none"],"showlegend":false,"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x2","frame":null},{"x":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"y":[686.46077552361,686.46077552361,686.46077552361,686.46077552361,686.46077552361],"yaxis":"y2","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.3,"hoverinfo":["none","none","none","none","none"],"showlegend":false,"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x2","frame":null}],"layout":{"xaxis":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"total descending","categoryarray":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"anchor":"y","title":"","tickangle":270,"tickfont":{"size":11},"autotick":false,"fixedrange":true,"showgrid":false},"xaxis2":{"domain":[0.7,1],"automargin":true,"type":"category","categoryorder":"total descending","categoryarray":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"anchor":"y2","title":"","showticklabels":false,"autotick":false,"fixedrange":true,"showgrid":false},"yaxis2":{"domain":[0.5,1],"automargin":true,"anchor":"x2","title":"","tickfont":{"size":10},"tickvals":[0,200,400,600,800,1000,1200],"ticktext":["0","  200","  400","  600","  800","1 000","1 200"],"fixedrange":true,"zeroline":true,"showline":false,"showgrid":false},"yaxis":{"domain":[0,1],"automargin":true,"anchor":"x","title":"€ per composite flight-hour","titlefont":{"size":12},"tickfont":{"size":11},"tickvals":[0,200,400,600,800,1000,1200,1400,1600],"ticktext":["0","  200","  400","  600","  800","1 000","1 200","1 400","1 600"],"fixedrange":true,"linewidth":1,"linecolor":"transparent","mirror":true,"zeroline":true,"showline":true,"showgrid":false},"annotations":[{"text":"DFS","x":"DFS","y":0,"showarrow":false,"xref":"x2","yref":"y2","yanchor":"top","xanchor":"center","align":"right","textangle":-90,"font":{"color":"black","size":9}},{"text":"DSNA","x":"DSNA","y":0,"showarrow":false,"xref":"x2","yref":"y2","yanchor":"top","xanchor":"center","align":"right","textangle":-90,"font":{"color":"black","size":9}},{"text":"ENAIRE","x":"ENAIRE","y":0,"showarrow":false,"xref":"x2","yref":"y2","yanchor":"top","xanchor":"center","align":"right","textangle":-90,"font":{"color":"black","size":9}},{"text":"ENAV","x":"ENAV","y":0,"showarrow":false,"xref":"x2","yref":"y2","yanchor":"top","xanchor":"center","align":"right","textangle":-90,"font":{"color":"black","size":9}},{"text":"NATS<br />(Continental)","x":"NATS<br />(Continental)","y":0,"showarrow":false,"xref":"x2","yref":"y2","yanchor":"top","xanchor":"center","align":"right","textangle":-90,"font":{"color":"black","size":9}},{"x":0.12,"y":0.98,"text":"<b>European system avg. for economic cost-effectiveness: € 689<\/b>","xref":"paper","yref":"paper","xanchor":"left","showarrow":false,"font":{"color":"#993366","size":10}},{"x":0.12,"y":0.93,"text":"<b>European system avg. for financial cost-effectiveness: € 663<\/b>","xref":"paper","yref":"paper","xanchor":"left","showarrow":false,"font":{"color":"#8989FF","size":10}}],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true,"autosize":true,"uniformtext":{"minsize":8,"mode":"show"},"bargap":0.45,"barmode":"stack","title":{"text":"","font":{"color":"black","size":14}},"font":{"family":"Helvetica"},"legend":{"orientation":"h","traceorder":"reversed","font":{"size":10},"y":-0.55,"x":0,"bgcolor":"transparent"}},"attrs":{"13ffa1c03e70c":{"x":{},"y":{},"yaxis":"y1","hoverinfo":"none","showlegend":true,"color":{},"colors":["#9999FF","#FF0000","#EEE800"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"13ffa4435d332":{"x":{},"y":{},"yaxis":"y1","mode":"text","text":{},"textfont":{"color":"black","size":8},"textposition":"top center","cliponaxis":false,"type":"scatter","mode.1":"lines","hoverinfo":"none","showlegend":false,"inherit":false},"13ffa29bc9a9a":{"x":{},"y":{},"yaxis":"y1","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.3,"hoverinfo":"none","showlegend":false,"inherit":false},"13ffa1d4a09de":{"x":{},"y":{},"yaxis":"y1","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.3,"hoverinfo":"none","showlegend":false,"inherit":false},"13ffa67cddcd7":{"x":{},"y":{},"yaxis":"y1","text":" ","hoverinfo":"none","showlegend":false,"color":{},"colors":["#9999FF","#FF0000","#EEE800"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"13ffa7c5ddc7e":{"x":{},"y":{},"yaxis":"y1","mode":"text","text":{},"textfont":{"color":"black","size":10},"textposition":"top center","cliponaxis":false,"type":"scatter","mode.1":"lines","hoverinfo":"none","showlegend":false,"inherit":false},"13ffa1a01005f":{"x":{},"y":{},"yaxis":"y1","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.3,"hoverinfo":"none","showlegend":false,"inherit":false},"13ffa37bf6a4f":{"x":{},"y":{},"yaxis":"y1","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.3,"hoverinfo":"none","showlegend":false,"inherit":false}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"responsive":false,"displaylogo":false,"displayModeBar":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bb0a4328491972f5c8ac" style="width:100%;height:490px;"></div>
+<script type="application/json" data-for="htmlwidget-bb0a4328491972f5c8ac">{"x":{"data":[{"x":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"y":[407.64439475770689,619.52430710425153,488.46741465728491,595.59017521646626,381.59922499505734,314.38254229528405,368.01688590117521,311.32831880261602,229.66937136541119,653.87539387377899,358.90578489859996,518.96822559095085,374.96183237089957,452.5185882062716,485.8603382969165,410.53035690338993,203.16399733724984,330.03587425958796,351.56261315017468,442.27294084363422,331.06517520648163,635.36843642816712,848.65314483858413,392.53591643792703,255.60423674622956,722.9354048756328,400.0692258853947,439.22516710042953,272.77998369523868,461.6610186631666,428.35164235445677,432.94841253232511,532.60041751430151,462.71953025616489,1068.6405140620618,926.34269797358718,515.6863754160388,361.49996871923076],"yaxis":"y","hovertemplate":["%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}"],"showlegend":true,"type":"bar","name":"Financial gate-to-gate cost-effectiveness","marker":{"color":"rgba(120,180,240,1)","line":{"color":"rgba(120,180,240,1)"}},"textfont":{"color":"rgba(120,180,240,1)"},"error_y":{"color":"rgba(120,180,240,1)"},"error_x":{"color":"rgba(120,180,240,1)"},"xaxis":"x","frame":null},{"x":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"y":[2.5671350822751431,452.94499510191628,0,23.696622159546884,0.79342312715171426,238.47006195090955,0.019065424640827715,173.13191266343046,0.14096840958836429,401.75073649959421,0,196.69787040386842,0.16383710511449451,36.437326423941713,20.48542552809565,0,20.792532585802761,262.42359701563566,0.20076708968631707,6.2707594167652569,0,2.4776524402443321,8.9183759478969566,76.979116335593659,0,0,30.003018411024396,39.247736037301543,93.453529438646811,0.34690812034301777,0,204.02523849892916,0,0,58.210566305304887,67.24532796388371,0.27405260616420513,317.29053750081511],"yaxis":"y","hovertemplate":["%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}"],"showlegend":true,"type":"bar","name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(224,88,79,1)","line":{"color":"rgba(224,88,79,1)"}},"textfont":{"color":"rgba(224,88,79,1)"},"error_y":{"color":"rgba(224,88,79,1)"},"error_x":{"color":"rgba(224,88,79,1)"},"xaxis":"x","frame":null},{"x":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"y":[0,3.6101589056885239,0,6.4278520027745127,4.9410388803241627,0.032546398012702135,0,0,1.4496886445506112,14.995638404966385,11.568722525876852,24.805810040493636,0,20.142898265709292,7.5639301740014737,3.6528935027251017,50.517617877233469,0,6.1398771159293082,2.3441376805616816,0.029863327660530268,0,183.30930303296429,0,0,0,0,23.863583225575059,113.89073769323198,0.72477392071664604,0.77294684970961347,2.8759091127316951,1.332115235202153,0,7.2937839580547026,38.885984295151488,0,0.28140929187892766],"yaxis":"y","hovertemplate":["%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}"],"showlegend":true,"type":"bar","name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(225,240,96,1)","line":{"color":"rgba(225,240,96,1)"}},"textfont":{"color":"rgba(225,240,96,1)"},"error_y":{"color":"rgba(225,240,96,1)"},"error_x":{"color":"rgba(225,240,96,1)"},"xaxis":"x","frame":null},{"marker":{"color":"transparent","line":{"color":"rgba(214,39,40,1)"}},"x":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"y":[410.21152983998201,1076.0794611118563,488.46741465728491,625.71464937878773,387.33368700253322,552.88515064420631,368.03595132581603,484.46023146604648,231.26002841955017,1070.6217687783396,370.47450742447683,740.47190603531283,375.12566947601408,509.09881289592261,513.9096939990136,414.18325040611501,274.47414780028606,592.45947127522368,357.90325735579034,450.88783794096116,331.09503853414213,637.84608886841147,1040.8808238194454,469.51503277352072,255.60423674622956,722.9354048756328,430.07224429641911,502.33648636330611,480.12425082711746,462.73270070422626,429.1245892041664,639.84956014398597,533.93253274950371,462.71953025616489,1134.1448643254214,1032.4740102326223,515.96042802220302,679.07191551192489],"yaxis":"y","mode":"text+markers","text":[" 410","1 076"," 488"," 626"," 387"," 553"," 368"," 484"," 231","1 071"," 370"," 740"," 375"," 509"," 514"," 414"," 274"," 592"," 358"," 451"," 331"," 638","1 041"," 470"," 256"," 723"," 430"," 502"," 480"," 463"," 429"," 640"," 534"," 463","1 134","1 032"," 516"," 679"],"textfont":{"color":"black","size":8},"textposition":["top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center","top center"],"cliponaxis":false,"type":"scatter","mode.1":"lines","hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"showlegend":false,"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"line":{"color":"rgba(214,39,40,1)"},"xaxis":"x","frame":null},{"marker":{"color":"transparent","line":{"color":"rgba(148,103,189,1)"}},"x":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"y":[410.21152983998201,1076.0794611118563,488.46741465728491,625.71464937878773,387.33368700253322,552.88515064420631,368.03595132581603,484.46023146604648,231.26002841955017,1070.6217687783396,370.47450742447683,740.47190603531283,375.12566947601408,509.09881289592261,513.9096939990136,414.18325040611501,274.47414780028606,592.45947127522368,357.90325735579034,450.88783794096116,331.09503853414213,637.84608886841147,1040.8808238194454,469.51503277352072,255.60423674622956,722.9354048756328,430.07224429641911,502.33648636330611,480.12425082711746,462.73270070422626,429.1245892041664,639.84956014398597,533.93253274950371,462.71953025616489,1134.1448643254214,1032.4740102326223,515.96042802220302,679.07191551192489],"yaxis":"y","mode":"text+markers","text":["Albcontrol (Albania)","ANS CR (Czech Republic)","ARMATS (Armenia)","Austro Control (Austria)","Avinor (Continental) (Norway)","BHANSA (Bosnia and Herzegovina)","BULATSA (Bulgaria)","Croatia Control (Croatia)","DCAC Cyprus (Cyprus)","DFS (Germany)","DHMI (Türkiye)","DSNA (France)","EANS (Estonia)","ENAIRE (Spain)","ENAV (Italy)","Fintraffic ANS (Finland)","HASP (Greece)","HungaroControl (Hungary)","IAA (Ireland)","LFV (Sweden)","LGS (Latvia)","LPS (Slovakia)","LVNL (Netherlands)","M-NAV (North Macedonia)","MATS (Malta)","MOLDATSA (Moldova)","MUAC (EUROCONTROL)","NATS (Continental) (United Kingdom)","NAV Portugal (Continental) (Portugal)","NAVIAIR (Denmark)","Oro Navigacija (Lithuania)","PANSA (Poland)","ROMATSA (Romania)","Sakaeronavigatsia (Georgia)","skeyes (Belgium)","Skyguide (Switzerland)","Slovenia Control (Slovenia)","SMATSA (Serbia/Montenegro)"],"textfont":{"color":"transparent","size":1},"type":"scatter","mode.1":"lines","hovertemplate":["%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>"],"showlegend":false,"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"line":{"color":"rgba(148,103,189,1)"},"xaxis":"x","frame":null},{"x":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"y":[411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524],"yaxis":"y","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.29999999999999999,"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"showlegend":false,"marker":{"color":"rgba(140,86,75,1)","line":{"color":"rgba(140,86,75,1)"}},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","frame":null},{"x":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"y":[634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559],"yaxis":"y","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.29999999999999999,"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"showlegend":false,"marker":{"color":"rgba(227,119,194,1)","line":{"color":"rgba(227,119,194,1)"}},"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"xaxis":"x","frame":null},{"x":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"y":[653.87539387377899,518.96822559095085,452.5185882062716,485.8603382969165,439.22516710042953],"yaxis":"y2","text":[" "," "," "," "," "],"hovertemplate":["%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}"],"showlegend":false,"type":"bar","name":"Financial gate-to-gate cost-effectiveness","marker":{"color":"rgba(120,180,240,1)","line":{"color":"rgba(120,180,240,1)"}},"textfont":{"color":"rgba(120,180,240,1)"},"error_y":{"color":"rgba(120,180,240,1)"},"error_x":{"color":"rgba(120,180,240,1)"},"xaxis":"x2","frame":null},{"x":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"y":[401.75073649959421,196.69787040386842,36.437326423941713,20.48542552809565,39.247736037301543],"yaxis":"y2","text":[" "," "," "," "," "],"hovertemplate":["%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}"],"showlegend":false,"type":"bar","name":"Unit cost of en-route ATFM delays","marker":{"color":"rgba(224,88,79,1)","line":{"color":"rgba(224,88,79,1)"}},"textfont":{"color":"rgba(224,88,79,1)"},"error_y":{"color":"rgba(224,88,79,1)"},"error_x":{"color":"rgba(224,88,79,1)"},"xaxis":"x2","frame":null},{"x":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"y":[14.995638404966385,24.805810040493636,20.142898265709292,7.5639301740014737,23.863583225575059],"yaxis":"y2","text":[" "," "," "," "," "],"hovertemplate":["%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}","%{y:.0f}"],"showlegend":false,"type":"bar","name":"Unit cost of airport ATFM delays","marker":{"color":"rgba(225,240,96,1)","line":{"color":"rgba(225,240,96,1)"}},"textfont":{"color":"rgba(225,240,96,1)"},"error_y":{"color":"rgba(225,240,96,1)"},"error_x":{"color":"rgba(225,240,96,1)"},"xaxis":"x2","frame":null},{"marker":{"color":"transparent","line":{"color":"rgba(31,119,180,1)"}},"x":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"y":[1070.6217687783396,740.47190603531283,509.09881289592261,513.9096939990136,502.33648636330611],"yaxis":"y2","mode":"text+markers","text":["DFS (Germany)","DSNA (France)","ENAIRE (Spain)","ENAV (Italy)","NATS<br />(Continental) (United Kingdom)"],"textfont":{"color":"transparent","size":1},"type":"scatter","mode.1":"lines","hovertemplate":["%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>","%{text} %{y:.0f}<extra><\/extra>"],"showlegend":false,"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x2","frame":null},{"marker":{"color":"transparent","line":{"color":"rgba(255,127,14,1)"}},"x":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"y":[1070.6217687783396,740.47190603531283,509.09881289592261,513.9096939990136,502.33648636330611],"yaxis":"y2","mode":"text+markers","text":["1 071"," 740"," 509"," 514"," 502"],"textfont":{"color":"black","size":10},"textposition":["top center","top center","top center","top center","top center"],"cliponaxis":false,"type":"scatter","mode.1":"lines","hoverinfo":["none","none","none","none","none"],"showlegend":false,"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x2","frame":null},{"x":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"y":[411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524,411.20445998151524],"yaxis":"y2","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.29999999999999999,"hoverinfo":["none","none","none","none","none"],"showlegend":false,"marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x2","frame":null},{"x":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"y":[634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559,634.81322899600559],"yaxis":"y2","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.29999999999999999,"hoverinfo":["none","none","none","none","none"],"showlegend":false,"marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x2","frame":null}],"layout":{"xaxis":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"total descending","categoryarray":["Albcontrol","ANS CR","ARMATS","Austro Control","Avinor (Continental)","BHANSA","BULATSA","Croatia Control","DCAC Cyprus","DFS","DHMI","DSNA","EANS","ENAIRE","ENAV","Fintraffic ANS","HASP","HungaroControl","IAA","LFV","LGS","LPS","LVNL","M-NAV","MATS","MOLDATSA","MUAC","NATS (Continental)","NAV Portugal (Continental)","NAVIAIR","Oro Navigacija","PANSA","ROMATSA","Sakaeronavigatsia","skeyes","Skyguide","Slovenia Control","SMATSA"],"anchor":"y","title":"","tickangle":270,"tickfont":{"size":11},"autotick":false,"fixedrange":true,"showgrid":false},"xaxis2":{"domain":[0.69999999999999996,1],"automargin":true,"type":"category","categoryorder":"total descending","categoryarray":["DFS","DSNA","ENAIRE","ENAV","NATS<br />(Continental)"],"anchor":"y2","title":"","showticklabels":false,"autotick":false,"fixedrange":true,"showgrid":false},"yaxis2":{"domain":[0.40000000000000002,0.92000000000000004],"automargin":true,"anchor":"x2","title":"","tickfont":{"size":10},"tickvals":[0,200,400,600,800,1000,1200],"ticktext":["0","  200","  400","  600","  800","1 000","1 200"],"hoverformat":".0f","fixedrange":true,"zeroline":true,"showline":false,"showgrid":false},"yaxis":{"domain":[0,0.90000000000000002],"automargin":true,"anchor":"x","title":"€ per composite flight-hour","titlefont":{"size":12},"tickfont":{"size":11},"tickvals":[0,200,400,600,800,1000,1200],"ticktext":["0","  200","  400","  600","  800","1 000","1 200"],"fixedrange":true,"hoverformat":".0f","linewidth":1,"linecolor":"transparent","mirror":true,"zeroline":true,"showline":true,"showgrid":false},"annotations":[{"text":"DFS","x":"DFS","y":0,"showarrow":false,"xref":"x2","yref":"y2","yanchor":"top","xanchor":"center","align":"right","textangle":-90,"font":{"color":"black","size":9}},{"text":"DSNA","x":"DSNA","y":0,"showarrow":false,"xref":"x2","yref":"y2","yanchor":"top","xanchor":"center","align":"right","textangle":-90,"font":{"color":"black","size":9}},{"text":"ENAIRE","x":"ENAIRE","y":0,"showarrow":false,"xref":"x2","yref":"y2","yanchor":"top","xanchor":"center","align":"right","textangle":-90,"font":{"color":"black","size":9}},{"text":"ENAV","x":"ENAV","y":0,"showarrow":false,"xref":"x2","yref":"y2","yanchor":"top","xanchor":"center","align":"right","textangle":-90,"font":{"color":"black","size":9}},{"text":"NATS<br />(Continental)","x":"NATS<br />(Continental)","y":0,"showarrow":false,"xref":"x2","yref":"y2","yanchor":"top","xanchor":"center","align":"right","textangle":-90,"font":{"color":"black","size":9}},{"x":0.12,"y":1.0800000000000001,"text":"<b>European system avg. for economic cost-effectiveness: € 591<\/b>","xref":"paper","yref":"paper","xanchor":"left","showarrow":false,"font":{"color":"#E0584F","size":10}},{"x":0.12,"y":1.03,"text":"<b>European system avg. for financial cost-effectiveness: € 470<\/b>","xref":"paper","yref":"paper","xanchor":"left","showarrow":false,"font":{"color":"#78B4F0","size":10}}],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"x unified","showlegend":true,"autosize":true,"uniformtext":{"minsize":8,"mode":"show"},"bargap":0.45000000000000001,"barmode":"stack","title":{"text":"","font":{"color":"black","size":14}},"font":{"family":"Helvetica"},"hoverlabel":{"bgcolor":"rgba(255,255,255,0.88)"},"legend":{"orientation":"h","traceorder":"reversed","font":{"size":10},"y":-0.84999999999999998,"x":0,"bgcolor":"transparent"}},"attrs":{"7b0c39bc28e2":{"x":{},"y":{},"yaxis":"y1","hovertemplate":"%{y:.0f}","showlegend":true,"color":{},"colors":["#78B4F0","#E0584F","#E1F060"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"7b0c13de4ccd":{"marker":{"color":"transparent"},"x":{},"y":{},"yaxis":"y1","mode":"text","text":{},"textfont":{"color":"black","size":8},"name":"","textposition":"top center","cliponaxis":false,"type":"scatter","mode.1":"lines","hoverinfo":"none","showlegend":false,"inherit":false},"7b0cac85331":{"marker":{"color":"transparent"},"x":{},"y":{},"yaxis":"y1","mode":"text","text":{},"textfont":{"color":"transparent","size":1},"type":"scatter","mode.1":"lines","hovertemplate":"%{text} %{y:.0f}<extra><\/extra>","name":"","showlegend":false,"inherit":false},"7b0c7cd91968":{"x":{},"y":{},"yaxis":"y1","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.29999999999999999,"hoverinfo":"none","showlegend":false,"inherit":false},"7b0c50943835":{"x":{},"y":{},"yaxis":"y1","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.29999999999999999,"hoverinfo":"none","showlegend":false,"inherit":false},"7b0c7ed33a2":{"x":{},"y":{},"yaxis":"y1","text":" ","hovertemplate":"%{y:.0f}","showlegend":false,"color":{},"colors":["#78B4F0","#E0584F","#E1F060"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"7b0c37ad2ed6":{"marker":{"color":"transparent"},"x":{},"y":{},"yaxis":"y1","mode":"text","text":{},"textfont":{"color":"transparent","size":1},"type":"scatter","mode.1":"lines","hovertemplate":"%{text} %{y:.0f}<extra><\/extra>","name":"","showlegend":false,"inherit":false},"7b0c3f6a5bb3":{"marker":{"color":"transparent"},"x":{},"y":{},"yaxis":"y1","mode":"text","text":{},"textfont":{"color":"black","size":10},"textposition":"top center","cliponaxis":false,"type":"scatter","mode.1":"lines","name":"","hoverinfo":"none","showlegend":false,"inherit":false},"7b0c328c5be1":{"x":{},"y":{},"yaxis":"y1","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.29999999999999999,"hoverinfo":"none","showlegend":false,"inherit":false},"7b0c5d3919dc":{"x":{},"y":{},"yaxis":"y1","type":"scatter","mode":"lines","line":{"color":"#333399","width":2,"dash":"dash"},"opacity":0.29999999999999999,"hoverinfo":"none","showlegend":false,"inherit":false}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"responsive":false,"displaylogo":false,"displayModeBar":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.2: Economic gate-to-gate cost-effectiveness, 2021</figcaption><p></p>
-</figure>
+<figcaption class="figure-caption">Figure&nbsp;3.2: Economic gate-to-gate cost-effectiveness, 2022 <!-- to avoid figure in the middle of the page --></figcaption></figure>
 </div>
+<p>For ten ANSPs ATFM delays represented more than 20% of their unit economic costs (see ANSPs with the largest red and lime portions, e.g.&nbsp;ANS CR, DFS, SMATSA, HungaroControl, etc.). In absolute terms (cumulative ATFM delays in minutes), DFS, DSNA, ENAIRE, NAV Portugal and NATS were the ANSPs generating the highest levels of ATFM delays in 2022 (70% of the pan-European system total ATFM delays). For some of these ANSPs, work associated with the implementation of new ATM systems caused a temporary reduction of the available capacity and as a consequence contributed to increase ATFM delays (this was for example the case for DSNA and NAV Portugal). Other ANSPs, for example PANSA, were affected by airspace closure due to extended monitoring activities performed by the military at the border with Ukraine, due to the ongoing war therein.</p>
+<p>Further analysis of the relationship between changes in ANSPs costs, traffic and unit costs will be analysed in detail in the forthcoming ACE report.</p>
 
 
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
 <ol>
-<li id="fn1"><p>See https://ansperformance.eu/economics/ace/ace-handbook/ for more information on the methodology used to compute composite flight-hours and economic costs.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>See <a href="https://ansperformance.eu/economics/ace/ace-handbook/" class="uri">https://ansperformance.eu/economics/ace/ace-handbook/</a> for more information on the methodology used to compute composite flight-hours and economic costs.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -478,9 +490,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -545,6 +571,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -583,12 +695,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp(/^(?:http:|https:)\/\/ansperformance\.eu\/|^(?:http:|https:)\/\/.*ace-handbook\.netlify\.app\//);
+      var filterRegex = new RegExp("^(?:http:|https:)\/\/ansperformance\.eu\/|^(?:http:|https:)\/\/.*ace-handbook\.netlify\.app\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

@@ -9,7 +9,7 @@ library(magick)
 library(here)
 library(webshot)
 library(htmlwidgets)
-library(RSelenium)
+# library(RSelenium)
 library(here)
 # library(ggrepel)
 
@@ -18,8 +18,8 @@ source(here("data_source.R"))
 
 ## import data
 pie_staff_data_all  <-  read_xlsx(
-                                  # paste0(data_folder, data_file),
-                                  here("data","hlsr2021_data.xlsx"),
+                                  paste0(data_folder, data_file),
+                                  # here("data", data_file ),
                                   sheet = "F_Staff",
                                   range = cell_limits(c(9, 1), c(NA, 3))) %>%
   as_tibble() %>% 
@@ -50,24 +50,39 @@ pie_staff_data <- pie_staff_data %>%
     STAF_TYPE == 'STAF_OTHER' ~ "Other"
   ),
   MYCOLOR = case_when(
-    STAF_TYPE == 'STAF_ATCO' ~ "#000080",
-    STAF_TYPE == 'STAF_ATCO_OTHER' ~ "#0000FF",
-    STAF_TYPE == 'STAF_AB_INITIO' ~ "#0066CC",
-    STAF_TYPE == 'STAF_TRAINEE' ~ "#9999FF",
-    STAF_TYPE == 'STAF_ATC_ASSISTANT' ~ "#99CCFF",
-    STAF_TYPE == 'STAF_OPS_SUPPORT' ~ "#CCFFFF",
-    STAF_TYPE == 'STAF_TECH_OPERAT' ~ "#FFCC00",
-    STAF_TYPE == 'STAF_TECH_PLANNING' ~ "#FFFF00",
-    STAF_TYPE == 'STAF_ADMIN' ~ "#FFFFCC",
-    STAF_TYPE == 'STAF_ANCILLARY' ~ "#FF00FF",
-    STAF_TYPE == 'STAF_OTHER' ~ "#993366"
+    STAF_TYPE == 'STAF_ATCO' ~ "#003366",
+    STAF_TYPE == 'STAF_ATCO_OTHER' ~ "#D4E9FB",
+    STAF_TYPE == 'STAF_AB_INITIO' ~ "#A9D3F7",
+    STAF_TYPE == 'STAF_TRAINEE' ~ "#7FBCF2",
+    STAF_TYPE == 'STAF_ATC_ASSISTANT' ~ "#EDF6A0",
+    STAF_TYPE == 'STAF_OPS_SUPPORT' ~ "#D9DDB3",
+    STAF_TYPE == 'STAF_TECH_OPERAT' ~ "#C6CC8D",
+    STAF_TYPE == 'STAF_TECH_PLANNING' ~ "#D1E616",
+    STAF_TYPE == 'STAF_ADMIN' ~ "#8B9A0E",
+    STAF_TYPE == 'STAF_ANCILLARY' ~ "#747A37",
+    STAF_TYPE == 'STAF_OTHER' ~ "#4D5225"
   )
   ) %>% 
   mutate(LABEL =  paste0(LABEL,
                          "\n",
                          format(round(STAF/sum(STAF)*100,1), nsmall =1 ,big.mark= " "),
                          "%")
-  )
+  ) %>% 
+  mutate(
+  STAF_TYPE = factor(STAF_TYPE, levels = c(
+    'STAF_ATCO',
+    'STAF_OTHER',                  
+    'STAF_ANCILLARY',
+    'STAF_ADMIN',
+    'STAF_TECH_PLANNING', 
+    'STAF_TECH_OPERAT',
+    'STAF_OPS_SUPPORT',
+    'STAF_ATC_ASSISTANT',
+    'STAF_TRAINEE',
+    'STAF_AB_INITIO',
+    'STAF_ATCO_OTHER'
+    ))) %>% 
+  arrange(STAF_TYPE)
 
 # parameters for initial slice
 atcos_ops <- pie_staff_data %>% select(STAF_TYPE,STAF) %>% 
@@ -81,13 +96,17 @@ start_point_staf <- 90-atcos_ops/total_staf*180
 domain_staff_x0 <- 0
 domain_staff_x1 <- 0.45
 
+mytext = 10
+
 # plot piechart
-pie_staff <- pie_staff_data %>% 
+pie_staff <- function(mytext){
+  pie_staff_data %>% 
   plot_ly(
     labels = ~LABEL, values = ~STAF, type = 'pie',
     hoverinfo = "none",
+    sort = FALSE,
     textinfo='label',
-    textfont = list(size = 10),
+    textfont = list(size = mytext),
     marker = list(colors = ~MYCOLOR),
     # line = list(color = '#FFFFFF', width = 1)),
     domain = list(x = c(domain_staff_x0, domain_staff_x1), y = c(0, 1)),  #domain controls the position in the subplot
@@ -103,10 +122,11 @@ pie_staff <- pie_staff_data %>%
     displaylogo = FALSE,
     displayModeBar = F
   )
-
+}
 ## prepare data for pie
 
 pie_atco_data <- pie_staff_data_all %>% 
+  filter(YEAR_DATA == year_report)%>% 
   filter(STAF_TYPE == "ACC_ATCO_NB" | STAF_TYPE == "APP_ATCO_NB")
 
 ## labels and colurs
@@ -117,8 +137,8 @@ pie_atco_data <- pie_atco_data %>%
     STAF_TYPE == 'APP_ATCO_NB' ~ "APPs + TWRs\nATCOs in OPS"
   ),
   MYCOLOR = case_when(
-    STAF_TYPE == 'ACC_ATCO_NB' ~ "#CCFFCC",
-    STAF_TYPE == 'APP_ATCO_NB' ~ "#FFFF99"
+    STAF_TYPE == 'ACC_ATCO_NB' ~ "#125AA2",
+    STAF_TYPE == 'APP_ATCO_NB' ~ "#2787E7"
   )
   )
 
@@ -126,12 +146,13 @@ domain_atco_x0 <-0.57
 domain_atco_x1 <-0.88
 
 # plot piechart
-pie_atco <- pie_atco_data %>% 
+pie_atco <- function(mytext) {
+  pie_atco_data %>% 
   plot_ly(
     labels = ~LABEL, values = ~STAF, type = 'pie',
     hoverinfo = "none",
     textinfo='label+percent',
-    textfont = list(size = 10),
+    textfont = list(size = mytext),
     insidetextorientation='horizontal',
     marker = list(colors = ~MYCOLOR),
     domain = list(x = c(domain_atco_x0, domain_atco_x1), y = c(0, 1)),
@@ -146,7 +167,8 @@ pie_atco <- pie_atco_data %>%
     displaylogo = FALSE,
     displayModeBar = F
   )
-
+}
+  
 # finally we don't use the lines. Too difficult to control in the html page
 lines <- list (
   list(
@@ -168,24 +190,39 @@ lines <- list (
   ))
 
 image_folder <- here("images")
-arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
-
+# arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
+ 
 myimages <- list(
-  list(source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
-       x = (domain_staff_x1+domain_atco_x0)/2, y = 0.55, 
+  list(
+    source = base64enc::dataURI(file = paste0(image_folder,"/long_right_arrow.png")),
+    # source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
+       x = (domain_staff_x1+domain_atco_x0)/2, y = 0.55,
        sizex = 0.15, sizey = 0.15,
-       xref = "paper", yref = "paper", 
+       xref = "paper", yref = "paper",
        xanchor = "center", yanchor = "center"
-  )  
+  )
 )
 
 
-fig <- subplot(pie_staff, pie_atco) %>% 
-  layout(images = myimages)
+fig <- subplot(pie_staff(10), pie_atco(10)) %>%
+   layout(images = myimages)
+
 
 fig
 
-# saveWidget(fig, file = "fig.html")
-# webshot(url = "fig.html", file = "fig.png")
-# export(fig, "fig2.svg", selenium =  RSelenium::rsDriver(browser = "chrome"))
-# htmltools::tagList(list(pie_er, pie_er_term))
+fig_pdf <- subplot(pie_staff(30), pie_atco(30)) %>%
+  layout(
+    height = 900, width = 1984,
+    images = myimages)
+
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+
+image_name <- "figure-2-6-hlsr_staff_pie.png"
+invisible(export(fig_pdf, paste0(fig_dir, image_name)))
+
+# invisible(figure <- image_read(paste0(fig_dir,image_name)))
+# invisible(cropped <- image_crop(figure, "0x470-0+140"))
+# invisible(image_write(cropped, paste0(fig_dir, image_name)))

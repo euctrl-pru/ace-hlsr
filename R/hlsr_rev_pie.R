@@ -8,14 +8,15 @@ library(plotly)
 library(htmltools)
 library(magick)
 library(here)
+library(webshot)
 # library(ggrepel)
 ## data source
 source(here("data_source.R"))
 
 ## import data
 pie_data  <-  read_xlsx(
-  # paste0(data_folder, data_file),
-  here("data","hlsr2021_data.xlsx"),
+  paste0(data_folder, data_file),
+  # here("data", data_file ),
   sheet = "F_Revenue",
                         range = cell_limits(c(9, 1), c(NA, 4))) %>%
   as_tibble() %>% 
@@ -54,13 +55,18 @@ er_trm_domain_x0 <- 0.35
 er_trm_domain_x1 <- 0.65
 
 # plot piechart
-pie_er_trm <- pie_er_trm_data %>% 
+
+pie_er_trm <- function(mytext){
+  
+  pie_er_trm_data %>% 
   plot_ly(
-    labels = ~LABELS, values = ~REVE, type = 'pie',
+    labels = ~LABELS, 
+    values = ~REVE, 
+    type = 'pie',
     hoverinfo = "none",
     textinfo='label+percent',
-    textfont = list(size = 10),
-    marker = list(colors = c("#008080", "#FFFF99"),
+    textfont = list(size = mytext),
+    marker = list(colors = c("#003366", "#E0584F"),
                   line = list(color = '#FFFFFF', width = 1)),
     rotation = start_point_er_trm,
     pull = c(0,0.05),
@@ -75,9 +81,11 @@ pie_er_trm <- pie_er_trm_data %>%
     displaylogo = FALSE,
     displayModeBar = F
   )
-
+}
+  
+  
 #transpose
-pie_data_t <- transpose(pie_data)
+pie_data_t <- data.table::transpose(pie_data)
 colnames(pie_data_t) <- pie_data$TYPE
 rownames(pie_data_t) <- colnames(pie_data)
 
@@ -90,7 +98,7 @@ pie_data_temp <- pie_data_t %>% filter(row_number()!=1)  %>%
          REVE_MILITARY, REVE_AIRPORT) 
 
 # transpose back
-pie_data_pivot <- transpose(pie_data_temp)
+pie_data_pivot <- data.table::transpose(pie_data_temp)
 colnames(pie_data_pivot) <- rownames(pie_data_temp)
 pie_data_pivot$CONCEPT <- colnames(pie_data_temp)
 
@@ -108,19 +116,28 @@ pie_data_pivot <- pie_data_pivot  %>%
     CONCEPT == 'REVE_FINANCIAL' ~ "\t\nFinancial",
     CONCEPT == 'REVE_OTHER' ~ "\t\nOther income"
   ),
-  MYCOLOR = case_when(
-    CONCEPT == 'REVE_CHARGE' ~ "#376092",
-    CONCEPT == 'REVE_AIRPORT' ~ "#0000FF",
-    CONCEPT == 'REVE_MILITARY' ~ "#FFFFCC",
-    CONCEPT == 'REVE_EXEMPT_FLT' ~ "#FFFF00",
-    CONCEPT == 'REVE_DOMESTIC' ~ "#FFCC00", 
-    CONCEPT == 'REVE_FINANCIAL' ~ "#CC99FF",
-    CONCEPT == 'REVE_OTHER' ~ "#FF6600"
+  MYCOLOR_TRM = case_when(
+    CONCEPT == 'REVE_CHARGE' ~ "#811D17",
+    CONCEPT == 'REVE_AIRPORT' ~ "#C12C22",
+    CONCEPT == 'REVE_MILITARY' ~ "#C64D45",
+    CONCEPT == 'REVE_EXEMPT_FLT' ~ "#EC9B95",
+    CONCEPT == 'REVE_DOMESTIC' ~ "#F3BCB9", 
+    CONCEPT == 'REVE_FINANCIAL' ~ "#F9DEDC",
+    CONCEPT == 'REVE_OTHER' ~ "#D9D9D9"
+  ),
+  MYCOLOR_ER = case_when(
+    CONCEPT == 'REVE_CHARGE' ~ "#125AA2",
+    CONCEPT == 'REVE_AIRPORT' ~ "#C12C22",
+    CONCEPT == 'REVE_MILITARY' ~ "#6A9FD5",
+    CONCEPT == 'REVE_EXEMPT_FLT' ~ "#0A85FF",
+    CONCEPT == 'REVE_DOMESTIC' ~ "#5CADFF", 
+    CONCEPT == 'REVE_FINANCIAL' ~ "#ADD6FF",
+    CONCEPT == 'REVE_OTHER' ~ "#D9D9D9"
   )
   )
 #filter ERT data and redo label for pie
 pie_er_data <- pie_data_pivot %>% 
-  select(ERT, CONCEPT, LABEL,MYCOLOR, ERT_PERC) %>% 
+  select(ERT, CONCEPT, LABEL,MYCOLOR_ER, ERT_PERC) %>% 
   mutate(LABEL = paste0(LABEL,
                         "\n",
                         round(ERT_PERC*100,if_else(ERT_PERC*100 <0.5,2,1)),
@@ -136,15 +153,16 @@ er_domain_x0 <- 0
 er_domain_x1 <- 0.27
 
 # plot piechart
-pie_er <- pie_er_data %>% 
+pie_er <- function(mytext){
+  pie_er_data %>% 
   filter(CONCEPT != "REVE_AIRPORT") %>% 
   plot_ly(
     labels = ~LABEL, values = ~ERT, type = 'pie',
     hoverinfo = "none",
     textinfo='label',
-    textfont = list(size = 10),
+    textfont = list(size = mytext),
     insidetextorientation='horizontal',
-    marker = list(colors = ~MYCOLOR),
+    marker = list(colors = ~MYCOLOR_ER),
     rotation = start_point_er,
     sort = FALSE,
     automargin = TRUE,
@@ -159,12 +177,13 @@ pie_er <- pie_er_data %>%
     displaylogo = FALSE,
     displayModeBar = F
   )
-
+}
+  
 ## prepare data for terminal pie
 
 #filter data for pie
 pie_trm_data <- pie_data_pivot %>% 
-  select(TRM, CONCEPT, LABEL,MYCOLOR, TRM_PERC) %>% 
+  select(TRM, CONCEPT, LABEL,MYCOLOR_TRM, TRM_PERC) %>% 
   mutate(LABEL = paste0(LABEL,
                         "\n",
                         round(TRM_PERC*100,if_else(TRM_PERC*100 <0.5,2,1)),
@@ -181,14 +200,15 @@ trm_domain_x0 <- 0.73
 trm_domain_x1 <- 1
 
 # plot piechart
-pie_trm <- pie_trm_data %>% 
+pie_trm <- function(mytext){
+  pie_trm_data %>% 
   plot_ly(
     labels = ~LABEL, values = ~TRM, type = 'pie',
     hoverinfo = "none",
     textinfo='label',
-    textfont = list(size = 10),
+    textfont = list(size = mytext),
     insidetextorientation='horizontal',
-    marker = list(colors = ~MYCOLOR),
+    marker = list(colors = ~MYCOLOR_TRM),
     rotation = start_point_trm,
     automargin = TRUE,
     sort = FALSE,
@@ -203,7 +223,8 @@ pie_trm <- pie_trm_data %>%
     displaylogo = FALSE,
     displayModeBar = F
   )
-
+}
+  
 # finally we don't use the lines. Too difficult to control in the html page
 lines <- list (
   list(
@@ -239,10 +260,12 @@ lines <- list (
     yref = "paper"
   )  )
 
-myannotations <- list(
+
+myannotations <- function(mytext, myvert){
+  list(
   list(
     x = 0.15,
-    y = -0.3,
+    y = myvert,
     text = paste0("<b>", 
                   "Total en-route\nrevenue: ", 
                   "\u20AC ",
@@ -253,11 +276,11 @@ myannotations <- list(
     xanchor = "center",
     showarrow = FALSE,
     font = list(color = "black",
-                size=11)
+                size=mytext)
   ),
   list(
     x = 0.5,
-    y = -0.3,
+    y = myvert,
     text = paste0("<b>", 
                   "Gate-to-gate\nrevenue: ", 
                   "\u20AC ",
@@ -268,11 +291,11 @@ myannotations <- list(
     xanchor = "center",
     showarrow = FALSE,
     font = list(color = "black",
-                size=11)
+                size=mytext)
   ),
   list(
     x = 0.85,
-    y = -0.3,
+    y = myvert,
     text = paste0("<b>", 
                   "Total terminal\nrevenue: ", 
                   "\u20AC ",
@@ -283,33 +306,56 @@ myannotations <- list(
     xanchor = "center",
     showarrow = FALSE,
     font = list(color = "black",
-                size=11)
+                size=mytext)
+  )
+)
+}
+  
+image_folder <- here("images")
+# arrow_left <- image_read(paste0(image_folder,"/long_left_arrow.svg"))
+# arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
+
+myimages <- list(
+  list(
+      source = base64enc::dataURI(file = paste0(image_folder,"/long_right_arrow.png")),
+    # source =raster2uri(as.raster(arrow_left)), #https://plotly-r.com/embedding-images.html
+       x = (er_domain_x1+er_trm_domain_x0)/2, y = 0.55,
+       sizex = 0.18, sizey = 0.18,
+       xref = "paper", yref = "paper",
+       xanchor = "center", yanchor = "center"
+  ),
+  list(
+    source = base64enc::dataURI(file = paste0(image_folder,"/long_left_arrow.png")),
+    # source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
+       x = (er_trm_domain_x1+trm_domain_x0)/2, y = 0.55,
+       sizex = 0.18, sizey = 0.18,
+       xref = "paper", yref = "paper",
+       xanchor = "center", yanchor = "center"
   )
 )
 
-image_folder <- here("images")
-arrow_left <- image_read(paste0(image_folder,"/long_left_arrow.svg")) 
-arrow_right <- image_read(paste0(image_folder,"/long_right_arrow.svg"))
 
-myimages <- list(
-  list(source =raster2uri(as.raster(arrow_left)), #https://plotly-r.com/embedding-images.html
-       x = (er_domain_x1+er_trm_domain_x0)/2, y = 0.55, 
-       sizex = 0.18, sizey = 0.18,
-       xref = "paper", yref = "paper", 
-       xanchor = "center", yanchor = "center"
-  ),
-  list(source =raster2uri(as.raster(arrow_right)), #https://plotly-r.com/embedding-images.html
-       x = (er_trm_domain_x1+trm_domain_x0)/2, y = 0.55, 
-       sizex = 0.18, sizey = 0.18,
-       xref = "paper", yref = "paper", 
-       xanchor = "center", yanchor = "center"
-  )  
-)
+fig <- subplot(pie_er(10), pie_er_trm(10), pie_trm(10)) %>%
+  layout(annotations = myannotations(11, -0.3), images = myimages)
 
-
-fig <- subplot(pie_er, pie_er_trm,pie_trm) %>% 
-  layout(annotations = myannotations, images = myimages)
 
 fig
 
 
+fig_pdf <-  subplot(pie_er(30), pie_er_trm(30), pie_trm(30)) %>%
+  layout(
+    height = 900, width = 1984,
+    annotations = myannotations(40, -0.30), images = myimages)
+
+
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+image_name <- "figure-2-1-hlsr_rev_pie.png"
+
+invisible(export(fig_pdf, paste0(fig_dir, image_name)))
+invisible(figure <- image_read(paste0(fig_dir,image_name)))
+invisible(cropped <- image_crop(figure, "0x890-0+90"))
+invisible(image_write(cropped, paste0(fig_dir, image_name)))
+  
