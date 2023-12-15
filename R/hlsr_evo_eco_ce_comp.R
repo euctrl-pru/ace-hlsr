@@ -9,27 +9,30 @@ library(data.table)
 library(here)
 ## data source
 source(here("data_source.R"))
+library(magick)
 
 # import data
 data_raw <- read_xlsx(
                       # paste0(data_folder, data_file),
-                      here("data","hlsr2021_data.xlsx"),
-                      sheet = "E_EcoCostEff",
-                      range = cell_limits(c(7, 1), c(NA, 3))) %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
+  paste0(data_folder,data_file ),
+  sheet = "E_EcoCostEff",
+  range = cell_limits(c(7, 1), c(NA, 3))
+  ) %>%
+  mutate_at(c(2,3), ~replace_na(.,0)) %>% 
   as_tibble() %>% 
   rename(YEAR_DATA = Year)
 
 data_raw_extra <-  read_xlsx(
-                            # paste0(data_folder, data_file),
-                            here("data","hlsr2021_data.xlsx"),
+                            paste0(data_folder, data_file),
+                            # here("data",data_file ),
                             sheet = "E_EcoCostEff",
                             range = cell_limits(c(7, 5), c(NA, 7))) %>%
   as_tibble() %>% mutate_at(c(2,3), ~replace_na(.,0)) %>% 
   mutate(FIN_CE = COST_CONTROLLABLE/COMPOSITE_FLIGHTHOUR) 
 
 cost_delay <-  read_xlsx(
-                        # paste0(data_folder, data_file),
-                        here("data","hlsr2021_data.xlsx"),
+                        paste0(data_folder, data_file),
+                        # here("data",data_file ),
                         sheet = "E_EcoCostEff",
                         range = cell_limits(c(7, 9), c(NA, 10))) %>%
   as_tibble() %>% 
@@ -39,7 +42,7 @@ data_merged = merge(x=data_raw, y=data_raw_extra, by="YEAR_DATA")
 data_merged = merge(x=data_merged, y=cost_delay, by="YEAR_DATA")
 
 data_calc <- data_merged %>% 
-  mutate(DELAY_CPH = (TDM_ERT_ALL_REASON*COST_DELAY+TDM_ARP_ALL_REASON)/COMPOSITE_FLIGHTHOUR,
+  mutate(DELAY_CPH = (TDM_ERT_ALL_REASON*COST_DELAY+TDM_ARP_ALL_REASON*COST_DELAY)/COMPOSITE_FLIGHTHOUR,
          COST_EV = case_when(YEAR_DATA == min(YEAR_DATA) ~ 0,
                              TRUE ~ COST_CONTROLLABLE/lag(COST_CONTROLLABLE)-1),
          DELAY_CPH_EV = case_when(YEAR_DATA == min(YEAR_DATA) ~ 0,
@@ -93,17 +96,20 @@ vline <- function(x = 0, color = "black") {
 }
 
 # plot 
-p <- plot_ly(
+p <- function(myfont, mywidth, myheight) { 
+  plot_ly(
   data_plot,
+  height = myheight,
+  width = mywidth,
   x = ~X_LABELS,
   y = ~PLOT1,
   color = ~TYPE,
-  colors = c("#003366","#DEA900", "#993366"),
+  colors = c("#2990EA","#E1F060", "#E0584F"),
   text = ~ if_else(abs(VALUE) > plot_div, "", LABELS),
   textangle = -90,
   textposition = "outside",
   textfont = list(
-    color = "black", size = 10),
+    color = "black", size = myfont +2),
   type = "bar",
   hoverinfo = "none"
 ) %>% 
@@ -111,7 +117,7 @@ p <- plot_ly(
              x = ~X_LABELS,
              y = ~PLOT2,
              color = ~TYPE,
-             colors = c("#003366","#DEA900", "#993366"),
+             colors = c("#2990EA","#E1F060", "#E0584F"),
              xaxis= "x2",
              yaxis = "y2",
              text = ~ if_else(abs(VALUE) > plot_div, LABELS,"" ),
@@ -119,7 +125,7 @@ p <- plot_ly(
              textposition = "inside",
              insidetextanchor = "start",
              textfont = list(
-               color = "white", size = 10),
+               color = "black", size = myfont +2),
              type = "bar",
              showlegend = FALSE,
              hoverinfo = "none"
@@ -127,21 +133,23 @@ p <- plot_ly(
   layout (plot_bgcolor = "transparent",
           font = list(family = "Helvetica"),
           legend = list(orientation = 'h',
-                        font = list(size = 11),
+                        font = list(size = myfont + 3),
                         y = -0.1,
                         x = 0.0,
                         bgcolor = 'transparent'),
-          uniformtext=list(minsize=8, mode='show'), #this is important so it does not autofit fonts
+          uniformtext=list(minsize=myfont, mode='show'), #this is important so it does not autofit fonts
           xaxis = list(
             title = "",
+            tickfont = list(size = myfont+3),
             showgrid = F
           ),
           yaxis = list(
             title = "",
-            titlefont = list(size = 12),
+            titlefont = list(size = myfont + 4),
             cliponaxis = FALSE,
             dtick = 0.05,
             tickformat=",.0%", ticks = 'outside',
+            tickfont = list(size = myfont+3),
             zeroline = T, showline = T, showgrid = F,
             range = list(-0.2,0.2)
           ),
@@ -161,4 +169,15 @@ p <- plot_ly(
           displayModeBar = F
           # modeBarButtons = list(list("toImage"))
   )
-p
+}
+
+p(8, NULL, NULL)
+
+fig_dir <- 'figures/'
+fig_name <- "figure-3-1-2-hlsr_evo_eco_ce_comp.png"
+
+invisible(export(p(17, 600, 600), paste0(fig_dir, fig_name)))
+invisible(figure <- image_read(paste0(fig_dir,fig_name)))
+invisible(cropped <- image_crop(figure, "600x600"))
+invisible(image_write(cropped, paste0(fig_dir, fig_name)))
+

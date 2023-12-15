@@ -4,13 +4,15 @@ library(stringr)
 library(readxl)
 library(plotly)
 library(here)
+library(webshot)
+library(magick)
 ## data source
 source(here("data_source.R"))
 
 ## import data
 data_raw <- read_xlsx(
   # paste0(data_folder, data_file),
-  here("data","hlsr2021_data.xlsx"),
+  paste0(data_folder,data_file ),
   sheet = "F_Costs",
   range = cell_limits(c(7, 6), c(NA, 7))) %>%
   as_tibble() %>% 
@@ -45,14 +47,15 @@ vline <- function(x = 0, y=0) {
 
 
 # draw costs plot
-p1 <- data_plot %>% 
+p1 <- function(myfont, mywidth, myheight) {
+  data_plot %>% 
   plot_ly(
-    # width = 500, 
-    # height = 750,
+    width = mywidth,
+    height = myheight,
     x = ~ YEAR_DATA,
     y = ~ COST,
     type = 'scatter', mode = 'lines', 
-    line = list(width = 4), 
+    line = list(width = 4, color = "#003366"), 
     hoverinfo = "none",
     showlegend = F
   ) %>% 
@@ -65,7 +68,7 @@ p1 <- data_plot %>%
     textangle = 0,
     textposition = "top center",
     # insidetextanchor =  "start",
-    textfont = list(color = 'black'),
+    textfont = list(color = 'black', size=myfont),
     cliponaxis = FALSE,
     mode = 'text',
     hoverinfo = "none",
@@ -78,17 +81,21 @@ p1 <- data_plot %>%
       # range = c(0, cost_max),
       # automargin = T,
       # tickvals = c(),
+      tickfont   = list(size = myfont),
       autotick = F, zeroline = F, showline = T,
       # domain=c(0,0.6),
+      uniformtext=list(minsize=myfont, mode='show'),
       showgrid = F
     ),
     yaxis = list(
-      title = paste0("Billions €", year_report),
-      linewidth=1, linecolor='black',
+      title = paste0("Billions €", year_report, "\n&nbsp;"),
+      titlefont   = list(size = myfont),
+      linewidth = 1, linecolor='black',
       # titlefont   = list(size = 13),
       fixedrange = TRUE,
       ticks = 'outside',
       range = c(cost_min,cost_max),
+      tickfont   = list(size = myfont-1),
       # tickson="boundaries",
       # tickcolor='#BFBFBF', ticklen=3,
       tickformat=".1f",
@@ -105,13 +112,23 @@ p1 <- data_plot %>%
                   ),
     autosize = T,
     # plot_bgcolor = '#DCE6F2',
-    uniformtext=list(minsize=10, mode='show')
+    uniformtext=list(minsize=myfont-1, mode='show')
   ) %>%
   config(responsive = FALSE,
          displaylogo = FALSE,
          displayModeBar = F)
+}
+
+p1(13, NULL, 230)
 
 
-p1
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
+fig_dir <- 'figures/'
+image_name <- "figure-2-5-1-hlsr_evo_cost.png"
 
+invisible(export(p1(26, 1500, 460), paste0(fig_dir,image_name)))
+invisible(figure <- image_read(paste0(fig_dir,image_name)))
+invisible(cropped <- image_crop(figure, "0x460"))
+invisible(image_write(cropped, paste0(fig_dir,image_name)))

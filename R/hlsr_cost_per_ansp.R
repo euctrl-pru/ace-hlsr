@@ -4,55 +4,81 @@ library(stringr)
 library(readxl)
 library(plotly)
 library(here)
+library(magick)
 ## data source
 source(here("data_source.R"))
 
 ## import data
 data_raw <- read_xlsx(
   # paste0(data_folder, data_file),
-  here("data","hlsr2021_data.xlsx"),
+  paste0(data_folder,data_file ),
   sheet = "F_Costs",
   range = cell_limits(c(7, 1), c(NA, 3))) %>%
   as_tibble() %>% 
   rename(COST=3)
 
+
 ## process data for plot
 data_plot <- data_raw %>% 
-  mutate(across('ANSP_NAME', str_replace, 'Continental', 'Cont.')) %>% 
   group_by(ANSP_NAME) %>% arrange(YEAR_DATA) %>% 
   mutate(YOY = COST/lag(COST)-1) %>% 
   filter(YEAR_DATA == max(YEAR_DATA)) %>% 
   arrange(desc(COST))  
-  
 
+# import ANSP countries
+ansp  <- read_xlsx(
+  # paste0(data_folder, data_file),
+  paste0(data_folder, data_file),
+  sheet = "Status",
+  range = cell_limits(c(8, 1), c(NA, 3))) %>%
+  as_tibble() %>% 
+  replace(is.na(.), 0) %>% 
+  select(-status)  
+
+data_plot = merge(x=data_plot, y=ansp, by="ANSP_NAME")
+
+data_plot <- data_plot %>% 
+  mutate_at("ANSP_NAME", ~ str_replace (.,'Continental', 'Cont.')) 
+  
 #calculate range for x axis and max year
 cost_max <- round((max(data_plot$COST/10^6)+500)/100,0)*100
 # perc_max <- max(abs(data_plot$YOY)) + 0.4
 year_max <- max(data_plot$YEAR_DATA)
 
 # draw costs plot
-p1 <- data_plot %>% 
+p1 <- function(myfont, mywidth, myheight, vmargin, myautosize){
+  data_plot %>% 
   plot_ly(
-    # width = 500, 
-    # height = 750,
+    width = mywidth,
+    height = myheight,
     x = ~ COST/10^6,
     y = ~ paste0(ANSP_NAME, "  "),
-    marker = list(color =('#4F81BD')),
+    marker = list(color =('#003366')),
     text = ~ format(round(COST/10^6,0), big.mark = " "),
     textangle = 0,
     textposition = "outside",
     # insidetextanchor =  "start",
-    textfont = list(color = 'black'),
+    textfont = list(color = 'black', size = myfont + 1),
     cliponaxis = FALSE,
     type = "bar",
     orientation = 'h',
     hoverinfo = "none",
     showlegend = F
   ) %>% 
-  layout(
+    add_trace(
+      type = 'bar',
+      marker = list(color =('transparent')),
+      text = ~ paste0(ANSP_NAME, " (", country, "): ", format(round(COST/10^6,0), big.mark = " ")),
+      textfont = list(color = 'transparent', size = 1),
+      name = "",
+      hovertemplate = paste('%{text}<extra></extra>'), #extra stuff is to remove the name of the trace
+      # hoverinfo = "none",
+      showlegend = F
+    ) %>%
+    layout(
     title = list(
       text = paste0("Total ATM/CNS provision costs in ", year_max ," (M€",year_max,")"), 
-      font = list(color = '#747a7f', size = 12),
+      font = list(color = '#747a7f', size = myfont),
       y = 0.02),
     xaxis = list(
       title = "",
@@ -76,17 +102,34 @@ p1 <- data_plot %>%
       tickson="boundaries",
       tickcolor='#BFBFBF', ticklen=3,
       # tickformat=",.0%", 
+      tickfont = list(size = myfont),
       categoryorder = "total ascending",
       # domain=c(0,1),
       zeroline = F, showline = T, showgrid = F
     ),
-    autosize = T,
+    autosize = myautosize,
+    margin = list(b = vmargin),
     bargap = 0.4,
+    barmode = 'overlay',
     plot_bgcolor = '#DCE6F2',
-    uniformtext=list(minsize=10, mode='show')
+    uniformtext=list(minsize=myfont, mode='show')
   ) %>%
   config(responsive = FALSE,
          displaylogo = FALSE,
          displayModeBar = F)
+}
+  
+p1(12, NULL, NULL, 30, 'T')
 
-p1
+
+# export to image
+# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
+
+fig_dir <- 'figures/'
+image_name <- "figure-2-5-2-hlsr_cost_per_ansp.png"
+
+invisible(export(p1(26, 950, 1300, 60, 'F'), paste0(fig_dir, image_name)))
+invisible(figure <- image_read(paste0(fig_dir,image_name)))
+invisible(cropped <- image_crop(figure, "950x0"))
+invisible(image_write(cropped, paste0(fig_dir,image_name)))
+

@@ -5,31 +5,34 @@ library(stringr)
 library(readxl)
 library(plotly)
 library(here)
+library(webshot)
+library(magick)
 ## data source
 source(here("data_source.R"))
 
 ace_graph_data <- read_xlsx(
-                            # paste0(data_folder, data_file),
-                            here("data","hlsr2021_data.xlsx"),
+                            paste0(data_folder, data_file),
+                            # here("data", data_file ),
                             sheet = "F_Unit cost",
                             range = cell_limits(c(18, 2), c(24, NA))) %>%
   as_tibble() %>% 
   mutate_all(as.numeric)%>%
   rename(year_data=1)
 
-plot_ACE <- ace_graph_data %>%
+p <- function(myfont, mywidth, myheight) {
+  ace_graph_data %>%
   plot_ly(
-    # width = 500, 
-    height = 330,
+    width = mywidth,
+    height = myheight,
     x = ~ year_data,
     y = ~ costs_per_cph,
     yaxis = "y1",
-    marker = list(color =('#4F81BD')),
+    marker = list(color =('#78B4F0')),
     text = ~ paste("  <b>",round(costs_per_cph,0),"</b>"),
     textangle = -90,
     textposition = "inside",
     insidetextanchor =  "start",
-    textfont = list(color = '#FFFFFF', size = 13),
+    textfont = list(color = '#FFFFFF', size = myfont + 1),
     type = "bar",
     hoverinfo = "none",
     showlegend = F
@@ -42,7 +45,7 @@ plot_ACE <- ace_graph_data %>%
     # colors = c('#4F81BD'),
     mode = 'text',
     text = paste0("<b>",if_else(ace_graph_data$costs_per_cph_change_perc >0, "+", ""),format(round(ace_graph_data$costs_per_cph_change_perc*100,1), 1), "%","</b>"),
-    textfont = list(color = 'black', size = 12),
+    textfont = list(color = 'black', size = myfont),
     type = 'scatter',  mode = 'lines',
     hoverinfo = "none",
     showlegend = F
@@ -54,7 +57,7 @@ plot_ACE <- ace_graph_data %>%
     inherit = FALSE,
     yaxis = "y2",
     type = 'scatter',  mode = 'lines', name = 'ATM/CNS provision costs',
-    line = list(color = "#1F497D"),
+    line = list(color = "#003366"),
     hovertemplate = paste('<b>ATM/CNS costs index</b>: <br>%{y}',
                           "<extra></extra>",
                           sep = "")
@@ -65,8 +68,8 @@ plot_ACE <- ace_graph_data %>%
     inherit = FALSE,
     yaxis = "y2",
     type = 'scatter',  mode = 'lines', name = 'Composite flight-hours',
-    line = list(color = "#E46C0A"),
-    hoverlabel=list(bgcolor="#F8A662",font=list(color='black')),
+    line = list(color = "#E1F060"),
+    hoverlabel=list(bgcolor="#E1F060",font=list(color='black')),
     hovertemplate = paste('<b>Composite flight-hours index</b>: <br>%{y}',
                           "<extra></extra>",
                           sep = "")
@@ -76,6 +79,7 @@ plot_ACE <- ace_graph_data %>%
     xaxis = list(
       title = "",
       fixedrange = TRUE,
+      tickfont = list(size = myfont),
       # automargin = T,
       # tickvals = 2014:2019,
       autotick = F,
@@ -84,8 +88,9 @@ plot_ACE <- ace_graph_data %>%
     
     yaxis = list(
       title = paste("\U20AC","per composite flight-hour"),
-      titlefont   = list(size = 13),
+      titlefont   = list(size = myfont + 1),
       fixedrange = TRUE,
+      tickfont = list(size = myfont),
       # tickformat=",.0%", ticks = 'outside',
       zeroline = T, showline = F, showgrid = T
     ),
@@ -93,18 +98,31 @@ plot_ACE <- ace_graph_data %>%
       overlaying = "y",
       side = "right",
       title = paste ("Index of costs and traffic", "<br>","(", min(ace_graph_data$year_data), " = 100)",sep = ""),
-      titlefont = list(size = 13),
-      range = list(40, 10+round(max(ace_graph_data$index_costs, ace_graph_data$index_cph)/10)*10),
+      titlefont = list(size = myfont +1 ),
+      tickfont = list(size = myfont),
+      range = list(20, 10+round(max(ace_graph_data$index_costs, ace_graph_data$index_cph)/10)*10),
       automargin = T,
       showgrid = F
     ),
     bargap = 0.4,
-    legend = list(orientation = 'h', xanchor = "left", x = -0.05, y = -0.05),
+    legend = list(orientation = 'h', 
+                  font = list(size = myfont),
+                  xanchor = "left", 
+                  x = -0.05, 
+                  y = -0.12),
     # hovermode = "x unified",
-    uniformtext=list(minsize=10, mode='show')
+    uniformtext=list(minsize=myfont, mode='show')
   ) %>%
   config(displaylogo = FALSE, modeBarButtons = list(list("toImage"))
   )
+}
 
-plot_ACE
+p(12, NULL, 330)
 
+fig_dir <- 'figures/'
+fig_name <- "figure-4-1-hlsr_evo_unit_cost.png"
+
+invisible(export(p(24, 1000, 660), paste0(fig_dir,fig_name)))
+invisible(figure <- image_read(paste0(fig_dir,fig_name)))
+invisible(cropped <- image_crop(figure, "1000x660"))
+invisible(image_write(cropped, paste0(fig_dir,fig_name)))
