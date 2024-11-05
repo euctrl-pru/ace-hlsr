@@ -19,7 +19,8 @@ ansp  <- read_xlsx(
   range = cell_limits(c(8, 1), c(NA, 3))) %>%
   as_tibble() %>% 
   filter(ANSP_NAME != 'UkSATSE')%>%
-  replace(is.na(.), 0)
+  replace(is.na(.), 0) %>% 
+  arrange(tolower(ANSP_NAME))
 
 #parameters passed via qmd
 if (exists("checkmark") == FALSE) {checkmark = "\u2714\ufe0f"}
