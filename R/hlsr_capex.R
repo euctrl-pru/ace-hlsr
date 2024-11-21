@@ -45,7 +45,7 @@ p <- function(myfont, mywidth, myheight) {
     x = ~ year_data,
     y = ~ value,
     type = "bar",
-    color = c('#9AA349'),
+    marker = list(color = '#9AA349'),
     text = ~ text_label,
     name = "Capex",
     textangle = 0,
@@ -55,6 +55,7 @@ p <- function(myfont, mywidth, myheight) {
     showlegend = F
   ) %>% 
   layout(
+    # margin = list(b = 50),
     legend = list(orientation = 'h',
                   font = list(size = myfont),
                   y = -0.15,
@@ -81,7 +82,7 @@ p <- function(myfont, mywidth, myheight) {
       tickfont = list(size = myfont),
       ticks = 'outside',
       dtick = 0.3,
-      range = c(0, value_max + 0.3), #so the last line is plotted
+      range = c(0, value_max + 0.21), #so the last line is plotted
       showgrid = TRUE,
       # tickson="boundaries",
       # tickcolor='#BFBFBF', ticklen=3,
