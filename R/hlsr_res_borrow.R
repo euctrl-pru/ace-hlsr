@@ -79,9 +79,9 @@ p <- function(myfont, mywidth, myheight) {
                   bgcolor = 'transparent'),
     xaxis = list(
       title = "",
-      ticks = 'outside',
+      # ticks = 'outside',
       range = c(min(data_plot$year_data) - 0.5, max(data_plot$year_data) + 0.5),
-      tick0 = min(data_plot$year_data),
+      # tick0 = min(data_plot$year_data),
       tickfont = list(size = myfont),
       # fixedrange = TRUE,
       # automargin = T,

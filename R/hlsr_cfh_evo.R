@@ -82,7 +82,7 @@ p <- function(myfont, mywidth, myheight) {
       tickfont = list(size = myfont),
       ticks = 'outside',
       dtick = 2,
-      range = c(0, value_max + 0.1), #so the last line is plotted
+      range = c(0, value_max + 0.2), #so the last line is plotted
       showgrid = TRUE,
       # tickson="boundaries",
       # tickcolor='#BFBFBF', ticklen=3,
