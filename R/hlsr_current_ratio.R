@@ -27,7 +27,12 @@ data_plot <- data_raw %>%
   filter(year_data >= year_report-5, year_data <= year_report) %>% 
   mutate_at(c(2), ~as.numeric(.)) %>% 
   mutate(value_text = case_when(type == "3rd quartile" ~ value + 0.15,
-                                .default = value - 0.15))
+                                .default = value - 0.15),
+         type = case_when(
+           type == "3rd quartile" ~ "3<sup>rd</sup> quartile",
+           type == "1st quartile" ~ "1<sup>st</sup> quartile",
+           .default = type
+         ))
 
 #calculate min and max for y axis
 value_max <- ceiling((max(data_plot$value)/2))*2
@@ -43,8 +48,8 @@ p <- function(myfont, mywidth, myheight) {
     y = ~ value,
     type = 'scatter', mode = 'lines', 
     color = ~ factor(type, levels = c("ANSP average",
-                                      "1st quartile",
-                                      "3rd quartile")
+                                      "1<sup>st</sup> quartile",
+                                      "3<sup>rd</sup> quartile")
     ),
     colors = c('#003366', '#E0584F', '#9AA349'),
     line = list(width = 4), 
