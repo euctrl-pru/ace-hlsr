@@ -206,7 +206,7 @@ As shown in previous sub-sections, the increase in revenue (+€1 229M) outpaced
 
 On the other hand, capital expenditures, which were scaled down in 2020 and 2021 due to liquidity issues and uncertainty as a result of the COVID-19 pandemic, remained at a relatively low level compared with 2018-2019.
 
-ANSPs’ cash and liquidity situation is outlined in more detail in @sec-covid.
+ANSPs’ cash and liquidity situation is outlined in more detail in @sec-cash.
 
 
 
