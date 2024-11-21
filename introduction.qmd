@@ -53,4 +53,4 @@ The remainder of this report is structured as follows:
 -   @sec-high: provides a high-level presentation of 2023 revenues, costs, staff and balance sheet data.
 -   @sec-economic: presents a preliminary analysis of economic cost-effectiveness at Pan-European and ANSP level.
 -   @sec-financial: presents a preliminary analysis of financial cost-effectiveness at Pan-European and ANSP level, and underlying components.
--   @sec-covid: presents a preliminary analysis of specific financial indicators at Pan-European level.
+-   @sec-cash: presents a preliminary analysis of specific financial indicators at Pan-European level.
