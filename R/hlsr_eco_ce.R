@@ -76,7 +76,7 @@ data_help <- data_prep %>%
 #prepare data for inset
 data_inset <- data_plot %>% 
   filter(ANSP_NAME == 'DSNA'| ANSP_NAME == 'ENAIRE' | ANSP_NAME == 'DFS' |
-           ANSP_NAME == 'ENAV' | ANSP_NAME == 'NATS (Continental)') %>% 
+           ANSP_NAME == 'ENAV' | ANSP_NAME == 'NATS (Continental)' | ANSP_NAME == 'DHMI') %>% 
   mutate(ANSP_NAME = case_when(
     ANSP_NAME == 'NATS (Continental)' ~ 'NATS\n(Continental)',
     TRUE ~ ANSP_NAME)) 
@@ -84,7 +84,7 @@ data_inset <- data_plot %>%
 # help table for labels and additional traces
 data_help_inset <- data_help %>% 
   filter(ANSP_NAME == 'DSNA'| ANSP_NAME == 'ENAIRE' | ANSP_NAME == 'DFS' |
-           ANSP_NAME == 'ENAV' | ANSP_NAME == 'NATS (Continental)') %>% 
+           ANSP_NAME == 'ENAV' | ANSP_NAME == 'NATS (Continental)' | ANSP_NAME == 'DHMI') %>% 
   mutate(ANSP_NAME = case_when(
     ANSP_NAME == 'NATS (Continental)' ~ 'NATS\n(Continental)',
     TRUE ~ ANSP_NAME))%>% 
