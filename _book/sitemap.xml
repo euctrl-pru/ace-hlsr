@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://eurocontrol.int/index.html</loc>
-    <lastmod>2023-12-15T09:16:28.104Z</lastmod>
-  </url>
-  <url>
     <loc>https://eurocontrol.int/introduction.html</loc>
-    <lastmod>2023-12-15T09:16:28.167Z</lastmod>
-  </url>
-  <url>
-    <loc>https://eurocontrol.int/high-level-revenues.html</loc>
-    <lastmod>2023-12-15T09:16:28.278Z</lastmod>
+    <lastmod>2024-11-21T14:37:08.017Z</lastmod>
   </url>
   <url>
     <loc>https://eurocontrol.int/economic-cost-effectiveness.html</loc>
-    <lastmod>2023-12-15T09:16:28.331Z</lastmod>
+    <lastmod>2024-11-21T13:19:34.913Z</lastmod>
   </url>
   <url>
     <loc>https://eurocontrol.int/financial-cost-effectiveness.html</loc>
-    <lastmod>2023-12-15T09:16:28.380Z</lastmod>
+    <lastmod>2024-11-21T13:28:06.816Z</lastmod>
   </url>
   <url>
     <loc>https://eurocontrol.int/cash-and-liquidity.html</loc>
-    <lastmod>2023-12-15T09:16:28.411Z</lastmod>
+    <lastmod>2024-11-21T14:55:22.188Z</lastmod>
   </url>
   <url>
     <loc>https://eurocontrol.int/disclaimer.html</loc>
-    <lastmod>2023-12-15T09:16:28.439Z</lastmod>
+    <lastmod>2024-03-13T15:04:05.634Z</lastmod>
   </url>
   <url>
-    <loc>https://eurocontrol.int/High-level-Summary-Report-on-Preliminary-ACE-2022-Data.pdf</loc>
-    <lastmod>2023-12-15T09:16:24.652Z</lastmod>
+    <loc>https://eurocontrol.int/high-level-revenues.html</loc>
+    <lastmod>2024-11-21T17:13:49.685Z</lastmod>
   </url>
 </urlset>

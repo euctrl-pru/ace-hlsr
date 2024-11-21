@@ -11,9 +11,9 @@ This chapter provides a [preliminary analysis]{.underline} of financial cost-eff
 
 ## Pan-European system level {#sec-fin_1}
 
-@fig-figure-4-1 shows that in {{< var doc.year_report >}} the unit ATM/CNS provision costs fell by -34.7% compared to 2021, reaching an amount of €470. This is the result of traffic increase (+58.3%) coupled with the growth of ATM/CNS provision costs (+3.4%).
+@fig-figure-4-1 shows that in {{< var doc.year_report >}} the unit ATM/CNS provision costs fell by -7.3% compared to 2022, reaching an amount of €460. This is the result of traffic increase (+11.0%) being partly offset by growth of ATM/CNS provision costs (+2.9%).
 
-However, Comparing with pre-pandemic levels, in 2022 unit ATM/CNS provision costs still remain +8.2% higher than in 2019. This mainly reflects the fact that, despite a lower cost-base (-6.1% compared to 2019) traffic volumes in 2022 still did not reach the 2019 level (-13.3%).
+Unit ATM/CNS provision costs in 2023 returned to the level of financial cost-effectiveness achieved in 2019, itself the lowest unit cost achieved since the inception of the ACE benchmarking in 2002. 
 
 ::: {#fig-figure-4-1 style="max-width: 500px; margin: auto"}
 ::: {.content-visible when-format="html"}
@@ -22,10 +22,6 @@ However, Comparing with pre-pandemic levels, in 2022 unit ATM/CNS provision cost
 #| out.height: "300px"
 #| out.width: "100%"
 ```
-:::
-
-::: {.content-visible when-format="pdf"}
-![](figures/figure-4-1-hlsr_evo_unit_cost.png){height="75%" width="75%"}
 :::
 
 Changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus5 >}} -- {{< var doc.year_report >}} (real terms)
@@ -43,11 +39,11 @@ c\) support costs per unit output (€319).
 
 ![ACE performance framework, {{< var doc.year_report >}} (real terms)](figures/Figure-4-2.png){#fig-figure-4-2 height="88%" width="88%"}
 
-@fig-figure-4-3 shows that in {{< var doc.year_report >}}, ATCO employment costs per ATCO-hour fell by -2.3% while ATCO-hour productivity rose by +46.9%. As a result, ATCO employment costs per composite flight-hour decreased (-33.5%). In the meantime, unit support costs fell by -35.2% due to the combination of an increase in composite flight-hours (+58.3%) and an increase in support costs (+2.6%). As a result, in {{< var doc.year_report >}}, unit ATM/CNS provision costs fell by -34.7% at Pan-European system level.
+@fig-figure-4-3 shows that in {{< var doc.year_report >}}, ATCO employment costs per ATCO-hour rose by +2.2% while ATCO-hour productivity rose by +9.0% compared to 2022. As a result, ATCO employment costs per composite flight-hour decreased (-6.3%). In the meantime, unit support costs fell by -7.8% due to an increase in composite flight-hours (+11.0%) being partly offset by an increase in support costs (+2.3%). Consequently, in 2023, unit ATM/CNS provision costs fell by -7.3% at the Pan-European system level compared to 2022, taking into account the relative weighting of ATCO employment and support costs based on their shares of total ATM/CNS provision costs.
 
 ![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3 height="98%" width="98%"}
 
-As the values of the 2021 indicators were significantly affected by the consequences of the COVID-19 crisis, @fig-figure-4-3-2 below provides an additional analysis using 2019 as a reference year. It shows that in 2022 the traffic was still well below its 2019 level and, despite a reduction in total support costs, the unit support costs were higher than in 2019. A similar situation is observed on the ATCO employment costs side where the reduction in employment costs per ATCO-hour was not sufficient to compensate for the decrease in ATCO-hour productivity. Overall, the unit cost in 2022 was then +8.2% higher than in 2019.
+As the values of the 2022 indicators were affected by the persistent consequences of the COVID-19 crisis, @fig-figure-4-3-2 below provides an additional analysis using 2019 as a reference year. It shows that in 2023 traffic was still -3.7% below its 2019 level. However, an equivalent reduction in total support costs (-3.8%) means that unit support costs in 2023 were all but level with 2019 (-0.1%). ATCO employment costs were also very close to their 2019 value (+0.6%) as both employment costs per ATCO-hour and ATCO-hour productivity remained marginally below pre-pandemic levels (-0.3% and -0.9% respectively). Overall, the unit cost in 2023 was +0.1% higher than in 2019.
 
 ![Breakdown of changes in unit ATM/CNS provision costs, 2019 -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-4.png){#fig-figure-4-3-2 height="98%" width="98%"}
 
@@ -55,11 +51,9 @@ As the values of the 2021 indicators were significantly affected by the conseque
 
 ## ANSP level {#sec-fin_2}
 
-All figures presented in this section present the preliminary benchmarking results for the 38 ANSPs. Because of their weight in the Pan-European system and their relatively similar operational and economic characteristics, the five largest ANSPs (DFS, DSNA, ENAIRE, ENAV and NATS) are also shown in a miniature replica of the chart (top right corner of the figures). The 1st and 3rd quartiles for each indicator are also shown in all figures. The gap between these two quartiles provides additional insight on the dispersion of the values.
+All figures presented in this section present the preliminary benchmarking results for the 38 ANSPs. Because of their weight in the Pan-European system, the six largest ANSPs by cost (DFS, DHMI, DSNA, ENAIRE, ENAV and NATS) are also shown in a miniature replica of the chart (top right corner of the figures). The 1^st^ and 3^rd^ quartiles for each indicator are also shown in all figures. The gap between these two quartiles provides additional insight on the dispersion of the values.
 
-@fig-figure-4-4 presents the financial gate-to-gate cost-effectiveness indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_4` and €`r q3_4_4`, respectively).
-
-\hfill\break
+@fig-figure-4-4 presents the financial gate-to-gate cost-effectiveness indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1^st^ and 3^rd^ quartiles (€`r q1_4_4` and €`r q3_4_4`, respectively).
 
 ::: {#fig-figure-4-4 fig-pos="h"}
 ::: {.content-visible when-format="html"}
@@ -70,16 +64,10 @@ All figures presented in this section present the preliminary benchmarking resul
 ```
 :::
 
-::: {.content-visible when-format="pdf"}
-![](figures/figure-4-4-hlsr_fin_ce.png)
-:::
-
 Financial gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 :::
 
-{{< pagebreak >}}
-
-@fig-figure-4-5 presents the ATCO-hour productivity indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (`r q1_4_5` and `r q3_4_5`, respectively).
+@fig-figure-4-5 presents the ATCO-hour productivity indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1^st^ and 3^rd^ quartiles (`r q1_4_5` and `r q3_4_5`, respectively).
 
 \hfill\break
 
@@ -92,17 +80,11 @@ Financial gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 ```
 :::
 
-::: {.content-visible when-format="pdf"}
-![](figures/figure-4-5-hlsr_prod.png)
-:::
-
 ATCO-hour productivity, {{< var doc.year_report >}}
 :::
 
 
-@fig-figure-4-6 presents the employment costs per ATCO in OPS indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_6` and €`r q3_4_6`, respectively).
-
-\hfill\break
+@fig-figure-4-6 presents the employment costs per ATCO in OPS indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1^st^ and 3^rd^ quartiles (€`r q1_4_6` and €`r q3_4_6`, respectively).
 
 ::: {#fig-figure-4-6 fig-pos="h"}
 ::: {.content-visible when-format="html"}
@@ -113,18 +95,13 @@ ATCO-hour productivity, {{< var doc.year_report >}}
 ```
 :::
 
-::: {.content-visible when-format="pdf"}
-![](figures/figure-4-6-hlsr_atco_cost_h.png)
-:::
-
 Employment costs per ATCO-hour, {{< var doc.year_report >}}
 :::
 
 {{< pagebreak >}}
 
-@fig-figure-4-7 presents the support costs per composite flight-hour indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1st and 3rd quartiles (€`r q1_4_7` and €`r q3_4_7`, respectively).
+@fig-figure-4-7 presents the support costs per composite flight-hour indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1^st^ and 3^rd^ quartiles (€`r q1_4_7` and €`r q3_4_7`, respectively).
 
-\hfill\break
 
 ::: {#fig-figure-4-7 fig-pos="h"}
 ::: {.content-visible when-format="html"}
@@ -133,10 +110,6 @@ Employment costs per ATCO-hour, {{< var doc.year_report >}}
 #| out.height: "450px"
 #| out.width: "100%"
 ```
-:::
-
-::: {.content-visible when-format="pdf"}
-![](figures/figure-4-7-hlsr_support.png)
 :::
 
 Breakdown of support costs per composite flight-hour, {{< var doc.year_report >}}
