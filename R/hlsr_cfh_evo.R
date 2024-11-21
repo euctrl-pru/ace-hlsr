@@ -15,8 +15,8 @@ source(here("data_source.R"))
 data_raw <- read_xlsx(
   # paste0(data_folder, data_file),
   paste0(data_folder,data_file ),
-  sheet = "F_Capex",
-  range = cell_limits(c(9, 1), c(NA, NA))) %>%
+  sheet = "F_Unit cost",
+  range = cell_limits(c(18, 2), c(NA, NA))) %>%
   as_tibble() %>% 
   clean_names()
 
@@ -26,14 +26,14 @@ data_plot <- data_raw %>%
   arrange(year_data) %>% 
   filter(year_data >= year_report-5, year_data <= year_report) %>% 
   mutate(
-    value = total/10^9,
-    dif_py = total / lag(total, 1) -1,
+    value = cph/10^6,
+    dif_py = value / lag(value, 1) -1,
     text_label = if_else(is.na(dif_py) == TRUE, NA_character_,
-                         paste0('<i>',if_else(dif_py >= 0,"+", ""), round(dif_py * 100, 0), "%</i>"))
+                         paste0('<b>',if_else(dif_py >= 0,"+", ""), format(round(dif_py * 1000, 0)/10, nsmall = 1, trim = TRUE), "%</b>"))
     ) 
 
 #calculate min and max for y axis
-value_max <- ceiling((max(data_plot$value))*10)/10
+value_max <- ceiling((max(data_plot$value))*2)/2 +2
 # cost_min <- round((min(data_plot$COST)-0.5)*2,0)/2
 
 # draw costs plot
@@ -45,13 +45,13 @@ p <- function(myfont, mywidth, myheight) {
     x = ~ year_data,
     y = ~ value,
     type = "bar",
-    marker = list(color = '#9AA349'),
+    marker = list(color = '#003366'),
     text = ~ text_label,
-    name = "Capex",
+    name = "Million composite flight-hours",
     textangle = 0,
     textposition = "outside",
-    textfont = list(color = '#003366', size= if_else(myfont <20, myfont, myfont+2)),
-    hovertemplate = paste('%{y:.1f} B€2023'),
+    textfont = list(color = 'black', size= if_else(myfont <20, myfont, myfont+2)),
+    hovertemplate = paste('%{y:.1f}'),
     showlegend = F
   ) %>% 
   layout(
@@ -75,18 +75,18 @@ p <- function(myfont, mywidth, myheight) {
       showgrid = F
     ),
     yaxis = list(
-      title = paste0("Capital expenditures (billion €2023)"),
+      title = paste0("Million composite flight-hours"),
       linewidth = 1, linecolor='black',
       titlefont   = list(size = myfont),
       fixedrange = TRUE,
       tickfont = list(size = myfont),
       ticks = 'outside',
-      dtick = 0.3,
-      range = c(0, value_max + 0.21), #so the last line is plotted
+      dtick = 2,
+      range = c(0, value_max + 0.1), #so the last line is plotted
       showgrid = TRUE,
       # tickson="boundaries",
       # tickcolor='#BFBFBF', ticklen=3,
-      tickformat=".1f",
+      tickformat=".0f",
       # categoryorder = "total ascending",
       zeroline = F, showline = T, showgrid = F
     ),

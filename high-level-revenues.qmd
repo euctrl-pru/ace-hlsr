@@ -204,7 +204,7 @@ ANSP balance sheets in 2023 comprised €9 159M in capital and reserves and €5
 
 ```{r}
 #| file: R/hlsr_capex.R
-#| out.height: "320px"
+#| out.height: "323px"
 ```
 
 Capital & reserves and borrowings (left) and capital expenditures (right) of the Pan-European system, 2018-2023 (real terms)
