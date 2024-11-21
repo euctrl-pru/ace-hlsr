@@ -195,8 +195,17 @@ Compared to 2019, the number of ATCOs in OPS was +0.7% higher in 2023, while the
 
 ANSP balance sheets in 2023 comprised €9 159M in capital and reserves and €5 891M in borrowings. Capital expenditure amounted to €1 186M in 2023. 
 
-:::{#fig-figure-2-9}
-![](figures/Figure-2-9.png)
+:::{#fig-figure-2-9 layout="[50,50]"}
+
+```{r}
+#| file: R/hlsr_res_borrow.R
+#| out.height: "350px"
+```
+
+```{r}
+#| file: R/hlsr_capex.R
+#| out.height: "320px"
+```
 
 Capital & reserves and borrowings (left) and capital expenditures (right) of the Pan-European system, 2018-2023 (real terms)
 :::
