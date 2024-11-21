@@ -44,7 +44,11 @@ p <- function(myfont, mywidth, myheight) {
     yaxis = "y1",
     # colors = c('#4F81BD'),
     mode = 'text',
-    text = paste0("<b>",if_else(ace_graph_data$costs_per_cph_change_perc >0, "+", ""),format(round(ace_graph_data$costs_per_cph_change_perc*100,1), 1), "%","</b>"),
+    text =  if_else(is.na(ace_graph_data$costs_per_cph_change_perc) == TRUE, NA_character_,
+      paste0("<b>",
+                  if_else(ace_graph_data$costs_per_cph_change_perc >0, "+", ""),
+                  format(round(ace_graph_data$costs_per_cph_change_perc*100,1), 1), "%","</b>")
+      ),
     textfont = list(color = 'black', size = myfont),
     type = 'scatter',  mode = 'lines',
     hoverinfo = "none",
