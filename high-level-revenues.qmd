@@ -62,8 +62,17 @@ Breakdown of gate-to-gate ANS revenues, {{< var doc.year_report >}}
 
 Across the Pan-European system, traffic in 2023 (measured in composite flight-hours) was +11.0% higher than in 2022 but remained -3.7% lower than in 2019. In the meantime, total gate-to-gate revenues increased slightly more than traffic (+12.9%, or +€1 229M) and remained -3.8% lower than in 2019.
 
-::: {#fig-2-2}
-![](figures/Figure-2-2-all.png){width=100%} 
+::: {#fig-2-2 layout="[50,50]"}
+
+```{r}
+#| file: R/hlsr_cfh_evo.R
+#| out.height: "300px"
+```
+
+```{r}
+#| file: R/hlsr_g2g_revenues_evo.R
+#| out.height: "300px"
+```
 
 Composite flight-hours (left) and gate-to-gate ANS revenues (right) of the Pan-European system, 2018-2023 (real terms)
 :::
