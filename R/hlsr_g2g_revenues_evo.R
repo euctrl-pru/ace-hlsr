@@ -26,6 +26,7 @@ data_plot <- data_raw %>%
   arrange(year_data) %>% 
   filter(year_data >= year_report-5, year_data <= year_report) %>% 
   mutate(
+    grand_total = reve_revenue - reve_delegation,
     value = grand_total/10^9,
     dif_py = grand_total / lag(grand_total, 1) -1,
     text_label = if_else(is.na(dif_py) == TRUE, NA_character_,
