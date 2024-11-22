@@ -351,11 +351,11 @@ fig_pdf <-  subplot(pie_er(30), pie_er_trm(30), pie_trm(30)) %>%
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
-fig_dir <- 'figures/'
-image_name <- "figure-2-1-hlsr_rev_pie.png"
-
-invisible(export(fig_pdf, paste0(fig_dir, image_name)))
-invisible(figure <- image_read(paste0(fig_dir,image_name)))
-invisible(cropped <- image_crop(figure, "0x890-0+90"))
-invisible(image_write(cropped, paste0(fig_dir, image_name)))
+# fig_dir <- 'figures/'
+# image_name <- "figure-2-1-hlsr_rev_pie.png"
+# 
+# invisible(export(fig_pdf, paste0(fig_dir, image_name)))
+# invisible(figure <- image_read(paste0(fig_dir,image_name)))
+# invisible(cropped <- image_crop(figure, "0x890-0+90"))
+# invisible(image_write(cropped, paste0(fig_dir, image_name)))
   

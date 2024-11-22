@@ -173,11 +173,11 @@ p <- function(myfont, mywidth, myheight) {
 
 p(8, NULL, NULL)
 
-fig_dir <- 'figures/'
-fig_name <- "figure-3-1-2-hlsr_evo_eco_ce_comp.png"
-
-invisible(export(p(17, 600, 600), paste0(fig_dir, fig_name)))
-invisible(figure <- image_read(paste0(fig_dir,fig_name)))
-invisible(cropped <- image_crop(figure, "600x600"))
-invisible(image_write(cropped, paste0(fig_dir, fig_name)))
+# fig_dir <- 'figures/'
+# fig_name <- "figure-3-1-2-hlsr_evo_eco_ce_comp.png"
+# 
+# invisible(export(p(17, 600, 600), paste0(fig_dir, fig_name)))
+# invisible(figure <- image_read(paste0(fig_dir,fig_name)))
+# invisible(cropped <- image_crop(figure, "600x600"))
+# invisible(image_write(cropped, paste0(fig_dir, fig_name)))
 

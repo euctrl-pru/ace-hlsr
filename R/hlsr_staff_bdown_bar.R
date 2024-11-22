@@ -123,14 +123,14 @@ p1(12, NULL, NULL, 40, 'T')
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
-
-fig_dir <- 'figures/'
-image_name <- "figure-2-7-2-hlsr_staff_bdown_bar.png"
-
-invisible(export(p1(26, 950, 950, 100, 'F'), paste0(fig_dir, image_name)))
-invisible(figure <- image_read(paste0(fig_dir,image_name)))
-invisible(cropped <- image_crop(figure, "950x0"))
-invisible(image_write(cropped, paste0(fig_dir,image_name)))
+# 
+# fig_dir <- 'figures/'
+# image_name <- "figure-2-7-2-hlsr_staff_bdown_bar.png"
+# 
+# invisible(export(p1(26, 950, 950, 100, 'F'), paste0(fig_dir, image_name)))
+# invisible(figure <- image_read(paste0(fig_dir,image_name)))
+# invisible(cropped <- image_crop(figure, "950x0"))
+# invisible(image_write(cropped, paste0(fig_dir,image_name)))
 
 
 
