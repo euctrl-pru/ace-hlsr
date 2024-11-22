@@ -177,12 +177,12 @@ In {{< var doc.year_report >}}, the number of ATM/CNS staff increased by +1.0% o
 ::: {#fig-figure-2-7 layout="[65,35]"}
 ```{r}
 #| file: R/hlsr_staff_bdown_bar.R
-#| out.height: "400px"
+#| out.height: "500px"
 ```
 
 ```{r}
 #| file: R/hlsr_staff_bdown_bar_perc.R
-#| out.height: "400px"
+#| out.height: "500px"
 ```
 
 Total gate-to-gate ATM/CNS staff per staff category
@@ -213,7 +213,7 @@ ANSP balance sheets in 2023 comprised €9 159M in capital and reserves and €5
 
 ```{r}
 #| file: R/hlsr_capex.R
-#| out.height: "323px"
+#| out.height: "322px"
 ```
 
 Capital & reserves and borrowings (left) and capital expenditures (right) of the Pan-European system, 2018-2023 (real terms)

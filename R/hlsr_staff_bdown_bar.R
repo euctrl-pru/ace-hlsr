@@ -62,7 +62,8 @@ p1 <- function(myfont, mywidth, myheight, vmargin, myautosize){
     height = myheight,
     x = ~ STAF,
     y = ~ LABEL,
-    marker = list(color =('#003366')),
+    marker = list(color =c('#003366', '#9AA349', '#9AA349', '#9AA349', '#9AA349', '#9AA349'
+                                    , '#9AA349', '#9AA349', '#9AA349', '#9AA349', '#9AA349')),
     text = ~ format(round(STAF,0), big.mark = " "),
     textangle = 0,
     textposition = "outside",
