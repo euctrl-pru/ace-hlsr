@@ -10,23 +10,41 @@ library(magick)
 source(here("data_source.R"))
 
 ## import data
-data_raw  <-  read_xlsx(
+data_raw_py  <-  read_xlsx(
                         paste0(data_folder, data_file),
                         # here("data", data_file ),
                         sheet = "F_Staff",
-                        range = cell_limits(c(9, 1), c(NA, 3))) %>%
+                        range = cell_limits(c(10, 1), c(NA, 3))) %>%
               as_tibble() %>% 
               rename(STAF_TYPE = 'Data', STAF = 'Total') %>% 
               mutate(across(STAF_TYPE, str_replace, 'Sum of ', ''))
 
+data_raw_2019  <-  read_xlsx(
+  paste0(data_folder, data_file),
+  # here("data", data_file ),
+  sheet = "F_Staff",
+  range = cell_limits(c(10, 9), c(NA, 11))) %>%
+  as_tibble() %>% 
+  rename(STAF_TYPE = 'Data', STAF = 'Total') %>% 
+  mutate(across(STAF_TYPE, str_replace, 'Sum of ', ''))
+
+
 ## process data for plot
-data_plot <- data_raw %>% 
+data_dif_2019 <- data_raw_2019 %>% 
   filter(grepl('STAF_', STAF_TYPE)) %>% 
   filter(!grepl('COST_', STAF_TYPE)) %>% 
   group_by(STAF_TYPE) %>% arrange(YEAR_DATA) %>% 
-  mutate(YOY = STAF/lag(STAF)-1,
-         VS_2019 = STAF/lag(STAF, year_report-2019)-1) %>% 
+  mutate(VS_2019 = STAF/lag(STAF, year_report-2019)-1) %>% 
+  ungroup() 
+  
+
+data_plot <- data_raw_py %>% 
+  filter(grepl('STAF_', STAF_TYPE)) %>% 
+  filter(!grepl('COST_', STAF_TYPE)) %>% 
+  group_by(STAF_TYPE) %>% arrange(YEAR_DATA) %>% 
+  mutate(YOY = STAF/lag(STAF)-1) %>% 
   ungroup() %>% 
+  left_join(data_dif_2019, by= c("YEAR_DATA", "STAF_TYPE")) %>% 
   filter(YEAR_DATA == year_report) %>% 
   mutate(LABEL = case_when(
     STAF_TYPE == 'STAF_ATCO' ~ "ATCOs in OPS",
