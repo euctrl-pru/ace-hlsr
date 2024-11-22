@@ -77,9 +77,9 @@ format:
           }
 
 book:
-  title: "High-level Summary Report on Preliminary ACE 2022 Data"
+  title: "High-level Summary Report on Preliminary ACE 2023 Data"
   author: "Performance Review Unit"
-  date: "2023-12-15"
+  date: "2024-12-13"
   search:
     location: sidebar
   chapters:
