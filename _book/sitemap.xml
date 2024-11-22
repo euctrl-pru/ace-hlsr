@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://eurocontrol.int/index.html</loc>
+    <lastmod>2024-03-13T15:04:05.679Z</lastmod>
+  </url>
+  <url>
     <loc>https://eurocontrol.int/introduction.html</loc>
     <lastmod>2024-11-21T14:37:08.017Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eurocontrol.int/high-level-revenues.html</loc>
+    <lastmod>2024-11-22T07:35:33.646Z</lastmod>
   </url>
   <url>
     <loc>https://eurocontrol.int/economic-cost-effectiveness.html</loc>
@@ -19,9 +27,5 @@
   <url>
     <loc>https://eurocontrol.int/disclaimer.html</loc>
     <lastmod>2024-03-13T15:04:05.634Z</lastmod>
-  </url>
-  <url>
-    <loc>https://eurocontrol.int/high-level-revenues.html</loc>
-    <lastmod>2024-11-22T07:35:33.646Z</lastmod>
   </url>
 </urlset>
