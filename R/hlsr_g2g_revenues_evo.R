@@ -34,7 +34,7 @@ data_plot <- data_raw %>%
     ) 
 
 #calculate min and max for y axis
-value_max <- ceiling((max(data_plot$value))*2)/2
+value_max <- ceiling((max(data_plot$value))/2)*2 
 # cost_min <- round((min(data_plot$COST)-0.5)*2,0)/2
 
 # draw costs plot

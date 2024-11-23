@@ -14,7 +14,7 @@ data_raw  <-  read_xlsx(
                         paste0(data_folder, data_file),
                         # here("data", data_file ),
                         sheet = "F_Staff",
-                        range = cell_limits(c(9, 1), c(NA, 3))) %>%
+                        range = cell_limits(c(10, 1), c(NA, 3))) %>%
               as_tibble() %>% 
               rename(STAF_TYPE = 'Data', STAF = 'Total') %>% 
               mutate(across(STAF_TYPE, str_replace, 'Sum of ', ''))

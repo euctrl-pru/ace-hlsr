@@ -109,7 +109,12 @@ Total ATM/CNS provision costs rose by +2.9% (+€272M) in 2023, reflecting cost 
 
 
 ::: {#fig-figure-2-4}
-![](figures/Figure-2-4.png){width=80%}
+```{r cost-category}
+#| file: R/hlsr_cost_category_change.R
+#| out.height: "400px"
+#| out.width: "90%"
+```
+
 
 Changes in gate-to-gate ATM/CNS provision cost categories (real terms)
 :::
@@ -123,7 +128,7 @@ In {{< var doc.year_report >}}, the six largest ANSPs in terms of costs (DSNA, D
 :::
 
 ::: {style="max-width: 620px; margin: auto"}
-```{r}
+```{r cost-evolution}
 #| file: R/hlsr_evo_cost.R
 #| out.height: "200px"
 #| out.width: "100%"
@@ -131,12 +136,12 @@ In {{< var doc.year_report >}}, the six largest ANSPs in terms of costs (DSNA, D
 :::
 
 ::: {#fig-figure-2-5 layout="[65,35]"}
-```{r}
+```{r cost-per-ansp}
 #| file: R/hlsr_cost_per_ansp.R
 #| out.height: "600px"
 ```
 
-```{r}
+```{r cost-per-ansp-perc}
 #| file: R/hlsr_cost_per_ansp_perc.R
 #| out.height: "600px"
 ```
@@ -150,7 +155,7 @@ Changes in ATM/CNS provision costs (real terms)
 The Pan-European ANSPs employed a total of 53 060 staff in 2023 (comprising 52 221 staff providing ATM/CNS services and 840 internal MET staff). Some 17 368 staff (33%) were ATCOs working on operational duties, split between ACCs (55%) and APP/TWR facilities (45%). On average, 2.0 additional staff are required for every ATCO in OPS in Europe.
 
 ::: {#fig-figure-2-6}
-```{r}
+```{r staff-pie}
 #| file: R/hlsr_staff_pie.R
 #| out.width: "100%"
 #| out.height: "300px"
@@ -167,7 +172,7 @@ In {{< var doc.year_report >}}, the number of ATM/CNS staff increased by +1.0% o
 :::
 
 ::: {style="max-width: 620px; margin: auto"}
-```{r}
+```{r staff-evolution}
 #| file: R/hlsr_evo_staff.R
 #| out.height: "200px"
 #| out.width: "100%"
@@ -175,12 +180,12 @@ In {{< var doc.year_report >}}, the number of ATM/CNS staff increased by +1.0% o
 :::
 
 ::: {#fig-figure-2-7 layout="[65,35]"}
-```{r}
+```{r staff-breakdown}
 #| file: R/hlsr_staff_bdown_bar.R
 #| out.height: "500px"
 ```
 
-```{r}
+```{r staff-breakdown-change}
 #| file: R/hlsr_staff_bdown_bar_perc.R
 #| out.height: "500px"
 ```
@@ -206,12 +211,12 @@ ANSP balance sheets in 2023 comprised €9 159M in capital and reserves and €5
 
 :::{#fig-figure-2-9 layout="[50,50]"}
 
-```{r}
+```{r reserves-borow}
 #| file: R/hlsr_res_borrow.R
 #| out.height: "350px"
 ```
 
-```{r}
+```{r capex}
 #| file: R/hlsr_capex.R
 #| out.height: "322px"
 ```
