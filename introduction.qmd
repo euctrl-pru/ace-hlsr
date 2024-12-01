@@ -1,6 +1,6 @@
 # Introduction {#dec-intro}
 
-The ACE benchmarking work is commissioned by the Performance Review Commission (PRC) and carried out by the EUROCONTROL Performance Review Unit (PRU) using information provided by Air Navigation Services Providers (ANSPs) in compliance with Decision No. 88 of the Permanent Commission of EUROCONTROL on economic information disclosure.
+The ACE benchmarking work is commissioned by the Performance Review Commission (PRC) and carried out by the EUROCONTROL Performance Review Unit (PRU) using information provided by Air Navigation Services Providers (ANSPs) in compliance with Decision No. 88 of the Permanent Commission of EUROCONTROL on economic information disclosure[^1].
 
 The data processing, analysis and reporting are conducted with the assistance of the ACE Working Group, which comprises representatives from participating ANSPs, airspace users, regulatory authorities and the Performance Review Unit. This enables participants to share experiences and establish a common understanding of underlying assumptions and data limitations.
 
@@ -54,3 +54,5 @@ The remainder of this report is structured as follows:
 -   @sec-economic: presents a preliminary analysis of economic cost-effectiveness at Pan-European and ANSP level.
 -   @sec-financial: presents a preliminary analysis of financial cost-effectiveness at Pan-European and ANSP level, and underlying components.
 -   @sec-cash: presents a preliminary analysis of specific financial indicators at Pan-European level.
+
+[^1]: Due to the on-going war in Ukraine, UkSATSE has been excluded from the ACE analysis.

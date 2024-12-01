@@ -7,9 +7,9 @@ source(here("R/calc_quartiles.R"))
 
 # Economic cost-effectiveness {#sec-economic}
 
-The concept of economic cost-effectiveness, developed by the PRC, is defined as the sum of gate-to-gate ATM/CNS provision costs and the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between quality of service provided and costs[^economic-cost-effectiveness-1].
+The concept of economic cost-effectiveness, developed by the PRC, is defined as the sum of gate-to-gate ATM/CNS provision costs and the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between quality of service provided and costs[^2].
 
-[^economic-cost-effectiveness-1]: See <https://ansperformance.eu/economics/ace/ace-handbook/> for more information on the methodology used to compute composite flight-hours and economic costs.
+[^2]: See <https://ansperformance.eu/economics/ace/ace-handbook/> for more information on the methodology used to compute composite flight-hours and economic costs.
 
 @fig-figure-3-1 shows [preliminary results]{.underline} on the changes in economic cost-effectiveness over {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} at Pan-European system level. The left-hand side shows the changes in unit economic costs, while the chart on the right-hand side provides complementary information on the year-on-year changes in ATM/CNS provision costs, composite flight-hours and unit costs of ATFM delays. Unit economic costs fell for the third consecutive year in 2023 (-2.4%). This reduction resulted from a decrease in ATM/CNS provision costs per composite flight-hour (-7.3%), partly offset by an increase in the unit cost of ATFM delays (+17.1%). Despite this decrease, 2023 unit economic costs remain +2.1% higher than in 2019.
 
@@ -57,7 +57,9 @@ Economic gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 
 For 12 ANSPs ATFM delays represented more than 20% of their unit economic costs (see ANSPs with the largest red and yellow portions, e.g. HungaroControl, HASP, NAV Portugal, DSNA, DFS, etc.). In absolute terms (cumulative ATFM delays in minutes) DSNA, DFS, NATS, ENAIRE and HASP were the ANSPs generating the highest levels of ATFM delays in 2023 (72.3% of the pan-European system total ATFM delays).
 
-The most common factors in ATFM delays were capacity and staffing, followed by weather. Individual ANSPs were impacted by other factors, such as ATC industrial action (DSNA), implementation of capacity improvement projects (4-Flight for DSNA, iCAS for DFS) and ongoing effects of the war in Ukraine (HungaroControl, DFS) . 
+The most common factors in ATFM delays were capacity and staffing, followed by weather. Individual ANSPs were impacted by other factors, such as ATC industrial action (DSNA), implementation of capacity improvement projects (4-Flight for DSNA, iCAS for DFS) and ongoing effects of the war in Ukraine (HungaroControl, DFS)[^3].
+
+[^3]: See <https://www.eurocontrol.int/publication/performance-review-report-prr-2023> for more information on ATFM delays in 2023.
 
 Further analysis of the relationship between changes in ANSPs costs, traffic and unit costs will be analysed in detail in the forthcoming ACE report.
 

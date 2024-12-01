@@ -1,4 +1,4 @@
-# High-level revenues, costs and staff data {#sec-high}
+# High-level revenues, costs, staff and balance sheet data {#sec-high}
 
 ```{r load-data}
 #libraries

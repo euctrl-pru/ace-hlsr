@@ -39,7 +39,7 @@ ansp_split <-ansp_checkmark %>%
   mutate(rn = rowid(mygroup)) %>% 
   pivot_wider(names_from = c(mygroup), values_from = c(ANSP_NAME))%>%
   select(-rn) %>% 
-  mutate_all(~ replace_na(., "")) %>% 
+  mutate_all(~ replace_na(., '<span style="color:white;"> </span>')) %>% 
   rename(" " = 1, "  " = 2, "   " = 3, "    " = 4, "     " = 5) # for the pdf
 
 

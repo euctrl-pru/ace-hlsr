@@ -21,6 +21,7 @@ format:
       - cosmo
       - media/custom.scss
     code-link: true
+    footnotes: continuous
     cover-image: media/cover.png
     link-external-newwindow: true
     link-external-icon: true
