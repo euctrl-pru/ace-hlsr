@@ -51,7 +51,7 @@ As the values of the 2022 indicators were affected by the persistent consequence
 
 ## ANSP level {#sec-fin_2}
 
-All figures presented in this section present the preliminary benchmarking results for the 38 ANSPs. Because of their weight in the Pan-European system, the six largest ANSPs by cost (DFS, DHMI, DSNA, ENAIRE, ENAV and NATS) are also shown in a miniature replica of the chart (top right corner of the figures). The 1^st^ and 3^rd^ quartiles for each indicator are also shown in all figures. The gap between these two quartiles provides additional insight on the dispersion of the values.
+All figures presented in this section present the preliminary benchmarking results for the 38 ANSPs. Because of their weight in the Pan-European system, the six largest ANSPs by cost (DFS, DHMI, DSNA, ENAIRE, ENAV and NATS) are also shown in a miniature replica of the chart (top right corner of the figures). Compared to previous years’ report, DHMI is now part of this group since its share in the total Pan-European system costs is now reaching 7%, which is close to ENAV and NATS shares. The 1^st^ and 3^rd^ quartiles for each indicator are also shown in all figures. The gap between these two quartiles provides additional insight on the dispersion of the values.
 
 @fig-figure-4-4 presents the financial gate-to-gate cost-effectiveness indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1^st^ and 3^rd^ quartiles (€`r q1_4_4` and €`r q3_4_4`, respectively).
 

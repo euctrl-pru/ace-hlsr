@@ -89,7 +89,7 @@ Looking forward, the recent EUROCONTROL [Seven-Year Forecast](https://www.euroco
 
 ##	Costs
 
-The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services, which amounted to €9 697M in 2023. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 84.1% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented around 15.9%.
+The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services, which amounted to €9 697M in 2023. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 84% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented around 16%.
 
 ::: {#fig-figure-2-3}
 ```{r}
@@ -152,7 +152,7 @@ Changes in ATM/CNS provision costs (real terms)
 
 ## Staff
 
-The Pan-European ANSPs employed a total of 53 060 staff in 2023 (comprising 52 221 staff providing ATM/CNS services and 840 internal MET staff). Some 17 368 staff (33%) were ATCOs working on operational duties, split between ACCs (55%) and APP/TWR facilities (45%). On average, 2.0 additional staff are required for every ATCO in OPS in Europe.
+The Pan-European ANSPs employed a total of 53 060 staff in 2023 (comprising 52 221 staff providing ATM/CNS services and 839 internal MET staff). Some 17 368 staff (33%) were ATCOs working on operational duties, split between ACCs (55%) and APP/TWR facilities (45%). On average, 2.0 additional staff are required for every ATCO in OPS in Europe.
 
 ::: {#fig-figure-2-6}
 ```{r staff-pie}
@@ -203,7 +203,7 @@ The overall change in staff numbers observed between 2022 and 2023 mainly reflec
 
 All other staff categories showed an increase in reported staff numbers, as shown in Figure 2.8. The highest proportional increase (+5.0%) was in ab-initio trainees, suggesting that some ANSPs increased recruitment of trainees for ATCO positions in 2023.
 
-Compared to 2019, the number of ATCOs in OPS was +0.7% higher in 2023, while the number of support staff was -2.5% lower. The overall reduction in support staff was mainly driven by a -6.6% decrease in administrative staff (-600 FTEs), partly compensated by an +25.0% increase in the number of on-the-job trainees (+240 FTEs).
+Compared to 2019, the number of ATCOs in OPS was +0.7% higher in 2023, while the number of support staff was -2.5% lower. The overall reduction in support staff was mainly driven by a -6.6% decrease in administrative staff (-600 FTEs), partly compensated by a +25.0% increase in the number of on-the-job trainees (+240 FTEs).
 
 ## Balance sheet structure and capital expenditures
 

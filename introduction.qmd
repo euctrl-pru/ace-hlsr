@@ -21,7 +21,7 @@ Fifteen out of 38 ANSPs submitted their ACE 2023 data on time by the 1st of July
 
 It should be noted that the data presented in this document are still [**preliminary and not yet fully validated**]{.underline}. Indeed, the data submission milestone is just the first step of a process which comprises a thorough verification and analysis of individual ANSP submissions. This validation exercise also includes a formal round of exchange between the PRU and each ANSP in order to ensure a common understanding of the data submitted by the ANSP.
 
-The data used in this document reflects the information stored in the ACE database on the 12th of November 2024. Figure 1.2 shows the status of the ACE data validation process for the data presented in this document.
+The data used in this document reflects the information received by the 12th of November 2024. Figure 1.2 shows the status of the ACE data validation process for the data presented in this document.
 
 
 ::: {#fig-figure-1-2}
@@ -46,7 +46,7 @@ The data used in this document reflects the information stored in the ACE databa
 Status of {{< var doc.year_report >}} data validation process
 :::
 
-The data contained in this report is therefore subject to changes before the release of the final ACE 2023 benchmarking report in May 2025.
+The data contained in this report is therefore subject to changes before the release of the final ACE benchmarking report in May 2025.
 
 The remainder of this report is structured as follows:
 
