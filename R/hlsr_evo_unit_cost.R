@@ -44,7 +44,11 @@ p <- function(myfont, mywidth, myheight) {
     yaxis = "y1",
     # colors = c('#4F81BD'),
     mode = 'text',
-    text = paste0("<b>",if_else(ace_graph_data$costs_per_cph_change_perc >0, "+", ""),format(round(ace_graph_data$costs_per_cph_change_perc*100,1), 1), "%","</b>"),
+    text =  if_else(is.na(ace_graph_data$costs_per_cph_change_perc) == TRUE, NA_character_,
+      paste0("<b>",
+                  if_else(ace_graph_data$costs_per_cph_change_perc >0, "+", ""),
+                  format(round(ace_graph_data$costs_per_cph_change_perc*100,1), 1), "%","</b>")
+      ),
     textfont = list(color = 'black', size = myfont),
     type = 'scatter',  mode = 'lines',
     hoverinfo = "none",
@@ -119,10 +123,10 @@ p <- function(myfont, mywidth, myheight) {
 
 p(12, NULL, 330)
 
-fig_dir <- 'figures/'
-fig_name <- "figure-4-1-hlsr_evo_unit_cost.png"
-
-invisible(export(p(24, 1000, 660), paste0(fig_dir,fig_name)))
-invisible(figure <- image_read(paste0(fig_dir,fig_name)))
-invisible(cropped <- image_crop(figure, "1000x660"))
-invisible(image_write(cropped, paste0(fig_dir,fig_name)))
+# fig_dir <- 'figures/'
+# fig_name <- "figure-4-1-hlsr_evo_unit_cost.png"
+# 
+# invisible(export(p(24, 1000, 660), paste0(fig_dir,fig_name)))
+# invisible(figure <- image_read(paste0(fig_dir,fig_name)))
+# invisible(cropped <- image_crop(figure, "1000x660"))
+# invisible(image_write(cropped, paste0(fig_dir,fig_name)))

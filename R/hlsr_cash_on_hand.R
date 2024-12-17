@@ -27,7 +27,12 @@ data_plot <- data_raw %>%
   filter(year_data >= year_report-5, year_data <= year_report) %>% 
   mutate_at(c(2), ~as.numeric(.)) %>% 
   mutate(value_text = case_when(type == "3rd quartile" ~ value + 10,
-                                .default = value - 10))
+                                .default = value - 10),
+         type = case_when(
+           type == "3rd quartile" ~ "3<sup>rd</sup> quartile",
+           type == "1st quartile" ~ "1<sup>st</sup> quartile",
+           .default = type
+         )) 
 
 #calculate min and max for y axis
 value_max <- ceiling((max(data_plot$value)/100))*100
@@ -43,8 +48,8 @@ p <- function(myfont, mywidth, myheight) {
     y = ~ value,
     type = 'scatter', mode = 'lines', 
     color = ~ factor(type, levels = c("ANSP average",
-                                      "1st quartile",
-                                      "3rd quartile")
+                                      "1<sup>st</sup> quartile",
+                                      "3<sup>rd</sup> quartile")
     ),
     colors = c('#003366', '#E0584F', '#9AA349'),
     line = list(width = 4), 
@@ -57,7 +62,7 @@ p <- function(myfont, mywidth, myheight) {
     y = ~ value_text,
     text = ~ format(round(value, 0), nsmall=0),
     textangle = 0,
-    textposition = ~ if_else(type == '3rd quartile', "top center", "bottom center"),
+    textposition = ~ if_else(type == '3<sup>rd</sup> quartile', "top center", "bottom center"),
     # insidetextanchor =  "start",
     textfont = list(color = 'black', size = myfont +1),
     cliponaxis = FALSE,
@@ -116,10 +121,10 @@ p(12, NULL, NULL)
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
-fig_dir <- 'figures/'
-image_name <- "figure-5-2-hlsr_cash_on_hand.png"
-
-invisible(export(p(28, 1320, 700), paste0(fig_dir, image_name)))
+# fig_dir <- 'figures/'
+# image_name <- "figure-5-2-hlsr_cash_on_hand.png"
+# 
+# invisible(export(p(28, 1320, 700), paste0(fig_dir, image_name)))
 # invisible(figure <- image_read(paste0(fig_dir,image_name)))
 # invisible(cropped <- image_crop(figure, "754x520"))
 # invisible(image_write(cropped, paste0(fig_dir,image_name)))

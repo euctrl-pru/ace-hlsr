@@ -14,7 +14,7 @@ data_raw  <-  read_xlsx(
                         paste0(data_folder, data_file),
                         # here("data", data_file ),
                         sheet = "F_Staff",
-                        range = cell_limits(c(9, 1), c(NA, 3))) %>%
+                        range = cell_limits(c(10, 1), c(NA, 3))) %>%
               as_tibble() %>% 
               rename(STAF_TYPE = 'Data', STAF = 'Total') %>% 
               mutate(across(STAF_TYPE, str_replace, 'Sum of ', ''))
@@ -62,7 +62,8 @@ p1 <- function(myfont, mywidth, myheight, vmargin, myautosize){
     height = myheight,
     x = ~ STAF,
     y = ~ LABEL,
-    marker = list(color =('#003366')),
+    marker = list(color =c('#003366', '#9AA349', '#9AA349', '#9AA349', '#9AA349', '#9AA349'
+                                    , '#9AA349', '#9AA349', '#9AA349', '#9AA349', '#9AA349')),
     text = ~ format(round(STAF,0), big.mark = " "),
     textangle = 0,
     textposition = "outside",
@@ -122,14 +123,14 @@ p1(12, NULL, NULL, 40, 'T')
 
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
-
-fig_dir <- 'figures/'
-image_name <- "figure-2-7-2-hlsr_staff_bdown_bar.png"
-
-invisible(export(p1(26, 950, 950, 100, 'F'), paste0(fig_dir, image_name)))
-invisible(figure <- image_read(paste0(fig_dir,image_name)))
-invisible(cropped <- image_crop(figure, "950x0"))
-invisible(image_write(cropped, paste0(fig_dir,image_name)))
+# 
+# fig_dir <- 'figures/'
+# image_name <- "figure-2-7-2-hlsr_staff_bdown_bar.png"
+# 
+# invisible(export(p1(26, 950, 950, 100, 'F'), paste0(fig_dir, image_name)))
+# invisible(figure <- image_read(paste0(fig_dir,image_name)))
+# invisible(cropped <- image_crop(figure, "950x0"))
+# invisible(image_write(cropped, paste0(fig_dir,image_name)))
 
 
 

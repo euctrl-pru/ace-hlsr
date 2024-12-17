@@ -146,6 +146,9 @@ t <- gt(
   tab_style(
     style = list(cell_text(size = '0.95rem')),
     locations = cells_body(columns = everything(), rows = everything())
+  ) %>% 
+  cols_width(
+    1 ~ pct(40) 
   )
 
 t

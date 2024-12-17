@@ -21,7 +21,7 @@ pie_staff_data_all  <-  read_xlsx(
                                   paste0(data_folder, data_file),
                                   # here("data", data_file ),
                                   sheet = "F_Staff",
-                                  range = cell_limits(c(9, 1), c(NA, 3))) %>%
+                                  range = cell_limits(c(10, 1), c(NA, 3))) %>%
   as_tibble() %>% 
   rename(STAF_TYPE = 'Data', STAF = 'Total') %>% 
   mutate(across(STAF_TYPE, str_replace, 'Sum of ', ''))
@@ -218,10 +218,10 @@ fig_pdf <- subplot(pie_staff(30), pie_atco(30)) %>%
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
-fig_dir <- 'figures/'
-
-image_name <- "figure-2-6-hlsr_staff_pie.png"
-invisible(export(fig_pdf, paste0(fig_dir, image_name)))
+# fig_dir <- 'figures/'
+# 
+# image_name <- "figure-2-6-hlsr_staff_pie.png"
+# invisible(export(fig_pdf, paste0(fig_dir, image_name)))
 
 # invisible(figure <- image_read(paste0(fig_dir,image_name)))
 # invisible(cropped <- image_crop(figure, "0x470-0+140"))

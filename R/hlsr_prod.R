@@ -43,7 +43,7 @@ data_plot <- data_merged  %>%
 #prepare data for inset
 data_inset <- data_plot %>% 
   filter(ANSP_NAME == 'DSNA'| ANSP_NAME == 'ENAIRE' | ANSP_NAME == 'DFS' |
-           ANSP_NAME == 'ENAV' | ANSP_NAME == 'NATS (Continental)') %>% 
+           ANSP_NAME == 'ENAV' | ANSP_NAME == 'NATS (Continental)' | ANSP_NAME == 'DHMI') %>% 
   mutate(ANSP_NAME = case_when(
     ANSP_NAME == 'NATS (Continental)' ~ 'NATS\n(Continental)',
     TRUE ~ ANSP_NAME)) %>% 
@@ -291,11 +291,11 @@ fig(8, NULL, 450)
 # export to image
 # the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
 
-fig_dir <- 'figures/'
-fig_name <- "figure-4-5-hlsr_prod.png"
-
-invisible(export(fig(22, 1700, 900), paste0(fig_dir, fig_name)))
-invisible(figure <- image_read(paste0(fig_dir,fig_name)))
-invisible(cropped <- image_crop(figure, "0x900"))
-invisible(image_write(cropped, paste0(fig_dir, fig_name)))
+# fig_dir <- 'figures/'
+# fig_name <- "figure-4-5-hlsr_prod.png"
+# 
+# invisible(export(fig(22, 1700, 900), paste0(fig_dir, fig_name)))
+# invisible(figure <- image_read(paste0(fig_dir,fig_name)))
+# invisible(cropped <- image_crop(figure, "0x900"))
+# invisible(image_write(cropped, paste0(fig_dir, fig_name)))
 

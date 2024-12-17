@@ -218,11 +218,11 @@ p <- function(myfont, mywidth, myheight, myvoffset) {
 
 p(8, NULL, NULL, 0)
 
-fig_dir <- 'figures/'
-fig_name <- "figure-3-1-1-hlsr_evo_eco_ce.png"
-
-invisible(export(p(17, 600, 600, 10), paste0(fig_dir, fig_name)))
-invisible(figure <- image_read(paste0(fig_dir,fig_name)))
-invisible(cropped <- image_crop(figure, "600x600"))
-invisible(image_write(cropped, paste0(fig_dir, fig_name)))
+# fig_dir <- 'figures/'
+# fig_name <- "figure-3-1-1-hlsr_evo_eco_ce.png"
+# 
+# invisible(export(p(17, 600, 600, 10), paste0(fig_dir, fig_name)))
+# invisible(figure <- image_read(paste0(fig_dir,fig_name)))
+# invisible(cropped <- image_crop(figure, "600x600"))
+# invisible(image_write(cropped, paste0(fig_dir, fig_name)))
 
