@@ -105,7 +105,7 @@ book:
   # For the icons to work.
     background: dark
     search: true
-    title: '      Standard Inputs for Economic Analyses'
+    title: '      ACE High Level Summary Report'
     logo: "media/EUROCONTROL-logo-standard-rgb.png"
     right:
       - text: "Home"
