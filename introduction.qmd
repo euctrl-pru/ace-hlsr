@@ -1,15 +1,14 @@
 # Introduction {#dec-intro}
 
-The ACE benchmarking work is commissioned by the Performance Review Commission (PRC) and carried out by the EUROCONTROL Performance Review Unit (PRU) using information provided by Air Navigation Services Providers (ANSPs) in compliance with Decision No. 88 of the Permanent Commission of EUROCONTROL on economic information disclosure[^1].
+The ACE benchmarking work is commissioned by the Performance Review Commission (PRC) and carried out by the EUROCONTROL Performance Review Unit (PRU) using information provided by Air Navigation Services Providers (ANSPs) in compliance with Decision No. 88 of the Permanent Commission of EUROCONTROL on economic information disclosure .
 
 The data processing, analysis and reporting are conducted with the assistance of the ACE Working Group, which comprises representatives from participating ANSPs, airspace users, regulatory authorities and the Performance Review Unit. This enables participants to share experiences and establish a common understanding of underlying assumptions and data limitations.
 
-The objective of this document is to provide a first insight on the level of 2023 cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the release of the final ACE benchmarking report, which is planned end of May 2025. This document also presents financial indicators extracted from the  [ANSPs Financial Indicators Dashboard](https://ansperformance.eu/economics/finance/) and monitoring ANSPs’ cash holdings and liquidity.
+The objective of this document is to provide a first insight on the level of 2024 cost-effectiveness performance both for the Pan-European system and for individual ANSPs before the release of the final ACE benchmarking report, which is planned end of May 2026. This document also presents financial indicators extracted from the [ANSPs Financial Indicators Dashboard](https://ansperformance.eu/economics/finance/) and monitoring ANSPs’ cash holdings and liquidity.
 
-Economic information disclosure by ANSPs takes time as it is depending on the publication of their financial statements, which can be a lengthy process. Indeed, ANSPs have to follow official procedures that prevent them from sharing their financial statements before the independent audit report is finalised and the formal approval for publication is received by the relevant authorities (sometimes at Ministry level).
+Economic information disclosure by ANSPs takes time as it depends on the publication of their financial statements, which can be a lengthy process. Indeed, after the finalisation of their financial accounts, ANSPs have to follow official procedures which include, inter alia, the preparation of an independent audit report and the formal approval for publication which is granted by the relevant authorities (sometimes at Ministry level). This explains the lag between the review of the 2024 operational performance presented in the Performance Review Report (published in March 2025) and the publication of this document in December 2025. It should be noted that operational conditions continued to evolve in 2025, and ATFM delay performance has improved for several of ANSPs.
 
-The final ACE benchmarking report will provide more detailed information on observed changes for selected performance indicators both at pan-European system level and at ANSP level. This detailed analysis will particularly focus on ANSPs for which significant differences in costs are observed. The report will present the main drivers underlying these differences.
-
+The final ACE benchmarking report will provide more detailed information on observed changes for selected performance indicators both at Pan-European system level and at ANSP level. This detailed analysis will particularly focus on ANSPs for which significant differences in costs are observed. The report will present the main drivers underlying these differences.
 
 @fig-figure-1-1 illustrates the timeline to produce the next ACE benchmarking report.
 
@@ -17,12 +16,11 @@ The final ACE benchmarking report will provide more detailed information on obse
 
 It is important that robust ACE benchmarking analysis is available in a timely manner since several stakeholders, most notably ANSPs’ management, regulatory authorities (e.g. NSAs) and airspace users, have a keen interest in receiving the information in the ACE reports as early as possible.
 
-Fifteen out of 38 ANSPs submitted their ACE 2023 data on time by the 1st of July 2024 and all data submissions were received by early September 2024. For ANSPs operating under Single European Sky regulations, the ACE data submission process was carried out at the same time as the preparation of performance plans for the 4th Reference Period (RP4) covering 2025-2029. However, clearly the timescale to produce the ACE benchmarking report is inevitably delayed if data are not submitted on time.
+Twenty out of 38 ANSPs submitted their ACE 2024 data on time by the 1st of July 2025 and all data submissions were received by the end of September 2025. The timescale to produce the ACE benchmarking report is inevitably delayed if data are not submitted on time.
 
 It should be noted that the data presented in this document are still [**preliminary and not yet fully validated**]{.underline}. Indeed, the data submission milestone is just the first step of a process which comprises a thorough verification and analysis of individual ANSP submissions. This validation exercise also includes a formal round of exchange between the PRU and each ANSP in order to ensure a common understanding of the data submitted by the ANSP.
 
-The data used in this document reflects the information received by the 12th of November 2024. Figure 1.2 shows the status of the ACE data validation process for the data presented in this document.
-
+The data used in this document reflects the information received by the 12th of November 2025. @fig-figure-1-2 shows the status of the ACE data validation process for the data presented in this document.
 
 ::: {#fig-figure-1-2}
 ::: {.content-visible when-format="html"}
@@ -46,13 +44,13 @@ The data used in this document reflects the information received by the 12th of 
 Status of {{< var doc.year_report >}} data validation process
 :::
 
-The data contained in this report is therefore subject to changes before the release of the final ACE benchmarking report in May 2025.
+The data contained in this report is therefore subject to changes before the release of the final ACE benchmarking report in May 2026.
 
 The remainder of this report is structured as follows:
 
--   @sec-high: provides a high-level presentation of 2023 revenues, costs, staff and balance sheet data.
+-   @sec-high: provides a high-level presentation of 2024 revenues, costs, staff and balance sheet data.
 -   @sec-economic: presents a preliminary analysis of economic cost-effectiveness at Pan-European and ANSP level.
--   @sec-financial: presents a preliminary analysis of financial cost-effectiveness at Pan-European and ANSP level, and underlying components.
+-   @sec-financial: presents a preliminary analysis of ATM/CNS provision cost-effectiveness at Pan-European and ANSP level, and underlying components.
 -   @sec-cash: presents a preliminary analysis of specific financial indicators at Pan-European level.
 
 [^1]: Due to the on-going war in Ukraine, UkSATSE has been excluded from the ACE analysis.

@@ -51,7 +51,7 @@ p <- function(myfont, mywidth, myheight) {
     textangle = 0,
     textposition = "outside",
     textfont = list(color = '#003366', size= if_else(myfont <20, myfont, myfont+2)),
-    hovertemplate = paste('%{y:.1f} B€2023'),
+    hovertemplate = paste('%{y:.1f} B€', year_report),
     showlegend = F
   ) %>% 
   layout(
@@ -75,7 +75,7 @@ p <- function(myfont, mywidth, myheight) {
       showgrid = F
     ),
     yaxis = list(
-      title = paste0("Capital expenditures (billion €2023)"),
+      title = paste0("Capital expenditures (billion €", year_report, ")"),
       linewidth = 1, linecolor='black',
       titlefont   = list(size = myfont),
       fixedrange = TRUE,
