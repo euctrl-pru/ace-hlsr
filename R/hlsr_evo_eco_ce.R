@@ -46,8 +46,9 @@ data_calc <- data_merged %>%
          ECO_CE_EVO = case_when(YEAR_DATA == min(YEAR_DATA) ~ 0,
                                 TRUE ~ ECO_CE/lag(ECO_CE)-1)
   ) %>% 
-  select(YEAR_DATA, FIN_CE, DELAY_ERT_CPH, DELAY_ARP_CPH, ECO_CE, ECO_CE_EVO)  %>% 
-  filter(YEAR_DATA != min(YEAR_DATA))
+  select(YEAR_DATA, FIN_CE, DELAY_ERT_CPH, DELAY_ARP_CPH, ECO_CE, ECO_CE_EVO) 
+# %>% 
+  # filter(YEAR_DATA != min(YEAR_DATA))
 
 # prepare data for plot
 data_prep <- data_calc  %>% 
