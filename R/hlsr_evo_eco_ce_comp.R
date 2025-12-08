@@ -51,7 +51,7 @@ data_calc <- data_merged %>%
                             TRUE ~ COMPOSITE_FLIGHTHOUR/lag(COMPOSITE_FLIGHTHOUR)-1),
   ) %>% 
   mutate(X_LABELS = paste(lag(YEAR_DATA),"-",substr(YEAR_DATA,3,4), sep = "")) %>%
-  filter(YEAR_DATA > min(YEAR_DATA)+1) %>% 
+  filter(YEAR_DATA > min(YEAR_DATA)) %>% 
   select(X_LABELS, COST_EV, CPH_EV, DELAY_CPH_EV) %>% 
   pivot_longer(cols = c("COST_EV","CPH_EV","DELAY_CPH_EV"), names_to = "TYPE", values_to ="VALUE")
 
