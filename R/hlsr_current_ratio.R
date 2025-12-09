@@ -26,7 +26,7 @@ data_plot <- data_raw %>%
   arrange(year_data) %>% 
   filter(year_data >= year_report-5, year_data <= year_report) %>% 
   mutate_at(c(2), ~as.numeric(.)) %>% 
-  mutate(value_text = case_when(type == "3rd quartile" ~ value + 0.15,
+  mutate(value_text = case_when(type == "3rd quartile" ~ value + 0.35,
                                 .default = value - 0.15),
          type = case_when(
            type == "3rd quartile" ~ "3<sup>rd</sup> quartile",

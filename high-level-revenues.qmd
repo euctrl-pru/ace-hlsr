@@ -77,7 +77,7 @@ Across the Pan-European system, traffic in 2024 (measured in composite flight-ho
 Composite flight-hours (left) and gate-to-gate ANS revenues (right) of the Pan-European system, {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} (real terms)
 :::
 
-At ANSP level, traffic in 2024 showed varied patterns of recovery, influenced both by the residual effects of the COVID-19 pandemic and by the ongoing war in Ukraine, which led to significant changes in route structures and traffic volumes due to airspace closures and reciprocal sanctions on air carriers (see Figure 2.3). On the recovery side, some ANSPs such as Sakaeronavigatsia and Albcontrol recorded substantial increases in composite flight-hours, reaching +116% and +68% above 2019 levels respectively. In contrast, others like LGS and EANS remained below pre-pandemic levels, at -32% and - 23%, respectively. This inevitably impacted the levels and trends of ACE indicators for the most affected ANSPs.
+At ANSP level, traffic in 2024 showed varied patterns of recovery, influenced both by the residual effects of the COVID-19 pandemic and by the ongoing war in Ukraine, which led to significant changes in route structures and traffic volumes due to airspace closures and reciprocal sanctions on air carriers (see [@fig-Traffic_map]{.no-external}). On the recovery side, some ANSPs such as Sakaeronavigatsia and Albcontrol recorded substantial increases in composite flight-hours, reaching +116% and +68% above 2019 levels respectively. In contrast, others like LGS and EANS remained below pre-pandemic levels, at -32% and - 23%, respectively. This inevitably impacted the levels and trends of ACE indicators for the most affected ANSPs.
 
 ::: {#fig-Traffic_map}
 ![](figures/Traffic_map.png)
@@ -197,7 +197,7 @@ The overall change in staff numbers between 2023 and 2024 was mainly driven by t
 -	ATCOs in OPS: +237 FTEs (+1.4%), partly offset by a reduction in ATCOs on other duties (-51 FTEs, -2.2%); and,
 -	Technical support staff for planning and development: +133 FTEs (+4.3%).
 
-Most other categories recorded increases, except Other Staff, which slightly declined (-0.8%), as shown in Figure 2.8. The largest proportional increase was observed in ab-initio trainees (+12.6%), indicating that some ANSPs expanded recruitment of future ATCOs in 2024. More detailed information on staff numbers will be provided in the upcoming ACE report, including comparisons to both 2023 and 2019 levels.
+Most other categories recorded increases, except Other Staff, which slightly declined (-0.8%), as shown in [@fig-figure-2-7]{.no-external}. The largest proportional increase was observed in ab-initio trainees (+12.6%), indicating that some ANSPs expanded recruitment of future ATCOs in 2024. More detailed information on staff numbers will be provided in the upcoming ACE report, including comparisons to both 2023 and 2019 levels.
 
 ## Balance sheet structure and capital expenditures
 

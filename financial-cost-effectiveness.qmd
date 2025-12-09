@@ -7,7 +7,7 @@ source(here("R/calc_quartiles.R"))
 
 # ATM/CNS provision cost-effectiveness {#sec-financial}
 
-This chapter provides a [preliminary analysis]{.underline} of financial cost-effectiveness.
+This chapter provides a [preliminary analysis]{.underline} of ATM/CNS provision cost-effectiveness.
 
 ## Pan-European system level {#sec-fin_1}
 
@@ -64,7 +64,7 @@ Many factors contribute to observed differences in ANSPs’ performance. Over th
 ```
 :::
 
-Financial gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
+ATM/CNS provision gate-to-gate cost-effectiveness, {{< var doc.year_report >}}
 :::
 
 @fig-figure-4-5 presents the ATCO-hour productivity indicator at ANSP level for the year {{< var doc.year_report >}}. The dotted lines represent the 1^st^ and 3^rd^ quartiles (`r q1_4_5` and `r q3_4_5`, respectively).

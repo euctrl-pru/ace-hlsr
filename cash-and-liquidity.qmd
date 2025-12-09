@@ -25,7 +25,7 @@ Trends in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.y
 :::
 
 
-@fig-figure-5-2 shows the changes in cash-on-hand days at Pan-European system level over the {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} period as well as well as the 1^st^ quartile and the 3^rd^ quartile of these indicators. The cash-on-hand days indicator (cash & cash equivalents divided by operating costs x 365) measures the length of time a company can pay its operating costs from its cash reserves.
+@fig-figure-5-2 shows the changes in cash-on-hand days at Pan-European system level over the {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} period as well as the 1^st^ quartile and the 3^rd^ quartile of these indicators. The cash-on-hand days indicator (cash & cash equivalents divided by operating costs x 365) measures the length of time a company can pay its operating costs from its cash reserves.
 
 ::: {#fig-figure-5-2}
 :::: {.content-visible when-format="html"}
