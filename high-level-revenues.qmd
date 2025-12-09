@@ -103,7 +103,7 @@ The ACE benchmarking analysis focuses on the specific costs of providing gate-to
 Gate-to-gate ATM/CNS provision costs at Pan-European system level, {{< var doc.year_report >}}
 :::
 
-Between 2023 and 2024, ATM/CNS provision costs increased by +4.0% (+€405M), reaching a level slightly above that recorded in 2019 (+0.6%). The main drivers were higher staff costs (+€271M), non-staff operating costs (+€90M) and depreciation costs (+€88M), while the cost of capital decreased (-€74M).
+Between 2023 and 2024, ATM/CNS provision costs increased by +4.0% (+€405M), reaching a level slightly above that recorded in 2019 (+0.6%). The main drivers were higher staff costs (+€272M), non-staff operating costs (+€90M) and depreciation costs (+€88M), while the cost of capital decreased (-€74M).
 
 ::: {#fig-figure-2-4}
 ```{r cost-category}
