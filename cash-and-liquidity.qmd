@@ -40,7 +40,7 @@ Trends in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.y
 :::
 
  
-@fig-figure-5-2 shows that cash-on-hand days fell sharply from 157 in 2019 to 85 in 2021, reflecting the impact of the pandemic, before improving to 116 days in 2022. However, this recovery was not sustained, as the average decreased to 102 days in 2023, then edged up slightly to 109 days in 2024. Overall, liquidity remains below pre-pandemic levels. Dispersion across ANSPs persists: the 3rd quartile rose to 202 days in 2024, still below its 2019 peak of 255 days, while the 1st quartile recovered to 70 days, slightly above its pre-pandemic level of 54 days.
+@fig-figure-5-2 shows that cash-on-hand days fell sharply from 157 in 2019 to 86 in 2021, reflecting the impact of the pandemic, before improving to 116 days in 2022. However, this recovery was not sustained, as the average decreased to 102 days in 2023, then edged up slightly to 109 days in 2024. Overall, liquidity remains below pre-pandemic levels. Dispersion across ANSPs persists: the 3rd quartile rose to 202 days in 2024, still below its 2019 peak of 255 days, while the 1st quartile recovered to 70 days, slightly above its pre-pandemic level of 54 days.
 
 More detailed analysis on these financial indicators will be available in the forthcoming ACE report.
 
