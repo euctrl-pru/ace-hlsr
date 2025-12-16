@@ -22,7 +22,7 @@ format:
       - media/custom.scss
     code-link: true
     footnotes: continuous
-    cover-image: media/cover.png
+    cover-image: media/cover_2024.png
     link-external-newwindow: true
     link-external-icon: true
     link-external-filter: '^(?:http:|https:)\/\/ansperformance\.eu\/|^(?:http:|https:)\/\/.*ace-hlsr\.netlify\.app\/'
