@@ -1,12 +1,16 @@
 # Monitoring of ANSPs cash and liquidity situation {#sec-cash}
 
-This chapter provides an overview of ANSPs’ financial situation over the 2018-2023 period, using two indicators: the current ratio and the cash-on-hand days. These indicators have been calculated at pan-European system level using the information provided in the ANSPs’ Financial Statements which were available at the time of publishing this report (35 for the 2018-2022 period and 27 in 2023). The indicators are therefore consistent with those published at individual ANSP level in the EUROCONTROL Aviation Intelligence Unit [ANSPs Financial Dashboard](https://ansperformance.eu/economics/finance/).
+This chapter provides an overview of ANSPs’ financial situation over the 2019–2024 period, using two indicators: the current ratio and cash-on-hand days. These indicators have been calculated at the Pan-European system level using the information provided in the Financial Statements of 34 ANSPs for the 2019–2023 period, and 30 ANSPs in 2024, according to the data available at the time of publication. They are therefore consistent with the information published at individual ANSP level in the EUROCONTROL Aviation Intelligence Unit [ANSPs Financial Dashboard](https://ansperformance.eu/economics/finance/).
 
-Depending on the organisational set up of different ANSPs, the information reported in their financial statements covers a different scope of activities (e.g. it may include airport management operations, commercial activities, etc.) which does not always correspond with the ACE gate-to-gate scope. Additionally, due to specific organisational and financial set up, DCAC Cyprus, HASP, LVNL and MUAC, are excluded from the analysis presented in this chapter.
+Due to specific organisational and financial set-ups, DCAC Cyprus, HASP, LVNL, MUAC and MATS (in this case due to the unavailability of financial data for both 2023 and 2024) are excluded from the analysis presented in this chapter. UkSATSE, excluded from the ACE analysis due to the war in Ukraine and the absence of traffic, is nevertheless included in the dashboard and in this chapter, since it continued publishing financial statements.
 
-@fig-figure-5-1 presents the changes in the average current ratio between {{< var doc.year_report_minus5 >}} and {{< var doc.year_report >}} as well as the 1^st^ and 3^rd^ quartiles. The current ratio (current assets divided by current liabilities) measures the ability of a company to pay its short-term debt obligations with its current assets.
+Depending on the organisational set-up of different ANSPs, the information reported in their financial statements covers a varying scope of activities (e.g. it may include airport management operations, commercial activities, etc.), which does not always correspond to the ACE gate-to-gate scope.
 
-@fig-figure-5-1 shows that the average current ratio for ANSPs declined from 2018 to a low point in 2021, due to pandemic related revenue drops, but has since improved, reaching 3.82 in 2023. This recovery reflects an overall strengthening of liquidity across the sector, yet there is substantial variability in financial resilience. Both the 1st and the 3rd quartiles have increased in 2023, however, while the former reached a level in line with that observed in 2018, the latter remains lower than pre-crisis levels. 
+Figure 5.1 presents the evolution of the current ratio at Pan-European system level[^3] between 2019 and 2024 as well as the 1st and 3rd quartiles. The current ratio (current assets divided by current liabilities) measures the ability of a company to pay its short-term debt obligations with its current assets.
+
+[^3]: The Pan-European system indicators (Figure 5.1 and Figure 5.2 and 6.2) are calculated by first aggregating the financial data of individual ANSPs. The current ratio and cash-on-hand days are then computed from this combined dataset, producing a weighted average that more accurately represents the overall financial position of the system.
+
+@fig-figure-5-1 shows that the average current ratio for ANSPs declined from 2.73 in 2019 to a low point of 1.89 in 2021, due to pandemic-related revenue drops, but subsequently improved through 2022 and 2023, reaching 3.21 before reducing slightly to 2.99 in 2024. This overall recovery indicates a strengthening of sector-wide liquidity compared to the trough of the crisis, although financial resilience continues to vary considerably across ANSPs. The 3rd quartile continued to rise and reached 4.60 in 2024, nearly matching the pre-Pandemic level. By contrast, the 1st quartile, after a modest recovery from its 2021 low, remained lower than in 2019, indicating a widening of the dispersion across ANPs.
 
 ::: {#fig-figure-5-1}
 :::: {.content-visible when-format="html"}
@@ -21,7 +25,7 @@ Trends in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.y
 :::
 
 
-@fig-figure-5-2 shows the changes in cash-on-hand days at Pan-European system level over the {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} period as well as well as the 1^st^ quartile and the 3^rd^ quartile of these indicators. The cash-on-hand days indicator (cash & cash equivalents divided by operating costs x 365) measures the length of time a company can pay its operating costs from its cash reserves.
+@fig-figure-5-2 shows the changes in cash-on-hand days at Pan-European system level over the {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} period as well as the 1^st^ quartile and the 3^rd^ quartile of these indicators. The cash-on-hand days indicator (cash & cash equivalents divided by operating costs x 365) measures the length of time a company can pay its operating costs from its cash reserves.
 
 ::: {#fig-figure-5-2}
 :::: {.content-visible when-format="html"}
@@ -36,7 +40,7 @@ Trends in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.y
 :::
 
  
-@fig-figure-5-2 illustrates that while the average has increased to 140 days in 2023 (up from 135 days in 2022), it remains below pre-pandemic levels. This gradual recovery indicates improved liquidity for many ANSPs, yet there is a clear disparity between those with stronger and weaker liquidity positions.
+@fig-figure-5-2 shows that cash-on-hand days fell sharply from 157 in 2019 to 86 in 2021, reflecting the impact of the pandemic, before improving to 116 days in 2022. However, this recovery was not sustained, as the average decreased to 102 days in 2023, then edged up slightly to 109 days in 2024. Overall, liquidity remains below pre-pandemic levels. Dispersion across ANSPs persists: the 3rd quartile rose to 202 days in 2024, still below its 2019 peak of 255 days, while the 1st quartile recovered to 70 days, slightly above its pre-pandemic level of 54 days.
 
 More detailed analysis on these financial indicators will be available in the forthcoming ACE report.
 

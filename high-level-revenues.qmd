@@ -60,7 +60,7 @@ Total ANS revenues in {{< var doc.year_report >}} amounted to `r total_reve_f`. 
 Breakdown of gate-to-gate ANS revenues, {{< var doc.year_report >}}
 :::
 
-Across the Pan-European system, traffic in 2023 (measured in composite flight-hours) was +11.0% higher than in 2022 but remained -3.7% lower than in 2019. In the meantime, total gate-to-gate revenues increased slightly more than traffic (+12.9%, or +€1 229M) and remained -3.8% lower than in 2019.
+Across the Pan-European system, traffic in 2024 (measured in composite flight-hours) increased by +5.5% compared to 2023 and exceeded the 2019 level by +1.6%. Meanwhile, total gate-to-gate revenues grew faster than traffic, rising by +7.4% (or +€829M) and surpassing 2019 revenues by +3.7%. As detailed in the following sections of this report, the increase in revenues in 2024 outpaced the rise in ATM/CNS costs and coincided with ongoing increases in capital and reserves as well as reductions in borrowings at the Pan-European system level.
 
 ::: {#fig-2-2 layout="[50,50]"}
 
@@ -74,22 +74,20 @@ Across the Pan-European system, traffic in 2023 (measured in composite flight-ho
 #| out.height: "300px"
 ```
 
-Composite flight-hours (left) and gate-to-gate ANS revenues (right) of the Pan-European system, 2018-2023 (real terms)
+Composite flight-hours (left) and gate-to-gate ANS revenues (right) of the Pan-European system, {{< var doc.year_report_minus5 >}}-{{< var doc.year_report >}} (real terms)
 :::
 
-At ANSP level, traffic in 2023 recovered to varying degrees from the crisis caused by the COVID-19 pandemic  (see @fig-Traffic_map). At the higher end, composite flight-hours were +63% and +38% above 2019 levels for Sakaeronavigatsia and Albcontrol respectively. While at the lower end, traffic remained -43% and -39% below 2019 levels for MOLDATSA and LGS respectively. The war in Ukraine continued to cause airspace closures and reciprocal sanctions on air carriers, which impacted traffic flows in Europe. This inevitably impacted the levels and trends of ACE indicators for the most affected ANSPs.
+At ANSP level, traffic in 2024 showed varied patterns of recovery, influenced both by the residual effects of the COVID-19 pandemic and by the ongoing war in Ukraine, which led to significant changes in route structures and traffic volumes due to airspace closures and reciprocal sanctions on air carriers (see [@fig-Traffic_map]{.no-external}). On the recovery side, some ANSPs such as Sakaeronavigatsia and Albcontrol recorded substantial increases in composite flight-hours, reaching +116% and +68% above 2019 levels respectively. In contrast, others like LGS and EANS remained below pre-pandemic levels, at -32% and - 23%, respectively. This inevitably impacted the levels and trends of ACE indicators for the most affected ANSPs.
 
 ::: {#fig-Traffic_map}
 ![](figures/Traffic_map.png)
 
-Changes in composite flight-hours between 2019 and 2023
+Changes in composite flight-hours between {{< var doc.year_report_minus5 >}} and {{< var doc.year_report >}}
 :::
-
-Looking forward, the recent EUROCONTROL [Seven-Year Forecast](https://www.eurocontrol.int/publication/eurocontrol-forecast-2024-2030-autumn-update) shows that traffic may remain below pre-pandemic levels until at least 2025.
 
 ##	Costs
 
-The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services, which amounted to €9 697M in 2023. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 84% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented around 16%.
+The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services, which amounted to €10 468M in 2024. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 84% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented around 16%.
 
 ::: {#fig-figure-2-3}
 ```{r}
@@ -105,8 +103,7 @@ The ACE benchmarking analysis focuses on the specific costs of providing gate-to
 Gate-to-gate ATM/CNS provision costs at Pan-European system level, {{< var doc.year_report >}}
 :::
 
-Total ATM/CNS provision costs rose by +2.9% (+€272M) in 2023, reflecting cost increases for 27 out of 38 ANSPs. A rise in staff costs (+€309M) was the main source of the increase in 2023, with six ANSPs accounting for 76% of the overall change in staff costs (ENAIRE, DHMI, LFV, Skyguide, ROMATSA and NAV Portugal). However, staff costs remain -3.0% lower than 2019 levels and as such total costs are - 3.6% lower given the large proportion for which staff costs account.
-
+Between 2023 and 2024, ATM/CNS provision costs increased by +4.0% (+€405M), reaching a level slightly above that recorded in 2019 (+0.6%). The main drivers were higher staff costs (+€272M), non-staff operating costs (+€90M) and depreciation costs (+€88M), while the cost of capital decreased (-€74M).
 
 ::: {#fig-figure-2-4}
 ```{r cost-category}
@@ -118,7 +115,6 @@ Total ATM/CNS provision costs rose by +2.9% (+€272M) in 2023, reflecting cost 
 
 Changes in gate-to-gate ATM/CNS provision cost categories (real terms)
 :::
-
 
 In {{< var doc.year_report >}}, the six largest ANSPs in terms of costs (DSNA, DFS, ENAIRE, NATS, ENAV and DHMI) bore some 58% of the total Pan-European gate-to-gate ATM/CNS provision costs, while the six smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-5).
 
@@ -152,7 +148,7 @@ Changes in ATM/CNS provision costs (real terms)
 
 ## Staff
 
-The Pan-European ANSPs employed a total of 53 060 staff in 2023 (comprising 52 221 staff providing ATM/CNS services and 839 internal MET staff). Some 17 368 staff (33%) were ATCOs working on operational duties, split between ACCs (55%) and APP/TWR facilities (45%). On average, 2.0 additional staff are required for every ATCO in OPS in Europe.
+The Pan-European ANSPs employed a total of 54 888 staff (expressed in Full Time Equivalents – FTEs) in 2024 (comprising 54 073 staff providing ATM/CNS services and 815 internal MET staff). Some 17 584 staff (33%) were ATCOs working on operational duties, split between ACCs (55%) and APP/TWR facilities (45%). On average, 2.1 additional staff were required for every ATCO in OPS in Europe.
 
 ::: {#fig-figure-2-6}
 ```{r staff-pie}
@@ -164,20 +160,20 @@ The Pan-European ANSPs employed a total of 53 060 staff in 2023 (comprising 52 2
 Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, {{< var doc.year_report >}}
 :::
 
-In {{< var doc.year_report >}}, the number of ATM/CNS staff increased by +1.0% or +537 FTEs compared to 2022. It however remained -1.5% lower than in 2019.
+In 2024, the number of ATM/CNS staff increased by +2.8% (+1 478 FTEs) compared to 2023, surpassing the 2019 level by +2.0%. Compared to 2019, both ATCOs in OPS and support staff were +2.0% higher in 2024.
 
 ::: {.content-visible when-format="html"}
-::: centeredtitle
-[**Trends in gate-to-gate ATM/CNS staff at Pan-European system level**]{.underline}
-:::
+<!-- ::: centeredtitle -->
+<!-- [**Trends in gate-to-gate ATM/CNS staff at Pan-European system level**]{.underline} -->
+<!-- ::: -->
 
-::: {style="max-width: 620px; margin: auto"}
-```{r staff-evolution}
-#| file: R/hlsr_evo_staff.R
-#| out.height: "200px"
-#| out.width: "100%"
-```
-:::
+<!-- ::: {style="max-width: 620px; margin: auto"} -->
+<!-- ```{r staff-evolution} -->
+<!-- #| file: R/hlsr_evo_staff.R -->
+<!-- #| out.height: "200px" -->
+<!-- #| out.width: "100%" -->
+<!-- ``` -->
+<!-- ::: -->
 
 ::: {#fig-figure-2-7 layout="[65,35]"}
 ```{r staff-breakdown}
@@ -190,24 +186,22 @@ In {{< var doc.year_report >}}, the number of ATM/CNS staff increased by +1.0% o
 #| out.height: "500px"
 ```
 
-Total gate-to-gate ATM/CNS staff per staff category
+Changes in total gate-to-gate ATM/CNS staff per staff category
 :::
 :::
 
+The overall change in staff numbers between 2023 and 2024 was mainly driven by the following categories:
 
-The overall change in staff numbers observed between 2022 and 2023 mainly reflects changes in the following staff categories:
+-	Technical support staff for operational maintenance, monitoring and control: +513 FTEs (+5.9%);
+-	Administrative staff: +269 FTEs (+3.1%);
+-	ATCOs in OPS: +237 FTEs (+1.4%), partly offset by a reduction in ATCOs on other duties (-51 FTEs, -2.2%); and,
+-	Technical support staff for planning and development: +133 FTEs (+4.3%).
 
--	ATCOs in OPS (+231 FTEs, or +1.3%), although this increase is partly offset by a reduction in ATCOs on other duties (-154 FTEs, or -6.8%);
--	OPS support (non-ATCOs) (+122 FTEs, or +3.1%); and,
--	Technical support staff for operational maintenance, monitoring and control (+112 FTEs, or +1.3%).
-
-All other staff categories showed an increase in reported staff numbers, as shown in Figure 2.8. The highest proportional increase (+5.0%) was in ab-initio trainees, suggesting that some ANSPs increased recruitment of trainees for ATCO positions in 2023.
-
-Compared to 2019, the number of ATCOs in OPS was +0.7% higher in 2023, while the number of support staff was -2.5% lower. The overall reduction in support staff was mainly driven by a -6.6% decrease in administrative staff (-600 FTEs), partly compensated by a +25.0% increase in the number of on-the-job trainees (+240 FTEs).
+Most other categories recorded increases, except Other Staff, which slightly declined (-0.8%), as shown in [@fig-figure-2-7]{.no-external}. The largest proportional increase was observed in ab-initio trainees (+12.6%), indicating that some ANSPs expanded recruitment of future ATCOs in 2024. More detailed information on staff numbers will be provided in the upcoming ACE report, including comparisons to both 2023 and 2019 levels.
 
 ## Balance sheet structure and capital expenditures
 
-ANSP balance sheets in 2023 comprised €9 159M in capital and reserves and €5 891M in borrowings. Capital expenditure amounted to €1 186M in 2023. 
+ANSP balance sheets in 2024 comprised €10 345M in capital and reserves and €5 466M in borrowings, while capital expenditure amounted to €1 474M. 
 
 :::{#fig-figure-2-9 layout="[50,50]"}
 
@@ -221,13 +215,11 @@ ANSP balance sheets in 2023 comprised €9 159M in capital and reserves and €5
 #| out.height: "322px"
 ```
 
-Capital & reserves and borrowings (left) and capital expenditures (right) of the Pan-European system, 2018-2023 (real terms)
+Capital & reserves and borrowings (left) and capital expenditures (right) of the Pan-European system, {{< var doc.year_report_minus5 >}} and {{< var doc.year_report >}} (real terms)
 :::
 
 
-As shown in previous sub-sections, the increase in revenue (+€1 229M) outpaced the increase in provision costs (+€272M) by +€958M in 2023. It appears that this amount has been predominantly used to reduce debt by -11% (-€721M) and, to a lesser extent, increase capital and reserves by +2% (+€193M) relative to 2022.
-
-On the other hand, capital expenditures, which were scaled down in 2020 and 2021 due to liquidity issues and uncertainty as a result of the COVID-19 pandemic, remained at a relatively low level compared with 2018-2019.
+In 2024, capital and reserves increased by +8% (+€809M), while the level of indebtedness continued to decline, falling by -10% (-€608M). Although the amount of debt remained significantly higher than in 2019, this indicates a clear improvement in the financial position of ANSPs. The traffic rebound since 2021, the subsequent increase in cash from operations and the gradual adaptation to a new traffic distribution shaped by the ongoing war in Ukraine created a favourable environment to increase capital expenditures (+19% in 2024).
 
 ANSPs’ cash and liquidity situation is outlined in more detail in @sec-cash.
 
