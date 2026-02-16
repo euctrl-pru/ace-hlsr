@@ -100,7 +100,12 @@ p <- function(myfont, mywidth, myheight) {
 
 }
 
-p(12, NULL, NULL)
 
-
+if (knitr::is_latex_output()) {
+  p(13, NULL, NULL)
+  
+  } else {
+  p(12, NULL, NULL)
+  
+}
 

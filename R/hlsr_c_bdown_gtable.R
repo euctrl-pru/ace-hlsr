@@ -144,11 +144,16 @@ t <- gt(
     locations = cells_body(columns = everything(), rows = c(2:3))
   ) %>% 
   tab_style(
-    style = list(cell_text(size = '0.95rem')),
+    style = list(cell_text(size = px(12))),
     locations = cells_body(columns = everything(), rows = everything())
   ) %>% 
   cols_width(
     1 ~ pct(40) 
   )
 
-t
+
+if (knitr::is_latex_output()) {
+  t 
+} else{
+  t
+}

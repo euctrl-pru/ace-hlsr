@@ -14,7 +14,13 @@ The final ACE benchmarking report will provide more detailed information on obse
 
 @fig-figure-1-1 illustrates the timeline to produce the next ACE benchmarking report.
 
+::: {.content-visible when-format="html"}
 ![Timeline to produce the next ACE benchmarking report](figures/figure1-1_transp.png){#fig-figure-1-1 width="100%"}
+:::
+
+::: {.content-visible when-format="pdf"}
+![Timeline to produce the next ACE benchmarking report](figures/figure1-1_transp.png){#fig-figure-1-1 width=1\linewidth}
+:::
 
 It is important that robust ACE benchmarking analysis is available in a timely manner since several stakeholders, most notably ANSPs’ management, regulatory authorities (e.g. NSAs) and airspace users, have a keen interest in receiving the information in the ACE reports as early as possible.
 
@@ -40,7 +46,7 @@ The data used in this document reflects the information received by the 12th of 
 -->
 ````
 
-![](figures/ansp_status_table.PNG){height="90%" width="90%"}
+![](figures/ansp_status_table.PNG){width=0.9\linewidth}
 :::
 
 Status of {{< var doc.year_report >}} data validation process

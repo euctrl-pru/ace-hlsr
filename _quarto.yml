@@ -40,6 +40,11 @@ format:
 # quarto render --to pdf --output-dir _pdf
 
   pdf: 
+    pdf-engine: xelatex
+    fig-crop: true
+    fig-pos: 'H'
+    tbl-pos: 'H'
+    keep-tex: true
     toc: true
     lof: true
     geometry:
@@ -53,36 +58,49 @@ format:
       - right=2.2cm
       - footskip=0.7cm
     mainfont: "Calibri"
-    # fig-pos: 'h'
     include-in-header:
       - text: |
-          % \usepackage{libertine} % so we can see the checkmarks in the intro
-          \usepackage{xcolor}
-          \usepackage{ragged2e} % for justifying text in multiple column layout
-          
-          \RedeclareSectionCommand[
-            beforeskip=0pt,
-            afterskip=2pt]{chapter} %so to remove the word chapter and the space before
-          
-          \setsansfont{Calibri}
-          
-          \definecolor{MyBlue}{RGB}{54,95,145}
-          \addtokomafont{chapter}{\color{MyBlue}}
-          \addtokomafont{chapterprefix}{\color{MyBlue}}
-          \addtokomafont{chapter}{\fontsize{14pt}{14pt}\selectfont}
-          \addtokomafont{chapterprefix}{\fontsize{14pt}{14pt}\selectfont}
+            % --- Required for xelatex/lualatex font selection ---
+            \usepackage{xcolor}
+            \usepackage{ragged2e}
+            
+            \usepackage{float}
+            \floatplacement{table}{H}
+            
+            \usepackage{caption}
+            \captionsetup[table]{position=bottom}
+            
+            % Calibri requires xelatex or lualatex
+            \usepackage{fontspec}
+            \setsansfont{Calibri}
+            
+            \definecolor{MyBlue}{RGB}{54,95,145}
+            
+            % --- KOMA-Script only: guard these so they don't break non-KOMA classes ---
+            \makeatletter
+            \@ifundefined{KOMAClassName}{}{%
+              \RedeclareSectionCommand[
+                beforeskip=0pt,
+                afterskip=2pt
+              ]{chapter}
+            
+              % Use setkomafont only (avoid mixing addtokomafont + setkomafont)
+              \setkomafont{chapter}{\color{MyBlue}\sffamily\bfseries\Large}
+              \setkomafont{section}{\color{MyBlue}\sffamily\bfseries\large}
+              \addtokomafont{chapterprefix}{\color{MyBlue}}
+            }
+            \makeatother
+            
+            % --- Custom environment ---
+            \newenvironment{tightcenter}{%
+              \setlength\topsep{5pt}%
+              \setlength\parskip{0pt}%
+              \bfseries%
+              \begin{center}%
+            }{%
+              \end{center}%
+            }
 
-          \addtokomafont{section}{\color{MyBlue}}
-          \addtokomafont{section}{\fontsize{12pt}{12pt}\selectfont}
-
-          \newenvironment{tightcenter}{%
-            \setlength\topsep{5pt}
-            \setlength\parskip{0pt}
-            \bfseries
-            \begin{center}
-          }{%
-            \end{center}
-          }
 
 book:
   title: "High-level Summary Report on Preliminary ACE 2024 Data"

@@ -391,16 +391,13 @@ fig <- function(myfont, mywidth, myheight, vlegend, vdomain, myvposition){
   )
 }
 
-fig(8, NULL, NULL, -0.85, 0.92, 1.08)
+# fig <- function(myfont, mywidth, myheight, vlegend, vdomain, myvposition)
 
-# export to image
-# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
-# 
-# fig_dir <- 'figures/'
-# fig_name <- "figure-3-2-hlsr_eco_ce.png"
-# 
-# # fig <- function(myfont, mywidth, myheight, vlegend, vdomain, myvposition)
-# invisible(export(fig(22, 1700, 1000, -0.55, 0.88, 1.05), paste0(fig_dir, fig_name)))
-# invisible(figure <- image_read(paste0(fig_dir,fig_name)))
-# invisible(cropped <- image_crop(figure, "0x1000"))
-# invisible(image_write(cropped, paste0(fig_dir, fig_name)))
+if (knitr::is_latex_output()) {
+  fig(8, 700, 420, -0.6, 0.92, 1.08)
+
+} else {
+  fig(8, NULL, NULL, -0.85, 0.92, 1.08)
+  
+}
+  

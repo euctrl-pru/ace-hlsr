@@ -116,8 +116,12 @@ table_reve <- gt(
     locations = cells_body(columns = everything(), rows = nrow(data_table))
   ) %>% 
   tab_style(
-    style = list(cell_text(size = '0.95rem')),
+    style = list(cell_text(size = px(12))),
     locations = cells_body(columns = everything(), rows = everything())
   )
 
-table_reve
+if (knitr::is_latex_output()) {
+  table_reve
+} else{
+  table_reve
+}

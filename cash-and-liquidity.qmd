@@ -13,13 +13,13 @@ Figure 5.1 presents the evolution of the current ratio at Pan-European system le
 @fig-figure-5-1 shows that the average current ratio for ANSPs declined from 2.73 in 2019 to a low point of 1.89 in 2021, due to pandemic-related revenue drops, but subsequently improved through 2022 and 2023, reaching 3.21 before reducing slightly to 2.99 in 2024. This overall recovery indicates a strengthening of sector-wide liquidity compared to the trough of the crisis, although financial resilience continues to vary considerably across ANSPs. The 3rd quartile continued to rise and reached 4.60 in 2024, nearly matching the pre-Pandemic level. By contrast, the 1st quartile, after a modest recovery from its 2021 low, remained lower than in 2019, indicating a widening of the dispersion across ANPs.
 
 ::: {#fig-figure-5-1}
-:::: {.content-visible when-format="html"}
 ```{r current-ratio}
 #| file: R/hlsr_current_ratio.R
-#| out.height: "400px"
-#| out.width: "100%"
+#| format:
+#|   html:
+#|     out.height: "400px"
+#|     out.width: "100%"
 ```
-::::
 
 Trends in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}}
 :::
@@ -28,13 +28,13 @@ Trends in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.y
 @fig-figure-5-2 shows the changes in cash-on-hand days at Pan-European system level over the {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} period as well as the 1^st^ quartile and the 3^rd^ quartile of these indicators. The cash-on-hand days indicator (cash & cash equivalents divided by operating costs x 365) measures the length of time a company can pay its operating costs from its cash reserves.
 
 ::: {#fig-figure-5-2}
-:::: {.content-visible when-format="html"}
 ```{r cash-on-hand}
 #| file: R/hlsr_cash_on_hand.R
-#| out.height: "400px"
-#| out.width: "100%"
+#| format:
+#|   html:
+#|     out.height: "400px"
+#|     out.width: "100%"
 ```
-::::
 
 {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}} trends in cash-on-hand days at Pan-European system level
 :::

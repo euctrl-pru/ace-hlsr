@@ -205,30 +205,25 @@ myimages <- list(
   )
 )
 
-fig <- subplot(pie_cost(10, '%{label}'), pie_atco(10, '%{label}</br>%{percent}', 1)) %>%
-layout(annotations = myannotations(12, -0.15), images = myimages)
 
-# fig <- subplot(pie_cost, pie_atco)
 
-fig
 
-fig_pdf <- subplot(
-  pie_cost(30, '%{label}'), pie_atco(30, '%{label}</br>%{percent}', 0.88)
-  # pie_cost(30, '<b>%{label}</b>'), pie_atco(30, '<b>%{label}</br>%{percent}</b>')
+
+if (knitr::is_latex_output()) {
+  fig_pdf <- subplot(
+    pie_cost(30, '%{label}'), pie_atco(30, '%{label}</br>%{percent}', 0.88)
+    # pie_cost(30, '<b>%{label}</b>'), pie_atco(30, '<b>%{label}</br>%{percent}</b>')
   ) %>%
-  layout(
-    height = 700, width = 1984,
-    annotations = myannotations(40, -0.15), images = myimages)
-
-# export to image
-# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
-# 
-# fig_dir <- 'figures/'
-# 
-# image_name <- "figure-2-3-hlsr_c_bdown_pie.png"
-# invisible(export(fig_pdf, paste0(fig_dir, image_name)))
-
-# invisible(figure <- image_read(paste0(fig_dir,image_name)))
-# invisible(cropped <- image_crop(figure, "0x520-0+140"))
-# invisible(image_write(cropped, paste0(fig_dir, image_name)))
+    layout(
+      height = 700, width = 1984,
+      annotations = myannotations(30, -0.15), images = myimages)
+  
+  fig_pdf
+  
+} else{
+  fig <- subplot(pie_cost(10, '%{label}'), pie_atco(10, '%{label}</br>%{percent}', 1)) %>%
+    layout(annotations = myannotations(12, -0.15), images = myimages)
+  
+  fig
+}
 

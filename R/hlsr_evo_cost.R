@@ -119,16 +119,10 @@ p1 <- function(myfont, mywidth, myheight) {
          displayModeBar = F)
 }
 
-p1(13, NULL, 230)
 
-
-# export to image
-# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
-# 
-# fig_dir <- 'figures/'
-# image_name <- "figure-2-5-1-hlsr_evo_cost.png"
-# 
-# invisible(export(p1(26, 1500, 460), paste0(fig_dir,image_name)))
-# invisible(figure <- image_read(paste0(fig_dir,image_name)))
-# invisible(cropped <- image_crop(figure, "0x460"))
-# invisible(image_write(cropped, paste0(fig_dir,image_name)))
+if (knitr::is_latex_output()) {
+  p1(15, 750, 240)
+  
+} else{
+  p1(13, NULL, 230)
+}

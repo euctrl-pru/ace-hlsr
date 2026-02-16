@@ -121,12 +121,12 @@ p <- function(myfont, mywidth, myheight) {
   )
 }
 
-p(12, NULL, 330)
 
-# fig_dir <- 'figures/'
-# fig_name <- "figure-4-1-hlsr_evo_unit_cost.png"
-# 
-# invisible(export(p(24, 1000, 660), paste0(fig_dir,fig_name)))
-# invisible(figure <- image_read(paste0(fig_dir,fig_name)))
-# invisible(cropped <- image_crop(figure, "1000x660"))
-# invisible(image_write(cropped, paste0(fig_dir,fig_name)))
+if (knitr::is_latex_output()) {
+  p(12, 500, 300)
+  
+}else{
+  
+  p(12, NULL, 330)
+  
+}

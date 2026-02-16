@@ -115,16 +115,9 @@ p <- function(myfont, mywidth, myheight) {
 
 }
 
-p(12, NULL, NULL)
-
-
-# export to image
-# the export function needs webshot and PhantomJS. Install PhantomJS with 'webshot::install_phantomjs()' and then cut the folder from wherever is installed and paste it in C:\Users\[username]\dev\r\win-library\4.2\webshot\PhantomJS
-
-# fig_dir <- 'figures/'
-# image_name <- "figure-5-2-hlsr_cash_on_hand.png"
-# 
-# invisible(export(p(28, 1320, 700), paste0(fig_dir, image_name)))
-# invisible(figure <- image_read(paste0(fig_dir,image_name)))
-# invisible(cropped <- image_crop(figure, "754x520"))
-# invisible(image_write(cropped, paste0(fig_dir,image_name)))
+if (knitr::is_latex_output()) {
+  p(12, 750, 500)
+  
+} else{
+  p(12, NULL, NULL)
+}
