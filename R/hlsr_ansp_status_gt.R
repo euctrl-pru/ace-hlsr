@@ -11,6 +11,10 @@ library(here)
 ## data source
 source(here("data_source.R"))
 
+## functions
+source(here("R/functions.R"))
+
+
 ## import ANSP table
 ansp  <- read_xlsx(
   # paste0(data_folder, data_file),
@@ -70,6 +74,12 @@ table_ansp_sub <- gt(
   ) %>% 
   fmt_markdown(columns = everything()) # so the table understands the linebreak tags
 
-table_ansp_sub
 
-# gtsave(table_ansp_sub, 'table_ansp_sub.png') #doesn't work because cannot open chrome
+if (knitr::is_latex_output()) {
+  
+} else {
+  table_ansp_sub
+  
+}
+
+

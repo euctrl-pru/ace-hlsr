@@ -40,11 +40,89 @@ trm_reve_apt_perc <- sprintf("%0.1f%%", trm_reve_apt/trm_reve*100)
 
 ##	Revenues and traffic
 
-::: {#fig-figure-2-1}
-```{r}
-#| label: hlsr_rev_gtable
-#| file: R/hlsr_rev_gtable.R
+```{r ansp_status_gt}
+#| file: R/hlsr_ansp_status_gt.R
+#| echo: false
+#| include: false
+
 ```
 
-Breakdown of gate-to-gate ANS revenues, {{< var doc.year_report >}}
-:::
+
+```{r ansp_status_gt_latex}
+#| echo: false
+#| results: asis
+
+cat(latex_table_ansp(df = ansp))
+```
+
+
+```{=latex}
+\noindent
+{\small % 1 point smaller than normalsize in standard classes
+
+% Tighten spacing so the whole table stays within \linewidth
+\setlength{\tabcolsep}{2pt}
+
+% vertical padding inside rows (global)
+\renewcommand{\arraystretch}{1.4}
+\setlength{\extrarowheight}{0.6pt}
+
+\begin{tabular}{@{}p{0.23\linewidth}@{}p{0.145\linewidth}@{}p{0.165\linewidth}@{}p{0.260\linewidth}@{}p{0.200\linewidth}@{}}
+\hline
+\cell{Albcontrol}{Albania} &
+\cell{DCAC Cyprus}{Cyprus} &
+\cell{HASP \reviewed}{Greece} &
+\cell{M-NAV}{North Macedonia} &
+\cell{ROMATSA}{Romania} \\[0.75em]
+
+\cell{ANS CR}{Czech Republic} &
+\cell{DFS \reviewed}{Germany} &
+\cell{HungaroControl}{Hungary} &
+\cell{MOLDATSA \reviewed}{Moldova} &
+\cell{Sakaeronavigatsia \reviewed}{Georgia} \\[0.75em]
+
+\cell{ARMATS}{Armenia} &
+\cell{DHMI \reviewed}{Türkiye} &
+\cell{IAA \reviewed}{Ireland} &
+\cell{MUAC}{EUROCONTROL} &
+\cell{skeyes}{Belgium} \\[0.75em]
+
+\cell{Austro Control \reviewed}{Austria} &
+\cell{DSNA \reviewed}{France} &
+\cell{LFV}{Sweden} &
+\cell{NATS (Continental) \reviewed}{United Kingdom} &
+\cell{Skyguide}{Switzerland} \\[0.75em]
+
+\cell{Avinor (Continental)}{Norway} &
+\cell{EANS}{Estonia} &
+\cell{LGS \reviewed}{Latvia} &
+\cell{NAV Portugal (Continental)}{Portugal} &
+\cell{Slovenia Control \reviewed}{Slovenia} \\[0.75em]
+
+\cell{BHANSA \reviewed}{Bosnia and Herzegovina} &
+\cell{ENAIRE \reviewed}{Spain} &
+\cell{LPS}{Slovakia} &
+\cell{NAVIAIR}{Denmark} &
+\cell{SMATSA}{Serbia/Montenegro} \\[0.75em]
+
+\cell{BULATSA}{Bulgaria} &
+\cell{ENAV \reviewed}{Italy} &
+\cell{LVNL}{Netherlands} &
+\cell{Oro Navigacija}{Lithuania} &
+\cell{PANSA}{Poland} \\[0.75em]
+
+\cell{Croatia Control}{Croatia} &
+\cell{Fintraffic ANS}{Finland} &
+\cell{MATS}{Malta} &
+ &
+ \\[1.4em]
+\hline
+\end{tabular}
+}
+
+\vspace{0.6em}
+\noindent{\reviewed\ \ Data submission has been reviewed}
+
+
+```
+

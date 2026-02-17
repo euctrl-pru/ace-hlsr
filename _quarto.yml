@@ -101,8 +101,18 @@ format:
             }{%
               \end{center}%
             }
+            
+            % ---- for intro table
+            \usepackage{tabularx}
+            \usepackage{booktabs}
+            \usepackage{pifont}
+            \usepackage{array}
 
-
+            \newcommand{\reviewed}{\textcolor{green!60!black}{\ding{51}}}
+            \newcommand{\cell}[2]{\parbox[t]{\linewidth}{#1\\{\small (#2)}}}
+            \setlength{\tabcolsep}{8pt}
+            \renewcommand{\arraystretch}{1.15}
+        
 book:
   title: "High-level Summary Report on Preliminary ACE 2024 Data"
   author: "Performance Review Unit"
@@ -111,13 +121,13 @@ book:
     location: sidebar
   chapters:
     - index.qmd
-    # - test.qmd
-    - introduction.qmd
-    - high-level-revenues.qmd
-    - economic-cost-effectiveness.qmd
-    - financial-cost-effectiveness.qmd
-    - cash-and-liquidity.qmd
-    - disclaimer.qmd
+    - test.qmd
+    # - introduction.qmd
+    # - high-level-revenues.qmd
+    # - economic-cost-effectiveness.qmd
+    # - financial-cost-effectiveness.qmd
+    # - cash-and-liquidity.qmd
+    # - disclaimer.qmd
   site-url: "https://eurocontrol.int/"
   navbar:
   # Note: You need to install: ```quarto install extension mcanouil/quarto-iconify```
