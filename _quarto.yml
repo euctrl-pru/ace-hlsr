@@ -40,6 +40,7 @@ format:
 # quarto render --to pdf --output-dir _pdf
 
   pdf: 
+    fig-path: "figures/"
     pdf-engine: xelatex
     fig-crop: true
     fig-pos: 'H'

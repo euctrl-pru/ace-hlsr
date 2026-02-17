@@ -40,14 +40,11 @@ trm_reve_apt_perc <- sprintf("%0.1f%%", trm_reve_apt/trm_reve*100)
 
 ##	Revenues and traffic
 
-::: {#fig-figure-5-1}
-```{r current-ratio}
-#| file: R/hlsr_current_ratio.R
-#| format:
-#|   html:
-#|     out.height: "400px"
-#|     out.width: "100%"
+::: {#fig-figure-2-1}
+```{r}
+#| label: hlsr_rev_gtable
+#| file: R/hlsr_rev_gtable.R
 ```
 
-Trends in ANSPs current ratio {{< var doc.year_report_minus5 >}} - {{< var doc.year_report >}}
+Breakdown of gate-to-gate ANS revenues, {{< var doc.year_report >}}
 :::
