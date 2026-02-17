@@ -38,15 +38,19 @@ The data used in this document reflects the information received by the 12th of 
 :::
 
 ::: {.content-visible when-format="pdf"}
-````{=html}
-<!--
-```{r, options=(checkmark='√')}
+```{r ansp_status_gt}
 #| file: R/hlsr_ansp_status_gt.R
+#| echo: false
+#| include: false
 ```
--->
-````
 
-![](figures/ansp_status_table.PNG){width=0.9\linewidth}
+
+```{r ansp_status_gt_latex}
+#| echo: false
+#| results: asis
+
+cat(latex_table_ansp(df = ansp))
+```
 :::
 
 Status of {{< var doc.year_report >}} data validation process

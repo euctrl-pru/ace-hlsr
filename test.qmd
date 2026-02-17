@@ -40,89 +40,93 @@ trm_reve_apt_perc <- sprintf("%0.1f%%", trm_reve_apt/trm_reve*100)
 
 ##	Revenues and traffic
 
-```{r ansp_status_gt}
-#| file: R/hlsr_ansp_status_gt.R
+::: {.content-visible when-format="pdf"}
+```{r rev_gt}
+#| file: R/hlsr_rev_gtable.R
 #| echo: false
 #| include: false
-
 ```
 
 
-```{r ansp_status_gt_latex}
+```{r rev_gt_latex}
 #| echo: false
 #| results: asis
 
-cat(latex_table_ansp(df = ansp))
+cat(latex_table_revenues(df = data_table_pdf))
 ```
+:::
+
 
 
 ```{=latex}
-\noindent
-{\small % 1 point smaller than normalsize in standard classes
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{r r >{\centering\arraybackslash}X r r}
 
-% Tighten spacing so the whole table stays within \linewidth
-\setlength{\tabcolsep}{2pt}
+% --- header (HeaderBlue), using literal € ---
+\multicolumn{1}{>{\columncolor{HeaderBlue}\color{white}\bfseries}r}{En-route} &
+\multicolumn{1}{>{\columncolor{HeaderBlue}\color{white}\bfseries}r}{\%} &
+\multicolumn{1}{>{\columncolor{HeaderBlue}\color{white}\bfseries}c}{Gate-togate revenues (€ M)} &
+\multicolumn{1}{>{\columncolor{HeaderBlue}\color{white}\bfseries}r}{\%} &
+\multicolumn{1}{>{\columncolor{HeaderBlue}\color{white}\bfseries}r}{Terminal} \\
 
-% vertical padding inside rows (global)
-\renewcommand{\arraystretch}{1.4}
-\setlength{\extrarowheight}{0.6pt}
+% 1 (Stripe)
+\multicolumn{1}{>{\columncolor{Stripe}}r}{9 235} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{95.8\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}>{\centering\arraybackslash}X}{Income from charges} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{73.7\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{1 742} \\
 
-\begin{tabular}{@{}p{0.23\linewidth}@{}p{0.145\linewidth}@{}p{0.165\linewidth}@{}p{0.260\linewidth}@{}p{0.200\linewidth}@{}}
-\hline
-\cell{Albcontrol}{Albania} &
-\cell{DCAC Cyprus}{Cyprus} &
-\cell{HASP \reviewed}{Greece} &
-\cell{M-NAV}{North Macedonia} &
-\cell{ROMATSA}{Romania} \\[0.75em]
+% 2 (white)
+\multicolumn{1}{>{\columncolor{white}}r}{n.a.} &
+\multicolumn{1}{>{\columncolor{white}}r}{n.a.} &
+\multicolumn{1}{>{\columncolor{white}}>{\centering\arraybackslash}X}{Income from airport operators} &
+\multicolumn{1}{>{\columncolor{white}}r}{17.5\%} &
+\multicolumn{1}{>{\columncolor{white}}r}{415} \\
 
-\cell{ANS CR}{Czech Republic} &
-\cell{DFS \reviewed}{Germany} &
-\cell{HungaroControl}{Hungary} &
-\cell{MOLDATSA \reviewed}{Moldova} &
-\cell{Sakaeronavigatsia \reviewed}{Georgia} \\[0.75em]
+% 3 (Stripe)
+\multicolumn{1}{>{\columncolor{Stripe}}r}{0.4} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{0\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}>{\centering\arraybackslash}X}{Income from the military} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{0.05\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{1.1} \\
 
-\cell{ARMATS}{Armenia} &
-\cell{DHMI \reviewed}{Türkiye} &
-\cell{IAA \reviewed}{Ireland} &
-\cell{MUAC}{EUROCONTROL} &
-\cell{skeyes}{Belgium} \\[0.75em]
+% 4 (white)
+\multicolumn{1}{>{\columncolor{white}}r}{56} &
+\multicolumn{1}{>{\columncolor{white}}r}{0.6\%} &
+\multicolumn{1}{>{\columncolor{white}}>{\centering\arraybackslash}X}{Income in respect of exempted flights} &
+\multicolumn{1}{>{\columncolor{white}}r}{2.2\%} &
+\multicolumn{1}{>{\columncolor{white}}r}{52} \\
 
-\cell{Austro Control \reviewed}{Austria} &
-\cell{DSNA \reviewed}{France} &
-\cell{LFV}{Sweden} &
-\cell{NATS (Continental) \reviewed}{United Kingdom} &
-\cell{Skyguide}{Switzerland} \\[0.75em]
+% 5 (Stripe)
+\multicolumn{1}{>{\columncolor{Stripe}}r}{61} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{0.6\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}>{\centering\arraybackslash}X}{Income from domestic government} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{3.4\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{81} \\
 
-\cell{Avinor (Continental)}{Norway} &
-\cell{EANS}{Estonia} &
-\cell{LGS \reviewed}{Latvia} &
-\cell{NAV Portugal (Continental)}{Portugal} &
-\cell{Slovenia Control \reviewed}{Slovenia} \\[0.75em]
+% 6 (white)
+\multicolumn{1}{>{\columncolor{white}}r}{216} &
+\multicolumn{1}{>{\columncolor{white}}r}{2.2\%} &
+\multicolumn{1}{>{\columncolor{white}}>{\centering\arraybackslash}X}{Financial income} &
+\multicolumn{1}{>{\columncolor{white}}r}{2.2\%} &
+\multicolumn{1}{>{\columncolor{white}}r}{51} \\
 
-\cell{BHANSA \reviewed}{Bosnia and Herzegovina} &
-\cell{ENAIRE \reviewed}{Spain} &
-\cell{LPS}{Slovakia} &
-\cell{NAVIAIR}{Denmark} &
-\cell{SMATSA}{Serbia/Montenegro} \\[0.75em]
+% 7 (Stripe)
+\multicolumn{1}{>{\columncolor{Stripe}}r}{70} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{0.7\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}>{\centering\arraybackslash}X}{Other income (incl.\ exceptional revenue item)} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{0.9\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{22} \\
 
-\cell{BULATSA}{Bulgaria} &
-\cell{ENAV \reviewed}{Italy} &
-\cell{LVNL}{Netherlands} &
-\cell{Oro Navigacija}{Lithuania} &
-\cell{PANSA}{Poland} \\[0.75em]
+% total (Total)
+\multicolumn{1}{>{\columncolor{Total}}r}{9 638} &
+\multicolumn{1}{>{\columncolor{Total}}r}{100\%} &
+\multicolumn{1}{>{\columncolor{Total}}>{\centering\arraybackslash}X}{} &
+\multicolumn{1}{>{\columncolor{Total}}r}{100\%} &
+\multicolumn{1}{>{\columncolor{Total}}r}{2 364} \\
 
-\cell{Croatia Control}{Croatia} &
-\cell{Fintraffic ANS}{Finland} &
-\cell{MATS}{Malta} &
- &
- \\[1.4em]
-\hline
-\end{tabular}
-}
-
-\vspace{0.6em}
-\noindent{\reviewed\ \ Data submission has been reviewed}
-
-
+\end{tabularx}
+\end{table}
 ```
 

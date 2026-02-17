@@ -11,6 +11,9 @@ library(here)
 ## data source
 source(here("data_source.R"))
 
+## functions
+source(here("R/functions.R"))
+
 ## import data
 data_raw  <-  read_xlsx(
   paste0(data_folder, data_file),
@@ -81,6 +84,8 @@ data_table <- data_temp %>%
          ' %' =  TRM_PERC,
          'Terminal' = TRM_F)
 
+data_table_pdf <- data_table %>% as_tibble()
+
 
 ##plot table
 table_reve <- gt(
@@ -121,7 +126,7 @@ table_reve <- gt(
   )
 
 if (knitr::is_latex_output()) {
-  table_reve
+  
 } else{
   table_reve
 }

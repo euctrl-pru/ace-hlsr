@@ -62,7 +62,7 @@ format:
     include-in-header:
       - text: |
             % --- Required for xelatex/lualatex font selection ---
-            \usepackage{xcolor}
+            \usepackage[table]{xcolor}
             \usepackage{ragged2e}
             
             \usepackage{float}
@@ -112,7 +112,13 @@ format:
             \newcommand{\cell}[2]{\parbox[t]{\linewidth}{#1\\{\small (#2)}}}
             \setlength{\tabcolsep}{8pt}
             \renewcommand{\arraystretch}{1.15}
-        
+            
+            % ----- for table Breakdown of gate-to-gate ANS revenues 
+            \definecolor{HeaderBlue}{RGB}{74,130,210}
+            \definecolor{Stripe}{gray}{0.95}
+            \definecolor{Total}{gray}{0.80}
+            
+
 book:
   title: "High-level Summary Report on Preliminary ACE 2024 Data"
   author: "Performance Review Unit"
@@ -121,9 +127,9 @@ book:
     location: sidebar
   chapters:
     - index.qmd
-    - test.qmd
+    # - test.qmd
     # - introduction.qmd
-    # - high-level-revenues.qmd
+    - high-level-revenues.qmd
     # - economic-cost-effectiveness.qmd
     # - financial-cost-effectiveness.qmd
     # - cash-and-liquidity.qmd

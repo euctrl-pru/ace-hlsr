@@ -58,10 +58,30 @@ Total ANS revenues in {{< var doc.year_report >}} amounted to `r total_reve_f`. 
 
 
 ::: {#fig-figure-2-1}
+::: {.content-visible when-format="html"}
 ```{r}
 #| label: hlsr_rev_gtable
 #| file: R/hlsr_rev_gtable.R
 ```
+:::
+
+::: {.content-visible when-format="pdf"}
+```{r rev_gt}
+#| file: R/hlsr_rev_gtable.R
+#| echo: false
+#| include: false
+```
+
+
+```{r rev_gt_latex}
+#| echo: false
+#| results: asis
+
+cat(latex_table_revenues(df = data_table_pdf))
+```
+:::
+
+
 
 Breakdown of gate-to-gate ANS revenues, {{< var doc.year_report >}}
 :::
