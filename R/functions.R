@@ -127,8 +127,6 @@ latex_table_ansp <- function(
 
 
 # revenues latex table ----
-# file: R/latex_table_revenues.R
-
 latex_table_revenues <- function(
     df,
     wrap_raw_block = TRUE,
@@ -236,6 +234,161 @@ latex_table_revenues <- function(
     paste(lines, collapse = "\n"),
     "",
     "\\end{tabularx}",
+    "\\end{table}",
+    sep = "\n"
+  )
+  
+  if (!isTRUE(wrap_raw_block)) return(latex)
+  paste0("```{=latex}\n", latex, "\n```")
+}
+
+
+# costs latex table ----
+latex_table_costs <- function(
+    df,
+    wrap_raw_block = TRUE,
+    float_placement = "H",
+    tabular_width = "\\textwidth",
+    num_w = "1.25cm",
+    label_w = "5.2cm",
+    tabcolsep_pt = 4,
+    stripe_starts_at_row_1 = TRUE,
+    subgroup_labels = c("ATCOs in OPS employment costs", "Other staff employment costs"),
+    subgroup_indent = "1.5em"
+) {
+  if (!is.data.frame(df) && !inherits(df, "tbl")) {
+    stop("latex_table_costs(): df must be a data.frame or tibble.")
+  }
+  if (ncol(df) != 7) stop("latex_table_costs(): expected exactly 7 columns.")
+  if (nrow(df) < 2) stop("latex_table_costs(): expected at least 2 rows (body + total).")
+  
+  latex_escape <- function(x) {
+    x <- as.character(x)
+    x[is.na(x)] <- ""
+    x <- gsub("\\\\", "\\\\textbackslash{}", x)                 # prevent accidental LaTeX commands
+    x <- gsub("([{}$&#_%])", "\\\\\\1", x, perl = TRUE)         # includes %
+    x <- gsub("~", "\\\\textasciitilde{}", x, fixed = TRUE)
+    x <- gsub("\\^", "\\\\textasciicircum{}", x, perl = TRUE)
+    x
+  }
+  
+  trim_label <- function(x) gsub("\\s+$", "", as.character(x))
+  
+  mc <- function(val, color, align) {
+    sprintf("\\multicolumn{1}{>{\\columncolor{%s}}%s}{%s}", color, align, latex_escape(val))
+  }
+  
+  mc_num <- function(val, color) mc(val, color, "r")
+  mc_lbl <- function(val, color) mc(val, color, "l")
+  
+  style_label <- function(label) {
+    base <- trim_label(label)
+    if (base %in% subgroup_labels) {
+      return(sprintf("\\hspace{%s}\\textit{%s}", subgroup_indent, latex_escape(base)))
+    }
+    latex_escape(base)
+  }
+  
+  build_body_row <- function(row_vec, color) {
+    lbl <- style_label(row_vec[[1]])
+    parts <- c(
+      sprintf("\\multicolumn{1}{>{\\columncolor{%s}}l}{%s}", color, lbl),
+      mc_num(row_vec[[2]], color),
+      mc_num(row_vec[[3]], color),
+      mc_num(row_vec[[4]], color),
+      mc_num(row_vec[[5]], color),
+      mc_num(row_vec[[6]], color),
+      mc_num(row_vec[[7]], color)
+    )
+    paste0(paste(parts, collapse = " & "), " \\\\")
+  }
+  
+  # split body vs total (assume last row is total, like your example)
+  total_row <- df[nrow(df), , drop = FALSE]
+  body <- df[-nrow(df), , drop = FALSE]
+  
+  lines <- character(0)
+  
+  # --- Header rows (hardcoded) ---
+  header <- c(
+    "% Header row 1",
+    "\\multicolumn{1}{>{\\columncolor{HeaderBlue}}l}{\\color{white}\\bfseries} &",
+    "\\multicolumn{2}{>{\\columncolor{HeaderBlue}}c}{\\GrpHdr{En-route}} &",
+    "\\multicolumn{2}{>{\\columncolor{HeaderBlue}}c}{\\GrpHdr{Terminal}} &",
+    "\\multicolumn{2}{>{\\columncolor{HeaderBlue}}c}{\\GrpHdr{Gate-to-gate}} \\\\",
+    "\\noalign{\\vskip -3.65ex}",
+    "",
+    "% Underlines row (no shading)",
+    "\\multicolumn{1}{l}{} &",
+    "\\multicolumn{1}{c}{\\smash{\\color{white}\\rule{1.4cm}{0.35pt}}} &",
+    "\\multicolumn{1}{c}{\\smash{\\color{white}\\rule{1.4cm}{0.35pt}}} &",
+    "\\multicolumn{1}{c}{\\smash{\\color{white}\\rule{1.4cm}{0.35pt}}} &",
+    "\\multicolumn{1}{c}{\\smash{\\color{white}\\rule{1.4cm}{0.35pt}}} &",
+    "\\multicolumn{1}{c}{\\smash{\\color{white}\\rule{1.4cm}{0.35pt}}} &",
+    "\\multicolumn{1}{c}{\\smash{\\color{white}\\rule{1.4cm}{0.35pt}}} \\\\",
+    "\\noalign{\\vskip -0.5ex}",
+    "",
+    "% Header row 2",
+    "\\multicolumn{1}{>{\\columncolor{HeaderBlue}}l}{} &",
+    "\\multicolumn{1}{>{\\columncolor{HeaderBlue}}r}{\\color{white}\\bfseries € M} &",
+    "\\multicolumn{1}{>{\\columncolor{HeaderBlue}}r}{\\color{white}\\bfseries \\%} &",
+    "\\multicolumn{1}{>{\\columncolor{HeaderBlue}}r}{\\color{white}\\bfseries € M} &",
+    "\\multicolumn{1}{>{\\columncolor{HeaderBlue}}r}{\\color{white}\\bfseries \\%} &",
+    "\\multicolumn{1}{>{\\columncolor{HeaderBlue}}r}{\\color{white}\\bfseries € M} &",
+    "\\multicolumn{1}{>{\\columncolor{HeaderBlue}}r}{\\color{white}\\bfseries \\%} \\\\",
+    "",
+    "% Body"
+  )
+  lines <- c(lines, header)
+  
+  # --- Body (zebra) ---
+  if (nrow(body) > 0) {
+    for (i in seq_len(nrow(body))) {
+      use_stripe <- if (stripe_starts_at_row_1) (i %% 2 == 1) else (i %% 2 == 0)
+      color <- if (use_stripe) "Stripe" else "white"
+      row_vec <- as.list(body[i, , drop = TRUE])
+      lines <- c(lines, build_body_row(row_vec, color), "")
+    }
+  }
+  
+  # --- Total row ---
+  tot <- as.list(total_row[1, , drop = TRUE])
+  total_line <- build_body_row(tot, "Total")
+  lines <- c(lines, "% Total", total_line)
+  
+  latex <- paste(
+    sprintf("\\begin{table}[%s]", float_placement),
+    "\\centering",
+    "\\begingroup",
+    "",
+    sprintf("\\newcommand{\\NumW}{%s}", num_w),
+    sprintf("\\newcommand{\\LabelW}{%s}", label_w),
+    "\\newcommand{\\HdrPad}{\\fontsize{2pt}{2pt}\\selectfont\\textcolor{HeaderBlue}{(something)}}",
+    "\\newcommand{\\GrpHdr}[1]{%",
+    "  \\color{white}\\bfseries",
+    "  \\shortstack{%",
+    "    \\HdrPad\\\\",
+    "    #1\\\\",
+    "    \\textcolor{HeaderBlue}{(something)}%",
+    "  }%",
+    "}",
+    "",
+    sprintf("\\setlength{\\tabcolsep}{%spt}", tabcolsep_pt),
+    "",
+    sprintf("\\begin{tabularx}{%s}{", tabular_width),
+    "  >{\\raggedright\\arraybackslash}p{\\LabelW}",
+    "  >{\\raggedleft\\arraybackslash}p{\\NumW}",
+    "  >{\\raggedleft\\arraybackslash}p{\\NumW}",
+    "  >{\\raggedleft\\arraybackslash}p{\\NumW}",
+    "  >{\\raggedleft\\arraybackslash}p{\\NumW}",
+    "  >{\\raggedleft\\arraybackslash}p{\\NumW}",
+    "  >{\\raggedleft\\arraybackslash}p{\\NumW}",
+    "}",
+    "",
+    paste(lines, collapse = "\n"),
+    "",
+    "\\end{tabularx}",
+    "\\endgroup",
     "\\end{table}",
     sep = "\n"
   )

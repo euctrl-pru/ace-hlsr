@@ -1,132 +1,144 @@
-# High-level revenues, costs, staff and balance sheet data {#sec-high}
+##	Revenues and traffic
 
-```{r load-data}
-#libraries
+```{=latex}
+\begin{table}[H]
+\centering
+\begingroup
 
-library(tidyverse)
-library(dplyr)
-library(readxl)
-library(here)
+\newcommand{\NumW}{1.25cm}
+\newcommand{\LabelW}{5.2cm}
+\newcommand{\HdrPad}{\fontsize{2pt}{2pt}\selectfont\textcolor{HeaderBlue}{(something)}}
+\newcommand{\GrpHdr}[1]{%
+  \color{white}\bfseries
+  \shortstack{%
+    \HdrPad\\
+    #1\\
+    \textcolor{HeaderBlue}{(something)}%
+  }%
+}
 
-source(here("data_source.R"))
+\setlength{\tabcolsep}{4pt}
 
-#import data
-data_raw  <-  read_xlsx(
-                        paste0(data_folder,data_file ),
-                        # here("data",data_file),
-                       sheet = "F_Revenue",
-                       range = cell_limits(c(9, 1), c(NA, 4))) %>%
-  as_tibble() %>% 
-  rename(TYPE = 'Data', TOTAL = 'Grand Total') %>% 
-  mutate(across(TYPE, str_replace, 'Sum of ', '')) %>% 
-  filter( TYPE != "REVE_DELEGATION", TYPE != "REVE_REVENUE")
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{\LabelW}
+  >{\raggedleft\arraybackslash}p{\NumW}
+  >{\raggedleft\arraybackslash}p{\NumW}
+  >{\raggedleft\arraybackslash}p{\NumW}
+  >{\raggedleft\arraybackslash}p{\NumW}
+  >{\raggedleft\arraybackslash}p{\NumW}
+  >{\raggedleft\arraybackslash}p{\NumW}
+}
 
-#calculate figures for text. Suffix '_f' means formatted figure -- Just an example for you to see how it could be done to avoid copy pasting
-total_reve_f <- data_raw  %>% select(TOTAL) %>%  summarise(sum(TOTAL/1000000)) %>% pull() %>% round() %>% 
-  format(., nsmall =0 ,big.mark= " ") %>% paste0("\u20AC", ., "M")
+% Header row 1
+\multicolumn{1}{>{\columncolor{HeaderBlue}}l}{\color{white}\bfseries} &
+\multicolumn{2}{>{\columncolor{HeaderBlue}}c}{\GrpHdr{En-route}} &
+\multicolumn{2}{>{\columncolor{HeaderBlue}}c}{\GrpHdr{Terminal}} &
+\multicolumn{2}{>{\columncolor{HeaderBlue}}c}{\GrpHdr{Gate-to-gate}} \\
+\noalign{\vskip -3.65ex}
 
-ert_reve <- data_raw  %>% select(ERT) %>%  summarise(sum(ERT)) %>% pull() 
-ert_reve_charge <- data_raw  %>%  filter(TYPE == 'REVE_CHARGE') %>% select(ERT)  %>% pull() 
-ert_reve_charge_perc <- sprintf("%0.1f%%", ert_reve_charge/ert_reve*100) 
+% Underlines row (no shading)
+\multicolumn{1}{l}{} &
+\multicolumn{1}{c}{\smash{\color{white}\rule{1.4cm}{0.35pt}}} &
+\multicolumn{1}{c}{\smash{\color{white}\rule{1.4cm}{0.35pt}}} &
+\multicolumn{1}{c}{\smash{\color{white}\rule{1.4cm}{0.35pt}}} &
+\multicolumn{1}{c}{\smash{\color{white}\rule{1.4cm}{0.35pt}}} &
+\multicolumn{1}{c}{\smash{\color{white}\rule{1.4cm}{0.35pt}}} &
+\multicolumn{1}{c}{\smash{\color{white}\rule{1.4cm}{0.35pt}}} \\
+\noalign{\vskip -0.5ex}
 
-trm_reve <- data_raw  %>% select(TRM) %>%  summarise(sum(TRM)) %>% pull() 
-trm_reve_charge <- data_raw  %>%  filter(TYPE == 'REVE_CHARGE') %>% select(TRM)  %>% pull() 
-trm_reve_charge_perc <- sprintf("%0.1f%%", trm_reve_charge/trm_reve*100) 
+% Header row 2
+\multicolumn{1}{>{\columncolor{HeaderBlue}}l}{} &
+\multicolumn{1}{>{\columncolor{HeaderBlue}}r}{\color{white}\bfseries € M} &
+\multicolumn{1}{>{\columncolor{HeaderBlue}}r}{\color{white}\bfseries \%} &
+\multicolumn{1}{>{\columncolor{HeaderBlue}}r}{\color{white}\bfseries € M} &
+\multicolumn{1}{>{\columncolor{HeaderBlue}}r}{\color{white}\bfseries \%} &
+\multicolumn{1}{>{\columncolor{HeaderBlue}}r}{\color{white}\bfseries € M} &
+\multicolumn{1}{>{\columncolor{HeaderBlue}}r}{\color{white}\bfseries \%} \\
 
-trm_reve_apt <- data_raw  %>%  filter(TYPE == 'REVE_AIRPORT') %>% select(TRM)  %>% pull() 
-trm_reve_apt_perc <- sprintf("%0.1f%%", trm_reve_apt/trm_reve*100) 
+% Body
+\multicolumn{1}{>{\columncolor{Stripe}}l}{Staff costs} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{5 427} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{66.8\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{1 529} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{65.1\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{6 956} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{66.5\%} \\
+
+\multicolumn{1}{>{\columncolor{white}}l}{\hspace{1.5em}\textit{ATCOs in OPS employment costs}} &
+\multicolumn{1}{>{\columncolor{white}}r}{2 653} &
+\multicolumn{1}{>{\columncolor{white}}r}{n.a.} &
+\multicolumn{1}{>{\columncolor{white}}r}{807} &
+\multicolumn{1}{>{\columncolor{white}}r}{n.a.} &
+\multicolumn{1}{>{\columncolor{white}}r}{3 460} &
+\multicolumn{1}{>{\columncolor{white}}r}{n.a.} \\
+
+\multicolumn{1}{>{\columncolor{Stripe}}l}{\hspace{1.5em}\textit{Other staff employment costs}} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{2 774} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{n.a.} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{722} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{n.a.} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{3 496} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{n.a.} \\
+
+\multicolumn{1}{>{\columncolor{white}}l}{Non-staff operating costs} &
+\multicolumn{1}{>{\columncolor{white}}r}{1 447} &
+\multicolumn{1}{>{\columncolor{white}}r}{17.8\%} &
+\multicolumn{1}{>{\columncolor{white}}r}{387} &
+\multicolumn{1}{>{\columncolor{white}}r}{16.5\%} &
+\multicolumn{1}{>{\columncolor{white}}r}{1 835} &
+\multicolumn{1}{>{\columncolor{white}}r}{17.5\%} \\
+
+\multicolumn{1}{>{\columncolor{Stripe}}l}{Depreciation costs} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{811} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{10.0\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{227} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{9.7\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{1 037} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{9.9\%} \\
+
+\multicolumn{1}{>{\columncolor{white}}l}{Cost of capital} &
+\multicolumn{1}{>{\columncolor{white}}r}{409} &
+\multicolumn{1}{>{\columncolor{white}}r}{5.0\%} &
+\multicolumn{1}{>{\columncolor{white}}r}{179} &
+\multicolumn{1}{>{\columncolor{white}}r}{7.6\%} &
+\multicolumn{1}{>{\columncolor{white}}r}{588} &
+\multicolumn{1}{>{\columncolor{white}}r}{5.6\%} \\
+
+\multicolumn{1}{>{\columncolor{Stripe}}l}{Exceptional items} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{25} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{0.3\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{27} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{1.2\%} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{52} &
+\multicolumn{1}{>{\columncolor{Stripe}}r}{0.5\%} \\
+
+% Total
+\multicolumn{1}{>{\columncolor{Total}}l}{Total ATM/CNS provision costs} &
+\multicolumn{1}{>{\columncolor{Total}}r}{8 119} &
+\multicolumn{1}{>{\columncolor{Total}}r}{100.0\%} &
+\multicolumn{1}{>{\columncolor{Total}}r}{2 349} &
+\multicolumn{1}{>{\columncolor{Total}}r}{100.0\%} &
+\multicolumn{1}{>{\columncolor{Total}}r}{10 468} &
+\multicolumn{1}{>{\columncolor{Total}}r}{100.0\%} \\
+
+\end{tabularx}
+\endgroup
+\end{table}
 
 ```
 
-##	Revenues and traffic
-
 ::: {.content-visible when-format="pdf"}
-```{r rev_gt}
-#| file: R/hlsr_rev_gtable.R
+```{r c_bdown_gtable}
+#| file: R/hlsr_c_bdown_gtable.R
 #| echo: false
 #| include: false
 ```
 
 
-```{r rev_gt_latex}
+```{r c_bdown_gtable_latex}
 #| echo: false
 #| results: asis
 
-cat(latex_table_revenues(df = data_table_pdf))
+cat(latex_table_costs(df = data_table_pdf))
 ```
 :::
-
-
-
-```{=latex}
-\begin{table}[H]
-\centering
-\begin{tabularx}{\textwidth}{r r >{\centering\arraybackslash}X r r}
-
-% --- header (HeaderBlue), using literal € ---
-\multicolumn{1}{>{\columncolor{HeaderBlue}\color{white}\bfseries}r}{En-route} &
-\multicolumn{1}{>{\columncolor{HeaderBlue}\color{white}\bfseries}r}{\%} &
-\multicolumn{1}{>{\columncolor{HeaderBlue}\color{white}\bfseries}c}{Gate-togate revenues (€ M)} &
-\multicolumn{1}{>{\columncolor{HeaderBlue}\color{white}\bfseries}r}{\%} &
-\multicolumn{1}{>{\columncolor{HeaderBlue}\color{white}\bfseries}r}{Terminal} \\
-
-% 1 (Stripe)
-\multicolumn{1}{>{\columncolor{Stripe}}r}{9 235} &
-\multicolumn{1}{>{\columncolor{Stripe}}r}{95.8\%} &
-\multicolumn{1}{>{\columncolor{Stripe}}>{\centering\arraybackslash}X}{Income from charges} &
-\multicolumn{1}{>{\columncolor{Stripe}}r}{73.7\%} &
-\multicolumn{1}{>{\columncolor{Stripe}}r}{1 742} \\
-
-% 2 (white)
-\multicolumn{1}{>{\columncolor{white}}r}{n.a.} &
-\multicolumn{1}{>{\columncolor{white}}r}{n.a.} &
-\multicolumn{1}{>{\columncolor{white}}>{\centering\arraybackslash}X}{Income from airport operators} &
-\multicolumn{1}{>{\columncolor{white}}r}{17.5\%} &
-\multicolumn{1}{>{\columncolor{white}}r}{415} \\
-
-% 3 (Stripe)
-\multicolumn{1}{>{\columncolor{Stripe}}r}{0.4} &
-\multicolumn{1}{>{\columncolor{Stripe}}r}{0\%} &
-\multicolumn{1}{>{\columncolor{Stripe}}>{\centering\arraybackslash}X}{Income from the military} &
-\multicolumn{1}{>{\columncolor{Stripe}}r}{0.05\%} &
-\multicolumn{1}{>{\columncolor{Stripe}}r}{1.1} \\
-
-% 4 (white)
-\multicolumn{1}{>{\columncolor{white}}r}{56} &
-\multicolumn{1}{>{\columncolor{white}}r}{0.6\%} &
-\multicolumn{1}{>{\columncolor{white}}>{\centering\arraybackslash}X}{Income in respect of exempted flights} &
-\multicolumn{1}{>{\columncolor{white}}r}{2.2\%} &
-\multicolumn{1}{>{\columncolor{white}}r}{52} \\
-
-% 5 (Stripe)
-\multicolumn{1}{>{\columncolor{Stripe}}r}{61} &
-\multicolumn{1}{>{\columncolor{Stripe}}r}{0.6\%} &
-\multicolumn{1}{>{\columncolor{Stripe}}>{\centering\arraybackslash}X}{Income from domestic government} &
-\multicolumn{1}{>{\columncolor{Stripe}}r}{3.4\%} &
-\multicolumn{1}{>{\columncolor{Stripe}}r}{81} \\
-
-% 6 (white)
-\multicolumn{1}{>{\columncolor{white}}r}{216} &
-\multicolumn{1}{>{\columncolor{white}}r}{2.2\%} &
-\multicolumn{1}{>{\columncolor{white}}>{\centering\arraybackslash}X}{Financial income} &
-\multicolumn{1}{>{\columncolor{white}}r}{2.2\%} &
-\multicolumn{1}{>{\columncolor{white}}r}{51} \\
-
-% 7 (Stripe)
-\multicolumn{1}{>{\columncolor{Stripe}}r}{70} &
-\multicolumn{1}{>{\columncolor{Stripe}}r}{0.7\%} &
-\multicolumn{1}{>{\columncolor{Stripe}}>{\centering\arraybackslash}X}{Other income (incl.\ exceptional revenue item)} &
-\multicolumn{1}{>{\columncolor{Stripe}}r}{0.9\%} &
-\multicolumn{1}{>{\columncolor{Stripe}}r}{22} \\
-
-% total (Total)
-\multicolumn{1}{>{\columncolor{Total}}r}{9 638} &
-\multicolumn{1}{>{\columncolor{Total}}r}{100\%} &
-\multicolumn{1}{>{\columncolor{Total}}>{\centering\arraybackslash}X}{} &
-\multicolumn{1}{>{\columncolor{Total}}r}{100\%} &
-\multicolumn{1}{>{\columncolor{Total}}r}{2 364} \\
-
-\end{tabularx}
-\end{table}
-```
-

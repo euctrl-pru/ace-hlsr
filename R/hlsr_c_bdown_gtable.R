@@ -11,6 +11,9 @@ library(here)
 ## data source
 source(here("data_source.R"))
 
+## functions
+source(here("R/functions.R"))
+
 ## import data
 cost_data  <-  read_xlsx(
   # paste0(data_folder, data_file),
@@ -101,6 +104,7 @@ data_table <- c_bdown_data %>%
           "  € M" = G2G_F, 
           "  %" = G2G_PERC)
 
+data_table_pdf <- data_table %>% as_tibble()
 
 ##plot table
 t <- gt(
@@ -153,7 +157,7 @@ t <- gt(
 
 
 if (knitr::is_latex_output()) {
-  t 
+
 } else{
   t
 }

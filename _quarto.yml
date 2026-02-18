@@ -128,12 +128,12 @@ book:
   chapters:
     - index.qmd
     # - test.qmd
-    # - introduction.qmd
+    - introduction.qmd
     - high-level-revenues.qmd
-    # - economic-cost-effectiveness.qmd
-    # - financial-cost-effectiveness.qmd
-    # - cash-and-liquidity.qmd
-    # - disclaimer.qmd
+    - economic-cost-effectiveness.qmd
+    - financial-cost-effectiveness.qmd
+    - cash-and-liquidity.qmd
+    - disclaimer.qmd
   site-url: "https://eurocontrol.int/"
   navbar:
   # Note: You need to install: ```quarto install extension mcanouil/quarto-iconify```
