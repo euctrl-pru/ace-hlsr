@@ -37,10 +37,8 @@ format:
       - media/fontawesome.html
       # UNCOMMENT for activating GA
       - media/analytics.html
-# quarto render --to pdf --output-dir _pdf
 
   pdf: 
-    fig-path: "figures/"
     pdf-engine: xelatex
     fig-crop: true
     fig-pos: 'H'
@@ -157,6 +155,8 @@ book:
             href: "https://www.eurocontrol.int/ServiceUnits/Dashboard/EnRouteMainDashboard.html"
           - text: "&nbsp;&nbsp;&nbsp;<span style='font-weight: normal'>Traffic forecast</span>"
             href: https://ansperformance.eu/traffic/statfor/
+          - text: "&nbsp;&nbsp;&nbsp;<span style='font-weight: normal'>Connectivity</span>"
+            href: https://ansperformance.eu/traffic/connectivity/
           - text: "{{< iconify fa6-solid calendar >}}&nbsp;Punctuality"
             href: https://ansperformance.eu/traffic/punctuality/
           - text: "&nbsp;&nbsp;&nbsp;&nbsp;<span style='font-weight: normal'>Daily punctuality dashboard</span>"
