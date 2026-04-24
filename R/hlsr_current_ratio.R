@@ -52,7 +52,7 @@ p <- function(myfont, mywidth, myheight) {
                                       "3<sup>rd</sup> quartile")
     ),
     colors = c('#003366', '#E0584F', '#9AA349'),
-    line = list(width = 4), 
+    line = list(width = 3), 
     hovertemplate = paste('%{y:.2f}'),
     showlegend = T
   ) %>% 
@@ -118,7 +118,7 @@ p <- function(myfont, mywidth, myheight) {
 
 
 if (knitr::is_latex_output()) {
-  p(12, 750, 500)
+  p(9, 450, 300)
   
 } else{
   p(12, NULL, NULL)

@@ -52,7 +52,7 @@ format:
       # - inner=3cm
       # - outer=4cm
       - top=2cm
-      - bottom=1cm
+      - bottom=1.8cm
       - left=2.5cm
       - right=2.2cm
       - footskip=0.7cm
@@ -63,17 +63,22 @@ format:
             \usepackage[table]{xcolor}
             \usepackage{ragged2e}
             
+            \definecolor{MyBlue}{RGB}{54,95,145}
+            \definecolor{CaptionBlue}{RGB}{23,54,93}
+            
             \usepackage{float}
             \floatplacement{table}{H}
             
             \usepackage{caption}
             \captionsetup[table]{position=bottom}
             
+            % --- caption blue color and bold ---
+            \usepackage{caption}
+            \captionsetup{labelfont={bf,color=CaptionBlue},textfont={bf,color=CaptionBlue}}
+            
             % Calibri requires xelatex or lualatex
             \usepackage{fontspec}
             \setsansfont{Calibri}
-            
-            \definecolor{MyBlue}{RGB}{54,95,145}
             
             % --- KOMA-Script only: guard these so they don't break non-KOMA classes ---
             \makeatletter
@@ -82,6 +87,11 @@ format:
                 beforeskip=0pt,
                 afterskip=2pt
               ]{chapter}
+              
+              \RedeclareSectionCommand[
+                beforeskip=0pt,
+                afterskip=2pt
+              ]{section}
             
               % Use setkomafont only (avoid mixing addtokomafont + setkomafont)
               \setkomafont{chapter}{\color{MyBlue}\sffamily\bfseries\Large}
