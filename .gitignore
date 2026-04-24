@@ -17,3 +17,4 @@
 /_book/
 /*_files/
 /*.tex
+**/*.quarto_ipynb

@@ -120,7 +120,7 @@ p1 <- function(myfont, mywidth, myheight, vmargin, myautosize){
 
 
 if (knitr::is_latex_output()) {
-  p1(12, 490, 500, 30, 'T')
+  p1(12, 490, 500, 40, 'T')
 } else {
   p1(12, NULL, NULL, 40, 'T')
 }

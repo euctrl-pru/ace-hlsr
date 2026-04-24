@@ -102,7 +102,7 @@ plot_fin_ce <- function(myfont, mywidth, myheight){
     yaxis = "y1",
     # colors = c('#4F81BD'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#333399', width = 2, dash = 'dash'),
+    line = list(color = '#333399', width = 2, dash = 'line'),
     opacity = 0.5,
     hoverinfo = "none",
     showlegend = F
@@ -114,7 +114,7 @@ plot_fin_ce <- function(myfont, mywidth, myheight){
     yaxis = "y1",
     # color = c('#333399'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#333399', width = 2, dash = 'dash'),
+    line = list(color = '#333399', width = 2, dash = 'line'),
     opacity = 0.5,
     hoverinfo = "none",
     showlegend = F
@@ -193,7 +193,7 @@ plot_inset <- function(myfont){
     yaxis = "y1",
     # colors = c('#4F81BD'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#333399', width = 2, dash = 'dash'),
+    line = list(color = '#333399', width = 2, dash = 'line'),
     opacity = 0.5,
     hoverinfo = "none",
     showlegend = F
@@ -205,7 +205,7 @@ plot_inset <- function(myfont){
     yaxis = "y1",
     # color = c('#333399'),
     type = 'scatter',  mode = 'lines',
-    line = list(color = '#333399', width = 2, dash = 'dash'),
+    line = list(color = '#333399', width = 2, dash = 'line'),
     opacity = 0.5,
     hoverinfo = "none",
     showlegend = F

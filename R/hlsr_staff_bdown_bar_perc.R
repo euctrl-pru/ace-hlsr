@@ -177,7 +177,7 @@ p <- function(myfont, mywidth, myheight, vmargin, myautosize) {
 
 
 if (knitr::is_latex_output()) {
-  p(11, 262, 500, 40, 'T')
+  p(11, 262, 512, 42, 'T')
 } else {
   p(11, NULL, NULL, 40, 'T')
 }

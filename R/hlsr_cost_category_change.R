@@ -182,22 +182,22 @@ p <- function(myfont, mywidth, myheight, vmargin, myautosize) {
       x = 0,
       y = ~ label,
       name = paste0(year_report, " vs. 19"),
-      marker = list(color =c('black'),
+      marker = list(color =c('#7F7F7F'),
                     pattern = list(shape = "none")),
-      visible = 'legendonly',
+      textfont = list(color = 'white'),
       showlegend = TRUE
-      
+
     ) %>%
     add_trace(
       data = data_plot_2019,
       x = 0,
       y = ~ label,
       name = paste0(year_report, " vs. ", stringr::str_sub(as.character(year_report-1), 3,4)),
-      marker = list(color =c('black'),
+      marker = list(color =c('#7F7F7F'),
                     pattern = list(shape = "\\")),
-      visible = 'legendonly',
+      textfont = list(color = 'white'),
       showlegend = TRUE
-      
+
     ) %>%
     layout(
         barmode = "group",
@@ -236,7 +236,7 @@ p <- function(myfont, mywidth, myheight, vmargin, myautosize) {
           traceorder = "normal",
           font = list(color = 'black')
         ),
-        bargap = 0.3,
+        bargap = 0,
         hovermode = "y unified",
         autosize = myautosize,
         margin = list(b = vmargin, l=0, r=0),

@@ -162,8 +162,8 @@ plot_all <- function(myfont, mywidth, myheight){
             yaxis = "y1",
             # colors = c('#4F81BD'),
             type = 'scatter',  mode = 'lines',
-            line = list(color = '#333399', width = 2, dash = 'dash'),
-            opacity = 0.3,
+            line = list(color = '#333399', width = 2, dash = 'line'),
+            opacity = 0.4,
             hoverinfo = "none",
             showlegend = F
   ) %>%
@@ -174,8 +174,8 @@ plot_all <- function(myfont, mywidth, myheight){
             yaxis = "y1",
             # color = c('#333399'),
             type = 'scatter',  mode = 'lines',
-            line = list(color = '#333399', width = 2, dash = 'dash'),
-            opacity = 0.3,
+            line = list(color = '#333399', width = 2, dash = 'line'),
+            opacity = 0.4,
             hoverinfo = "none",
             showlegend = F
   ) %>% 
@@ -262,8 +262,8 @@ plot_inset <- function(myfont){
             yaxis = "y1",
             # colors = c('#4F81BD'),
             type = 'scatter',  mode = 'lines',
-            line = list(color = '#333399', width = 2, dash = 'dash'),
-            opacity = 0.3,
+            line = list(color = '#333399', width = 2, dash = 'line'),
+            opacity = 0.4,
             hoverinfo = "none",
             showlegend = F
   ) %>%
@@ -274,8 +274,8 @@ plot_inset <- function(myfont){
             yaxis = "y1",
             # color = c('#333399'),
             type = 'scatter',  mode = 'lines',
-            line = list(color = '#333399', width = 2, dash = 'dash'),
-            opacity = 0.3,
+            line = list(color = '#333399', width = 2, dash = 'line'),
+            opacity = 0.4,
             hoverinfo = "none",
             showlegend = F
   ) %>%
@@ -394,10 +394,10 @@ fig <- function(myfont, mywidth, myheight, vlegend, vdomain, myvposition){
 # fig <- function(myfont, mywidth, myheight, vlegend, vdomain, myvposition)
 
 if (knitr::is_latex_output()) {
-  fig(8, 700, 420, -0.6, 0.92, 1.08)
+  fig(8, 700, 480, -0.5, 0.92, 1.08)
 
 } else {
-  fig(8, NULL, NULL, -0.85, 0.92, 1.08)
+  fig(8, NULL, 480, -0.5, 0.92, 1.08)
   
 }
   
