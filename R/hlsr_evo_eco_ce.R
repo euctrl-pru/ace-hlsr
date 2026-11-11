@@ -331,7 +331,12 @@ p <- function(myfont, mywidth, myheight, myvoffset) {
     )
 }
 
-p(8, NULL, NULL, 0)
+
+if (knitr::is_latex_output()) {
+  p(7, 430, 300, 0)
+} else {
+  p(8, NULL, NULL, 0)
+}
 
 # fig_dir <- 'figures/'
 # fig_name <- "figure-3-1-1-hlsr_evo_eco_ce.png"

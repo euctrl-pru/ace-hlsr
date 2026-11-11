@@ -23,7 +23,7 @@ Although gate-to-gate ATFM delays fell from 29.6 million minutes in 2024 to 25.2
 #| file: R/hlsr_evo_eco_ce.R
 #| echo: false
 #| out-width: "100%"
-#| out.height: !expr if (knitr::is_html_output()) "300px" else "245px"
+#| out.height: !expr if (knitr::is_html_output()) "300px" else "300px"
 ```
 
 Trend of unit economic costs at Pan-European system level, {{< var doc.year_report_minus10 >}}-{{< var doc.year_report >}} (real terms)

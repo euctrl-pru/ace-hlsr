@@ -55,7 +55,10 @@ p <- function(myfont, mywidth, myheight) {
           "</b>"
         )
       ),
-      textfont = list(color = 'black', size = myfont),
+      textfont = list(
+        color = 'black',
+        size = if_else(knitr::is_latex_output(), myfont - 1, myfont)
+      ),
       type = 'scatter',
       mode = 'lines',
       hoverinfo = "none",
@@ -97,7 +100,10 @@ p <- function(myfont, mywidth, myheight) {
       xaxis = list(
         title = "",
         fixedrange = TRUE,
-        tickfont = list(size = myfont),
+        tickfont = list(
+          size = if_else(knitr::is_latex_output(), myfont - 1, myfont)
+        ),
+        tickangle = 0,
         # automargin = T,
         # tickvals = 2014:2019,
         autotick = F,
@@ -109,6 +115,7 @@ p <- function(myfont, mywidth, myheight) {
         titlefont = list(size = myfont + 1),
         fixedrange = TRUE,
         tickfont = list(size = myfont),
+        range = c(0, 1210),
         # tickformat=",.0%", ticks = 'outside',
         zeroline = T,
         showline = F,
@@ -127,14 +134,18 @@ p <- function(myfont, mywidth, myheight) {
         ),
         titlefont = list(size = myfont + 1),
         tickfont = list(size = myfont),
-        range = list(
-          20,
-          10 +
-            round(
-              max(ace_graph_data$index_costs, ace_graph_data$index_cph) / 10
-            ) *
-              10
-        ),
+        # range = list(
+        #   20,
+        #   30 +
+        #     round(
+        #       max(ace_graph_data$index_costs, ace_graph_data$index_cph) / 10
+        #     ) *
+        #       10
+        # ),
+        range = c(20, 140.3),
+        autorange = FALSE,
+        tick0 = 20,
+        dtick = 20,
         automargin = T,
         showgrid = F
       ),
@@ -147,14 +158,14 @@ p <- function(myfont, mywidth, myheight) {
         y = -0.12
       ),
       # hovermode = "x unified",
-      uniformtext = list(minsize = myfont, mode = 'show')
+      uniformtext = list(minsize = myfont - 1, mode = 'show')
     ) %>%
     config(displaylogo = FALSE, modeBarButtons = list(list("toImage")))
 }
 
 
 if (knitr::is_latex_output()) {
-  p(12, 500, 300)
+  p(11, 500, 300)
 } else {
   p(12, NULL, 330)
 }

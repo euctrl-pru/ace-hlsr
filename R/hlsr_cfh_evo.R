@@ -61,10 +61,11 @@ p <- function(myfont, mywidth, myheight) {
       textposition = "outside",
       textfont = list(
         color = 'black',
-        size = if_else(myfont < 20, myfont, myfont + 2)
+        size = myfont - 1
       ),
       hovertemplate = paste('%{y:.1f}'),
-      showlegend = F
+      showlegend = F,
+      cliponaxis = FALSE
     ) %>%
     layout(
       bargap = 0.4,
@@ -84,10 +85,13 @@ p <- function(myfont, mywidth, myheight) {
           max(data_plot$year_data) + 0.5
         ),
         # tick0 = min(data_plot$year_data),
-        tickfont = list(size = myfont),
+        tickfont = list(
+          size = if_else(knitr::is_latex_output(), myfont - 1, myfont)
+        ),
         # fixedrange = TRUE,
         # automargin = T,
         # tickvals = c(),
+        tickangle = 0,
         autotick = F,
         zeroline = F,
         showline = T,
@@ -114,9 +118,13 @@ p <- function(myfont, mywidth, myheight) {
       ),
       autosize = T,
       hovermode = "x unified",
-      uniformtext = list(minsize = myfont, mode = 'show')
+      uniformtext = list(minsize = myfont - 1, mode = 'show')
     ) %>%
     config(responsive = FALSE, displaylogo = FALSE, displayModeBar = F)
 }
 
-p(12, NULL, NULL)
+if (knitr::is_latex_output()) {
+  p(9, 400, 250)
+} else {
+  p(12, NULL, NULL)
+}

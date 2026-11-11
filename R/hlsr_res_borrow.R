@@ -87,9 +87,10 @@ p <- function(myfont, mywidth, myheight) {
       textposition = "outside",
       textfont = list(
         color = '#2990EA',
-        size = if_else(myfont < 20, myfont, myfont + 2)
+        size = if_else(knitr::is_latex_output(), myfont - 1, myfont)
       ),
-      showlegend = T
+      showlegend = T,
+      cliponaxis = FALSE
     ) %>%
     layout(
       barmode = 'stak',
@@ -109,7 +110,10 @@ p <- function(myfont, mywidth, myheight) {
           max(data_plot$year_data) + 0.5
         ),
         # tick0 = min(data_plot$year_data),
-        tickfont = list(size = myfont),
+        tickfont = list(
+          size = if_else(knitr::is_latex_output(), myfont - 1, myfont)
+        ),
+        tickangle = 0,
         # fixedrange = TRUE,
         # automargin = T,
         # tickvals = c(),
@@ -127,7 +131,7 @@ p <- function(myfont, mywidth, myheight) {
         tickfont = list(size = myfont),
         ticks = 'outside',
         dtick = 2,
-        range = c(0, value_max + 0.1), #so the last line is plotted
+        range = c(0, value_max + 2 + 0.1), #so the last line is plotted
         showgrid = TRUE,
         # tickson="boundaries",
         # tickcolor='#BFBFBF', ticklen=3,
@@ -139,9 +143,13 @@ p <- function(myfont, mywidth, myheight) {
       ),
       autosize = T,
       hovermode = "x unified",
-      uniformtext = list(minsize = myfont, mode = 'show')
+      uniformtext = list(minsize = myfont - 1, mode = 'show')
     ) %>%
     config(responsive = FALSE, displaylogo = FALSE, displayModeBar = F)
 }
 
-p(12, NULL, NULL)
+if (knitr::is_latex_output()) {
+  p(9, 420, 250)
+} else {
+  p(12, NULL, NULL)
+}
