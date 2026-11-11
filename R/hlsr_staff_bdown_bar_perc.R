@@ -159,7 +159,7 @@ p <- function(myfont, mywidth, myheight, vmargin, myautosize) {
       xaxis = list(
         title = "",
         # fixedrange = TRUE,
-        range = c(-xrange_max - .3, xrange_max + .3),
+        range = c(-xrange_max - .5, xrange_max + .5),
         # automargin = T,
         # tickvals = c(),
         # tickformat=",.0%",
