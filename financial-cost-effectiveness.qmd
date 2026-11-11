@@ -43,7 +43,7 @@ This chapter provides a [preliminary analysis]{.underline} of ATM/CNS provision 
 ::::
 :::
 
-Changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus10 >}} -- {{< var doc.year_report >}} (real terms)
+Changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus10 >}} - {{< var doc.year_report >}} (real terms)
 :::
 
 The analytical framework used in the ACE analysis to break down the ATM/CNS provision cost-effectiveness indicator into relevant economic drivers is presented in @fig-figure-4-2. These key drivers include:

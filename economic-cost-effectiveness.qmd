@@ -7,14 +7,11 @@ source(here("R/calc_quartiles.R"))
 
 # Economic cost-effectiveness {#sec-economic}
 
-The concept of economic cost-effectiveness, developed by the PRC, is defined as the sum of gate-to-gate ATM/CNS provision costs and the costs of ground ATFM delays for both en‐route and airport, all expressed per composite flight-hour. This economic performance indicator is meant to capture trade‐offs between quality of service provided and costs[^3].
+The concept of economic cost-effectiveness, developed by the PRC, is defined as the sum of gate-to-gate ATM/CNS provision costs and en‐route and airport ground ATFM delays costs, expressed per composite flight-hour. This economic performance indicator is intended to capture trade‐offs between these two components, with delays arising from temporary imbalances between available capacity and traffic demand[^3].
 
 [^3]: See <https://ansperformance.eu/economics/ace/ace-handbook/> for more information on the methodology used to compute composite flight-hours and economic costs.
 
-@fig-figure-3-1 shows [preliminary results]{.underline} on the changes in economic cost-effectiveness over {{< var doc.year_report_minus10 >}} - {{< var doc.year_report >}} at Pan-European system level. 
-
-Unit economic costs fell by -7.1% in 2025, driven by a -18.8% decrease in the unit costs of ATFM delays, and a -2.8% reduction in ATM/CNS provision costs per composite flight-hour. 
-Although gate-to-gate ATFM delays fell from 29.6 million minutes in 2024 to 25.2 million minutes in 2025, they remained relatively high, with estimated costs of €3.4 billion. ATFM delay costs accounted for 23% of unit economic costs, down from the record high of 27% in 2024 but close to the shares recorded in 2018, 2019 and 2023.
+@fig-figure-3-1 shows [preliminary results]{.underline} on the changes in economic cost-effectiveness over {{< var doc.year_report_minus10 >}} - {{< var doc.year_report >}} at Pan-European system level. Unit economic costs fell by -7.1% in 2025, driven by a -18.8% decrease in the unit costs of ATFM delays, and a -2.8% reduction in ATM/CNS provision costs per composite flight-hour. Although gate-to-gate ATFM delays fell from 29.6 million minutes in 2024 to 25.2 million minutes in 2025, they remained relatively high, with estimated costs of €3.4 billion. ATFM delay costs accounted for 23% of unit economic costs, down from the record high of 27% in 2024 but close to the shares recorded in 2018, 2019 and 2023.
 
 
 ::: {#fig-figure-3-1 layout="[[-10,80,-10]]" style="margin: auto"}
@@ -26,7 +23,7 @@ Although gate-to-gate ATFM delays fell from 29.6 million minutes in 2024 to 25.2
 #| out.height: !expr if (knitr::is_html_output()) "300px" else "300px"
 ```
 
-Trend of unit economic costs at Pan-European system level, {{< var doc.year_report_minus10 >}}-{{< var doc.year_report >}} (real terms)
+Trend of unit economic costs at the Pan-European system level, {{< var doc.year_report_minus10 >}}-{{< var doc.year_report >}} (real terms)
 
 :::
 

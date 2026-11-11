@@ -20,7 +20,7 @@ ace_graph_data <- read_xlsx(
   rename(year_data = 1)
 
 p <- function(myfont, mywidth, myheight) {
-  ace_graph_data %>%
+  chart <- ace_graph_data %>%
     plot_ly(
       width = mywidth,
       height = myheight,
@@ -40,7 +40,7 @@ p <- function(myfont, mywidth, myheight) {
     add_trace(
       inherit = FALSE,
       x = ~year_data,
-      y = ~ costs_per_cph + 20,
+      y = ~ costs_per_cph + 50,
       yaxis = "y1",
       # colors = c('#4F81BD'),
       mode = 'text',
@@ -161,6 +161,27 @@ p <- function(myfont, mywidth, myheight) {
       uniformtext = list(minsize = myfont - 1, mode = 'show')
     ) %>%
     config(displaylogo = FALSE, modeBarButtons = list(list("toImage")))
+
+  chart <- plotly_build(chart)
+
+  baseline <- list(
+    type = "line",
+    xref = "x domain",
+    yref = "y",
+    x0 = 0,
+    x1 = 1,
+    y0 = 0,
+    y1 = 0,
+    line = list(color = "#444444", width = 0.5),
+    layer = "above"
+  )
+
+  chart$x$layout$shapes <- c(
+    chart$x$layout$shapes,
+    list(baseline)
+  )
+
+  chart
 }
 
 

@@ -64,7 +64,7 @@ data_prep <- data_calc %>%
   mutate(
     LABELS = if_else(
       ECO_CE_EVO >= 0,
-      paste0("+", format(LABELS * 100, nsmall = 1), "%"),
+      paste0("+", trimws(format(LABELS * 100, nsmall = 1)), "%"),
       paste0(format(LABELS * 100, nsmall = 1), "%")
     )
   ) %>%
@@ -149,7 +149,7 @@ lineDT10 <- lineDT %>%
 
 # plot
 p <- function(myfont, mywidth, myheight, myvoffset) {
-  plot_ly(
+  chart <- plot_ly(
     DT,
     height = myheight,
     width = mywidth,
@@ -189,6 +189,10 @@ p <- function(myfont, mywidth, myheight, myvoffset) {
           max(DT$YEAR_DATA),
           " prices)"
         ),
+        dtick = 200,
+        range = c(0, 1200),
+        ticks = 'outside',
+        showline = T,
         titlefont = list(size = myfont + 4),
         tickfont = list(size = myfont + 3),
         showgrid = F
@@ -329,6 +333,27 @@ p <- function(myfont, mywidth, myheight, myvoffset) {
       displayModeBar = F
       # modeBarButtons = list(list("toImage"))
     )
+
+  chart <- plotly_build(chart)
+
+  baseline <- list(
+    type = "line",
+    xref = "x domain",
+    yref = "y",
+    x0 = 0,
+    x1 = 1,
+    y0 = 0,
+    y1 = 0,
+    line = list(color = "black", width = 0.5),
+    layer = "above"
+  )
+
+  chart$x$layout$shapes <- c(
+    chart$x$layout$shapes,
+    list(baseline)
+  )
+
+  chart
 }
 
 
@@ -337,11 +362,3 @@ if (knitr::is_latex_output()) {
 } else {
   p(8, NULL, NULL, 0)
 }
-
-# fig_dir <- 'figures/'
-# fig_name <- "figure-3-1-1-hlsr_evo_eco_ce.png"
-#
-# invisible(export(p(17, 600, 600, 10), paste0(fig_dir, fig_name)))
-# invisible(figure <- image_read(paste0(fig_dir,fig_name)))
-# invisible(cropped <- image_crop(figure, "600x600"))
-# invisible(image_write(cropped, paste0(fig_dir, fig_name)))

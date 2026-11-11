@@ -120,7 +120,7 @@ p <- function(myfont, mywidth, myheight, vmargin, myautosize) {
         "%</i>"
       ),
       textangle = 0,
-      textposition = "auto",
+      textposition = "outside",
       # insidetextanchor =  "start",
       textfont = list(color = '#002A5F', size = myfont + 1),
       cliponaxis = FALSE,
@@ -159,7 +159,7 @@ p <- function(myfont, mywidth, myheight, vmargin, myautosize) {
       xaxis = list(
         title = "",
         # fixedrange = TRUE,
-        range = c(-xrange_max, xrange_max),
+        range = c(-xrange_max - .3, xrange_max + .3),
         # automargin = T,
         # tickvals = c(),
         # tickformat=",.0%",

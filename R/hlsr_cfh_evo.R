@@ -106,7 +106,7 @@ p <- function(myfont, mywidth, myheight) {
         tickfont = list(size = myfont),
         ticks = 'outside',
         dtick = 2,
-        range = c(0, value_max + 0.2), #so the last line is plotted
+        range = c(0, value_max + 0.6), #so the last line is plotted
         showgrid = TRUE,
         # tickson="boundaries",
         # tickcolor='#BFBFBF', ticklen=3,
@@ -124,7 +124,7 @@ p <- function(myfont, mywidth, myheight) {
 }
 
 if (knitr::is_latex_output()) {
-  p(9, 400, 250)
+  p(9, 450, 250)
 } else {
   p(12, NULL, NULL)
 }

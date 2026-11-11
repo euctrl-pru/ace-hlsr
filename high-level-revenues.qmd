@@ -113,7 +113,7 @@ Taking a longer-term perspective and setting aside the exceptional disruption to
 #| out.height: !expr if (knitr::is_html_output()) "300px" else "250px"
 ```
 
-Composite flight-hours of the Pan-European system, {{< var doc.year_report_minus10 >}}–{{< var doc.year_report >}}
+Composite flight-hours of the Pan-European system, {{< var doc.year_report_minus10 >}}-{{< var doc.year_report >}}
 
 :::
 
@@ -277,7 +277,7 @@ ANSP balance sheets in 2025 comprised €10 017M in capital and reserves and €
 ::: {#fig-figure-2-9 layout="[[-10,80,-10]]"}
 
 ```{r}
-#| file: R/hlsr_capex.R
+#| file: R/hlsr_res_borrow.R
 #| echo: false
 #| out-width: "100%"
 #| out.height: !expr if (knitr::is_html_output()) "300px" else "250px"
@@ -293,7 +293,7 @@ In 2025, capital and reserves decreased by -6% ( €649M), while borrowings cont
 ::: {#fig-figure-2-9bis layout="[[-10,80,-10]]"}
 
 ```{r}
-#| file: R/hlsr_res_borrow.R
+#| file: R/hlsr_capex.R
 #| echo: false
 #| out-width: "100%"
 #| out.height: !expr if (knitr::is_html_output()) "300px" else "250px"

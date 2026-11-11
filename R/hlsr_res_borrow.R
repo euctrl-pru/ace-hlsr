@@ -149,7 +149,7 @@ p <- function(myfont, mywidth, myheight) {
 }
 
 if (knitr::is_latex_output()) {
-  p(9, 420, 250)
+  p(9, 450, 250)
 } else {
   p(12, NULL, NULL)
 }
