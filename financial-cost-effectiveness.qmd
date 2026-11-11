@@ -11,13 +11,15 @@ This chapter provides a [preliminary analysis]{.underline} of ATM/CNS provision 
 
 ## Pan-European system level {#sec-fin_1}
 
-@fig-figure-4-1 shows that ATM/CNS costs per composite flight-hour stood at €469 in 2024, which is slightly lower than pre-COVID-19 level and represents the lowest level since the inception of ACE benchmarking activities in 2002. Compared to 2023, unit ATM/CNS provision costs were -1.4% lower, as traffic (+5.5%) rose faster than ATM/CNS provision costs (+4.0%). 
+@fig-figure-4-1 shows that ATM/CNS costs per composite flight-hour stood at €469 in 2025, which represents the lowest level since the inception of ACE benchmarking activities in 2002. Compared to 2024, unit ATM/CNS provision costs were -2.8% lower, as traffic (+4.9%) rose faster than ATM/CNS provision costs (+2.0%). 
 
-::: {#fig-figure-4-1 style="max-width: 500px; margin: auto"}
+::: {#fig-figure-4-1 style="max-width: 550px; margin: auto"}
 
 ::: {.content-visible when-format="html"}
+
 ```{r}
 #| file: R/hlsr_evo_unit_cost.R
+#| echo: false
 #| format:
 #|   html:
 #|     out.height: "300px"
@@ -25,7 +27,7 @@ This chapter provides a [preliminary analysis]{.underline} of ATM/CNS provision 
 ```
 :::
 
-::: {.content-visible when-format="pdf" layout="[15,80,15]"}
+::: {.content-visible when-format="pdf" layout="[10,80,10]"}
 :::: {.col-left}
 \hspace*{3mm}
 ::::
@@ -41,16 +43,16 @@ This chapter provides a [preliminary analysis]{.underline} of ATM/CNS provision 
 ::::
 :::
 
-Changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus5 >}} -- {{< var doc.year_report >}} (real terms)
+Changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus10 >}} -- {{< var doc.year_report >}} (real terms)
 :::
 
 The analytical framework used in the ACE analysis to break down the ATM/CNS provision cost-effectiveness indicator into relevant economic drivers is presented in @fig-figure-4-2. These key drivers include:
 
-a\) ATCO-hour productivity (0.98 composite flight-hours per ATCO-hour);
+a\) ATCO-hour productivity (1.00 composite flight-hours per ATCO-hour);
 
-b\) ATCO employment costs per ATCO-hour (€152); and,
+b\) ATCO employment costs per ATCO-hour (€162); and,
 
-c\) support costs per unit output (€314).
+c\) support costs per unit output (€307).
 
 {{< pagebreak >}}
 
@@ -62,7 +64,7 @@ c\) support costs per unit output (€314).
 ![ACE performance framework, {{< var doc.year_report >}} (real terms)](figures/Figure-4-2.png){#fig-figure-4-2 width=12cm}
 :::
 
-@fig-figure-4-3 shows that in 2024, ATCO employment costs per ATCO-hour rose by +3.9% while ATCO-hour productivity rose by +4.8% compared to 2023. As a result, ATCO employment costs per composite flight-hour decreased by -0.9%. In the meantime, unit support costs fell by -1.6% due to an increase in composite flight-hours (+5.5%) being partly offset by an increase in support costs (+3.8%). Consequently, in 2024, unit ATM/CNS provision costs fell by -1.4% at the Pan-European system level compared to 2023, taking into account the relative weighting of ATCO employment and support costs based on their shares of total ATM/CNS provision costs.
+@fig-figure-4-3 shows that in 2025, ATCO employment costs per ATCO-hour rose by +3.3% while ATCO-hour productivity rose by +2.2% compared to 2024. As a result, ATCO employment costs per composite flight-hour increased by +1.1%. In the meantime, unit support costs fell by  4.7% due to an increase in composite flight-hours (+4.9%) while total support costs remained fairly stable (-0.1%). Consequently, in 2025, unit ATM/CNS provision costs fell by -2.8% at the Pan-European system level compared to 2024, taking into account the relative weighting of ATCO employment and support costs based on their shares of total ATM/CNS provision costs.
 
 ::: {.content-visible when-format="html"}
 ![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3 height="98%" width="98%"}
@@ -73,19 +75,9 @@ c\) support costs per unit output (€314).
 :::
 
 
-As the values of the 2023 indicators were still affected by the persistent consequences of the COVID-19 crisis, Figure 4.4 below provides an additional analysis using 2019 as a reference year. It shows that in 2024 traffic was +1.6% above its 2019 level. Support costs decreased slightly (-0.8%), but because composite flight-hours increased, support costs per composite flight-hour fell more significantly (-2.4%). ATCO employment costs per composite flight-hour were +2.1% higher than in 2019, driven by an increase in employment costs per ATCO-hour (+2.3%) while ATCO-hour productivity improved marginally (+0.3%). As a result, ATM/CNS provision costs per composite flight-hour were -0.9% lower than in 2019.
-
-::: {.content-visible when-format="html"}
-![Breakdown of changes in unit ATM/CNS provision costs, 2019 -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-4.png){#fig-figure-4-3-2 height="98%" width="98%"}
-:::
-
-::: {.content-visible when-format="pdf"}
-![Breakdown of changes in unit ATM/CNS provision costs, 2019 -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-4.png){#fig-figure-4-3-2 width=0.98\linewidth}
-:::
-
 ## ANSP level {#sec-fin_2}
 
-All figures presented in this section show the preliminary benchmarking results for the 38 ANSPs. Because of their weight in the Pan-European system, the six largest ANSPs by cost (DFS, DHMI, DSNA, ENAIRE, ENAV and NATS) are also shown in a miniature replica of the chart (top right corner of the figures). The 1st and 3rd quartiles for each indicator are also shown in all figures. The gap between these two quartiles provides additional insight on the dispersion of the values.
+All figures presented in this section show the preliminary benchmarking results for the 38 ANSPs. Because of their weight in the Pan-European system, the six largest ANSPs by cost (DFS, DHMI, DSNA, ENAIRE, ENAV and NATS) are also shown in a miniature replica of the chart (top right corner of the figures). The 1^st^ and 3^rd^ quartiles for each indicator are also shown in all figures. The gap between these two quartiles provides additional insight on the dispersion of the values.
 
 Many factors contribute to observed differences in ANSPs’ performance. Over the years, the Performance Review Unit has identified factors which can be of an exogenous nature (i.e. those outside the control of an ANSP) or of an endogenous nature (those entirely under the ANSP’s control). A detailed list of these factors can be found in the [ACE Handbook](https://ansperformance.eu/economics/ace/ace-handbook/influencing-factors.html).
 

@@ -1,7 +1,8 @@
 doc:
-  year_report_plus2: 2026
-  year_report_plus1: 2025
-  year_report: 2024
-  year_report_minus1: 2023
-  year_report_minus2: 2022
-  year_report_minus5: 2019
+  year_report_plus2: 2027
+  year_report_plus1: 2026
+  year_report: 2025
+  year_report_minus1: 2024
+  year_report_minus2: 2023
+  year_report_minus5: 2020
+  year_report_minus10: 2015

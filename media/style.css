@@ -116,3 +116,9 @@ div.callout.callout {
 .gt_table{
   margin-bottom: 0px;
 }
+
+/* Center figure captions in HTML */
+figcaption.quarto-float-caption-figure,
+figcaption.quarto-float-fig {
+  text-align: center;
+}
