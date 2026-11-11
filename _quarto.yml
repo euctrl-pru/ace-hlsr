@@ -22,7 +22,7 @@ format:
       - media/custom.scss
     code-link: true
     footnotes: continuous
-    cover-image: media/cover_2024.png
+    cover-image: media/cover_2025.png
     link-external-newwindow: true
     link-external-icon: true
     link-external-filter: '^(?:http:|https:)\/\/ansperformance\.eu\/|^(?:http:|https:)\/\/.*ace-hlsr\.netlify\.app\/'
@@ -66,7 +66,7 @@ format:
       # - inner=3cm
       # - outer=4cm
       - top=2cm
-      - bottom=1.8cm
+      - bottom=1cm
       - left=2.5cm
       - right=2.2cm
       - footskip=0.7cm
@@ -77,22 +77,18 @@ format:
             \usepackage[table]{xcolor}
             \usepackage{ragged2e}
             
-            \definecolor{MyBlue}{RGB}{54,95,145}
-            \definecolor{CaptionBlue}{RGB}{23,54,93}
-            
             \usepackage{float}
             \floatplacement{table}{H}
             
             \usepackage{caption}
             \captionsetup[table]{position=bottom}
-            
-            % --- caption blue color and bold ---
-            \usepackage{caption}
-            \captionsetup{labelfont={bf,color=CaptionBlue},textfont={bf,color=CaptionBlue}}
+            \captionsetup[figure]{justification=centering}
             
             % Calibri requires xelatex or lualatex
             \usepackage{fontspec}
             \setsansfont{Calibri}
+            
+            \definecolor{MyBlue}{RGB}{54,95,145}
             
             % --- KOMA-Script only: guard these so they don't break non-KOMA classes ---
             \makeatletter
@@ -101,11 +97,6 @@ format:
                 beforeskip=0pt,
                 afterskip=2pt
               ]{chapter}
-              
-              \RedeclareSectionCommand[
-                beforeskip=0pt,
-                afterskip=2pt
-              ]{section}
             
               % Use setkomafont only (avoid mixing addtokomafont + setkomafont)
               \setkomafont{chapter}{\color{MyBlue}\sffamily\bfseries\Large}
@@ -142,9 +133,9 @@ format:
             
 
 book:
-  title: "High-level Summary Report on Preliminary ACE 2024 Data"
+  title: "High-level Summary Report on Preliminary ACE 2025 Data"
   author: "Performance Review Unit"
-  date: "2025-12-16"
+  date: "2026-12-16"
   search:
     location: sidebar
   chapters:
@@ -154,7 +145,7 @@ book:
     - high-level-revenues.qmd
     - economic-cost-effectiveness.qmd
     - financial-cost-effectiveness.qmd
-    - cash-and-liquidity.qmd
+    # - cash-and-liquidity.qmd
     - disclaimer.qmd
   site-url: "https://eurocontrol.int/"
   navbar:
