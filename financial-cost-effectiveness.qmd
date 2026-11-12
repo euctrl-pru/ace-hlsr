@@ -67,11 +67,11 @@ c\) support costs per unit output (€307).
 @fig-figure-4-3 shows that in 2025, ATCO employment costs per ATCO-hour rose by +3.3% while ATCO-hour productivity rose by +2.2% compared to 2024. As a result, ATCO employment costs per composite flight-hour increased by +1.1%. In the meantime, unit support costs fell by  4.7% due to an increase in composite flight-hours (+4.9%) while total support costs remained fairly stable (-0.1%). Consequently, in 2025, unit ATM/CNS provision costs fell by -2.8% at the Pan-European system level compared to 2024, taking into account the relative weighting of ATCO employment and support costs based on their shares of total ATM/CNS provision costs.
 
 ::: {.content-visible when-format="html"}
-![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3 height="98%" width="98%"}
+![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} - {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3 height="98%" width="98%"}
 :::
 
 ::: {.content-visible when-format="pdf"}
-![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} -- {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3 width=0.98\linewidth}
+![Breakdown of changes in unit ATM/CNS provision costs, {{< var doc.year_report_minus1 >}} - {{< var doc.year_report >}} (real terms)](figures/Figure-4-3.png){#fig-figure-4-3 width=0.99\linewidth}
 :::
 
 
