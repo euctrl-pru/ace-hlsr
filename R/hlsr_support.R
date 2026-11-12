@@ -68,6 +68,17 @@ data_plot <- data_prep %>%
     values_to = "VALUE"
   )
 
+ansp_type_list <- data_plot |>
+  distinct(ANSP_NAME, TYPE) |>
+  arrange(ANSP_NAME, TYPE)
+
+data_plot_positive <- data_plot |>
+  filter(VALUE >= 0)
+
+data_plot_negative <- data_plot |>
+  filter(VALUE < 0)
+
+
 # help table for labels and additional traces
 data_help <- data_prep %>%
   select(
@@ -151,6 +162,10 @@ plot_all <- function(myfont, mywidth, myheight) {
       hovertemplate = paste('%{y:.0f}'),
       showlegend = T
     ) %>%
+    # add_trace(
+    #   data = data_plot_negative,
+    #   inherit= TRUE
+    # ) |>
     add_trace(
       data = data_help,
       inherit = FALSE,
@@ -363,18 +378,18 @@ myannotations <- function(myfont) {
 # https://stackoverflow.com/questions/64024937/how-to-change-thousands-separator-for-blank-in-r-plotly
 
 ticklabels1 <- seq(
-  from = 0,
+  from = -50,
   to = round(max(data_plot$`Support costs per composite flight-hour` + 200)),
-  by = 200
+  by = 100
 )
-ticktexts1 <- c(0, format(ticklabels1[-1], big.mark = " "))
+ticktexts1 <- c(-50, format(ticklabels1[-1], big.mark = " "))
 
 ticklabels2 <- seq(
-  from = 0,
+  from = -50,
   to = round(max(data_inset$`Support costs per composite flight-hour` + 200)),
-  by = 200
+  by = 100
 )
-ticktexts2 <- c(0, format(ticklabels2[-1], big.mark = " "))
+ticktexts2 <- c(-50, format(ticklabels2[-1], big.mark = " "))
 
 fig <- function(myfont, mywidth, myheight, vlegend, vdomain) {
   p <- subplot(plot_all(myfont, mywidth, myheight), plot_inset(myfont + 1)) %>%
@@ -382,7 +397,7 @@ fig <- function(myfont, mywidth, myheight, vlegend, vdomain) {
       autosize = T,
       uniformtext = list(minsize = myfont, mode = 'show'), #this is important so it does not autofit fonts
       bargap = 0.45,
-      barmode = 'stack',
+      barmode = 'relative',
       title = list(text = "", font = list(color = "black", size = 14)),
       font = list(family = "Helvetica"),
       hovermode = "x unified",
@@ -425,7 +440,7 @@ fig <- function(myfont, mywidth, myheight, vlegend, vdomain) {
         linecolor = 'transparent',
         mirror = T,
         range = list(
-          0,
+          -50,
           200 +
             round(
               max(data_plot$`Support costs per composite flight-hour` / 1000),
@@ -461,7 +476,7 @@ fig <- function(myfont, mywidth, myheight, vlegend, vdomain) {
         tickcolor = 'white',
         fixedrange = TRUE,
         range = list(
-          0,
+          -50,
           200 +
             round(
               max(data_inset$`Support costs per composite flight-hour` / 1000),
@@ -482,37 +497,37 @@ fig <- function(myfont, mywidth, myheight, vlegend, vdomain) {
     )
 
   # Build first, then add the baselines
-  p <- plotly_build(p)
-
-  baselines <- list(
-    # Main chart
-    list(
-      type = "line",
-      xref = "paper",
-      yref = "paper",
-      x0 = 0,
-      x1 = 1,
-      y0 = 0,
-      y1 = 0,
-      line = list(color = "black", width = 0.5),
-      layer = "above"
-    ),
-
-    # Inset chart
-    list(
-      type = "line",
-      xref = "paper",
-      yref = "paper",
-      x0 = 0.65,
-      x1 = 1,
-      y0 = vdomain - 0.4,
-      y1 = vdomain - 0.4,
-      line = list(color = "black", width = 0.5),
-      layer = "above"
-    )
-  )
-
-  p$x$layout$shapes <- c(p$x$layout$shapes, baselines)
+  # p <- plotly_build(p)
+  #
+  # baselines <- list(
+  #   # Main chart
+  #   list(
+  #     type = "line",
+  #     xref = "paper",
+  #     yref = "paper",
+  #     x0 = 0,
+  #     x1 = 1,
+  #     y0 = 0,
+  #     y1 = 0,
+  #     line = list(color = "black", width = 0.5),
+  #     layer = "above"
+  #   ),
+  #
+  #   # Inset chart
+  #   list(
+  #     type = "line",
+  #     xref = "paper",
+  #     yref = "paper",
+  #     x0 = 0.65,
+  #     x1 = 1,
+  #     y0 = vdomain - 0.4,
+  #     y1 = vdomain - 0.4,
+  #     line = list(color = "black", width = 0.5),
+  #     layer = "above"
+  #   )
+  # )
+  #
+  # p$x$layout$shapes <- c(p$x$layout$shapes, baselines)
 
   p
 }
