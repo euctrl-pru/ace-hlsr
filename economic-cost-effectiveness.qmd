@@ -28,7 +28,7 @@ Trend of unit economic costs at Pan-European system level, {{< var doc.year_repo
 :::
 
 
-@fig-figure-3-2 shows [preliminary results]{.underline} at ANSP level (dotted lines represent the 1st and 3rd quartiles, €`r q1_3_2` and €`r q3_3_2`, respectively).
+@fig-figure-3-2 shows [preliminary results]{.underline} at ANSP level for {{< var doc.year_report >}} (dotted lines represent the 1st and 3rd quartiles, €`r q1_3_2` and €`r q3_3_2`, respectively).
 
 ::: {#fig-figure-3-2}
 ```{r}

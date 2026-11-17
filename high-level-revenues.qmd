@@ -224,7 +224,7 @@ Four ANSPs reported increases in total ATM/CNS provision costs of more than €2
 #|     out.height: "600px"
 ```
 
-Changes in ATM/CNS provision costs (real terms)
+Changes in gate-to-gate ATM/CNS provision costs (real terms)
 :::
 
 ## Staff
