@@ -40,7 +40,7 @@ trm_reve_apt_perc <- sprintf("%0.1f%%", trm_reve_apt/trm_reve*100)
 
 ##	Revenues and traffic
 
-This chapter provides a [preliminary]{.underline} overview of high-level revenues, costs and staff data provided in ANSPs ACE {{< var doc.year_report >}} data submissions. 
+This chapter provides a [preliminary]{.underline} overview of high-level revenues, costs and staff data provided in ANSPs' ACE {{< var doc.year_report >}} data submissions. 
 
 Total ANS revenues in {{< var doc.year_report >}} amounted to `r total_reve_f`. Most en-route revenues come from the collection of en-route charges (`r ert_reve_charge_perc`, see left pie chart). The proportion of terminal revenues from charges is lower (`r trm_reve_charge_perc`, see right pie chart), as additional income may directly come from airport operators (`r trm_reve_apt_perc`) through, for example, a contractual arrangement between the ANSP and the airport operator.
 
@@ -113,7 +113,7 @@ Taking a longer-term perspective and setting aside the exceptional disruption to
 #| out.height: !expr if (knitr::is_html_output()) "300px" else "250px"
 ```
 
-Composite flight-hours of the Pan-European system, {{< var doc.year_report_minus10 >}}-{{< var doc.year_report >}}
+Composite flight-hours at Pan-European system level, {{< var doc.year_report_minus10 >}}-{{< var doc.year_report >}}
 
 :::
 
@@ -121,7 +121,7 @@ However, at ANSP level, traffic flows and characteristics changed significantly 
 
 [^2]: Performance Review Report, March 2026.
 
-As a result, eight ANSPs were still below their 2015 traffic levels in 2025 (see @fig-Traffic_map) and 16 below 2019 levels. This inevitably impacted the levels and trends of ACE indicators for the most affected ANSPs.
+As a result, eight ANSPs were below their 2015 traffic levels in 2025 (see @fig-Traffic_map) and 16 below 2019 levels. This inevitably impacted the levels and trends of ACE indicators for the most affected ANSPs.
 
 
 ::: {#fig-Traffic_map}
@@ -132,7 +132,7 @@ Changes in composite flight-hours between {{< var doc.year_report_minus10 >}} an
 
 ##	Costs
 
-The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services, which amounted to €10 468M in 2025. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 84% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented around 16%.
+The ACE benchmarking analysis focuses on the specific costs of providing gate-to-gate ATM/CNS services, which amounted to €10 980M in 2025. Operating costs (including staff costs, non-staff operating costs and exceptional cost items) accounted for some 86.1% of total ATM/CNS provision costs, while depreciation costs and the cost of capital represented around 13.9%.
 
 ```{r hlsr_c_bdown_pie}
 #| file: R/hlsr_c_bdown_pie.R
@@ -170,7 +170,7 @@ cat(latex_table_costs(df = data_table_pdf))
 Gate-to-gate ATM/CNS provision costs at Pan-European system level, {{< var doc.year_report >}}
 :::
 
-Between 2024 and 2025, ATM/CNS provision costs increased by +2.0% (+€210M). The main drivers were higher staff costs (+€417M) while all other cost categories decreased.
+Between 2024 and 2025, ATM/CNS provision costs increased by +2.0% (+€214M). The main drivers were higher staff costs (+€417M) while all other cost categories decreased.
 
 ::: {#fig-figure-2-4}
 ```{r cost-category}
@@ -185,7 +185,9 @@ Between 2024 and 2025, ATM/CNS provision costs increased by +2.0% (+€210M). Th
 Changes in gate-to-gate ATM/CNS provision cost categories (real terms)
 :::
 
-In {{< var doc.year_report >}}, the six largest ANSPs in terms of costs (DSNA, DFS, ENAIRE, NATS, ENAV and DHMI) bore some 57% of the total Pan-European gate-to-gate ATM/CNS provision costs, while the six smallest ANSPs accounted for some 1% (see bottom left part of @fig-figure-2-5).
+In {{< var doc.year_report >}}, the six largest ANSPs in terms of costs (DSNA, DFS, ENAIRE, NATS, ENAV and DHMI) bore some 57.5% of the total Pan-European gate-to-gate ATM/CNS provision costs, while the six smallest ANSPs accounted for some 1.3% (see bottom left part of @fig-figure-2-5).
+
+Four ANSPs reported increases in total ATM/CNS provision costs of more than €20M in 2025: ENAV, DSNA, DFS and ROMATSA. For these ANSPs, staff costs were the primary driver. By contrast, three ANSPs recorded reductions in ATM/CNS provision costs greater than  €10M: DHMI, LFV and NAVIAIR. In most cases, these reductions were mainly due to the fact that exceptional costs were reported in 2024.
 
 ::: {.content-visible when-format="html"}
 ::: centeredtitle
@@ -227,7 +229,7 @@ Changes in ATM/CNS provision costs (real terms)
 
 ## Staff
 
-The Pan-European ANSPs employed a total of 56 146 staff (expressed in Full Time Equivalents – FTEs) in 2025 (comprising 55 309 staff providing ATM/CNS services and 837 internal MET staff). Some 17 840 staff (32%) were ATCOs working on operational duties, split between ACCs (53%) and APP/TWR facilities (47%). On average, 2.1 additional staff were required for every ATCO in OPS in Europe.
+The Pan-European ANSPs employed a total of 56 336 staff (expressed in Full Time Equivalents – FTEs) in 2025 (comprising 55 499 staff providing ATM/CNS services and 837 internal MET staff). Some 17 840 staff (32%) were ATCOs working on operational duties, split between ACCs (53%) and APP/TWR facilities (47%). On average, 2.1 additional staff were required for every ATCO in OPS in Europe.
 
 ::: {#fig-figure-2-6}
 ```{r staff-pie}
@@ -241,7 +243,7 @@ The Pan-European ANSPs employed a total of 56 146 staff (expressed in Full Time 
 Breakdown of total gate-to-gate ATM/CNS staff at Pan-European system level, {{< var doc.year_report >}}
 :::
 
-In 2025, the number of ATM/CNS staff increased by +2.4% (+1 278 FTEs) compared with 2024, reaching a level +8.0% above that recorded in 2015. The numbers of ATCOs in OPS and support staff rose by +1.5% (+264 FTEs) and +2.8% (+1 014 FTEs), respectively, compared with 2024. The increase in ATCOs in OPS at the Pan-European system level was mainly attributable to a change in ENAV’s reporting scope. In 2025, ENAV included 20 additional tower units serving regional airports with relatively low traffic which were previously excluded from the ACE benchmarking exercise. Excluding ENAV from the 2024-2025 comparison, the increase in the number of ATCOs in OPS would be lower (+0.4%).
+In 2025, the number of ATM/CNS staff increased by +2.7% (+1 468 FTEs) compared with 2024, reaching a level +8.3% above that recorded in 2015. The numbers of ATCOs in OPS and support staff rose by +1.5% (+264 FTEs) and +3.3% (+1 204 FTEs), respectively, compared with 2024. The increase in ATCOs in OPS at the Pan-European system level was mainly attributable to a change in ENAV’s reporting scope. In 2025, ENAV included 20 additional tower units serving regional airports with relatively low traffic which were previously excluded from the ACE benchmarking exercise. Excluding ENAV from the 2024-2025 comparison, the increase in the number of ATCOs in OPS would be lower (+0.4%).
 
 ::: {#fig-figure-2-7 layout="[65,35]"}
 ```{r staff-breakdown}
@@ -263,16 +265,16 @@ Changes in total gate-to-gate ATM/CNS staff per staff category
 
 The overall change in staff numbers between {{< var doc.year_report_minus1 >}} and {{< var doc.year_report >}} was mainly driven by the following categories:
 
--	Technical support staff for operational maintenance, monitoring and control: +413 FTEs (+4.5%);
+-	Technical support staff for operational maintenance, monitoring and control: +398 FTEs (+4.3%);
 -	Administrative staff: +328 FTEs (+3.7%);
 -	ATCOs in OPS: +264 FTEs (+1.5%); and,
--	Technical support staff for planning and development: +183 FTEs (+5.7%).
+-	Technical support staff for planning and development: +198 FTEs (+6.2%).
 
-Most other categories recorded increases, except OPS support (non-ATCOs) and Other Staff, which declined by -1.6% and -6.1%, respectively, as shown in [@fig-figure-2-7]{.no-external}. The largest proportional increase was observed in ab-initio trainees (+5.9%), indicating that some ANSPs expanded the recruitment of future ATCOs in 2025. More detailed information on staff numbers will be provided in the upcoming ACE report.
+Most other categories recorded increases, except OPS support (non-ATCOs) and Other Staff, which declined by -1.6% and -3.2%, respectively, as shown in [@fig-figure-2-7]{.no-external}. The largest proportional increases were observed in on-the-job trainees (+9.8%) and ab-initio trainees (+9.5%), indicating that some ANSPs recently expanded the recruitment of future ATCOs. More detailed information on staff numbers will be provided in the forthcoming ACE report.
 
 ## Balance sheet structure and capital expenditures
 
-ANSP balance sheets in 2025 comprised €10 017M in capital and reserves and €5 091M in borrowings, while capital expenditures amounted to €1 454M. 
+ANSP balance sheets in 2025 comprised €10 017M in capital and reserves and €5 089M in borrowings, while capital expenditures amounted to €1 455M. 
 
 ::: {#fig-figure-2-9 layout="[[-10,80,-10]]"}
 
@@ -287,7 +289,7 @@ Total ANS capital & reserves and borrowings of the Pan-European system, {{< var 
 
 :::
 
-In 2025, capital and reserves decreased by -6% ( €649M), while borrowings continued to decline, falling by -9% (-€483M). At €5.1 billion, borrowings remained significantly above their 2019 level (the lowest recorded over the 2015-2025 period) but continued to move closer to their 2015 level of €4.0 billion.
+In 2025, capital and reserves decreased by -6.1% ( €649M), while borrowings continued to decline, falling by -8.7% (-€482M). At €5.1 billion, borrowings remained significantly above their 2019 level (the lowest recorded over the 2015-2025 period) but continued to move closer to their 2015 level of €4.0 billion.
 
 
 ::: {#fig-figure-2-9bis layout="[[-10,80,-10]]"}

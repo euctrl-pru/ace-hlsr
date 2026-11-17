@@ -24,11 +24,11 @@ The final ACE benchmarking report will provide more detailed information on obse
 
 It is important that robust ACE benchmarking analysis is available in a timely manner since several stakeholders, most notably ANSPs’ management, regulatory authorities (e.g. NSAs) and airspace users, have a keen interest in receiving the information in the ACE reports as early as possible.
 
-Twenty out of 38 ANSPs submitted their ACE 2025 data on time by the 1^st^ of July 2026 and all data submissions were received by the end of September 2026. The timescale to produce the ACE benchmarking report is inevitably delayed if data are not submitted on time.
+Twenty out of 38 ANSPs submitted their ACE 2025 data on time by 1^st^ July 2026 and all data submissions were received by the end of September 2026. The timescale to produce the ACE benchmarking report is inevitably delayed if data are not submitted on time.
 
 It should be noted that the data presented in this document are still [**preliminary and not yet fully validated**]{.underline}. Indeed, the data submission milestone is just the first step of a process which comprises a thorough verification and analysis of individual ANSP submissions. This validation exercise also includes a formal round of exchange between the PRU and each ANSP to ensure a common understanding of the data submitted by the ANSP.
 
-The data used in this document reflects the information received by the 11^th^ of November 2025. @fig-figure-1-2 shows the status of the ACE data validation process for the data presented in this document.
+The data used in this document reflects the information received by 12^th^ of November 2025. @fig-figure-1-2 shows the status of the ACE data validation process for the data presented in this document.
 
 ::: {#fig-figure-1-2}
 ::: {.content-visible when-format="html"}
@@ -56,7 +56,7 @@ cat(latex_table_ansp(df = ansp))
 Status of {{< var doc.year_report >}} data validation process
 :::
 
-The data contained in this report is therefore subject to changes before the release of the final ACE benchmarking report in May {{< var doc.year_report_plus2 >}}.
+The data contained in this report is therefore subject to change before the release of the final ACE benchmarking report in May {{< var doc.year_report_plus2 >}}.
 
 The remainder of this report is structured as follows:
 

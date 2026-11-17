@@ -7,7 +7,7 @@ source(here("R/calc_quartiles.R"))
 
 # Economic cost-effectiveness {#sec-economic}
 
-The concept of economic cost-effectiveness, developed by the PRC, is defined as the sum of gate-to-gate ATM/CNS provision costs and en‐route and airport ground ATFM delays costs, expressed per composite flight-hour. This economic performance indicator is intended to capture trade‐offs between these two components, with delays arising from temporary imbalances between available capacity and traffic demand[^3].
+The concept of economic cost-effectiveness, developed by the PRC, is defined as the sum of gate-to-gate ATM/CNS provision costs and en‐route and airport ground ATFM delay costs, expressed per composite flight-hour. This economic performance indicator is intended to capture trade‐offs between these two components, with delays arising from temporary imbalances between available capacity and traffic demand[^3].
 
 [^3]: See <https://ansperformance.eu/economics/ace/ace-handbook/> for more information on the methodology used to compute composite flight-hours and economic costs.
 
@@ -23,7 +23,7 @@ The concept of economic cost-effectiveness, developed by the PRC, is defined as 
 #| out.height: !expr if (knitr::is_html_output()) "300px" else "300px"
 ```
 
-Trend of unit economic costs at the Pan-European system level, {{< var doc.year_report_minus10 >}}-{{< var doc.year_report >}} (real terms)
+Trend of unit economic costs at Pan-European system level, {{< var doc.year_report_minus10 >}}-{{< var doc.year_report >}} (real terms)
 
 :::
 
@@ -42,7 +42,7 @@ Trend of unit economic costs at the Pan-European system level, {{< var doc.year_
 Economic gate-to-gate cost-effectiveness, {{< var doc.year_report >}} 
 :::
 
-For ten ANSPs ATFM delays represented more than 30% of their unit economic costs (see ANSPs with the largest red and yellow portions, e.g. M-NAV, BHANSA, HASP, SMATSA, DSNA, etc.). In absolute terms (cumulative ATFM delays in minutes) DSNA, ENAIRE and HASP generated 50% of the Pan-European system total ATFM delays.
+For ten ANSPs ATFM delays represented more than 30% of their unit economic costs (see ANSPs with the largest red and yellow portions, e.g. M-NAV, BHANSA, HASP, SMATSA, DSNA, etc.). In absolute terms (cumulative ATFM delays in minutes) DSNA, DFS and ENAIRE generated 54% of the Pan-European system total ATFM delays.
 
 The primary sources of ATFM delays in 2025 were capacity and staffing shortages (47% of total ATFM delays), followed by adverse weather conditions (34% of total ATFM delays). 
 
