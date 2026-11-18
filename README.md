@@ -27,24 +27,25 @@ Note that when rendering in one format, it will erase the files from the other f
 
 1. For the yearly update, create a branch 'hlsr-202x' where 202x is the year the hlsr reports on.
 2. Update the variables.yml file. Typically add 1 year to all variables.
-3. Make the updates as requested by the ECO team.
-4. Set up netlify to get a url for the preview
+3. Update the title, date and cover page png in the quarto.yml file.
+4. Make the updates as requested by the ECO team.
+5. Set up netlify to get a url for the preview
 
-  4.1. Open your ace-hlsr project in Netlify.
+    5.1. Open your ace-hlsr project in Netlify.
 
-  4.2. Go to Project configuration → Developer settings → Continuous deployment → Branches and deploy contexts → Configure.
+    5.2. Go to Project configuration → Developer settings → Continuous deployment → Branches and deploy contexts → Configure.
 
-  4.3. Under Branch deploys, select Let me add individual branches and add hlsr-202x.
+    5.3. Under Branch deploys, select Let me add individual branches and add hlsr-202x.
 
-  4.4. Save, keeping your existing production branch unchanged. 
+    5.4. Save, keeping your existing production branch unchanged. 
 
-  5. Then, on your local hlsr-202x branch:
+6. Then, on your local hlsr-202x branch:
 
-5.1. Render the book as usual.
+    6.1. Render the book as usual.
 
-5.2. Commit the rendered HTML and its supporting files—images, CSS, JavaScript, and Plotly dependencies.
+    6.2. Commit the rendered HTML and its supporting files—images, CSS, JavaScript, and Plotly dependencies.
 
-5.3. Push the branch: `git push -u origin hlsr-202x`
+    6.3. Push the branch: `git push -u origin hlsr-202x`
 
 
 Once the branch deployment succeeds, its expected URL is:
