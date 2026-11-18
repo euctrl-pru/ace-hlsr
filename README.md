@@ -51,3 +51,7 @@ Note that when rendering in one format, it will erase the files from the other f
 Once the branch deployment succeeds, its expected URL is:
 
 https://hlsr-202x--ace-hlsr.netlify.app/
+
+7. When agreed with the ECO team, merge with master (same method as for merging the Portal branches, except no need for tagging).
+
+8. Integrate in AIU portal ACE section during the relevant Portal release, and announce as any other publication.
