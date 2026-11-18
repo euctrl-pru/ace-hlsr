@@ -30,7 +30,6 @@ Note that when rendering in one format, it will erase the files from the other f
 3. Make the updates as requested by the ECO team.
 4. Set up netlify to get a url for the preview
 
-
 4.1. Open your ace-hlsr project in Netlify.
 4.2. Go to Project configuration → Developer settings → Continuous deployment → Branches and deploy contexts → Configure.
 4.3. Under Branch deploys, select Let me add individual branches and add hlsr-202x.
