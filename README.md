@@ -30,15 +30,15 @@ Note that when rendering in one format, it will erase the files from the other f
 3. Make the updates as requested by the ECO team.
 4. Set up netlify to get a url for the preview
 
-4.1. Open your ace-hlsr project in Netlify.
+  4.1. Open your ace-hlsr project in Netlify.
 
-4.2. Go to Project configuration → Developer settings → Continuous deployment → Branches and deploy contexts → Configure.
+  4.2. Go to Project configuration → Developer settings → Continuous deployment → Branches and deploy contexts → Configure.
 
-4.3. Under Branch deploys, select Let me add individual branches and add hlsr-202x.
+  4.3. Under Branch deploys, select Let me add individual branches and add hlsr-202x.
 
-4.4. Save, keeping your existing production branch unchanged. 
+  4.4. Save, keeping your existing production branch unchanged. 
 
-5. Then, on your local hlsr-202x branch:
+  5. Then, on your local hlsr-202x branch:
 
 5.1. Render the book as usual.
 
